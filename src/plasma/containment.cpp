@@ -27,7 +27,9 @@
 #include <KConfigSkeleton>
 #include <KLocalizedString>
 
+#if ENABLE_ACTIVITIES
 #include <plasmaactivities/info.h>
+#endif
 
 #include "containmentactions.h"
 #include "corona.h"
@@ -212,7 +214,9 @@ void Containment::save(KConfigGroup &g) const
     group.writeEntry("lastScreen", d->lastScreen);
     group.writeEntry("formfactor", (int)d->formFactor);
     group.writeEntry("location", (int)d->location);
+#if ENABLE_ACTIVITIES
     group.writeEntry("activityId", d->activityId);
+#endif
 
     group.writeEntry("wallpaperplugin", d->wallpaperPlugin);
 
@@ -662,10 +666,14 @@ QString Containment::activity() const
 
 QString Containment::activityName() const
 {
+#if ENABLE_ACTIVITIES
     if (!d->activityInfo) {
         return QString();
     }
     return d->activityInfo->name();
+#else
+    return QString();
+#endif
 }
 
 void Containment::reactToScreenChange()

@@ -104,10 +104,13 @@ PRIVATE
     KF6::GlobalAccel #Applet::setGlobalShortcut
     KF6::Notifications
     KF6::IconThemes
-    Plasma::Activities
     KF6::Svg
     ${PLASMA_EXTRA_LIBS}
 )
+
+if(ENABLE_ACTIVITIES)
+    target_link_libraries(Plasma PRIVATE Plasma::Activities)
+endif()
 
 target_link_libraries(Plasma PRIVATE KF6::Package)
 

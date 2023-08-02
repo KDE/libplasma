@@ -36,6 +36,8 @@ include(ECMGenerateQDoc)
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
+option(ENABLE_ACTIVITIES "Enable support for Plasma Activities in containments" ON)
+
 ecm_setup_version(PROJECT
                   VARIABLE_PREFIX PLASMA
                   VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/plasma_version.h"
@@ -67,12 +69,15 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
         Svg
         ColorScheme
 )
-find_package(PlasmaActivities REQUIRED ${PROJECT_DEP_VERSION})
 
 # Wayland features
 find_package(PlasmaWaylandProtocols 1.10.0 REQUIRED)
 find_package(Qt6WaylandClient ${QT_MIN_VERSION} REQUIRED CONFIG)
 find_package(Wayland 1.9 REQUIRED Client)
+
+if(ENABLE_ACTIVITIES)
+    find_package(PlasmaActivities ${PROJECT_DEP_VERSION} REQUIRED)
+endif()
 
 option(WITHOUT_X11 "Build without X11 support (skips finding X11)." OFF)
 if(NOT WITHOUT_X11)

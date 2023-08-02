@@ -16,7 +16,9 @@
 
 #include "pluginloader.h"
 
+#if ENABLE_ACTIVITIES
 #include <plasmaactivities/info.h>
+#endif
 
 #include "debug_p.h"
 #include "private/applet_p.h"
@@ -34,8 +36,10 @@ ContainmentPrivate::ContainmentPrivate(Containment *c)
     , uiReady(false)
     , appletsUiReady(false)
 {
+#if ENABLE_ACTIVITIES
     activityInfo = new KActivities::Info(activityId, q);
     QObject::connect(activityInfo, &KActivities::Info::nameChanged, q, &Containment::activityNameChanged);
+#endif
 }
 
 Plasma::ContainmentPrivate::~ContainmentPrivate()

@@ -11,14 +11,12 @@ ecm_add_qml_module(corebindingsplugin URI "org.kde.plasma.core" VERSION 2.0 DEPE
 target_sources(corebindingsplugin PRIVATE
     action.cpp
     corebindingsplugin.cpp
-    quicktheme.cpp
     tooltiparea.cpp
     tooltipdialog.cpp
     windowthumbnail.cpp
 
     action.h
     corebindingsplugin.h
-    quicktheme.h
     tooltiparea.h
     tooltipdialog.h
     windowthumbnail.h

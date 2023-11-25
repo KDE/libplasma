@@ -39,7 +39,7 @@ Dependencies:
     'frameworks/ktexteditor' : '@same'
     'frameworks/oxygen-icons' : '@same'
     'frameworks/kirigami' : '@same'
-    'plasma/kactivities' : '@same'
+    'plasma/plasma-activities' : '@same'
 
 - 'on': ['Linux', 'FreeBSD']
   'require':

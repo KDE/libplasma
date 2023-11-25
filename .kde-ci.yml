@@ -21,7 +21,7 @@ Dependencies:
     'frameworks/kirigami' : '@same'
     'frameworks/kcmutils' : '@same'
     'frameworks/ksvg' : '@same'
-    'plasma/kactivities' : '@same'
+    'plasma/plasma-activities' : '@same'
 
 Options:
   test-before-installing: True

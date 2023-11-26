@@ -18,6 +18,7 @@ class TransientPlacementHintPrivate : public QSharedData
 {
 public:
     QRect parentAnchorRect;
+    bool constrainByAnchorWindow;
     Qt::Edges parentAnchor = Qt::BottomEdge | Qt::RightEdge;
     Qt::Edges popupAnchor = Qt::TopEdge | Qt::LeftEdge;
     Qt::Orientations slideConstraintAdjustments = Qt::Horizontal | Qt::Vertical;
@@ -79,6 +80,16 @@ void TransientPlacementHint::setPopupAnchor(Qt::Edges popupAnchor)
 Qt::Edges TransientPlacementHint::popupAnchor() const
 {
     return d->popupAnchor;
+}
+
+void TransientPlacementHint::setConstrainByAnchorWindow(bool constrainByAnchorWindow)
+{
+    d->constrainByAnchorWindow = constrainByAnchorWindow;
+}
+
+bool TransientPlacementHint::constrainByAnchorWindow() const
+{
+    return d->constrainByAnchorWindow;
 }
 
 void TransientPlacementHint::setSlideConstraintAdjustments(Qt::Orientations slideConstraintAdjustments)
@@ -180,9 +191,20 @@ QRect TransientPlacementHelper::popupRect(QWindow *w, const TransientPlacementHi
         screen = qApp->primaryScreen();
 
     QRect screenArea = screen->geometry();
+
     QVariant restrictedPopupGeometry = w->property("restrictedPopupGeometry");
     if (restrictedPopupGeometry.canConvert<QRect>()) {
         screenArea = restrictedPopupGeometry.toRect();
+    }
+
+    if (placement.constrainByAnchorWindow()) {
+        if (placement.parentAnchor() == Qt::TopEdge || placement.parentAnchor() == Qt::BottomEdge) {
+            screenArea.setRight(w->transientParent()->geometry().right());
+            screenArea.setLeft(w->transientParent()->geometry().left());
+        } else {
+            screenArea.setTop(w->transientParent()->geometry().top());
+            screenArea.setBottom(w->transientParent()->geometry().bottom());
+        }
     }
 
     auto inScreenArea = [screenArea](const QRect &target, Qt::Edges edges = Qt::LeftEdge | Qt::RightEdge | Qt::TopEdge | Qt::BottomEdge) -> bool {

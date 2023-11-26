@@ -137,6 +137,7 @@ void PopupPlasmaWindowPrivate::updatePosition()
     placementHint.setParentAnchorArea(parentAnchorRect.toRect());
     placementHint.setParentAnchor(m_popupDirection);
     placementHint.setPopupAnchor(PlasmaQuickPrivate::oppositeEdge(m_popupDirection));
+    placementHint.setConstrainByAnchorWindow(true);
     placementHint.setFlipConstraintAdjustments(m_floating ? Qt::Vertical : Qt::Orientations());
     placementHint.setMargin(m_margin);
 

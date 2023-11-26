@@ -18,6 +18,7 @@ class TransientPlacementHintPrivate : public QSharedData
 {
 public:
     QRect parentAnchorRect;
+    QRect anchorConstraint;
     Qt::Edges parentAnchor = Qt::BottomEdge | Qt::RightEdge;
     Qt::Edges popupAnchor = Qt::TopEdge | Qt::LeftEdge;
     Qt::Orientations slideConstraintAdjustments = Qt::Horizontal | Qt::Vertical;
@@ -79,6 +80,16 @@ void TransientPlacementHint::setPopupAnchor(Qt::Edges popupAnchor)
 Qt::Edges TransientPlacementHint::popupAnchor() const
 {
     return d->popupAnchor;
+}
+
+void TransientPlacementHint::setAnchorConstraint(QRect anchorConstraint)
+{
+    d->anchorConstraint = anchorConstraint;
+}
+
+QRect TransientPlacementHint::anchorConstraint() const
+{
+    return d->anchorConstraint;
 }
 
 void TransientPlacementHint::setSlideConstraintAdjustments(Qt::Orientations slideConstraintAdjustments)
@@ -173,6 +184,23 @@ QRect TransientPlacementHelper::popupRect(QWindow *w, const TransientPlacementHi
     const QMargins margin(placement.margin(), placement.margin(), placement.margin(), placement.margin());
     QSize paddedWindowSize = w->size().grownBy(margin);
     QRect popupRect = QRect(popupPosition(globalParentAnchorRect, placement.parentAnchor(), placement.popupAnchor(), paddedWindowSize), paddedWindowSize);
+
+    if (placement.popupAnchor() & (Qt::TopEdge | Qt::BottomEdge) && popupRect.width() <= placement.anchorConstraint().width()) {
+        if (popupRect.left() < placement.anchorConstraint().left()) {
+            popupRect.moveLeft(placement.anchorConstraint().left());
+        }
+        if (popupRect.right() > placement.anchorConstraint().right()) {
+            popupRect.moveRight(placement.anchorConstraint().right());
+        }
+    }
+    if (placement.popupAnchor() & (Qt::LeftEdge | Qt::RightEdge) && popupRect.height() <= placement.anchorConstraint().height()) {
+        if (popupRect.top() < placement.anchorConstraint().top()) {
+            popupRect.moveTop(placement.anchorConstraint().top());
+        }
+        if (popupRect.bottom() > placement.anchorConstraint().bottom()) {
+            popupRect.moveBottom(placement.anchorConstraint().bottom());
+        }
+    }
 
     if (!screen)
         screen = qApp->screenAt(globalParentAnchorRect.center());

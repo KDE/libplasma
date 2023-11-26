@@ -30,6 +30,8 @@ public:
     Qt::Edges parentAnchor() const;
     void setPopupAnchor(Qt::Edges popupAnchor);
     Qt::Edges popupAnchor() const;
+    QRect anchorConstraint() const;
+    void setAnchorConstraint(QRect anchorConstraint);
     Qt::Orientations slideConstraintAdjustments() const;
     void setSlideConstraintAdjustments(Qt::Orientations slideConstraintAdjustments);
     Qt::Orientations flipConstraintAdjustments() const;

@@ -81,9 +81,27 @@ AppletPopup::AppletPopup(QWindow *parent)
     connect(this, &PlasmaWindow::paddingChanged, this, [windowResizer, this]() {
         windowResizer->setMargins(padding());
     });
-    windowResizer->setActiveEdges(borders());
-    connect(this, &PlasmaWindow::bordersChanged, this, [windowResizer, this]() {
-        windowResizer->setActiveEdges(borders());
+
+    Qt::Edge oppositePopupDirection;
+    switch (popupDirection()) {
+    case Qt::TopEdge:
+        oppositePopupDirection = Qt::BottomEdge;
+        break;
+    case Qt::BottomEdge:
+        oppositePopupDirection = Qt::TopEdge;
+        break;
+    case Qt::LeftEdge:
+        oppositePopupDirection = Qt::RightEdge;
+        break;
+    case Qt::RightEdge:
+        oppositePopupDirection = Qt::LeftEdge;
+    }
+
+    // We do not allow resizing towards the visualParent, which is the opposite of
+    // the popupDirection
+    windowResizer->setActiveEdges(borders() & ~oppositePopupDirection);
+    connect(this, &PlasmaWindow::bordersChanged, this, [windowResizer, oppositePopupDirection, this]() {
+        windowResizer->setActiveEdges(borders() & ~oppositePopupDirection);
     });
 
     connect(this, &PlasmaWindow::mainItemChanged, this, &AppletPopup::onMainItemChanged);

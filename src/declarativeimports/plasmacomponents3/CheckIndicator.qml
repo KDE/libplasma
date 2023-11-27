@@ -27,7 +27,7 @@ KSvg.FrameSvgItem {
 
     Private.ButtonShadow {
         anchors.fill: parent
-        showShadow: !control.pressed
+        showShadow: !control.down
     }
 
     KSvg.SvgItem {
@@ -61,7 +61,7 @@ KSvg.FrameSvgItem {
 
     Private.ButtonFocus {
         anchors.fill: parent
-        showFocus: control.visualFocus && !control.pressed
+        showFocus: control.visualFocus && !control.down
     }
 
     Private.ButtonHover {

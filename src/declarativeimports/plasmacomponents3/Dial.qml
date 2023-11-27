@@ -81,7 +81,7 @@ T.Dial {
                 id: buttonSvg
                 imagePath: "widgets/actionbutton"
             }
-            elementId: control.pressed? "pressed" : "normal"
+            elementId: control.pressed ? "pressed" : "normal"
             width: Math.floor(parent.height/2) * 2
             height: width
             anchors.centerIn: parent

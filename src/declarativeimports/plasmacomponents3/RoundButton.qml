@@ -72,7 +72,7 @@ T.RoundButton {
             visible: !control.flat || control.activeFocus || control.highlighted
             anchors.fill: parent
             state: {
-                if (control.pressed) {
+                if (control.down) {
                     return "hidden"
                 } else if (control.hovered) {
                     return "hover"
@@ -87,10 +87,10 @@ T.RoundButton {
         KSvg.SvgItem {
             id: buttonItem
             svg: buttonSvg
-            elementId: (control.pressed || control.checked) ? "pressed" : "normal"
+            elementId: (control.down || control.checked) ? "pressed" : "normal"
             anchors.fill: parent
             //internal: if there is no hover status, don't paint on mouse over in touchscreens
-            opacity: (control.pressed || control.checked || !control.flat || (roundShadow.hasOverState && control.hovered)) ? 1 : 0
+            opacity: (control.down || control.checked || !control.flat || (roundShadow.hasOverState && control.hovered)) ? 1 : 0
             Behavior on opacity {
                 PropertyAnimation { duration: Kirigami.Units.longDuration }
             }
@@ -103,7 +103,7 @@ T.RoundButton {
 
         Private.ButtonShadow {
             anchors.fill: parent
-            showShadow: background.useNormalButton && !control.flat && (!control.pressed || !control.checked)
+            showShadow: background.useNormalButton && !control.flat && (!control.down || !control.checked)
         }
 
         KSvg.FrameSvgItem {
@@ -111,7 +111,7 @@ T.RoundButton {
             anchors.fill: parent
             imagePath: "widgets/button"
             prefix: "normal"
-            opacity: background.useNormalButton && (!control.flat || control.hovered) && (!control.pressed || !control.checked) ? 1 : 0
+            opacity: background.useNormalButton && (!control.flat || control.hovered) && (!control.down || !control.checked) ? 1 : 0
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
@@ -122,12 +122,12 @@ T.RoundButton {
 
         Private.ButtonFocus {
             anchors.fill: parent
-            showFocus: background.useNormalButton && control.activeFocus && !control.pressed
+            showFocus: background.useNormalButton && control.activeFocus && !control.down
         }
 
         Private.ButtonHover {
             anchors.fill: parent
-            showHover: background.useNormalButton && control.hovered && !control.pressed
+            showHover: background.useNormalButton && control.hovered && !control.down
         }
 
         KSvg.FrameSvgItem {
@@ -135,7 +135,7 @@ T.RoundButton {
             imagePath: "widgets/button"
             prefix: "pressed"
             visible: background.useNormalButton
-            opacity: control.checked || control.pressed ? 1 : 0
+            opacity: control.checked || control.down ? 1 : 0
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration

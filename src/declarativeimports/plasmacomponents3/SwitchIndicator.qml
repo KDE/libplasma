@@ -67,13 +67,13 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
 
         svg: switchSvg
-        elementId: control.pressed ? "handle-pressed" : (control.hovered || control.focus ? "handle-hover" : "handle")
+        elementId: control.down ? "handle-pressed" : (control.hovered || control.focus ? "handle-hover" : "handle")
 
         implicitWidth: naturalSize.width
         implicitHeight: naturalSize.height
 
         Behavior on x {
-            enabled: !root.control.pressed
+            enabled: !root.control.down
             XAnimator {
                 duration: Kirigami.Units.shortDuration
                 easing.type: Easing.InOutQuad
@@ -86,7 +86,7 @@ Item {
             implicitWidth: naturalSize.width
             implicitHeight: naturalSize.height
             elementId: "handle-shadow"
-            visible: enabled && !control.pressed
+            visible: enabled && !control.down
         }
         KSvg.SvgItem {
             anchors.centerIn: parent

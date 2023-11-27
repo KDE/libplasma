@@ -125,11 +125,11 @@ T.ComboBox {
         imagePath: editable ? "widgets/lineedit" : "widgets/button"
         prefix: editable
                 ? "base"
-                : (control.pressed ? "pressed" : "normal")
+                : (control.down ? "pressed" : "normal")
 
         Private.ButtonShadow {
             anchors.fill: parent
-            showShadow: !parent.editable && !control.pressed
+            showShadow: !parent.editable && !control.down
         }
 
         Private.TextFieldFocus {
@@ -141,12 +141,12 @@ T.ComboBox {
 
         Private.ButtonFocus {
             anchors.fill: parent
-            showFocus: control.activeFocus && !control.pressed
+            showFocus: control.activeFocus && !control.down
         }
 
         Private.ButtonHover {
             anchors.fill: parent
-            showHover: control.hovered && !control.pressed
+            showHover: control.hovered && !control.down
         }
 
         MouseArea {

@@ -13,7 +13,7 @@ KSvg.FrameSvgItem {
     id: background
 
     imagePath: "widgets/listitem"
-    prefix: control.highlighted || control.pressed ? "pressed" : "normal"
+    prefix: control.highlighted || control.down ? "pressed" : "normal"
 
     visible: control.ListView.view ? control.ListView.view.highlight === null : true
 
@@ -22,7 +22,7 @@ KSvg.FrameSvgItem {
         visible: !Kirigami.Settings.isMobile
         prefix: "hover"
         anchors.fill: parent
-        opacity: control.hovered && !control.pressed ? 1 : 0
+        opacity: control.hovered && !control.down ? 1 : 0
     }
 }
 

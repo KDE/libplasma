@@ -109,7 +109,7 @@ T.MenuItem {
             prefix: "hover"
             anchors.fill: parent
             opacity: {
-                if (controlRoot.highlighted || controlRoot.hovered || controlRoot.pressed) {
+                if (controlRoot.highlighted || controlRoot.hovered || controlRoot.down) {
                     return 1
                 } else {
                     return 0

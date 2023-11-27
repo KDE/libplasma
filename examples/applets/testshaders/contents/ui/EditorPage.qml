@@ -93,6 +93,7 @@ PlasmaComponents.Page {
 //             left: parent.left
 //             right: parent.right
 //             bottom: applyButton.top
+//             wrapMode: TextEdit.Wrap
 //             bottomMargin: _s
 //
 //         }

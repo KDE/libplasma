@@ -36,6 +36,7 @@ Item {
             anchors { left: parent.left; right: parent.right; top: localeItem.bottom; }
             width: parent.width
             height: 80
+            wrapMode: TextEdit.Wrap
         }
         PlasmaComponents.Button {
             id: thanks

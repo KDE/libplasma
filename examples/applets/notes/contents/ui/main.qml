@@ -49,6 +49,7 @@ PlasmoidItem {
             background: null
             color: Qt.alpha("black", 0.8)
             font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.3)
+            wrapMode: TextEdit.Wrap
 
             text: Plasmoid.configuration.Text
             onEditingFinished: {

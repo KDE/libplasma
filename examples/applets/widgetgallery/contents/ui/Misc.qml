@@ -119,6 +119,7 @@ Page {
                         anchors.horizontalCenter: parent.horizontalCenter
                         placeholderText: "This is a\n multiline control."
                         width: parent.width - parent.spacing; height: 280
+                        wrapMode: TextEdit.Wrap
                     }
 
                     Slider {

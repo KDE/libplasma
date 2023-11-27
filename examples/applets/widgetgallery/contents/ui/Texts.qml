@@ -118,6 +118,7 @@ PlasmaComponents.Page {
                     width: 200
                     height: 100
                     enabled: false
+                    wrapMode: TextEdit.WordWrap
                     text: "Disabled Text Area"
                 }
             }

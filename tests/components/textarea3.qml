@@ -19,12 +19,14 @@ ComponentBase {
 
         PlasmaComponents.TextArea {
             placeholderText: "CHEESE"
+            wrapMode: TextEdit.Wrap
             width: 150
             height: 100
         }
 
         PlasmaComponents.TextArea {
             text: root.longText
+            wrapMode: TextEdit.Wrap
             width: 150
             height: 100
         }
@@ -32,7 +34,7 @@ ComponentBase {
 
         PlasmaComponents.TextArea {
             text: root.longText
-            wrapMode: Text.Wrap
+            wrapMode: TextEdit.Wrap
             width: 150
             height: 100
         }

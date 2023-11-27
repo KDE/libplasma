@@ -32,7 +32,6 @@ T.TextArea {
     selectionColor: Kirigami.Theme.highlightColor
     selectedTextColor: Kirigami.Theme.highlightedTextColor
     opacity: control.enabled ? 1 : 0.6
-    wrapMode: Text.WordWrap
     verticalAlignment: TextEdit.AlignTop
     hoverEnabled: !Kirigami.Settings.tabletMode || !Kirigami.Settings.hasTransientTouchInput
 

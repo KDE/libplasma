@@ -76,7 +76,7 @@ void ContainmentItem::init()
     }
 
     // Create the ToolBox
-    if (m_containment) {
+    if (m_containment && m_containment->isContainment()) {
         KConfigGroup defaults;
         if (m_containment->containmentType() == Plasma::Containment::Type::Desktop) {
             defaults = KConfigGroup(KSharedConfig::openConfig(m_containment->corona()->kPackage().filePath("defaults")), QStringLiteral("Desktop"));

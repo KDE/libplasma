@@ -79,6 +79,9 @@ void ConfigViewPrivate::init()
     }
     if (!applet.data()->pluginMetaData().isValid()) {
         qWarning() << "Invalid applet passed to constructor";
+        if (applet->containment()) {
+            corona = applet->containment()->corona();
+        }
         return;
     }
 
@@ -106,9 +109,10 @@ void ConfigViewPrivate::init()
         if (a) {
             corona = a->containment()->corona();
         }
-    } else if (!applet.data()->containment()->corona()->kPackage().isValid()) {
-        qWarning() << "Invalid home screen package";
     } else {
+        if (!applet.data()->containment()->corona()->kPackage().isValid()) {
+            qWarning() << "Invalid home screen package";
+        }
         corona = applet.data()->containment()->corona();
     }
     if (!corona) {

@@ -34,6 +34,7 @@ target_sources(PlasmaQuick PRIVATE
     private/configcategory_p.cpp
     private/plasmoidattached_p.cpp
     private/dialogbackground_p.cpp
+    private/utils.cpp
     plasmoid/plasmoiditem.cpp
     plasmoid/containmentitem.cpp
     plasmoid/dropmenu.cpp

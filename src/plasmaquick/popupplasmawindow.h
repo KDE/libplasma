@@ -36,6 +36,13 @@ class PLASMAQUICK_EXPORT PopupPlasmaWindow : public PlasmaWindow
     Q_PROPERTY(Qt::Edge popupDirection READ popupDirection WRITE setPopupDirection NOTIFY popupDirectionChanged)
 
     /**
+     * Defines the direction the popup was placed relative to the visualParent.
+     * This property is read-only and is updated when the popup is shown.
+     * The value whilst the popup is hidden is undefined.
+     */
+    Q_PROPERTY(Qt::Edge effectivePopupDirection READ effectivePopupDirection NOTIFY effectivePopupDirectionChanged)
+
+    /**
      * Defines whether the popup can appaer (float) over the parent window. The default is false.
      */
     Q_PROPERTY(bool floating READ floating WRITE setFloating NOTIFY floatingChanged)
@@ -68,6 +75,8 @@ public:
     Qt::Edge popupDirection() const;
     void setPopupDirection(Qt::Edge popupDirection);
 
+    Qt::Edge effectivePopupDirection() const;
+
     bool floating() const;
     void setFloating(bool floating);
 
@@ -85,6 +94,7 @@ public:
 Q_SIGNALS:
     void visualParentChanged();
     void popupDirectionChanged();
+    void effectivePopupDirectionChanged();
     void floatingChanged();
     void animatedChanged();
     void removeBorderStrategyChanged();

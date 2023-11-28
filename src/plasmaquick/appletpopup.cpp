@@ -21,6 +21,7 @@
 
 // used in detecting if focus passes to config UI
 #include "configview.h"
+#include "private/utils.h"
 #include "sharedqmlengine.h"
 
 // This is a proxy object that connects to the Layout attached property of an item
@@ -81,10 +82,15 @@ AppletPopup::AppletPopup(QWindow *parent)
     connect(this, &PlasmaWindow::paddingChanged, this, [windowResizer, this]() {
         windowResizer->setMargins(padding());
     });
-    windowResizer->setActiveEdges(borders());
-    connect(this, &PlasmaWindow::bordersChanged, this, [windowResizer, this]() {
-        windowResizer->setActiveEdges(borders());
-    });
+
+    auto updateWindowResizerEdges = [windowResizer, this]() {
+        Qt::Edges activeEdges = borders();
+        activeEdges.setFlag(PlasmaQuickPrivate::oppositeEdge(effectivePopupDirection()), false);
+        windowResizer->setActiveEdges(activeEdges);
+    };
+    updateWindowResizerEdges();
+    connect(this, &PlasmaWindow::bordersChanged, this, updateWindowResizerEdges);
+    connect(this, &PopupPlasmaWindow::effectivePopupDirectionChanged, this, updateWindowResizerEdges);
 
     connect(this, &PlasmaWindow::mainItemChanged, this, &AppletPopup::onMainItemChanged);
     connect(this, &PlasmaWindow::paddingChanged, this, &AppletPopup::updateMaxSize);

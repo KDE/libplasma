@@ -14,6 +14,7 @@
 #include <qnamespace.h>
 #include <qtmetamacros.h>
 
+#include "private/utils.h"
 #include "transientplacementhint_p.h"
 #include "waylandintegration_p.h"
 
@@ -25,12 +26,12 @@ class PopupPlasmaWindowPrivate
 public:
     PopupPlasmaWindowPrivate(PopupPlasmaWindow *_q);
 
-    void updateSlideEffect(const QRect &anchorRect, const QRect &relativePopupPosition);
+    void updateEffectivePopupDirection(const QRect &anchorRect, const QRect &relativePopupPosition);
+    void updateSlideEffect();
     void updatePosition();
     void updatePositionX11(const QPoint &position);
     void updatePositionWayland(const QPoint &position);
     void updateBorders(const QRect &globalPosition);
-    static Qt::Edge oppositeEdge(Qt::Edge edge);
     void updateVisualParentWindow();
 
     PopupPlasmaWindow *q;
@@ -42,6 +43,7 @@ public:
     bool m_animated = false;
     int m_margin = 0;
     Qt::Edge m_popupDirection = Qt::TopEdge;
+    Qt::Edge m_effectivePopupDirection = Qt::TopEdge;
 };
 
 PopupPlasmaWindowPrivate::PopupPlasmaWindowPrivate(PopupPlasmaWindow *_q)
@@ -56,26 +58,52 @@ PopupPlasmaWindowPrivate::PopupPlasmaWindowPrivate(PopupPlasmaWindow *_q)
  *
  * This is based purely on position in prepartion for being called in a wayland configure event
  */
-void PopupPlasmaWindowPrivate::updateSlideEffect(const QRect &anchorRect, const QRect &relativePopupPosition)
+void PopupPlasmaWindowPrivate::updateEffectivePopupDirection(const QRect &anchorRect, const QRect &relativePopupPosition)
 {
-    KWindowEffects::SlideFromLocation slideLocation = KWindowEffects::NoEdge;
-    if (m_animated) {
-        if (m_popupDirection == Qt::TopEdge || m_popupDirection == Qt::BottomEdge) {
-            if (relativePopupPosition.center().y() >= anchorRect.center().y()) {
-                slideLocation = KWindowEffects::TopEdge;
-            } else {
-                slideLocation = KWindowEffects::BottomEdge;
-            }
-        }
-        if (m_popupDirection == Qt::LeftEdge || m_popupDirection == Qt::RightEdge) {
-            if (relativePopupPosition.center().x() >= anchorRect.center().x()) {
-                slideLocation = KWindowEffects::LeftEdge;
-            } else {
-                slideLocation = KWindowEffects::RightEdge;
-            }
+    Qt::Edge effectivePopupDirection = Qt::TopEdge;
+    if (m_popupDirection == Qt::TopEdge || m_popupDirection == Qt::BottomEdge) {
+        if (relativePopupPosition.center().y() >= anchorRect.center().y()) {
+            effectivePopupDirection = Qt::TopEdge;
+        } else {
+            effectivePopupDirection = Qt::BottomEdge;
         }
     }
-    KWindowEffects::slideWindow(q, slideLocation, -1);
+    if (m_popupDirection == Qt::LeftEdge || m_popupDirection == Qt::RightEdge) {
+        if (relativePopupPosition.center().x() >= anchorRect.center().x()) {
+            effectivePopupDirection = Qt::LeftEdge;
+        } else {
+            effectivePopupDirection = Qt::RightEdge;
+        }
+    }
+
+    if (effectivePopupDirection != m_effectivePopupDirection) {
+        Q_EMIT q->effectivePopupDirectionChanged();
+        m_effectivePopupDirection = effectivePopupDirection;
+    }
+}
+
+void PopupPlasmaWindowPrivate::updateSlideEffect()
+{
+    KWindowEffects::SlideFromLocation slideLocation = KWindowEffects::NoEdge;
+    if (!m_animated) {
+        KWindowEffects::slideWindow(q, slideLocation);
+        return;
+    }
+    switch (m_effectivePopupDirection) {
+    case Qt::TopEdge:
+        slideLocation = KWindowEffects::TopEdge;
+        break;
+    case Qt::BottomEdge:
+        slideLocation = KWindowEffects::BottomEdge;
+        break;
+    case Qt::LeftEdge:
+        slideLocation = KWindowEffects::LeftEdge;
+        break;
+    case Qt::RightEdge:
+        slideLocation = KWindowEffects::RightEdge;
+        break;
+    }
+    KWindowEffects::slideWindow(q, slideLocation);
 }
 
 void PopupPlasmaWindowPrivate::updatePosition()
@@ -105,7 +133,7 @@ void PopupPlasmaWindowPrivate::updatePosition()
 
     placementHint.setParentAnchorArea(parentAnchorRect.toRect());
     placementHint.setParentAnchor(m_popupDirection);
-    placementHint.setPopupAnchor(oppositeEdge(m_popupDirection));
+    placementHint.setPopupAnchor(PlasmaQuickPrivate::oppositeEdge(m_popupDirection));
     placementHint.setFlipConstraintAdjustments(m_floating ? Qt::Vertical : Qt::Orientations());
     placementHint.setMargin(m_margin);
 
@@ -115,7 +143,8 @@ void PopupPlasmaWindowPrivate::updatePosition()
     if (m_visualParent->window()) {
         relativePopupPosition = relativePopupPosition.translated(-m_visualParent->window()->position());
     }
-    updateSlideEffect(parentAnchorRect.toRect(), relativePopupPosition);
+    updateEffectivePopupDirection(parentAnchorRect.toRect(), relativePopupPosition);
+    updateSlideEffect();
 
     if (KWindowSystem::isPlatformX11()) {
         updatePositionX11(popupPosition.topLeft());
@@ -191,21 +220,6 @@ void PopupPlasmaWindowPrivate::updateBorders(const QRect &globalPosition)
     q->setBorders(enabledBorders);
 }
 
-Qt::Edge PopupPlasmaWindowPrivate::oppositeEdge(Qt::Edge edge)
-{
-    switch (edge) {
-    case Qt::TopEdge:
-        return Qt::BottomEdge;
-    case Qt::BottomEdge:
-        return Qt::TopEdge;
-    case Qt::LeftEdge:
-        return Qt::RightEdge;
-    case Qt::RightEdge:
-        return Qt::LeftEdge;
-    }
-    Q_UNREACHABLE();
-}
-
 void PopupPlasmaWindowPrivate::updateVisualParentWindow()
 {
     if (m_visualParentWindow) {
@@ -275,6 +289,11 @@ void PopupPlasmaWindow::setPopupDirection(Qt::Edge popupDirection)
     queuePositionUpdate();
 
     Q_EMIT popupDirectionChanged();
+}
+
+Qt::Edge PopupPlasmaWindow::effectivePopupDirection() const
+{
+    return d->m_effectivePopupDirection;
 }
 
 bool PopupPlasmaWindow::floating() const

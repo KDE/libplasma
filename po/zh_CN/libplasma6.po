@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-25 01:35+0000\n"
-"PO-Revision-Date: 2023-11-19 03:37\n"
+"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -52,7 +52,7 @@ msgstr "搜索"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "清除搜索内容"
 
 #: plasma/applet.cpp:300
 #, kde-format
@@ -224,7 +224,7 @@ msgstr "无效的服务，无法执行任何操作。"
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr ""
+msgstr "%1 的根项目必须是 ContainmentItem 类型"
 
 #: plasmaquick/appletquickitem.cpp:524
 #, kde-format
@@ -243,6 +243,8 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"此挂件是为未知的旧版 Plasma 编写的，它与 Plasma %1 不兼容。请联系挂件的作者获"
+"取新版挂件。"
 
 #: plasmaquick/appletquickitem.cpp:549
 #, kde-format
@@ -250,6 +252,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"此挂件是为 Plasma %1 编写的，它与 Plasma %2 不兼容。请联系挂件的作者获取新版"
+"挂件。"
 
 #: plasmaquick/appletquickitem.cpp:554
 #, kde-format
@@ -257,6 +261,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"此挂件是为 Plasma %1 编写的，它与 Plasma %2 不兼容。请升级 Plasma 桌面环境以"
+"使用此挂件。"
 
 #: plasmaquick/appletquickitem.cpp:573
 #, kde-format
@@ -264,8 +270,7 @@ msgid "Error loading QML file: %1 %2"
 msgstr "加载 QML 文件出错：%1 %2"
 
 #: plasmaquick/appletquickitem.cpp:576
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "加载小程序出错：软件包不存在。%1"
 

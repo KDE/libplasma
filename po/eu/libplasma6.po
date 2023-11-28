@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-25 01:35+0000\n"
-"PO-Revision-Date: 2023-10-25 21:08+0200\n"
+"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"PO-Revision-Date: 2023-11-26 01:27+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -57,7 +57,7 @@ msgstr "Bilatu"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "Garbitu bilaketa"
 
 #: plasma/applet.cpp:300
 #, kde-format
@@ -251,6 +251,9 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"Trepeta hori Plasmaren bertsio ezezagun baterako idatzi zen eta ez da Plasma "
+"%1(e)rekin bateragarria. Mesedez, eguneratu Plasma trepeta erabili ahal "
+"izateko."
 
 #: plasmaquick/appletquickitem.cpp:549
 #, kde-format
@@ -258,6 +261,9 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"Trepeta hori Plasma %1(e)rako idatzi zen eta ez da Plasma %2(e)rekin "
+"bateragarria. Mesedez, jar zaitez trepetaren  egilearekin harremanean "
+"eguneratutako bertsio baterako."
 
 #: plasmaquick/appletquickitem.cpp:554
 #, kde-format
@@ -265,6 +271,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"Trepeta hori Plasma %1(e)rako idatzi zen eta ez da Plasma %2(e)rekin "
+"bateragarria. Mesedez, eguneratu Plasma trepeta erabili ahal izateko."
 
 #: plasmaquick/appletquickitem.cpp:573
 #, kde-format
@@ -272,10 +280,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Errorea QML fitxategia zamatzean: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:576
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
-msgstr "Errorea aplikaziotxoa kargatzean: paketea ez dago. %1"
+msgstr "Aplikaziotxoa zamatzeko errorea: paketea ez da existitzen. %1"
 
 #: plasmaquick/configview.cpp:101
 #, kde-format

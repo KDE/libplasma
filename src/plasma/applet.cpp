@@ -802,6 +802,7 @@ void Applet::setHasConfigurationInterface(bool hasInterface)
     }
 
     d->hasConfigurationInterface = hasInterface;
+    Q_EMIT hasConfigurationInterfaceChanged(hasInterface);
 }
 
 void Applet::configChanged()

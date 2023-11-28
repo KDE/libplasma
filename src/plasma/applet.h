@@ -168,6 +168,11 @@ class PLASMA_EXPORT Applet : public QObject
     Q_PROPERTY(bool configurationRequired READ configurationRequired WRITE setConfigurationRequired NOTIFY configurationRequiredChanged)
 
     /**
+     * True if this applet will provide a UI for its configuration
+     */
+    Q_PROPERTY(bool hasConfigurationInterface READ hasConfigurationInterface WRITE setHasConfigurationInterface NOTIFY hasConfigurationInterfaceChanged)
+
+    /**
      * The hints that the applet gives to its constraint,
      * such as asking to fill all the available space ignoring margins.
      */
@@ -729,6 +734,13 @@ Q_SIGNALS:
      * @since 5.20
      */
     void configurationRequiredChanged(bool needsConfig, const QString &reason);
+
+    /**
+     * Emitted when the applet gains or loses the ability to show a configuration interface
+     * @see hasConfigurationInterface
+     * @since 6.0
+     */
+    void hasConfigurationInterfaceChanged(bool hasConfiguration);
 
     /**
      * Emitted when the constraint hints changed

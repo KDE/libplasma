@@ -582,6 +582,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
 
         qmlObject->setSource(applet->containment()->corona()->kPackage().fileUrl("appleterror"));
 
+        applet->setHasConfigurationInterface(false);
         // even the error message QML may fail
         if (qmlObject->mainComponent()->isError()) {
             return nullptr;

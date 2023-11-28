@@ -538,22 +538,23 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
         }
 
         bool versionMismatch = false;
+        const int plasma_version_major = 6; // TODO: as soon PLASMA_VERSION_MAJOR is actually 6, use directly that
         if (version.isNull()) {
             reason = i18n(
                 "This Widget was written for an unknown older version of Plasma and is not compatible with Plasma %1. Please contact the widget's author for "
                 "an updated version.",
-                PLASMA_VERSION_MAJOR);
+                plasma_version_major);
             versionMismatch = true;
-        } else if (version.majorVersion() < PLASMA_VERSION_MAJOR) {
+        } else if (version.majorVersion() < plasma_version_major) {
             reason =
                 i18n("This Widget was written for Plasma %1 and is not compatible with Plasma %2. Please contact the widget's author for an updated version.",
                      version.majorVersion(),
-                     PLASMA_VERSION_MAJOR);
+                     plasma_version_major);
             versionMismatch = true;
-        } else if (version.majorVersion() > PLASMA_VERSION_MAJOR || version.minorVersion() > PLASMA_VERSION_MINOR) {
+        } else if (version.majorVersion() > plasma_version_major || version.minorVersion() > PLASMA_VERSION_MINOR) {
             reason = i18n("This Widget was written for Plasma %1 and is not compatible with Plasma %2. Please update Plasma in order to use the widget.",
                           versionString,
-                          PLASMA_VERSION_MAJOR);
+                          plasma_version_major);
             versionMismatch = true;
         } else if (applet->failedToLaunch()) {
             reason = applet->launchErrorMessage();

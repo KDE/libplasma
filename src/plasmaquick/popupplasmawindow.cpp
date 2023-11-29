@@ -224,12 +224,14 @@ void PopupPlasmaWindow::setVisualParent(QQuickItem *item)
         QObject::disconnect(d->m_visualParent->window(), nullptr, this, nullptr);
     }
     d->m_visualParent = item;
-    QObject::connect(d->m_visualParent->window(), &QQuickWindow::yChanged, this, [this]() {
-        d->updatePosition();
-    });
-    QObject::connect(d->m_visualParent->window(), &QQuickWindow::xChanged, this, [this]() {
-        d->updatePosition();
-    });
+    if (d->m_visualParent) {
+        QObject::connect(d->m_visualParent->window(), &QQuickWindow::yChanged, this, [this]() {
+            d->updatePosition();
+        });
+        QObject::connect(d->m_visualParent->window(), &QQuickWindow::xChanged, this, [this]() {
+            d->updatePosition();
+        });
+    }
     Q_EMIT visualParentChanged();
     queuePositionUpdate();
 }

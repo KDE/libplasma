@@ -31,9 +31,11 @@ public:
     void updatePositionWayland(const QPoint &position);
     void updateBorders(const QRect &globalPosition);
     static Qt::Edge oppositeEdge(Qt::Edge edge);
+    void updateVisualParentWindow();
 
     PopupPlasmaWindow *q;
     QPointer<QQuickItem> m_visualParent;
+    QPointer<QQuickWindow> m_visualParentWindow;
     PopupPlasmaWindow::RemoveBorders m_removeBorderStrategy = PopupPlasmaWindow::Never;
     bool m_needsReposition = false;
     bool m_floating = false;
@@ -204,6 +206,21 @@ Qt::Edge PopupPlasmaWindowPrivate::oppositeEdge(Qt::Edge edge)
     Q_UNREACHABLE();
 }
 
+void PopupPlasmaWindowPrivate::updateVisualParentWindow()
+{
+    if (m_visualParentWindow) {
+        QObject::disconnect(m_visualParentWindow, &QQuickWindow::yChanged, q, &PopupPlasmaWindow::queuePositionUpdate);
+        QObject::disconnect(m_visualParentWindow, &QQuickWindow::xChanged, q, &PopupPlasmaWindow::queuePositionUpdate);
+    }
+
+    m_visualParentWindow = m_visualParent ? m_visualParent->window() : nullptr;
+
+    if (m_visualParentWindow) {
+        QObject::connect(m_visualParentWindow, &QQuickWindow::yChanged, q, &PopupPlasmaWindow::queuePositionUpdate);
+        QObject::connect(m_visualParentWindow, &QQuickWindow::xChanged, q, &PopupPlasmaWindow::queuePositionUpdate);
+    }
+}
+
 PopupPlasmaWindow::PopupPlasmaWindow(QWindow *parent)
     : PlasmaWindow(parent)
     , d(new PopupPlasmaWindowPrivate(this))
@@ -221,17 +238,16 @@ void PopupPlasmaWindow::setVisualParent(QQuickItem *item)
     }
 
     if (d->m_visualParent) {
-        QObject::disconnect(d->m_visualParent->window(), nullptr, this, nullptr);
+        disconnect(d->m_visualParent, SIGNAL(windowChanged(QQuickWindow *)), this, SLOT(updateVisualParentWindow()));
     }
+
     d->m_visualParent = item;
+    d->updateVisualParentWindow();
+
     if (d->m_visualParent) {
-        QObject::connect(d->m_visualParent->window(), &QQuickWindow::yChanged, this, [this]() {
-            d->updatePosition();
-        });
-        QObject::connect(d->m_visualParent->window(), &QQuickWindow::xChanged, this, [this]() {
-            d->updatePosition();
-        });
+        connect(d->m_visualParent, SIGNAL(windowChanged(QQuickWindow *)), this, SLOT(updateVisualParentWindow()));
     }
+
     Q_EMIT visualParentChanged();
     queuePositionUpdate();
 }
@@ -340,11 +356,10 @@ bool PopupPlasmaWindow::event(QEvent *event)
     return PlasmaQuick::PlasmaWindow::event(event);
 }
 
-void PlasmaQuick::PopupPlasmaWindow::queuePositionUpdate()
+void PopupPlasmaWindow::queuePositionUpdate()
 {
     d->m_needsReposition = true;
 }
-
 }
 
 #include "moc_popupplasmawindow.cpp"

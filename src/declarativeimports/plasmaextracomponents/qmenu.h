@@ -80,11 +80,19 @@ class QMenuProxy : public QObject
     Q_PROPERTY(Status status READ status NOTIFY statusChanged)
 
     /**
-     * The default placement for the menu.
-     *
-     * (since 5.103) Will be automatically flipped horizontally in Right-to-left User Interfaces.
+     * This property holds the requested placement for the menu. It will be
+     * automatically flipped horizontally in Right-to-left User Interfaces.
+     * Additionally it may be flipped to the other side in any direction if
+     * there is not enough space on a screen to fit the menu.
      */
     Q_PROPERTY(PopupPlacement placement READ placement WRITE setPlacement NOTIFY placementChanged)
+
+    /**
+     * This property allows to request a seamless appearance in the direction
+     * adjacent to the visualParent item, as determined by the menu's placement
+     * policy.
+     */
+    Q_PROPERTY(bool preferSeamlessEdges READ preferSeamlessEdges WRITE setPreferSeamlessEdges NOTIFY preferSeamlessEdgesChanged)
 
     /**
      * A minimum width for the menu.
@@ -149,6 +157,9 @@ public:
     PopupPlacement placement() const;
     void setPlacement(PopupPlacement placement);
 
+    bool preferSeamlessEdges() const;
+    void setPreferSeamlessEdges(bool request);
+
     int minimumWidth() const;
     void setMinimumWidth(int width);
 
@@ -204,6 +215,7 @@ Q_SIGNALS:
     void visualParentChanged();
     void transientParentChanged();
     void placementChanged();
+    void preferSeamlessEdgesChanged();
     void minimumWidthChanged();
     void maximumWidthChanged();
     void triggered(QMenuItem *item);
@@ -224,13 +236,16 @@ private:
      * Qt::LayoutDirectionAuto, in which case it will be deduced from shared
      * QGuiApplication instance.
      **/
-    PopupPlacement visualPopupPlacement(PopupPlacement placement, Qt::LayoutDirection layoutDirection = Qt::LayoutDirectionAuto);
+    static PopupPlacement visualPopupPlacement(PopupPlacement placement, Qt::LayoutDirection layoutDirection = Qt::LayoutDirectionAuto);
+    Qt::Edges seamlessEdgesForPlacement(std::optional<PopupPlacement> placement);
+    void setupSeamlessEdges(std::optional<PopupPlacement> placement);
 
     QList<QMenuItem *> m_items;
     QMenu *m_menu;
     Status m_status;
     QPointer<QObject> m_visualParent;
     PopupPlacement m_placement;
+    bool m_preferSeamlessEdges;
 };
 
 #endif // QMENU_PROXY_H

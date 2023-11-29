@@ -17,6 +17,7 @@
 #include <QVersionNumber>
 
 #include <KAcceleratorManager>
+#include <optional>
 
 #include "plasma.h"
 
@@ -25,6 +26,7 @@ QMenuProxy::QMenuProxy(QObject *parent)
     , m_menu(nullptr)
     , m_status(Closed)
     , m_placement(LeftPosedTopAlignedPopup)
+    , m_preferSeamlessEdges(false)
 {
     if (qobject_cast<QApplication *>(QCoreApplication::instance())) {
         m_menu = new QMenu(nullptr);
@@ -136,6 +138,20 @@ void QMenuProxy::setPlacement(QMenuProxy::PopupPlacement placement)
         m_placement = placement;
 
         Q_EMIT placementChanged();
+    }
+}
+
+bool QMenuProxy::preferSeamlessEdges() const
+{
+    return m_preferSeamlessEdges;
+}
+
+void QMenuProxy::setPreferSeamlessEdges(bool request)
+{
+    if (m_preferSeamlessEdges != request) {
+        m_preferSeamlessEdges = request;
+
+        Q_EMIT preferSeamlessEdgesChanged();
     }
 }
 
@@ -299,8 +315,6 @@ void QMenuProxy::rebuildMenu()
         }
     }
 
-    const auto isOnTopEdgeOfTheScreen = m_placement == BottomPosedLeftAlignedPopup || m_placement == BottomPosedRightAlignedPopup;
-    m_menu->setProperty("_breeze_menu_is_top", isOnTopEdgeOfTheScreen);
     m_menu->adjustSize();
 }
 
@@ -340,6 +354,8 @@ void QMenuProxy::open(int x, int y)
     QPointF posLocal = parentItem->mapToScene(QPointF(x, y));
 
     QPoint posGlobal = mapToGlobalUsingRenderWindowOfItem(parentItem, posLocal);
+
+    setupSeamlessEdges(std::nullopt);
 
     openInternal(posGlobal);
 }
@@ -439,6 +455,8 @@ void QMenuProxy::openRelative()
         return;
     }
 
+    setupSeamlessEdges(std::optional(placement));
+
     openInternal(posGlobal);
 }
 
@@ -488,7 +506,7 @@ void QMenuProxy::close()
     m_menu->hide();
 }
 
-QMenuProxy::PopupPlacement QMenuProxy::visualPopupPlacement(QMenuProxy::PopupPlacement placement, Qt::LayoutDirection layoutDirection)
+QMenuProxy::PopupPlacement QMenuProxy::visualPopupPlacement(PopupPlacement placement, Qt::LayoutDirection layoutDirection)
 {
     const bool mirrored = (layoutDirection == Qt::LayoutDirectionAuto) ? qApp->isRightToLeft() : (layoutDirection == Qt::RightToLeft);
 
@@ -517,6 +535,43 @@ QMenuProxy::PopupPlacement QMenuProxy::visualPopupPlacement(QMenuProxy::PopupPla
     default:
         return placement;
     }
+}
+
+Qt::Edges QMenuProxy::seamlessEdgesForPlacement(std::optional<PopupPlacement> placement)
+{
+    if (m_preferSeamlessEdges && placement.has_value()) {
+        switch (placement.value()) {
+        case TopPosedLeftAlignedPopup:
+        case TopPosedRightAlignedPopup:
+            return Qt::BottomEdge;
+
+        case LeftPosedTopAlignedPopup:
+        case LeftPosedBottomAlignedPopup:
+            return Qt::RightEdge;
+
+        case BottomPosedLeftAlignedPopup:
+        case BottomPosedRightAlignedPopup:
+            return Qt::TopEdge;
+
+        case RightPosedTopAlignedPopup:
+        case RightPosedBottomAlignedPopup:
+            return Qt::LeftEdge;
+
+        case FloatingPopup:
+        default:
+            break;
+        }
+    }
+
+    return Qt::Edges();
+}
+
+void QMenuProxy::setupSeamlessEdges(std::optional<PopupPlacement> placement)
+{
+    // Note: Assume that seamless edges don't affect size of the menu.
+    auto edges = seamlessEdgesForPlacement(placement);
+    // Note: Breeze currently only supports the top edge via this boolean property
+    m_menu->setProperty("_breeze_menu_is_top", edges.testFlag(Qt::TopEdge));
 }
 
 #include "moc_qmenu.cpp"

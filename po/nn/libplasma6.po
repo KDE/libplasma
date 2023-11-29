@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
 "PO-Revision-Date: 2023-07-15 13:59+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -257,7 +257,7 @@ msgstr "Rotelement til %1 må vera av typen PlasmoidItem"
 msgid "Unknown Applet"
 msgstr "Ukjent element"
 
-#: plasmaquick/appletquickitem.cpp:543
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -265,32 +265,32 @@ msgid ""
 "version."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:550
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Feil ved lasting av QML-fil: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:577
 #, fuzzy, kde-format
 #| msgid "Error loading Applet: package inexistent. %1"
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Feil ved lasting av miniprogram: pakken finst ikkje. %1"
 
-#: plasmaquick/configview.cpp:101
+#: plasmaquick/configview.cpp:104
 #, kde-format
 msgid "%1 Settings"
 msgstr "Set opp «%1»|/|Set opp $[dobbelbest %1]$[bunden %1]"

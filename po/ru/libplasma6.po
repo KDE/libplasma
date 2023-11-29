@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
 "PO-Revision-Date: 2022-08-11 15:23+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -256,7 +256,7 @@ msgstr ""
 msgid "Unknown Applet"
 msgstr "Неизвестный виджет"
 
-#: plasmaquick/appletquickitem.cpp:543
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -264,33 +264,33 @@ msgid ""
 "version."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:550
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Ошибка загрузки файла QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:577
 #, fuzzy, kde-format
 #| msgid "Error loading Applet: package inexistent. %1"
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Ошибка загрузки виджета: пакет не существует. %1"
 
 # BUGME: what is the context? window title or page header? --aspotashev
-#: plasmaquick/configview.cpp:101
+#: plasmaquick/configview.cpp:104
 #, kde-format
 msgid "%1 Settings"
 msgstr "Настройка виджета «%1»"

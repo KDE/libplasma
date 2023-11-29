@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
 "PO-Revision-Date: 2023-11-26 01:27+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -244,7 +244,7 @@ msgstr "%1(e)(r)en erro elementua «PlasmoidItem» motakoa izan behar da"
 msgid "Unknown Applet"
 msgstr "Aplikaziotxo ezezaguna"
 
-#: plasmaquick/appletquickitem.cpp:543
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -255,7 +255,7 @@ msgstr ""
 "%1(e)rekin bateragarria. Mesedez, eguneratu Plasma trepeta erabili ahal "
 "izateko."
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:550
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -265,7 +265,7 @@ msgstr ""
 "bateragarria. Mesedez, jar zaitez trepetaren  egilearekin harremanean "
 "eguneratutako bertsio baterako."
 
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -274,17 +274,17 @@ msgstr ""
 "Trepeta hori Plasma %1(e)rako idatzi zen eta ez da Plasma %2(e)rekin "
 "bateragarria. Mesedez, eguneratu Plasma trepeta erabili ahal izateko."
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Errorea QML fitxategia zamatzean: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:577
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Aplikaziotxoa zamatzeko errorea: paketea ez da existitzen. %1"
 
-#: plasmaquick/configview.cpp:101
+#: plasmaquick/configview.cpp:104
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 ezarpenak"

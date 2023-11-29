@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
 "PO-Revision-Date: 2023-11-23 17:35+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -242,7 +242,7 @@ msgstr "O elemento raíz de %1 debe ser de tipo «PlasmoidItem»."
 msgid "Unknown Applet"
 msgstr "Trebello descoñecido"
 
-#: plasmaquick/appletquickitem.cpp:543
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -253,7 +253,7 @@ msgstr ""
 "non é compatíbel con Plasma %1. Solicite a quen fixo o trebello unha versión "
 "actualizada."
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:550
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -262,7 +262,7 @@ msgstr ""
 "O trebello escribiuse para Plasma %1 e non é compatíbel con Plasma %2. "
 "Solicite a quen fixo o trebello unha versión actualizada."
 
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -271,18 +271,18 @@ msgstr ""
 "O trebello escribiuse para Plasma %1 e non é compatíbel con Plasma %2. "
 "Actualice Plasma para usar o trebello."
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Produciuse un erro ao cargar o ficheiro QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:577
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr ""
 "Produciuse un erro ao cargar o miniaplicativo: o paquete non existe. %1"
 
-#: plasmaquick/configview.cpp:101
+#: plasmaquick/configview.cpp:104
 #, kde-format
 msgid "%1 Settings"
 msgstr "Configuración de %1"

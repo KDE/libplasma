@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
 "PO-Revision-Date: 2023-11-22 02:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -241,7 +241,7 @@ msgstr "El elemento raíz de %1 debe ser de tipo PlasmoidItem"
 msgid "Unknown Applet"
 msgstr "Miniaplicación desconocida"
 
-#: plasmaquick/appletquickitem.cpp:543
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -252,7 +252,7 @@ msgstr ""
 "no es compatible con Plasma %1. Póngase en contacto con el autor del "
 "elemento gráfico para obtener una versión actualizada."
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:550
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -262,7 +262,7 @@ msgstr ""
 "Plasma %2. Póngase en contacto con el autor del elemento gráfico para "
 "obtener una versión actualizada."
 
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -271,17 +271,17 @@ msgstr ""
 "Este elemento gráfico fue escrito para Plasma %1 y no es compatible con "
 "Plasma %2. Actualice Plasma para poder usar este elemento gráfico."
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Error al cargar archivo QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:577
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Error cargando miniaplicación: el paquete no existe. %1"
 
-#: plasmaquick/configview.cpp:101
+#: plasmaquick/configview.cpp:104
 #, kde-format
 msgid "%1 Settings"
 msgstr "Preferencias de %1"

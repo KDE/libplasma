@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
 "PO-Revision-Date: 2023-11-21 12:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -244,7 +244,7 @@ msgstr "L'element arrel de %1 cal que sigui del tipus PlasmoidItem"
 msgid "Unknown Applet"
 msgstr "Miniaplicació desconeguda"
 
-#: plasmaquick/appletquickitem.cpp:543
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -255,7 +255,7 @@ msgstr ""
 "és compatible amb el Plasma %1. Poseu-vos en contacte amb l'autor del giny "
 "per a una versió actualitzada."
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:550
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -264,7 +264,7 @@ msgstr ""
 "Aquest giny s'ha escrit per al Plasma %1 i no és compatible amb el Plasma "
 "%2. Poseu-vos en contacte amb l'autor del giny per a una versió actualitzada."
 
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -273,17 +273,17 @@ msgstr ""
 "Aquest giny s'ha escrit per al Plasma %1 i no és compatible amb el Plasma "
 "%2. Actualitzeu el Plasma per tal de fer servir el giny."
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Error en carregar el fitxer QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:577
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Error en carregar la miniaplicació: el paquet no existeix. %1"
 
-#: plasmaquick/configview.cpp:101
+#: plasmaquick/configview.cpp:104
 #, kde-format
 msgid "%1 Settings"
 msgstr "Configuració de %1"

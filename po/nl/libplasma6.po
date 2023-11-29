@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
 "PO-Revision-Date: 2023-11-21 10:51+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -241,7 +241,7 @@ msgstr "Het hoofditem van %1 moet van het type PlasmoidItem zijn"
 msgid "Unknown Applet"
 msgstr "Onbekend applet"
 
-#: plasmaquick/appletquickitem.cpp:543
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -252,7 +252,7 @@ msgstr ""
 "niet compatibel met Plasma %1. Neem contact op met de auteur van het widget "
 "voor een bijgewerkte versie."
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:550
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -261,7 +261,7 @@ msgstr ""
 "Dit widget is geschreven voor Plasma %1 en is niet compatibel met Plasma %2. "
 "Neem contact op met de auteur van het widget voor een bijgewerkte versie."
 
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -270,17 +270,17 @@ msgstr ""
 "Dit widget is geschreven voor Plasma %1 en is niet compatibel met Plasma %2. "
 "Werk Plasma bij om het widget te kunnen gebruiken."
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Fout bij het laden van QML-bestand: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:577
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Fout bij laden van Applet: pakket bestaat niet. %1"
 
-#: plasmaquick/configview.cpp:101
+#: plasmaquick/configview.cpp:104
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 instellingen"

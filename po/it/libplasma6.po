@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-28 01:36+0000\n"
+"POT-Creation-Date: 2023-11-29 01:38+0000\n"
 "PO-Revision-Date: 2023-11-21 14:11+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -244,7 +244,7 @@ msgstr "L'elemento radice di %1 deve essere di tipo PlasmoidItem"
 msgid "Unknown Applet"
 msgstr "Applet sconosciuta"
 
-#: plasmaquick/appletquickitem.cpp:543
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -255,7 +255,7 @@ msgstr ""
 "Plasma e non è compatibile con Plasma %1. Contatta l'autore dell'oggetto per "
 "una versione aggiornata."
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:550
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -264,7 +264,7 @@ msgstr ""
 "Questo oggetto è stato scritto per Plasma %1 e non è compatibile con Plasma "
 "%2.Contatta l'autore dell'oggetto per una versione aggiornata."
 
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -273,17 +273,17 @@ msgstr ""
 "Questo oggetto è stato scritto per Plasma %1 e non è compatibile con Plasma "
 "%2. Aggiorna Plasma per poter utilizzare l'oggetto."
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Errore durante il caricamento del file QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:577
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Errore durante il caricamento dell'applet: il pacchetto non esiste. %1"
 
-#: plasmaquick/configview.cpp:101
+#: plasmaquick/configview.cpp:104
 #, kde-format
 msgid "%1 Settings"
 msgstr "Impostazioni di %1"

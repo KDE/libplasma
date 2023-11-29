@@ -570,8 +570,7 @@ void QMenuProxy::setupSeamlessEdges(std::optional<PopupPlacement> placement)
 {
     // Note: Assume that seamless edges don't affect size of the menu.
     auto edges = seamlessEdgesForPlacement(placement);
-    // Note: Breeze currently only supports the top edge via this boolean property
-    m_menu->setProperty("_breeze_menu_is_top", edges.testFlag(Qt::TopEdge));
+    m_menu->setProperty("_breeze_menu_seamless_edges", QVariant::fromValue(edges));
 }
 
 #include "moc_qmenu.cpp"

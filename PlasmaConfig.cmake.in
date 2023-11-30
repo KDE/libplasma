@@ -13,6 +13,7 @@ set(PLASMA_PLASMOIDS_PLUGINDIR ${KDE_INSTALL_PLUGINDIR}/plasma/applets)
 set(PLASMA_CONTAINMENTACTIONS_PLUGINDIR ${KDE_INSTALL_PLUGINDIR}/plasma/containmentactions)
 
 include(CMakeFindDependencyMacro)
+find_dependency(Qt6Qml "@REQUIRED_QT_VERSION@")
 find_dependency(Qt6Gui "@REQUIRED_QT_VERSION@")
 find_dependency(KF6Package "@KF_DEP_VERSION@")
 find_dependency(KF6WindowSystem "@KF_DEP_VERSION@")

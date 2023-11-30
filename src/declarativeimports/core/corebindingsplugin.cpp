@@ -54,6 +54,7 @@ void CoreBindingsPlugin::registerTypes(const char *uri)
     });
 
     qmlRegisterType<PlasmaQuick::AppletPopup>(uri, 2, 0, "AppletPopup");
+    qmlRegisterType<PlasmaQuick::PopupPlasmaWindow>(uri, 2, 0, "PopupPlasmaWindow");
     qmlRegisterType<PlasmaQuick::Dialog>(uri, 2, 0, "Dialog");
     // HACK make properties like "opacity" work that are in REVISION 1 of QWindow
     qmlRegisterRevision<QWindow, 1>(uri, 2, 0);

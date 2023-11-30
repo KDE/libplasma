@@ -26,6 +26,8 @@
 #include <qabstractitemmodel.h>
 #include <qtmetamacros.h>
 
+#include "debug_p.h"
+
 WallpaperItem::WallpaperItem(QQuickItem *parent)
     : QQuickItem(parent)
 {
@@ -56,7 +58,7 @@ void WallpaperItem::classBegin()
         m_configuration = new KConfigPropertyMap(configScheme(), this);
     }
 
-    connect(m_containment->corona(), &Plasma::Corona::startupCompleted, this, std::bind(&WallpaperItem::repaintNeeded, this, Qt::transparent));
+    connect(m_containment->corona(), &Plasma::Corona::startupCompleted, this, &WallpaperItem::accentColorChanged);
 }
 
 void WallpaperItem::componentComplete()
@@ -198,6 +200,31 @@ bool WallpaperItem::supportsMimetype(const QString &mimetype) const
 bool WallpaperItem::isLoading() const
 {
     return m_loading;
+}
+
+QColor WallpaperItem::accentColor() const
+{
+    return m_accentColor.value_or(QColor(Qt::transparent));
+}
+
+void WallpaperItem::setAccentColor(const QColor &newColor)
+{
+    if (m_accentColor.has_value() && m_accentColor == newColor) {
+        return;
+    }
+
+    m_accentColor = newColor;
+    Q_EMIT accentColorChanged();
+}
+
+void WallpaperItem::resetAccentColor()
+{
+    if (!m_accentColor.has_value()) {
+        return;
+    }
+
+    m_accentColor.reset();
+    Q_EMIT accentColorChanged();
 }
 
 void WallpaperItem::contextualActions_append(QQmlListProperty<QAction> *prop, QAction *action)

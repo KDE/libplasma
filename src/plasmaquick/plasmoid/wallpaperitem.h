@@ -47,6 +47,15 @@ class WallpaperItem : public QQuickItem
     Q_PROPERTY(QQmlListProperty<QAction> contextualActions READ qmlContextualActions NOTIFY contextualActionsChanged)
     Q_PROPERTY(bool loading MEMBER m_loading NOTIFY isLoadingChanged)
 
+    /*
+     * The accent color manually set by the wallpaper plugin.
+     * By default it's transparent, which means either the dominant color is used
+     * when "Accent Color From Wallpaper" is enabled, or the theme color is used.
+     *
+     * @since 6.0
+     */
+    Q_PROPERTY(QColor accentColor READ accentColor WRITE setAccentColor NOTIFY accentColorChanged RESET resetAccentColor)
+
 public:
     explicit WallpaperItem(QQuickItem *parent = nullptr);
     ~WallpaperItem() override;
@@ -86,11 +95,15 @@ public:
 
     bool isLoading() const;
 
+    QColor accentColor() const;
+    void setAccentColor(const QColor &newColor);
+    void resetAccentColor();
+
 Q_SIGNALS:
     void isLoadingChanged();
     void openUrlRequested(const QUrl &url);
     void contextualActionsChanged(const QList<QAction *> &actions);
-    void repaintNeeded(const QColor &accentColor = Qt::transparent);
+    void accentColorChanged();
 
 private:
     static void contextualActions_append(QQmlListProperty<QAction> *prop, QAction *action);
@@ -108,6 +121,7 @@ private:
     KConfigLoader *m_configLoader = nullptr;
     QList<QAction *> m_contextualActions;
     bool m_loading = false;
+    std::optional<QColor> m_accentColor;
 };
 
 #endif

@@ -14,7 +14,7 @@ class QmlWallpaperPackage : public KPackage::PackageStructure
 public:
     using KPackage::PackageStructure::PackageStructure;
 
-    void initPackage(KPackage::Package *package)
+    void initPackage(KPackage::Package *package) override
     {
         package->addFileDefinition("mainscript", QStringLiteral("ui/main.qml"));
         package->setRequired("mainscript", true);

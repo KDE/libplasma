@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-framework package.
 #
-# Kishore G <kishore96@gmail.com>, 2021, 2022.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-27 05:30+0000\n"
-"PO-Revision-Date: 2022-07-26 21:16+0530\n"
+"PO-Revision-Date: 2023-12-04 20:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.07.80\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: declarativeimports/calendar/eventdatadecorator.cpp:51
 #, kde-format
@@ -191,7 +191,7 @@ msgstr "திருத்தும் பயன்முறையிலிர�
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
 #, kde-format
 msgid "Whether or not to create an on-disk cache for the theme."
-msgstr ""
+msgstr "தோற்றத்திட்டத்திற்கு வட்டில் தற்காலிக நினைவிடத்தை உருவாக்க வேண்டுமா."
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
@@ -226,7 +226,7 @@ msgstr "தோற்றத்திட்டத்தின் படங்க�
 #: plasma/packagestructure/packages.cpp:76
 #, kde-format
 msgid "Configuration Definitions"
-msgstr ""
+msgstr "அமைப்புத்திட்டங்கள்"
 
 #: plasma/packagestructure/packages.cpp:81
 #, kde-format
@@ -259,17 +259,17 @@ msgstr "மொழிபெயர்ப்புகள்"
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:30
 #, kde-format
 msgid "Configuration UI pages model"
-msgstr ""
+msgstr "அமைப்புகள் பக்கத்திற்கான திட்டம்"
 
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:31
 #, kde-format
 msgid "Configuration XML file"
-msgstr ""
+msgstr "அமைப்புகளுக்கான XML கோப்பு"
 
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:47
 #, kde-format
 msgid "Custom expander for compact applets"
-msgstr ""
+msgstr "சுருக்கப்பட்டுள்ள பிளாஸ்மாய்டுகளுக்கான தனிப்பட்ட விரிப்பான்"
 
 #: plasma/packagestructure/plasma_dataengine_packagestructure.cpp:36
 #, kde-format
@@ -370,7 +370,7 @@ msgstr "கருவித்துப்புகளுக்கான ஒள�
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:70
 #, kde-format
 msgid "KColorScheme configuration file"
-msgstr ""
+msgstr "KColorScheme அமைப்புக்கோப்பு"
 
 #: plasma/pluginloader.cpp:592 plasma/pluginloader.cpp:593
 #, kde-format

@@ -206,6 +206,11 @@ ContainmentView::~ContainmentView()
 
 void ContainmentView::destroy()
 {
+    // it will hide and deallocate the window so that no visibility or geometry
+    // changes will be emitted during the destructor, avoiding potential crash
+    // situations
+    QWindow::destroy();
+
     // TODO: do we need a version which does not create?
     QQuickItem *graphicObject = AppletQuickItem::itemForApplet(d->containment);
     if (auto item = qobject_cast<QQuickItem *>(graphicObject)) {

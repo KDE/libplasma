@@ -1,6 +1,5 @@
 maintainer: mart
 description: Plugin based UI runtime used to write primary user interfaces
-tier: 3
 type: solution
 platforms:
     - name: Linux
@@ -14,5 +13,4 @@ libraries:
 cmakename: KF6Plasma
 
 public_lib: true
-group: Frameworks
-subgroup: Tier 3
+group: Plasma

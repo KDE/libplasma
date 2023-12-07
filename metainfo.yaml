@@ -1,5 +1,6 @@
 maintainer: mart
 description: Plugin based UI runtime used to write primary user interfaces
+repo_id: plasma-framework
 tier: 3
 type: solution
 platforms:

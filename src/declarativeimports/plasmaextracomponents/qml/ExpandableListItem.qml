@@ -6,14 +6,14 @@
 
 pragma ComponentBehavior: Bound
 
-import QtQuick 2.14
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Layouts
 import QtQuick.Templates as T
 import org.kde.plasma.core as PlasmaCore
-import org.kde.ksvg 1.0 as KSvg
-import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.kirigami 2 as Kirigami
+import org.kde.ksvg as KSvg
+import org.kde.plasma.components as PlasmaComponents3
+import org.kde.plasma.extras as PlasmaExtras
+import org.kde.kirigami as Kirigami
 
 /**
  * A list item that expands when clicked to show additional actions and/or a

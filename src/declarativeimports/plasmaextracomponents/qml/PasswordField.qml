@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2019 Carl-Lucien Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.plasma.extras as PlasmaExtras
 import org.kde.config as KConfig
 import org.kde.kirigami as Kirigami
 

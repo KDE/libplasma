@@ -4,15 +4,14 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.12
-import QtQuick.Layouts 1.12
-import QtQuick.Window
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Templates as T
 
 import org.kde.plasma.core as PlasmaCore
-import org.kde.ksvg 1.0 as KSvg
-import org.kde.plasma.plasmoid 2.0
-import QtQuick.Templates 2.12 as T
-import org.kde.kirigami 2 as Kirigami
+import org.kde.ksvg as KSvg
+import org.kde.plasma.plasmoid
+import org.kde.kirigami as Kirigami
 
 /**
  * Item to be used as a header or footer in plasmoids

@@ -3,12 +3,11 @@
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
-import QtQuick 2.12
-import QtQuick.Window 2.2
+import QtQuick
 
-import org.kde.plasma.plasmoid 2.0
+import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
-import org.kde.ksvg 1.0 as KSvg
+import org.kde.ksvg as KSvg
 
 KSvg.FrameSvgItem {
     id: backgroundMetrics

@@ -5,10 +5,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.plasma.extras as PlasmaExtras
 
-import QtQuick 2.1
-import QtQml 2.0
+import QtQuick
+import QtQml
 
 /**
  * A ModelContextMenu creates a context menu with items populated from a model or a QList<QAction*>.

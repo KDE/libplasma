@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2019 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
+import QtQuick
+import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
-import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.kirigami 2 as Kirigami
+import org.kde.plasma.components as PlasmaComponents3
+import org.kde.kirigami as Kirigami
 
 /**
  * This is advanced textfield. It is recommended to use this class when there

@@ -1,4 +1,3 @@
-// -*- coding: iso-8859-1 -*-
 /*
     SPDX-FileCopyrightText: 2011 Sebastian Kügler <sebas@kde.org>
 

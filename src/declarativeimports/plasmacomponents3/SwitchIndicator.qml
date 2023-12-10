@@ -48,16 +48,14 @@ Item {
         prefix: "inactive"
     }
     KSvg.FrameSvgItem {
-        anchors.fill: inactive
+        anchors {
+            left: inactive.left
+            top: inactive.top
+            bottom: inactive.bottom
+            right: button.right
+        }
         imagePath: "widgets/switch"
         prefix: "active"
-        opacity: root.control.checked ? 1 : 0
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.shortDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
     }
     KSvg.SvgItem {
         id: button

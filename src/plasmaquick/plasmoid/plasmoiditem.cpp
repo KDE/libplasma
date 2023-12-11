@@ -116,7 +116,6 @@ void PlasmoidItem::init()
             y->setStatus(Plasma::Types::AcceptingInputStatus);
             return;
         }
-
     });
 
     connect(applet, &Plasma::Applet::destroyedChanged, this, &PlasmoidItem::destroyedChanged);

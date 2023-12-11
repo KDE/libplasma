@@ -68,7 +68,8 @@ KPluginMetaData metaDataForTheme(const QString &theme)
         for (const QString &key : cg.keyList()) {
             obj[key] = cg.readEntry(key);
         }
-        qWarning(LOG_PLASMA) << "The theme" << theme << "uses the legacy metadata.desktop. Consider contacting the author and asking them update it to use the newer JSON format.";
+        qWarning(LOG_PLASMA) << "The theme" << theme
+                             << "uses the legacy metadata.desktop. Consider contacting the author and asking them update it to use the newer JSON format.";
         return KPluginMetaData(obj, packageBasePath + QLatin1String("/metadata.desktop"));
     } else {
         qCWarning(LOG_PLASMA) << "Could not locate metadata for theme" << theme;

@@ -88,7 +88,7 @@ Item {
             Layout.maximumHeight: implicitHeight > 0 ? implicitHeight : Number.POSITIVE_INFINITY
         }
 
-        T.Label {
+        Text {
             id: label
             visible: text.length > 0 && root.display !== T.AbstractButton.IconOnly
             palette: root.palette

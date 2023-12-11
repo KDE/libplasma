@@ -16,8 +16,6 @@ import org.kde.plasma.components as PlasmaComponents3
 T.ScrollView {
     id: controlRoot
 
-    clip: true
-
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
                             contentWidth + leftPadding + rightPadding)
     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
@@ -33,12 +31,6 @@ T.ScrollView {
             // `Qt.styleHints.wheelScrollLines * 20` is the default scroll speed.
             horizontalStepSize: Qt.styleHints.wheelScrollLines * 20
             verticalStepSize: Qt.styleHints.wheelScrollLines * 20
-        },
-        Binding { // TODO KF6: remove, Qt6 has this behavior by default
-            target: controlRoot.contentItem // always instanceof Flickable
-            property: 'clip'
-            value: true
-            restoreMode: Binding.RestoreBindingOrValue
         }
     ]
 

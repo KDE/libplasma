@@ -1038,6 +1038,13 @@ void ContainmentItem::itemChange(ItemChange change, const ItemChangeData &value)
     if (change == QQuickItem::ItemSceneChange) {
         // we have a window: create the representations if needed
         if (value.window && !m_containment->wallpaperPlugin().isEmpty()) {
+            if (value.window) {
+                // In the beginning the window will be invisible: force creation of the scenegraph nodes
+                // then make the events process: this makes sure the qml contents of the view will have
+                // already calculated the proper size hint, so ie the panels will come up with the proper size the first time they show
+                value.window->create();
+                QCoreApplication::processEvents(QEventLoop::AllEvents, 0);
+            }
             loadWallpaper();
         } else if (m_wallpaperItem) {
             deleteWallpaperItem();

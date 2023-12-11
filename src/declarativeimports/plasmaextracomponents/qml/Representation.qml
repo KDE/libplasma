@@ -43,16 +43,17 @@ PlasmaComponents.Page {
 
     leftPadding: backgroundMetrics.getMargin("left")
     rightPadding: backgroundMetrics.getMargin("right")
-    topPadding: header && header.visible ? 0 : backgroundMetrics.getMargin("top")
-    bottomPadding: footer && footer.visible ? 0 : backgroundMetrics.getMargin("bottom")
+    topPadding: header?.visible ? 0 : backgroundMetrics.getMargin("top")
+    bottomPadding: footer?.visible ? 0 : backgroundMetrics.getMargin("bottom")
 
     BackgroundMetrics {
         id: backgroundMetrics
-        function getMargin(margin) {
-            if (!hasInset) {
-                return 0;
+
+        function getMargin(margin: string): real {
+            if (hasInset && control.collapseMarginsHint) {
+                return -fixedMargins[margin] + inset[margin];
             } else {
-                return control.collapseMarginsHint ? -backgroundMetrics.fixedMargins[margin] + backgroundMetrics.inset[margin] : 0
+                return 0;
             }
         }
     }

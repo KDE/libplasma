@@ -41,7 +41,7 @@ PlasmaComponents3.Label {
     property bool renderShadow: true
 
     elide: Text.ElideRight
-    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+    wrapMode: Text.Wrap
     textFormat: Text.PlainText
 
     color: "white"

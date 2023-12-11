@@ -45,7 +45,7 @@ T.ToolBar {
         // * both this and the dialog background are from fallback
         visible: fromCurrentImageSet === backgroundSvg.fromCurrentImageSet
         imagePath: "widgets/plasmoidheading"
-        prefix: position === T.ToolBar.Header ? "header" : "footer"
+        prefix: control.position === T.ToolBar.Header ? "header" : "footer"
         KSvg.Svg {
             id: backgroundSvg
             imagePath: "dialogs/background"
@@ -61,29 +61,33 @@ T.ToolBar {
             }
             return borders;
         }
+
         BackgroundMetrics {
             id: backgroundMetrics
-            function getMargin(margin) {
-                if (Window.window &&
-                    (Window.window.hasOwnProperty("leftPadding") &&
-                     Window.window.hasOwnProperty("topPadding") &&
-                     Window.window.hasOwnProperty("rightPadding") &&
-                     Window.window.hasOwnProperty("bottomPadding"))) {
-                    switch(margin) {
+
+            function getMargin(margin: string): real {
+                const w = Window.window;
+
+                // TODO: This shouldn't be duck-typed
+                if (w && w.hasOwnProperty("leftPadding")
+                      && w.hasOwnProperty("topPadding")
+                      && w.hasOwnProperty("rightPadding")
+                      && w.hasOwnProperty("bottomPadding")) {
+                    switch (margin) {
                     case "left":
-                        return -Window.window.leftPadding;
+                        return -w.leftPadding;
                     case "top":
-                        return -Window.window.topPadding;
+                        return -w.topPadding;
                     case "right":
-                        return -Window.window.rightPadding;
+                        return -w.rightPadding;
                     case "bottom":
                     default:
-                        return -Window.window.bottomPadding;
+                        return -w.bottomPadding;
                     }
                 } else if (!hasInset) {
                     return -headingSvg.fixedMargins[margin];
                 } else {
-                    return -backgroundMetrics.fixedMargins[margin] + backgroundMetrics.inset[margin]
+                    return -fixedMargins[margin] + inset[margin];
                 }
             }
         }

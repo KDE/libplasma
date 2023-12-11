@@ -20,10 +20,6 @@ Item {
         : (alignment & Qt.AlignRight) ? Qt.AlignLeft
         : Qt.AlignHCenter
     property int display: T.AbstractButton.TextBesideIcon
-    readonly property bool iconOnly: display === T.AbstractButton.IconOnly || !label.visible
-    readonly property bool textOnly: display === T.AbstractButton.TextOnly || !iconItem.visible
-    readonly property bool textBesideIcon: display === T.AbstractButton.TextBesideIcon && iconItem.visible && label.visible
-    readonly property bool textUnderIcon: display === T.AbstractButton.TextUnderIcon && iconItem.visible && label.visible
 
     property alias iconItem: iconItem
     property alias label: label

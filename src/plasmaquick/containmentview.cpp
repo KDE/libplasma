@@ -29,10 +29,15 @@ public:
     Plasma::Types::Location location() const;
     void showConfigurationInterface(Plasma::Applet *applet);
     void updateDestroyed(bool destroyed);
+    /**
+     * Reconnects the relevant signals after a screen change
+     **/
+    void reactToScreenChange();
 
     ContainmentView *q;
     friend class ContainmentView;
     Plasma::Corona *corona;
+    QScreen *lastScreen;
     QPointer<Plasma::Containment> containment;
     QPointer<ConfigView> configContainmentView;
 };
@@ -177,13 +182,34 @@ void ContainmentViewPrivate::updateDestroyed(bool destroyed)
     q->setVisible(!destroyed);
 }
 
+void ContainmentViewPrivate::reactToScreenChange()
+{
+    QScreen *newScreen = q->screen();
+
+    if (newScreen == lastScreen) {
+        return;
+    }
+
+    QObject::disconnect(lastScreen, nullptr, q, nullptr);
+    lastScreen = newScreen;
+    QObject::connect(newScreen, &QScreen::geometryChanged, q,
+                     &ContainmentView::screenGeometryChanged);
+    Q_EMIT q->screenGeometryChanged();
+}
+
 ContainmentView::ContainmentView(Plasma::Corona *corona, QWindow *parent)
     : PlasmaQuick::QuickViewSharedEngine(parent)
     , d(new ContainmentViewPrivate(corona, this))
 {
     setColor(Qt::transparent);
 
-    QObject::connect(screen(), &QScreen::geometryChanged, this, &ContainmentView::screenGeometryChanged);
+    d->lastScreen = screen();
+    QObject::connect(d->lastScreen, &QScreen::geometryChanged, this,
+                     &ContainmentView::screenGeometryChanged);
+    QObject::connect(this, &ContainmentView::screenChanged, this,
+                     [this]() {
+                         d->reactToScreenChange();
+                     });
 
     if (corona->kPackage().isValid()) {
         const auto info = corona->kPackage().metadata();

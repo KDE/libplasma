@@ -136,6 +136,15 @@ T.SpinBox {
 
     background: Loader {
         id: bgLoader
+        // Anchors are needed because the Loader tries to resize itself on load
+        anchors {
+            fill: parent
+            topMargin: control.topInset
+            // Anchors will automirrot, inset won't, so we wnt the left stays left regardless of the layout
+            leftMargin: LayoutMirroring.enabled ? control.rightInset : control.leftInset
+            rightMargin: LayoutMirroring.enabled ? control.leftInset : control.rightInset
+            bottomMargin: control.bottomInset
+        }
         readonly property real leftMargin: item.leftMargin
         readonly property real rightMargin: item.rightMargin
         readonly property real topMargin: item.topMargin

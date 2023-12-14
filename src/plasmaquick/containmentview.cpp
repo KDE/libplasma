@@ -62,7 +62,11 @@ void ContainmentViewPrivate::setContainment(Plasma::Containment *cont)
     Plasma::Types::FormFactor oldForm = formFactor();
 
     if (containment) {
-        QObject::disconnect(containment, nullptr, q, nullptr);
+        QObject::disconnect(containment, &Plasma::Containment::locationChanged, q, &ContainmentView::locationChanged);
+        QObject::disconnect(containment, &Plasma::Containment::formFactorChanged, q, &ContainmentView::formFactorChanged);
+        QObject::disconnect(containment, &Plasma::Containment::configureRequested, q, &ContainmentView::showConfigurationInterface);
+        QObject::disconnect(containment, SIGNAL(destroyedChanged(bool)), q, SLOT(updateDestroyed(bool)));
+
         QObject *oldGraphicObject = AppletQuickItem::itemForApplet(containment);
         if (auto item = qobject_cast<QQuickItem *>(oldGraphicObject)) {
             // TODO: delete the item when needed instead of just hiding, but there are quite a lot of cornercases to manage beforehand
@@ -190,7 +194,7 @@ void ContainmentViewPrivate::reactToScreenChange()
         return;
     }
 
-    QObject::disconnect(lastScreen, nullptr, q, nullptr);
+    QObject::disconnect(lastScreen, &QScreen::geometryChanged, q, &ContainmentView::screenGeometryChanged);
     lastScreen = newScreen;
     QObject::connect(newScreen, &QScreen::geometryChanged, q,
                      &ContainmentView::screenGeometryChanged);

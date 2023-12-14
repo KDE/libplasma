@@ -18,7 +18,7 @@
 #include "waylandintegration_p.h"
 
 ToolTipDialog::ToolTipDialog()
-    : PopupPlasmaWindow()
+    : PopupPlasmaWindow(QStringLiteral("widgets/tooltip"))
     , m_qmlObject(nullptr)
     , m_hideTimeout(-1)
     , m_interactive(false)

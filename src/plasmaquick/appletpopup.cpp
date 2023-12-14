@@ -57,8 +57,8 @@ private:
 
 using namespace PlasmaQuick;
 
-AppletPopup::AppletPopup(QWindow *parent)
-    : PopupPlasmaWindow(parent)
+AppletPopup::AppletPopup()
+    : PopupPlasmaWindow()
 {
     setAnimated(true);
     setFlags(flags() | Qt::Dialog);

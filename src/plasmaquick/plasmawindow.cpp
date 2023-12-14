@@ -31,20 +31,22 @@ public:
     void handleFrameChanged();
     void updateMainItemGeometry();
     PlasmaWindow *q;
+    DialogShadows *shadows;
     QPointer<QQuickItem> mainItem;
     DialogBackground *dialogBackground;
     PlasmaWindow::BackgroundHints backgroundHints = PlasmaWindow::StandardBackground;
 };
 
-PlasmaWindow::PlasmaWindow(QWindow *parent)
-    : QQuickWindow(parent)
+PlasmaWindow::PlasmaWindow(const QString &svgPrefix)
+    : QQuickWindow()
     , d(new PlasmaWindowPrivate(this))
 {
     setColor(QColor(Qt::transparent));
     setFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
 
+    d->shadows = DialogShadows::instance(svgPrefix);
     d->dialogBackground = new DialogBackground(contentItem());
-    d->dialogBackground->setImagePath(QStringLiteral("dialogs/background"));
+    d->dialogBackground->setImagePath(svgPrefix);
     connect(d->dialogBackground, &DialogBackground::fixedMarginsChanged, this, [this]() {
         d->updateMainItemGeometry();
         Q_EMIT paddingChanged();
@@ -53,7 +55,7 @@ PlasmaWindow::PlasmaWindow(QWindow *parent)
         d->handleFrameChanged();
     });
 
-    DialogShadows::self()->addWindow(this, d->dialogBackground->enabledBorders());
+    d->shadows->addWindow(this, d->dialogBackground->enabledBorders());
 }
 
 PlasmaWindow::~PlasmaWindow()
@@ -124,7 +126,7 @@ static Qt::Edges bordersToEdge(KSvg::FrameSvg::EnabledBorders borders)
 void PlasmaWindow::setBorders(Qt::Edges bordersToShow)
 {
     d->dialogBackground->setEnabledBorders(edgeToBorder(bordersToShow));
-    DialogShadows::self()->setEnabledBorders(this, d->dialogBackground->enabledBorders());
+    d->shadows->setEnabledBorders(this, d->dialogBackground->enabledBorders());
     Q_EMIT bordersChanged();
 }
 

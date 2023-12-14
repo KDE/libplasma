@@ -42,7 +42,7 @@ class PLASMAQUICK_EXPORT AppletPopup : public PopupPlasmaWindow
     Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
 
 public:
-    AppletPopup(QWindow *parent = nullptr);
+    AppletPopup();
     ~AppletPopup() override;
     QQuickItem *appletInterface() const;
     void setAppletInterface(QQuickItem *appletInterface);

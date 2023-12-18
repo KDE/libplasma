@@ -36,6 +36,11 @@ class PLASMAQUICK_EXPORT PlasmaWindow : public QQuickWindow
      */
     Q_PROPERTY(BackgroundHints backgroundHints READ backgroundHints WRITE setBackgroundHints NOTIFY backgroundHintsChanged)
 
+    /**
+     * Tells what borders are enabled of its background
+     */
+    Q_PROPERTY(Qt::Edges borders READ borders NOTIFY bordersChanged)
+
     Q_PROPERTY(qreal topPadding READ topPadding NOTIFY paddingChanged)
     Q_PROPERTY(qreal bottomPadding READ bottomPadding NOTIFY paddingChanged)
     Q_PROPERTY(qreal leftPadding READ leftPadding NOTIFY paddingChanged)

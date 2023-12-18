@@ -38,6 +38,25 @@ T.ToolBar {
     Kirigami.Theme.colorSet: position === T.ToolBar.Header ? Kirigami.Theme.Header : Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
 
+    property /*Qt.Edges*/ int enabledBorders: {
+        const w = Window.window;
+        const popup = w as PlasmaCore.PopupPlasmaWindow;
+        if (!popup) {
+            return Qt.LeftEdge | Qt.TopEdge | Qt.RightEdge | Qt.BottomEdge;
+        }
+
+        const windowBorders = popup.borders;
+        let borders = Qt.TopEdge | Qt.BottomEdge;
+
+        if (windowBorders & Qt.LeftEdge && background.Kirigami.ScenePosition.x <= 0) {
+            borders |= Qt.LeftEdge;
+        }
+        if (windowBorders & Qt.RightEdge && background.Kirigami.ScenePosition.x + background.width >= w.width) {
+            borders |= Qt.RightEdge;
+        }
+
+        return borders;
+    }
     background: KSvg.FrameSvgItem {
         id: headingSvg
         // This graphics has to back with the dialog background, so it can be used if:
@@ -52,11 +71,17 @@ T.ToolBar {
         }
 
         enabledBorders: {
-            let borders = KSvg.FrameSvg.LeftBorder | KSvg.FrameSvg.RightBorder;
-            if (Plasmoid.position !== PlasmaCore.Types.TopEdge || position !== T.ToolBar.Header) {
+            let borders = KSvg.FrameSvg.NoBorder;
+            if (control.enabledBorders & Qt.LeftEdge) {
+                borders |= KSvg.FrameSvg.LeftBorder;
+            }
+            if (control.enabledBorders & Qt.RightEdge) {
+                borders |= KSvg.FrameSvg.RightBorder;
+            }
+            if (control.enabledBorders & Qt.TopEdge) {
                 borders |= KSvg.FrameSvg.TopBorder;
             }
-            if (Plasmoid.position !== PlasmaCore.Types.BottomEdge || position !== T.ToolBar.Footer) {
+            if (control.enabledBorders & Qt.BottomEdge) {
                 borders |= KSvg.FrameSvg.BottomBorder;
             }
             return borders;

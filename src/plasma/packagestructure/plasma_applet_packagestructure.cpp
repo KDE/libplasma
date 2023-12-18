@@ -12,6 +12,9 @@
 #include <kcoreaddons_export.h>
 #include <kpackage/package.h>
 #include <kpackage/packagestructure.h>
+#include <KPackage/packagestructure_compat_p>
+#include <KDesktopFile>
+#include <KConfigGroup>
 
 class PlasmoidPackage : public Plasma::GenericPackage
 {
@@ -26,6 +29,7 @@ public:
 
         package->addFileDefinition("configmodel", QStringLiteral("config/config.qml"));
         package->addFileDefinition("mainconfigxml", QStringLiteral("config/main.xml"));
+        package->addFileDefinition("metadata", QStringLiteral("metadata.desktop"));
     }
 
     void pathChanged(KPackage::Package *package) override
@@ -33,7 +37,10 @@ public:
         GenericPackage::pathChanged(package);
         const KPluginMetaData md = package->metadata();
         if (!md.isValid()) {
-            return;
+            KPackagePrivate::desktopFileMetadataCompat<KDesktopFile, KConfigGroup> (package, QMap<QString, QMetaType::Type> ());
+            if (!md.isValid()) {
+                return;
+            }
         }
         if (md.rawData().contains(QStringLiteral("X-Plasma-ContainmentType"))) {
             package->addFileDefinition("compactapplet", QStringLiteral("applet/CompactApplet.qml"));

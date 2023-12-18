@@ -7,9 +7,12 @@
 #include "plasma.h"
 
 #include "config-plasma.h"
+#include <KConfigGroup>
+#include <KDesktopFile>
 #include <KLocalizedString>
 #include <kpackage/package.h>
 #include <kpackage/packagestructure.h>
+#include <KPackage/packagestructure_compat_p>
 
 class ThemePackage : public KPackage::PackageStructure
 {
@@ -24,6 +27,7 @@ public:
         package->setContentsPrefixPaths(QStringList());
         package->setDefaultPackageRoot(QStringLiteral(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/"));
 
+        package->addFileDefinition("metadata", QStringLiteral("metadata.desktop"));
         package->addDirectoryDefinition("dialogs", QStringLiteral("dialogs/"));
         package->addFileDefinition("dialogs/background", QStringLiteral("dialogs/background.svg"));
         package->addFileDefinition("dialogs/background", QStringLiteral("dialogs/background.svgz"));
@@ -61,6 +65,15 @@ public:
         QStringList mimetypes;
         mimetypes << QStringLiteral("image/svg+xml");
         package->setDefaultMimeTypes(mimetypes);
+    }
+
+    void pathChanged(KPackage::Package *package) override
+    {
+        KPackage::PackageStructure::pathChanged(package);
+        const KPluginMetaData md = package->metadata();
+        if (!md.isValid()) {
+            KPackagePrivate::desktopFileMetadataCompat<KDesktopFile, KConfigGroup> (package, QMap<QString, QMetaType::Type> ());
+        }
     }
 };
 

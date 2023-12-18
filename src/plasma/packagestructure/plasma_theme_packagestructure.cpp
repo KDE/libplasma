@@ -24,6 +24,7 @@ public:
         package->setContentsPrefixPaths(QStringList());
         package->setDefaultPackageRoot(QStringLiteral(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/"));
 
+        package->addFileDefinition("metadata", QStringLiteral("metadata.desktop"));
         package->addDirectoryDefinition("dialogs", QStringLiteral("dialogs/"));
         package->addFileDefinition("dialogs/background", QStringLiteral("dialogs/background.svg"));
         package->addFileDefinition("dialogs/background", QStringLiteral("dialogs/background.svgz"));
@@ -67,6 +68,15 @@ public:
     {
         // The KCM uses KPackage to list available themes
         KPackagePrivate::convertCompatMetaDataDesktopFile(package);
+    }
+
+    void pathChanged(KPackage::Package *package) override
+    {
+        KPackage::PackageStructure::pathChanged(package);
+        const KPluginMetaData md = package->metadata();
+        if (!md.isValid()) {
+            KPackagePrivate::desktopFileMetadataCompat<KDesktopFile, KConfigGroup> (package, QMap<QString, QMetaType::Type> ());
+        }
     }
 };
 

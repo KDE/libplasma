@@ -6,8 +6,18 @@
 
 #include "config-plasma.h"
 #include "packages_p.h"
+<<<<<<< HEAD
 #include <KPackage/Package>
 #include <KPackage/PackageStructure>
+=======
+#include <KLocalizedString>
+#include <kcoreaddons_export.h>
+#include <kpackage/package.h>
+#include <kpackage/packagestructure.h>
+#include <KPackage/packagestructure_compat_p>
+#include <KDesktopFile>
+#include <KConfigGroup>
+>>>>>>> dd7477f5b (Support metadata.desktop for both plasmoids and themes)
 
 class PlasmoidPackage : public Plasma::GenericPackage
 {
@@ -23,6 +33,7 @@ public:
         package->addFileDefinition("configmodel", QStringLiteral("config/config.qml"));
         package->addFileDefinition("mainconfigxml", QStringLiteral("config/main.xml"));
         package->setRequired("metadata", true);
+        package->addFileDefinition("metadata", QStringLiteral("metadata.desktop"));
     }
 
     void pathChanged(KPackage::Package *package) override

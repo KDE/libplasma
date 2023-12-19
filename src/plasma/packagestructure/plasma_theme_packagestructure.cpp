@@ -5,8 +5,11 @@
 */
 
 #include "config-plasma.h"
+#include <KConfigGroup>
+#include <KDesktopFile>
 #include <KPackage/Package>
 #include <KPackage/PackageStructure>
+#include <KPackage/packagestructure_compat_p>
 
 class ThemePackage : public KPackage::PackageStructure
 {
@@ -56,6 +59,14 @@ public:
         package->addFileDefinition("colors", QStringLiteral("colors"));
 
         package->setDefaultMimeTypes({QStringLiteral("image/svg+xml")});
+
+        package->addFileDefinition("metadata", QStringLiteral("metadata.desktop"));
+        package->setRequired("metadata", true);
+    }
+    void pathChanged(KPackage::Package *package) override
+    {
+        // The KCM uses KPackage to list available themes
+        KPackagePrivate::convertCompatMetaDataDesktopFile(package);
     }
 };
 

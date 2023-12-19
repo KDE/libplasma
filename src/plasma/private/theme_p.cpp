@@ -45,6 +45,7 @@ KSharedConfig::Ptr configForTheme(const QString &theme)
     if (!configPath.isEmpty()) {
         return KSharedConfig::openConfig(configPath, KConfig::SimpleConfig);
     }
+    // Because we have dektop file compat code further below too, this is still needed in KF6
     QString metadataPath = QSP::locate(QSP::GenericDataLocation, baseName + QLatin1String("/metadata.desktop"));
     return KSharedConfig::openConfig(metadataPath, KConfig::SimpleConfig);
 }

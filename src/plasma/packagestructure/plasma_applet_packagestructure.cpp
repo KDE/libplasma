@@ -22,6 +22,7 @@ public:
 
         package->addFileDefinition("configmodel", QStringLiteral("config/config.qml"));
         package->addFileDefinition("mainconfigxml", QStringLiteral("config/main.xml"));
+        package->setRequired("metadata", true);
     }
 
     void pathChanged(KPackage::Package *package) override

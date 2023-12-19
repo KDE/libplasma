@@ -6,7 +6,6 @@
 
 #include "config-plasma.h"
 #include "packages_p.h"
-#include <KLocalizedString>
 #include <KPackage/Package>
 #include <KPackage/PackageStructure>
 

@@ -4,12 +4,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "plasma.h"
-
 #include "config-plasma.h"
-#include <KLocalizedString>
-#include <kpackage/package.h>
-#include <kpackage/packagestructure.h>
+#include <KPackage/Package>
+#include <KPackage/PackageStructure>
 
 class ThemePackage : public KPackage::PackageStructure
 {
@@ -58,9 +55,7 @@ public:
 
         package->addFileDefinition("colors", QStringLiteral("colors"));
 
-        QStringList mimetypes;
-        mimetypes << QStringLiteral("image/svg+xml");
-        package->setDefaultMimeTypes(mimetypes);
+        package->setDefaultMimeTypes({QStringLiteral("image/svg+xml")});
     }
 };
 

@@ -4,12 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "plasma.h"
-
 #include "packages_p.h"
-#include <KLocalizedString>
-#include <kpackage/package.h>
-#include <kpackage/packagestructure.h>
 
 K_PLUGIN_CLASS_WITH_JSON(Plasma::GenericPackage, "plasma_generic_packagestructure.json")
 

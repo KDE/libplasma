@@ -4,22 +4,17 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <float.h> // FLT_MAX
-#include <math.h>
-
 #include <QCoreApplication>
 #include <QDebug>
 #include <QFileInfo>
 
 #include <KConfigGroup>
 #include <KDesktopFile>
-#include <KLocalizedString>
+#include <KPackage/Package>
 #include <KRuntimePlatform>
 
 #include "config-plasma.h"
 #include "packages_p.h"
-
-#include <kpackage/package.h>
 
 namespace Plasma
 {

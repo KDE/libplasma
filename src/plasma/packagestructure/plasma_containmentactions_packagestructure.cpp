@@ -4,12 +4,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "plasma.h"
-
 #include "config-plasma.h"
 #include "packages_p.h"
-#include <kpackage/package.h>
-#include <kpackage/packagestructure.h>
+#include <KPackage/Package>
+#include <KPackage/PackageStructure>
 
 class ContainmentActionsPackage : public Plasma::GenericPackage
 {

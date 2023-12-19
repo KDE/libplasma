@@ -7,10 +7,8 @@
 #ifndef LIBS_PLASMA_PACKAGES_P_H
 #define LIBS_PLASMA_PACKAGES_P_H
 
-#include "plasma.h"
-
-#include <kpackage/package.h>
-#include <kpackage/packagestructure.h>
+#include <KPackage/Package>
+#include <KPackage/PackageStructure>
 
 namespace Plasma
 {

@@ -923,14 +923,15 @@ void AppletQuickItem::itemChange(ItemChange change, const ItemChangeData &value)
 {
     if (change == QQuickItem::ItemSceneChange) {
         // we have a window: create the representations if needed
-        if (value.window) {
+        // also avoid initializing the item more than once,
+        // since this will cause shortcut to open and close the item immediately
+        if (value.window && !d->initComplete) {
             init();
         }
     }
 
     QQuickItem::itemChange(change, value);
 }
-
 }
 
 #include "moc_appletquickitem.cpp"

@@ -31,14 +31,12 @@ public:
     void pathChanged(KPackage::Package *package) override
     {
         GenericPackage::pathChanged(package);
-        const KPluginMetaData md = package->metadata();
-        if (!md.isValid()) {
-            return;
-        }
-        if (md.rawData().contains(QStringLiteral("X-Plasma-ContainmentType"))) {
-            package->addFileDefinition("compactapplet", QStringLiteral("applet/CompactApplet.qml"));
-        } else {
-            package->removeDefinition("compactapplet");
+        if (const KPluginMetaData md = package->metadata(); md.isValid()) {
+            if (md.rawData().contains(QStringLiteral("X-Plasma-ContainmentType"))) {
+                package->addFileDefinition("compactapplet", QStringLiteral("applet/CompactApplet.qml"));
+            } else {
+                package->removeDefinition("compactapplet");
+            }
         }
     }
 };

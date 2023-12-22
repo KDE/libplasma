@@ -1,19 +1,20 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2014, 2016, 2022, 2023.
+# Johannes Obermayr <johannesobermayr@gmx.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 01:38+0000\n"
-"PO-Revision-Date: 2023-03-21 20:07+0100\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2023-12-18 14:44+0100\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -50,7 +51,7 @@ msgstr "Suchen"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "Suche leeren"
 
 #: plasma/applet.cpp:300
 #, kde-format
@@ -227,12 +228,12 @@ msgstr "Ungültiger Dienst (null), es sind keine Operationen möglich."
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr ""
+msgstr "Der Haupteintrag von %1 muss vom Typ ContainmentItem sein"
 
 #: plasmaquick/appletquickitem.cpp:524
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
-msgstr ""
+msgstr "Der Haupteintrag von %1 muss vom Typ PlasmoidItem sein"
 
 #: plasmaquick/appletquickitem.cpp:531
 #, kde-format
@@ -246,6 +247,10 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"Dieses Miniprogramm wurde für ein unbekannte ältere Version von Plasma "
+"geschrieben und ist nicht mit Plasma %1 kompatibel. Bitte nehmen Sie mit dem "
+"Autor des Miniprogramms Kontakt auf und bitten diesen um eine aktualisierte "
+"Version."
 
 #: plasmaquick/appletquickitem.cpp:550
 #, kde-format
@@ -253,6 +258,9 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"Dieses Miniprogramm wurde für Plasma %1 geschrieben und ist nicht mit Plasma "
+"%2 kompatibel. Bitte nehmen Sie mit dem Autor des Miniprogramms Kontakt auf "
+"und bitten diesen um eine aktualisierte Version."
 
 #: plasmaquick/appletquickitem.cpp:555
 #, kde-format
@@ -260,6 +268,9 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"Dieses Miniprogramm wurde für Plasma %1 geschrieben und ist nicht mit Plasma "
+"%2 kompatibel. Bitte aktualisieren Plasma, damit das Miniprogramm verwendet "
+"werden kann."
 
 #: plasmaquick/appletquickitem.cpp:574
 #, kde-format
@@ -267,10 +278,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Fehler beim Laden der QML-Datei: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:577
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
-msgstr "Fehler beim Laden des Miniprogramms: Paket existiert nicht. %1"
+msgstr "Fehler beim Laden des Miniprogramms: Das Paket existiert nicht. %1"
 
 #: plasmaquick/configview.cpp:104
 #, kde-format

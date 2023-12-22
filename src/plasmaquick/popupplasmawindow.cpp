@@ -63,16 +63,16 @@ void PopupPlasmaWindowPrivate::updateEffectivePopupDirection(const QRect &anchor
     Qt::Edge effectivePopupDirection = Qt::TopEdge;
     if (m_popupDirection == Qt::TopEdge || m_popupDirection == Qt::BottomEdge) {
         if (relativePopupPosition.center().y() >= anchorRect.center().y()) {
-            effectivePopupDirection = Qt::TopEdge;
-        } else {
             effectivePopupDirection = Qt::BottomEdge;
+        } else {
+            effectivePopupDirection = Qt::TopEdge;
         }
     }
     if (m_popupDirection == Qt::LeftEdge || m_popupDirection == Qt::RightEdge) {
         if (relativePopupPosition.center().x() >= anchorRect.center().x()) {
-            effectivePopupDirection = Qt::LeftEdge;
-        } else {
             effectivePopupDirection = Qt::RightEdge;
+        } else {
+            effectivePopupDirection = Qt::LeftEdge;
         }
     }
 
@@ -91,16 +91,16 @@ void PopupPlasmaWindowPrivate::updateSlideEffect()
     }
     switch (m_effectivePopupDirection) {
     case Qt::TopEdge:
-        slideLocation = KWindowEffects::TopEdge;
-        break;
-    case Qt::BottomEdge:
         slideLocation = KWindowEffects::BottomEdge;
         break;
+    case Qt::BottomEdge:
+        slideLocation = KWindowEffects::TopEdge;
+        break;
     case Qt::LeftEdge:
-        slideLocation = KWindowEffects::LeftEdge;
+        slideLocation = KWindowEffects::RightEdge;
         break;
     case Qt::RightEdge:
-        slideLocation = KWindowEffects::RightEdge;
+        slideLocation = KWindowEffects::LeftEdge;
         break;
     }
     KWindowEffects::slideWindow(q, slideLocation);

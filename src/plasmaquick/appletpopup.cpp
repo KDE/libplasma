@@ -259,11 +259,11 @@ QSize LayoutChangedProxy::maximumSize() const
 {
     QSize size(QWINDOWSIZE_MAX, QWINDOWSIZE_MAX);
     qreal width = m_maximumWidth.read().toReal();
-    if (qIsFinite(width) && width > 0) {
+    if (qIsFinite(width) && int(width) > 0) {
         size.setWidth(width);
     }
     qreal height = m_maximumHeight.read().toReal();
-    if (qIsFinite(height) && height > 0) {
+    if (qIsFinite(height) && int(height) > 0) {
         size.setHeight(height);
     }
 
@@ -280,11 +280,11 @@ QSize LayoutChangedProxy::implicitSize() const
         size = QSize(m_item->implicitWidth(), m_item->implicitHeight());
     }
     qreal width = m_preferredWidth.read().toReal();
-    if (qIsFinite(width) && width > 0) {
+    if (qIsFinite(width) && int(width) > 0) {
         size.setWidth(width);
     }
     qreal height = m_preferredHeight.read().toReal();
-    if (qIsFinite(height) && height > 0) {
+    if (qIsFinite(height) && int(height) > 0) {
         size.setHeight(height);
     }
     return size;
@@ -294,11 +294,11 @@ QSize LayoutChangedProxy::minimumSize() const
 {
     QSize size(0, 0);
     qreal width = m_minimumWidth.read().toReal();
-    if (qIsFinite(width) && width > 0) {
+    if (qIsFinite(width) && int(width) > 0) {
         size.setWidth(width);
     }
     qreal height = m_minimumHeight.read().toReal();
-    if (qIsFinite(height) && height > 0) {
+    if (qIsFinite(height) && int(height) > 0) {
         size.setHeight(height);
     }
 

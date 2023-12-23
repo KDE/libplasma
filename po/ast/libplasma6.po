@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 01:38+0000\n"
-"PO-Revision-Date: 2023-11-07 21:30+0100\n"
+"PO-Revision-Date: 2023-12-15 14:12+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
-"Language-Team: \n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
 "Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -217,7 +217,7 @@ msgstr ""
 #, kde-format
 msgctxt "Error message, tried to start an invalid service"
 msgid "Invalid (null) service, can not perform any operations."
-msgstr "El serviciu nun ye válidu, nun se pue facer nenguna operación."
+msgstr "El serviciu ye inválidu, nun se pue facer nenguna operación."
 
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
@@ -262,10 +262,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Hebo un error al cargar el ficheru QML: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:577
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
-msgstr "Hebo un error al cargar l'applet: el paquete nun esiste %1"
+msgstr "Hebo un error al cargar l'applet: el paquete nun esiste. %1"
 
 #: plasmaquick/configview.cpp:104
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 01:38+0000\n"
-"PO-Revision-Date: 2023-11-11 14:05+0100\n"
+"PO-Revision-Date: 2023-12-23 11:47+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -248,6 +248,9 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"Ten element interfejsu został napisany dla nieznanej, starszej wersji Plazmy "
+"i nie jest on zgodny z Plazmą %1. Zalecamy napisanie do jego autora z prośbą "
+"o uaktualnienie do nowej wersji Plazmy."
 
 #: plasmaquick/appletquickitem.cpp:550
 #, kde-format
@@ -255,6 +258,9 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"Ten element interfejsu został napisany dla Plazmy %1 i nie jest on zgodny z "
+"Plazmą %2. Zalecamy napisanie do jego autora z prośbą o uaktualnienie do "
+"nowej wersji Plazmy."
 
 #: plasmaquick/appletquickitem.cpp:555
 #, kde-format
@@ -262,6 +268,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"Ten element interfejsu został napisany dla Plazmy %1 i nie jest on zgodny z "
+"Plazmą %2. Uaktualnij swoją Plazmę, aby móc go używać."
 
 #: plasmaquick/appletquickitem.cpp:574
 #, kde-format
@@ -269,15 +277,14 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Błąd wczytywania pliku QML: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:577
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Błąd wczytywania apletu: pakiet nie istnieje. %1"
 
 #: plasmaquick/configview.cpp:104
 #, kde-format
 msgid "%1 Settings"
-msgstr "%1 Ustawienia "
+msgstr "%1 Ustawienia"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:528
 #, kde-format
@@ -292,7 +299,7 @@ msgstr "Wgraj"
 #: plasmaquick/plasmoid/containmentitem.cpp:543
 #, kde-format
 msgid "Package Installation Failed"
-msgstr "Niepowodzenia wgrywania pakietu"
+msgstr "Nie udało się wgrać pakietu"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:559
 #, kde-format

@@ -42,7 +42,8 @@
                 "Name[uk]": "Marco Martin",
                 "Name[vi]": "Marco Martin",
                 "Name[x-test]": "xxMarco Martinxx",
-                "Name[zh_CN]": "Marco Martin"
+                "Name[zh_CN]": "Marco Martin",
+                "Name[zh_TW]": "Marco Martin"
             }
         ],
         "Category": "",
@@ -72,6 +73,7 @@
         "Description[vi]": "Phần bao chứa kiểm thử",
         "Description[x-test]": "xxTest Containmentxx",
         "Description[zh_CN]": "测试容器",
+        "Description[zh_TW]": "測試容器",
         "Id": "org.kde.example.testcontainment",
         "License": "GPLv2+",
         "Name": "Containment Test",
@@ -110,6 +112,7 @@
         "Name[vi]": "Kiểm thử việc bao chứa",
         "Name[x-test]": "xxContainment Testxx",
         "Name[zh_CN]": "容器测试",
+        "Name[zh_TW]": "容器測試",
         "Version": "",
         "Website": ""
     },

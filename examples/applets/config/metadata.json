@@ -42,7 +42,8 @@
                 "Name[uk]": "Marco Martin",
                 "Name[vi]": "Marco Martin",
                 "Name[x-test]": "xxMarco Martinxx",
-                "Name[zh_CN]": "Marco Martin"
+                "Name[zh_CN]": "Marco Martin",
+                "Name[zh_TW]": "Marco Martin"
             }
         ],
         "Category": "",
@@ -71,6 +72,7 @@
         "Description[vi]": "Tiểu ứng dụng ví dụ với cấu hình",
         "Description[x-test]": "xxExample applet with configxx",
         "Description[zh_CN]": "带有配置的示例小程序",
+        "Description[zh_TW]": "有設定的範例小程式",
         "Id": "org.kde.example.configuration",
         "License": "GPLv2+",
         "Name": "Configuration test",
@@ -109,6 +111,7 @@
         "Name[vi]": "Kiểm thử cấu hình",
         "Name[x-test]": "xxConfiguration testxx",
         "Name[zh_CN]": "配置测试",
+        "Name[zh_TW]": "設定測試",
         "Version": "",
         "Website": ""
     },

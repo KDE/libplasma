@@ -42,7 +42,8 @@
                 "Name[uk]": "Marco Martin",
                 "Name[vi]": "Marco Martin",
                 "Name[x-test]": "xxMarco Martinxx",
-                "Name[zh_CN]": "Marco Martin"
+                "Name[zh_CN]": "Marco Martin",
+                "Name[zh_TW]": "Marco Martin"
             }
         ],
         "Category": "Miscellaneous",
@@ -73,6 +74,7 @@
         "Description[vi]": "Chào Thế giới",
         "Description[x-test]": "xxHello Worldxx",
         "Description[zh_CN]": "Hello World",
+        "Description[zh_TW]": "Hello World",
         "Icon": "package_toys",
         "Id": "org.kde.example.helloworld",
         "License": "GPL",
@@ -114,6 +116,7 @@
         "Name[vi]": "chào thế giới",
         "Name[x-test]": "xxhello worldxx",
         "Name[zh_CN]": "hello world",
+        "Name[zh_TW]": "hello world",
         "Version": "",
         "Website": ""
     }

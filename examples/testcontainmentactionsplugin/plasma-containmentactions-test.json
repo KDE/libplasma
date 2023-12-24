@@ -30,7 +30,8 @@
                 "Name[uk]": "Chani",
                 "Name[vi]": "Chani",
                 "Name[x-test]": "xxChanixx",
-                "Name[zh_CN]": "Chani"
+                "Name[zh_CN]": "Chani",
+                "Name[zh_TW]": "Chani"
             }
         ],
         "Description": "A dummy plugin for testing",
@@ -59,6 +60,7 @@
         "Description[vi]": "Một phần cài cắm nộm dùng cho kiểm thử",
         "Description[x-test]": "xxA dummy plugin for testingxx",
         "Description[zh_CN]": "测试用虚拟插件",
+        "Description[zh_TW]": "測試用的外掛程式",
         "EnabledByDefault": true,
         "Icon": "preferences-desktop-color",
         "License": "GPL",
@@ -90,6 +92,7 @@
         "Name[vi]": "Kiểm thử",
         "Name[x-test]": "xxTestxx",
         "Name[zh_CN]": "测试",
+        "Name[zh_TW]": "測試",
         "Version": "pre0.1",
         "Website": "https://plasma.kde.org/"
     },

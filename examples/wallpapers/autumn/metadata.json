@@ -41,7 +41,8 @@
                 "Name[uk]": "Sebastian Kügler",
                 "Name[vi]": "Sebastian Kügler",
                 "Name[x-test]": "xxSebastian Küglerxx",
-                "Name[zh_CN]": "Sebastian Kügler"
+                "Name[zh_CN]": "Sebastian Kügler",
+                "Name[zh_TW]": "Sebastian Kügler"
             }
         ],
         "Category": "",
@@ -70,6 +71,7 @@
         "Description[vi]": "Phông nền mùa thu ví dụ",
         "Description[x-test]": "xxExample Autumn Wallpaperxx",
         "Description[zh_CN]": "示例 Autumn 秋色壁纸",
+        "Description[zh_TW]": "範例秋天桌布",
         "Icon": "java",
         "Id": "org.kde.autumn",
         "License": "GPLv2+",
@@ -110,6 +112,7 @@
         "Name[vi]": "Mùa thu",
         "Name[x-test]": "xxAutumnxx",
         "Name[zh_CN]": "Autumn 秋色",
+        "Name[zh_TW]": "秋天",
         "Version": "",
         "Website": ""
     },

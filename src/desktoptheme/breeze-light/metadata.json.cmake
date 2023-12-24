@@ -40,7 +40,8 @@
                 "Name[uk]": "Група з візуального дизайну KDE",
                 "Name[vi]": "Đội Thiết kế Trực quan KDE",
                 "Name[x-test]": "xxKDE Visual Design Groupxx",
-                "Name[zh_CN]": "KDE 视觉设计团队"
+                "Name[zh_CN]": "KDE 视觉设计团队",
+                "Name[zh_TW]": "KDE VDG 視覺設計組"
             }
         ],
         "Category": "",
@@ -82,6 +83,7 @@
         "Description[vi]": "Breeze Sáng, do KDE VDG",
         "Description[x-test]": "xxBreeze Light by the KDE VDGxx",
         "Description[zh_CN]": "Breeze 微风浅色主题，由 KDE VDG (视觉设计团队) 设计制作",
+        "Description[zh_TW]": "由 KDE VDG 製作的 Breeze Light",
         "EnabledByDefault": true,
         "Id": "default",
         "License": "LGPL",
@@ -123,6 +125,7 @@
         "Name[vi]": "Breeze Sáng",
         "Name[x-test]": "xxBreeze Lightxx",
         "Name[zh_CN]": "Breeze 微风浅色",
+        "Name[zh_TW]": "Breeze Light",
         "Version": "@KF6_MIN_VERSION@",
         "Website": "https://plasma.kde.org"
     },

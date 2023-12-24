@@ -42,7 +42,8 @@
                 "Name[uk]": "Marco Martin",
                 "Name[vi]": "Marco Martin",
                 "Name[x-test]": "xxMarco Martinxx",
-                "Name[zh_CN]": "Marco Martin"
+                "Name[zh_CN]": "Marco Martin",
+                "Name[zh_TW]": "Marco Martin"
             }
         ],
         "Category": "Miscellaneous",
@@ -80,6 +81,7 @@
         "Description[vi]": "Ví dụ về cách quản lí dữ liệu thả",
         "Description[x-test]": "xxExample on how to manage Drop dataxx",
         "Description[zh_CN]": "展示如何管理拖放数据的示例程序",
+        "Description[zh_TW]": "管理拖放資料的範例",
         "Icon": "org.kde.plasma.notes",
         "Id": "org.kde.example.notes",
         "License": "GPL",
@@ -118,6 +120,7 @@
         "Name[vi]": "Ghi chú ví dụ",
         "Name[x-test]": "xxExample notesxx",
         "Name[zh_CN]": "示例便笺",
+        "Name[zh_TW]": "範例備註",
         "Version": "",
         "Website": ""
     },

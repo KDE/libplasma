@@ -10,6 +10,7 @@
                 "Name[ca@valencia]": "El projecte Oxygen",
                 "Name[ca]": "The Oxygen Project",
                 "Name[cs]": "Projekt Oxygen",
+                "Name[de]": "Das Oxygen-Projekt",
                 "Name[en_GB]": "The Oxygen Project",
                 "Name[eo]": "La Oksigeno-Projekto",
                 "Name[es]": "El proyecto Oxígeno",

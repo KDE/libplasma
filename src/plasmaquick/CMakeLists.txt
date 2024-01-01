@@ -104,10 +104,6 @@ if(HAVE_X11)
             XCB::XCB
             Qt6::GuiPrivate
     )
-
-    if(HAVE_XCB_SHAPE)
-        target_link_libraries(PlasmaQuick PRIVATE XCB::SHAPE)
-    endif()
 endif()
 
 install(TARGETS PlasmaQuick EXPORT PlasmaQuickTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

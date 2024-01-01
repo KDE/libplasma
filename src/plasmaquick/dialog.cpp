@@ -33,11 +33,6 @@
 #include <QDebug>
 #include <optional>
 
-#if HAVE_XCB_SHAPE
-#include <private/qtx11extras_p.h>
-#include <xcb/shape.h>
-#endif
-
 #if HAVE_X11
 #include <qpa/qplatformwindow_p.h>
 #endif
@@ -70,8 +65,6 @@ public:
         , backgroundHints(Dialog::StandardBackground)
     {
     }
-
-    void updateInputShape();
 
     // SLOTS
     /**
@@ -272,7 +265,6 @@ void DialogPrivate::updateTheme()
             DialogShadows::self()->addWindow(q, dialogBackground->enabledBorders());
         }
     }
-    updateInputShape();
 }
 
 void DialogPrivate::updateVisibility(bool visible)
@@ -612,43 +604,6 @@ void DialogPrivate::repositionIfOffScreen()
     q->setY(y);
 }
 
-void DialogPrivate::updateInputShape()
-{
-    if (!q->isVisible()) {
-        return;
-    }
-
-#if HAVE_XCB_SHAPE
-    if (KWindowSystem::isPlatformX11()) {
-        xcb_connection_t *c = QX11Info::connection();
-        static std::optional<bool> s_shapeAvailable = std::nullopt;
-        if (!s_shapeAvailable.has_value()) {
-            s_shapeAvailable = std::optional(false);
-            xcb_prefetch_extension_data(c, &xcb_shape_id);
-            const xcb_query_extension_reply_t *extension = xcb_get_extension_data(c, &xcb_shape_id);
-            if (extension->present) {
-                // query version
-                auto cookie = xcb_shape_query_version(c);
-                QScopedPointer<xcb_shape_query_version_reply_t, QScopedPointerPodDeleter> version(xcb_shape_query_version_reply(c, cookie, nullptr));
-                if (!version.isNull()) {
-                    s_shapeAvailable = std::optional((version->major_version * 0x10 + version->minor_version) >= 0x11);
-                }
-            }
-        }
-        if (!s_shapeAvailable.value()) {
-            return;
-        }
-        if (outputOnly) {
-            // set input shape, so that it doesn't accept any input events
-            xcb_shape_rectangles(c, XCB_SHAPE_SO_SET, XCB_SHAPE_SK_INPUT, XCB_CLIP_ORDERING_UNSORTED, q->winId(), 0, 0, 0, nullptr);
-        } else {
-            // delete the shape
-            xcb_shape_mask(c, XCB_SHAPE_SO_INTERSECT, XCB_SHAPE_SK_INPUT, q->winId(), 0, 0, XCB_PIXMAP_NONE);
-        }
-    }
-#endif
-}
-
 void DialogPrivate::syncToMainItemSize()
 {
     Q_ASSERT(mainItem);
@@ -830,7 +785,13 @@ void DialogPrivate::applyType()
     // an OSD can't be a Dialog, as qt xcb would attempt to set a transient parent for it
     // see bug 370433
     if (type == Dialog::OnScreenDisplay) {
-        q->setFlags((q->flags() & ~Qt::Dialog) | Qt::Window);
+        Qt::WindowFlags flags = (q->flags() & ~Qt::Dialog) | Qt::Window;
+        if (outputOnly) {
+            flags |= Qt::WindowTransparentForInput;
+        } else {
+            flags &= ~Qt::WindowTransparentForInput;
+        }
+        q->setFlags(flags);
     }
 
     if (backgroundHints == Dialog::NoBackground) {
@@ -968,8 +929,6 @@ Dialog::Dialog(QQuickItem *parent)
     });
 
     connect(this, &QWindow::visibleChanged, this, &Dialog::visibleChangedProxy);
-    connect(this, SIGNAL(visibleChanged(bool)), this, SLOT(updateInputShape()));
-    connect(this, SIGNAL(outputOnlyChanged()), this, SLOT(updateInputShape()));
 
     // HACK: this property is invoked due to the initialization that gets done to contentItem() in the getter
     property("data");
@@ -1611,6 +1570,7 @@ void Dialog::setOutputOnly(bool outputOnly)
         return;
     }
     d->outputOnly = outputOnly;
+    d->applyType();
     Q_EMIT outputOnlyChanged();
 }
 

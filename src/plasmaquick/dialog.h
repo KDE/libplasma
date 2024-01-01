@@ -264,7 +264,6 @@ private:
     friend class DialogPrivate;
     const QScopedPointer<DialogPrivate> d;
 
-    Q_PRIVATE_SLOT(d, void updateInputShape())
     Q_PRIVATE_SLOT(d, void updateTheme())
     Q_PRIVATE_SLOT(d, void updateVisibility(bool visible))
 

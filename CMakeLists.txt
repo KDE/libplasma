@@ -77,7 +77,7 @@ if(NOT WITHOUT_X11)
                         URL "https://www.x.org/"
                         TYPE OPTIONAL
                         )
-    find_package(XCB MODULE COMPONENTS XCB COMPOSITE DAMAGE SHAPE XFIXES RENDER)
+    find_package(XCB MODULE COMPONENTS XCB COMPOSITE DAMAGE XFIXES RENDER)
     set_package_properties(XCB PROPERTIES DESCRIPTION "X protocol C-language Binding"
                         URL "https://xcb.freedesktop.org/"
                         TYPE OPTIONAL
@@ -86,10 +86,8 @@ if(NOT WITHOUT_X11)
         set(HAVE_X11 1)
         #X11_Xrender discovery is done by FindX11
         #add_feature_info("X Rendering Extension (libXrender)" X11_Xrender_FOUND "Support for compositing, rendering operations, and alpha-blending. STRONGLY RECOMMENDED")
-        set(HAVE_XCB_SHAPE ${XCB_SHAPE_FOUND})
     else()
         set(HAVE_X11 0)
-        set(HAVE_XCB_SHAPE 0)
     endif()
 endif()
 

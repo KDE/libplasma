@@ -308,12 +308,13 @@ void ConfigView::setSource(const QUrl &src)
             qWarning() << error;
         }
     }
-    QObject *object = uiComponent.createWithInitialProperties({{QStringLiteral("parent"), QVariant::fromValue(contentItem())}}, d->rootContext);
 
-    d->rootItem = qobject_cast<QQuickItem *>(object);
+    std::unique_ptr<QObject> object(uiComponent.createWithInitialProperties({{QStringLiteral("parent"), QVariant::fromValue(contentItem())}}, d->rootContext));
+    d->rootItem = qobject_cast<QQuickItem *>(object.get());
     if (!d->rootItem) {
         return;
     }
+    Q_UNUSED(object.release());
     d->mainItemLoaded();
 
     if (d->rootItem->implicitHeight() > 0 || d->rootItem->implicitWidth() > 0) {

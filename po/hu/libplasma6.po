@@ -4,20 +4,21 @@
 # Balázs Úr <urbalazs@gmail.com>, 2013, 2014.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2014, 2015, 2019.
 # Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017, 2018, 2020, 2021.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-29 01:38+0000\n"
-"PO-Revision-Date: 2021-09-02 09:12+0200\n"
-"Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-01-03 14:13+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -28,33 +29,33 @@ msgstr "További műveletek"
 #, kde-format
 msgctxt "@action:button"
 msgid "Collapse"
-msgstr ""
+msgstr "Összecsukás"
 
 #: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:516
 #, kde-format
 msgctxt "@action:button"
 msgid "Expand"
-msgstr ""
+msgstr "Kibontás"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:49
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Jelszó"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:60
 #, kde-format
 msgid "Search…"
-msgstr ""
+msgstr "Keresés…"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Keresés"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "Keresés törlése"
 
 #: plasma/applet.cpp:300
 #, kde-format
@@ -229,12 +230,12 @@ msgstr "Érvénytelen (null) szolgáltatás, nem végezhető el semmilyen művel
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr ""
+msgstr "A(z) %1 gyökérelemének ContainmentItem típusúnak kell lennie"
 
 #: plasmaquick/appletquickitem.cpp:524
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
-msgstr ""
+msgstr "A(z) %1 gyökérelemének PlasmoidItem típusúnak kell lennie"
 
 #: plasmaquick/appletquickitem.cpp:531
 #, kde-format
@@ -248,6 +249,9 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"Az elem a Plasma egy régebbi, ismeretlen verziójához készült, és nem "
+"kompatibilis a Plasma %1 verzióval. Lépjen kapcsolatba a szerzőjével egy "
+"frissített verzióért."
 
 #: plasmaquick/appletquickitem.cpp:550
 #, kde-format
@@ -255,6 +259,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"Az elem a Plasma %1 verziójához készült, és nem kompatibilis a Plasma %2 "
+"verzióval. Lépjen kapcsolatba a szerzőjével egy frissített verzióért."
 
 #: plasmaquick/appletquickitem.cpp:555
 #, kde-format
@@ -262,6 +268,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"Az elem a Plasma %1 verziójához készült, és nem kompatibilis a Plasma %2 "
+"verzióval. Frissítse a Plasmát az elem használatához."
 
 #: plasmaquick/appletquickitem.cpp:574
 #, kde-format
@@ -269,8 +277,7 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Hiba a QML fájl betöltése közben: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:577
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Hiba a kisalkalmazás betöltésekor: a csomag nem létezik. %1"
 

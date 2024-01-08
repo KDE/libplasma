@@ -502,7 +502,7 @@ Item {
                     KeyNavigation.tab: expandToggleButton
                     KeyNavigation.right: expandToggleButton
                     KeyNavigation.down: expandToggleButton.KeyNavigation.down
-                    Keys.onUpPressed: event => listItem.Keys.onUpPressed(event)
+                    Keys.onUpPressed: event => listItem.Keys.upPressed(event)
 
                     Accessible.name: action !== null ? action.text : ""
                 }
@@ -516,7 +516,7 @@ Item {
                     text: expandedView.expanded ? i18ndc("libplasma6", "@action:button", "Collapse") : i18ndc("libplasma6", "@action:button", "Expand")
                     icon.name: expandedView.expanded ? "collapse" : "expand"
 
-                    Keys.onUpPressed: event => listItem.Keys.onUpPressed(event)
+                    Keys.onUpPressed: event => listItem.Keys.upPressed(event)
 
                     onClicked: listItem.toggleExpanded()
 

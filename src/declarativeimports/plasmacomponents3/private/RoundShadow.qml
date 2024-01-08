@@ -21,9 +21,9 @@ Properties:
         TODO needs more info??
 **/
 
-import QtQuick 2.1
-import org.kde.ksvg 1.0 as KSvg
-import org.kde.kirigami 2 as Kirigami
+import QtQuick
+import org.kde.ksvg as KSvg
+import org.kde.kirigami as Kirigami
 
 Item {
     id: main

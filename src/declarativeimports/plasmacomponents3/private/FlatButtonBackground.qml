@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.6
-import org.kde.ksvg 1.0 as KSvg
-import org.kde.kirigami 2 as Kirigami
+import QtQuick
+import org.kde.ksvg as KSvg
+import org.kde.kirigami as Kirigami
 
 Item {
     id: root

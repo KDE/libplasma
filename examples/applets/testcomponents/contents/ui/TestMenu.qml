@@ -4,9 +4,9 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-import QtQuick 2.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
+import QtQuick
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 
 // PlasmoidPage
 

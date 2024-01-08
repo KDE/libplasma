@@ -6,12 +6,12 @@
     SPDX-License-Identifier: BSD-3-Clause
 */
 
-import QtQuick 2.0
-//import QtQuick.Particles 2.0
+import QtQuick
+//import QtQuick.Particles
 
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.ksvg 1.0 as KSvg
-import org.kde.kirigami 2 as Kirigami
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.ksvg as KSvg
+import org.kde.kirigami as Kirigami
 
 ShaderExample {
 

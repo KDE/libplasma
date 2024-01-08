@@ -22,8 +22,8 @@ import org.kde.kirigami as Kirigami
  * duration of 50ms (defined in Kirigami.Units.veryShortDuration).
  *
  * @code{.qml}
- * import QtQuick 2.15
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import QtQuick
+ * import org.kde.plasma.extras as PlasmaExtras
  *
  * ListView {
  *     highlightFollowsCurrentItem: true

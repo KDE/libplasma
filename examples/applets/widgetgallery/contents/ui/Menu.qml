@@ -5,8 +5,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.0
-import org.kde.plasma.components 2.0
+import QtQuick
+import org.kde.plasma.components
 
 Page {
     ListView {

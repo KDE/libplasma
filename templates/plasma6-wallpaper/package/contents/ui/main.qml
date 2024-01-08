@@ -5,7 +5,7 @@
 
 import QtQuick
 import org.kde.plasma.plasmoid
-import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami as Kirigami
 
 WallpaperItem {
     id: root

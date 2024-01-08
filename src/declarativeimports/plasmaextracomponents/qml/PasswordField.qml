@@ -13,7 +13,7 @@ import org.kde.kirigami as Kirigami
  * Example usage for the password field component:
  *
  * @code{.qml}
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import org.kde.plasma.extras as PlasmaExtras
  *
  * PlasmaExtras.PasswordField {
  *     id: passwordField

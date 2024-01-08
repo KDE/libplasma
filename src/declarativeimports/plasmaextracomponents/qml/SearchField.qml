@@ -16,7 +16,7 @@ import org.kde.kirigami as Kirigami
  *
  * Example usage for the search field component:
  * @code
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import org.kde.plasma.extras as PlasmaExtras
  *
  * PlasmaExtras.SearchField {
  *     id: searchField

@@ -1,10 +1,10 @@
-import QtQuick 2.15
-import QtQuick.Layouts 1.5
+import QtQuick
+import QtQuick.Layouts
 
-import QtQml.Models 2.15
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.plasma.components 3.0 as PlasmaComponents
-import org.kde.kirigami 2 as Kirigami
+import QtQml.Models
+import org.kde.plasma.extras as PlasmaExtras
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.kirigami as Kirigami
 
 Rectangle {
     height: 800

@@ -5,14 +5,14 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-import QtQuick 2.0
+import QtQuick
 
-import QtQuick.Controls 2.15 as Controls
-import QtQuick.Layouts 1.1
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
 
 import org.kde.plasma.core as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.kirigami 2 as Kirigami
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.kirigami as Kirigami
 
 ColumnLayout
 {

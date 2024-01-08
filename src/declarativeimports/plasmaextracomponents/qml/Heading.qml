@@ -18,8 +18,8 @@ import org.kde.kirigami as Kirigami
  * Example usage:
  *
  * @code
- * import org.kde.plasma.components 3.0 as PlasmaComponents3
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import org.kde.plasma.components as PlasmaComponents3
+ * import org.kde.plasma.extras as PlasmaExtras
  * [...]
  * Column {
  *     PlasmaExtras.Heading { text: "Fruit sweetness on the rise"; level: 1 }

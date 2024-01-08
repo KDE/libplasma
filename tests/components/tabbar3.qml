@@ -3,9 +3,9 @@
  * SPDX-FileCopyrightText: 2020 Noah Davis <noahadvs@gmail.com>
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
-import QtQuick 2.0
-import QtQuick.Layouts 1.12
-import org.kde.plasma.components 3.0 as PlasmaComponents
+import QtQuick
+import QtQuick.Layouts
+import org.kde.plasma.components as PlasmaComponents
 
 ComponentBase {
     id: root

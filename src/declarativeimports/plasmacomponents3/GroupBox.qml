@@ -4,13 +4,13 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.6
-import QtQuick.Controls @QQC2_VERSION@
-import QtQuick.Templates @QQC2_VERSION@ as T
-import org.kde.ksvg 1.0 as KSvg
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Templates as T
+import org.kde.ksvg as KSvg
 //NOTE: importing PlasmaCore is necessary in order to make KSvg load the current Plasma Theme
-import org.kde.plasma.core 2 as PlasmaCore
-import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.components as PlasmaComponents3
 
 T.GroupBox {
     id: control

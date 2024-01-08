@@ -24,8 +24,8 @@ import org.kde.kirigami as Kirigami
  *
  * @code{.qml}
  ** Shows how to use PlaceholderMessage to implement a "this view is empty" message
- * import QtQuick 2.12
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import QtQuick
+ * import org.kde.plasma.extras as PlasmaExtras
  *
  * ListView {
  *     id: listView
@@ -44,9 +44,9 @@ import org.kde.kirigami as Kirigami
  * @endcode
  * @code{.qml}
  ** Shows how to use PlaceholderMessage to implement a "here's how to proceed" message
- * import QtQuick 2.12
- * import QtQuick.Controls 2.12 as QQC2
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import QtQuick
+ * import QtQuick.Controls as QQC2
+ * import org.kde.plasma.extras as PlasmaExtras
  *
  * ListView {
  *     id: listView
@@ -74,8 +74,8 @@ import org.kde.kirigami as Kirigami
  * @endcode
  * @code{.qml}
  ** Shows how to use PlaceholderMessage to implement a "there was a problem here" message
- * import org.kde.plasma.components 3.0 as PlasmaComponents3
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import org.kde.plasma.components as PlasmaComponents3
+ * import org.kde.plasma.extras as PlasmaExtras
  *
  * PlasmaComponents3.Page {
  *     id: root
@@ -94,8 +94,8 @@ import org.kde.kirigami as Kirigami
  * }
  * @endcode
  * @code{.qml}
- * import org.kde.plasma.components 3.0 as PlasmaComponents3
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import org.kde.plasma.components as PlasmaComponents3
+ * import org.kde.plasma.extras as PlasmaExtras
  *
  ** Shows how to use PlaceholderMessage to implement a loading indicator
  * PlasmaComponents3.Page {
@@ -122,9 +122,9 @@ import org.kde.kirigami as Kirigami
  * }
  * @endcode
  * @code{.qml}
- * import QtQuick.Controls 2.12 as QQC2
- * import org.kde.plasma.components 3.0 as PlasmaComponents3
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import QtQuick.Controls as QQC2
+ * import org.kde.plasma.components as PlasmaComponents3
+ * import org.kde.plasma.extras as PlasmaExtras
  *
  ** Shows how to use PlaceholderMessage to implement a "Here's what you do next" button
  * PlasmaComponents3.Page {

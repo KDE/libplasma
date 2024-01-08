@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.12
-import org.kde.ksvg 1.0 as KSvg
+import QtQuick
+import org.kde.ksvg as KSvg
 
 KSvg.FrameSvgItem {
     property bool showHover: false

@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
-import QtQuick 2.12
-import QtQuick.Controls @QQC2_VERSION@
-import QtQuick.Templates @QQC2_VERSION@ as T
-import org.kde.ksvg 1.0 as KSvg
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Templates as T
+import org.kde.ksvg as KSvg
 //NOTE: importing PlasmaCore is necessary in order to make KSvg load the current Plasma Theme
-import org.kde.plasma.core 2 as PlasmaCore
-import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.kirigami 2 as Kirigami
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.components as PlasmaComponents3
+import org.kde.kirigami as Kirigami
 import "private" as P
 
 T.SpinBox {

@@ -4,10 +4,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Layouts
 import org.kde.plasma.core
-import org.kde.plasma.components 2.0
+import org.kde.plasma.components
 
 FrameSvgItem {
     width: 300

@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.6
-import QtQuick.Templates @QQC2_VERSION@ as T
+import QtQuick
+import QtQuick.Templates as T
 
 T.Container {
     id: control

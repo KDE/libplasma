@@ -4,10 +4,10 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
 
-import org.kde.ksvg 1.0 as KSvg
+import org.kde.ksvg as KSvg
 
 Rectangle {
     color: "white"

@@ -17,8 +17,8 @@ import org.kde.kirigami as Kirigami
  *
  * Example usage for a search field:
  * @code
- * import QtQuick.Controls 2.15 as QQC2
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import QtQuick.Controls as QQC2
+ * import org.kde.plasma.extras as PlasmaExtras
  *
  * PlasmaExtras.ActionTextField {
  *     id: searchField

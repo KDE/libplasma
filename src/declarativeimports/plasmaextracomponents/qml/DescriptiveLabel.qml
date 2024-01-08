@@ -14,7 +14,7 @@ import org.kde.plasma.components
  *
  * Example usage:
  * @code
- * import org.kde.plasma.extras 2.0 as PlasmaExtras
+ * import org.kde.plasma.extras as PlasmaExtras
  * [...]
  * Column {
  *     PlasmaComponents.Label { text: "Firefox" }

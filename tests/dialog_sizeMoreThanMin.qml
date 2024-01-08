@@ -5,10 +5,10 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-import QtQuick 2.0
+import QtQuick
 
-import QtQuick.Controls 2.15 as Controls
-import QtQuick.Layouts 1.1
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
 
 import org.kde.plasma.core as PlasmaCore
 
@@ -22,7 +22,7 @@ Item {
         text: "Show Dialog"
         onClicked: {
             //changing the minimumHeight of the mainItem of an hidden dialog
-            //shouldn't 
+            //shouldn't
             rect.Layout.minimumHeight = rect.Layout.minimumHeight + 1
             rect.Layout.minimumWidth = rect.Layout.minimumWidth + 1
             subDialog.visible = !subDialog.visible

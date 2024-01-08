@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.6
-import QtQuick.Templates @QQC2_VERSION@ as T
+import QtQuick
+import QtQuick.Templates as T
 
 T.Page {
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
@@ -17,4 +17,4 @@ T.Page {
                              + (implicitHeaderHeight > 0 ? implicitHeaderHeight + spacing : 0)
                              + (implicitFooterHeight > 0 ? implicitFooterHeight + spacing : 0))
 }
- 
+

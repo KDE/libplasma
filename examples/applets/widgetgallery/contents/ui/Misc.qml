@@ -6,9 +6,9 @@
     SPDX-License-Identifier: BSD-3-Clause
 */
 
-import QtQuick 2.0
-import org.kde.plasma.components 2.0
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import QtQuick
+import org.kde.plasma.components
+import org.kde.plasma.extras as PlasmaExtras
 
 
 Page {

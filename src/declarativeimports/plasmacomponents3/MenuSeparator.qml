@@ -7,9 +7,9 @@
 */
 
 
-import QtQuick 2.15
-import QtQuick.Templates @QQC2_VERSION@ as T
-import org.kde.kirigami 2 as Kirigami
+import QtQuick
+import QtQuick.Templates as T
+import org.kde.kirigami as Kirigami
 
 T.MenuSeparator {
     id: controlRoot

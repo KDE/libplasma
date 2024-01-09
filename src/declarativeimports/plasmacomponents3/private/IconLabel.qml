@@ -35,8 +35,6 @@ Item {
     property real spacing: 0
 
     property font font
-    // TODO KF6: remove palette property, as it is already built-in into all Items in Qt 6
-    property var palette
     // TODO KF6: This is not a correct formula for mirrored property.
     // Explicitly setting `LayoutMirroring.enabled` to `false` should undone
     // any mirroring imposed by LayoutMirroring inheritance or RTL locale.
@@ -91,7 +89,6 @@ Item {
         Text {
             id: label
             visible: text.length > 0 && root.display !== T.AbstractButton.IconOnly
-            palette: root.palette
             font: root.font
             color: Kirigami.Theme.textColor
             linkColor: Kirigami.Theme.linkColor

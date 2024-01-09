@@ -62,7 +62,6 @@ T.ComboBox {
         id: textField
         implicitWidth: Math.ceil(contentWidth) + leftPadding + rightPadding
         implicitHeight: Math.ceil(contentHeight) + topPadding + bottomPadding
-        palette: control.palette
         padding: 0
         text: control.editable ? control.editText : control.displayText
 

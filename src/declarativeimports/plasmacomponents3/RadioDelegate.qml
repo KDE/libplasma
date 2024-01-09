@@ -40,7 +40,6 @@ T.RadioDelegate {
         leftPadding: !control.mirrored ? 0 : effectiveIndicatorWidth
         rightPadding: control.mirrored ? 0 : effectiveIndicatorWidth
 
-        palette: control.palette
         font: control.font
         alignment: Qt.AlignLeft
         display: control.display

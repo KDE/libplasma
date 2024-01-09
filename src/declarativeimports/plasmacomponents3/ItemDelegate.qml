@@ -34,7 +34,6 @@ T.ItemDelegate {
 
     contentItem: Private.IconLabel {
         mirrored: control.mirrored
-        palette: control.palette
         font: control.font
         alignment: Qt.AlignLeft
         display: control.display

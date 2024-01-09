@@ -60,7 +60,6 @@ T.TabButton {
 
     contentItem: Private.IconLabel {
         mirrored: control.mirrored
-        palette: control.palette
         font: control.font
         display: control.display
         spacing: control.spacing

@@ -117,7 +117,6 @@ T.SpinBox {
         opacity: enabled ? 1 : 0.5
         implicitWidth: Math.ceil(contentWidth) + leftPadding + rightPadding
         implicitHeight: Math.ceil(contentHeight) + topPadding + bottomPadding
-        palette: control.palette
         text: control.displayText
         font: control.font
         Kirigami.Theme.colorSet: Kirigami.Theme.View

@@ -46,7 +46,6 @@ T.CheckBox {
         leftPadding: !control.mirrored ? effectiveIndicatorWidth : 0
         rightPadding: control.mirrored ? effectiveIndicatorWidth : 0
 
-        palette: control.palette
         font: control.font
         alignment: Qt.AlignLeft | Qt.AlignVCenter
         display: control.display

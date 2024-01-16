@@ -636,7 +636,10 @@ Plasma::Applet *AppletQuickItem::applet() const
 
 void AppletQuickItem::init()
 {
-    Q_ASSERT(d->applet);
+    if (!d->applet) {
+        // This can happen only if the client QML code declares a PlasmoidItem somewhere else than the root object
+        return;
+    }
 
     d->appletPackage = d->applet->kPackage();
 
@@ -710,7 +713,10 @@ void AppletQuickItem::classBegin()
 {
     QQuickItem::classBegin();
     AppletContext *ac = qobject_cast<AppletContext *>(QQmlEngine::contextForObject(this)->parentContext());
-    Q_ASSERT(ac);
+    if (!ac) {
+        qCWarning(LOG_PLASMAQUICK) << "Detected a PlasmoidItem which is not the root QML item: this is not supported.";
+        return;
+    }
     d->applet = ac->applet();
     d->qmlObject = ac->sharedQmlEngine();
 }

@@ -50,6 +50,10 @@ void PlasmoidItem::init()
     AppletQuickItem::init();
 
     auto *applet = PlasmoidItem::applet();
+    if (!applet) {
+        // This can happen only if the client QML code declares a PlasmoidItem somewhere else than the root object
+        return;
+    }
 
     connect(applet, &Plasma::Applet::contextualActionsAboutToShow, this, &PlasmoidItem::contextualActionsAboutToShow);
 

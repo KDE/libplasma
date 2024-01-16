@@ -53,6 +53,10 @@ void ContainmentItem::classBegin()
 {
     PlasmoidItem::classBegin();
     m_containment = static_cast<Plasma::Containment *>(applet());
+    if (!m_containment) {
+        // This can happen only if the client QML code declares a PlasmoidItem somewhere else than the root object
+        return;
+    }
 
     connect(m_containment.data(), &Plasma::Containment::appletAboutToBeRemoved, this, &ContainmentItem::appletRemovedForward);
     connect(m_containment.data(), &Plasma::Containment::appletAboutToBeAdded, this, &ContainmentItem::appletAddedForward);
@@ -63,6 +67,10 @@ void ContainmentItem::classBegin()
 void ContainmentItem::init()
 {
     PlasmoidItem::init();
+    if (!m_containment) {
+        // This can happen only if the client QML code declares a PlasmoidItem somewhere else than the root object
+        return;
+    }
 
     for (auto *applet : m_containment->applets()) {
         auto appletGraphicObject = AppletQuickItem::itemForApplet(applet);
@@ -1022,6 +1030,11 @@ bool ContainmentItem::isLoading() const
 
 void ContainmentItem::itemChange(ItemChange change, const ItemChangeData &value)
 {
+    if (!m_containment) {
+        // This can happen only if the client QML code declares a PlasmoidItem somewhere else than the root object
+        PlasmoidItem::itemChange(change, value);
+        return;
+    }
     if (change == QQuickItem::ItemSceneChange) {
         // we have a window: create the representations if needed
         if (value.window && !m_containment->wallpaperPlugin().isEmpty()) {

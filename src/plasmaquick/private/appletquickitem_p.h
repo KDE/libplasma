@@ -108,7 +108,7 @@ public:
     QPointer<QObject> representationLayout;
     QPointer<QObject> ownLayout;
 
-    Plasma::Applet *applet;
+    Plasma::Applet *applet = nullptr;
     PlasmaQuick::SharedQmlEngine *qmlObject;
 
     KPackage::Package appletPackage;

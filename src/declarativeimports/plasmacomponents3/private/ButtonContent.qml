@@ -11,7 +11,7 @@ import org.kde.ksvg as KSvg
 import org.kde.kirigami as Kirigami
 import "../" as PlasmaComponents
 
-GridLayout {
+RowLayout {
     id: root
 
     property string labelText: ""
@@ -19,42 +19,55 @@ GridLayout {
     readonly property bool usingFocusBackground: !parent.flat && buttonSvg.hasElement("hint-focus-highlighted-background") && parent.visualFocus && !(parent.pressed || parent.checked)
     readonly property int defaultIconSize: parent.flat ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.small
 
-    columns: parent.display == T.Button.TextBesideIcon ? 2 : 1
+    spacing: parent.spacing
 
-    rowSpacing: parent.spacing
-    columnSpacing: rowSpacing
-
-    Kirigami.Icon {
-        id: icon
-
-        Layout.alignment: Qt.AlignCenter
-
-        Layout.fillWidth: root.parent.display !== T.Button.TextBesideIcon || root.labelText.length === 0
-        Layout.fillHeight: true
-
-        Layout.minimumWidth: Math.min(root.width, root.height, implicitWidth)
-        Layout.minimumHeight: Math.min(root.width, root.height, implicitHeight)
-
-        Layout.maximumWidth: root.parent.icon.width > 0 ? root.parent.icon.width : Number.POSITIVE_INFINITY
-        Layout.maximumHeight: root.parent.icon.height > 0 ? root.parent.icon.height : Number.POSITIVE_INFINITY
-
-        implicitWidth: root.parent.icon.width > 0 ? root.parent.icon.width : root.defaultIconSize
-        implicitHeight: root.parent.icon.height > 0 ? root.parent.icon.height : root.defaultIconSize
-        visible: source.length > 0 && root.parent.display !== T.Button.TextOnly
-        source: root.parent.icon ? (root.parent.icon.name || root.parent.icon.source) : ""
-        selected: root.usingFocusBackground
-    }
-    PlasmaComponents.Label {
-        id: label
+    GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
-        visible: text.length > 0 && root.parent.display !== T.Button.IconOnly
-        text: root.labelText
-        font: root.parent.font
-        color: root.usingFocusBackground ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
-        horizontalAlignment: root.parent.display !== T.Button.TextUnderIcon && icon.visible ? Text.AlignLeft : Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        elide: Text.ElideRight
+        columns: root.parent.display == T.Button.TextBesideIcon ? 2 : 1
+        rowSpacing: root.parent.spacing
+        columnSpacing: rowSpacing
+
+        Kirigami.Icon {
+            id: icon
+
+            Layout.alignment: Qt.AlignCenter
+
+            Layout.fillWidth: root.parent.display !== T.Button.TextBesideIcon || root.labelText.length === 0
+            Layout.fillHeight: true
+
+            Layout.minimumWidth: Math.min(root.width, root.height, implicitWidth)
+            Layout.minimumHeight: Math.min(root.width, root.height, implicitHeight)
+
+            Layout.maximumWidth: root.parent.icon.width > 0 ? root.parent.icon.width : Number.POSITIVE_INFINITY
+            Layout.maximumHeight: root.parent.icon.height > 0 ? root.parent.icon.height : Number.POSITIVE_INFINITY
+
+            implicitWidth: root.parent.icon.width > 0 ? root.parent.icon.width : root.defaultIconSize
+            implicitHeight: root.parent.icon.height > 0 ? root.parent.icon.height : root.defaultIconSize
+            visible: source.length > 0 && root.parent.display !== T.Button.TextOnly
+            source: root.parent.icon ? (root.parent.icon.name || root.parent.icon.source) : ""
+            selected: root.usingFocusBackground
+        }
+        PlasmaComponents.Label {
+            id: label
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            visible: text.length > 0 && root.parent.display !== T.Button.IconOnly
+            text: root.labelText
+            font: root.parent.font
+            color: root.usingFocusBackground ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
+            horizontalAlignment: root.parent.display !== T.Button.TextUnderIcon && icon.visible ? Text.AlignLeft : Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
+        }
+    }
+    KSvg.SvgItem {
+        visible: root.parent.Accessible.role === Accessible.ButtonMenu
+        Layout.preferredWidth: Kirigami.Units.iconSizes.small
+        Layout.preferredHeight: Layout.preferredWidth
+        Layout.alignment: Qt.AlignCenter
+        imagePath: "widgets/arrows"
+        elementId: "down-arrow"
     }
     KSvg.Svg {
         id: buttonSvg

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 01:38+0000\n"
+"POT-Creation-Date: 2024-01-17 02:26+0000\n"
 "PO-Revision-Date: 2023-12-09 18:27+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -282,51 +282,51 @@ msgstr "載入小程式發生錯誤：軟體包不存在。%1"
 msgid "%1 Settings"
 msgstr "%1 設定"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:528
+#: plasmaquick/plasmoid/containmentitem.cpp:536
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma 套件包"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:532
+#: plasmaquick/plasmoid/containmentitem.cpp:540
 #, kde-format
 msgid "Install"
 msgstr "安裝"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:543
+#: plasmaquick/plasmoid/containmentitem.cpp:551
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "套件包安裝失敗"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:559
+#: plasmaquick/plasmoid/containmentitem.cpp:567
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "您放入的套件包無效。"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:568
-#: plasmaquick/plasmoid/containmentitem.cpp:637
+#: plasmaquick/plasmoid/containmentitem.cpp:576
+#: plasmaquick/plasmoid/containmentitem.cpp:645
 #, kde-format
 msgid "Widgets"
 msgstr "元件"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:581
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "增加 %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:587
-#: plasmaquick/plasmoid/containmentitem.cpp:641
+#: plasmaquick/plasmoid/containmentitem.cpp:595
+#: plasmaquick/plasmoid/containmentitem.cpp:649
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "增加圖示"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:599
+#: plasmaquick/plasmoid/containmentitem.cpp:607
 #, kde-format
 msgid "Wallpaper"
 msgstr "桌布"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:609
+#: plasmaquick/plasmoid/containmentitem.cpp:617
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

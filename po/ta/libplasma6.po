@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 01:38+0000\n"
+"POT-Creation-Date: 2024-01-17 02:26+0000\n"
 "PO-Revision-Date: 2023-12-08 19:42+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -279,51 +279,51 @@ msgstr "பிளாஸ்மாய்டை ஏற்றுவதில் ச�
 msgid "%1 Settings"
 msgstr "%1 அமைப்புகள்"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:528
+#: plasmaquick/plasmoid/containmentitem.cpp:536
 #, kde-format
 msgid "Plasma Package"
 msgstr "பிளாஸ்மா தொகுப்பு"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:532
+#: plasmaquick/plasmoid/containmentitem.cpp:540
 #, kde-format
 msgid "Install"
 msgstr "நிறுவு"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:543
+#: plasmaquick/plasmoid/containmentitem.cpp:551
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "தொகுப்பை நிறுவல் தோல்வியடைந்தது"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:559
+#: plasmaquick/plasmoid/containmentitem.cpp:567
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "நீங்கள் இட்ட தொகுப்பு செல்லுபடியாகாதது"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:568
-#: plasmaquick/plasmoid/containmentitem.cpp:637
+#: plasmaquick/plasmoid/containmentitem.cpp:576
+#: plasmaquick/plasmoid/containmentitem.cpp:645
 #, kde-format
 msgid "Widgets"
 msgstr "பிளாஸ்மாய்டுகள்"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:581
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "%1 தனை சேர்"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:587
-#: plasmaquick/plasmoid/containmentitem.cpp:641
+#: plasmaquick/plasmoid/containmentitem.cpp:595
+#: plasmaquick/plasmoid/containmentitem.cpp:649
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "சின்னத்தை சேர்"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:599
+#: plasmaquick/plasmoid/containmentitem.cpp:607
 #, kde-format
 msgid "Wallpaper"
 msgstr "பின்னணிப் படம்"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:609
+#: plasmaquick/plasmoid/containmentitem.cpp:617
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

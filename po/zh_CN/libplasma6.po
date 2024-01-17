@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 01:38+0000\n"
+"POT-Creation-Date: 2024-01-17 02:26+0000\n"
 "PO-Revision-Date: 2024-01-06 03:32\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -279,51 +279,51 @@ msgstr "加载小程序出错：软件包不存在。%1"
 msgid "%1 Settings"
 msgstr "%1 设置"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:528
+#: plasmaquick/plasmoid/containmentitem.cpp:536
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma 软件包"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:532
+#: plasmaquick/plasmoid/containmentitem.cpp:540
 #, kde-format
 msgid "Install"
 msgstr "安装"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:543
+#: plasmaquick/plasmoid/containmentitem.cpp:551
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "软件包安装失败"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:559
+#: plasmaquick/plasmoid/containmentitem.cpp:567
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "您刚刚拖放的软件包无效。"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:568
-#: plasmaquick/plasmoid/containmentitem.cpp:637
+#: plasmaquick/plasmoid/containmentitem.cpp:576
+#: plasmaquick/plasmoid/containmentitem.cpp:645
 #, kde-format
 msgid "Widgets"
 msgstr "挂件"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:581
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "添加 %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:587
-#: plasmaquick/plasmoid/containmentitem.cpp:641
+#: plasmaquick/plasmoid/containmentitem.cpp:595
+#: plasmaquick/plasmoid/containmentitem.cpp:649
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "添加图标"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:599
+#: plasmaquick/plasmoid/containmentitem.cpp:607
 #, kde-format
 msgid "Wallpaper"
 msgstr "壁纸"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:609
+#: plasmaquick/plasmoid/containmentitem.cpp:617
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

@@ -8,9 +8,9 @@
 # Empar Montoro Martín <montoro_mde@gva.es>, 2019.
 msgid ""
 msgstr ""
-"Project-Id-Version: plasma-framework\n"
+"Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 01:38+0000\n"
+"POT-Creation-Date: 2024-01-17 02:26+0000\n"
 "PO-Revision-Date: 2023-11-21 12:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -253,8 +253,8 @@ msgid ""
 "version."
 msgstr ""
 "Este giny s'ha escrit per a una versió antiga desconeguda de Plasma i no és "
-"compatible amb Plasma %1. Poseu-vos en contacte amb l'autor del giny per a "
-"una versió actualitzada."
+"compatible amb Plasma %1. Poseu-vos en contacte amb el seu autor per a una "
+"versió actualitzada."
 
 #: plasmaquick/appletquickitem.cpp:550
 #, kde-format
@@ -263,7 +263,7 @@ msgid ""
 "Please contact the widget's author for an updated version."
 msgstr ""
 "Este giny s'ha escrit per a Plasma %1 i no és compatible amb Plasma %2. "
-"Poseu-vos en contacte amb l'autor del giny per a una versió actualitzada."
+"Poseu-vos en contacte amb el seu autor per a una versió actualitzada."
 
 #: plasmaquick/appletquickitem.cpp:555
 #, kde-format
@@ -272,7 +272,7 @@ msgid ""
 "Please update Plasma in order to use the widget."
 msgstr ""
 "Este giny s'ha escrit per a Plasma %1 i no és compatible amb Plasma %2. "
-"Actualitzeu Plasma per tal d'utilitzar el giny."
+"Actualitzeu Plasma per tal d'emprar-lo."
 
 #: plasmaquick/appletquickitem.cpp:574
 #, kde-format
@@ -290,51 +290,51 @@ msgstr ""
 msgid "%1 Settings"
 msgstr "Configuració de %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:528
+#: plasmaquick/plasmoid/containmentitem.cpp:536
 #, kde-format
 msgid "Plasma Package"
 msgstr "Paquet de Plasma"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:532
+#: plasmaquick/plasmoid/containmentitem.cpp:540
 #, kde-format
 msgid "Install"
 msgstr "Instal·la"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:543
+#: plasmaquick/plasmoid/containmentitem.cpp:551
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "La instal·lació del paquet ha fallat"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:559
+#: plasmaquick/plasmoid/containmentitem.cpp:567
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "El paquet que acabeu de deixar no és vàlid."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:568
-#: plasmaquick/plasmoid/containmentitem.cpp:637
+#: plasmaquick/plasmoid/containmentitem.cpp:576
+#: plasmaquick/plasmoid/containmentitem.cpp:645
 #, kde-format
 msgid "Widgets"
 msgstr "Ginys"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:581
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Afig %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:587
-#: plasmaquick/plasmoid/containmentitem.cpp:641
+#: plasmaquick/plasmoid/containmentitem.cpp:595
+#: plasmaquick/plasmoid/containmentitem.cpp:649
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Afig una icona"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:599
+#: plasmaquick/plasmoid/containmentitem.cpp:607
 #, kde-format
 msgid "Wallpaper"
 msgstr "Fons de pantalla"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:609
+#: plasmaquick/plasmoid/containmentitem.cpp:617
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

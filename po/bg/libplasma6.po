@@ -334,10 +334,3 @@ msgstr "Задаване на %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Съдържанието е пуснато"
-
-#~ msgid "The %1 widget did not define which ScriptEngine to use."
-#~ msgstr "Уиджетът %1 не дефинира, кой ScriptEngine да се използва."
-
-#~ msgctxt "misc category"
-#~ msgid "Miscellaneous"
-#~ msgstr "Разни"

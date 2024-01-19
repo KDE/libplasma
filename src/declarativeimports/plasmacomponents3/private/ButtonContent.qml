@@ -62,7 +62,7 @@ RowLayout {
         }
     }
     KSvg.SvgItem {
-        visible: root.parent.Accessible.role === Accessible.ButtonMenu
+        visible: root.parent.Accessible.role === Accessible.ButtonMenu && label.visible
         Layout.preferredWidth: Kirigami.Units.iconSizes.small
         Layout.preferredHeight: Layout.preferredWidth
         Layout.alignment: Qt.AlignCenter

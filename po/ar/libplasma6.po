@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the libplasma5 package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014, 2015, 2017, 2018.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:38+0000\n"
-"PO-Revision-Date: 2023-04-06 12:44+0400\n"
+"PO-Revision-Date: 2024-01-20 20:23+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 "X-Project-Style: kde\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
@@ -54,7 +54,7 @@ msgstr "ابحث"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "مسح سجل البحث"
 
 #: plasma/applet.cpp:300
 #, kde-format
@@ -269,8 +269,7 @@ msgid "Error loading QML file: %1 %2"
 msgstr "خطأ في تحميل ملف QML:‏ %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:577
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "خطأ في تحميل البريمج: الحزمة غير موجودة. %1"
 

@@ -439,7 +439,10 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
     connect(applet, &Applet::configNeedsSaving, this, &Applet::configNeedsSaving);
     connect(applet, SIGNAL(appletDeleted(Plasma::Applet *)), this, SLOT(appletDeleted(Plasma::Applet *)));
     connect(applet, SIGNAL(statusChanged(Plasma::Types::ItemStatus)), this, SLOT(checkStatus(Plasma::Types::ItemStatus)));
-    connect(applet, &Applet::activated, this, &Applet::activated);
+    connect(applet, &Applet::activated, this, [&]() {
+        setStatus(Plasma::Types::NeedsAttentionStatus);
+        Q_EMIT activated();
+    });
     connect(this, &Containment::containmentDisplayHintsChanged, applet, &Applet::containmentDisplayHintsChanged);
 
     if (!currentContainment) {

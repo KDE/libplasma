@@ -115,11 +115,6 @@ void PlasmoidItem::init()
             }
             return;
         }
-        // Focus any container, such as panels
-        if (Plasma::Containment *y = qobject_cast<Plasma::Containment *>(applet)) {
-            y->setStatus(Plasma::Types::AcceptingInputStatus);
-            return;
-        }
     });
 
     connect(applet, &Plasma::Applet::destroyedChanged, this, &PlasmoidItem::destroyedChanged);

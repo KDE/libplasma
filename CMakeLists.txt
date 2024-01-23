@@ -4,6 +4,7 @@ set(PROJECT_VERSION "6.0.80")
 project(plasma-framework VERSION ${PROJECT_VERSION})
 
 set(QT_MIN_VERSION "6.6.0")
+set(PROJECT_DEP_VERSION "6.0.80")
 set(KF6_MIN_VERSION "5.240.0")
 
 set(CMAKE_CXX_STANDARD 20)
@@ -62,7 +63,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
         KCMUtils
         Svg
 )
-find_package(PlasmaActivities REQUIRED ${PROJECT_VERSION})
+find_package(PlasmaActivities REQUIRED ${PROJECT_DEP_VERSION})
 
 # Wayland features
 find_package(PlasmaWaylandProtocols 1.10.0 REQUIRED)

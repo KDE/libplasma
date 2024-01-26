@@ -205,7 +205,8 @@ install(EXPORT PlasmaTargets
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/plasma_version.h
         DESTINATION ${KDE_INSTALL_INCLUDEDIR}/Plasma COMPONENT Devel )
 
-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+include(ECMFeatureSummary)
+ecm_feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 # add clang-format target for all our source files
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)

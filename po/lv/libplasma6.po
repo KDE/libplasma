@@ -1,14 +1,15 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-framework package.
 #
 # Maris Nartiss <maris.kde@gmail.com>, 2019.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:38+0000\n"
-"PO-Revision-Date: 2019-12-08 12:11+0200\n"
-"Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
+"PO-Revision-Date: 2024-01-26 09:00+0200\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
@@ -16,44 +17,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
 msgid "More actions"
-msgstr ""
+msgstr "Vairāk darbību"
 
 #: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:516
 #, kde-format
 msgctxt "@action:button"
 msgid "Collapse"
-msgstr ""
+msgstr "Sakļaut"
 
 #: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:516
 #, kde-format
 msgctxt "@action:button"
 msgid "Expand"
-msgstr ""
+msgstr "Izvērst"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:49
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Parole"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:60
 #, kde-format
 msgid "Search…"
-msgstr ""
+msgstr "Meklēt..."
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Meklēt"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "Notīrīt meklēšanu"
 
 #: plasma/applet.cpp:300
 #, kde-format
@@ -63,30 +64,30 @@ msgstr "Nezināms"
 #: plasma/applet.cpp:743
 #, kde-format
 msgid "Activate %1 Widget"
-msgstr "Aktivēt %1 logdaļu"
+msgstr "Aktivēt „%1“ logdaļu"
 
 #: plasma/containment.cpp:97 plasma/private/applet_p.cpp:108
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
-msgstr "Noņemt %1"
+msgstr "Noņemt „%1“"
 
 #: plasma/containment.cpp:103 plasma/containment.cpp:114 plasma/corona.cpp:367
 #: plasma/corona.cpp:485
 #, kde-format
 msgid "Enter Edit Mode"
-msgstr ""
+msgstr "Ieslēgt rediģēšanas režīmu"
 
 #: plasma/containment.cpp:106 plasma/private/applet_p.cpp:113
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "Konfigurēt %1..."
+msgstr "Konfigurēt „%1“..."
 
 #: plasma/containment.cpp:112 plasma/corona.cpp:365
 #, kde-format
 msgid "Exit Edit Mode"
-msgstr ""
+msgstr "Iziet no rediģēšanas režīma"
 
 #: plasma/corona.cpp:316 plasma/corona.cpp:470
 #, kde-format
@@ -102,7 +103,7 @@ msgstr "Atslēgt logdaļas"
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
 #, kde-format
 msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Vai izveidot tēmas kešatmiņu uz diska."
+msgstr "Vai izveidot motīva kešatmiņu uz diska."
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
@@ -112,16 +113,16 @@ msgid ""
 "files are sparse files, so the maximum size may not be used. Setting a "
 "larger size is therefore often quite safe."
 msgstr ""
-"Maksimālais tēmas kešatmiņas izmērs uz diska kilobaitos. Ņemiet vērā, ka "
-"parasti šīs datnes ir nelielas un tādēļ maksimālais izmērs netiks izmantots. "
-"Tādēļ ir droši likt lielu izmēru."
+"Maksimālais motīva kešatmiņas izmērs uz diska kilobaitos. Ņemiet vērā, ka "
+"parasti šīs datnes ir nelielas un tādēļ maksimālais izmērs var netikt "
+"izmantots. Tāpēc parasti ir droši norādīt lielu izmēru."
 
 #: plasma/private/applet_p.cpp:138
 #, kde-format
 msgctxt "Package file, name of the widget"
 msgid "Could not open the %1 package required for the %2 widget."
 msgstr ""
-"Nebija iespējams atvērt %1 pakotni, kas ir nepieciešama priekš logdaļas %2."
+"Nebija iespējams atvērt „%1“ pakotni, kas ir nepieciešama logdaļai „%2“."
 
 #: plasma/private/applet_p.cpp:146
 #, kde-format
@@ -146,7 +147,7 @@ msgstr "Panelis ir noņemts"
 #: plasma/private/applet_p.cpp:259
 #, kde-format
 msgid "A panel has been removed."
-msgstr "Panelis ir noņemts."
+msgstr "Ir noņemts panelis."
 
 #: plasma/private/applet_p.cpp:262
 #, kde-format
@@ -156,12 +157,12 @@ msgstr "Darbvirsma ir noņemta"
 #: plasma/private/applet_p.cpp:263
 #, kde-format
 msgid "A desktop has been removed."
-msgstr "Darbvirsma ir noņemta"
+msgstr "Ir noņemta darbvirsma."
 
 #: plasma/private/applet_p.cpp:266
 #, kde-format
 msgid "Undo"
-msgstr "Atdarīt"
+msgstr "Atsaukt"
 
 #: plasma/private/applet_p.cpp:357
 #, kde-format
@@ -196,7 +197,7 @@ msgstr "Pievienot logdaļas..."
 #: plasma/private/containment_p.cpp:197
 #, kde-format
 msgid "Could not find requested component: %1"
-msgstr "Nebija iespējams atrast pieprasīto komponenti: %1"
+msgstr "Neatrada pieprasīto komponenti: %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: plasma/private/publish.ui:17
@@ -206,7 +207,7 @@ msgid ""
 "another computer as a remote control."
 msgstr ""
 "Logdaļas kopīgošana tīklā ļauj citiem datoriem piekļūt šai logdaļai un "
-"tādējādi kalpot kā tālvadības pultīm."
+"tādējādi to izmantot kā tālvadības pulti."
 
 #. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
 #: plasma/private/publish.ui:27
@@ -218,7 +219,7 @@ msgstr "Koplietot šo logdaļu tīklā"
 #: plasma/private/publish.ui:37
 #, kde-format
 msgid "Allow everybody to freely access this widget"
-msgstr "Atļaut jebkuram brīvi piekļūt šai logdaļai."
+msgstr "Atļaut visiem brīvi piekļūt šai logdaļai."
 
 #: plasma/private/service_p.h:32
 #, kde-format
@@ -229,18 +230,17 @@ msgstr "Nederīgs (null) serviss. Nav iespējams veikt darbības."
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr ""
+msgstr "Saknes vienumam „%1“ ir jābūt „ContainmentItem“ tipam"
 
 #: plasmaquick/appletquickitem.cpp:524
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
-msgstr ""
+msgstr "Saknes vienumam „%1“ jābūt „PlasmoidItem“ tipam"
 
 #: plasmaquick/appletquickitem.cpp:531
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown Applet"
-msgstr "Nezināms"
+msgstr "Nezināma sīklietotne"
 
 #: plasmaquick/appletquickitem.cpp:544
 #, kde-format
@@ -249,6 +249,9 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"Šī logdaļa ir izveidota nezināmai vecākai „Plasma“ versijai un nav "
+"savietojama ar „Plasma“ %1. Sazinieties ar logdaļas autoru saistībā ar jaunu "
+"versiju."
 
 #: plasmaquick/appletquickitem.cpp:550
 #, kde-format
@@ -256,6 +259,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"Šī logdaļa ir izveidota „Plasma“ %1 un nav savietojama ar „Plasma“ %2. "
+"Sazinieties ar logdaļas autoru saistībā ar jaunu versiju."
 
 #: plasmaquick/appletquickitem.cpp:555
 #, kde-format
@@ -263,28 +268,28 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"Šī logdaļa ir izveidota „Plasma“ %1 un nav savietojama ar „Plasma“ %2. Lai "
+"to izmantotu, atjauniniet „Plasma“."
 
 #: plasmaquick/appletquickitem.cpp:574
-#, fuzzy, kde-format
-#| msgid "Error loading QML file: %1"
+#, kde-format
 msgid "Error loading QML file: %1 %2"
-msgstr "Kļūda ielādējot QML datni: %1"
+msgstr "Kļūda, ielādējot QML datni: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:577
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
-msgstr "Kļūda ielādējot lietotni: pakotne neeksistē. %1"
+msgstr "Kļūda, ielādējot lietotni: pakotne neeksistē. %1"
 
 #: plasmaquick/configview.cpp:104
 #, kde-format
 msgid "%1 Settings"
-msgstr "%1 iestatījumi"
+msgstr "„%1“ iestatījumi"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:536
 #, kde-format
 msgid "Plasma Package"
-msgstr "Plasma pakotne"
+msgstr "„Plasma“ pakotne"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:540
 #, kde-format
@@ -311,7 +316,7 @@ msgstr "Logdaļas"
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
-msgstr "Pievienot %1"
+msgstr "Pievienot „%1“"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:595
 #: plasmaquick/plasmoid/containmentitem.cpp:649
@@ -329,7 +334,7 @@ msgstr "Tapete"
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"
-msgstr "Uzlikt %1"
+msgstr "Uzlikt „%1“"
 
 #: plasmaquick/plasmoid/dropmenu.cpp:28
 #, kde-format

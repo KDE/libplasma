@@ -36,7 +36,8 @@
                 "Name[uk]": "%{AUTHOR}",
                 "Name[vi]": "%{AUTHOR}",
                 "Name[x-test]": "xx%{AUTHOR}xx",
-                "Name[zh_CN]": "%{AUTHOR}"
+                "Name[zh_CN]": "%{AUTHOR}",
+                "Name[zh_TW]": "%{AUTHOR}"
             }
         ],
         "Description": "",
@@ -77,6 +78,7 @@
         "Name[vi]": "%{APPNAME}",
         "Name[x-test]": "xx%{APPNAME}xx",
         "Name[zh_CN]": "%{APPNAME}",
+        "Name[zh_TW]": "%{APPNAME}",
         "ServiceTypes": [
             "Plasma/Wallpaper"
         ],

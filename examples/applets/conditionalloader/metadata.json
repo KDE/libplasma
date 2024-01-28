@@ -36,7 +36,8 @@
                 "Name[uk]": "Marco Martin",
                 "Name[vi]": "Marco Martin",
                 "Name[x-test]": "xxMarco Martinxx",
-                "Name[zh_CN]": "Marco Martin"
+                "Name[zh_CN]": "Marco Martin",
+                "Name[zh_TW]": "Marco Martin"
             }
         ],
         "Category": "",
@@ -75,6 +76,7 @@
         "Name[vi]": "Kiểm thử tiểu ứng dụng",
         "Name[x-test]": "xxApplet Testxx",
         "Name[zh_CN]": "小程序测试",
+        "Name[zh_TW]": "小程式測試",
         "ServiceTypes": [
             "Plasma/Applet"
         ],

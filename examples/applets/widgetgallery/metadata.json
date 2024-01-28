@@ -36,7 +36,8 @@
                 "Name[uk]": "Marco Martin",
                 "Name[vi]": "Marco Martin",
                 "Name[x-test]": "xxMarco Martinxx",
-                "Name[zh_CN]": "Marco Martin"
+                "Name[zh_CN]": "Marco Martin",
+                "Name[zh_TW]": "Marco Martin"
             }
         ],
         "Category": "Examples",
@@ -71,6 +72,7 @@
         "Description[vi]": "nơi trưng bày các phụ kiện làm bằng QtComponents của Plasma",
         "Description[x-test]": "xxgallery of widgets done with Plasma QtComponentsxx",
         "Description[zh_CN]": "通过 Plasma Qt 组件实现的挂件展厅",
+        "Description[zh_TW]": "用 Plasma QtComponents 做的元件範例庫",
         "EnabledByDefault": true,
         "Icon": "preferences-desktop-theme",
         "Id": "org.kde.example.widgetgallery",
@@ -107,6 +109,7 @@
         "Name[vi]": "Bộ sưu tập phụ kiện",
         "Name[x-test]": "xxWidgets galleryxx",
         "Name[zh_CN]": "挂件展厅",
+        "Name[zh_TW]": "元件範例庫",
         "ServiceTypes": [
             "Plasma/Applet"
         ],

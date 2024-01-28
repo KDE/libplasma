@@ -36,7 +36,8 @@
                 "Name[uk]": "Marco Martin",
                 "Name[vi]": "Marco Martin",
                 "Name[x-test]": "xxMarco Martinxx",
-                "Name[zh_CN]": "Marco Martin"
+                "Name[zh_CN]": "Marco Martin",
+                "Name[zh_TW]": "Marco Martin"
             }
         ],
         "Category": "Windows and Tasks",
@@ -71,6 +72,7 @@
         "Description[vi]": "Ví dụ cho thấy cách hiển thị hình nhỏ của cửa sổ",
         "Description[x-test]": "xxExample showing how to display window thumbnailsxx",
         "Description[zh_CN]": "窗口缩略图显示示例",
+        "Description[zh_TW]": "顯示視窗縮圖的範例",
         "Icon": "preferences-system-windows",
         "Id": "org.kde.example.windowthumbnails",
         "License": "GPL",
@@ -105,6 +107,7 @@
         "Name[vi]": "Danh sách ví dụ các hình nhỏ của cửa sổ",
         "Name[x-test]": "xxExample window thumbnails listxx",
         "Name[zh_CN]": "窗口缩略图列表示例",
+        "Name[zh_TW]": "範例視窗縮圖列表",
         "ServiceTypes": [
             "Plasma/Applet"
         ],

@@ -84,6 +84,7 @@
         "Description[vi]": "Một ví dụ về DataEngine cho thấy cách hồi đáp các yêu cầu tạo và cập nhật nguồn",
         "Description[x-test]": "xxA DataEngine example showing how to respond to requests for source creation and updatesxx",
         "Description[zh_CN]": "展示如何响应源的创建和更新请求的数据引擎示例程序",
+        "Description[zh_TW]": "一個資料引擎範例，展示如何回應來源建立或更新的請求",
         "EnabledByDefault": true,
         "Icon": "plasma",
         "Id": "org.kde.examples.sourcesOnRequest",

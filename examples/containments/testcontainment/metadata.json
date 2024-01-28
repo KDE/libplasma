@@ -36,7 +36,8 @@
                 "Name[uk]": "Marco Martin",
                 "Name[vi]": "Marco Martin",
                 "Name[x-test]": "xxMarco Martinxx",
-                "Name[zh_CN]": "Marco Martin"
+                "Name[zh_CN]": "Marco Martin",
+                "Name[zh_TW]": "Marco Martin"
             }
         ],
         "Category": "",
@@ -74,6 +75,7 @@
         "Name[vi]": "Kiểm thử việc bao chứa",
         "Name[x-test]": "xxContainment Testxx",
         "Name[zh_CN]": "容器测试",
+        "Name[zh_TW]": "容器測試",
         "ServiceTypes": [
             "Plasma/Applet",
             "Plasma/Containment"

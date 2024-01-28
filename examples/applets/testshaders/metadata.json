@@ -36,7 +36,8 @@
                 "Name[uk]": "Sebastian Kügler",
                 "Name[vi]": "Sebastian Kügler",
                 "Name[x-test]": "xxSebastian Küglerxx",
-                "Name[zh_CN]": "Sebastian Kügler"
+                "Name[zh_CN]": "Sebastian Kügler",
+                "Name[zh_TW]": "Sebastian Kügler"
             }
         ],
         "Category": "Graphics",
@@ -71,6 +72,7 @@
         "Description[vi]": "Thử các hiệu ứng trực quan",
         "Description[x-test]": "xxFutzing with Visual Effectsxx",
         "Description[zh_CN]": "测试各种视觉效果",
+        "Description[zh_TW]": "玩玩視覺效果",
         "Icon": "plasma",
         "Id": "org.kde.example.testshaders",
         "License": "GPLv2+",
@@ -106,6 +108,7 @@
         "Name[vi]": "Kiểm thử trình đánh bóng",
         "Name[x-test]": "xxShader Testxx",
         "Name[zh_CN]": "着色器测试",
+        "Name[zh_TW]": "著色器測試",
         "ServiceTypes": [
             "Plasma/Applet"
         ],

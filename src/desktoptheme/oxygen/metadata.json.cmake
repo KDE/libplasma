@@ -35,7 +35,8 @@
                 "Name[uk]": "Проєкт Oxygen",
                 "Name[vi]": "Dự án Oxygen",
                 "Name[x-test]": "xxThe Oxygen Projectxx",
-                "Name[zh_CN]": "Oxygen 项目"
+                "Name[zh_CN]": "Oxygen 项目",
+                "Name[zh_TW]": "Oxygen 專案"
             }
         ],
         "Category": "",
@@ -72,6 +73,7 @@
         "Description[vi]": "Chủ đề được tạo với kiểu cách Oxygen",
         "Description[x-test]": "xxTheme done in the Oxygen stylexx",
         "Description[zh_CN]": "Oxygen 轻氧风格的主题",
+        "Description[zh_TW]": "以 Oxygen 風格所做的主題",
         "EnabledByDefault": true,
         "Id": "oxygen",
         "License": "GPL",
@@ -109,6 +111,7 @@
         "Name[vi]": "Oxygen",
         "Name[x-test]": "xxOxygenxx",
         "Name[zh_CN]": "Oxygen 轻氧",
+        "Name[zh_TW]": "Oxygen",
         "Version": "@KF_VERSION@",
         "Website": "https://plasma.kde.org"
     },

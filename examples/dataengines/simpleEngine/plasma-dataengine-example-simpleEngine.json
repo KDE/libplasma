@@ -84,6 +84,7 @@
         "Description[vi]": "Một phần thi hành DataEngine rất cơ bản",
         "Description[x-test]": "xxA very basic DataEngine implementationxx",
         "Description[zh_CN]": "非常基础的数据引擎实现示例程序",
+        "Description[zh_TW]": "非常基礎的資料引擎實作",
         "EnabledByDefault": true,
         "Icon": "plasma",
         "Id": "org.kde.examples.simpleEngine",
@@ -120,6 +121,7 @@
         "Name[vi]": "Ví dụ DataEngine đơn giản",
         "Name[x-test]": "xxSimple DataEngine Examplexx",
         "Name[zh_CN]": "简单数据引擎示例",
+        "Name[zh_TW]": "簡單的資料引擎範例",
         "ServiceTypes": [
             "Plasma/DataEngine"
         ],

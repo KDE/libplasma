@@ -36,7 +36,8 @@
                 "Name[uk]": "Sebastian Kügler",
                 "Name[vi]": "Sebastian Kügler",
                 "Name[x-test]": "xxSebastian Küglerxx",
-                "Name[zh_CN]": "Sebastian Kügler"
+                "Name[zh_CN]": "Sebastian Kügler",
+                "Name[zh_TW]": "Sebastian Kügler"
             }
         ],
         "Category": "Development Tools",
@@ -74,6 +75,7 @@
         "Name[vi]": "Kiểm thử các thành phần",
         "Name[x-test]": "xxComponents Testxx",
         "Name[zh_CN]": "组件测试",
+        "Name[zh_TW]": "元件測試",
         "ServiceTypes": [
             "Plasma/Applet"
         ],

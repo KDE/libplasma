@@ -36,7 +36,8 @@
                 "Name[uk]": "Marco Martin",
                 "Name[vi]": "Marco Martin",
                 "Name[x-test]": "xxMarco Martinxx",
-                "Name[zh_CN]": "Marco Martin"
+                "Name[zh_CN]": "Marco Martin",
+                "Name[zh_TW]": "Marco Martin"
             }
         ],
         "Category": "Examples",
@@ -71,6 +72,7 @@
         "Description[vi]": "Chương trình minh hoạ cho Qt, Same game, viết bằng QML, chuyển dạng thành plasmoid",
         "Description[x-test]": "xxThe Same game QML Qt demo converted as plasmoidxx",
         "Description[zh_CN]": "找重游戏 的 QML Qt 演示程序转换而来的小部件",
+        "Description[zh_TW]": "實作 Same 遊戲的 QML Qt 範例的 Plasma 元件版本",
         "EnabledByDefault": true,
         "Icon": "applications-games",
         "Id": "org.kde.samegame-qml",
@@ -106,6 +108,7 @@
         "Name[vi]": "Trò chơi Same game (QML)",
         "Name[x-test]": "xxSame game (QML)xx",
         "Name[zh_CN]": "找重游戏 (QML)",
+        "Name[zh_TW]": "Same 遊戲 (QML)",
         "ServiceTypes": [
             "Plasma/Applet"
         ],

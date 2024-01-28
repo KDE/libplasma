@@ -36,7 +36,8 @@
                 "Name[uk]": "Marco Martin",
                 "Name[vi]": "Marco Martin",
                 "Name[x-test]": "xxMarco Martinxx",
-                "Name[zh_CN]": "Marco Martin"
+                "Name[zh_CN]": "Marco Martin",
+                "Name[zh_TW]": "Marco Martin"
             }
         ],
         "Category": "Windows and Tasks",
@@ -71,6 +72,7 @@
         "Description[vi]": "Ví dụ cho thấy cách viết Phụ kiện tác vụ của riêng bạn",
         "Description[x-test]": "xxExample showing how to write your own tasks Widgetxx",
         "Description[zh_CN]": "展示如何编写自定义任务栏挂件的示例程序",
+        "Description[zh_TW]": "展示如何撰寫您自己的工作管理員元件的範例",
         "Icon": "preferences-system-windows",
         "Id": "org.kde.example.tasks",
         "License": "GPL",

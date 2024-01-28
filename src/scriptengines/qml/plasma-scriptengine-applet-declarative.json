@@ -35,7 +35,8 @@
                 "Name[uk]": "Alexis Menard",
                 "Name[vi]": "Alexis Menard",
                 "Name[x-test]": "xxAlexis Menardxx",
-                "Name[zh_CN]": "Alexis Menard"
+                "Name[zh_CN]": "Alexis Menard",
+                "Name[zh_TW]": "Alexis Menard"
             }
         ],
         "Category": "Examples",
@@ -71,6 +72,7 @@
         "Description[vi]": "Phụ kiện nội Plasma viết bằng QML và JavaScript",
         "Description[x-test]": "xxNative Plasma widget written in QML and JavaScriptxx",
         "Description[zh_CN]": "使用 QML 和 JavaScript 编写的原生 Plasma 挂件",
+        "Description[zh_TW]": "用 QML 及 JavaScript 撰寫的原生 Plasma 元件",
         "EnabledByDefault": true,
         "Icon": "text-x-script",
         "Id": "qmlscript",

@@ -6,8 +6,11 @@
 
 #include "config-plasma.h"
 #include "packages_p.h"
+#include <KConfigGroup>
+#include <KDesktopFile>
 #include <KPackage/Package>
 #include <KPackage/PackageStructure>
+#include <KPackage/packagestructure_compat_p>
 
 class PlasmoidPackage : public Plasma::GenericPackage
 {
@@ -23,6 +26,8 @@ public:
         package->addFileDefinition("configmodel", QStringLiteral("config/config.qml"));
         package->addFileDefinition("mainconfigxml", QStringLiteral("config/main.xml"));
         package->setRequired("metadata", true);
+        package->addFileDefinition("metadata", QStringLiteral("metadata.desktop"));
+        package->setRequired("metadata", true);
     }
 
     void pathChanged(KPackage::Package *package) override
@@ -35,6 +40,8 @@ public:
                 package->removeDefinition("compactapplet");
             }
         }
+        // The widge explorer uses it to display old incompatible plasmoids
+        KPackagePrivate::convertCompatMetaDataDesktopFile(package);
     }
 };
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:38+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2022-04-04 11:55+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -71,8 +71,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Elimină %1"
 
-#: plasma/containment.cpp:103 plasma/containment.cpp:114 plasma/corona.cpp:367
-#: plasma/corona.cpp:485
+#: plasma/containment.cpp:103 plasma/corona.cpp:367 plasma/corona.cpp:485
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Intră în regim de modificare"
@@ -83,11 +82,6 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Configurare %1..."
 
-#: plasma/containment.cpp:112 plasma/corona.cpp:365
-#, kde-format
-msgid "Exit Edit Mode"
-msgstr "Ieși din regim de modificare"
-
 #: plasma/corona.cpp:316 plasma/corona.cpp:470
 #, kde-format
 msgid "Lock Widgets"
@@ -97,6 +91,11 @@ msgstr "Blochează controalele"
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Deblochează controalele"
+
+#: plasma/corona.cpp:365
+#, kde-format
+msgid "Exit Edit Mode"
+msgstr "Ieși din regim de modificare"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9

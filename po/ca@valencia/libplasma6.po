@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:38+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2023-11-21 12:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -75,8 +75,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Elimina %1"
 
-#: plasma/containment.cpp:103 plasma/containment.cpp:114 plasma/corona.cpp:367
-#: plasma/corona.cpp:485
+#: plasma/containment.cpp:103 plasma/corona.cpp:367 plasma/corona.cpp:485
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Entra en el mode d'edició"
@@ -87,11 +86,6 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Configura %1..."
 
-#: plasma/containment.cpp:112 plasma/corona.cpp:365
-#, kde-format
-msgid "Exit Edit Mode"
-msgstr "Ix del mode d'edició"
-
 #: plasma/corona.cpp:316 plasma/corona.cpp:470
 #, kde-format
 msgid "Lock Widgets"
@@ -101,6 +95,11 @@ msgstr "Bloqueja els ginys"
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Desbloqueja els ginys"
+
+#: plasma/corona.cpp:365
+#, kde-format
+msgid "Exit Edit Mode"
+msgstr "Ix del mode d'edició"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9

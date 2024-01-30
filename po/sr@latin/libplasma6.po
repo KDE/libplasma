@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:38+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2016-03-20 15:24+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -76,8 +76,7 @@ msgstr ""
 "Ukloni ovaj %1|/|Ukloni $[po-rodu-broju %1 ovaj ovu ovo ove ove ova] $[aku "
 "%1]"
 
-#: plasma/containment.cpp:103 plasma/containment.cpp:114 plasma/corona.cpp:367
-#: plasma/corona.cpp:485
+#: plasma/containment.cpp:103 plasma/corona.cpp:367 plasma/corona.cpp:485
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr ""
@@ -86,11 +85,6 @@ msgstr ""
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr ""
-
-#: plasma/containment.cpp:112 plasma/corona.cpp:365
-#, kde-format
-msgid "Exit Edit Mode"
 msgstr ""
 
 #: plasma/corona.cpp:316 plasma/corona.cpp:470
@@ -102,6 +96,11 @@ msgstr "Zaključaj vidžete"
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Otključaj vidžete"
+
+#: plasma/corona.cpp:365
+#, kde-format
+msgid "Exit Edit Mode"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9

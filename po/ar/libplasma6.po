@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:38+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2024-01-20 20:23+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -72,8 +72,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "أزِل %1"
 
-#: plasma/containment.cpp:103 plasma/containment.cpp:114 plasma/corona.cpp:367
-#: plasma/corona.cpp:485
+#: plasma/containment.cpp:103 plasma/corona.cpp:367 plasma/corona.cpp:485
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "ادخل نمط التحرير"
@@ -84,11 +83,6 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "اضبط %1…"
 
-#: plasma/containment.cpp:112 plasma/corona.cpp:365
-#, kde-format
-msgid "Exit Edit Mode"
-msgstr "اخرج من نمط التحرير"
-
 #: plasma/corona.cpp:316 plasma/corona.cpp:470
 #, kde-format
 msgid "Lock Widgets"
@@ -98,6 +92,11 @@ msgstr "اقفل الودجات"
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "أزِل قفل الودجات"
+
+#: plasma/corona.cpp:365
+#, kde-format
+msgid "Exit Edit Mode"
+msgstr "اخرج من نمط التحرير"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:38+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2024-01-26 09:00+0200\n"
 "Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -72,8 +72,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Noņemt „%1“"
 
-#: plasma/containment.cpp:103 plasma/containment.cpp:114 plasma/corona.cpp:367
-#: plasma/corona.cpp:485
+#: plasma/containment.cpp:103 plasma/corona.cpp:367 plasma/corona.cpp:485
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Ieslēgt rediģēšanas režīmu"
@@ -84,11 +83,6 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Konfigurēt „%1“..."
 
-#: plasma/containment.cpp:112 plasma/corona.cpp:365
-#, kde-format
-msgid "Exit Edit Mode"
-msgstr "Iziet no rediģēšanas režīma"
-
 #: plasma/corona.cpp:316 plasma/corona.cpp:470
 #, kde-format
 msgid "Lock Widgets"
@@ -98,6 +92,11 @@ msgstr "Slēgt logdaļas"
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Atslēgt logdaļas"
+
+#: plasma/corona.cpp:365
+#, kde-format
+msgid "Exit Edit Mode"
+msgstr "Iziet no rediģēšanas režīma"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9

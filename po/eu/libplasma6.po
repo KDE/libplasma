@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:38+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2023-11-26 01:27+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -75,8 +75,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Kendu %1"
 
-#: plasma/containment.cpp:103 plasma/containment.cpp:114 plasma/corona.cpp:367
-#: plasma/corona.cpp:485
+#: plasma/containment.cpp:103 plasma/corona.cpp:367 plasma/corona.cpp:485
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Sartu editatzeko modura"
@@ -87,11 +86,6 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Konfiguratu %1..."
 
-#: plasma/containment.cpp:112 plasma/corona.cpp:365
-#, kde-format
-msgid "Exit Edit Mode"
-msgstr "Irten editatzeko modutik"
-
 #: plasma/corona.cpp:316 plasma/corona.cpp:470
 #, kde-format
 msgid "Lock Widgets"
@@ -101,6 +95,11 @@ msgstr "Giltzatu trepetak"
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Giltzapetik askatu trepetak"
+
+#: plasma/corona.cpp:365
+#, kde-format
+msgid "Exit Edit Mode"
+msgstr "Irten editatzeko modutik"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9

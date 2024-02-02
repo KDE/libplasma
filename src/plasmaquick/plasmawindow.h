@@ -46,12 +46,6 @@ class PLASMAQUICK_EXPORT PlasmaWindow : public QQuickWindow
     Q_PROPERTY(qreal leftPadding READ leftPadding NOTIFY paddingChanged)
     Q_PROPERTY(qreal rightPadding READ rightPadding NOTIFY paddingChanged)
 
-    // Deprecated
-    Q_PROPERTY(qreal topMargin READ topMargin NOTIFY paddingChanged)
-    Q_PROPERTY(qreal bottomMargin READ bottomMargin NOTIFY paddingChanged)
-    Q_PROPERTY(qreal leftMargin READ leftMargin NOTIFY paddingChanged)
-    Q_PROPERTY(qreal rightMargin READ rightMargin NOTIFY paddingChanged)
-
 public:
     enum BackgroundHints {
         StandardBackground = 0, /**< The standard background from the theme is drawn */
@@ -91,24 +85,6 @@ public:
     qreal bottomPadding() const;
     qreal leftPadding() const;
     qreal rightPadding() const;
-
-    /**DEPRECATED TO BE REMOVED NEXT WEEK*/
-    qreal topMargin() const
-    {
-        return topPadding();
-    }
-    qreal bottomMargin() const
-    {
-        return bottomPadding();
-    }
-    qreal leftMargin() const
-    {
-        return leftPadding();
-    }
-    qreal rightMargin() const
-    {
-        return rightPadding();
-    }
 
 Q_SIGNALS:
     void mainItemChanged();

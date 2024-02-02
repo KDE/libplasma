@@ -53,7 +53,7 @@ public:
     };
     Q_ENUM(BackgroundHints)
 
-    PlasmaWindow(QWindow *parent = nullptr);
+    PlasmaWindow(const QString &svgPrefix = QStringLiteral("dialogs/background"));
     ~PlasmaWindow() override;
 
     /**

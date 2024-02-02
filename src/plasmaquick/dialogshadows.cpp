@@ -37,18 +37,6 @@ public:
     QList<KWindowShadowTile::Ptr> m_tiles;
 };
 
-typedef QHash<QString, DialogShadows *> DialogShadowHash;
-Q_GLOBAL_STATIC(DialogShadowHash, s_privateDialogShadowsInstances)
-
-DialogShadows *DialogShadows::instance(const QString &prefix)
-{
-    DialogShadows *&shadow = (*s_privateDialogShadowsInstances)[prefix];
-    if (!shadow) {
-        shadow = new DialogShadows(qApp, prefix);
-    }
-    return shadow;
-}
-
 DialogShadows::DialogShadows(QObject *parent, const QString &prefix)
     : KSvg::Svg(parent)
     , d(new Private(this))
@@ -60,6 +48,16 @@ DialogShadows::DialogShadows(QObject *parent, const QString &prefix)
 DialogShadows::~DialogShadows()
 {
     delete d;
+}
+
+DialogShadows *DialogShadows::self()
+{
+    // KF6 port to Q_APPLICATION_STATIC
+    static DialogShadows *s_privateDialogShadowsSelf = nullptr;
+    if (!s_privateDialogShadowsSelf) {
+        s_privateDialogShadowsSelf = new DialogShadows(qApp);
+    }
+    return s_privateDialogShadowsSelf;
 }
 
 void DialogShadows::addWindow(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders)
@@ -90,7 +88,6 @@ void DialogShadows::removeWindow(QWindow *window)
 
 void DialogShadows::setEnabledBorders(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders)
 {
-    Q_ASSERT(d->m_windows.contains(window));
     if (!window || !d->m_windows.contains(window)) {
         return;
     }

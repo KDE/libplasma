@@ -67,7 +67,7 @@ public:
     Q_DECLARE_FLAGS(RemoveBorders, RemoveBorder)
     Q_ENUM(RemoveBorder);
 
-    PopupPlasmaWindow(const QString &svgPrefix = QStringLiteral("dialogs/background"));
+    PopupPlasmaWindow(QWindow *parent = nullptr);
     ~PopupPlasmaWindow() override;
     QQuickItem *visualParent() const;
     void setVisualParent(QQuickItem *parent);

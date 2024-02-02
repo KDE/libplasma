@@ -17,10 +17,10 @@ class DialogShadows : public KSvg::Svg
     Q_OBJECT
 
 public:
-    static DialogShadows *instance(const QString &prefix = QLatin1String("dialogs/background"));
-
-    explicit DialogShadows(QObject *parent, const QString &prefix);
+    explicit DialogShadows(QObject *parent = nullptr, const QString &prefix = QStringLiteral("dialogs/background"));
     ~DialogShadows() override;
+
+    static DialogShadows *self();
 
     void addWindow(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders = KSvg::FrameSvg::AllBorders);
     void removeWindow(QWindow *window);

@@ -235,8 +235,8 @@ void PopupPlasmaWindowPrivate::updateVisualParentWindow()
     }
 }
 
-PopupPlasmaWindow::PopupPlasmaWindow(const QString &svgPrefix)
-    : PlasmaWindow(svgPrefix)
+PopupPlasmaWindow::PopupPlasmaWindow(QWindow *parent)
+    : PlasmaWindow(parent)
     , d(new PopupPlasmaWindowPrivate(this))
 {
 }

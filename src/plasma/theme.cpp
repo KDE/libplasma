@@ -314,9 +314,9 @@ qreal Theme::backgroundIntensity() const
 {
     if (qIsNaN(d->backgroundIntensity)) {
         if (qGray(color(Plasma::Theme::BackgroundColor).rgb()) < 127) {
-            return 0.45;
+            return 0.6;
         } else {
-            return 1.9;
+            return 1.4;
         }
     }
     return d->backgroundIntensity;

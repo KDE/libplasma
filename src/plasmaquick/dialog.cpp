@@ -571,7 +571,10 @@ void DialogPrivate::updateLayoutParameters()
 
     dialogBackground->setSize(QSizeF(q->width(), q->height()));
 
-    repositionIfOffScreen();
+    if (!needsSetupNextExpose && visible) {
+        // Only reposition after successful setup; otherwise repositionIfOffScreen will override the default position set by kwin under wayland
+        repositionIfOffScreen();
+    }
     updateTheme();
 
     // setting the minimum or maximum size will resize the window instantly and min <= max is enforced
@@ -1413,10 +1416,10 @@ bool Dialog::event(QEvent *event)
         // sometimes non null regions arrive even for non visible windows
         // for which surface creation would fail
         if (d->needsSetupNextExpose && isVisible()) {
-            d->needsSetupNextExpose = false;
             d->updateVisibility(true);
             const bool ret = QQuickWindow::event(event);
             d->updateTheme();
+            d->needsSetupNextExpose = false;
             return ret;
         }
     } else if (event->type() == QEvent::Show) {

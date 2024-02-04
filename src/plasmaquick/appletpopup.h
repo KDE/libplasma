@@ -49,6 +49,7 @@ public:
 
     bool hideOnWindowDeactivate() const;
     void setHideOnWindowDeactivate(bool hideOnWindowDeactivate);
+    Q_INVOKABLE void requestHide();
 
 Q_SIGNALS:
     void appletInterfaceChanged();

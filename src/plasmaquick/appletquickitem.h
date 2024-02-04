@@ -135,6 +135,8 @@ Q_SIGNALS:
     void switchWidthChanged(int width);
     void switchHeightChanged(int height);
 
+    void requestedHide();
+
     void expandedChanged(bool expanded);
 
     void activationTogglesExpandedChanged(bool activationTogglesExpanded);

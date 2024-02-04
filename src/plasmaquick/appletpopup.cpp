@@ -160,7 +160,7 @@ void AppletPopup::hideEvent(QHideEvent *event)
     PopupPlasmaWindow::hideEvent(event);
 }
 
-void AppletPopup::focusOutEvent(QFocusEvent *ev)
+void AppletPopup::requestHide()
 {
     if (m_hideOnWindowDeactivate) {
         bool parentHasFocus = false;
@@ -185,7 +185,11 @@ void AppletPopup::focusOutEvent(QFocusEvent *ev)
             setVisible(false);
         }
     }
+}
 
+void AppletPopup::focusOutEvent(QFocusEvent *ev)
+{
+    requestHide();
     PopupPlasmaWindow::focusOutEvent(ev);
 }
 

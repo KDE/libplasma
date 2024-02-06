@@ -1,14 +1,14 @@
 # Translation of plasmapkg to Korean.
 # Copyright (C) 2008 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kdebase package.
-# Shinjo Park <kde@peremen.name>, 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 02:26+0000\n"
-"PO-Revision-Date: 2023-07-25 01:12+0200\n"
+"PO-Revision-Date: 2024-02-06 00:45+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -53,7 +53,7 @@ msgstr "검색"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "검색 지우기"
 
 #: plasma/applet.cpp:300
 #, kde-format
@@ -225,8 +225,7 @@ msgid "Invalid (null) service, can not perform any operations."
 msgstr "잘못된(빈) 서비스, 작업을 수행할 수 없습니다."
 
 #: plasmaquick/appletquickitem.cpp:519
-#, fuzzy, kde-format
-#| msgid "The root item of %1 must be of type ContaimentItem"
+#, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "%1의 루트 항목은 ContainmentItem 형식이어야 함"
 
@@ -247,6 +246,8 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"이 위젯은 알 수 없는 과거 Plasma 버전을 위해서 작성되었으며 Plasma %1 버전과 "
+"호환되지 않습니다. 위젯 개발자에게 업데이트된 버전에 대해서 문의하십시오."
 
 #: plasmaquick/appletquickitem.cpp:550
 #, kde-format
@@ -254,6 +255,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"이 위젯은 Plasma %1 버전을 위해서 작성되었으며 Plasma %2 버전과 호환되지 않습"
+"니다. 위젯 개발자에게 업데이트된 버전에 대해서 문의하십시오."
 
 #: plasmaquick/appletquickitem.cpp:555
 #, kde-format
@@ -261,6 +264,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"이 위젯은 Plasma %1 버전을 위해서 작성되었으며 Plasma %2 버전과 호환되지 않습"
+"니다. 위젯을 사용하려면 Plasma를 업데이트하십시오."
 
 #: plasmaquick/appletquickitem.cpp:574
 #, kde-format
@@ -268,8 +273,7 @@ msgid "Error loading QML file: %1 %2"
 msgstr "QML 파일을 불러오는 중 오류 발생: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:577
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "애플릿을 불러오는 중 오류 발생: 패키지가 없음. %1"
 

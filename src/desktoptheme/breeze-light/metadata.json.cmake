@@ -58,7 +58,7 @@
         "Description[de]": "Breeze Hell von der KDE VDG",
         "Description[en_GB]": "Breeze Light by the KDE VDG",
         "Description[eo]": "Breeze Light de la KDE VDG",
-        "Description[es]": "Brisa claro por KDE VDG",
+        "Description[es]": "Brisa claro, por KDE VDG",
         "Description[eu]": "Brisa argia, KDE VDGk egina",
         "Description[fi]": "Vaalea Breeze KDE VDG:ltä",
         "Description[fr]": "Breeze clair par l'équipe « KDE VDG »",

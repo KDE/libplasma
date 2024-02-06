@@ -58,7 +58,7 @@
         "Description[de]": "Breeze Dunkel von der KDE VDG",
         "Description[en_GB]": "Breeze Dark by the KDE VDG",
         "Description[eo]": "Breeze Dark de la KDE VDG",
-        "Description[es]": "Brisa oscuro por KDE VDG",
+        "Description[es]": "Brisa oscuro, por KDE VDG",
         "Description[eu]": "Brisa iluna KDEren VDGk egina",
         "Description[fi]": "Tumma Breeze KDE VDG:ltä",
         "Description[fr]": "Breeze sombre par l'équipe « KDE VDG »",

@@ -48,6 +48,7 @@ public:
     void updateMinimumHeight();
     void updateMaximumWidth();
     void updateMaximumHeight();
+    void updateTitle();
     void mainItemLoaded();
 
     ConfigView *q;
@@ -101,7 +102,7 @@ void ConfigViewPrivate::init()
 
     // FIXME: problem on nvidia, all windows should be transparent or won't show
     q->setColor(Qt::transparent);
-    q->setTitle(i18n("%1 Settings", applet.data()->title()));
+    updateTitle();
 
     // systray case
     if (!applet.data()->containment()->corona()) {
@@ -229,12 +230,24 @@ void ConfigViewPrivate::updateMaximumHeight()
     }
 }
 
+void ConfigViewPrivate::updateTitle()
+{
+    QVariant itemTitle = rootItem ? rootItem->property("title") : QVariant();
+    q->setTitle(itemTitle.canConvert<QString>() ? i18n("%1 — %2 Settings", itemTitle.toString(), applet.data()->title())
+                                                : i18n("%1 Settings", applet.data()->title()));
+}
+
 void ConfigViewPrivate::mainItemLoaded()
 {
     if (applet) {
         KConfigGroup cg = applet.data()->config();
         cg = KConfigGroup(&cg, QStringLiteral("ConfigDialog"));
         q->resize(cg.readEntry("DialogWidth", q->width()), cg.readEntry("DialogHeight", q->height()));
+
+        if (rootItem->property("title").isValid()) {
+            QObject::connect(rootItem, SIGNAL(titleChanged()), q, SLOT(updateTitle()));
+            updateTitle();
+        }
     }
 
     // Extract the representation's Layout, if any

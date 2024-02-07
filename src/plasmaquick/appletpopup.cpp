@@ -96,6 +96,17 @@ AppletPopup::AppletPopup()
     connect(this, &PlasmaWindow::paddingChanged, this, &AppletPopup::updateMaxSize);
     connect(this, &PlasmaWindow::paddingChanged, this, &AppletPopup::updateSize);
     connect(this, &PlasmaWindow::paddingChanged, this, &AppletPopup::updateMinSize);
+
+    connect(this, &PlasmaWindow::screenChanged, this, [this](QScreen *screen) {
+        if (m_oldScreen) {
+            disconnect(m_oldScreen, &QScreen::geometryChanged, this, &AppletPopup::updateMaxSize);
+        }
+        if (screen) {
+            connect(screen, &QScreen::geometryChanged, this, &AppletPopup::updateMaxSize);
+        }
+        m_oldScreen = screen;
+        updateMaxSize();
+    });
 }
 
 AppletPopup::~AppletPopup()
@@ -221,7 +232,12 @@ void AppletPopup::updateMaxSize()
     if (!m_layoutChangedProxy) {
         return;
     }
-    setMaximumSize(m_layoutChangedProxy->maximumSize().grownBy(padding()));
+    QSize size = m_layoutChangedProxy->maximumSize().grownBy(padding());
+    if (screen()) {
+        size.setWidth(std::min(size.width(), int(std::round(screen()->geometry().width() * 0.95))));
+        size.setHeight(std::min(size.height(), int(std::round(screen()->geometry().height() * 0.95))));
+    }
+    setMaximumSize(size);
 }
 
 void AppletPopup::updateSize()

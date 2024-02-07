@@ -65,6 +65,7 @@ private:
     void updateSize();
 
     QPointer<AppletQuickItem> m_appletInterface;
+    QPointer<QScreen> m_oldScreen;
     bool m_hideOnWindowDeactivate = false;
     bool m_sizeExplicitlySetFromConfig = false;
     QScopedPointer<LayoutChangedProxy> m_layoutChangedProxy;

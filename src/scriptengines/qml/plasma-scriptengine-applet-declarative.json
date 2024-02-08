@@ -109,6 +109,7 @@
         "Name[vi]": "Phụ kiện khai báo",
         "Name[x-test]": "xxDeclarative widgetxx",
         "Name[zh_CN]": "程序声明挂件",
+        "Name[zh_TW]": "宣告式元件",
         "ServiceTypes": [
             "Plasma/ScriptEngine"
         ],

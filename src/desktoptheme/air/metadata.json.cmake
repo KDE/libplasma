@@ -73,6 +73,7 @@
         "Description[vi]": "Một luồng không khí trong lành",
         "Description[x-test]": "xxA breath of fresh airxx",
         "Description[zh_CN]": "如清新空气般淡雅的主题",
+        "Description[zh_TW]": "新鮮空氣",
         "EnabledByDefault": true,
         "Id": "air",
         "License": "GPL",

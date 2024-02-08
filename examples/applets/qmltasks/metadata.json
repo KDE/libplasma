@@ -107,6 +107,7 @@
         "Name[vi]": "Tác vụ của người đàn ông nghèo",
         "Name[x-test]": "xxPoor Man's Tasksxx",
         "Name[zh_CN]": "简易版任务栏控件",
+        "Name[zh_TW]": "簡易待辦事項",
         "ServiceTypes": [
             "Plasma/Applet"
         ],

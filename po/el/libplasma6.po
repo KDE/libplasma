@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-10 00:40+0000\n"
+"POT-Creation-Date: 2024-02-13 00:39+0000\n"
 "PO-Revision-Date: 2016-09-22 16:19+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -279,7 +279,13 @@ msgstr "Σφάλμα κατά τη φόρτωση αρχείου QML: %1"
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Σφάλμα φόρτωσης μικροεφαρμογής: δεν υπάρχει πακέτο.  %1"
 
-#: plasmaquick/configview.cpp:104
+#: plasmaquick/configview.cpp:236
+#, fuzzy, kde-format
+#| msgid "%1 Settings"
+msgid "%1 — %2 Settings"
+msgstr "Ρυθμίσεις του %1"
+
+#: plasmaquick/configview.cpp:237
 #, kde-format
 msgid "%1 Settings"
 msgstr "Ρυθμίσεις του %1"

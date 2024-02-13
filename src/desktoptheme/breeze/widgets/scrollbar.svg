@@ -31,10 +31,10 @@
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="34.441993"
-     inkscape:cx="30.224732"
+     inkscape:cx="30.239249"
      inkscape:cy="18.219039"
      inkscape:window-width="3440"
-     inkscape:window-height="1375"
+     inkscape:window-height="1373"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
@@ -511,7 +511,7 @@
          id="path70-75"
          class="ColorScheme-ButtonText"
          d="m 28 7 v 1 h 3 v -1 z"
-         style="opacity:.3;fill:currentColor;fill-opacity:1"
+         style="opacity:0.2;fill:currentColor;fill-opacity:1"
          inkscape:connector-curvature="0" />
       <path
          id="path1632-1-7-0"
@@ -533,7 +533,7 @@
          id="path74-8"
          class="ColorScheme-ButtonText"
          d="m 27 7 c -1.68216 0 -3 1.31784 -3 3 h 1 a 2 2 0 0 1 2 -2 z"
-         style="opacity:.3;fill:currentColor;fill-opacity:1" />
+         style="opacity:0.2;fill:currentColor;fill-opacity:1" />
       <path
          id="path1626-53"
          d="m 27 8 a 2 2 0 0 0 -2 2 h 2 z"
@@ -553,7 +553,7 @@
          id="path78-3"
          class="ColorScheme-ButtonText"
          d="m 32 7 v 1 a 2 2 0 0 1 2 2 h 1 c 0 -1.68216 -1.31784 -3 -3 -3 z"
-         style="opacity:.3;fill:currentColor;fill-opacity:1" />
+         style="opacity:0.2;fill:currentColor;fill-opacity:1" />
       <path
          id="path1626-53-5"
          d="m 32 8 a -2 2 0 0 1 2 2 h -2 z"
@@ -574,7 +574,7 @@
          id="path82-2"
          class="ColorScheme-ButtonText"
          d="m 28 18 v -1 h 3 v 1 z"
-         style="opacity:.3;fill:currentColor;fill-opacity:1"
+         style="opacity:0.2;fill:currentColor;fill-opacity:1"
          inkscape:connector-curvature="0" />
       <path
          id="path1632-1-7"
@@ -596,7 +596,7 @@
          id="path86-9"
          class="ColorScheme-ButtonText"
          d="m 24 15 c 0 1.68216 1.31784 3 3 3 v -1 a 2 2 0 0 1 -2 -2 z"
-         style="opacity:.3;fill:currentColor;fill-opacity:1" />
+         style="opacity:0.2;fill:currentColor;fill-opacity:1" />
       <path
          id="path1626-53-2"
          d="m 27 17 a 2 -2 0 0 1 -2 -2 h 2 z"
@@ -616,7 +616,7 @@
          id="path90-8"
          class="ColorScheme-ButtonText"
          d="m 34 15 a 2 2 0 0 1 -2 2 v 1 c 1.68216 0 3 -1.31784 3 -3 z"
-         style="opacity:.3;fill:currentColor;fill-opacity:1" />
+         style="opacity:0.2;fill:currentColor;fill-opacity:1" />
       <path
          id="path1626-53-6"
          d="m 32 17 a 2 -2 0 0 0 2 -2 h -2 z"
@@ -653,7 +653,7 @@
          id="path95-3"
          class="ColorScheme-ButtonText"
          d="m 24 11 v 3 h 1 v -3 z"
-         style="opacity:.3;fill:currentColor;fill-opacity:1"
+         style="opacity:0.2;fill:currentColor;fill-opacity:1"
          inkscape:connector-curvature="0" />
       <path
          id="path1632-1"
@@ -676,7 +676,7 @@
          id="path99-06"
          class="ColorScheme-ButtonText"
          d="m 34 11 v 3 h 1 v -3 z"
-         style="opacity:.3;fill:currentColor;fill-opacity:1"
+         style="opacity:0.2;fill:currentColor;fill-opacity:1"
          inkscape:connector-curvature="0" />
       <path
          id="path1632-1-2"

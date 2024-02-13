@@ -117,7 +117,7 @@
        class="ColorScheme-Text"
        d="m19 50v-1h-4l-2-2e-5v1l2 2e-5h1z"
        fill-rule="evenodd"
-       opacity=".15"
+       opacity=".2"
        fill="currentColor" />
   </g>
   <g
@@ -135,7 +135,7 @@
        class="ColorScheme-Text"
        transform="rotate(90)"
        d="m49-51h1v32h-1z"
-       opacity=".15"
+       opacity=".2"
        fill="currentColor" />
   </g>
   <g
@@ -153,7 +153,7 @@
        class="ColorScheme-Text"
        d="m57 49h-6v1h6c0-1-2e-5 0 0-1z"
        fill-rule="evenodd"
-       opacity=".15"
+       opacity=".2"
        fill="currentColor" />
   </g>
   <g
@@ -171,7 +171,7 @@
        class="ColorScheme-Text"
        d="m67 6v1h-4l-2 2e-5v-1l2-2e-5h1z"
        fill-rule="evenodd"
-       opacity=".15"
+       opacity=".2"
        fill="currentColor" />
   </g>
   <g
@@ -189,7 +189,7 @@
        class="ColorScheme-Text"
        transform="matrix(0 -1 -1 0 0 0)"
        d="m-7-99h1v32h-1z"
-       opacity=".15"
+       opacity=".2"
        fill="currentColor" />
   </g>
   <g
@@ -207,7 +207,7 @@
        class="ColorScheme-Text"
        d="m105 7h-6v-1h6c0 1-2e-5 0 0 1z"
        fill-rule="evenodd"
-       opacity=".15"
+       opacity=".2"
        fill="currentColor" />
   </g>
   <path

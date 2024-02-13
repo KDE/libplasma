@@ -348,7 +348,7 @@
        style="fill:currentColor;fill-opacity:0.4;stroke:none"
        class="ColorScheme-ViewBackground" />
     <rect
-       style="opacity:0.25;fill:currentColor;fill-opacity:1;stroke:none"
+       style="opacity:0.20;fill:currentColor;fill-opacity:1;stroke:none"
        id="rect3986"
        width="80"
        height="1"
@@ -369,7 +369,7 @@
      height="40"
      width="1"
      id="sunken-left"
-     style="opacity:0.25;fill:currentColor;fill-opacity:1;stroke:none"
+     style="opacity:0.20;fill:currentColor;fill-opacity:1;stroke:none"
      inkscape:label="#rect4010"
      class="ColorScheme-Text" />
   <g
@@ -382,7 +382,7 @@
        height="2"
        width="1"
        id="rect4014"
-       style="opacity:0.25;fill:currentColor;fill-opacity:1;stroke:none"
+       style="opacity:0.20;fill:currentColor;fill-opacity:1;stroke:none"
        class="ColorScheme-Text" />
     <path
        sodipodi:end="4.712389"
@@ -393,7 +393,7 @@
        sodipodi:cy="-35"
        sodipodi:cx="150"
        id="path4016"
-       style="opacity:0.25;fill:currentColor;fill-opacity:1;stroke:none"
+       style="opacity:0.20;fill:currentColor;fill-opacity:1;stroke:none"
        sodipodi:type="arc"
        class="ColorScheme-Text" />
   </g>
@@ -406,13 +406,13 @@
      sodipodi:cy="-35"
      sodipodi:cx="150"
      id="sunken-bottomleft"
-     style="opacity:0.25;fill:currentColor;fill-opacity:1;stroke:none"
+     style="opacity:0.20;fill:currentColor;fill-opacity:1;stroke:none"
      sodipodi:type="arc"
      transform="matrix(1,0,0,-1,-93,-19)"
      inkscape:label="#path4018"
      class="ColorScheme-Text" />
   <rect
-     style="opacity:0.25;fill:currentColor;fill-opacity:1;stroke:none"
+     style="opacity:0.20;fill:currentColor;fill-opacity:1;stroke:none"
      id="sunken-bottom"
      width="80"
      height="1"
@@ -421,7 +421,7 @@
      inkscape:label="#rect4020"
      class="ColorScheme-Text" />
   <rect
-     style="opacity:0.25;fill:currentColor;fill-opacity:1;stroke:none"
+     style="opacity:0.20;fill:currentColor;fill-opacity:1;stroke:none"
      id="sunken-right"
      width="1"
      height="40"
@@ -436,7 +436,7 @@
      inkscape:label="#g4035">
     <rect
        transform="scale(-1,1)"
-       style="opacity:0.25;fill:currentColor;fill-opacity:1;stroke:none"
+       style="opacity:0.20;fill:currentColor;fill-opacity:1;stroke:none"
        id="rect4024"
        width="1"
        height="2"
@@ -446,7 +446,7 @@
     <path
        transform="matrix(-1,0,0,1,380,0)"
        sodipodi:type="arc"
-       style="opacity:0.25;fill:currentColor;fill-opacity:1;stroke:none"
+       style="opacity:0.20;fill:currentColor;fill-opacity:1;stroke:none"
        id="path4026"
        sodipodi:cx="150"
        sodipodi:cy="-35"
@@ -460,7 +460,7 @@
   <path
      transform="matrix(-1,0,0,-1,287,-19)"
      sodipodi:type="arc"
-     style="opacity:0.25;fill:currentColor;fill-opacity:1;stroke:none"
+     style="opacity:0.20;fill:currentColor;fill-opacity:1;stroke:none"
      id="sunken-bottomright"
      sodipodi:cx="150"
      sodipodi:cy="-35"

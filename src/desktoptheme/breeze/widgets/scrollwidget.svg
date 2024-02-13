@@ -2,21 +2,21 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="128"
    height="128"
    id="svg2396"
    sodipodi:version="0.32"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
    version="1.0"
-   sodipodi:docname="scrollwidget.svgz"
-   inkscape:output_extension="org.inkscape.output.svgz.inkscape">
+   sodipodi:docname="scrollwidget.svg"
+   inkscape:output_extension="org.inkscape.output.svgz.inkscape"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2398">
     <style
@@ -60,20 +60,29 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="82.003475"
-     inkscape:cy="144.5568"
+     inkscape:zoom="4"
+     inkscape:cx="60.125"
+     inkscape:cy="76.875"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="true"
      inkscape:window-width="1386"
      inkscape:window-height="787"
-     inkscape:window-x="215"
-     inkscape:window-y="150"
-     inkscape:window-maximized="0">
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
     <inkscape:grid
        type="xygrid"
-       id="grid3805" />
+       id="grid3805"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px"
+       visible="true" />
   </sodipodi:namedview>
   <metadata
      id="metadata2401">
@@ -100,7 +109,7 @@
          height="1"
          width="747.70868"
          id="rect2419"
-         style="opacity:0.15;fill:currentColor"
+         style="opacity:0.2;fill:currentColor"
          class="ColorScheme-Text" />
       <rect
          transform="scale(1,-1)"
@@ -155,7 +164,7 @@
        id="border-left">
       <rect
          class="ColorScheme-Text"
-         style="opacity:0.15;fill:currentColor"
+         style="opacity:0.2;fill:currentColor"
          id="rect4096"
          width="747.70868"
          height="1"
@@ -181,7 +190,7 @@
          height="1"
          width="747.70868"
          id="rect4104"
-         style="opacity:0.15;fill:currentColor"
+         style="opacity:0.2;fill:currentColor"
          class="ColorScheme-Text" />
       <rect
          transform="scale(1,-1)"
@@ -197,7 +206,7 @@
        id="border-right">
       <rect
          class="ColorScheme-Text"
-         style="opacity:0.15;fill:currentColor"
+         style="opacity:0.2;fill:currentColor"
          id="rect4112"
          width="747.70868"
          height="1"

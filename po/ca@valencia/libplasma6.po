@@ -1,17 +1,17 @@
 # Translation of libplasma6.po to Catalan (Valencian)
-# Copyright (C) 2014-2023 This_file_is_part_of_KDE
+# Copyright (C) 2014-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2018, 2019, 2020, 2022.
 # Empar Montoro Martín <montoro_mde@gva.es>, 2019.
 msgid ""
 msgstr ""
-"Project-Id-Version: plasma-framework\n"
+"Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-13 00:39+0000\n"
-"PO-Revision-Date: 2023-11-21 12:08+0100\n"
+"PO-Revision-Date: 2024-02-13 11:56+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -252,8 +252,8 @@ msgid ""
 "version."
 msgstr ""
 "Este giny s'ha escrit per a una versió antiga desconeguda de Plasma i no és "
-"compatible amb Plasma %1. Poseu-vos en contacte amb l'autor del giny per a "
-"una versió actualitzada."
+"compatible amb Plasma %1. Poseu-vos en contacte amb el seu autor per a una "
+"versió actualitzada."
 
 #: plasmaquick/appletquickitem.cpp:550
 #, kde-format
@@ -262,7 +262,7 @@ msgid ""
 "Please contact the widget's author for an updated version."
 msgstr ""
 "Este giny s'ha escrit per a Plasma %1 i no és compatible amb Plasma %2. "
-"Poseu-vos en contacte amb l'autor del giny per a una versió actualitzada."
+"Poseu-vos en contacte amb el seu autor per a una versió actualitzada."
 
 #: plasmaquick/appletquickitem.cpp:555
 #, kde-format
@@ -271,7 +271,7 @@ msgid ""
 "Please update Plasma in order to use the widget."
 msgstr ""
 "Este giny s'ha escrit per a Plasma %1 i no és compatible amb Plasma %2. "
-"Actualitzeu Plasma per tal d'utilitzar el giny."
+"Actualitzeu Plasma per tal d'emprar-lo."
 
 #: plasmaquick/appletquickitem.cpp:574
 #, kde-format
@@ -285,10 +285,9 @@ msgstr ""
 "S'ha produït un error en carregar la miniaplicació: el paquet no existix. %1"
 
 #: plasmaquick/configview.cpp:236
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "Configuració de %1"
+msgstr "%1 — Configuració de %2"
 
 #: plasmaquick/configview.cpp:237
 #, kde-format

@@ -970,7 +970,6 @@ void Dialog::setMainItem(QQuickItem *mainItem)
 
         if (mainItem) {
             mainItem->setParentItem(contentItem());
-            mainItem->setFlag(QQuickItem::ItemIsFocusScope, true);
 
             connect(mainItem, SIGNAL(widthChanged()), this, SLOT(slotMainItemSizeChanged()));
             connect(mainItem, SIGNAL(heightChanged()), this, SLOT(slotMainItemSizeChanged()));

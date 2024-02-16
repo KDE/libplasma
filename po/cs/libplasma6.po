@@ -272,10 +272,9 @@ msgid "Error loading Applet: package does not exist. %1"
 msgstr "Chyba při načítání appletu, balíček neexistuje. %1"
 
 #: plasmaquick/configview.cpp:236
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "Nastavení %1"
+msgstr ""
 
 #: plasmaquick/configview.cpp:237
 #, kde-format

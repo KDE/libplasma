@@ -763,14 +763,26 @@ void ContainmentItem::mousePressEvent(QMouseEvent *event)
     // even if the menu is executed synchronously, other events may be processed
     // by the qml incubator when plasma is loading, so we need to guard there
     if (m_contextMenu) {
-        m_contextMenu.data()->close();
-        return;
+        m_contextMenu->close();
+        for (const auto actions = m_contextMenu->actions(); auto action : actions) {
+            if (action->menu()) {
+                action->menu()->disconnect(m_contextMenu.get());
+            }
+        }
+        m_contextMenu->disconnect(m_containment);
+        m_contextMenu->clear();
     }
 
     const QString trigger = Plasma::ContainmentActions::eventToString(event);
     Plasma::ContainmentActions *plugin = m_containment->containmentActions().value(trigger);
 
-    if (!plugin || plugin->contextualActions().isEmpty()) {
+    if (!plugin) {
+        event->setAccepted(false);
+        return;
+    }
+
+    const auto contextualActions = plugin->contextualActions();
+    if (contextualActions.empty()) {
         event->setAccepted(false);
         return;
     }
@@ -778,8 +790,8 @@ void ContainmentItem::mousePressEvent(QMouseEvent *event)
     // the plugin can be a single action or a context menu
     // Don't have an action list? execute as single action
     // and set the event position as action data
-    if (plugin->contextualActions().length() == 1) {
-        QAction *action = plugin->contextualActions().at(0);
+    if (contextualActions.length() == 1) {
+        QAction *action = contextualActions.at(0);
         action->setData(event->pos());
         action->trigger();
         event->accept();
@@ -800,27 +812,26 @@ void ContainmentItem::mousePressEvent(QMouseEvent *event)
     }
     // qDebug() << "Invoking menu for applet" << applet;
 
-    QMenu *desktopMenu = new QMenu;
-
-    // this is a workaround where Qt now creates the menu widget
-    // in .exec before oxygen can polish it and set the following attribute
-    desktopMenu->setAttribute(Qt::WA_TranslucentBackground);
-    // end workaround
-
-    if (desktopMenu->winId()) {
-        desktopMenu->windowHandle()->setTransientParent(window());
+    if (!m_contextMenu) {
+        m_contextMenu.reset(new QMenu);
+        m_contextMenu->setAttribute(Qt::WA_TranslucentBackground);
+        // this is a workaround where Qt now creates the menu widget
+        // in .exec before oxygen can polish it and set the following attribute
+        // end workaround
+        if (m_contextMenu->winId()) {
+            m_contextMenu->windowHandle()->setTransientParent(window());
+        }
+        m_contextMenu->setAttribute(Qt::WA_DeleteOnClose, false);
+        KAcceleratorManager::manage(m_contextMenu.get());
     }
-    desktopMenu->setAttribute(Qt::WA_DeleteOnClose);
-
-    m_contextMenu = desktopMenu;
 
     Q_EMIT m_containment->contextualActionsAboutToShow();
 
     if (applet) {
         Q_EMIT applet->contextualActionsAboutToShow();
-        addAppletActions(desktopMenu, applet, event);
+        addAppletActions(m_contextMenu.get(), applet, event);
     } else {
-        addContainmentActions(desktopMenu, event);
+        addContainmentActions(m_contextMenu.get(), event);
     }
 
     // this is a workaround where Qt will fail to realize a mouse has been released
@@ -848,18 +859,18 @@ void ContainmentItem::mousePressEvent(QMouseEvent *event)
 
     QPoint pos = event->globalPosition().toPoint();
     if (window() && m_containment->containmentType() == Plasma::Containment::Type::Panel) {
-        desktopMenu->adjustSize();
+        m_contextMenu->adjustSize();
 
         if (QScreen *screen = window()->screen()) {
             const QRect geo = screen->availableGeometry();
 
-            pos = QPoint(qBound(geo.left(), pos.x(), geo.right() + 1 - desktopMenu->width()),
-                         qBound(geo.top(), pos.y(), geo.bottom() + 1 - desktopMenu->height()));
+            pos = QPoint(qBound(geo.left(), pos.x(), geo.right() + 1 - m_contextMenu->width()),
+                         qBound(geo.top(), pos.y(), geo.bottom() + 1 - m_contextMenu->height()));
         }
     }
 
-    if (desktopMenu->isEmpty()) {
-        delete desktopMenu;
+    if (m_contextMenu->isEmpty()) {
+        m_contextMenu.reset();
         event->accept();
         return;
     }
@@ -868,24 +879,22 @@ void ContainmentItem::mousePressEvent(QMouseEvent *event)
     const auto oldStatus = m_containment->status();
     m_containment->setStatus(Plasma::Types::RequiresAttentionStatus);
 
-    connect(desktopMenu, &QMenu::aboutToHide, m_containment, [this, oldStatus] {
+    connect(m_contextMenu.get(), &QMenu::aboutToHide, m_containment, [this, oldStatus] {
         m_containment->setStatus(oldStatus);
     });
 
-    KAcceleratorManager::manage(desktopMenu);
-
-    for (auto action : desktopMenu->actions()) {
+    for (auto action : m_contextMenu->actions()) {
         if (action->menu()) {
-            connect(action->menu(), &QMenu::aboutToShow, desktopMenu, [action, desktopMenu] {
+            connect(action->menu(), &QMenu::aboutToShow, m_contextMenu.get(), [this, action] {
                 if (action->menu()->windowHandle()) {
                     // Need to add the transient parent otherwise Qt will create a new toplevel
-                    action->menu()->windowHandle()->setTransientParent(desktopMenu->windowHandle());
+                    action->menu()->windowHandle()->setTransientParent(m_contextMenu->windowHandle());
                 }
             });
         }
     }
 
-    desktopMenu->popup(pos);
+    m_contextMenu->popup(pos);
     event->setAccepted(true);
 }
 

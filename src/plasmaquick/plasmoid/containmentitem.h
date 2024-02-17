@@ -145,7 +145,7 @@ private:
     WallpaperItem *m_wallpaperItem = nullptr;
     QList<QObject *> m_plasmoidItems;
     QPointer<Plasma::Containment> m_containment;
-    QPointer<QMenu> m_contextMenu;
+    std::unique_ptr<QMenu> m_contextMenu; // QTBUG-122409: Keep the context menu so menu actions will keep their accessible interfaces valid
     QPointer<DropMenu> m_dropMenu;
     int m_wheelDelta;
     friend class PlasmoidItem;

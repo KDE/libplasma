@@ -20,6 +20,8 @@ public:
     Qt::Edges activeEdges;
 
     bool updateMouseCursor(const QPointF &globalMousePos);
+    void unsetMouseCursor();
+
     Qt::Edges hitTest(const QPointF &pos);
 
 private:
@@ -67,6 +69,14 @@ bool WindowResizeHandler::eventFilter(QObject *watched, QEvent *event)
 {
     Q_UNUSED(watched)
     switch (event->type()) {
+    case QEvent::Enter: {
+        QEnterEvent *ee = static_cast<QEnterEvent *>(event);
+        d->updateMouseCursor(ee->globalPosition());
+        return false;
+    }
+    case QEvent::Leave:
+        d->unsetMouseCursor();
+        return false;
     case QEvent::MouseMove:
     case QEvent::MouseButtonPress:
     case QEvent::MouseButtonRelease: {
@@ -93,10 +103,7 @@ bool WindowResizeHandlerPrivate::updateMouseCursor(const QPointF &globalMousePos
 {
     Qt::Edges sides = hitTest(globalMousePos) & activeEdges;
     if (!sides) {
-        if (overridingCursor) {
-            window->unsetCursor();
-            overridingCursor = false;
-        }
+        unsetMouseCursor();
         return false;
     }
 
@@ -120,6 +127,14 @@ bool WindowResizeHandlerPrivate::updateMouseCursor(const QPointF &globalMousePos
 
     overridingCursor = true;
     return true;
+}
+
+void WindowResizeHandlerPrivate::unsetMouseCursor()
+{
+    if (overridingCursor) {
+        window->unsetCursor();
+        overridingCursor = false;
+    }
 }
 
 Qt::Edges WindowResizeHandlerPrivate::hitTest(const QPointF &pos)

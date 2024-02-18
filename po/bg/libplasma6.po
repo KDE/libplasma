@@ -1,17 +1,17 @@
-# SPDX-FileCopyrightText: 2022, 2023 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-13 00:39+0000\n"
-"PO-Revision-Date: 2023-11-22 11:37+0100\n"
+"PO-Revision-Date: 2024-02-17 13:10+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
-"Language-Team: C <kde-i18n-doc@kde.org>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
@@ -275,10 +275,9 @@ msgid "Error loading Applet: package does not exist. %1"
 msgstr "Грешка при зареждането на аплета: пакетът не съществува. %1"
 
 #: plasmaquick/configview.cpp:236
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "%1 Настройки"
+msgstr "%1 — %2 настройки"
 
 #: plasmaquick/configview.cpp:237
 #, kde-format

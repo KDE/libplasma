@@ -12,6 +12,7 @@
 
 #include <KConfigGroup>
 #include <KWindowSystem>
+#include <KX11Extras>
 
 #include "applet.h"
 #include "appletquickitem.h"
@@ -63,7 +64,11 @@ AppletPopup::AppletPopup()
     setAnimated(true);
     setFlags(flags() | Qt::Dialog);
 
-    PlasmaShellWaylandIntegration::get(this)->setRole(QtWayland::org_kde_plasma_surface::role::role_appletpopup);
+    if (KWindowSystem::isPlatformX11()) {
+        KX11Extras::setType(winId(), NET::AppletPopup);
+    } else {
+        PlasmaShellWaylandIntegration::get(this)->setRole(QtWayland::org_kde_plasma_surface::role::role_appletpopup);
+    }
 
     auto edgeForwarder = new EdgeEventForwarder(this);
     edgeForwarder->setMargins(padding());

@@ -13,8 +13,6 @@
 #include <QQuickRenderControl>
 #include <QQuickWindow>
 #include <QScreen>
-#include <QTimer>
-#include <QVersionNumber>
 
 #include <KAcceleratorManager>
 #include <optional>
@@ -470,20 +468,17 @@ void QMenuProxy::openInternal(QPoint pos)
         m_menu->windowHandle()->setTransientParent(parentItem->window());
 
         // Workaround for QTBUG-59044
-        auto ungrabMouseHack = [this]() {
-            QQuickItem *parentItem = this->parentItem();
-            if (parentItem && parentItem->window() && parentItem->window()->mouseGrabberItem()) {
-                parentItem->window()->mouseGrabberItem()->ungrabMouse();
-            }
-        };
-
         // pre 5.8.0 QQuickWindow code is "item->grabMouse(); sendEvent(item, mouseEvent)"
         // post 5.8.0 QQuickWindow code is sendEvent(item, mouseEvent); item->grabMouse()
-        if (QVersionNumber::fromString(QString::fromLatin1(qVersion())) > QVersionNumber(5, 8, 0)) {
-            QTimer::singleShot(0, this, ungrabMouseHack);
-        } else {
-            ungrabMouseHack();
-        }
+        QMetaObject::invokeMethod(
+            this,
+            [this]() {
+                QQuickItem *parentItem = this->parentItem();
+                if (parentItem && parentItem->window() && parentItem->window()->mouseGrabberItem()) {
+                    parentItem->window()->mouseGrabberItem()->ungrabMouse();
+                }
+            },
+            Qt::QueuedConnection);
         // end workaround
     }
 

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Sergiu Bivol <sergiu@cip.md>, 2014, 2015, 2020, 2021, 2022, 2023.
+# Sergiu Bivol <sergiu@cip.md>, 2014, 2015, 2020, 2021, 2022, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-13 00:39+0000\n"
-"PO-Revision-Date: 2023-04-10 19:07+0100\n"
+"PO-Revision-Date: 2024-02-24 18:10+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -53,7 +53,7 @@ msgstr "Caută"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "Șterge căutarea"
 
 #: plasma/applet.cpp:300
 #, kde-format
@@ -228,12 +228,12 @@ msgstr "Serviciu nevalid (nul), nu se pot efectua operații de niciun fel."
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr ""
+msgstr "Elementul rădăcină al %1 trebuie să aibă tipul ContainmentItem"
 
 #: plasmaquick/appletquickitem.cpp:524
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
-msgstr ""
+msgstr "Elementul rădăcină al %1 trebuie să aibă tipul PlasmoidItem"
 
 #: plasmaquick/appletquickitem.cpp:531
 #, kde-format
@@ -247,6 +247,9 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"Acest control grafic a fost scris pentru o versiune Plasma necunoscută și nu "
+"e compatibil cu Plasma %1. Contactați autorul controlului grafic pentru o "
+"versiune mai nouă."
 
 #: plasmaquick/appletquickitem.cpp:550
 #, kde-format
@@ -254,6 +257,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"Acest control grafic a fost scris pentru Plasma %1 și nu e compatibil cu "
+"Plasma %2. Contactați autorul controlului grafic pentru o versiune mai nouă."
 
 #: plasmaquick/appletquickitem.cpp:555
 #, kde-format
@@ -261,6 +266,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"Acest control grafic a fost scris pentru Plasma %1 și nu e compatibil cu "
+"Plasma %2. Actualizați Plasma pentru a folosi controlul grafic."
 
 #: plasmaquick/appletquickitem.cpp:574
 #, kde-format
@@ -268,16 +275,14 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Eroare la încărcarea fișierului QML: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:577
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
-msgstr "Eroare la încărcarea miniaplicației: pachet inexistent. %1"
+msgstr "Eroare la încărcarea miniaplicației: pachetul nu există. %1"
 
 #: plasmaquick/configview.cpp:236
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "Configurări %1"
+msgstr "%1 — Configurări %2"
 
 #: plasmaquick/configview.cpp:237
 #, kde-format

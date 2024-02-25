@@ -28,6 +28,7 @@
                 "Name[pl]": "Projekt Tlenu",
                 "Name[pt]": "O Projecto Oxygen",
                 "Name[pt_BR]": "O projeto Oxygen",
+                "Name[ro]": "Proiectul Oxygen",
                 "Name[ru]": "Проект Oxygen",
                 "Name[sl]": "Projekt kisik",
                 "Name[sv]": "Oxygen-projektet",

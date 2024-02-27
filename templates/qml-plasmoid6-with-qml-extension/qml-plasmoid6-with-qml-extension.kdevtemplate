@@ -1,5 +1,6 @@
 [General]
 Name=Plasma QML Applet with QML extension (Qt6)
+Name[be]=Аплет QML для Plasma з пашырэннем QML (Qt6)
 Name[bg]=QML аплет на Plasma с QML разширение (Qt6)
 Name[ca]=Miniaplicació QML del Plasma amb una extensió QML (Qt6)
 Name[ca@valencia]=Miniaplicació en QML de Plasma amb una extensió en QML (Qt6)

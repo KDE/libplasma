@@ -18,7 +18,6 @@
 
 // X11
 #if HAVE_XCB_COMPOSITE
-#include <private/qtx11extras_p.h>
 #include <xcb/composite.h>
 #if HAVE_GLX
 #include <GL/glx.h>
@@ -55,6 +54,7 @@ private:
 };
 
 #if HAVE_XCB_COMPOSITE
+
 #if HAVE_GLX
 class DiscardGlxPixmapRunnable : public QRunnable
 {
@@ -79,7 +79,7 @@ DiscardGlxPixmapRunnable::DiscardGlxPixmapRunnable(uint texture, QFunctionPointe
 void DiscardGlxPixmapRunnable::run()
 {
     if (m_glxPixmap != XCB_PIXMAP_NONE) {
-        Display *d = QX11Info::display();
+        Display *d = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->display();
         ((glXReleaseTexImageEXT_func)(m_releaseTexImage))(d, m_glxPixmap, GLX_FRONT_LEFT_EXT);
         glXDestroyPixmap(d, m_glxPixmap);
         glDeleteTextures(1, &m_texture);
@@ -140,7 +140,7 @@ WindowThumbnail::WindowThumbnail(QQuickItem *parent)
         if (m_xcb) {
             gui->installNativeEventFilter(this);
 #if HAVE_XCB_COMPOSITE
-            xcb_connection_t *c = QX11Info::connection();
+            xcb_connection_t *c = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->connection();
             xcb_prefetch_extension_data(c, &xcb_composite_id);
             const auto *compositeReply = xcb_get_extension_data(c, &xcb_composite_id);
             m_composite = (compositeReply && compositeReply->present);
@@ -364,11 +364,15 @@ bool WindowThumbnail::nativeEventFilter(const QByteArray &eventType, void *messa
     } else if (responseType == XCB_CONFIGURE_NOTIFY) {
         if (reinterpret_cast<xcb_configure_notify_event_t *>(event)->window == m_winId) {
             releaseResources();
+            if (m_pixmap) {
+                xcb_free_pixmap(qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->connection(), m_pixmap);
+                m_pixmap = XCB_PIXMAP_NONE;
+            }
             m_damaged = true;
             update();
         }
     } else if (responseType == XCB_MAP_NOTIFY) {
-        if (reinterpret_cast<xcb_configure_notify_event_t *>(event)->window == m_winId) {
+        if (reinterpret_cast<xcb_map_notify_event_t *>(event)->window == m_winId) {
             releaseResources();
             m_damaged = true;
             update();
@@ -407,7 +411,7 @@ bool WindowThumbnail::windowToTextureGLX(WindowTextureProvider *textureProvider)
             return false;
         }
         if (m_glxPixmap == XCB_PIXMAP_NONE) {
-            xcb_connection_t *c = QX11Info::connection();
+            xcb_connection_t *c = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->connection();
             auto attrCookie = xcb_get_window_attributes_unchecked(c, m_winId);
             auto geometryCookie = xcb_get_geometry_unchecked(c, m_pixmap);
             QScopedPointer<xcb_get_window_attributes_reply_t, QScopedPointerPodDeleter> attr(xcb_get_window_attributes_reply(c, attrCookie, nullptr));
@@ -455,7 +459,7 @@ bool WindowThumbnail::xcbWindowToTextureEGL(WindowTextureProvider *textureProvid
             return false;
         }
         if (m_image == EGL_NO_IMAGE_KHR) {
-            xcb_connection_t *c = QX11Info::connection();
+            xcb_connection_t *c = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->connection();
             auto geometryCookie = xcb_get_geometry_unchecked(c, m_pixmap);
 
             const EGLint attribs[] = {EGL_IMAGE_PRESERVED_KHR, EGL_TRUE, EGL_NONE};
@@ -559,7 +563,7 @@ xcb_pixmap_t WindowThumbnail::pixmapForWindow()
         return XCB_PIXMAP_NONE;
     }
 
-    xcb_connection_t *c = QX11Info::connection();
+    xcb_connection_t *c = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->connection();
     xcb_pixmap_t pix = xcb_generate_id(c);
     auto cookie = xcb_composite_name_window_pixmap_checked(c, m_winId, pix);
     QScopedPointer<xcb_generic_error_t, QScopedPointerPodDeleter> error(xcb_request_check(c, cookie));
@@ -573,7 +577,8 @@ xcb_pixmap_t WindowThumbnail::pixmapForWindow()
 void WindowThumbnail::resolveGLXFunctions()
 {
     auto *context = static_cast<QOpenGLContext *>(window()->rendererInterface()->getResource(window(), QSGRendererInterface::OpenGLContextResource));
-    QList<QByteArray> extensions = QByteArray(glXQueryExtensionsString(QX11Info::display(), QX11Info::appScreen())).split(' ');
+    auto display = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->display();
+    QList<QByteArray> extensions = QByteArray(glXQueryExtensionsString(display, DefaultScreen(display))).split(' ');
     if (extensions.contains(QByteArrayLiteral("GLX_EXT_texture_from_pixmap"))) {
         m_bindTexImage = context->getProcAddress(QByteArrayLiteral("glXBindTexImageEXT"));
         m_releaseTexImage = context->getProcAddress(QByteArrayLiteral("glXReleaseTexImageEXT"));
@@ -585,7 +590,7 @@ void WindowThumbnail::resolveGLXFunctions()
 
 void WindowThumbnail::bindGLXTexture()
 {
-    Display *d = QX11Info::display();
+    Display *d = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->display();
     ((glXReleaseTexImageEXT_func)(m_releaseTexImage))(d, m_glxPixmap, GLX_FRONT_LEFT_EXT);
     ((glXBindTexImageEXT_func)(m_bindTexImage))(d, m_glxPixmap, GLX_FRONT_LEFT_EXT, nullptr);
     resetDamaged();
@@ -599,7 +604,7 @@ struct FbConfigInfo {
 struct GlxGlobalData {
     GlxGlobalData()
     {
-        xcb_connection_t *const conn = QX11Info::connection();
+        xcb_connection_t *const conn = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->connection();
 
         // Fetch the render pict formats
         reply = xcb_render_query_pict_formats_reply(conn, xcb_render_query_pict_formats_unchecked(conn), nullptr);
@@ -676,7 +681,7 @@ static int visualDepth(xcb_visualid_t visual)
 
 FbConfigInfo *getConfig(xcb_visualid_t visual)
 {
-    Display *dpy = QX11Info::display();
+    Display *dpy = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->display();
     const xcb_render_pictformat_t format = findPictFormat(visual);
     const xcb_render_directformat_t *direct = findPictFormatInfo(format);
 
@@ -726,7 +731,7 @@ FbConfigInfo *getConfig(xcb_visualid_t visual)
     }
 
     int count = 0;
-    GLXFBConfig *configs = glXChooseFBConfig(dpy, QX11Info::appScreen(), attribs, &count);
+    GLXFBConfig *configs = glXChooseFBConfig(dpy, DefaultScreen(dpy), attribs, &count);
     if (count < 1) {
         return nullptr;
     }
@@ -853,7 +858,7 @@ bool WindowThumbnail::loadGLXTexture()
         XCB_NONE};
     /* clang-format on */
 
-    m_glxPixmap = glXCreatePixmap(QX11Info::display(), info->fbConfig, m_pixmap, attrs);
+    m_glxPixmap = glXCreatePixmap(qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->display(), info->fbConfig, m_pixmap, attrs);
 
     return true;
 }
@@ -868,7 +873,7 @@ void WindowThumbnail::resetDamaged()
     if (m_damage == XCB_NONE) {
         return;
     }
-    xcb_damage_subtract(QX11Info::connection(), m_damage, XCB_NONE, XCB_NONE);
+    xcb_damage_subtract(qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->connection(), m_damage, XCB_NONE, XCB_NONE);
 #endif
 }
 
@@ -878,7 +883,7 @@ void WindowThumbnail::stopRedirecting()
         return;
     }
 #if HAVE_XCB_COMPOSITE
-    xcb_connection_t *c = QX11Info::connection();
+    xcb_connection_t *c = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->connection();
     if (m_pixmap != XCB_PIXMAP_NONE) {
         xcb_free_pixmap(c, m_pixmap);
         m_pixmap = XCB_PIXMAP_NONE;
@@ -907,7 +912,7 @@ bool WindowThumbnail::startRedirecting()
     if (m_winId == XCB_WINDOW_NONE) {
         return false;
     }
-    xcb_connection_t *c = QX11Info::connection();
+    xcb_connection_t *c = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()->connection();
 
     // need to get the window attributes for the existing event mask
     const auto attribsCookie = xcb_get_window_attributes_unchecked(c, m_winId);

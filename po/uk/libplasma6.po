@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-13 00:39+0000\n"
+"POT-Creation-Date: 2024-03-02 00:38+0000\n"
 "PO-Revision-Date: 2024-02-13 22:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -236,12 +236,12 @@ msgstr "Кореневий запис %1 має належати до типу C
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "Кореневий запис %1 має належати до типу PlasmoidItem"
 
-#: plasmaquick/appletquickitem.cpp:531
+#: plasmaquick/appletquickitem.cpp:532
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Невідомий аплет"
 
-#: plasmaquick/appletquickitem.cpp:544
+#: plasmaquick/appletquickitem.cpp:545
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -252,7 +252,13 @@ msgstr ""
 "несумісним із Плазмою %1. Будь ласка, зв'яжіться з автором віджета, щоб "
 "отримати оновлену версію."
 
-#: plasmaquick/appletquickitem.cpp:550
+#: plasmaquick/appletquickitem.cpp:548 plasmaquick/appletquickitem.cpp:555
+#: plasmaquick/appletquickitem.cpp:561
+#, kde-format
+msgid "%1 is not compatible with Plasma %2"
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -261,7 +267,7 @@ msgstr ""
 "Цей віджет було написано для Плазми %1, він є несумісним із Плазмою %2. Будь "
 "ласка, зв'яжіться з автором віджета, щоб отримати оновлену версію."
 
-#: plasmaquick/appletquickitem.cpp:555
+#: plasmaquick/appletquickitem.cpp:558
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -270,12 +276,17 @@ msgstr ""
 "Цей віджет було написано для Плазми %1, він є несумісним із Плазмою %2. Будь "
 "ласка, оновіть Плазму, щоб користуватися цим віджетом."
 
-#: plasmaquick/appletquickitem.cpp:574
+#: plasmaquick/appletquickitem.cpp:567
+#, kde-format
+msgid "Sorry! There was an error loading %1."
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:584
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Помилка під час завантаження файла QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:577
+#: plasmaquick/appletquickitem.cpp:587
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Помилка під час спроби завантажити аплет: пакунка не існує. %1"

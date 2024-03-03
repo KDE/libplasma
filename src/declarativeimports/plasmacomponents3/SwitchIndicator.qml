@@ -72,7 +72,9 @@ Item {
 
         Behavior on x {
             enabled: !root.control.down
-            XAnimator {
+            // Can't use XAnimator, since it doesn't update x during the animation, so the active
+            // background is not animated.
+            NumberAnimation {
                 duration: Kirigami.Units.shortDuration
                 easing.type: Easing.InOutQuad
             }

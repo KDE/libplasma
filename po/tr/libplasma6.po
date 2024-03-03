@@ -4,13 +4,13 @@
 # Volkan, 2013.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2015, 2017, 2022.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-10 02:48+0000\n"
-"PO-Revision-Date: 2023-11-21 11:41+0300\n"
+"PO-Revision-Date: 2024-03-02 10:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -83,7 +83,7 @@ msgstr "Düzenleme Kipine Gir"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "%1 Ögesini Yapılandır..."
+msgstr "%1 Uygulamacığını Yapılandır…"
 
 #: plasma/containment.cpp:112 plasma/corona.cpp:365
 #, kde-format
@@ -114,7 +114,7 @@ msgid ""
 "files are sparse files, so the maximum size may not be used. Setting a "
 "larger size is therefore often quite safe."
 msgstr ""
-"Kilobyte türünden diskteki Tema önbelleğinin en büyük boyutu. Bu dosyalar "
+"Kilobyte türünden diskteki tema önbelleğinin en büyük boyutu. Bu dosyalar "
 "diskte tanımlanan boyutu hemen kullanmadıklarından en büyük boyut "
 "kullanılmıyor olabilir. Genellikle daha büyük boyut atamak güvenli sayılır."
 
@@ -127,7 +127,7 @@ msgstr "%2 araç takımı için gereken %1 paketi açılamadı."
 #: plasma/private/applet_p.cpp:146
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "Alternatifleri Göster..."
+msgstr "Alternatifleri Göster…"
 
 #: plasma/private/applet_p.cpp:253
 #, kde-format
@@ -137,7 +137,7 @@ msgstr "Araç Takımı Kaldırıldı"
 #: plasma/private/applet_p.cpp:254
 #, kde-format
 msgid "The widget \"%1\" has been removed."
-msgstr "\"%1\" araç takımı kaldırıldı."
+msgstr "‘%1’ araç takımı kaldırıldı."
 
 #: plasma/private/applet_p.cpp:258
 #, kde-format
@@ -192,7 +192,7 @@ msgstr "Etkinlik Ayarları"
 #: plasma/private/containment_p.cpp:78
 #, kde-format
 msgid "Add Widgets..."
-msgstr "Araç Takımları Ekle..."
+msgstr "Araç Takımları Ekle…"
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -249,7 +249,7 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
-"Bu araç takımı Plasma'nın bilinmeyen eski bir sürümü için yazıldı ve Plasma "
+"Bu araç takımı Plasma’nın bilinmeyen eski bir sürümü için yazıldı ve Plasma "
 "%1 ile uyumlu değil. Güncel bir sürüm için araç takımının yazarıyla "
 "iletişime geçin."
 
@@ -269,7 +269,7 @@ msgid ""
 "Please update Plasma in order to use the widget."
 msgstr ""
 "Bu araç takımı Plasma %1 için yazıldı ve Plasma %2 ile uyumlu değil. Araç "
-"takımını kullanmak için lütfen Plasma'yı güncelleştirin."
+"takımını kullanmak için lütfen Plasma’yı güncelleyin."
 
 #: plasmaquick/appletquickitem.cpp:574
 #, kde-format

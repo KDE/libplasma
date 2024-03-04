@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-02 00:38+0000\n"
-"PO-Revision-Date: 2024-01-03 14:13+0100\n"
+"PO-Revision-Date: 2024-03-03 22:23+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -256,7 +256,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "A(z) %1 nem kompatibilis a Plasma %2 verzióval"
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
@@ -279,7 +279,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Hiba történt a(z) %1 betöltésekor."
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format
@@ -292,10 +292,9 @@ msgid "Error loading Applet: package does not exist. %1"
 msgstr "Hiba a kisalkalmazás betöltésekor: a csomag nem létezik. %1"
 
 #: plasmaquick/configview.cpp:236
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "Beállítások: %1"
+msgstr "%1 — %2 beállításai"
 
 #: plasmaquick/configview.cpp:237
 #, kde-format

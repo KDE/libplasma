@@ -527,6 +527,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
 
     if (!item || !qmlObject->mainComponent() || qmlObject->mainComponent()->isError() || applet->failedToLaunch()) {
         QString reason;
+        QString compactReason;
         QJsonObject errorData;
         errorData[QStringLiteral("appletName")] = i18n("Unknown Applet");
         errorData[QStringLiteral("isDebugMode")] = qEnvironmentVariableIntValue("PLASMA_ENABLE_QML_DEBUG") != 0;
@@ -544,22 +545,31 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
                 "This Widget was written for an unknown older version of Plasma and is not compatible with Plasma %1. Please contact the widget's author for "
                 "an updated version.",
                 plasma_version_major);
+            compactReason = i18n("%1 is not compatible with Plasma %2", applet->pluginMetaData().name(), plasma_version_major);
             versionMismatch = true;
         } else if (version.majorVersion() < plasma_version_major) {
             reason =
                 i18n("This Widget was written for Plasma %1 and is not compatible with Plasma %2. Please contact the widget's author for an updated version.",
                      version.majorVersion(),
                      plasma_version_major);
+            compactReason = i18n("%1 is not compatible with Plasma %2", applet->pluginMetaData().name(), plasma_version_major);
             versionMismatch = true;
         } else if (version.majorVersion() > plasma_version_major || version.minorVersion() > PLASMA_VERSION_MINOR) {
             reason = i18n("This Widget was written for Plasma %1 and is not compatible with Plasma %2. Please update Plasma in order to use the widget.",
                           versionString,
                           plasma_version_major);
+            compactReason = i18n("%1 is not compatible with Plasma %2", applet->pluginMetaData().name(), plasma_version_major);
             versionMismatch = true;
         } else if (applet->failedToLaunch()) {
             reason = applet->launchErrorMessage();
+            compactReason = reason;
+        } else {
+            compactReason = i18n("Sorry! There was an error loading %1.", applet->pluginMetaData().name());
         }
         errorData[QStringLiteral("errors")] = QJsonArray::fromStringList({reason});
+        if (compactReason != QString()) {
+            errorData[QStringLiteral("compactError")] = compactReason;
+        }
         if (applet->kPackage().isValid()) {
             if (!versionMismatch) {
                 const auto errors = qmlObject->mainComponent()->errors();

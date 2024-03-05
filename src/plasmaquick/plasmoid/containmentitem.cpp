@@ -6,6 +6,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <algorithm>
+
 #include "containmentitem.h"
 #include "dropmenu.h"
 #include "private/appletquickitem_p.h"
@@ -234,94 +236,95 @@ QPointF ContainmentItem::adjustToAvailableScreenRegion(int x, int y, int w, int 
                      qBound(reg.boundingRect().top(), y, reg.boundingRect().bottom() + 1 - h),
                      w,
                      h);
-    const QRectF ar = availableScreenRect();
     QRect tempRect(rect);
 
-    // in the case we are in the topleft quadrant
-    // * see if the passed rect is completely in the region, if yes, return
-    // * otherwise, try to move it horizontally to the screenrect x
-    // * if now fits, return
-    // * if fail, move vertically
-    // * as last resort, move horizontally and vertically
+    // To place the rectangle, the idea is the following:
+    // Each QRegion is the union of some disjoint rectangles. We can imagine
+    // drawing a vertical line at the left and right sides of each rectangle, and
+    // an horizontal line at the top and bottom sides of each rectangle. We thus
+    // construct a grid (or partition) where each cell is either entirely within
+    // the QRegion or entirely outside.
+    // We now start "snapping" the given rectangle to all intersections of horizontal
+    // and vertical lines, until we find a place where the rectangle fits entirely.
+    // We test by snapping at all possible corners of the rectangle, to test
+    // all possibilities.
+    // We do this beginning from the closes grid element to the rect, and then
+    // we increase the distance. This allows us to find the smallest distance we
+    // have to displace the rectangle to fit in the QRegion.
+    // Note that we employ some performance optimizations, such as only left-snapping
+    // to vertical lines drawn from left-corners of rectangles, only right-snapping
+    // to vertical lines drawn from right-corners, and so on.
 
-    // top left corner
-    if (rect.center().x() <= ar.center().x() && rect.center().y() <= ar.center().y()) {
-        // QRegion::contains doesn't do what it would suggest, so do reg.intersected(rect) != rect instead
-        if (reg.intersected(rect) != rect) {
-            tempRect = QRect(qMax(rect.left(), (int)ar.left()), rect.top(), w, h);
-            if (reg.intersected(tempRect) == tempRect) {
-                return tempRect.topLeft();
-            }
+    // We start by reading the left, right, top and bottom values of all QRegion rects.
+    QSet<int> leftAlignedGrid = {rect.left()};
+    QSet<int> rightAlignedGrid = {rect.right()};
+    QSet<int> topAlignedGrid = {rect.top()};
+    QSet<int> bottomAlignedGrid = {rect.bottom()};
+    for (QRegion::const_iterator it = reg.begin(); it != reg.end(); ++it) {
+        QRect r = *it;
+        leftAlignedGrid.insert(r.left());
+        rightAlignedGrid.insert(r.right());
+        topAlignedGrid.insert(r.top());
+        bottomAlignedGrid.insert(r.bottom());
+    }
 
-            tempRect = QRect(rect.left(), qMax(rect.top(), (int)ar.top()), w, h);
-            if (reg.intersected(tempRect) == tempRect) {
-                return tempRect.topLeft();
-            }
-
-            tempRect = QRect(qMax(rect.left(), (int)ar.left()), qMax(rect.top(), (int)ar.top()), w, h);
-            return tempRect.topLeft();
+    // We then join them together, sorting them so that they
+    // are from the closes to the furthest away from the rectangle.
+    QList<int> horizontalGrid = (leftAlignedGrid + rightAlignedGrid).values();
+    std::sort(horizontalGrid.begin(), horizontalGrid.end(), [&leftAlignedGrid, &rightAlignedGrid, rect](int a, int b) {
+        if (leftAlignedGrid.contains(a)) {
+            a = std::abs(a - rect.left());
         } else {
-            return rect.topLeft();
+            a = std::abs(a - rect.right());
         }
-
-        // bottom left corner
-    } else if (rect.center().x() <= ar.center().x() && rect.center().y() > ar.center().y()) {
-        if (reg.intersected(rect) != rect) {
-            tempRect = QRect(qMax(rect.left(), (int)ar.left()), rect.top(), w, h);
-            if (reg.intersected(tempRect) == tempRect) {
-                return tempRect.topLeft();
-            }
-
-            tempRect = QRect(rect.left(), qMin(rect.top(), (int)(ar.bottom() + 1 - h)), w, h);
-            if (reg.intersected(tempRect) == tempRect) {
-                return tempRect.topLeft();
-            }
-
-            tempRect = QRect(qMax(rect.left(), (int)ar.left()), qMin(rect.top(), (int)(ar.bottom() + 1 - h)), w, h);
-            return tempRect.topLeft();
+        if (leftAlignedGrid.contains(b)) {
+            b = std::abs(b - rect.left());
         } else {
-            return rect.topLeft();
+            b = std::abs(b - rect.right());
         }
-
-        // top right corner
-    } else if (rect.center().x() > ar.center().x() && rect.center().y() <= ar.center().y()) {
-        if (reg.intersected(rect) != rect) {
-            tempRect = QRect(qMin(rect.left(), (int)(ar.right() + 1 - w)), rect.top(), w, h);
-            if (reg.intersected(tempRect) == tempRect) {
-                return tempRect.topLeft();
-            }
-
-            tempRect = QRect(rect.left(), qMax(rect.top(), (int)ar.top()), w, h);
-            if (reg.intersected(tempRect) == tempRect) {
-                return tempRect.topLeft();
-            }
-
-            tempRect = QRect(qMin(rect.left(), (int)(ar.right() + 1 - w)), qMax(rect.top(), (int)ar.top()), w, h);
-            return tempRect.topLeft();
+        return a < b;
+    });
+    QList<int> verticalGrid = (topAlignedGrid + bottomAlignedGrid).values();
+    std::sort(verticalGrid.begin(), verticalGrid.end(), [&topAlignedGrid, &bottomAlignedGrid, rect](int a, int b) {
+        if (topAlignedGrid.contains(a)) {
+            a = std::abs(a - rect.top());
         } else {
-            return rect.topLeft();
+            a = std::abs(a - rect.bottom());
         }
-
-        // bottom right corner
-    } else if (rect.center().x() > ar.center().x() && rect.center().y() > ar.center().y()) {
-        if (reg.intersected(rect) != rect) {
-            tempRect = QRect(qMin(rect.left(), (int)(ar.right() + 1 - w)), rect.top(), w, h);
-            if (reg.intersected(tempRect) == tempRect) {
-                return tempRect.topLeft();
-            }
-
-            tempRect = QRect(rect.left(), qMin(rect.top(), (int)(ar.bottom() + 1 - h)), w, h);
-            if (reg.intersected(tempRect) == tempRect) {
-                return tempRect.topLeft();
-            }
-
-            tempRect = QRect(qMin(rect.left(), (int)(ar.right() + 1 - w)), qMin(rect.top(), (int)(ar.bottom() + 1 - h)), w, h);
-            return tempRect.topLeft();
+        if (topAlignedGrid.contains(b)) {
+            b = std::abs(b - rect.top());
         } else {
-            return rect.topLeft();
+            b = std::abs(b - rect.bottom());
+        }
+        return a < b;
+    });
+
+    // We then move the rect to each grid intersection, and check
+    // if the rect fits in the QRegion. If so, we return it.
+    for (int horizontal : horizontalGrid) {
+        for (int vertical : verticalGrid) {
+            // Technically speaking a value could be in both left/right or
+            // top/bottom-aligned lists and we should check both possibilities;
+            // Instead, I'm only checking the first one to keep the code simple,
+            // since such occourrence is unlikely.
+            if (leftAlignedGrid.contains(horizontal)) {
+                tempRect.moveLeft(horizontal);
+            } else {
+                tempRect.moveRight(horizontal);
+            }
+            if (topAlignedGrid.contains(vertical)) {
+                tempRect.moveTop(vertical);
+            } else {
+                tempRect.moveBottom(vertical);
+            }
+            if (reg.intersected(tempRect) == tempRect) {
+                return tempRect.topLeft();
+            }
         }
     }
 
+    // The rectangle can't fit in the QRegion in any possible way. We
+    // return the given value.
     return rect.topLeft();
 }
 

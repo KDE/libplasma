@@ -106,15 +106,6 @@ void PlasmoidItem::init()
         bool activate = !(isExpanded() && isActivationTogglesExpanded());
 
         setExpanded(activate);
-
-        // Expand any widget and set it focused
-        if (activate) {
-            if (QQuickItem *i = qobject_cast<QQuickItem *>(fullRepresentationItem())) {
-                // Bug 372476: never pull focus away from it, only setFocus(true)
-                i->setFocus(true, Qt::ShortcutFocusReason);
-            }
-            return;
-        }
     });
 
     connect(applet, &Plasma::Applet::destroyedChanged, this, &PlasmoidItem::destroyedChanged);

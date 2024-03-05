@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(PROJECT_VERSION "6.0.0")
+set(PROJECT_VERSION "6.0.1")
 project(plasma-framework VERSION ${PROJECT_VERSION})
 
 set(QT_MIN_VERSION "6.6.0")

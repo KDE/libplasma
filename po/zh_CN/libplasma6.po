@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-10 02:48+0000\n"
+"POT-Creation-Date: 2024-03-05 02:20+0000\n"
 "PO-Revision-Date: 2024-01-06 03:32\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -231,12 +231,12 @@ msgstr "%1 的根项目必须是 ContainmentItem 类型"
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "%1 的根项目必须是 PlasmoidItem 类型"
 
-#: plasmaquick/appletquickitem.cpp:531
+#: plasmaquick/appletquickitem.cpp:532
 #, kde-format
 msgid "Unknown Applet"
 msgstr "未知小程序"
 
-#: plasmaquick/appletquickitem.cpp:544
+#: plasmaquick/appletquickitem.cpp:545
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -246,7 +246,13 @@ msgstr ""
 "此挂件是为未知的旧版 Plasma 编写的，它与 Plasma %1 不兼容。请联系挂件的作者获"
 "取新版挂件。"
 
-#: plasmaquick/appletquickitem.cpp:550
+#: plasmaquick/appletquickitem.cpp:548 plasmaquick/appletquickitem.cpp:555
+#: plasmaquick/appletquickitem.cpp:561
+#, kde-format
+msgid "%1 is not compatible with Plasma %2"
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -255,7 +261,7 @@ msgstr ""
 "此挂件是为 Plasma %1 编写的，它与 Plasma %2 不兼容。请联系挂件的作者获取新版"
 "挂件。"
 
-#: plasmaquick/appletquickitem.cpp:555
+#: plasmaquick/appletquickitem.cpp:558
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -264,12 +270,17 @@ msgstr ""
 "此挂件是为 Plasma %1 编写的，它与 Plasma %2 不兼容。请升级 Plasma 桌面环境以"
 "使用此挂件。"
 
-#: plasmaquick/appletquickitem.cpp:574
+#: plasmaquick/appletquickitem.cpp:567
+#, kde-format
+msgid "Sorry! There was an error loading %1."
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:584
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "加载 QML 文件出错：%1 %2"
 
-#: plasmaquick/appletquickitem.cpp:577
+#: plasmaquick/appletquickitem.cpp:587
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "加载小程序出错：软件包不存在。%1"

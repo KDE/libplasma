@@ -107,14 +107,6 @@ void PlasmoidItem::init()
 
         setExpanded(activate);
 
-        // Expand any widget and set it focused
-        if (activate) {
-            if (QQuickItem *i = qobject_cast<QQuickItem *>(fullRepresentationItem())) {
-                // Bug 372476: never pull focus away from it, only setFocus(true)
-                i->setFocus(true, Qt::ShortcutFocusReason);
-            }
-            return;
-        }
         // Focus any container, such as panels
         if (Plasma::Containment *y = qobject_cast<Plasma::Containment *>(applet)) {
             y->setStatus(Plasma::Types::AcceptingInputStatus);

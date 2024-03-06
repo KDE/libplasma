@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-02 00:38+0000\n"
-"PO-Revision-Date: 2024-01-26 09:00+0200\n"
-"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
+"POT-Creation-Date: 2024-03-06 00:39+0000\n"
+"PO-Revision-Date: 2024-03-04 16:03+0200\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -256,7 +256,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "„%1“ nav saderīgs ar „Plasma“ %2"
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
@@ -279,7 +279,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Diemžēl, ielādējot „%1“, radās kļūda."
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format
@@ -292,61 +292,60 @@ msgid "Error loading Applet: package does not exist. %1"
 msgstr "Kļūda, ielādējot lietotni: pakotne neeksistē. %1"
 
 #: plasmaquick/configview.cpp:236
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "„%1“ iestatījumi"
+msgstr "„%1“ — „%2“ Iestatījumi"
 
 #: plasmaquick/configview.cpp:237
 #, kde-format
 msgid "%1 Settings"
 msgstr "„%1“ iestatījumi"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:540
+#: plasmaquick/plasmoid/containmentitem.cpp:543
 #, kde-format
 msgid "Plasma Package"
 msgstr "„Plasma“ pakotne"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:544
+#: plasmaquick/plasmoid/containmentitem.cpp:547
 #, kde-format
 msgid "Install"
 msgstr "Instalēt"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:555
+#: plasmaquick/plasmoid/containmentitem.cpp:558
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Neizdevās instalēt pakotni"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:571
+#: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Nomestā pakotne nav derīga."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:580
-#: plasmaquick/plasmoid/containmentitem.cpp:649
+#: plasmaquick/plasmoid/containmentitem.cpp:583
+#: plasmaquick/plasmoid/containmentitem.cpp:652
 #, kde-format
 msgid "Widgets"
 msgstr "Logdaļas"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:585
+#: plasmaquick/plasmoid/containmentitem.cpp:588
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Pievienot „%1“"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:599
-#: plasmaquick/plasmoid/containmentitem.cpp:653
+#: plasmaquick/plasmoid/containmentitem.cpp:602
+#: plasmaquick/plasmoid/containmentitem.cpp:656
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Pievienot ikonu"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:611
+#: plasmaquick/plasmoid/containmentitem.cpp:614
 #, kde-format
 msgid "Wallpaper"
 msgstr "Tapete"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:621
+#: plasmaquick/plasmoid/containmentitem.cpp:624
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

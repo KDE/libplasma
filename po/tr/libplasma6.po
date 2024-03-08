@@ -257,7 +257,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1, Plasma %2 ile uyumlu değil"
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
@@ -280,7 +280,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Üzgünüm! %1 yüklenirken bir hata oluştu."
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format
@@ -351,6 +351,3 @@ msgstr "Ayarla: %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "İçerik bırakıldı"
-
-#~ msgid "The %1 widget did not define which ScriptEngine to use."
-#~ msgstr "%1 araç takımı kullanılacak Betik İşletkesi'ni tanımlamadı."

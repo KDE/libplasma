@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-05 02:20+0000\n"
-"PO-Revision-Date: 2023-11-22 12:08+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
+"PO-Revision-Date: 2024-03-06 12:31+0100\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Text-Markup: kde4\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
@@ -269,7 +269,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 est non compatible avec Plasma %2."
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
@@ -294,7 +294,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Désolé ! Une erreur est survenue durant le chargement de %1."
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format

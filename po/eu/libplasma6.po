@@ -1,18 +1,18 @@
 # Translation for libplasma6.po to Euskara/Basque (eu).
-# Copyright (C) 2017-2023 This file is copyright:
+# Copyright (C) 2017-2024 This file is copyright:
 # This file is distributed under the same license as the plasma-framework package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Osoitz <oelkoro@gmail.com>, 2017.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
 # Ander Elortondo <ander.elor@gmail.com>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-05 02:20+0000\n"
-"PO-Revision-Date: 2023-11-26 01:27+0100\n"
+"PO-Revision-Date: 2024-03-07 18:54+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -259,7 +259,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 ez da bateragarria Plasma %2(r)ekin"
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
@@ -283,7 +283,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Barkatu! %1 zamatzean errore bat egon da."
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format

@@ -1040,7 +1040,6 @@ void ContainmentItem::addContainmentActions(QMenu *desktopMenu, QEvent *event)
 
 bool ContainmentItem::isLoading() const
 {
-    return false;
     return m_wallpaperItem && m_wallpaperItem->isLoading();
 }
 

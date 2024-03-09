@@ -733,11 +733,20 @@ void ContainmentItem::loadWallpaper()
         // Qml seems happier if the parent gets set in this way
         m_wallpaperItem->setProperty("parent", QVariant::fromValue(this));
 
-        connect(m_wallpaperItem, &WallpaperItem::isLoadingChanged, this, [this]() {
-            if (!isLoading()) {
-                applet()->updateConstraints(Plasma::Applet::UiReadyConstraint);
-            }
-        });
+        if (isLoading()) {
+            connect(
+                m_wallpaperItem,
+                &WallpaperItem::isLoadingChanged,
+                this,
+                [this]() {
+                    if (!isLoading()) {
+                        applet()->updateConstraints(Plasma::Applet::UiReadyConstraint);
+                    }
+                },
+                Qt::SingleShotConnection);
+        } else {
+            applet()->updateConstraints(Plasma::Applet::UiReadyConstraint);
+        }
 
         // set anchors
         QQmlExpression expr(qmlObject()->engine()->rootContext(), m_wallpaperItem, QStringLiteral("parent"));

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-06 00:39+0000\n"
-"PO-Revision-Date: 2024-02-18 17:05+0530\n"
+"PO-Revision-Date: 2024-03-08 21:12+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -249,7 +249,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1, பிளாஸ்மா %2-க்கு ஏற்புடையதல்ல"
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
@@ -272,7 +272,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "மன்னிக்கவும்! %1 என்பதை ஏற்றுவதில் சிக்கல் ஏற்பட்டது."
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format

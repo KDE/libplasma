@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-05 02:20+0000\n"
-"PO-Revision-Date: 2023-11-21 15:06+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-02-19 17:07+0100\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -271,7 +271,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Při načítání došlo k chybě %1."
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format

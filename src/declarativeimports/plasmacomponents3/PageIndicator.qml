@@ -27,6 +27,7 @@ T.PageIndicator {
 
         opacity: index === currentIndex ? 0.9 : pressed ? 0.7 : 0.5
         Behavior on opacity {
+            enabled: Kirigami.Units.longDuration > 0
             OpacityAnimator {
                 duration: Kirigami.Units.longDuration
                 easing.type: Easing.InOutQuad

@@ -63,6 +63,7 @@ T.ScrollBar {
         opacity: controlRoot.hovered && controlRoot.interactive
         visible: opacity > 0
         Behavior on opacity {
+            enabled: Kirigami.Units.longDuration > 0
             NumberAnimation {
                 duration: Kirigami.Units.longDuration
                 easing.type: Easing.OutCubic

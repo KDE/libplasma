@@ -62,7 +62,7 @@ Item {
                 visible: opacity > 0
                 opacity: enabled && !root.control.down
                 Behavior on opacity {
-                    enabled: root.control.down
+                    enabled: root.control.down && Kirigami.Units.longDuration > 0
                     NumberAnimation {
                         duration: Kirigami.Units.longDuration
                         easing.type: Easing.OutCubic
@@ -79,7 +79,7 @@ Item {
                 opacity: (root.control.checked || root.control.down)
                     && !(root.control instanceof T.ItemDelegate && root.control.highlighted)
                 Behavior on opacity {
-                    enabled: root.control.checked || root.control.down
+                    enabled: (root.control.checked || root.control.down) && Kirigami.Units.longDuration > 0
                     NumberAnimation {
                         duration: Kirigami.Units.longDuration
                         easing.type: Easing.OutCubic
@@ -95,6 +95,7 @@ Item {
                 visible: opacity > 0
                 opacity: root.control.visualFocus
                 Behavior on opacity {
+                    enabled: Kirigami.Units.longDuration > 0
                     NumberAnimation {
                         duration: Kirigami.Units.longDuration
                         easing.type: Easing.OutCubic
@@ -110,7 +111,7 @@ Item {
                 visible: opacity > 0
                 opacity: root.control.hovered
                 Behavior on opacity {
-                    enabled: root.control.hovered
+                    enabled: root.control.hovered && Kirigami.Units.longDuration > 0
                     NumberAnimation {
                         duration: Kirigami.Units.longDuration
                         easing.type: Easing.OutCubic
@@ -126,6 +127,7 @@ Item {
                 visible: scale > 0
                 scale: root.control.checked
                 Behavior on scale {
+                    enabled: Kirigami.Units.longDuration > 0
                     NumberAnimation {
                         duration: Kirigami.Units.longDuration
                         easing.type: Easing.OutCubic
@@ -162,6 +164,7 @@ Item {
                     fill: parent
                 }
                 Behavior on opacity {
+                    enabled: Kirigami.Units.longDuration > 0
                     NumberAnimation {
                         duration: Kirigami.Units.longDuration
                         easing.type: Easing.InOutQuad

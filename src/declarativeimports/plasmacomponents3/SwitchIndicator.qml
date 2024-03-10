@@ -71,7 +71,7 @@ Item {
         implicitHeight: naturalSize.height
 
         Behavior on x {
-            enabled: !root.control.down
+            enabled: !root.control.down && Kirigami.Units.shortDuration > 0
             // Can't use XAnimator, since it doesn't update x during the animation, so the active
             // background is not animated.
             NumberAnimation {
@@ -97,6 +97,7 @@ Item {
             visible: opacity > 0
             opacity: control.visualFocus
             Behavior on opacity {
+                enabled: Kirigami.Units.longDuration > 0
                 NumberAnimation {
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.OutCubic

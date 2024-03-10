@@ -306,6 +306,7 @@ Item {
     height: mainLayout.height
 
     Behavior on height {
+        enabled: listItem.ListView.view.highlightResizeDuration > 0
         SmoothedAnimation { // to match the highlight
             id: heightAnimation
             duration: listItem.ListView.view.highlightResizeDuration || -1
@@ -538,6 +539,7 @@ Item {
 
                 opacity: expanded ? 1 : 0
                 Behavior on opacity {
+                    enabled: listItem.ListView.view.highlightResizeDuration > 0
                     SmoothedAnimation { // to match the highlight
                         id: expandedItemOpacityFade
                         duration: listItem.ListView.view.highlightResizeDuration || -1

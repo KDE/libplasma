@@ -184,7 +184,7 @@ T.SpinBox {
                     visible: opacity > 0
                     opacity: control.hovered
                     Behavior on opacity {
-                        enabled: control.hovered
+                        enabled: control.hovered && Kirigami.Units.longDuration > 0
                         NumberAnimation {
                             duration: Kirigami.Units.longDuration
                             easing.type: Easing.OutCubic
@@ -210,6 +210,7 @@ T.SpinBox {
                     visible: opacity > 0
                     opacity: visualFocus || control.activeFocus || control.contentItem.activeFocus
                     Behavior on opacity {
+                        enabled: Kirigami.Units.longDuration > 0
                         NumberAnimation {
                             duration: Kirigami.Units.longDuration
                             easing.type: Easing.OutCubic

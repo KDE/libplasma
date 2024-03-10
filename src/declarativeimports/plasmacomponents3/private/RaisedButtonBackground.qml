@@ -54,7 +54,10 @@ Item {
         imagePath: "widgets/button"
         prefix: "pressed"
         opacity: root.showPressed ? 1 : 0
-        Behavior on opacity { OpacityAnimator { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutQuad } }
+        Behavior on opacity {
+            enabled: Kirigami.Units.shortDuration > 0
+            OpacityAnimator { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutQuad }
+        }
     }
 
     KSvg.FrameSvgItem {
@@ -63,7 +66,10 @@ Item {
         imagePath: "widgets/button"
         prefix: ["focus-background", "normal"]
         opacity: root.showFocused ? 1 : 0
-        Behavior on opacity { OpacityAnimator { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutQuad } }
+        Behavior on opacity {
+            enabled: Kirigami.Units.shortDuration > 0
+            OpacityAnimator { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutQuad }
+        }
     }
 
 }

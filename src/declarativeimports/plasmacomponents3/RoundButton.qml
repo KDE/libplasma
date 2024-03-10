@@ -92,6 +92,7 @@ T.RoundButton {
             //internal: if there is no hover status, don't paint on mouse over in touchscreens
             opacity: (control.down || control.checked || !control.flat || (roundShadow.hasOverState && control.hovered)) ? 1 : 0
             Behavior on opacity {
+                enabled: Kirigami.Units.longDuration > 0
                 PropertyAnimation { duration: Kirigami.Units.longDuration }
             }
         }
@@ -113,6 +114,7 @@ T.RoundButton {
             prefix: "normal"
             opacity: background.useNormalButton && (!control.flat || control.hovered) && (!control.down || !control.checked) ? 1 : 0
             Behavior on opacity {
+                enabled: Kirigami.Units.longDuration > 0
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.InOutQuad
@@ -137,6 +139,7 @@ T.RoundButton {
             visible: background.useNormalButton
             opacity: control.checked || control.down ? 1 : 0
             Behavior on opacity {
+                enabled: Kirigami.Units.longDuration > 0
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.InOutQuad

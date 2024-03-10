@@ -116,6 +116,7 @@ T.MenuItem {
                 }
             }
             Behavior on opacity {
+                enabled: Kirigami.Units.shortDuration > 0
                 NumberAnimation {
                     duration: Kirigami.Units.shortDuration
                 }

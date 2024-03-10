@@ -95,6 +95,7 @@ PlasmaComponents3.TextField {
     }
 
     Behavior on leftPadding {
+        enabled: Kirigami.Units.longDuration > 0
         NumberAnimation {
             duration: Kirigami.Units.longDuration
             easing.type: Easing.InOutQuad
@@ -102,6 +103,7 @@ PlasmaComponents3.TextField {
     }
 
     Behavior on rightPadding {
+        enabled: Kirigami.Units.longDuration > 0
         NumberAnimation {
             duration: Kirigami.Units.longDuration
             easing.type: Easing.InOutQuad

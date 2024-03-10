@@ -26,5 +26,8 @@ KSvg.FrameSvgItem {
     prefix: "shadow"
 
     opacity: showShadow ? 1 : 0
-    Behavior on opacity { OpacityAnimator { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutQuad } }
+    Behavior on opacity {
+        enabled: Kirigami.Units.shortDuration > 0
+        OpacityAnimator { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutQuad }
+    }
 }

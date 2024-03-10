@@ -85,6 +85,7 @@ Item {
         }
 
         Behavior on opacity {
+            enabled: Kirigami.Units.veryShortDuration > 0
             NumberAnimation {
                 duration: Kirigami.Units.veryShortDuration
                 easing.type: Easing.OutQuad

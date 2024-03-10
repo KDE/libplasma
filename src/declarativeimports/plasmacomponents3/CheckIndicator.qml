@@ -52,6 +52,7 @@ KSvg.FrameSvgItem {
             }
         }
         Behavior on opacity {
+            enabled: Kirigami.Units.longDuration > 0
             NumberAnimation {
                 duration: Kirigami.Units.longDuration
                 easing.type: Easing.InOutQuad

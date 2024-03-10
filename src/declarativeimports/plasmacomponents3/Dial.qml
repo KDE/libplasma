@@ -86,6 +86,7 @@ T.Dial {
             height: width
             anchors.centerIn: parent
             Behavior on opacity {
+                enabled: Kirigami.Units.longDuration > 0
                 NumberAnimation { duration: Kirigami.Units.longDuration }
             }
         }

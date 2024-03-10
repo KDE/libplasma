@@ -163,6 +163,7 @@ T.TextField {
             opacity: (control.length > 0 && clearButtonShown && control.enabled) ? 1 : 0
             visible: opacity > 0
             Behavior on opacity {
+                enabled: Kirigami.Units.longDuration > 0
                 NumberAnimation {
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.InOutQuad
@@ -197,7 +198,7 @@ T.TextField {
             visible: opacity > 0
             opacity: control.hovered
             Behavior on opacity {
-                enabled: control.hovered
+                enabled: control.hovered && Kirigami.Units.longDuration > 0
                 NumberAnimation {
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.OutCubic
@@ -218,6 +219,7 @@ T.TextField {
             visible: opacity > 0
             opacity: control.visualFocus || control.activeFocus
             Behavior on opacity {
+                enabled: Kirigami.Units.longDuration > 0
                 NumberAnimation {
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.OutCubic

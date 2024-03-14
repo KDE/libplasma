@@ -86,6 +86,9 @@ Applet::~Applet()
     if (d->configLoader) {
         disconnect(d->configLoader, SIGNAL(configChanged()), this, SLOT(propagateConfigChanged()));
     }
+    if (d->configPropertyMap) {
+        d->configPropertyMap->writeConfig();
+    }
     delete d;
 }
 

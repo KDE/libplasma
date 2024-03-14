@@ -1,11 +1,11 @@
-# Plasma Framework
+# libplasma
 
 Foundational libraries, components, and tools of the Plasma workspaces
 
 ## Introduction
-The plasma framework provides the following:
-- QML components
-- A C++ library: libplasma
+libplasma provides the following:
+- QML components that can be used by any Plasma shell
+- A C++ library: `libplasma` itself
 - Script engines
 
 ## QML components

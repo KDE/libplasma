@@ -80,7 +80,7 @@ void Containment::init()
         }
     });
     connect(corona(), &Plasma::Corona::screenGeometryChanged, this, [this](int screenId) {
-        if (screenId == screen() || screenId == lastScreen()) {
+        if (screenId == screen()) {
             Q_EMIT screenGeometryChanged(screenGeometry());
         }
     });

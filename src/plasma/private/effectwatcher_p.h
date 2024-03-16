@@ -7,6 +7,7 @@
 #ifndef EFFECTWATCHER_P_H
 #define EFFECTWATCHER_P_H
 
+#include <QGuiApplication>
 #include <QObject>
 
 #include <QAbstractNativeEventFilter>
@@ -33,7 +34,7 @@ private:
     void init(const QString &property);
     xcb_atom_t m_property;
     bool m_effectActive;
-    bool m_isX11;
+    QNativeInterface::QX11Application *m_x11Interface = nullptr;
 };
 
 } // namespace Plasma

@@ -66,7 +66,7 @@ ecm_generate_export_header(Plasma
 )
 
 if(HAVE_X11)
-    set(PLASMA_EXTRA_LIBS ${PLASMA_EXTRA_LIBS} XCB::XCB Qt6::GuiPrivate)
+    set(PLASMA_EXTRA_LIBS ${PLASMA_EXTRA_LIBS} XCB::XCB)
 endif()
 
 target_link_libraries(Plasma

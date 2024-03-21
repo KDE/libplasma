@@ -55,6 +55,10 @@ public:
         // Widget explorer
         package->addFileDefinition("widgetexplorer", QStringLiteral("explorer/WidgetExplorer.qml"));
 
+        // Lock screen
+        package->addDirectoryDefinition("lockscreen", QStringLiteral("lockscreen"));
+        package->addFileDefinition("lockscreenmainscript", QStringLiteral("lockscreen/LockScreen.qml"));
+
         package->addFileDefinition("interactiveconsole", QStringLiteral("InteractiveConsole.qml"));
     }
 

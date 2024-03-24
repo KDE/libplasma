@@ -53,8 +53,8 @@ import org.kde.kirigami as Kirigami
  *         clip: true
  *         model: myModel
  *         highlight: PlasmaExtras.Highlight {}
- *         highlightMoveDuration: Kirigami.Units.longDuration
- *         highlightResizeDuration: Kirigami.Units.longDuration
+ *         highlightMoveDuration: Kirigami.Units.shortDuration
+ *         highlightResizeDuration: Kirigami.Units.shortDuration
  *         delegate: PlasmaExtras.ExpandableListItem {
  *             icon: model.iconName
  *             iconEmblem: model.isPaused ? "emblem-pause" : ""

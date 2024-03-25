@@ -103,7 +103,7 @@ void Containment::init()
             configAction->setText(i18n("Enter Edit Mode"));
             configAction->setIcon(QIcon::fromTheme(QStringLiteral("document-edit")));
         } else {
-            configAction->setText(i18nc("%1 is the name of the applet", "Configure %1...", title()));
+            configAction->setText(i18nc("%1 is the name of the applet", "Configure %1... widget", title()));
         }
     }
     connect(corona(), &Plasma::Corona::editModeChanged, this, [=, this](bool isEditModeNow) {

@@ -68,7 +68,7 @@ class WindowTextureProvider;
 class WindowThumbnail : public QQuickItem, public QAbstractNativeEventFilter
 {
     Q_OBJECT
-    Q_PROPERTY(uint winId READ winId WRITE setWinId NOTIFY winIdChanged)
+    Q_PROPERTY(uint winId READ winId WRITE setWinId RESET resetWinId NOTIFY winIdChanged)
     Q_PROPERTY(qreal paintedWidth READ paintedWidth NOTIFY paintedSizeChanged)
     Q_PROPERTY(qreal paintedHeight READ paintedHeight NOTIFY paintedSizeChanged)
     Q_PROPERTY(bool thumbnailAvailable READ thumbnailAvailable NOTIFY thumbnailAvailableChanged)
@@ -81,6 +81,7 @@ public:
 
     uint32_t winId() const;
     void setWinId(uint32_t winId);
+    void resetWinId();
 
     qreal paintedWidth() const;
     qreal paintedHeight() const;

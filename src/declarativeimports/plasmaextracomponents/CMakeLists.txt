@@ -13,6 +13,7 @@ ecm_target_qml_sources(plasmaextracomponentsplugin SOURCES
     qml/Heading.qml
     qml/Highlight.qml
     qml/ListItem.qml
+    qml/ListSectionHeader.qml
     qml/ModelContextMenu.qml
     qml/PasswordField.qml
     qml/PlaceholderMessage.qml

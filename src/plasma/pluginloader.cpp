@@ -19,8 +19,9 @@
 #include "applet.h"
 #include "containment.h"
 #include "containmentactions.h"
-#include "debug_p.h"
 #include "private/applet_p.h"
+
+using namespace Qt::Literals;
 
 namespace Plasma
 {
@@ -41,8 +42,6 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
         return nullptr;
     }
 
-    Applet *applet = nullptr;
-
     if (appletId == 0) {
         appletId = ++AppletPrivate::s_maxAppletId;
     }
@@ -51,57 +50,73 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     // latter case, ensure we only use the name part of the path.
     const QString pluginName = name.section(QLatin1Char('/'), -1);
 
-    KPluginMetaData plugin(QStringLiteral("plasma/applets/") + pluginName, KPluginMetaData::AllowEmptyMetaData);
-    const KPackage::Package p = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Applet"), name);
+    /*
+     * Cases:
+     * - Pure KPackage
+     * - KPackage + C++
+     * - KPackage + C++ (with X-Plasma-RootPath)
+     * - C++ with embedded QML
+     */
 
-    if (!p.isValid()) {
-        qWarning(LOG_PLASMA) << "Applet invalid: Cannot find a package for" << name;
-    }
+    KPluginMetaData plugin(u"plasma/applets/" + name, KPluginMetaData::AllowEmptyMetaData);
+    const KPackage::Package package = KPackage::PackageLoader::self()->loadPackage(u"Plasma/Applet"_s, name);
 
     // If the applet is using another applet package, search for the plugin of the other applet
-    if (!plugin.isValid()) {
-        const QString parentPlugin = p.metadata().value(u"X-Plasma-RootPath");
-        if (!parentPlugin.isEmpty()) {
-            plugin = KPluginMetaData(QStringLiteral("plasma/applets/") + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
-        }
+    const QString parentPlugin = package.metadata().value(u"X-Plasma-RootPath");
+    if (!parentPlugin.isEmpty()) {
+        plugin = KPluginMetaData(u"plasma/applets/" + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
     }
 
-    if (plugin.isValid()) {
-        QVariantList allArgs = QVariantList{QVariant::fromValue(p), appletId} << args;
-        if (KPluginFactory *factory = KPluginFactory::loadFactory(plugin).plugin) {
-            if (factory->metaData().rawData().isEmpty()) {
-                factory->setMetaData(p.metadata());
-            }
-            applet = factory->create<Plasma::Applet>(nullptr, allArgs);
+    // pure KPackage
+    if (package.isValid() && !plugin.isValid()) {
+        QVariantList allArgs;
+        allArgs << QVariant::fromValue(package) << appletId << args;
+
+        Applet *applet = nullptr;
+
+        if (isContainmentMetaData(package.metadata())) {
+            applet = new Containment(nullptr, package.metadata(), allArgs);
+        } else {
+            applet = new Applet(nullptr, package.metadata(), allArgs);
         }
-    }
-    if (applet) {
+
+        const QString localePath = package.filePath("translations");
+        if (!localePath.isEmpty()) {
+            KLocalizedString::addDomainLocaleDir(QByteArray("plasma_applet_") + name.toLatin1(), localePath);
+        }
+
         return applet;
     }
 
-    QVariantList allArgs;
-    allArgs << QVariant::fromValue(p) << appletId << args;
+    // KPackage + C++
+    if (package.isValid()) {
+        QVariantList allArgs;
+        allArgs << QVariant::fromValue(package) << appletId << args;
 
-    if (isContainmentMetaData(p.metadata())) {
-        applet = new Containment(nullptr, p.metadata(), allArgs);
-    } else {
-        KPluginMetaData metadata = p.metadata();
-        if (metadata.pluginId().isEmpty()) {
-            // Add fake extension to parse completeBaseName() as pluginId
-            // without having to construct a fake JSON metadata object.
-            // This would help with better error messages which would
-            // at least show the missing applet's ID.
-            const QString fakeFileName = name + u'.';
-            metadata = KPluginMetaData(QJsonObject(), fakeFileName);
+        KPluginFactory *factory = KPluginFactory::loadFactory(plugin).plugin;
+
+        if (plugin.rawData().isEmpty()) {
+            // Plugin has empty metadata, use metadata from KPackage
+            factory->setMetaData(package.metadata());
+        } else {
+            // Plugin has its own metadata
+            factory->setMetaData(plugin);
         }
-        applet = new Applet(nullptr, metadata, allArgs);
+        return factory->create<Plasma::Applet>(nullptr, allArgs);
     }
 
-    const QString localePath = p.filePath("translations");
-    if (!localePath.isEmpty()) {
-        KLocalizedString::addDomainLocaleDir(QByteArray("plasma_applet_") + name.toLatin1(), localePath);
+    // C++ with embedded QML
+    if (plugin.isValid()) {
+        return KPluginFactory::instantiatePlugin<Plasma::Applet>(plugin, nullptr, {{}, appletId}).plugin;
     }
-    return applet;
+
+    // Add fake extension to parse completeBaseName() as pluginId
+    // without having to construct a fake JSON metadata object.
+    // This would help with better error messages which would
+    // at least show the missing applet's ID.
+    const auto fakeFileName = name + u'.';
+    // metadata = KPluginMetaData(QJsonObject(), fakeFileName);
+    return new Applet(nullptr, KPluginMetaData(QJsonObject(), fakeFileName), {{}, appletId});
 }
 
 ContainmentActions *PluginLoader::loadContainmentActions(Containment *parent, const QString &name, const QVariantList &args)
@@ -179,7 +194,25 @@ QList<KPluginMetaData> PluginLoader::listAppletMetaData(const QString &category)
         };
     }
 
-    return KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Applet"), QString(), filter);
+    const auto kpackages = KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Applet"), QString(), filter);
+
+    const auto plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/applets/"), {}, KPluginMetaData::AllowEmptyMetaData);
+
+    QList<KPluginMetaData> extraPlugins;
+
+    for (const KPluginMetaData &plugin : plugins) {
+        auto it = std::find_if(kpackages.cbegin(), kpackages.cend(), [plugin](const KPluginMetaData &md) {
+            return md.pluginId() == plugin.pluginId();
+        });
+
+        if (it != kpackages.cend()) {
+            continue;
+        }
+
+        extraPlugins << plugin;
+    }
+
+    return kpackages + extraPlugins;
 }
 
 QList<KPluginMetaData> PluginLoader::listAppletMetaDataForMimeType(const QString &mimeType)

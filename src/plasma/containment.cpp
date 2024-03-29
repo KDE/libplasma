@@ -583,6 +583,11 @@ QUrl Containment::compactApplet() const
 {
     if (Applet::d->package.isValid()) {
         return Applet::d->package.fileUrl("compactapplet");
+    } else {
+        const QString path = qrcPath() + QLatin1String("CompactApplet.qml");
+        if (QFile::exists(path)) {
+            return QUrl(QLatin1String("qrc") + path);
+        }
     }
     return QUrl();
 }

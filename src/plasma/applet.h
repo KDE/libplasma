@@ -897,15 +897,7 @@ private:
     QUrl mainScript() const;
     QUrl configModel() const;
     bool sourceValid() const;
-    /**
-     * @internal This constructor is to be used with the Package loading system.
-     *
-     * @param parent a QObject parent; you probably want to pass in 0
-     * @param args a list of strings containing two entries: the service id
-     *      and the applet id
-     * @since 4.3
-     */
-    Applet(const QString &packagePath, uint appletId);
+    QString qrcPath() const;
 
     // TODO KF6: drop Q_PRIVATE_SLOT
     Q_PRIVATE_SLOT(d, void cleanUpAndDelete())

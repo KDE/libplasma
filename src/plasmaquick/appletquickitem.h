@@ -97,7 +97,6 @@ public:
 
     QQuickItem *compactRepresentationItem();
     QQuickItem *fullRepresentationItem();
-    QObject *testItem();
 
     ////PROPERTY ACCESSORS
     int switchWidth() const;

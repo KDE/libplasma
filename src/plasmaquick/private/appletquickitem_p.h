@@ -102,7 +102,6 @@ public:
     QPointer<QQuickItem> fullRepresentationItem;
     QPointer<QQuickItem> compactRepresentationExpanderItem;
     QPointer<QQuickItem> currentRepresentationItem;
-    QPointer<QObject> testItem;
 
     // Attached layout objects: own and the representation's one
     QPointer<QObject> representationLayout;

@@ -6,16 +6,16 @@
 
 #include "pluginloader.h"
 
+#include <QDebug>
 #include <QGuiApplication>
 #include <QPluginLoader>
 #include <QPointer>
+#include <QRegularExpression>
 #include <QStandardPaths>
 
 #include <KLazyLocalizedString>
 #include <KPackage/PackageLoader>
 #include <KRuntimePlatform>
-#include <QDebug>
-#include <QRegularExpression>
 
 #include "config-plasma.h"
 

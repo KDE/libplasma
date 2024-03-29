@@ -15,8 +15,8 @@
 #include <qtmetamacros.h>
 
 #include "plasmashellwaylandintegration.h"
-#include "private/utils.h"
 #include "transientplacementhint_p.h"
+#include "utils.h"
 
 namespace PlasmaQuick
 {

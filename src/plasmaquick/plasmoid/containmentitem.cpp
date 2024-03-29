@@ -8,9 +8,9 @@
 
 #include <algorithm>
 
+#include "appletquickitem_p.h"
 #include "containmentitem.h"
 #include "dropmenu.h"
-#include "private/appletquickitem_p.h"
 #include "sharedqmlengine.h"
 #include "wallpaperitem.h"
 

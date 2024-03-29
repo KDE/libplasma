@@ -7,6 +7,7 @@
 #include "appletquickitem.h"
 #include "applet.h"
 #include "appletcontext_p.h"
+#include "appletquickitem_p.h"
 #include "configview.h"
 #include "containment.h"
 #include "debug_p.h"
@@ -14,8 +15,7 @@
 #include "plasmoid/containmentitem.h"
 #include "plasmoid/plasmoiditem.h"
 #include "plasmoid/wallpaperitem.h"
-#include "private/appletquickitem_p.h"
-#include "private/plasmoidattached_p.h"
+#include "plasmoidattached_p.h"
 #include "sharedqmlengine.h"
 
 #include <QJsonArray>

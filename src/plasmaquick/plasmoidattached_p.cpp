@@ -65,4 +65,4 @@ Plasma::Containment *ContainmentAttached::qmlAttachedProperties(QObject *object)
 
 }
 
-#include "private/moc_plasmoidattached_p.cpp"
+#include "moc_plasmoidattached_p.cpp"

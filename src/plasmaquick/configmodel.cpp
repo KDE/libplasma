@@ -8,9 +8,9 @@
 #include "configmodel.h"
 #include "Plasma/Applet"
 #include "Plasma/Containment"
+#include "configcategory_p.h"
 #include "configview.h"
 #include "debug_p.h"
-#include "private/configcategory_p.h"
 #include "sharedqmlengine.h"
 
 #include <QDebug>

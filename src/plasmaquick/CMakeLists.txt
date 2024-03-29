@@ -6,13 +6,15 @@ set(PLASMAQUICK_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR}/PlasmaQuick")
 add_library(PlasmaQuick SHARED)
 add_library(Plasma::PlasmaQuick ALIAS PlasmaQuick)
 
+qt_extract_metatypes(PlasmaQuick)
+
 set_target_properties(PlasmaQuick PROPERTIES
     VERSION     ${PLASMA_VERSION}
     SOVERSION   ${PLASMA_SOVERSION}
     EXPORT_NAME PlasmaQuick
 )
 
-qt_add_resources(RESOURCES private/resources.qrc)
+qt_add_resources(RESOURCES resources.qrc)
 
 target_sources(PlasmaQuick PRIVATE
     appletcontext.cpp
@@ -32,10 +34,10 @@ target_sources(PlasmaQuick PRIVATE
     popupplasmawindow.cpp
     transientplacementhint.cpp
     windowresizehandler.cpp
-    private/configcategory_p.cpp
-    private/plasmoidattached_p.cpp
-    private/dialogbackground_p.cpp
-    private/utils.cpp
+    configcategory_p.cpp
+    plasmoidattached_p.cpp
+    dialogbackground_p.cpp
+    utils.cpp
     plasmoid/plasmoiditem.cpp
     plasmoid/containmentitem.cpp
     plasmoid/dropmenu.cpp

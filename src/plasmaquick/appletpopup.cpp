@@ -23,8 +23,8 @@
 
 // used in detecting if focus passes to config UI
 #include "configview.h"
-#include "private/utils.h"
 #include "sharedqmlengine.h"
+#include "utils.h"
 
 // This is a proxy object that connects to the Layout attached property of an item
 // it also handles turning properties to proper defaults

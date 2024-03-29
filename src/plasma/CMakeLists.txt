@@ -14,6 +14,8 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-plasma.h.cmake ${CMAKE_CURRENT
 add_library(Plasma)
 add_library(Plasma::Plasma ALIAS Plasma)
 
+qt_extract_metatypes(Plasma)
+
 set_target_properties(Plasma PROPERTIES
     VERSION     ${PLASMA_VERSION}
     SOVERSION   ${PLASMA_SOVERSION}

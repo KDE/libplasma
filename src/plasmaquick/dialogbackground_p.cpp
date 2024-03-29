@@ -95,4 +95,4 @@ QObject *DialogBackground::inset() const
 }
 }
 
-#include "private/moc_dialogbackground_p.cpp"
+#include "moc_dialogbackground_p.cpp"

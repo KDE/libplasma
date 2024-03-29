@@ -114,4 +114,4 @@ void ConfigCategory::setVisible(bool visible)
 
 }
 
-#include "private/moc_configcategory_p.cpp"
+#include "moc_configcategory_p.cpp"

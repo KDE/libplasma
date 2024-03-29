@@ -9,8 +9,8 @@
 #include "Plasma/Containment"
 #include "appletcontext_p.h"
 #include "appletquickitem.h"
+#include "configcategory_p.h"
 #include "configmodel.h"
-#include "private/configcategory_p.h"
 
 #include <QDebug>
 #include <QDir>

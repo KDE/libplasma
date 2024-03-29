@@ -5,8 +5,8 @@
 
 #include "plasmawindow.h"
 
+#include "dialogbackground_p.h"
 #include "dialogshadows_p.h"
-#include "private/dialogbackground_p.h"
 
 #include <QMarginsF>
 #include <QQuickItem>

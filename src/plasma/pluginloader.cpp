@@ -12,10 +12,10 @@
 #include <QStandardPaths>
 
 #include <KLazyLocalizedString>
+#include <KPackage/PackageLoader>
 #include <KRuntimePlatform>
 #include <QDebug>
 #include <QRegularExpression>
-#include <kpackage/packageloader.h>
 
 #include "config-plasma.h"
 

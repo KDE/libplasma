@@ -879,6 +879,7 @@ private:
     QUrl mainScript() const;
     QUrl configModel() const;
     bool sourceValid() const;
+    QString qrcPath() const;
     /**
      * @internal This constructor is to be used with the Package loading system.
      *

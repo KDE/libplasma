@@ -28,3 +28,56 @@ macro(plasma_install_package dir component)
 
    kpackage_install_package(${dir} ${component} ${root} ${PLASMA_RELATIVE_DATA_INSTALL_DIR} NO_DEPRECATED_WARNING)
 endmacro()
+
+# plasma_add_applet(id QML_SOURCES ... [CPP_SOURCES] [RESOURCES])
+#
+# Creates a plasma applet
+#
+# An applet consists of one or more QML files and optionally C++ sources.
+#
+
+#
+function(plasma_add_applet id)
+   set(options GENERATE_APPLET_CLASS)
+   set(oneValueArgs)
+   set(multiValueArgs QML_SOURCES CPP_SOURCES RESOURCES)
+   cmake_parse_arguments(ARGS "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+
+   # not using MODULE because of https://bugreports.qt.io/browse/QTBUG-117159
+   add_library(${id} SHARED)
+
+   set_target_properties(${id} PROPERTIES PREFIX "")
+
+   include(ECMQmlModule)
+   ecm_add_qml_module(${id} URI "plasma.applet.${id}" QT_NO_PLUGIN)
+
+   ecm_target_qml_sources(${id} SOURCES ${ARGS_QML_SOURCES} RESOURCES ${ARGS_RESOURCES})
+
+   if(ARGS_GENERATE_APPLET_CLASS)
+      set(PLUGIN_SRC "
+#include <KPluginFactory>
+#include <Plasma/Applet>
+
+class ThePlugin : public Plasma::Applet {
+   Q_OBJECT
+public:
+   ThePlugin(QObject *parent, const KPluginMetaData &data, const QVariantList &args)
+      : Plasma::Applet(parent, data, args) {}
+}\;
+
+K_PLUGIN_CLASS_WITH_JSON(ThePlugin, \"metadata.json\")
+
+#include \"${id}.moc\"
+   ")
+
+      file(GENERATE OUTPUT ${id}.cpp CONTENT ${PLUGIN_SRC})
+
+      target_sources(${id} PRIVATE ${id}.cpp)
+
+      target_link_libraries(${id} PRIVATE KF6::CoreAddons Plasma::Plasma)
+   endif()
+
+   target_sources(${id} PRIVATE ${ARGS_CPP_SOURCES})
+
+   install(TARGETS ${id} DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/applets)
+endfunction()

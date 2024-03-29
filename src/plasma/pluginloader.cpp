@@ -42,24 +42,6 @@ public:
 
     static QString s_plasmoidsPluginDir;
     static QString s_containmentActionsPluginDir;
-
-    class Cache
-    {
-        // We only use this cache during start of the process to speed up many consecutive calls
-        // After that, we're too afraid to produce race conditions and it's not that time-critical anyway
-        // the 20 seconds here means that the cache is only used within 20sec during startup, after that,
-        // complexity goes up and we'd have to update the cache in order to avoid subtle bugs
-        // just not using the cache is way easier then, since it doesn't make *that* much of a difference,
-        // anyway
-        int maxCacheAge = 20;
-        qint64 pluginCacheAge = 0;
-        QHash<QString, KPluginMetaData> plugins;
-
-    public:
-        KPluginMetaData findPluginById(const QString &name, const QString &pluginNamespace);
-    };
-    Cache plasmoidCache;
-    Cache containmentactionCache;
 };
 
 QString PluginLoaderPrivate::s_plasmoidsPluginDir = QStringLiteral("plasma/applets");
@@ -93,7 +75,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
         appletId = ++AppletPrivate::s_maxAppletId;
     }
 
-    auto plugin = d->plasmoidCache.findPluginById(name, PluginLoaderPrivate::s_plasmoidsPluginDir);
+    KPluginMetaData plugin(PluginLoaderPrivate::s_plasmoidsPluginDir + QLatin1Char('/') + name, KPluginMetaData::AllowEmptyMetaData);
     const KPackage::Package p = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Applet"), name);
 
     if (!p.isValid()) {
@@ -104,7 +86,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     if (!plugin.isValid()) {
         const QString parentPlugin = p.metadata().value(QStringLiteral("X-Plasma-RootPath"));
         if (!parentPlugin.isEmpty()) {
-            plugin = d->plasmoidCache.findPluginById(parentPlugin, PluginLoaderPrivate::s_plasmoidsPluginDir);
+            plugin = KPluginMetaData(PluginLoaderPrivate::s_plasmoidsPluginDir + QLatin1Char('/') + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
         }
     }
 
@@ -144,7 +126,7 @@ ContainmentActions *PluginLoader::loadContainmentActions(Containment *parent, co
         return nullptr;
     }
 
-    KPluginMetaData plugin = d->containmentactionCache.findPluginById(name, PluginLoaderPrivate::s_containmentActionsPluginDir);
+    KPluginMetaData plugin(PluginLoaderPrivate::s_containmentActionsPluginDir + QLatin1Char('/') + name, KPluginMetaData::AllowEmptyMetaData);
 
     if (plugin.isValid()) {
         if (auto res = KPluginFactory::instantiatePlugin<Plasma::ContainmentActions>(plugin, nullptr, {QVariant::fromValue(plugin)})) {
@@ -275,43 +257,6 @@ QList<KPluginMetaData> PluginLoader::listContainmentActionsMetaData(const QStrin
     }
 
     return plugins;
-}
-
-KPluginMetaData PluginLoaderPrivate::Cache::findPluginById(const QString &name, const QString &pluginNamespace)
-{
-    const qint64 now = qRound64(QDateTime::currentMSecsSinceEpoch() / 1000.0);
-    bool useRuntimeCache = true;
-
-    if (pluginCacheAge == 0) {
-        // Find all the plugins now, but only once
-        pluginCacheAge = now;
-
-        const auto metaDataList = KPluginMetaData::findPlugins(pluginNamespace, {}, KPluginMetaData::AllowEmptyMetaData);
-        for (const KPluginMetaData &metadata : metaDataList) {
-            plugins.insert(metadata.pluginId(), metadata);
-        }
-    } else if (now - pluginCacheAge > maxCacheAge) {
-        // cache is old and we're not within a few seconds of startup anymore
-        useRuntimeCache = false;
-        plugins.clear();
-    }
-
-    // if name wasn't a path, pluginName == name
-    const QString pluginName = name.section(QLatin1Char('/'), -1);
-
-    if (useRuntimeCache) {
-        KPluginMetaData data = plugins.value(name);
-        qCDebug(LOG_PLASMA) << "loading applet by name" << name << useRuntimeCache << data.isValid();
-        return data;
-    } else {
-        const QList<KPluginMetaData> offers = KPluginMetaData::findPlugins(
-            pluginNamespace,
-            [&pluginName](const KPluginMetaData &data) {
-                return data.pluginId() == pluginName;
-            },
-            KPluginMetaData::AllowEmptyMetaData);
-        return offers.isEmpty() ? KPluginMetaData() : offers.first();
-    }
 }
 
 } // Plasma Namespace

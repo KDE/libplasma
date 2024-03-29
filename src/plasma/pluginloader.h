@@ -20,8 +20,6 @@ class Applet;
 class Containment;
 class ContainmentActions;
 
-class PluginLoaderPrivate;
-
 // TODO:
 // * add loadWallpaper
 // * add KPluginInfo listing support for Containments (already loaded via the applet loading code)
@@ -134,11 +132,11 @@ public:
      **/
     static PluginLoader *self();
 
-    PluginLoader();
-    virtual ~PluginLoader();
+    PluginLoader() = default;
+    virtual ~PluginLoader() = default;
 
 private:
-    PluginLoaderPrivate *const d;
+    void *d;
 };
 
 }

@@ -32,30 +32,6 @@ inline bool isContainmentMetaData(const KPluginMetaData &md)
     return md.rawData().contains(QStringLiteral("X-Plasma-ContainmentType"));
 }
 
-class PluginLoaderPrivate
-{
-public:
-    PluginLoaderPrivate()
-    {
-    }
-
-    static QString s_plasmoidsPluginDir;
-    static QString s_containmentActionsPluginDir;
-};
-
-QString PluginLoaderPrivate::s_plasmoidsPluginDir = QStringLiteral("plasma/applets");
-QString PluginLoaderPrivate::s_containmentActionsPluginDir = QStringLiteral("plasma/containmentactions");
-
-PluginLoader::PluginLoader()
-    : d(new PluginLoaderPrivate)
-{
-}
-
-PluginLoader::~PluginLoader()
-{
-    delete d;
-}
-
 PluginLoader *PluginLoader::self()
 {
     static PluginLoader self;
@@ -74,7 +50,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
         appletId = ++AppletPrivate::s_maxAppletId;
     }
 
-    KPluginMetaData plugin(PluginLoaderPrivate::s_plasmoidsPluginDir + QLatin1Char('/') + name, KPluginMetaData::AllowEmptyMetaData);
+    KPluginMetaData plugin(QStringLiteral("plasma/applets/") + name, KPluginMetaData::AllowEmptyMetaData);
     const KPackage::Package p = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Applet"), name);
 
     if (!p.isValid()) {
@@ -85,7 +61,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     if (!plugin.isValid()) {
         const QString parentPlugin = p.metadata().value(QStringLiteral("X-Plasma-RootPath"));
         if (!parentPlugin.isEmpty()) {
-            plugin = KPluginMetaData(PluginLoaderPrivate::s_plasmoidsPluginDir + QLatin1Char('/') + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
+            plugin = KPluginMetaData(QStringLiteral("plasma/applets/") + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
         }
     }
 
@@ -124,7 +100,7 @@ ContainmentActions *PluginLoader::loadContainmentActions(Containment *parent, co
         return nullptr;
     }
 
-    KPluginMetaData plugin(PluginLoaderPrivate::s_containmentActionsPluginDir + QLatin1Char('/') + name, KPluginMetaData::AllowEmptyMetaData);
+    KPluginMetaData plugin(QStringLiteral("plasma/containmentactions/") + name, KPluginMetaData::AllowEmptyMetaData);
 
     if (plugin.isValid()) {
         if (auto res = KPluginFactory::instantiatePlugin<Plasma::ContainmentActions>(plugin, nullptr, {QVariant::fromValue(plugin)})) {
@@ -249,9 +225,9 @@ QList<KPluginMetaData> PluginLoader::listContainmentActionsMetaData(const QStrin
 
     QList<KPluginMetaData> plugins;
     if (parentApp.isEmpty()) {
-        plugins = KPluginMetaData::findPlugins(PluginLoaderPrivate::s_containmentActionsPluginDir);
+        plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/containmentactions"));
     } else {
-        plugins = KPluginMetaData::findPlugins(PluginLoaderPrivate::s_containmentActionsPluginDir, filter);
+        plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/containmentactions"), filter);
     }
 
     return plugins;

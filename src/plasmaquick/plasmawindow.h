@@ -25,6 +25,7 @@ class PlasmaWindowPrivate;
 class PLASMAQUICK_EXPORT PlasmaWindow : public QQuickWindow
 {
     Q_OBJECT
+    QML_ELEMENT
 
     /**
      * The main QML item that will be displayed in the Dialog

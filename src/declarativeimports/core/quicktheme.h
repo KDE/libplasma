@@ -11,6 +11,7 @@
 #include <plasma/theme.h>
 
 #include <QColor>
+#include <QQmlEngine>
 
 namespace Plasma
 {
@@ -33,6 +34,8 @@ namespace Plasma
 class QuickTheme : public Plasma::Theme
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(Theme)
+    QML_SINGLETON
 
     // colors
     Q_PROPERTY(QColor textColor READ textColor NOTIFY themeChangedProxy)

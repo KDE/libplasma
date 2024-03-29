@@ -12,6 +12,43 @@
 
 #include <QQmlEngine>
 #include <QQmlExtensionPlugin>
+#include <QQmlPropertyMap>
+
+#include <Plasma/Plasma>
+
+#include "appletpopup.h"
+#include "dialog.h"
+
+struct TypesForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(Types)
+    QML_UNCREATABLE("")
+    QML_FOREIGN(Plasma::Types)
+};
+
+struct PropertyMapForeign {
+    Q_GADGET
+    QML_ANONYMOUS
+    QML_FOREIGN(QQmlPropertyMap)
+};
+
+struct AppletPopupForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(AppletPopup)
+    QML_FOREIGN(PlasmaQuick::AppletPopup)
+};
+
+struct PopupPlasmaWindowForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(PopupPlasmaWindow)
+    QML_FOREIGN(PlasmaQuick::PopupPlasmaWindow)
+};
+
+struct DialogForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(Dialog)
+    QML_FOREIGN(PlasmaQuick::Dialog)
+};
 
 class CoreBindingsPlugin : public QQmlExtensionPlugin
 {

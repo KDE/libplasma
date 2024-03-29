@@ -9,24 +9,13 @@
 
 #include "corebindingsplugin.h"
 
-#include <QActionGroup>
+#include <QDebug>
 #include <QQmlContext>
+#include <QWindow>
 
 #include <KLocalizedContext>
 
 #include "action.h"
-#include "appletpopup.h"
-
-#include "dialog.h"
-#include "quicktheme.h"
-
-#include "tooltip.h"
-#include "windowthumbnail.h"
-
-#include <QDebug>
-#include <QQmlPropertyMap>
-#include <QWindow>
-#include <qqml.h>
 
 void CoreBindingsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
 {
@@ -46,29 +35,10 @@ void CoreBindingsPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QByteArray("org.kde.plasma.core"));
 
-    qmlRegisterUncreatableType<Plasma::Types>(uri, 2, 0, "Types", {});
-
-    // qmlRegisterType<ThemeProxy>(uri, 2, 0, "Theme");
-    qmlRegisterSingletonType<Plasma::QuickTheme>(uri, 2, 0, "Theme", [](QQmlEngine *engine, QJSEngine *) -> QObject * {
-        return new Plasma::QuickTheme(engine);
-    });
-
-    qmlRegisterType<PlasmaQuick::PlasmaWindow>(uri, 2, 0, "Window");
-    qmlRegisterType<PlasmaQuick::AppletPopup>(uri, 2, 0, "AppletPopup");
-    qmlRegisterType<PlasmaQuick::PopupPlasmaWindow>(uri, 2, 0, "PopupPlasmaWindow");
-    qmlRegisterType<PlasmaQuick::Dialog>(uri, 2, 0, "Dialog");
     // HACK make properties like "opacity" work that are in REVISION 1 of QWindow
     qmlRegisterRevision<QWindow, 1>(uri, 2, 0);
     qmlRegisterRevision<QQuickItem, 1>(uri, 2, 0);
-    qmlRegisterType<ToolTip>(uri, 2, 0, "ToolTipArea");
-
-    qmlRegisterAnonymousType<QQmlPropertyMap>(uri, 1);
-
-    qmlRegisterType<Plasma::WindowThumbnail>(uri, 2, 0, "WindowThumbnail");
-
-    qmlRegisterAnonymousType<IconGroup>(uri, 2);
     qmlRegisterExtendedType<QAction, ActionExtension>(uri, 2, 0, "Action");
-    qmlRegisterType<ActionGroup>(uri, 2, 0, "ActionGroup");
 }
 
 #include "moc_corebindingsplugin.cpp"

@@ -26,6 +26,7 @@ class ActionExtension;
 class IconGroup : public QObject
 {
     Q_OBJECT
+    QML_ANONYMOUS
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QIcon icon READ icon WRITE setIcon NOTIFY iconChanged)
 public:
@@ -89,6 +90,7 @@ private:
 class ActionGroup : public QActionGroup
 {
     Q_OBJECT
+    QML_ELEMENT
 public:
     ActionGroup(QObject *parent = nullptr)
         : QActionGroup(parent)

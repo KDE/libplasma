@@ -50,6 +50,7 @@ class ToolTipDialog;
 class ToolTip : public QQuickItem
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(ToolTipArea)
 
     /**
      * The item shown inside the tooltip.

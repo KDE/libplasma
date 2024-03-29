@@ -578,6 +578,7 @@ void Containment::setWallpaperGraphicsObject(QObject *object)
 QUrl Containment::compactApplet() const
 {
     if (Applet::d->package.isValid()) {
+        // TODO qml module
         return Applet::d->package.fileUrl("compactapplet");
     }
     return QUrl();

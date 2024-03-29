@@ -244,6 +244,7 @@ bool Applet::destroyed() const
 KConfigLoader *Applet::configScheme() const
 {
     if (!d->configLoader) {
+        // TODO qml module
         const QString xmlPath = d->package.isValid() ? d->package.filePath("mainconfigxml") : QString();
         KConfigGroup cfg = config();
         if (xmlPath.isEmpty()) {
@@ -802,11 +803,20 @@ QUrl Applet::fileUrl(const QByteArray &key, const QString &filename) const
     if (d->package.isValid()) {
         return d->package.fileUrl(key, filename);
     }
+
+    // TODO qml module
+
     return QUrl();
 }
 
 QUrl Applet::mainScript() const
 {
+    const QString path = QLatin1String(":/qt/qml/plasma/applet/") + pluginName().replace(QLatin1Char('.'), QLatin1Char('/')) + QLatin1String("/main.qml");
+
+    if (QFile::exists(path)) {
+        return QUrl(QLatin1String("qrc") + path);
+    }
+
     if (d->package.isValid()) {
         return d->package.fileUrl("mainscript");
     }
@@ -819,11 +829,14 @@ QUrl Applet::configModel() const
         return d->package.fileUrl("configmodel");
     }
 
+    // TODO qml module
+
     return QUrl();
 }
 
 bool Applet::sourceValid() const
 {
+    // TODO qml module
     return d->package.isValid();
 }
 

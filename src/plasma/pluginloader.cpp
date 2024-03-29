@@ -44,54 +44,71 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
         return nullptr;
     }
 
-    Applet *applet = nullptr;
-
     if (appletId == 0) {
         appletId = ++AppletPrivate::s_maxAppletId;
     }
 
-    KPluginMetaData plugin(QStringLiteral("plasma/applets/") + name, KPluginMetaData::AllowEmptyMetaData);
-    const KPackage::Package p = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Applet"), name);
+    /*
+     * Cases:
+     * - Pure KPackage
+     * - KPackage + C++
+     * - KPackage + C++ (with X-Plasma-RootPath)
+     * - C++ with embedded QML
+     *
+     */
 
-    if (!p.isValid()) {
-        qWarning(LOG_PLASMA) << "Applet invalid: Cannot find a package for" << name;
-    }
+    KPluginMetaData plugin(QStringLiteral("plasma/applets/") + name, KPluginMetaData::AllowEmptyMetaData);
+    const KPackage::Package package = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Applet"), name);
 
     // If the applet is using another applet package, search for the plugin of the other applet
-    if (!plugin.isValid()) {
-        const QString parentPlugin = p.metadata().value(QStringLiteral("X-Plasma-RootPath"));
-        if (!parentPlugin.isEmpty()) {
-            plugin = KPluginMetaData(QStringLiteral("plasma/applets/") + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
-        }
+    const QString parentPlugin = package.metadata().value(QStringLiteral("X-Plasma-RootPath"));
+    if (!parentPlugin.isEmpty()) {
+        plugin = KPluginMetaData(QStringLiteral("plasma/applets/") + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
     }
 
-    if (plugin.isValid()) {
-        QVariantList allArgs = QVariantList{QVariant::fromValue(p), appletId} << args;
-        if (KPluginFactory *factory = KPluginFactory::loadFactory(plugin).plugin) {
-            if (factory->metaData().rawData().isEmpty()) {
-                factory->setMetaData(p.metadata());
-            }
-            applet = factory->create<Plasma::Applet>(nullptr, allArgs);
+    if (package.isValid() && !plugin.isValid()) {
+        qWarning() << "pure kpackage" << package.metadata().pluginId();
+
+        const QVariantList allArgs{QVariant::fromValue(package), appletId, args};
+
+        Applet *applet = nullptr;
+
+        if (isContainmentMetaData(package.metadata())) {
+            applet = new Containment(nullptr, package.metadata(), allArgs);
+        } else {
+            applet = new Applet(nullptr, package.metadata(), allArgs);
         }
-    }
-    if (applet) {
+
+        const QString localePath = package.filePath("translations");
+        if (!localePath.isEmpty()) {
+            KLocalizedString::addDomainLocaleDir(QByteArray("plasma_applet_") + name.toLatin1(), localePath);
+        }
+
         return applet;
     }
 
-    QVariantList allArgs;
-    allArgs << QVariant::fromValue(p) << appletId << args;
+    Q_ASSERT(plugin.isValid());
 
-    if (isContainmentMetaData(p.metadata())) {
-        applet = new Containment(nullptr, p.metadata(), allArgs);
-    } else {
-        applet = new Applet(nullptr, p.metadata(), allArgs);
+    if (package.isValid()) {
+        qWarning() << "kpackage + c++" << package.metadata().pluginId();
+
+        QVariantList allArgs = QVariantList{QVariant::fromValue(package), appletId} << args;
+
+        KPluginFactory *factory = KPluginFactory::loadFactory(plugin).plugin;
+
+        if (plugin.rawData().isEmpty()) {
+            // Plugin has empty metadata, use metadata from KPackage
+            factory->setMetaData(package.metadata());
+        } else {
+            // Plugin has its own metadata
+            factory->setMetaData(plugin);
+        }
+        return factory->create<Plasma::Applet>(nullptr, allArgs);
     }
 
-    const QString localePath = p.filePath("translations");
-    if (!localePath.isEmpty()) {
-        KLocalizedString::addDomainLocaleDir(QByteArray("plasma_applet_") + name.toLatin1(), localePath);
-    }
-    return applet;
+    qWarning() << "pure plugin" << plugin.pluginId();
+
+    return KPluginFactory::instantiatePlugin<Plasma::Applet>(plugin, nullptr, {{}, appletId}).plugin;
 }
 
 ContainmentActions *PluginLoader::loadContainmentActions(Containment *parent, const QString &name, const QVariantList &args)
@@ -167,7 +184,28 @@ QList<KPluginMetaData> PluginLoader::listAppletMetaData(const QString &category)
         };
     }
 
-    return KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Applet"), QString(), filter);
+    auto kpackages = KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Applet"), QString(), filter);
+
+    auto plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/applets/"), {}, KPluginMetaData::AllowEmptyMetaData);
+
+    QList<KPluginMetaData> extraPlugins;
+
+    for (auto plugin : plugins) {
+        qWarning() << "check" << plugin;
+        auto it = std::find_if(kpackages.cbegin(), kpackages.cend(), [plugin](const KPluginMetaData &md) {
+            return md.pluginId() == plugin.pluginId();
+        });
+
+        if (it != kpackages.cend()) {
+            continue;
+        }
+
+        qWarning() << "found" << plugin.pluginId();
+
+        extraPlugins << plugin;
+    }
+
+    return kpackages + extraPlugins;
 }
 
 QList<KPluginMetaData> PluginLoader::listAppletMetaDataForMimeType(const QString &mimeType)

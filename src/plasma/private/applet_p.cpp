@@ -433,6 +433,8 @@ void AppletPrivate::setupPackage()
     //         << ", main script is" << package->filePath("mainscript");
 #endif
 
+    // TODO qml module
+
     if (!package.filePath("mainconfigui").isEmpty()) {
         q->setHasConfigurationInterface(true);
     }

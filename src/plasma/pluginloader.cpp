@@ -15,7 +15,6 @@
 #include <KRuntimePlatform>
 #include <QDebug>
 #include <QRegularExpression>
-#include <kcoreaddons_export.h>
 #include <kpackage/packageloader.h>
 
 #include "config-plasma.h"

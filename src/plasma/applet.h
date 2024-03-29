@@ -868,8 +868,10 @@ protected:
     void timerEvent(QTimerEvent *event) override;
 
 private:
-    QString filePath(const QByteArray &key, const QString &filename = QString()) const;
-    KPackage::Package kPackage() const;
+    QUrl fileUrl(const QByteArray &key, const QString &filename) const;
+    QUrl mainScript() const;
+    QUrl configModel() const;
+    bool sourceValid() const;
     /**
      * @internal This constructor is to be used with the Package loading system.
      *

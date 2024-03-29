@@ -512,16 +512,16 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
     }
 
     AppletQuickItem *item = nullptr;
-    qmlObject->setSource(applet->kPackage().fileUrl("mainscript"));
+    qmlObject->setSource(applet->mainScript());
     if (pc && pc->isContainment()) {
         item = qobject_cast<ContainmentItem *>(qmlObject->rootObject());
         if (!item && qmlObject->mainComponent() && !qmlObject->mainComponent()->isError()) {
-            applet->setLaunchErrorMessage(i18n("The root item of %1 must be of type ContainmentItem", applet->kPackage().fileUrl("mainscript").toString()));
+            applet->setLaunchErrorMessage(i18n("The root item of %1 must be of type ContainmentItem", applet->mainScript().toString()));
         }
     } else {
         item = qobject_cast<PlasmoidItem *>(qmlObject->rootObject());
         if (!item && qmlObject->mainComponent() && !qmlObject->mainComponent()->isError()) {
-            applet->setLaunchErrorMessage(i18n("The root item of %1 must be of type PlasmoidItem", applet->kPackage().fileUrl("mainscript").toString()));
+            applet->setLaunchErrorMessage(i18n("The root item of %1 must be of type PlasmoidItem", applet->mainScript().toString()));
         }
     }
 
@@ -570,7 +570,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
         if (compactReason != QString()) {
             errorData[QStringLiteral("compactError")] = compactReason;
         }
-        if (applet->kPackage().isValid()) {
+        if (applet->sourceValid()) {
             if (!versionMismatch) {
                 const auto errors = qmlObject->mainComponent()->errors();
                 QStringList errorList;
@@ -651,14 +651,10 @@ void AppletQuickItem::init()
         return;
     }
 
-    d->appletPackage = d->applet->kPackage();
-
     if (d->applet->containment()) {
         if (d->applet->containment()->corona()) {
             d->coronaPackage = d->applet->containment()->corona()->kPackage();
         }
-
-        d->containmentPackage = d->applet->containment()->kPackage();
     }
 
     // Initialize the main QML file
@@ -676,7 +672,7 @@ void AppletQuickItem::init()
     // default compactRepresentationExpander is the popup in which fullRepresentation goes
     if (!d->compactRepresentationExpander && d->fullRepresentation) {
         d->compactRepresentationExpander = new QQmlComponent(engine, this);
-        QUrl compactExpanderUrl = d->containmentPackage.fileUrl("compactapplet");
+        QUrl compactExpanderUrl = d->applet->containment()->compactApplet();
         if (compactExpanderUrl.isEmpty()) {
             compactExpanderUrl = d->coronaPackage.fileUrl("compactapplet");
         }

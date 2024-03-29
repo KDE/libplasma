@@ -132,7 +132,7 @@ void ConfigViewPrivate::init()
     }
 
     // config model local of the applet
-    QQmlComponent component(q->engine(), applet.data()->kPackage().fileUrl("configmodel"));
+    QQmlComponent component(q->engine(), applet.data()->configModel());
     QObject *object = component.create(rootContext);
     configModel = qobject_cast<ConfigModel *>(object);
 

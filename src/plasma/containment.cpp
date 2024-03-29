@@ -578,6 +578,14 @@ void Containment::setWallpaperGraphicsObject(QObject *object)
     Q_EMIT wallpaperGraphicsObjectChanged();
 }
 
+QUrl Containment::compactApplet() const
+{
+    if (Applet::d->package.isValid()) {
+        return Applet::d->package.fileUrl("compactapplet");
+    }
+    return QUrl();
+}
+
 void Containment::setContainmentActions(const QString &trigger, const QString &pluginName)
 {
     KConfigGroup cfg = d->containmentActionsConfig();

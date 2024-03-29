@@ -476,6 +476,8 @@ private:
     QObject *wallpaperGraphicsObject() const;
     void setWallpaperGraphicsObject(QObject *object);
 
+    QUrl compactApplet() const;
+
     Q_PRIVATE_SLOT(d, void appletDeleted(Plasma::Applet *))
     Q_PRIVATE_SLOT(d, void triggerShowAddWidgets())
     Q_PRIVATE_SLOT(d, void checkStatus(Plasma::Types::ItemStatus))
@@ -485,6 +487,7 @@ private:
     friend class CoronaPrivate;
     friend class ContainmentPrivate;
     friend class ContainmentActions;
+    friend class PlasmaQuick::AppletQuickItem;
     ContainmentPrivate *const d;
 };
 

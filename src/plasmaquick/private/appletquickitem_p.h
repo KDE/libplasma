@@ -110,9 +110,7 @@ public:
     Plasma::Applet *applet = nullptr;
     PlasmaQuick::SharedQmlEngine *qmlObject;
 
-    KPackage::Package appletPackage;
     KPackage::Package coronaPackage;
-    KPackage::Package containmentPackage;
 
     bool expanded = false;
     bool hideOnWindowDeactivate = false;

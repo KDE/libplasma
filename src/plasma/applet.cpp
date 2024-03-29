@@ -266,11 +266,6 @@ KConfigPropertyMap *Applet::configuration()
     return d->configPropertyMap;
 }
 
-KPackage::Package Applet::kPackage() const
-{
-    return d->package;
-}
-
 void Applet::updateConstraints(Constraints constraints)
 {
     d->scheduleConstraintsUpdate(constraints);
@@ -812,12 +807,34 @@ void Applet::configChanged()
     }
 }
 
-QString Applet::filePath(const QByteArray &key, const QString &filename) const
+QUrl Applet::fileUrl(const QByteArray &key, const QString &filename) const
 {
     if (d->package.isValid()) {
-        return d->package.filePath(key, filename);
+        return d->package.fileUrl(key, filename);
     }
-    return QString();
+    return QUrl();
+}
+
+QUrl Applet::mainScript() const
+{
+    if (d->package.isValid()) {
+        return d->package.fileUrl("mainscript");
+    }
+    return QUrl();
+}
+
+QUrl Applet::configModel() const
+{
+    if (d->package.isValid()) {
+        return d->package.fileUrl("configmodel");
+    }
+
+    return QUrl();
+}
+
+bool Applet::sourceValid() const
+{
+    return d->package.isValid();
 }
 
 void Applet::timerEvent(QTimerEvent *event)

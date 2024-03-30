@@ -122,26 +122,6 @@ void AppletPrivate::init(const QVariantList &args)
         return;
     }
 
-    // A constructor may have set a valid package already
-    if (!package.isValid()) {
-        const QString packagePath = QFileInfo(appletDescription.fileName()).dir().path();
-        QString path = appletDescription.value(QStringLiteral("X-Plasma-RootPath"));
-        if (path.isEmpty()) {
-            path = packagePath.isEmpty() ? appletDescription.pluginId() : packagePath;
-        }
-
-        package = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Applet"));
-        package.setPath(path);
-
-        if (!package.isValid()) {
-            q->setLaunchErrorMessage(i18nc("Package file, name of the widget",
-                                           "Could not open the %1 package required for the %2 widget.",
-                                           appletDescription.pluginId(),
-                                           appletDescription.name()));
-            return;
-        }
-    }
-
     if (!q->isContainment()) {
         QAction *a = new QAction(QIcon::fromTheme(QStringLiteral("widget-alternatives")), i18n("Show Alternatives..."), q);
         a->setVisible(false);

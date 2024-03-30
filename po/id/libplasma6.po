@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2022-06-14 10:56+0700\n"
 "Last-Translator: Aziz Adam Adrian <4.adam.adrian@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -200,34 +200,6 @@ msgstr "Tambah Widget..."
 msgid "Could not find requested component: %1"
 msgstr "Tidak dapat menemukan komponen yang diminta: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Berbagi widget di jaringan memperkenankanmu mengakses widget ini dari "
-"komputer lainnya sebagai kendali jarak jauh."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Bagikan widget ini pada jaringan"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Perkenankan siapa saja untuk akses secara bebas widget ini"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Layanan (null) tidak absah, tidak bisa melakukan operasi apa pun."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -352,6 +324,23 @@ msgstr "Set %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Isi yang ditaruh"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "Berbagi widget di jaringan memperkenankanmu mengakses widget ini dari "
+#~ "komputer lainnya sebagai kendali jarak jauh."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Bagikan widget ini pada jaringan"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "Perkenankan siapa saja untuk akses secara bebas widget ini"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "Layanan (null) tidak absah, tidak bisa melakukan operasi apa pun."
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr "Widget %1 tidak mendefinisikan ScriptEngine mana yang digunakan."

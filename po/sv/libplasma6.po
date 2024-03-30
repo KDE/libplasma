@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2022-08-03 09:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -195,34 +195,6 @@ msgstr "Lägg till grafiska komponenter..."
 msgid "Could not find requested component: %1"
 msgstr "Kunde inte hitta begärd komponent: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Att dela en grafisk komponent på nätverket låter dig komma åt komponenten "
-"från en annan dator som en fjärrkomponent."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Dela grafisk komponent på nätverket"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Tillåt alla att fritt komma åt grafisk komponent"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Ogiltig (tom) tjänst, kan inte utföra några åtgärder."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -347,6 +319,23 @@ msgstr "Ställ in %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Innehåll släppt"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "Att dela en grafisk komponent på nätverket låter dig komma åt komponenten "
+#~ "från en annan dator som en fjärrkomponent."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Dela grafisk komponent på nätverket"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "Tillåt alla att fritt komma åt grafisk komponent"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "Ogiltig (tom) tjänst, kan inte utföra några åtgärder."
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr ""

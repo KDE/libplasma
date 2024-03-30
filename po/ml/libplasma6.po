@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2019-12-14 15:16+0530\n"
 "Last-Translator: Nithin S Sabu <nithinsn@protonmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -193,34 +193,6 @@ msgstr "വിഡ്ജറ്റ് ചേര്‍ക്കുക..."
 msgid "Could not find requested component: %1"
 msgstr "ആവശ്യപ്പെട്ട ഘടകം കണ്ടെത്തുവാനായില്ല: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"ഒരു വി‍‍ഡ്ജറ്റ് ശൃഖലയില്‍ പങ്കുവയ്ക്കുന്നത് ആ വിഡ്ജറ്റ് വിദൂരത്തിലുള്ള മറ്റൊരു കമ്പ്യൂട്ടറില്‍ നിന്ന് "
-"നിയന്ത്രിക്കാന്‍ അനുവദിക്കുന്നു."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "ഈ വിഡ്ജറ്റ് ശൃംഖലയില്‍ പങ്കുവയ്ക്കുക"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "എല്ലാവരേയും ഈ വിഡ്ജറ്റ് ഉപയോഗിക്കാന്‍ അനുവദിക്കുക"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "അസാധുവായ സേവനം, യാതൊരു പ്രക്രിയയും നിര്‍വഹിക്കാനാവുന്നില്ല."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -347,6 +319,23 @@ msgstr "%1 -നെ തീര്‍ച്ചപ്പെടുത്തുക"
 #, kde-format
 msgid "Content dropped"
 msgstr "ഉള്ളടക്കം ഉപേക്ഷിക്കപ്പെട്ടു"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "ഒരു വി‍‍ഡ്ജറ്റ് ശൃഖലയില്‍ പങ്കുവയ്ക്കുന്നത് ആ വിഡ്ജറ്റ് വിദൂരത്തിലുള്ള മറ്റൊരു കമ്പ്യൂട്ടറില്‍ നിന്ന് "
+#~ "നിയന്ത്രിക്കാന്‍ അനുവദിക്കുന്നു."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "ഈ വിഡ്ജറ്റ് ശൃംഖലയില്‍ പങ്കുവയ്ക്കുക"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "എല്ലാവരേയും ഈ വിഡ്ജറ്റ് ഉപയോഗിക്കാന്‍ അനുവദിക്കുക"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "അസാധുവായ സേവനം, യാതൊരു പ്രക്രിയയും നിര്‍വഹിക്കാനാവുന്നില്ല."
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr "%1 വിഡ്ജറ്റ് ഏത് സ്ക്രിപ്റ്റ് എന്‍ജിനാണ് ഉപയോഗിക്കേണ്ടതെന്ന് നിര്‍വചിച്ചിട്ടില്ല."

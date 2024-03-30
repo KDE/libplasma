@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2024-03-03 22:23+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -198,34 +198,6 @@ msgstr "Felületi elemek hozzáadása…"
 msgid "Could not find requested component: %1"
 msgstr "A kért komponens nem található: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"A felületi elemek hálózaton történő megosztásakor lehetővé teszi ehhez a "
-"felületi elemhez való hozzáférést másik számítógépről mint távirányítóról."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Felületi elem megosztása a hálózaton"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Bárki számára szabad hozzáférést enged ehhez a felületi elemhez"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Érvénytelen (null) szolgáltatás, nem végezhető el semmilyen művelet."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -355,6 +327,24 @@ msgstr "A(z) %1 beállítása"
 #, kde-format
 msgid "Content dropped"
 msgstr "Tartalom ejtve"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "A felületi elemek hálózaton történő megosztásakor lehetővé teszi ehhez a "
+#~ "felületi elemhez való hozzáférést másik számítógépről mint távirányítóról."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Felületi elem megosztása a hálózaton"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "Bárki számára szabad hozzáférést enged ehhez a felületi elemhez"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr ""
+#~ "Érvénytelen (null) szolgáltatás, nem végezhető el semmilyen művelet."
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr ""

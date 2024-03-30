@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2014-08-13 22:05+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -203,34 +203,6 @@ msgstr "Lüttprogrammen tofögen..."
 msgid "Could not find requested component: %1"
 msgstr "Anfraagt Komponent lett sik nich finnen: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Na't Apenmaken vun en Lüttprogramm in't Nettwark kannst Du dor vun en anner "
-"Reekner ut op togriepen."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Dit Lüttprogramm in't Nettwark apenmaken"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Jan un Allemann den Togriep op dit Lüttprogramm verlöven"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Leeg oder keen Deenst, keen Akschonen lett sik utföhren."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -360,6 +332,23 @@ msgstr ""
 #, kde-format
 msgid "Content dropped"
 msgstr ""
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "Na't Apenmaken vun en Lüttprogramm in't Nettwark kannst Du dor vun en "
+#~ "anner Reekner ut op togriepen."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Dit Lüttprogramm in't Nettwark apenmaken"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "Jan un Allemann den Togriep op dit Lüttprogramm verlöven"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "Leeg oder keen Deenst, keen Akschonen lett sik utföhren."
 
 #, fuzzy
 #~| msgid "The %2 widget did not define which ScriptEngine to use."

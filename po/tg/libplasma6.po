@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2020-09-19 11:42+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -197,35 +197,6 @@ msgstr "Илова кардани виҷетҳо..."
 msgid "Could not find requested component: %1"
 msgstr "Унсури дархостшуда ёфт нашуд: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Мубодилакунии виҷет тавассути шабака иҷозат медиҳад. то тавонед ба ин виҷет "
-"аз компютери дурдаст, монанди идоракунии дурдаст, дастрасӣ пайдо кунед."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Мубодилакунии ин виҷет тавассути шабака"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr ""
-"Иҷозат диҳед, то ки ҳар як кас тавонад ба ин виҷет дастрасӣ пайдо кунад"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Хидмати (null) беэътибор ягон амалиётро иҷро карда наметавонад."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -352,6 +323,25 @@ msgstr "Танзим кардани %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Ҳаракаткунии муҳтаво"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "Мубодилакунии виҷет тавассути шабака иҷозат медиҳад. то тавонед ба ин "
+#~ "виҷет аз компютери дурдаст, монанди идоракунии дурдаст, дастрасӣ пайдо "
+#~ "кунед."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Мубодилакунии ин виҷет тавассути шабака"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr ""
+#~ "Иҷозат диҳед, то ки ҳар як кас тавонад ба ин виҷет дастрасӣ пайдо кунад"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "Хидмати (null) беэътибор ягон амалиётро иҷро карда наметавонад."
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2022-07-25 09:37+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -193,34 +193,6 @@ msgstr "Adicionar Elementos..."
 msgid "Could not find requested component: %1"
 msgstr "Não foi possível encontrar o componente pedido: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"A publicação de um elemento na rede permite-lhe aceder a este elemento a "
-"partir de outro computador, como se fosse um comando à distância."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Publicar este elemento na rede"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Permitir o acesso por todos a este elemento"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Serviço inválido (nulo); não é possível efectuar nenhuma operação."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -345,6 +317,23 @@ msgstr "Configurar o %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Conteúdo largado"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "A publicação de um elemento na rede permite-lhe aceder a este elemento a "
+#~ "partir de outro computador, como se fosse um comando à distância."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Publicar este elemento na rede"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "Permitir o acesso por todos a este elemento"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "Serviço inválido (nulo); não é possível efectuar nenhuma operação."
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr "O elemento %1 não definiu qual o motor de programação a usar."

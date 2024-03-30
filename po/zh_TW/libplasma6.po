@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2024-03-08 03:32+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -198,32 +198,6 @@ msgstr "新增元件..."
 msgid "Could not find requested component: %1"
 msgstr "找不到請求的組件：%1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr "在網路上分享元件能讓您存取另一台電腦上的此元件。"
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "將此元件分享在網路上"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "允許所有人自由存取此元件"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "不合法的（空白的）服務，無法執行任何操作。"
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -351,6 +325,21 @@ msgstr "設定 %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "已放入的內容"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr "在網路上分享元件能讓您存取另一台電腦上的此元件。"
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "將此元件分享在網路上"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "允許所有人自由存取此元件"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "不合法的（空白的）服務，無法執行任何操作。"
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr "%1 元件未定義使用哪個文稿引擎。"

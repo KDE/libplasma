@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2024-02-23 13:34\n"
 "Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -200,35 +200,6 @@ msgstr "Дадаць віджэты..."
 msgid "Could not find requested component: %1"
 msgstr "Не ўдалося знайсці патрэбны кампанент: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Абагульванне віджэта ў сетцы дае магчымасць атрымаць доступ да гэтага "
-"віджэта з іншага камп'ютара, які можна выкарыстоўваць як пульт дыстанцыйнага "
-"кіравання."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Абагуліць гэты віджэт у сетцы"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Дазволіць усім свабодны доступ да гэтага віджэта"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Хібная (нулявая) служба, не можа выконваць ніякіх аперацый."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -358,6 +329,24 @@ msgstr "Вызначыць %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Змесціва перацягнута"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "Абагульванне віджэта ў сетцы дае магчымасць атрымаць доступ да гэтага "
+#~ "віджэта з іншага камп'ютара, які можна выкарыстоўваць як пульт "
+#~ "дыстанцыйнага кіравання."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Абагуліць гэты віджэт у сетцы"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "Дазволіць усім свабодны доступ да гэтага віджэта"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "Хібная (нулявая) служба, не можа выконваць ніякіх аперацый."
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr "Віджэт %1 не вызначыў, які ScriptEngine выкарыстоўваць."

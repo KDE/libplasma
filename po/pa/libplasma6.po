@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2024-01-28 19:51-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -193,34 +193,6 @@ msgstr "...ਵਿਦਜੈੱਟ ਸ਼ਾਮਿਲ"
 msgid "Could not find requested component: %1"
 msgstr "ਲੋੜੀਦਾ ਭਾਗ ਲੱਭਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"ਨੈੱਟਵਰਕ ਉੱਤੇ ਵਿਦਜੈੱਟ ਨੂੰ ਸਾਂਝਾ ਕਰਨ ਨਾਲ ਤੁਸੀਂ ਇਸ ਵਿਦਜੈੱਟ ਨੂੰ ਹੋਰ ਕੰਪਿਊਟਰ ਤੋਂ ਰਿਮੋਟ ਕੰਟਰੋਲ ਵਜੋਂ ਅਸੈੱਸ "
-"ਮਨਜ਼ੂਰ ਕਰਦੇ ਹੋ।"
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "ਇਹ ਵਿਦਜੈੱਟ ਨੈੱਟਵਰਕ ਉੱਤੇ ਸਾਂਝਾ ਕਰੋ"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "ਹਰੇਕ ਨੂੰ ਇਹ ਵਿਦਜੈੱਟ ਵਰਤਣ ਦਿਓ"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "ਗਲਤ (ਨਲ) ਸਰਵਿਸ, ਕੋਈ ਵੀ ਓਪਰੇਸ਼ਨ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।"
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -344,6 +316,23 @@ msgstr "%1 ਸੈੱਟ ਕਰੋ"
 #, kde-format
 msgid "Content dropped"
 msgstr ""
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "ਨੈੱਟਵਰਕ ਉੱਤੇ ਵਿਦਜੈੱਟ ਨੂੰ ਸਾਂਝਾ ਕਰਨ ਨਾਲ ਤੁਸੀਂ ਇਸ ਵਿਦਜੈੱਟ ਨੂੰ ਹੋਰ ਕੰਪਿਊਟਰ ਤੋਂ ਰਿਮੋਟ ਕੰਟਰੋਲ ਵਜੋਂ ਅਸੈੱਸ "
+#~ "ਮਨਜ਼ੂਰ ਕਰਦੇ ਹੋ।"
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "ਇਹ ਵਿਦਜੈੱਟ ਨੈੱਟਵਰਕ ਉੱਤੇ ਸਾਂਝਾ ਕਰੋ"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "ਹਰੇਕ ਨੂੰ ਇਹ ਵਿਦਜੈੱਟ ਵਰਤਣ ਦਿਓ"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "ਗਲਤ (ਨਲ) ਸਰਵਿਸ, ਕੋਈ ਵੀ ਓਪਰੇਸ਼ਨ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।"
 
 #~ msgctxt "misc category"
 #~ msgid "Miscellaneous"

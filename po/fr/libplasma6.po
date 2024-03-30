@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2024-03-06 12:31+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -210,34 +210,6 @@ msgstr "Ajouter des composants graphiques..."
 msgid "Could not find requested component: %1"
 msgstr "Impossible de trouver le composant demandé : %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Partager un composant graphique sur le réseau vous permet d'accéder à ce "
-"composant depuis un autre ordinateur en tant que commande à distance."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Partager ce composant graphique sur le réseau"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Permettre à tous le monde d'accéder librement à ce composant graphique"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Service non valable (Null), aucune opération ne peut être effectuée."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -369,6 +341,25 @@ msgstr "Appliquer %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Contenu déposé"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "Partager un composant graphique sur le réseau vous permet d'accéder à ce "
+#~ "composant depuis un autre ordinateur en tant que commande à distance."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Partager ce composant graphique sur le réseau"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr ""
+#~ "Permettre à tous le monde d'accéder librement à ce composant graphique"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr ""
+#~ "Service non valable (Null), aucune opération ne peut être effectuée."
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr ""

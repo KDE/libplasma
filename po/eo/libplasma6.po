@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2024-03-24 06:28+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -196,34 +196,6 @@ msgstr "Aldoni fenestraĵojn..."
 msgid "Could not find requested component: %1"
 msgstr "Ne eblis trovi petitan komponanton: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Kunhavigi fenestraĵon en la reto permesas al vi aliri ĉi tiun fenestraĵon de "
-"alia komputilo kiel teleregilo."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Kunhavigi ĉi tiun fenestraĵon en la reto"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Permesi al ĉiuj libere aliri ĉi tiun fenestraĵon"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Nevalida (nula) servo, ne povas fari ajnajn operaciojn."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -353,3 +325,20 @@ msgstr "Agordi %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Enhavo perdiĝis"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "Kunhavigi fenestraĵon en la reto permesas al vi aliri ĉi tiun fenestraĵon "
+#~ "de alia komputilo kiel teleregilo."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Kunhavigi ĉi tiun fenestraĵon en la reto"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "Permesi al ĉiuj libere aliri ĉi tiun fenestraĵon"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "Nevalida (nula) servo, ne povas fari ajnajn operaciojn."

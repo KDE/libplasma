@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2024-03-02 12:48+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -197,34 +197,6 @@ msgstr "Dodaj elementy interfejsu..."
 msgid "Could not find requested component: %1"
 msgstr "Nie można znaleźć żądanego składnika: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Współdzielenie elementu interfejsu w sieci pozwala uzyskać dostęp do tego "
-"elementu interfejsu z innego komputera jako pilota."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Współdziel ten element interfejsu w sieci"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Zezwól każdemu na dostęp do tego elementu interfejsu"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Niepoprawna (pusta) usługa. Nie można wykonać żadnej operacji."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -355,6 +327,23 @@ msgstr "Ustaw %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Upuszczono zawartość"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "Współdzielenie elementu interfejsu w sieci pozwala uzyskać dostęp do tego "
+#~ "elementu interfejsu z innego komputera jako pilota."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Współdziel ten element interfejsu w sieci"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "Zezwól każdemu na dostęp do tego elementu interfejsu"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "Niepoprawna (pusta) usługa. Nie można wykonać żadnej operacji."
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr ""

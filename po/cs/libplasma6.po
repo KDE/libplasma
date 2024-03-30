@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2024-02-19 17:07+0100\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -196,34 +196,6 @@ msgstr "Přidat widgety..."
 msgid "Could not find requested component: %1"
 msgstr "Požadovanou komponentu se nepovedlo nalézt: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Sdílení widgetu na síti vám umožní přístup k widgetu z jiného počítače a "
-"vzdáleně jej ovládat."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Sdílet tento widget na síti"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Umožnit každému volný přístup k tomuto widgetu"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Neplatná (prázdná) služba, nelze provádět žádné operace."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -346,3 +318,20 @@ msgstr "Nastavit %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Obsah byl zahozen"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "Sdílení widgetu na síti vám umožní přístup k widgetu z jiného počítače a "
+#~ "vzdáleně jej ovládat."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Sdílet tento widget na síti"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "Umožnit každému volný přístup k tomuto widgetu"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "Neplatná (prázdná) služba, nelze provádět žádné operace."

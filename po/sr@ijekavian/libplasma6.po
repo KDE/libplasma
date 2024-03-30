@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:38+0000\n"
 "PO-Revision-Date: 2016-03-20 15:24+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -203,34 +203,6 @@ msgstr "Додај виџете..."
 msgid "Could not find requested component: %1"
 msgstr "Не могу да нађем захтијевану компоненту: %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: plasma/private/publish.ui:17
-#, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Дијељење виџета на мрежи омогућава вам да приступите том виџету са другог "
-"рачунара као даљинским управљачем."
-
-#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
-#: plasma/private/publish.ui:27
-#, kde-format
-msgid "Share this widget on the network"
-msgstr "Подијели овај виџет на мрежи"
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
-#: plasma/private/publish.ui:37
-#, kde-format
-msgid "Allow everybody to freely access this widget"
-msgstr "Дозволи свима слободан приступ овом виџету"
-
-#: plasma/private/service_p.h:32
-#, kde-format
-msgctxt "Error message, tried to start an invalid service"
-msgid "Invalid (null) service, can not perform any operations."
-msgstr "Неисправан (нулти) сервис, не може извршити никакву операцију."
-
 #: plasmaquick/appletquickitem.cpp:519
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
@@ -364,6 +336,23 @@ msgstr ""
 #, kde-format
 msgid "Content dropped"
 msgstr "Садржај превучен"
+
+#~ msgid ""
+#~ "Sharing a widget on the network allows you to access this widget from "
+#~ "another computer as a remote control."
+#~ msgstr ""
+#~ "Дијељење виџета на мрежи омогућава вам да приступите том виџету са другог "
+#~ "рачунара као даљинским управљачем."
+
+#~ msgid "Share this widget on the network"
+#~ msgstr "Подијели овај виџет на мрежи"
+
+#~ msgid "Allow everybody to freely access this widget"
+#~ msgstr "Дозволи свима слободан приступ овом виџету"
+
+#~ msgctxt "Error message, tried to start an invalid service"
+#~ msgid "Invalid (null) service, can not perform any operations."
+#~ msgstr "Неисправан (нулти) сервис, не може извршити никакву операцију."
 
 #~ msgid "The %1 widget did not define which ScriptEngine to use."
 #~ msgstr "Виџет %1 не дефинише који скриптни мотор треба за њега."

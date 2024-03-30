@@ -458,12 +458,6 @@ void AppletPrivate::setupPackage()
     //         << ", main script is" << package->filePath("mainscript");
 #endif
 
-    // FIXME: Replace with ki18n functionality once semantics is clear.
-    // const QString translationsPath = package->filePath("translations");
-    // if (!translationsPath.isEmpty()) {
-    //     KGlobal::dirs()->addResourceDir("locale", translationsPath);
-    // }
-
     if (!package.filePath("mainconfigui").isEmpty()) {
         q->setHasConfigurationInterface(true);
     }

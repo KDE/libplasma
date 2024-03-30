@@ -113,12 +113,9 @@ void AppletPrivate::init(const QVariantList &args)
         configAction->setText(i18nc("%1 is the name of the applet", "Configure %1...", q->title().replace(QLatin1Char('&'), QStringLiteral("&&"))));
     }
 
+    Q_ASSERT(appletDescription.isValid());
     if (!appletDescription.isValid()) {
-#ifndef NDEBUG
-        // qCDebug(LOG_PLASMA) << "Check your constructor! "
-        //         << "You probably want to be passing in a Service::Ptr "
-        //         << "or a QVariantList with a valid storageid as arg[0].";
-#endif
+        qCWarning(LOG_PLASMA) << "Trying to create applet without valid metadata";
         return;
     }
 

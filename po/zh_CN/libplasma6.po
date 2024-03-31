@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-30 00:38+0000\n"
-"PO-Revision-Date: 2024-03-28 19:17\n"
+"PO-Revision-Date: 2024-03-30 19:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -322,18 +322,3 @@ msgstr "设置 %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "内容已拖放"
-
-#~ msgid ""
-#~ "Sharing a widget on the network allows you to access this widget from "
-#~ "another computer as a remote control."
-#~ msgstr "在网络上共享挂件后，您可以将其他计算机作为遥控器远程访问此挂件。"
-
-#~ msgid "Share this widget on the network"
-#~ msgstr "在网络上共享此挂件"
-
-#~ msgid "Allow everybody to freely access this widget"
-#~ msgstr "允许任何人自由访问此挂件"
-
-#~ msgctxt "Error message, tried to start an invalid service"
-#~ msgid "Invalid (null) service, can not perform any operations."
-#~ msgstr "无效的服务，无法执行任何操作。"

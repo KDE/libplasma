@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-05 02:20+0000\n"
-"PO-Revision-Date: 2024-01-06 03:32\n"
+"PO-Revision-Date: 2024-03-30 19:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/libplasma/libplasma6.pot\n"
-"X-Crowdin-File-ID: 48704\n"
+"X-Crowdin-File: /kf6-stable/messages/libplasma/libplasma6.pot\n"
+"X-Crowdin-File-ID: 50190\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -133,7 +133,7 @@ msgstr "挂件已移除"
 #: plasma/private/applet_p.cpp:254
 #, kde-format
 msgid "The widget \"%1\" has been removed."
-msgstr "已移除挂件“%1”。"
+msgstr "挂件“%1”已移除。"
 
 #: plasma/private/applet_p.cpp:258
 #, kde-format
@@ -250,7 +250,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 不兼容 Plasma %2"
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
@@ -273,7 +273,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "对不起，加载 %1 时发生错误。"
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format

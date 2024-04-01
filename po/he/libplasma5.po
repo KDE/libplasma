@@ -3,20 +3,21 @@
 #
 # Elkana Bardugo <ttv200@gmail.com>, 2016.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-27 05:30+0000\n"
-"PO-Revision-Date: 2017-05-16 06:50-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2024-04-01 00:13+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: declarativeimports/calendar/eventdatadecorator.cpp:51
 #, kde-format
@@ -34,7 +35,7 @@ msgstr "אירועים"
 #, kde-format
 msgctxt "Agenda listview section title"
 msgid "Todo"
-msgstr ""
+msgstr "מטלה"
 
 #: declarativeimports/calendar/eventdatadecorator.cpp:57
 #, kde-format
@@ -46,7 +47,7 @@ msgstr "אחר"
 #, kde-format
 msgctxt "Format: month year"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: declarativeimports/calendar/qml/MonthView.qml:255
 #, kde-format
@@ -72,7 +73,7 @@ msgstr "היום"
 #: declarativeimports/calendar/qml/MonthView.qml:273
 #, kde-format
 msgid "Reset calendar to today"
-msgstr ""
+msgstr "איפוס לוח השנה להיום"
 
 #: declarativeimports/calendar/qml/MonthView.qml:282
 #, kde-format
@@ -92,18 +93,17 @@ msgstr "העשור הבא"
 #: declarativeimports/calendar/qml/MonthView.qml:306
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "ימים"
 
 #: declarativeimports/calendar/qml/MonthView.qml:311
-#, fuzzy, kde-format
-#| msgid "Next Month"
+#, kde-format
 msgid "Months"
-msgstr "חודש הבא"
+msgstr "חודשים"
 
 #: declarativeimports/calendar/qml/MonthView.qml:316
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "שנים"
 
 #: declarativeimports/plasmacomponents/qml/QueryDialog.qml:21
 #, kde-format
@@ -118,34 +118,34 @@ msgstr "בטל"
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:80
 #, kde-format
 msgid "More actions"
-msgstr ""
+msgstr "פעולות נוספות"
 
 #: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:559
 #, kde-format
 msgctxt "@action:button"
 msgid "Collapse"
-msgstr ""
+msgstr "צמצום"
 
 #: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:559
 #, kde-format
 msgctxt "@action:button"
 msgid "Expand"
-msgstr ""
+msgstr "הרחבה"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:46
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "סיסמה"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:68
 #, kde-format
 msgid "Search…"
-msgstr ""
+msgstr "חיפוש…"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:70
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "חיפוש"
 
 #: plasma/applet.cpp:379
 #, kde-format
@@ -155,26 +155,24 @@ msgstr "לא ידוע"
 #: plasma/applet.cpp:759
 #, kde-format
 msgid "Activate %1 Widget"
-msgstr ""
+msgstr "הפעלת היישומון %1"
 
 #: plasma/containment.cpp:115 plasma/private/applet_p.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "%1 is the name of the applet"
-#| msgid "Remove this %1"
+#, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
-msgstr "הסר את %1"
+msgstr "הסרת %1"
 
 #: plasma/containment.cpp:121 plasma/corona.cpp:406 plasma/corona.cpp:496
 #, kde-format
 msgid "Enter Edit Mode"
-msgstr ""
+msgstr "כניסה למצב עריכה"
 
 #: plasma/containment.cpp:124 plasma/private/applet_p.cpp:111
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr ""
+msgstr "הגדרת %1…"
 
 #: plasma/corona.cpp:355 plasma/corona.cpp:482
 #, kde-format
@@ -189,13 +187,13 @@ msgstr "בטל נעילת יישומונים"
 #: plasma/corona.cpp:404
 #, kde-format
 msgid "Exit Edit Mode"
-msgstr ""
+msgstr "יציאה ממצב עריכה"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
 #, kde-format
 msgid "Whether or not to create an on-disk cache for the theme."
-msgstr ""
+msgstr "האם ליצור מטמון בכונן לערכת העיצוב."
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
@@ -205,12 +203,15 @@ msgid ""
 "files are sparse files, so the maximum size may not be used. Setting a "
 "larger size is therefore often quite safe."
 msgstr ""
+"הגודל המרבי של מטמון ערכות עיצוב על הכונן הוא בקילובתים. נא לשים שהקבצים "
+"האלה הם דלילים, לכן סביר להניח שלא ייעשה שימוש במלוא הגודל שהוגדר. הגדרת "
+"גודל גדול יותר היא בדרך כלל די בטוחה."
 
 #: plasma/packagestructure/packages.cpp:28
 #: plasma/packagestructure/packages.cpp:47
 #, kde-format
 msgid "Main Script File"
-msgstr ""
+msgstr "קובץ הסקריפט הראשי"
 
 #: plasma/packagestructure/packages.cpp:29
 #, kde-format
@@ -225,7 +226,7 @@ msgstr "תמונות"
 #: plasma/packagestructure/packages.cpp:70
 #, kde-format
 msgid "Themed Images"
-msgstr ""
+msgstr "תמונות לפי נושא"
 
 #: plasma/packagestructure/packages.cpp:76
 #, kde-format
@@ -268,7 +269,7 @@ msgstr ""
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:31
 #, kde-format
 msgid "Configuration XML file"
-msgstr ""
+msgstr "קובץ XML הגדרות"
 
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:47
 #, kde-format
@@ -278,12 +279,12 @@ msgstr ""
 #: plasma/packagestructure/plasma_dataengine_packagestructure.cpp:36
 #, kde-format
 msgid "Service Descriptions"
-msgstr ""
+msgstr "תיאורי שירותים"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:30
 #, kde-format
 msgid "Images for dialogs"
-msgstr ""
+msgstr "תמונות לחלוניות"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:31
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:32
@@ -300,24 +301,24 @@ msgstr ""
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:36
 #, kde-format
 msgid "Wallpaper packages"
-msgstr ""
+msgstr "חבילות תמונות רקע"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:38
 #, kde-format
 msgid "Images for widgets"
-msgstr ""
+msgstr "תמונות ליישומונים"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:39
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:40
 #, kde-format
 msgid "Background image for widgets"
-msgstr ""
+msgstr "תמונת רקע ליישומונים"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:41
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:42
 #, kde-format
 msgid "Analog clock face"
-msgstr ""
+msgstr "פני שעון מחוגים"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:43
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:44
@@ -340,7 +341,7 @@ msgstr ""
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:50
 #, kde-format
 msgid "Opaque images for dialogs"
-msgstr ""
+msgstr "תמונות אטומות לחלוניות"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:51
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:52
@@ -352,29 +353,29 @@ msgstr ""
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:58
 #, kde-format
 msgid "Opaque theme for the logout dialog"
-msgstr ""
+msgstr "ערכת עיצוב אטומה לחלונית היציאה מהמשתמש"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:60
 #, kde-format
 msgid "Opaque images for widgets"
-msgstr ""
+msgstr "תמונות אטומות ליישומונים"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:63
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:66
 #, kde-format
 msgid "Opaque background image for panels"
-msgstr ""
+msgstr "תמונת רקע אטומה ללוחות"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:67
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:68
 #, kde-format
 msgid "Opaque background image for tooltips"
-msgstr ""
+msgstr "תמונת רקע אטום לחלוניות צצות"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:70
 #, kde-format
 msgid "KColorScheme configuration file"
-msgstr ""
+msgstr "קובץ הגדרות של KColorScheme"
 
 #: plasma/pluginloader.cpp:592 plasma/pluginloader.cpp:593
 #, kde-format
@@ -385,26 +386,25 @@ msgstr "שונות"
 #: plasma/private/applet_p.cpp:126
 #, kde-format
 msgid "The %1 widget did not define which ScriptEngine to use."
-msgstr ""
+msgstr "היישומון %1 לא הגדיר באיזה ScriptEngine (מנוע סקריפטים) להשתמש."
 
 #: plasma/private/applet_p.cpp:145
 #, kde-format
 msgctxt "Package file, name of the widget"
 msgid "Could not open the %1 package required for the %2 widget."
-msgstr ""
+msgstr "לא ניתן לפתוח את החבילה %1 שנחוצה ליישומון %2."
 
 #: plasma/private/applet_p.cpp:166
 #, kde-format
 msgctxt ""
 "API or programming language the widget was written in, name of the widget"
 msgid "Could not create a %1 ScriptEngine for the %2 widget."
-msgstr ""
+msgstr "לא ניתן ליצור ScriptEngine‏ %1 ליישומון %2."
 
 #: plasma/private/applet_p.cpp:172
-#, fuzzy, kde-format
-#| msgid "Alternatives..."
+#, kde-format
 msgid "Show Alternatives..."
-msgstr "חלופות..."
+msgstr "הצגת חלופות…"
 
 #: plasma/private/applet_p.cpp:274
 #, kde-format
@@ -457,12 +457,12 @@ msgstr "הסר יישומון זה"
 #: plasma/private/associatedapplicationmanager.cpp:166
 #, kde-format
 msgid "Run the Associated Application"
-msgstr ""
+msgstr "הרצת היישום המשויך"
 
 #: plasma/private/applet_p.cpp:480
 #, kde-format
 msgid "Script initialization failed"
-msgstr ""
+msgstr "הפעלת הסקריפט נכשלה"
 
 #: plasma/private/associatedapplicationmanager.cpp:62
 #: plasma/private/associatedapplicationmanager.cpp:163
@@ -493,7 +493,7 @@ msgstr "הוסף יישומון..."
 #: plasma/private/containment_p.cpp:187
 #, kde-format
 msgid "Could not find requested component: %1"
-msgstr ""
+msgstr "לא ניתן למצוא את הרכיב המבוקש: %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: plasma/private/publish.ui:17
@@ -502,40 +502,40 @@ msgid ""
 "Sharing a widget on the network allows you to access this widget from "
 "another computer as a remote control."
 msgstr ""
+"שיתוף היישומון הזה ברשת מאפשר לך לגשת ליישומון הזה ממחשב אחר כשליטה מרחוק."
 
 #. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
 #: plasma/private/publish.ui:27
 #, kde-format
 msgid "Share this widget on the network"
-msgstr ""
+msgstr "שיתוף היישומון הזה ברשת"
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
 #: plasma/private/publish.ui:37
 #, kde-format
 msgid "Allow everybody to freely access this widget"
-msgstr ""
+msgstr "לאפשר לכולם לגשת ליישומון הזה בחופשיות"
 
 #: plasma/private/service_p.h:32
 #, kde-format
 msgctxt "Error message, tried to start an invalid service"
 msgid "Invalid (null) service, can not perform any operations."
-msgstr ""
+msgstr "שירות (אפס) לא ידוע, אי אפשר לבצע פעולות."
 
 #: plasmaquick/appletquickitem.cpp:609
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown Applet"
-msgstr "לא ידוע"
+msgstr "יישומונית לא ידועה"
 
 #: plasmaquick/appletquickitem.cpp:624
 #, kde-format
 msgid "Error loading QML file: %1 %2"
-msgstr ""
+msgstr "שגיאה בטעינת קובץ QML‏: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:626
 #, kde-format
 msgid "Error loading Applet: package inexistent. %1"
-msgstr ""
+msgstr "שגיאה בטעינת יישומונית: החבילה לא קיימת. %1"
 
 #: plasmaquick/configview.cpp:92
 #, kde-format
@@ -545,7 +545,7 @@ msgstr "הגדרות %1"
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:603
 #, kde-format
 msgid "Plasma Package"
-msgstr ""
+msgstr "חבילת פלזמה"
 
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:607
 #, kde-format
@@ -555,12 +555,12 @@ msgstr "התקן"
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:620
 #, kde-format
 msgid "Package Installation Failed"
-msgstr ""
+msgstr "התקנת החבילה נכשלה"
 
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:643
 #, kde-format
 msgid "The package you just dropped is invalid."
-msgstr ""
+msgstr "החבילה שהרגע גררת שגויה."
 
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:652
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:721
@@ -572,15 +572,14 @@ msgstr "יישומונים"
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
-msgstr ""
+msgstr "הוספת %1"
 
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:671
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:725
-#, fuzzy, kde-format
-#| msgid "Icon"
+#, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
-msgstr "סמל"
+msgstr "הוספת סמל"
 
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:683
 #, kde-format
@@ -591,12 +590,12 @@ msgstr "רקע"
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"
-msgstr ""
+msgstr "הגדרת %1"
 
 #: scriptengines/qml/plasmoid/dropmenu.cpp:28
 #, kde-format
 msgid "Content dropped"
-msgstr ""
+msgstr "התוכן נגרר"
 
 #~ msgid "Accessibility"
 #~ msgstr "נגישות"

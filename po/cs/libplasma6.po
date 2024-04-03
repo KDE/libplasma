@@ -318,20 +318,3 @@ msgstr "Nastavit %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Obsah byl zahozen"
-
-#~ msgid ""
-#~ "Sharing a widget on the network allows you to access this widget from "
-#~ "another computer as a remote control."
-#~ msgstr ""
-#~ "Sdílení widgetu na síti vám umožní přístup k widgetu z jiného počítače a "
-#~ "vzdáleně jej ovládat."
-
-#~ msgid "Share this widget on the network"
-#~ msgstr "Sdílet tento widget na síti"
-
-#~ msgid "Allow everybody to freely access this widget"
-#~ msgstr "Umožnit každému volný přístup k tomuto widgetu"
-
-#~ msgctxt "Error message, tried to start an invalid service"
-#~ msgid "Invalid (null) service, can not perform any operations."
-#~ msgstr "Neplatná (prázdná) služba, nelze provádět žádné operace."

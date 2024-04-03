@@ -7,7 +7,6 @@
 import QtQuick
 import QtQuick.Templates as T
 import QtQuick.Controls as Controls
-import Qt5Compat.GraphicalEffects
 import org.kde.ksvg as KSvg
 //NOTE: importing PlasmaCore is necessary in order to make KSvg load the current Plasma Theme
 import org.kde.plasma.core as PlasmaCore
@@ -190,7 +189,7 @@ T.ComboBox {
             LayoutMirroring.childrenInherit: true
             T.ScrollBar.vertical: Controls.ScrollBar { }
         }
-        background: Rectangle {
+        background: Kirigami.ShadowedRectangle {
             anchors {
                 fill: parent
                 margins: -1
@@ -199,15 +198,14 @@ T.ComboBox {
             Kirigami.Theme.colorSet: Kirigami.Theme.View
             Kirigami.Theme.inherit: false
             color: Kirigami.Theme.backgroundColor
-            border.color: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.3)
-            layer.enabled: true
-
-            layer.effect: DropShadow {
-                transparentBorder: true
-                radius: 4
-                samples: 8
-                horizontalOffset: 2
-                verticalOffset: 2
+            border {
+                color: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.3)
+                width: 1
+            }
+            shadow {
+                size: 4
+                xOffset: 2
+                yOffset: 2
                 color: Qt.rgba(0, 0, 0, 0.3)
             }
         }

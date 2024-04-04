@@ -24,7 +24,12 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
     auto parentItem = qobject_cast<QQuickItem *>(parent);
     if (parentItem) {
         connect(parentItem, &QQuickItem::enabledChanged, this, &PlasmaTheme::syncColors);
-        connect(parentItem, &QQuickItem::visibleChanged, this, &PlasmaTheme::syncColors);
+        connect(parentItem, &QQuickItem::visibleChanged, this, [this, parentItem] {
+            if (!parentItem->isVisible()) {
+                return;
+            }
+            syncColors();
+        });
     }
 
     setDefaultFont(qGuiApp->font());

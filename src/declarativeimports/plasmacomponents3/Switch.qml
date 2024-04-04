@@ -54,4 +54,10 @@ T.Switch {
         iconItem.source: control.icon.name || control.icon.source
         label.text: control.text
     }
+
+    Keys.onPressed: (event) => {
+        if (event.key == Qt.Key_Space || event.key == Qt.Key_Return || event.key == Qt.Key_Enter) {
+            toggle();
+        }
+    }
 }

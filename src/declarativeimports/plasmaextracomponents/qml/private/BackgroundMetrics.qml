@@ -10,7 +10,6 @@ import org.kde.plasma.core as PlasmaCore
 import org.kde.ksvg as KSvg
 
 KSvg.FrameSvgItem {
-    id: backgroundMetrics
     visible: false
     imagePath: {
         if (Window.window instanceof PlasmaCore.AppletPopup || Window.window instanceof PlasmaCore.Dialog) {
@@ -22,5 +21,5 @@ KSvg.FrameSvgItem {
             return "";
         }
     }
-    readonly property bool hasInset: backgroundMetrics.inset.left >= 0 && backgroundMetrics.inset.right >= 0 && backgroundMetrics.inset.top >= 0 && backgroundMetrics.inset.bottom >= 0
+    readonly property bool hasInset: inset.left >= 0 && inset.right >= 0 && inset.top >= 0 && inset.bottom >= 0
 }

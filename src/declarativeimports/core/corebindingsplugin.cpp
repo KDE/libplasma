@@ -53,6 +53,7 @@ void CoreBindingsPlugin::registerTypes(const char *uri)
         return new Plasma::QuickTheme(engine);
     });
 
+    qmlRegisterType<PlasmaQuick::PlasmaWindow>(uri, 2, 0, "Window");
     qmlRegisterType<PlasmaQuick::AppletPopup>(uri, 2, 0, "AppletPopup");
     qmlRegisterType<PlasmaQuick::PopupPlasmaWindow>(uri, 2, 0, "PopupPlasmaWindow");
     qmlRegisterType<PlasmaQuick::Dialog>(uri, 2, 0, "Dialog");

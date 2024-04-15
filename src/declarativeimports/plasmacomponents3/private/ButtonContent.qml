@@ -15,17 +15,18 @@ RowLayout {
     id: root
 
     property string labelText: ""
+    property T.Button button
 
-    readonly property bool usingFocusBackground: !parent.flat && buttonSvg.hasElement("hint-focus-highlighted-background") && parent.visualFocus && !(parent.pressed || parent.checked)
-    readonly property int defaultIconSize: parent.flat ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.small
+    readonly property bool usingFocusBackground: !button.flat && buttonSvg.hasElement("hint-focus-highlighted-background") && button.visualFocus && !(button.pressed || button.checked)
+    readonly property int defaultIconSize: button.flat ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.small
 
-    spacing: parent.spacing
+    spacing: button.spacing
 
     GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
-        columns: root.parent.display == T.Button.TextBesideIcon ? 2 : 1
-        rowSpacing: root.parent.spacing
+        columns: root.button.display == T.Button.TextBesideIcon ? 2 : 1
+        rowSpacing: root.button.spacing
         columnSpacing: rowSpacing
 
         Kirigami.Icon {
@@ -33,36 +34,36 @@ RowLayout {
 
             Layout.alignment: Qt.AlignCenter
 
-            Layout.fillWidth: root.parent.display !== T.Button.TextBesideIcon || root.labelText.length === 0
+            Layout.fillWidth: root.button.display !== T.Button.TextBesideIcon || root.labelText.length === 0
             Layout.fillHeight: true
 
             Layout.minimumWidth: Math.min(root.width, root.height, implicitWidth)
             Layout.minimumHeight: Math.min(root.width, root.height, implicitHeight)
 
-            Layout.maximumWidth: root.parent.icon.width > 0 ? root.parent.icon.width : Number.POSITIVE_INFINITY
-            Layout.maximumHeight: root.parent.icon.height > 0 ? root.parent.icon.height : Number.POSITIVE_INFINITY
+            Layout.maximumWidth: root.button.icon.width > 0 ? root.button.icon.width : Number.POSITIVE_INFINITY
+            Layout.maximumHeight: root.button.icon.height > 0 ? root.button.icon.height : Number.POSITIVE_INFINITY
 
-            implicitWidth: root.parent.icon.width > 0 ? root.parent.icon.width : root.defaultIconSize
-            implicitHeight: root.parent.icon.height > 0 ? root.parent.icon.height : root.defaultIconSize
-            visible: source.length > 0 && root.parent.display !== T.Button.TextOnly
-            source: root.parent.icon ? (root.parent.icon.name || root.parent.icon.source) : ""
+            implicitWidth: root.button.icon.width > 0 ? root.button.icon.width : root.defaultIconSize
+            implicitHeight: root.button.icon.height > 0 ? root.button.icon.height : root.defaultIconSize
+            visible: source.length > 0 && root.button.display !== T.Button.TextOnly
+            source: root.button.icon ? (root.button.icon.name || root.button.icon.source) : ""
             selected: root.usingFocusBackground
         }
         PlasmaComponents.Label {
             id: label
             Layout.fillWidth: true
             Layout.fillHeight: true
-            visible: text.length > 0 && root.parent.display !== T.Button.IconOnly
+            visible: text.length > 0 && root.button.display !== T.Button.IconOnly
             text: root.labelText
-            font: root.parent.font
+            font: root.button.font
             color: root.usingFocusBackground ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
-            horizontalAlignment: root.parent.display !== T.Button.TextUnderIcon && icon.visible ? Text.AlignLeft : Text.AlignHCenter
+            horizontalAlignment: root.button.display !== T.Button.TextUnderIcon && icon.visible ? Text.AlignLeft : Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
         }
     }
     KSvg.SvgItem {
-        visible: root.parent.Accessible.role === Accessible.ButtonMenu && label.visible
+        visible: root.button.Accessible.role === Accessible.ButtonMenu && label.visible
         Layout.preferredWidth: Kirigami.Units.iconSizes.small
         Layout.preferredHeight: Layout.preferredWidth
         Layout.alignment: Qt.AlignCenter

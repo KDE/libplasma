@@ -45,6 +45,7 @@ T.Button {
 
     contentItem: Private.ButtonContent {
         labelText: control.Kirigami.MnemonicData.richTextLabel
+        button: control
     }
 
     background: Private.ButtonBackground {}

@@ -3,11 +3,17 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
+import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 
 Item {
     id: root
+
+    required property T.Button button
+
     // These should be used as the padding for the parent control
     property real leftMargin: loader.item.leftMargin
     property real topMargin: loader.item.topMargin
@@ -23,17 +29,17 @@ Item {
     Loader {
         id: loader
         anchors.fill: parent
-        sourceComponent: root.parent.flat ? flatButtonBackground : raisedButtonBackground
+        sourceComponent: root.button.flat ? flatButtonBackground : raisedButtonBackground
     }
 
     Component {
         id: flatButtonBackground
         FlatButtonBackground {
             anchors.fill: parent
-            hovered: root.parent.hovered
-            pressed: root.parent.down
-            checked: root.parent.checked
-            focused: root.parent.visualFocus
+            hovered: root.button.hovered
+            pressed: root.button.down
+            checked: root.button.checked
+            focused: root.button.visualFocus
         }
     }
 
@@ -41,10 +47,10 @@ Item {
         id: raisedButtonBackground
         RaisedButtonBackground {
             anchors.fill: parent
-            hovered: root.parent.hovered
-            pressed: root.parent.down
-            checked: root.parent.checked
-            focused: root.parent.visualFocus
+            hovered: root.button.hovered
+            pressed: root.button.down
+            checked: root.button.checked
+            focused: root.button.visualFocus
         }
     }
 }

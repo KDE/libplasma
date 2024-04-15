@@ -48,5 +48,7 @@ T.Button {
         button: control
     }
 
-    background: Private.ButtonBackground {}
+    background: Private.ButtonBackground {
+        button: control
+    }
 }

@@ -37,6 +37,8 @@ T.RadioButton {
     }
 
     contentItem: Private.IconLabel {
+        id: contentLabel
+
         readonly property int effectiveIndicatorWidth: control.indicator && control.indicator.visible && control.indicator.width > 0
             ? control.indicator.width + control.spacing : 0
 
@@ -54,8 +56,8 @@ T.RadioButton {
         label.text: control.text
 
         Rectangle { // As long as we don't enable antialiasing, not rounding should be fine
-            parent: control.contentItem.label
-            width: Math.min(parent.width, parent.contentWidth)
+            parent: contentLabel.label
+            width: Math.min(parent.width, contentLabel.label.contentWidth)
             height: 1
             anchors.left: parent.left
             anchors.top: parent.bottom

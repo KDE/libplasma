@@ -6,11 +6,14 @@
 
 import QtQuick
 //for Settings
+import QtQuick.Templates as T
 import org.kde.ksvg as KSvg
 import org.kde.kirigami as Kirigami
 
 KSvg.FrameSvgItem {
     id: background
+
+    property T.ItemDelegate control
 
     imagePath: "widgets/listitem"
     prefix: control.highlighted || control.down ? "pressed" : "normal"
@@ -22,7 +25,7 @@ KSvg.FrameSvgItem {
         visible: !Kirigami.Settings.isMobile
         prefix: "hover"
         anchors.fill: parent
-        opacity: control.hovered && !control.down ? 1 : 0
+        opacity: background.control.hovered && !background.control.down ? 1 : 0
     }
 }
 

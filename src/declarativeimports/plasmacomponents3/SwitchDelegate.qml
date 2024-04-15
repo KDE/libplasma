@@ -57,5 +57,7 @@ T.SwitchDelegate {
         control: control
     }
 
-    background: Private.DefaultListItemBackground {}
+    background: Private.DefaultListItemBackground {
+        control: control
+    }
 }

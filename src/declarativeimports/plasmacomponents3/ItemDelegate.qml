@@ -44,5 +44,7 @@ T.ItemDelegate {
         label.text: control.text
     }
 
-    background: Private.DefaultListItemBackground {}
+    background: Private.DefaultListItemBackground {
+        control: control
+    }
 }

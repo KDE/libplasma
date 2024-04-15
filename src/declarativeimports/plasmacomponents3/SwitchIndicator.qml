@@ -26,7 +26,7 @@ Item {
         id: switchSvg
         imagePath: "widgets/switch"
         // FIXME
-        colorSet: control.Kirigami.Theme.colorSet
+        colorSet: root.control.Kirigami.Theme.colorSet
     }
 
     KSvg.FrameSvgItem {
@@ -60,12 +60,12 @@ Item {
     KSvg.SvgItem {
         id: button
 
-        x: Math.max(0, Math.min(parent.width - width, control.visualPosition * parent.width - (width / 2)))
+        x: Math.max(0, Math.min(parent.width - width, root.control.visualPosition * parent.width - (width / 2)))
 
         anchors.verticalCenter: parent.verticalCenter
 
         svg: switchSvg
-        elementId: control.down ? "handle-pressed" : (control.hovered || control.focus ? "handle-hover" : "handle")
+        elementId: root.control.down ? "handle-pressed" : (root.control.hovered || root.control.focus ? "handle-hover" : "handle")
 
         implicitWidth: naturalSize.width
         implicitHeight: naturalSize.height
@@ -86,7 +86,7 @@ Item {
             implicitWidth: naturalSize.width
             implicitHeight: naturalSize.height
             elementId: "handle-shadow"
-            visible: enabled && !control.down
+            visible: enabled && !root.control.down
         }
         KSvg.SvgItem {
             anchors.centerIn: parent
@@ -95,7 +95,7 @@ Item {
             svg: switchSvg
             elementId: "handle-focus"
             visible: opacity > 0
-            opacity: control.visualFocus
+            opacity: root.control.visualFocus
             Behavior on opacity {
                 enabled: Kirigami.Units.longDuration > 0
                 NumberAnimation {

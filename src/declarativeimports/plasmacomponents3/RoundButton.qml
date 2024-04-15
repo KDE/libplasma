@@ -57,6 +57,8 @@ T.RoundButton {
     }
 
     background: Item {
+        id: backgroundItem
+
         opacity: control.enabled ? 1 : 0.6
 
         // Round Button
@@ -104,7 +106,7 @@ T.RoundButton {
 
         Private.ButtonShadow {
             anchors.fill: parent
-            showShadow: background.useNormalButton && !control.flat && (!control.down || !control.checked)
+            showShadow: backgroundItem.useNormalButton && !control.flat && (!control.down || !control.checked)
         }
 
         KSvg.FrameSvgItem {
@@ -112,7 +114,7 @@ T.RoundButton {
             anchors.fill: parent
             imagePath: "widgets/button"
             prefix: "normal"
-            opacity: background.useNormalButton && (!control.flat || control.hovered) && (!control.down || !control.checked) ? 1 : 0
+            opacity: backgroundItem.useNormalButton && (!control.flat || control.hovered) && (!control.down || !control.checked) ? 1 : 0
             Behavior on opacity {
                 enabled: Kirigami.Units.longDuration > 0
                 OpacityAnimator {
@@ -124,19 +126,19 @@ T.RoundButton {
 
         Private.ButtonFocus {
             anchors.fill: parent
-            showFocus: background.useNormalButton && control.activeFocus && !control.down
+            showFocus: backgroundItem.useNormalButton && control.activeFocus && !control.down
         }
 
         Private.ButtonHover {
             anchors.fill: parent
-            showHover: background.useNormalButton && control.hovered && !control.down
+            showHover: backgroundItem.useNormalButton && control.hovered && !control.down
         }
 
         KSvg.FrameSvgItem {
             anchors.fill: parent
             imagePath: "widgets/button"
             prefix: "pressed"
-            visible: background.useNormalButton
+            visible: backgroundItem.useNormalButton
             opacity: control.checked || control.down ? 1 : 0
             Behavior on opacity {
                 enabled: Kirigami.Units.longDuration > 0

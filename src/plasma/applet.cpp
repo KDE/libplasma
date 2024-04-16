@@ -262,6 +262,7 @@ KConfigPropertyMap *Applet::configuration()
 {
     if (!d->configPropertyMap) {
         d->configPropertyMap = new KConfigPropertyMap(configScheme(), this);
+        connect(d->configPropertyMap, &KConfigPropertyMap::valueChanged, this, &Applet::configNeedsSaving);
     }
     return d->configPropertyMap;
 }

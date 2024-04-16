@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:38+0000\n"
+"POT-Creation-Date: 2024-04-16 00:39+0000\n"
 "PO-Revision-Date: 2024-03-18 15:34+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -114,58 +114,52 @@ msgstr ""
 "skrár eru strjálar og ná því líklega sjaldan hámarksstærðinni. Það er því "
 "oftast öruggt að velja stærri stærð."
 
-#: plasma/private/applet_p.cpp:138
-#, kde-format
-msgctxt "Package file, name of the widget"
-msgid "Could not open the %1 package required for the %2 widget."
-msgstr "Gat ekki opnað pakkann %1 sem er nauðsynlegur fyrir %2 græjuna."
-
-#: plasma/private/applet_p.cpp:146
+#: plasma/private/applet_p.cpp:126
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Sýna aðra valkosti…"
 
-#: plasma/private/applet_p.cpp:253
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "Widget Removed"
 msgstr "Græja fjarlægð"
 
-#: plasma/private/applet_p.cpp:254
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Græjan \"%1\" var fjarlægð."
 
-#: plasma/private/applet_p.cpp:258
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "Panel Removed"
 msgstr "Skjáborðsstika fjarlægð"
 
-#: plasma/private/applet_p.cpp:259
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Skjáborðsstikan var fjarlægð."
 
-#: plasma/private/applet_p.cpp:262
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Skjáborð fjarlægt"
 
-#: plasma/private/applet_p.cpp:263
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Skjáborð var fjarlægt."
 
-#: plasma/private/applet_p.cpp:266
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "Undo"
 msgstr "Afturkalla"
 
-#: plasma/private/applet_p.cpp:357
+#: plasma/private/applet_p.cpp:337
 #, kde-format
 msgid "Widget Settings"
 msgstr "Græjustillingar"
 
-#: plasma/private/applet_p.cpp:364
+#: plasma/private/applet_p.cpp:344
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Fjarlægja þessa græju"
@@ -323,6 +317,10 @@ msgstr "Velja %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Innihaldi sleppt"
+
+#~ msgctxt "Package file, name of the widget"
+#~ msgid "Could not open the %1 package required for the %2 widget."
+#~ msgstr "Gat ekki opnað pakkann %1 sem er nauðsynlegur fyrir %2 græjuna."
 
 #~ msgid ""
 #~ "Sharing a widget on the network allows you to access this widget from "

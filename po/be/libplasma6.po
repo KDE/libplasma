@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:38+0000\n"
+"POT-Creation-Date: 2024-04-16 00:39+0000\n"
 "PO-Revision-Date: 2024-02-23 13:34\n"
 "Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -119,58 +119,52 @@ msgstr ""
 "што гэтыя файлы разрэджаныя, таму максімальны памер можа не выкарыстоўвацца. "
 "Таму вызначэнне большага памеру не стварае небяспекі."
 
-#: plasma/private/applet_p.cpp:138
-#, kde-format
-msgctxt "Package file, name of the widget"
-msgid "Could not open the %1 package required for the %2 widget."
-msgstr "Не ўдалося адкрыць пакунак %1, неабходны для віджэта %2."
-
-#: plasma/private/applet_p.cpp:146
+#: plasma/private/applet_p.cpp:126
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Паказаць альтэрнатыўныя варыянты..."
 
-#: plasma/private/applet_p.cpp:253
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "Widget Removed"
 msgstr "Віджэт выдалены"
 
-#: plasma/private/applet_p.cpp:254
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Віджэт \"%1\" быў выдалены."
 
-#: plasma/private/applet_p.cpp:258
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "Panel Removed"
 msgstr "Панэль выдаленая"
 
-#: plasma/private/applet_p.cpp:259
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Панэль была выдаленая."
 
-#: plasma/private/applet_p.cpp:262
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Працоўны стол выдалены"
 
-#: plasma/private/applet_p.cpp:263
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Працоўны стол быў выдалены."
 
-#: plasma/private/applet_p.cpp:266
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "Undo"
 msgstr "Адрабіць"
 
-#: plasma/private/applet_p.cpp:357
+#: plasma/private/applet_p.cpp:337
 #, kde-format
 msgid "Widget Settings"
 msgstr "Налады віджэтаў"
 
-#: plasma/private/applet_p.cpp:364
+#: plasma/private/applet_p.cpp:344
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Выдаліць гэты віджэт"
@@ -329,6 +323,10 @@ msgstr "Вызначыць %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Змесціва перацягнута"
+
+#~ msgctxt "Package file, name of the widget"
+#~ msgid "Could not open the %1 package required for the %2 widget."
+#~ msgstr "Не ўдалося адкрыць пакунак %1, неабходны для віджэта %2."
 
 #~ msgid ""
 #~ "Sharing a widget on the network allows you to access this widget from "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:38+0000\n"
+"POT-Creation-Date: 2024-04-16 00:39+0000\n"
 "PO-Revision-Date: 2024-03-08 21:12+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -111,58 +111,52 @@ msgid ""
 "larger size is therefore often quite safe."
 msgstr ""
 
-#: plasma/private/applet_p.cpp:138
-#, kde-format
-msgctxt "Package file, name of the widget"
-msgid "Could not open the %1 package required for the %2 widget."
-msgstr "%2 பிளாஸ்மாய்டுக்குத் தேவையான %1 எனும் தொகுப்பைத் திறக்க முடியவில்லை."
-
-#: plasma/private/applet_p.cpp:146
+#: plasma/private/applet_p.cpp:126
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "மாற்றுகள் காட்டு..."
 
-#: plasma/private/applet_p.cpp:253
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "Widget Removed"
 msgstr "பிளாஸ்மாய்ட் நீக்கப்பட்டது"
 
-#: plasma/private/applet_p.cpp:254
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "\"%1\" என்ற பிளாஸ்மாய்ட் நீக்கப்பட்டது."
 
-#: plasma/private/applet_p.cpp:258
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "Panel Removed"
 msgstr "பலகை நீக்கப்பட்டது"
 
-#: plasma/private/applet_p.cpp:259
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "A panel has been removed."
 msgstr "ஒரு பலகை நீக்கப்பட்டது."
 
-#: plasma/private/applet_p.cpp:262
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "Desktop Removed"
 msgstr "பணிமேடை நீக்கப்பட்டது"
 
-#: plasma/private/applet_p.cpp:263
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "ஒரு பணிமேடை நீக்கப்பட்டது."
 
-#: plasma/private/applet_p.cpp:266
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "Undo"
 msgstr "செயல்நீக்கு"
 
-#: plasma/private/applet_p.cpp:357
+#: plasma/private/applet_p.cpp:337
 #, kde-format
 msgid "Widget Settings"
 msgstr "பிளாஸ்மாய்ட் அமைப்புகள்"
 
-#: plasma/private/applet_p.cpp:364
+#: plasma/private/applet_p.cpp:344
 #, kde-format
 msgid "Remove this Widget"
 msgstr "இந்த பிளாஸ்மாய்டை நீக்கு"
@@ -320,6 +314,10 @@ msgstr "%1 தனை அமை"
 #, kde-format
 msgid "Content dropped"
 msgstr "உள்ளடக்கம் போடப்பட்டது"
+
+#~ msgctxt "Package file, name of the widget"
+#~ msgid "Could not open the %1 package required for the %2 widget."
+#~ msgstr "%2 பிளாஸ்மாய்டுக்குத் தேவையான %1 எனும் தொகுப்பைத் திறக்க முடியவில்லை."
 
 #~ msgid ""
 #~ "Sharing a widget on the network allows you to access this widget from "

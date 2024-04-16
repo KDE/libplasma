@@ -32,7 +32,6 @@ target_sources(Plasma PRIVATE
     corona.cpp
     private/applet_p.cpp
     private/containment_p.cpp
-    private/timetracker.cpp
 
 #graphics
     theme.cpp

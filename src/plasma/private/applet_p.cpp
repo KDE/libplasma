@@ -32,7 +32,6 @@
 #include "debug_p.h"
 #include "pluginloader.h"
 #include "private/containment_p.h"
-#include "timetracker.h"
 
 namespace Plasma
 {
@@ -67,11 +66,6 @@ AppletPrivate::AppletPrivate(const KPluginMetaData &info, int uniqueID, Applet *
         s_maxAppletId = appletId;
     }
     QObject::connect(actions.value(QStringLiteral("configure")), SIGNAL(triggered()), q, SLOT(requestConfiguration()));
-#ifndef NDEBUG
-    if (qEnvironmentVariableIsSet("PLASMA_TRACK_STARTUP")) {
-        new TimeTracker(q);
-    }
-#endif
 
     for (auto it = actions.constBegin(); it != actions.constEnd(); ++it) {
         QAction *action = it.value();

@@ -27,7 +27,6 @@
 #include "pluginloader.h"
 #include "private/applet_p.h"
 #include "private/containment_p.h"
-#include "private/timetracker.h"
 
 using namespace Plasma;
 
@@ -38,12 +37,6 @@ Corona::Corona(QObject *parent)
     , d(new CoronaPrivate(this))
 {
     d->init();
-
-#ifndef NDEBUG
-    if (qEnvironmentVariableIsSet("PLASMA_TRACK_STARTUP")) {
-        new TimeTracker(this);
-    }
-#endif
 }
 
 Corona::~Corona()

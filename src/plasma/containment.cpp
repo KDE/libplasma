@@ -441,10 +441,6 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
 
         applet->init();
 
-        if (isNew) {
-            applet->save(*applet->d->mainConfigGroup());
-            Q_EMIT configNeedsSaving();
-        }
         // FIXME: an on-appear animation would be nice to have again
     }
 
@@ -460,7 +456,8 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
         applet->flushPendingConstraintsEvents();
     }
 
-    applet->d->scheduleModificationNotification();
+    applet->save(*applet->d->mainConfigGroup());
+    Q_EMIT configNeedsSaving();
 }
 
 QList<Applet *> Containment::applets() const

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 00:39+0000\n"
+"POT-Creation-Date: 2024-04-18 00:39+0000\n"
 "PO-Revision-Date: 2023-09-22 09:52+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -55,44 +55,44 @@ msgstr "अन्वेषण"
 msgid "Clear search"
 msgstr ""
 
-#: plasma/applet.cpp:300
+#: plasma/applet.cpp:296
 #, kde-format
 msgid "Unknown"
 msgstr "अज्ञात्"
 
-#: plasma/applet.cpp:743
+#: plasma/applet.cpp:739
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "%1 विजेट् सक्रियताम्"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:108
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:102
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "%1 निष्कासयन्तु"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:367 plasma/corona.cpp:485
+#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:478
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "सम्पादनविधिं प्रविशन्तु"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:113
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:107
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "%1 विन्यस्यताम्..."
 
-#: plasma/corona.cpp:316 plasma/corona.cpp:470
+#: plasma/corona.cpp:309 plasma/corona.cpp:463
 #, kde-format
 msgid "Lock Widgets"
 msgstr "विजेट् तालान्"
 
-#: plasma/corona.cpp:316
+#: plasma/corona.cpp:309
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "विजेट् मुक्तं कुर्वन्तु"
 
-#: plasma/corona.cpp:365
+#: plasma/corona.cpp:358
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "सम्पादन विधितः निर्गच्छन्तु"
@@ -115,52 +115,52 @@ msgstr ""
 "सञ्चिकाः विरलसञ्चिकाः सन्ति, अतः अधिकतमस्य आकारस्य उपयोगः न भवितुं शक्नोति । अतः "
 "बृहत्तरं आकारं निरूपयत् करणं प्रायः अत्यन्तं सुरक्षितं भवति ।."
 
-#: plasma/private/applet_p.cpp:126
+#: plasma/private/applet_p.cpp:120
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "विकल्पान् दर्शयतु..."
 
-#: plasma/private/applet_p.cpp:233
+#: plasma/private/applet_p.cpp:227
 #, kde-format
 msgid "Widget Removed"
 msgstr "विजेट् निष्कासितम्"
 
-#: plasma/private/applet_p.cpp:234
+#: plasma/private/applet_p.cpp:228
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "\"%1\" इति विजेट् निष्कासितम् ।."
 
-#: plasma/private/applet_p.cpp:238
+#: plasma/private/applet_p.cpp:232
 #, kde-format
 msgid "Panel Removed"
 msgstr "फलकं निष्कासितम्"
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "A panel has been removed."
 msgstr "एकं फलकं निष्कासितम् अस्ति।."
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "Desktop Removed"
 msgstr "कार्यमुखं निष्कासितम्"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "एकः कार्यमुखः निष्कासितः अस्ति।."
 
-#: plasma/private/applet_p.cpp:246
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "Undo"
 msgstr "अपाकरोति"
 
-#: plasma/private/applet_p.cpp:337
+#: plasma/private/applet_p.cpp:331
 #, kde-format
 msgid "Widget Settings"
 msgstr "विजेट् समायोजननि"
 
-#: plasma/private/applet_p.cpp:344
+#: plasma/private/applet_p.cpp:338
 #, kde-format
 msgid "Remove this Widget"
 msgstr "एतत् विजेट् निष्कासयन्तु"

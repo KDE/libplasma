@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 00:39+0000\n"
+"POT-Creation-Date: 2024-04-18 00:39+0000\n"
 "PO-Revision-Date: 2024-04-03 11:49+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -58,44 +58,44 @@ msgstr "Hledat"
 msgid "Clear search"
 msgstr "Vyprázdnit hledání"
 
-#: plasma/applet.cpp:300
+#: plasma/applet.cpp:296
 #, kde-format
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: plasma/applet.cpp:743
+#: plasma/applet.cpp:739
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Aktivovat %1 widget"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:108
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:102
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Odstranit %1"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:367 plasma/corona.cpp:485
+#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:478
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Spustit režim úprav"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:113
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:107
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Nastavit %1..."
 
-#: plasma/corona.cpp:316 plasma/corona.cpp:470
+#: plasma/corona.cpp:309 plasma/corona.cpp:463
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Uzamknout widgety"
 
-#: plasma/corona.cpp:316
+#: plasma/corona.cpp:309
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Odemknout widgety"
 
-#: plasma/corona.cpp:365
+#: plasma/corona.cpp:358
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Ukončit režim úprav"
@@ -115,52 +115,52 @@ msgid ""
 "larger size is therefore often quite safe."
 msgstr ""
 
-#: plasma/private/applet_p.cpp:126
+#: plasma/private/applet_p.cpp:120
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Zobrazit alternativy..."
 
-#: plasma/private/applet_p.cpp:233
+#: plasma/private/applet_p.cpp:227
 #, kde-format
 msgid "Widget Removed"
 msgstr "Widget byl odstraněn."
 
-#: plasma/private/applet_p.cpp:234
+#: plasma/private/applet_p.cpp:228
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Widget \"%1\" byl odstraněn."
 
-#: plasma/private/applet_p.cpp:238
+#: plasma/private/applet_p.cpp:232
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panel byl odstraněn"
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Panel byl odstraněn."
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Pracovní plocha byla odstraněna"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Pracovní plocha byla odstraněna."
 
-#: plasma/private/applet_p.cpp:246
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "Undo"
 msgstr "Zpět"
 
-#: plasma/private/applet_p.cpp:337
+#: plasma/private/applet_p.cpp:331
 #, kde-format
 msgid "Widget Settings"
 msgstr "Nastavení widgetu"
 
-#: plasma/private/applet_p.cpp:344
+#: plasma/private/applet_p.cpp:338
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Odstranit tento widget"

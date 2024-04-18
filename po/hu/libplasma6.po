@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 00:39+0000\n"
+"POT-Creation-Date: 2024-04-18 00:39+0000\n"
 "PO-Revision-Date: 2024-03-03 22:23+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -57,44 +57,44 @@ msgstr "Keresés"
 msgid "Clear search"
 msgstr "Keresés törlése"
 
-#: plasma/applet.cpp:300
+#: plasma/applet.cpp:296
 #, kde-format
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: plasma/applet.cpp:743
+#: plasma/applet.cpp:739
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "%1 felületi elem aktiválása"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:108
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:102
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "A(z) %1 eltávolítása"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:367 plasma/corona.cpp:485
+#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:478
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Belépés a szerkesztőmódba"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:113
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:107
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "A(z) %1 beállítása…"
 
-#: plasma/corona.cpp:316 plasma/corona.cpp:470
+#: plasma/corona.cpp:309 plasma/corona.cpp:463
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Felületi elemek zárolása"
 
-#: plasma/corona.cpp:316
+#: plasma/corona.cpp:309
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Felületi elemek feloldása"
 
-#: plasma/corona.cpp:365
+#: plasma/corona.cpp:358
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Kilépés a szerkesztőmódból"
@@ -117,52 +117,52 @@ msgstr ""
 "ritkán használtak, vagyis a maximális méret nem mindig lesz kihasználva, "
 "ugyanakkor biztonságosabb nagyobb méretet beállítani."
 
-#: plasma/private/applet_p.cpp:126
+#: plasma/private/applet_p.cpp:120
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Alternatívák megjelenítése…"
 
-#: plasma/private/applet_p.cpp:233
+#: plasma/private/applet_p.cpp:227
 #, kde-format
 msgid "Widget Removed"
 msgstr "Elem eltávolítva"
 
-#: plasma/private/applet_p.cpp:234
+#: plasma/private/applet_p.cpp:228
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "A(z) „%1” elem eltávolításra került."
 
-#: plasma/private/applet_p.cpp:238
+#: plasma/private/applet_p.cpp:232
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panel eltávolítva"
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Egy panel eltávolításra került."
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Asztal eltávolítva"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Egy asztal eltávolításra került."
 
-#: plasma/private/applet_p.cpp:246
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "Undo"
 msgstr "Visszavonás"
 
-#: plasma/private/applet_p.cpp:337
+#: plasma/private/applet_p.cpp:331
 #, kde-format
 msgid "Widget Settings"
 msgstr "Felületi elem beállítások"
 
-#: plasma/private/applet_p.cpp:344
+#: plasma/private/applet_p.cpp:338
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Felületi elem eltávolítása"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 00:39+0000\n"
+"POT-Creation-Date: 2024-04-18 00:39+0000\n"
 "PO-Revision-Date: 2016-03-20 15:24+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -56,17 +56,17 @@ msgstr ""
 msgid "Clear search"
 msgstr ""
 
-#: plasma/applet.cpp:300
+#: plasma/applet.cpp:296
 #, kde-format
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: plasma/applet.cpp:743
+#: plasma/applet.cpp:739
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Aktiviraj vidžet %1"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:108
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:102
 #, fuzzy, kde-format
 #| msgctxt "%1 is the name of the applet"
 #| msgid "Remove this %1"
@@ -76,28 +76,28 @@ msgstr ""
 "Ukloni ovaj %1|/|Ukloni $[po-rodu-broju %1 ovaj ovu ovo ove ove ova] $[aku "
 "%1]"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:367 plasma/corona.cpp:485
+#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:478
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr ""
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:113
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:107
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr ""
 
-#: plasma/corona.cpp:316 plasma/corona.cpp:470
+#: plasma/corona.cpp:309 plasma/corona.cpp:463
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Zaključaj vidžete"
 
-#: plasma/corona.cpp:316
+#: plasma/corona.cpp:309
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Otključaj vidžete"
 
-#: plasma/corona.cpp:365
+#: plasma/corona.cpp:358
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr ""
@@ -121,53 +121,53 @@ msgstr ""
 "fajlovi retki, tako da zadata veličina ne mora biti potpuno iskorišćena. "
 "Zato je zadavanje veće vrednosti često sasvim bezbedno."
 
-#: plasma/private/applet_p.cpp:126
+#: plasma/private/applet_p.cpp:120
 #, fuzzy, kde-format
 #| msgid "Alternatives..."
 msgid "Show Alternatives..."
 msgstr "Alternative..."
 
-#: plasma/private/applet_p.cpp:233
+#: plasma/private/applet_p.cpp:227
 #, kde-format
 msgid "Widget Removed"
 msgstr "Vidžet uklonjen"
 
-#: plasma/private/applet_p.cpp:234
+#: plasma/private/applet_p.cpp:228
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Vidžet „%1“ je uklonjen."
 
-#: plasma/private/applet_p.cpp:238
+#: plasma/private/applet_p.cpp:232
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panel uklonjen"
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Panel je uklonjen."
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Površ uklonjena"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Površ je uklonjena."
 
-#: plasma/private/applet_p.cpp:246
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "Undo"
 msgstr "Opozovi"
 
-#: plasma/private/applet_p.cpp:337
+#: plasma/private/applet_p.cpp:331
 #, kde-format
 msgid "Widget Settings"
 msgstr "Postavke vidžeta"
 
-#: plasma/private/applet_p.cpp:344
+#: plasma/private/applet_p.cpp:338
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Ukloni ovaj vidžet"

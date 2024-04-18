@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-05 02:20+0000\n"
+"POT-Creation-Date: 2024-04-18 02:23+0000\n"
 "PO-Revision-Date: 2024-03-30 19:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -54,12 +54,12 @@ msgstr "搜索"
 msgid "Clear search"
 msgstr "清除搜索内容"
 
-#: plasma/applet.cpp:300
+#: plasma/applet.cpp:301
 #, kde-format
 msgid "Unknown"
 msgstr "未知"
 
-#: plasma/applet.cpp:743
+#: plasma/applet.cpp:744
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "激活 %1 挂件"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-05 02:20+0000\n"
+"POT-Creation-Date: 2024-04-18 02:23+0000\n"
 "PO-Revision-Date: 2024-03-06 12:31+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -69,12 +69,12 @@ msgstr "Rechercher"
 msgid "Clear search"
 msgstr "Effacer une recherche"
 
-#: plasma/applet.cpp:300
+#: plasma/applet.cpp:301
 #, kde-format
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: plasma/applet.cpp:743
+#: plasma/applet.cpp:744
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Activer le composant graphique %1"

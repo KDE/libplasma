@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-05 02:20+0000\n"
+"POT-Creation-Date: 2024-04-18 02:23+0000\n"
 "PO-Revision-Date: 2024-03-09 15:21+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -57,12 +57,12 @@ msgstr "Keresés"
 msgid "Clear search"
 msgstr "Keresés törlése"
 
-#: plasma/applet.cpp:300
+#: plasma/applet.cpp:301
 #, kde-format
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: plasma/applet.cpp:743
+#: plasma/applet.cpp:744
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "%1 felületi elem aktiválása"

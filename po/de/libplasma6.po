@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-18 00:39+0000\n"
+"POT-Creation-Date: 2024-04-23 00:39+0000\n"
 "PO-Revision-Date: 2023-12-21 17:50+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -63,7 +63,7 @@ msgstr "Unbekannt"
 msgid "Activate %1 Widget"
 msgstr "Miniprogramm %1 aktivieren"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:102
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -74,7 +74,7 @@ msgstr "%1 entfernen"
 msgid "Enter Edit Mode"
 msgstr "Bearbeitungsmodus starten"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:107
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -115,52 +115,52 @@ msgstr ""
 "maximale Größe wahrscheinlich nicht erreicht wird. Ein höheres Limit zu "
 "setzen, ist hier daher oft eine gute Wahl."
 
-#: plasma/private/applet_p.cpp:120
+#: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Alternativen anzeigen ..."
 
-#: plasma/private/applet_p.cpp:227
+#: plasma/private/applet_p.cpp:230
 #, kde-format
 msgid "Widget Removed"
 msgstr "Miniprogramm entfernt"
 
-#: plasma/private/applet_p.cpp:228
+#: plasma/private/applet_p.cpp:231
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Das Miniprogramm „%1“ wurde entfernt."
 
-#: plasma/private/applet_p.cpp:232
+#: plasma/private/applet_p.cpp:235
 #, kde-format
 msgid "Panel Removed"
 msgstr "Kontrollleiste entfernt"
 
-#: plasma/private/applet_p.cpp:233
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Eine Kontrollleiste wurde entfernt."
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Arbeitsfläche entfernt"
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Eine Arbeitsfläche wurde entfernt."
 
-#: plasma/private/applet_p.cpp:240
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "Undo"
 msgstr "Zurücknehmen"
 
-#: plasma/private/applet_p.cpp:331
+#: plasma/private/applet_p.cpp:334
 #, kde-format
 msgid "Widget Settings"
 msgstr "Miniprogramm-Einstellungen"
 
-#: plasma/private/applet_p.cpp:338
+#: plasma/private/applet_p.cpp:341
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Dieses Miniprogramm entfernen"

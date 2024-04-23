@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-18 00:39+0000\n"
+"POT-Creation-Date: 2024-04-23 00:39+0000\n"
 "PO-Revision-Date: 2023-06-17 12:03+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -67,7 +67,7 @@ msgstr "Unknown"
 msgid "Activate %1 Widget"
 msgstr "Activate %1 Widget"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:102
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -78,7 +78,7 @@ msgstr "Remove %1"
 msgid "Enter Edit Mode"
 msgstr "Enter Edit Mode"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:107
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -117,52 +117,52 @@ msgstr ""
 "files are sparse files, so the maximum size may not be used. Setting a "
 "larger size is therefore often quite safe."
 
-#: plasma/private/applet_p.cpp:120
+#: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Show Alternatives..."
 
-#: plasma/private/applet_p.cpp:227
+#: plasma/private/applet_p.cpp:230
 #, kde-format
 msgid "Widget Removed"
 msgstr "Widget Removed"
 
-#: plasma/private/applet_p.cpp:228
+#: plasma/private/applet_p.cpp:231
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "The widget \"%1\" has been removed."
 
-#: plasma/private/applet_p.cpp:232
+#: plasma/private/applet_p.cpp:235
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panel Removed"
 
-#: plasma/private/applet_p.cpp:233
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "A panel has been removed."
 msgstr "A panel has been removed."
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Desktop Removed"
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "A desktop has been removed."
 
-#: plasma/private/applet_p.cpp:240
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "Undo"
 msgstr "Undo"
 
-#: plasma/private/applet_p.cpp:331
+#: plasma/private/applet_p.cpp:334
 #, kde-format
 msgid "Widget Settings"
 msgstr "Widget Settings"
 
-#: plasma/private/applet_p.cpp:338
+#: plasma/private/applet_p.cpp:341
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Remove this Widget"

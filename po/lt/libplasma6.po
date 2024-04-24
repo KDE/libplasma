@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-23 00:39+0000\n"
-"PO-Revision-Date: 2024-02-03 12:28+0200\n"
+"PO-Revision-Date: 2024-04-23 11:58+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -223,7 +223,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 yra nesuderinamas su Plasma %2"
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
@@ -247,7 +247,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Apgailestaujame! Įkeliant %1, įvyko klaida."
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format
@@ -260,10 +260,9 @@ msgid "Error loading Applet: package does not exist. %1"
 msgstr "Klaida įkeliant programėlę: paketo nėra. %1"
 
 #: plasmaquick/configview.cpp:236
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "Nuostatos: %1|/|$[get-case Kilmininkas %1] nuostatos"
+msgstr "%1 – Nuostatos: %2|/|%1 – $[get-case Kilmininkas %2] nuostatos"
 
 #: plasmaquick/configview.cpp:237
 #, kde-format

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:39+0000\n"
+"POT-Creation-Date: 2024-04-26 00:39+0000\n"
 "PO-Revision-Date: 2024-03-07 18:54+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -64,12 +64,12 @@ msgstr "Garbitu bilaketa"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: plasma/applet.cpp:739
+#: plasma/applet.cpp:728
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Aktibatu %1 trepeta"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:99
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -80,7 +80,7 @@ msgstr "Kendu %1"
 msgid "Enter Edit Mode"
 msgstr "Sartu editatzeko modura"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:104
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -119,52 +119,52 @@ msgstr ""
 "fitxategi hauek 'sparse' fitxategiak direla, beraz balitekeela gehienezko "
 "neurria ez erabiltzea. Neurri handiagoa ezartzea beraz segurua izaten da."
 
-#: plasma/private/applet_p.cpp:119
+#: plasma/private/applet_p.cpp:117
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Erakutsi ordezko aukerak..."
 
-#: plasma/private/applet_p.cpp:230
+#: plasma/private/applet_p.cpp:228
 #, kde-format
 msgid "Widget Removed"
 msgstr "Trepeta kendu da"
 
-#: plasma/private/applet_p.cpp:231
+#: plasma/private/applet_p.cpp:229
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "\"%1\" trepeta kendu da."
 
-#: plasma/private/applet_p.cpp:235
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panela kenduta"
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Panel bat kendu da."
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Mahaigaina kenduta"
 
-#: plasma/private/applet_p.cpp:240
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Mahaigain bat kendu da."
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Undo"
 msgstr "Desegin"
 
-#: plasma/private/applet_p.cpp:334
+#: plasma/private/applet_p.cpp:332
 #, kde-format
 msgid "Widget Settings"
 msgstr "Trepetaren ezarpenak"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:339
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Kendu trepeta hau"

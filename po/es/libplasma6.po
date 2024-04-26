@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:39+0000\n"
+"POT-Creation-Date: 2024-04-26 00:39+0000\n"
 "PO-Revision-Date: 2024-03-02 12:28+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -59,12 +59,12 @@ msgstr "Borrar búsqueda"
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: plasma/applet.cpp:739
+#: plasma/applet.cpp:728
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Activar el elemento gráfico %1"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:99
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -75,7 +75,7 @@ msgstr "Eliminar %1"
 msgid "Enter Edit Mode"
 msgstr "Entrar en el modo de edición"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:104
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -115,52 +115,52 @@ msgstr ""
 "se utilice el tamaño máximo. Por este motivo, suele ser bastante seguro "
 "especificar un tamaño mayor."
 
-#: plasma/private/applet_p.cpp:119
+#: plasma/private/applet_p.cpp:117
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Mostrar alternativas..."
 
-#: plasma/private/applet_p.cpp:230
+#: plasma/private/applet_p.cpp:228
 #, kde-format
 msgid "Widget Removed"
 msgstr "Elemento gráfico eliminado"
 
-#: plasma/private/applet_p.cpp:231
+#: plasma/private/applet_p.cpp:229
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Se ha eliminado el elemento gráfico «%1»."
 
-#: plasma/private/applet_p.cpp:235
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panel eliminado"
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Se ha eliminado un panel."
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Escritorio eliminado"
 
-#: plasma/private/applet_p.cpp:240
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Se ha eliminado un escritorio."
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Undo"
 msgstr "Deshacer"
 
-#: plasma/private/applet_p.cpp:334
+#: plasma/private/applet_p.cpp:332
 #, kde-format
 msgid "Widget Settings"
 msgstr "Preferencias del elemento gráfico"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:339
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Eliminar este elemento gráfico"

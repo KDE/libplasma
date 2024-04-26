@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:39+0000\n"
+"POT-Creation-Date: 2024-04-26 00:39+0000\n"
 "PO-Revision-Date: 2014-01-31 21:06+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -62,12 +62,12 @@ msgstr ""
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: plasma/applet.cpp:739
+#: plasma/applet.cpp:728
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Aktiviraj grafičku kontrolu %1"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:99
 #, fuzzy, kde-format
 #| msgctxt "%1 is the name of the applet"
 #| msgid "Remove this %1"
@@ -80,7 +80,7 @@ msgstr "Ukloni ovaj %1"
 msgid "Enter Edit Mode"
 msgstr ""
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:104
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -116,53 +116,53 @@ msgid ""
 "larger size is therefore often quite safe."
 msgstr ""
 
-#: plasma/private/applet_p.cpp:119
+#: plasma/private/applet_p.cpp:117
 #, kde-format
 msgid "Show Alternatives..."
 msgstr ""
 
-#: plasma/private/applet_p.cpp:230
+#: plasma/private/applet_p.cpp:228
 #, fuzzy, kde-format
 #| msgid "Widgets explorer UI"
 msgid "Widget Removed"
 msgstr "Istraživač dodataka UI"
 
-#: plasma/private/applet_p.cpp:231
+#: plasma/private/applet_p.cpp:229
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr ""
 
-#: plasma/private/applet_p.cpp:235
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "Panel Removed"
 msgstr ""
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "A panel has been removed."
 msgstr ""
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Desktop Removed"
 msgstr ""
 
-#: plasma/private/applet_p.cpp:240
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "A desktop has been removed."
 msgstr ""
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Undo"
 msgstr ""
 
-#: plasma/private/applet_p.cpp:334
+#: plasma/private/applet_p.cpp:332
 #, kde-format
 msgid "Widget Settings"
 msgstr "Postavke grafičke kontrole"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:339
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Ukloni ovu grafičku kontrolu"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:39+0000\n"
+"POT-Creation-Date: 2024-04-26 00:39+0000\n"
 "PO-Revision-Date: 2023-02-22 21:27+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -61,12 +61,12 @@ msgstr ""
 msgid "Unknown"
 msgstr "不明"
 
-#: plasma/applet.cpp:739
+#: plasma/applet.cpp:728
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "%1 ウィジェットを有効化"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:99
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -77,7 +77,7 @@ msgstr "%1を削除"
 msgid "Enter Edit Mode"
 msgstr "編集モードに入る"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:104
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -117,52 +117,52 @@ msgstr ""
 "に注意してください。したがって、より大きなサイズを設定することが、多くの場合"
 "安全です。"
 
-#: plasma/private/applet_p.cpp:119
+#: plasma/private/applet_p.cpp:117
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "代替を表示..."
 
-#: plasma/private/applet_p.cpp:230
+#: plasma/private/applet_p.cpp:228
 #, kde-format
 msgid "Widget Removed"
 msgstr "ウィジェットの削除"
 
-#: plasma/private/applet_p.cpp:231
+#: plasma/private/applet_p.cpp:229
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "\"%1\" ウィジェットが削除されました。"
 
-#: plasma/private/applet_p.cpp:235
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "Panel Removed"
 msgstr "パネルの削除"
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "A panel has been removed."
 msgstr "パネルが削除されました。"
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Desktop Removed"
 msgstr "デスクトップの削除"
 
-#: plasma/private/applet_p.cpp:240
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "デスクトップが削除されました。"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Undo"
 msgstr "元に戻す"
 
-#: plasma/private/applet_p.cpp:334
+#: plasma/private/applet_p.cpp:332
 #, kde-format
 msgid "Widget Settings"
 msgstr "ウィジェットの設定"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:339
 #, kde-format
 msgid "Remove this Widget"
 msgstr "このウィジェットを削除"

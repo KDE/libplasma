@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:39+0000\n"
+"POT-Creation-Date: 2024-04-26 00:39+0000\n"
 "PO-Revision-Date: 2024-01-28 19:51-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -60,12 +60,12 @@ msgstr "ਖੋਜ ਮਿਟਾਓ"
 msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
-#: plasma/applet.cpp:739
+#: plasma/applet.cpp:728
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "%1 ਵਿਦਜੈਟ ਸਰਗਰਮ ਕਰੋ"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:99
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -76,7 +76,7 @@ msgstr "%1 ਨੂੰ ਹਟਾਓ"
 msgid "Enter Edit Mode"
 msgstr "ਸੋਧ ਢੰਗ ਵਿੱਚ ਜਾਓ"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:104
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -112,52 +112,52 @@ msgid ""
 "larger size is therefore often quite safe."
 msgstr ""
 
-#: plasma/private/applet_p.cpp:119
+#: plasma/private/applet_p.cpp:117
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "ਬਦਲ ਦਿਖਾਓ..."
 
-#: plasma/private/applet_p.cpp:230
+#: plasma/private/applet_p.cpp:228
 #, kde-format
 msgid "Widget Removed"
 msgstr "ਵਿਦਜੈਟ ਹਟਾਇਆ"
 
-#: plasma/private/applet_p.cpp:231
+#: plasma/private/applet_p.cpp:229
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "ਵਿਦਜੈਟ \"%1\" ਨੂੰ ਹਟਾਇਆ ਗਿਆ।"
 
-#: plasma/private/applet_p.cpp:235
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "Panel Removed"
 msgstr "ਪੈਨਲ ਹਟਾਇਆ"
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "A panel has been removed."
 msgstr "ਪੈਨਲ ਹਟਾਇਆ ਜਾ ਚੁੱਕਾ ਹੈ।"
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Desktop Removed"
 msgstr "ਡੈਸਕਟਾਪ ਹਟਾਇਆ"
 
-#: plasma/private/applet_p.cpp:240
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "ਡੈਸਕਟਾਪ ਹਟਾਇਆ ਜਾ ਚੁੱਕਿਆ ਹੈ।"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Undo"
 msgstr "ਵਾਪਿਸ"
 
-#: plasma/private/applet_p.cpp:334
+#: plasma/private/applet_p.cpp:332
 #, kde-format
 msgid "Widget Settings"
 msgstr "ਵਿਦਜੈਟ ਸੈਟਿੰਗ"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:339
 #, kde-format
 msgid "Remove this Widget"
 msgstr "ਇਹ ਵਿਦਜੈਟ ਹਟਾਓ"

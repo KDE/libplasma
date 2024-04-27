@@ -137,7 +137,7 @@
         "Name[zh_CN]": "Oxygen 轻氧",
         "Name[zh_TW]": "Oxygen",
         "Version": "@KF6_MIN_VERSION@",
-        "Website": "https://plasma.kde.org"
+        "Website": "https://www.kde.org/"
     },
     "X-Plasma-API": "5.0"
 }

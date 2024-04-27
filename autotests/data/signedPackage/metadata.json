@@ -89,7 +89,7 @@
         "Name[zh_CN]": "JavaScript 文件操作",
         "Name[zh_TW]": "JavaScript 檔案操作",
         "Version": "0.1",
-        "Website": ""
+        "Website": "https://www.kde.org/"
     },
     "X-Plasma-OptionalExtensions": "http",
     "KPackageStructure": "Plasma/Applet"

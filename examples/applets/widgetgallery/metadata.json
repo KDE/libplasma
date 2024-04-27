@@ -50,7 +50,7 @@
             }
         ],
         "Category": "Examples",
-        "Description": "gallery of widgets done with Plasma QtComponents",
+        "Description": "Gallery of widgets done with Plasma QtComponents",
         "Description[az]": "Plasmada QtComponents köməyi ilə reallaşan vidjetlər qalareyası",
         "Description[be]": "галерэя віджэтаў, зробленых з дапамогай Plasma QtComponents",
         "Description[bg]": "галерия от уиджети с QtComponents на Plasma",
@@ -133,6 +133,6 @@
         "Name[zh_CN]": "挂件展厅",
         "Name[zh_TW]": "元件範例庫",
         "Version": "1.0",
-        "Website": "https://plasma.kde.org/"
+        "Website": "https://www.kde.org/"
     }
 }

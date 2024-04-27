@@ -139,7 +139,7 @@
         "Name[zh_CN]": "Breeze 微风",
         "Name[zh_TW]": "Breeze",
         "Version": "@KF6_MIN_VERSION@",
-        "Website": "https://plasma.kde.org"
+        "Website": "https://www.kde.org/"
     },
     "X-Plasma-API": "5.0"
 }

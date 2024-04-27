@@ -82,7 +82,7 @@ PlasmaComponents.Page {
                         objectName: "image"
                         anchors { fill: parent; }
                         //delegateImage: "akonadi"
-                        //mimeData.url: "https://plasma.kde.org"
+                        //mimeData.url: "https://www.kde.org/"
                         onDragStarted: {
                             isDragging = true;
                             print(" drag started for " + objectName);
@@ -150,7 +150,7 @@ PlasmaComponents.Page {
                         mimeData.text: "Clownfish"
                         mimeData.html: "<h2>Swimming in a Sea of Cheese</h2><pre>Primus->perform();</pre><br/>"
                         mimeData.color: "darkred"
-                        mimeData.url: "https://plasma.kde.org"
+                        mimeData.url: "https://www.kde.org/"
                         mimeData.urls: ["https://planet.kde.org", "https://fsfe.org", "https://techbase.kde.org", "https://qt.io"]
 
                         //Rectangle { anchors.fill: parent; color: "yellow"; opacity: 0.6; }

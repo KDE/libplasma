@@ -125,7 +125,7 @@
         "Name[zh_CN]": "hello world",
         "Name[zh_TW]": "hello world",
         "Version": "",
-        "Website": ""
+        "Website": "https://www.kde.org/"
     },
     "Keywords": "",
     "X-KDE-ParentApp": ""

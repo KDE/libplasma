@@ -284,26 +284,26 @@
      id="base-hint-left-margin"
      height="1.9999999"
      style="fill:#4e9a06;"
-     width="8"
-     x="9.0000002e-10"
+     width="6"
+     x="0"
      y="14" />
   <rect
      id="base-hint-right-margin"
      height="2"
      style="fill:#4e9a06;"
-     width="8"
-     x="72"
+     width="6"
+     x="74"
      y="14" />
   <rect
      id="base-hint-bottom-margin"
-     height="8"
+     height="6"
      style="fill:#4e9a06;"
      x="40"
-     y="22"
+     y="24"
      width="2" />
   <rect
      id="base-hint-top-margin"
-     height="8"
+     height="6"
      style="fill:#4e9a06;"
      width="2"
      x="40"

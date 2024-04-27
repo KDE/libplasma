@@ -24,7 +24,6 @@ Dependencies:
     'plasma/plasma-activities' : '@same'
 
 Options:
-  test-before-installing: True
   cppcheck-ignore-files: ['templates/']
   require-passing-tests-on: [ '@all' ]
   cmake-options: -DBUILD_EXAMPLES=ON

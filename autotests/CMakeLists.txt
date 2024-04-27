@@ -8,7 +8,7 @@ include(ECMMarkAsTest)
 include(ECMAddTests)
 
 find_package(KF6CoreAddons REQUIRED)
-find_package(Qt6Widgets REQUIRED)
+find_package(Qt6 COMPONENTS QuickTest Widgets REQUIRED)
 
 # add_definitions( -DKDESRCDIR=${CMAKE_CURRENT_SOURCE_DIR} )
 
@@ -69,3 +69,5 @@ find_program(SH bash)
 if(SH)
     add_test(i18ndcheck ${SH} ${CMAKE_CURRENT_SOURCE_DIR}/i18ndcheck.sh ${CMAKE_SOURCE_DIR}/src/declarativeimports)
 endif()
+
+add_subdirectory(declarativetests)

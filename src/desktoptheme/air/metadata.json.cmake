@@ -48,6 +48,7 @@
         "Description[ca@valencia]": "Una alenada d'aire fresc",
         "Description[ca]": "Una alenada d'aire fresc",
         "Description[cs]": "Závan čerstvého vzduchu",
+        "Description[de]": "Ein Hauch frischer Luft",
         "Description[en_GB]": "A breath of fresh air",
         "Description[eo]": "Spiro de freŝa aero",
         "Description[es]": "Un soplo de aire fresco",

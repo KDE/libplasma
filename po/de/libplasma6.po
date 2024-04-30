@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
+# SPDX-FileCopyrightText: 2023, 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 # Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2014, 2016, 2022, 2023.
 msgid ""
@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:39+0000\n"
-"PO-Revision-Date: 2023-12-21 17:50+0100\n"
+"PO-Revision-Date: 2024-04-28 19:38+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -191,16 +191,14 @@ msgid "Could not find requested component: %1"
 msgstr "Die angeforderte Komponente ist nicht auffindbar: %1"
 
 #: plasmaquick/appletquickitem.cpp:519
-#, fuzzy, kde-format
-#| msgid "The root item of %1 must be of type ContainmentItem"
+#, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr "Der Haupteintrag von %1 muss vom Typ ContainmentItem sein"
+msgstr "Das Wurzelelement von %1 muss vom Typ ContainmentItem sein"
 
 #: plasmaquick/appletquickitem.cpp:524
-#, fuzzy, kde-format
-#| msgid "The root item of %1 must be of type PlasmoidItem"
+#, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
-msgstr "Der Haupteintrag von %1 muss vom Typ PlasmoidItem sein"
+msgstr "Das Wurzelelement von %1 muss vom Typ PlasmoidItem sein"
 
 #: plasmaquick/appletquickitem.cpp:532
 #, kde-format
@@ -223,7 +221,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 ist mit Plasma %2 nicht kompatibel"
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
@@ -248,7 +246,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Leider ist beim Laden von %1 ein Fehler aufgetreten."
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format
@@ -261,10 +259,9 @@ msgid "Error loading Applet: package does not exist. %1"
 msgstr "Fehler beim Laden des Miniprogramms: Das Paket existiert nicht. %1"
 
 #: plasmaquick/configview.cpp:236
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "Einstellungen für %1"
+msgstr "%1 — Einstellungen für %2"
 
 #: plasmaquick/configview.cpp:237
 #, kde-format

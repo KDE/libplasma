@@ -13,6 +13,7 @@
 #include <KConfigGroup>
 #include <KWindowSystem>
 #include <KX11Extras>
+#include <QSize>
 
 #include "applet.h"
 #include "appletquickitem.h"
@@ -230,6 +231,11 @@ void AppletPopup::updateMinSize()
         return;
     }
     setMinimumSize(m_layoutChangedProxy->minimumSize().grownBy(padding()));
+    // SetMinimumsize doesn't work since
+    // https://codereview.qt-project.org/c/qt/qtwayland/+/527831
+    // which fixes and conforms to the wayland protocol specification.
+    // This workaround is needed as the bug is in the protocol itself
+    resize(std::max(size().width(), minimumSize().width()), std::max(size().height(), minimumSize().height()));
 }
 
 void AppletPopup::updateMaxSize()
@@ -237,12 +243,13 @@ void AppletPopup::updateMaxSize()
     if (!m_layoutChangedProxy) {
         return;
     }
-    QSize size = m_layoutChangedProxy->maximumSize().grownBy(padding());
+    QSize maxSize = m_layoutChangedProxy->maximumSize().grownBy(padding());
     if (screen()) {
-        size.setWidth(std::min(size.width(), int(std::round(screen()->geometry().width() * 0.95))));
-        size.setHeight(std::min(size.height(), int(std::round(screen()->geometry().height() * 0.95))));
+        maxSize.setWidth(std::min(maxSize.width(), int(std::round(screen()->geometry().width() * 0.95))));
+        maxSize.setHeight(std::min(maxSize.height(), int(std::round(screen()->geometry().height() * 0.95))));
     }
-    setMaximumSize(size);
+    setMaximumSize(maxSize);
+    resize(std::min(size().width(), maxSize.width()), std::min(size().height(), maxSize.height()));
 }
 
 void AppletPopup::updateSize()
@@ -253,7 +260,10 @@ void AppletPopup::updateSize()
     if (!m_layoutChangedProxy) {
         return;
     }
-    resize(m_layoutChangedProxy->implicitSize().grownBy(padding()));
+    const QSize wantedSize = m_layoutChangedProxy->implicitSize().grownBy(padding());
+    QSize size = {std::clamp(wantedSize.width(), minimumSize().width(), maximumSize().width()),
+                  std::clamp(wantedSize.height(), minimumSize().height(), maximumSize().height())};
+    resize(size);
 }
 
 LayoutChangedProxy::LayoutChangedProxy(QQuickItem *item)

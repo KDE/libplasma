@@ -13,6 +13,7 @@
 #include <QQmlEngine>
 #include <QScopeGuard>
 
+#include <KColorScheme>
 #include <KConfigGroup>
 #include <KIconColors>
 
@@ -59,13 +60,19 @@ PlasmaTheme::~PlasmaTheme()
 
 QIcon PlasmaTheme::iconFromTheme(const QString &name, const QColor &customColor)
 {
+    KIconColors colors(Plasma::Theme::globalPalette());
+    KColorScheme colorScheme(QPalette::Active, KColorScheme::Window, Plasma::Theme::globalColorScheme());
+
+    colors.setPositiveText(colorScheme.foreground(KColorScheme::PositiveText).color().name());
+    colors.setNeutralText(colorScheme.foreground(KColorScheme::NeutralText).color().name());
+    colors.setNegativeText(colorScheme.foreground(KColorScheme::NegativeText).color().name());
+    colors.setActiveText(colorScheme.foreground(KColorScheme::ActiveText).color().name());
+
     if (customColor != Qt::transparent) {
-        KIconColors colors;
         colors.setText(customColor);
-        return KDE::icon(name, colors);
-    } else {
-        return KDE::icon(name);
     }
+
+    return KDE::icon(name, colors);
 }
 
 void PlasmaTheme::syncColors()

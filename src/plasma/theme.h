@@ -289,6 +289,8 @@ public:
 
     static QPalette globalPalette();
 
+    static KSharedConfigPtr globalColorScheme();
+
 Q_SIGNALS:
     /**
      * Emitted when the user changes the theme. Stylesheet usage, colors, etc. should

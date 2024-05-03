@@ -175,6 +175,15 @@ QPalette Theme::globalPalette()
     return ThemePrivate::globalTheme->palette;
 }
 
+KSharedConfigPtr Theme::globalColorScheme()
+{
+    if (!ThemePrivate::globalTheme) {
+        ThemePrivate::globalTheme = new ThemePrivate;
+        ThemePrivate::globalTheme->settingsChanged(false);
+    }
+    return ThemePrivate::globalTheme->colors;
+}
+
 QString Theme::wallpaperPath(const QSize &size) const
 {
     QString fullPath;

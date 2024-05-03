@@ -618,6 +618,13 @@ public:
      **/
     bool hasConfigurationInterface() const;
 
+    /**
+     * The translation domain for this applet
+     *
+     * @since 6.1
+     */
+    QString translationDomain() const;
+
 Q_SIGNALS:
     // BOOKKEEPING
     /**

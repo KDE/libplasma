@@ -92,12 +92,7 @@ void ConfigViewPrivate::init()
     applet.data()->setUserConfiguring(true);
 
     KLocalizedContext *localizedContextObject = new KLocalizedContext(q->engine());
-    const QString rootPath = applet.data()->pluginMetaData().value(QStringLiteral("X-Plasma-RootPath"));
-    if (!rootPath.isEmpty()) {
-        localizedContextObject->setTranslationDomain(QStringLiteral("plasma_applet_") + rootPath);
-    } else {
-        localizedContextObject->setTranslationDomain(QStringLiteral("plasma_applet_") + applet.data()->pluginMetaData().pluginId());
-    }
+    localizedContextObject->setTranslationDomain(applet->translationDomain());
     rootContext->setContextObject(localizedContextObject);
 
     // FIXME: problem on nvidia, all windows should be transparent or won't show

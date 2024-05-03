@@ -502,14 +502,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
     auto *qmlObject = new PlasmaQuick::SharedQmlEngine(applet, applet);
     qmlObject->engine()->setProperty("_kirigamiTheme", QStringLiteral("KirigamiPlasmaStyle"));
     qmlObject->setInitializationDelayed(true);
-    if (applet->pluginMetaData().isValid()) {
-        const QString rootPath = applet->pluginMetaData().value(QStringLiteral("X-Plasma-RootPath"));
-        if (!rootPath.isEmpty()) {
-            qmlObject->setTranslationDomain(QLatin1String("plasma_applet_") + rootPath);
-        } else {
-            qmlObject->setTranslationDomain(QLatin1String("plasma_applet_") + applet->pluginMetaData().pluginId());
-        }
-    }
+    qmlObject->setTranslationDomain(applet->translationDomain());
 
     AppletQuickItem *item = nullptr;
     qmlObject->setSource(applet->mainScript());

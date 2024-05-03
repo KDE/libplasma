@@ -857,6 +857,16 @@ bool Applet::isContainment() const
     return qobject_cast<const Containment *>(this) && qobject_cast<Corona *>(parent());
 }
 
+QString Applet::translationDomain() const
+{
+    const QString rootPath = d->appletDescription.value(QStringLiteral("X-Plasma-RootPath"));
+    if (!rootPath.isEmpty()) {
+        return QLatin1String("plasma_applet_") + rootPath;
+    } else {
+        return QLatin1String("plasma_applet_") + d->appletDescription.pluginId();
+    }
+}
+
 } // Plasma namespace
 
 #include "moc_applet.cpp"

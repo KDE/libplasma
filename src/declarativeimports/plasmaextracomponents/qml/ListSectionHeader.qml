@@ -57,7 +57,7 @@ PlasmaComponents.ItemDelegate {
     activeFocusOnTab: false
 
     // we do not need a background
-    background: Item {}
+    background: null
 
     topPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 

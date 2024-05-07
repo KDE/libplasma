@@ -1,6 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2016 Marco Martin <mart@kde.org>
-    SPDX-FileCopyrightText: 2022 ivan (@ratijas) tkachenko <me@ratijas.tk>
+    SPDX-FileCopyrightText: 2022-2024 ivan (@ratijas) tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -8,6 +8,7 @@
 import QtQuick
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
+import org.kde.ksvg as KSvg
 import "private" as Private
 
 T.ItemDelegate {
@@ -23,10 +24,10 @@ T.ItemDelegate {
     baselineOffset: contentItem.y + contentItem.baselineOffset
     hoverEnabled: true
 
-    topPadding: background.margins.top
-    leftPadding: background.margins.left
-    rightPadding: background.margins.right
-    bottomPadding: background.margins.bottom
+    topPadding: (background as KSvg.FrameSvgItem)?.margins.top ?? 0
+    leftPadding: (background as KSvg.FrameSvgItem)?.margins.left ?? 0
+    rightPadding: (background as KSvg.FrameSvgItem)?.margins.right ?? 0
+    bottomPadding: (background as KSvg.FrameSvgItem)?.margins.bottom ?? 0
     spacing: Kirigami.Units.smallSpacing
 
     icon.width: Kirigami.Units.iconSizes.sizeForLabels

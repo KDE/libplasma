@@ -66,9 +66,6 @@ void PlasmoidItem::init()
     if (applet->containment()) {
         connect(applet->containment(), &Plasma::Containment::screenChanged, this, &PlasmoidItem::screenChanged);
 
-        // Screen change implies geo change for good measure.
-        connect(applet->containment(), &Plasma::Containment::screenChanged, this, &PlasmoidItem::screenGeometryChanged);
-
         connect(applet->containment()->corona(), &Plasma::Corona::screenGeometryChanged, this, [this](int id) {
             if (id == AppletQuickItem::applet()->containment()->screen()) {
                 Q_EMIT screenGeometryChanged();

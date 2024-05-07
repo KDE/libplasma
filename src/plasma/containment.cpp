@@ -70,12 +70,12 @@ void Containment::init()
     Applet::init();
 
     connect(corona(), &Plasma::Corona::availableScreenRectChanged, this, [this](int screenId) {
-        if (screenId == screen() || screenId == lastScreen()) {
+        if (screenId == screen()) {
             Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
         }
     });
     connect(corona(), &Plasma::Corona::availableScreenRegionChanged, this, [this](int screenId) {
-        if (screenId == screen() || screenId == lastScreen()) {
+        if (screenId == screen()) {
             Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
         }
     });
@@ -666,14 +666,18 @@ void Containment::reactToScreenChange()
 {
     int newScreen = screen();
 
+    Q_EMIT screenChanged(newScreen);
+
     if (newScreen >= 0) {
         d->lastScreen = newScreen;
         KConfigGroup c = config();
         c.writeEntry("lastScreen", d->lastScreen);
         Q_EMIT configNeedsSaving();
-    }
 
-    Q_EMIT screenChanged(newScreen);
+        Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
+        Q_EMIT screenGeometryChanged(screenGeometry());
+        Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
+    }
 }
 
 } // Plasma namespace

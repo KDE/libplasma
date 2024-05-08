@@ -14,8 +14,8 @@ import "../" as PlasmaComponents
 RowLayout {
     id: root
 
-    property string labelText: ""
-    property T.Button button
+    required property string labelText
+    required property T.Button button
 
     readonly property bool usingFocusBackground: !button.flat && buttonSvg.hasElement("hint-focus-highlighted-background") && button.visualFocus && !(button.pressed || button.checked)
     readonly property int defaultIconSize: button.flat ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.small

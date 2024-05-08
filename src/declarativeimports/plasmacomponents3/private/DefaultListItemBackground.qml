@@ -13,7 +13,7 @@ import org.kde.kirigami as Kirigami
 KSvg.FrameSvgItem {
     id: background
 
-    property T.ItemDelegate control
+    required property T.ItemDelegate control
 
     imagePath: "widgets/listitem"
     prefix: control.highlighted || control.down ? "pressed" : "normal"

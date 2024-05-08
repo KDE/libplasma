@@ -22,10 +22,10 @@ T.Dialog {
     contentWidth: contentItem.implicitWidth || (contentChildren.length === 1 ? contentChildren[0].implicitWidth : 0)
     contentHeight: contentItem.implicitHeight || (contentChildren.length === 1 ? contentChildren[0].implicitHeight : 0)
 
-    leftPadding: background.margins.left
-    topPadding: background.margins.top
-    rightPadding: background.margins.right
-    bottomPadding: background.margins.bottom
+    topPadding: (background as KSvg.FrameSvgItem)?.margins.top ?? undefined
+    leftPadding: (background as KSvg.FrameSvgItem)?.margins.left ?? undefined
+    rightPadding: (background as KSvg.FrameSvgItem)?.margins.right ?? undefined
+    bottomPadding: (background as KSvg.FrameSvgItem)?.margins.bottom ?? undefined
 
     enter: Transition {
         NumberAnimation {

@@ -8,6 +8,7 @@
 import QtQuick
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
+import org.kde.ksvg as KSvg
 import "private" as Private
 
 T.CheckDelegate {
@@ -23,10 +24,11 @@ T.CheckDelegate {
     baselineOffset: contentItem.y + contentItem.baselineOffset
     hoverEnabled: true
 
-    topPadding: background.margins.top
-    leftPadding: background.margins.left
-    rightPadding: background.margins.right
-    bottomPadding: background.margins.bottom
+    topPadding: (background as KSvg.FrameSvgItem)?.margins.top ?? undefined
+    leftPadding: (background as KSvg.FrameSvgItem)?.margins.left ?? undefined
+    rightPadding: (background as KSvg.FrameSvgItem)?.margins.right ?? undefined
+    bottomPadding: (background as KSvg.FrameSvgItem)?.margins.bottom ?? undefined
+
     spacing: Kirigami.Units.smallSpacing
 
     icon.width: Kirigami.Units.iconSizes.sizeForLabels

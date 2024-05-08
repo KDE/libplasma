@@ -24,10 +24,11 @@ T.ItemDelegate {
     baselineOffset: contentItem.y + contentItem.baselineOffset
     hoverEnabled: true
 
-    topPadding: (background as KSvg.FrameSvgItem)?.margins.top ?? 0
-    leftPadding: (background as KSvg.FrameSvgItem)?.margins.left ?? 0
-    rightPadding: (background as KSvg.FrameSvgItem)?.margins.right ?? 0
-    bottomPadding: (background as KSvg.FrameSvgItem)?.margins.bottom ?? 0
+    topPadding: (background as KSvg.FrameSvgItem)?.margins.top ?? undefined
+    leftPadding: (background as KSvg.FrameSvgItem)?.margins.left ?? undefined
+    rightPadding: (background as KSvg.FrameSvgItem)?.margins.right ?? undefined
+    bottomPadding: (background as KSvg.FrameSvgItem)?.margins.bottom ?? undefined
+
     spacing: Kirigami.Units.smallSpacing
 
     icon.width: Kirigami.Units.iconSizes.sizeForLabels

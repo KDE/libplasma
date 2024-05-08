@@ -15,10 +15,12 @@ T.DialogButtonBox {
     implicitHeight: contentItem.implicitHeight + topPadding + bottomPadding
 
     spacing: Kirigami.Units.smallSpacing
-    leftPadding: parent instanceof T.Control ? parent.leftPadding : horizontalPadding
-    topPadding: parent instanceof T.Control ? parent.topPadding : verticalPadding
-    rightPadding: parent instanceof T.Control ? parent.rightPadding : horizontalPadding
-    bottomPadding: parent instanceof T.Control ? parent.bottomPadding : verticalPadding
+
+    topPadding: (parent as T.Control)?.topPadding ?? undefined
+    leftPadding: (parent as T.Control)?.leftPadding ?? undefined
+    rightPadding: (parent as T.Control)?.rightPadding ?? undefined
+    bottomPadding: (parent as T.Control)?.bottomPadding ?? undefined
+
     alignment: Qt.AlignRight
 
     delegate: Button {

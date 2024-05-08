@@ -27,8 +27,9 @@ T.ToolTip {
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset, contentWidth + leftPadding + rightPadding)
 
     margins: Kirigami.Units.smallSpacing
-    leftPadding: backgroundItem.margins.left
+
     topPadding: backgroundItem.margins.top
+    leftPadding: backgroundItem.margins.left
     rightPadding: backgroundItem.margins.right
     bottomPadding: backgroundItem.margins.bottom
 
@@ -75,10 +76,10 @@ T.ToolTip {
 
             // ensure that long text actually gets wrapped
             onLineLaidOut: (line) => {
-                if (line.implicitWidth > maxTextLength)
+                if (line.implicitWidth > maxTextLength) {
                     line.width = maxTextLength
+                }
             }
-
         }
     }
 
@@ -87,11 +88,13 @@ T.ToolTip {
         implicitWidth: Kirigami.Units.gridUnit + backgroundItem.margins.left + backgroundItem.margins.right
 
         KSvg.FrameSvgItem {
-            anchors.fill: parent
-            anchors.leftMargin: -margins.left
-            anchors.rightMargin: -margins.right
-            anchors.topMargin: -margins.top
-            anchors.bottomMargin: -margins.bottom
+            anchors {
+                fill: parent
+                topMargin: -margins.top
+                leftMargin: -margins.left
+                rightMargin: -margins.right
+                bottomMargin: -margins.bottom
+            }
             imagePath: "solid/widgets/tooltip"
             prefix: "shadow"
             Kirigami.Theme.colorGroup: Kirigami.Theme.Tooltip

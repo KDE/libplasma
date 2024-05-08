@@ -20,10 +20,10 @@ T.Button {
     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
                              implicitContentHeight + topPadding + bottomPadding)
 
-    leftPadding: background.leftMargin
-    topPadding: background.topMargin
-    rightPadding: background.rightMargin
-    bottomPadding: background.bottomMargin
+    topPadding: (background as Private.ButtonBackground)?.topMargin ?? undefined
+    leftPadding: (background as Private.ButtonBackground)?.leftMargin ?? undefined
+    rightPadding: (background as Private.ButtonBackground)?.rightMargin ?? undefined
+    bottomPadding: (background as Private.ButtonBackground)?.bottomMargin ?? undefined
 
     spacing: Kirigami.Units.smallSpacing
 

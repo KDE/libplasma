@@ -15,8 +15,8 @@ Item {
     required property T.Button button
 
     // These should be used as the padding for the parent control
-    property real leftMargin: loader.item.leftMargin
     property real topMargin: loader.item.topMargin
+    property real leftMargin: loader.item.leftMargin
     property real rightMargin: loader.item.rightMargin
     property real bottomMargin: loader.item.bottomMargin
 

@@ -386,7 +386,7 @@ QList<Plasma::Types::Location> Corona::freeEdges(int screen) const
 
     const auto containments = this->containments();
     for (Containment *containment : containments) {
-        if (containment->screen() == screen && freeEdges.contains(containment->location())) {
+        if (containment->lastScreen() == screen && freeEdges.contains(containment->location())) {
             freeEdges.removeAll(containment->location());
         }
     }

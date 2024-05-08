@@ -118,20 +118,21 @@ T.ComboBox {
 
     background: KSvg.FrameSvgItem {
         id: surfaceNormal
+
         anchors.fill: parent
-        readonly property bool editable: control.hasOwnProperty("editable") && control.editable
-        imagePath: editable ? "widgets/lineedit" : "widgets/button"
-        prefix: editable
+
+        imagePath: control.editable ? "widgets/lineedit" : "widgets/button"
+        prefix: control.editable
                 ? "base"
                 : (control.down ? "pressed" : "normal")
 
         Private.ButtonShadow {
             anchors.fill: parent
-            showShadow: !parent.editable && !control.down
+            showShadow: !control.editable && !control.down
         }
 
         Private.TextFieldFocus {
-            visible: parent.editable
+            visible: control.editable
             z: -1
             state: control.activeFocus ? "focus" : (control.hovered ? "hover" : "hidden")
             anchors.fill: parent

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:39+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-01-28 19:51-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -187,22 +187,22 @@ msgstr "...ਵਿਦਜੈੱਟ ਸ਼ਾਮਿਲ"
 msgid "Could not find requested component: %1"
 msgstr "ਲੋੜੀਦਾ ਭਾਗ ਲੱਭਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ: %1"
 
-#: plasmaquick/appletquickitem.cpp:519
+#: plasmaquick/appletquickitem.cpp:512
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:524
+#: plasmaquick/appletquickitem.cpp:517
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:532
+#: plasmaquick/appletquickitem.cpp:525
 #, kde-format
 msgid "Unknown Applet"
 msgstr "ਅਣਪਛਾਤਾ ਐਪਲਿਟ"
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:538
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -210,48 +210,48 @@ msgid ""
 "version."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:548 plasmaquick/appletquickitem.cpp:555
-#: plasmaquick/appletquickitem.cpp:561
+#: plasmaquick/appletquickitem.cpp:541 plasmaquick/appletquickitem.cpp:548
+#: plasmaquick/appletquickitem.cpp:554
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:552
+#: plasmaquick/appletquickitem.cpp:545
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:558
+#: plasmaquick/appletquickitem.cpp:551
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:567
+#: plasmaquick/appletquickitem.cpp:560
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:584
+#: plasmaquick/appletquickitem.cpp:577
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "QML ਫਾਇਲ ਲੋਡ ਕਰਨ ਵਿੱਚ ਗਲਤੀ: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:587
+#: plasmaquick/appletquickitem.cpp:580
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr ""
 
-#: plasmaquick/configview.cpp:236
+#: plasmaquick/configview.cpp:231
 #, fuzzy, kde-format
 #| msgid "%1 Settings"
 msgid "%1 — %2 Settings"
 msgstr "%1 ਸੈਟਿੰਗਾਂ"
 
-#: plasmaquick/configview.cpp:237
+#: plasmaquick/configview.cpp:232
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 ਸੈਟਿੰਗਾਂ"

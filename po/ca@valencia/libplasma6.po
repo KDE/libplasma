@@ -85,7 +85,7 @@ msgstr "Entra en el mode d'edició"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "Configura %1..."
+msgstr "Configura %1…"
 
 #: plasma/containment.cpp:112 plasma/corona.cpp:365
 #, kde-format
@@ -130,7 +130,7 @@ msgstr "No s'ha pogut obrir el paquet %1 requerit pel giny %2."
 #: plasma/private/applet_p.cpp:146
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "Mostra les alternatives..."
+msgstr "Mostra les alternatives…"
 
 #: plasma/private/applet_p.cpp:253
 #, kde-format
@@ -195,7 +195,7 @@ msgstr "Configureu l'activitat"
 #: plasma/private/containment_p.cpp:78
 #, kde-format
 msgid "Add Widgets..."
-msgstr "Afig ginys..."
+msgstr "Afig ginys…"
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format

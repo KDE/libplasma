@@ -144,6 +144,7 @@ private:
     void resolveEGLFunctions();
     void bindEGLTexture();
     bool m_eglFunctionsResolved = false;
+    static std::optional<bool> s_hasPixmapExtension;
     EGLImageKHR m_image = EGL_NO_IMAGE_KHR;
     QFunctionPointer m_eglCreateImageKHR;
     QFunctionPointer m_eglDestroyImageKHR;

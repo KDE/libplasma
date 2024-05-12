@@ -175,7 +175,7 @@ msgstr "Entra en el mode d'edició"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "Configura %1..."
+msgstr "Configura %1…"
 
 #: plasma/corona.cpp:355 plasma/corona.cpp:482
 #, kde-format
@@ -408,7 +408,7 @@ msgstr "No s'ha pogut crear «ScriptEngine» %1 pel giny %2."
 #: plasma/private/applet_p.cpp:172
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "Mostra les alternatives..."
+msgstr "Mostra les alternatives…"
 
 #: plasma/private/applet_p.cpp:274
 #, kde-format
@@ -492,7 +492,7 @@ msgstr "Configureu l'activitat"
 #: plasma/private/containment_p.cpp:71
 #, kde-format
 msgid "Add Widgets..."
-msgstr "Afig ginys..."
+msgstr "Afig ginys…"
 
 #: plasma/private/containment_p.cpp:187
 #, kde-format

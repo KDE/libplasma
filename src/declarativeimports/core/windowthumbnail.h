@@ -121,6 +121,7 @@ private:
     mutable WindowTextureProvider *m_textureProvider = nullptr;
 #if HAVE_XCB_COMPOSITE
     xcb_pixmap_t pixmapForWindow();
+    static std::optional<bool> s_hasPixmapExtension;
     bool m_openGLFunctionsResolved = false;
     uint8_t m_damageEventBase = 0;
     xcb_damage_damage_t m_damage = XCB_NONE;
@@ -144,7 +145,6 @@ private:
     void resolveEGLFunctions();
     void bindEGLTexture();
     bool m_eglFunctionsResolved = false;
-    static std::optional<bool> s_hasPixmapExtension;
     EGLImageKHR m_image = EGL_NO_IMAGE_KHR;
     QFunctionPointer m_eglCreateImageKHR;
     QFunctionPointer m_eglDestroyImageKHR;

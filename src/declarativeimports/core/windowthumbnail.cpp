@@ -130,7 +130,9 @@ void WindowTextureProvider::setTexture(QSGTexture *texture)
     Q_EMIT textureChanged();
 }
 
+#if HAVE_XCB_COMPOSITE
 std::optional<bool> WindowThumbnail::s_hasPixmapExtension = std::nullopt;
+#endif
 
 WindowThumbnail::WindowThumbnail(QQuickItem *parent)
     : QQuickItem(parent)

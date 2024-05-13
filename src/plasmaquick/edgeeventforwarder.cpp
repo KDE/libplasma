@@ -164,10 +164,10 @@ bool EdgeEventForwarder::eventFilter(QObject *watched, QEvent *event)
 
 QMargins EdgeEventForwarderPrivate::activeMargins() const
 {
-    return QMargins(activeEdges.testFlag(Qt::TopEdge) ? margins.top() : 0,
-                    activeEdges.testFlag(Qt::BottomEdge) ? margins.bottom() : 0,
-                    activeEdges.testFlag(Qt::LeftEdge) ? margins.left() : 0,
-                    activeEdges.testFlag(Qt::RightEdge) ? margins.right() : 0);
+    return QMargins(activeEdges.testFlag(Qt::LeftEdge) ? margins.left() : 0,
+                    activeEdges.testFlag(Qt::TopEdge) ? margins.top() : 0,
+                    activeEdges.testFlag(Qt::RightEdge) ? margins.right() : 0,
+                    activeEdges.testFlag(Qt::BottomEdge) ? margins.bottom() : 0);
 }
 
 bool EdgeEventForwarderPrivate::mainItemContainsPosition(const QPointF &position) const

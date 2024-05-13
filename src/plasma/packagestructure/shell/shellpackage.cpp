@@ -40,6 +40,10 @@ public:
         package->setMimeTypes("defaultlayout", QStringList{QStringLiteral("application/javascript"), QStringLiteral("text/javascript")});
         package->setMimeTypes("defaults", QStringList{QStringLiteral("text/plain")});
 
+        // OSD
+        package->addDirectoryDefinition("osd", QStringLiteral("osd"));
+        package->addFileDefinition("osdmainscript", QStringLiteral("osd/Osd.qml"));
+
         // Applet furniture
         package->addFileDefinition("appleterror", QStringLiteral("applet/AppletError.qml"));
         package->addFileDefinition("compactapplet", QStringLiteral("applet/CompactApplet.qml"));

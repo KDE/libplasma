@@ -7,6 +7,7 @@
 
 #include <kwindoweffects.h>
 #include <kwindowsystem.h>
+#include <KX11Extras>
 
 #include "debug_p.h"
 #include <QGuiApplication>
@@ -239,6 +240,13 @@ PopupPlasmaWindow::PopupPlasmaWindow(const QString &svgPrefix)
     : PlasmaWindow(svgPrefix)
     , d(new PopupPlasmaWindowPrivate(this))
 {
+    // Put those popups in the Above layer, over the panels
+    // as on Wayland they will be positionned not considering the struts
+    if (KWindowSystem::isPlatformX11()) {
+        KX11Extras::setType(winId(), NET::AppletPopup);
+    } else {
+        PlasmaShellWaylandIntegration::get(this)->setRole(QtWayland::org_kde_plasma_surface::role::role_appletpopup);
+    }
 }
 
 PopupPlasmaWindow::~PopupPlasmaWindow()

@@ -15,7 +15,7 @@
 #include <KWindowSystem>
 #include <plasmaquick/sharedqmlengine.h>
 
-#include "waylandintegration_p.h"
+#include "plasmashellwaylandintegration.h"
 
 ToolTipDialog::ToolTipDialog()
     : PopupPlasmaWindow(QStringLiteral("widgets/tooltip"))

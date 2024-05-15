@@ -25,6 +25,7 @@ target_sources(PlasmaQuick PRIVATE
     configmodel.cpp
     configview.cpp
     edgeeventforwarder.cpp
+    plasmashellwaylandintegration.cpp
     sharedqmlengine.cpp
     quickviewsharedengine.cpp
     plasmawindow.cpp
@@ -39,7 +40,6 @@ target_sources(PlasmaQuick PRIVATE
     plasmoid/containmentitem.cpp
     plasmoid/dropmenu.cpp
     plasmoid/wallpaperitem.cpp
-    waylandintegration.cpp
     ${RESOURCES}
 )
 
@@ -131,6 +131,7 @@ ecm_generate_headers(PlasmaQuick_CamelCase_HEADERS
         ConfigModel
         Dialog
         PlasmaWindow
+        PlasmaShellWaylandIntegration
         PopupPlasmaWindow
         AppletPopup
         SharedQmlEngine

@@ -18,7 +18,7 @@
 #include "applet.h"
 #include "appletquickitem.h"
 #include "edgeeventforwarder.h"
-#include "waylandintegration_p.h"
+#include "plasmashellwaylandintegration.h"
 #include "windowresizehandler.h"
 
 // used in detecting if focus passes to config UI

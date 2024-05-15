@@ -4,8 +4,8 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef WAYLANDINTEGRATION_P_H
-#define WAYLANDINTEGRATION_P_H
+#ifndef PLASMASHELLWAYLANDINTEGRATION_P_H
+#define PLASMASHELLWAYLANDINTEGRATION_P_H
 
 #include <QObject>
 #include <QPoint>
@@ -18,6 +18,7 @@
 class QWindow;
 
 class PlasmaShellSurface;
+class PlasmaShellWaylandIntegrationPrivate;
 
 /**
  * @brief The PlasmaWaylandShellIntegration class exposes Plasma specific
@@ -48,16 +49,12 @@ public:
 
 private:
     PlasmaShellWaylandIntegration(QWindow *window);
-    void platformSurfaceCreated(QWindow *window);
-    void surfaceCreated();
-    void surfaceDestroyed();
 
-    QWindow *m_window = nullptr;
-    std::optional<QPoint> m_position;
-    QtWayland::org_kde_plasma_surface::panel_behavior m_panelBehavior = QtWayland::org_kde_plasma_surface::panel_behavior_always_visible;
-    QtWayland::org_kde_plasma_surface::role m_role = QtWayland::org_kde_plasma_surface::role_normal;
-    bool m_takesFocus = false;
-    std::unique_ptr<PlasmaShellSurface> m_shellSurface;
+    Q_PRIVATE_SLOT(d, void platformSurfaceCreated(QWindow *window))
+    Q_PRIVATE_SLOT(d, void surfaceCreated())
+    Q_PRIVATE_SLOT(d, void surfaceDestroyed())
+
+    const std::unique_ptr<PlasmaShellWaylandIntegrationPrivate> d;
 };
 
-#endif // WAYLANDINTEGRATION_P_H
+#endif // PLASMASHELLWAYLANDINTEGRATION_P_H

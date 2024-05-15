@@ -37,7 +37,7 @@
 #include <qpa/qplatformwindow_p.h>
 #endif
 
-#include "waylandintegration_p.h"
+#include "plasmashellwaylandintegration.h"
 
 // Unfortunately QWINDOWSIZE_MAX is not exported
 #define DIALOGSIZE_MAX ((1 << 24) - 1)

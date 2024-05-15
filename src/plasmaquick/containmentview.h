@@ -32,7 +32,6 @@ class PLASMAQUICK_EXPORT ContainmentView : public PlasmaQuick::QuickViewSharedEn
     Q_OBJECT
     Q_PROPERTY(Plasma::Types::Location location READ location WRITE setLocation NOTIFY locationChanged)
     Q_PROPERTY(Plasma::Types::FormFactor formFactor READ formFactor NOTIFY formFactorChanged)
-    Q_PROPERTY(QRectF screenGeometry READ screenGeometry NOTIFY screenGeometryChanged)
 
 public:
     /**
@@ -84,11 +83,6 @@ public:
      **/
     Plasma::Types::FormFactor formFactor() const;
 
-    /**
-     * @return the screenGeometry of the ContainmentView
-     **/
-    QRectF screenGeometry();
-
 protected Q_SLOTS:
     /**
      * It will be called when the configuration is requested
@@ -110,11 +104,6 @@ Q_SIGNALS:
      * emitted when the containment is changed
      **/
     void containmentChanged();
-
-    /**
-     * emitted when the screenGeometry is changed
-     **/
-    void screenGeometryChanged();
 
 private:
     ContainmentViewPrivate *const d;

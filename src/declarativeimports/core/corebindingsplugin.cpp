@@ -20,6 +20,7 @@
 #include "dialog.h"
 #include "quicktheme.h"
 
+#include "screeninfo.h"
 #include "tooltip.h"
 #include "windowthumbnail.h"
 
@@ -69,6 +70,8 @@ void CoreBindingsPlugin::registerTypes(const char *uri)
     qmlRegisterAnonymousType<IconGroup>(uri, 2);
     qmlRegisterExtendedType<QAction, ActionExtension>(uri, 2, 0, "Action");
     qmlRegisterType<ActionGroup>(uri, 2, 0, "ActionGroup");
+
+    qmlRegisterType<ScreenWorkArea>(uri, 2, 0, "ScreenWorkArea");
 }
 
 #include "moc_corebindingsplugin.cpp"

@@ -40,6 +40,7 @@ target_sources(PlasmaQuick PRIVATE
     plasmoid/dropmenu.cpp
     plasmoid/wallpaperitem.cpp
     waylandintegration.cpp
+    screeninfo.cpp
     ${RESOURCES}
 )
 

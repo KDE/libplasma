@@ -259,6 +259,8 @@ bool PlasmoidItem::hideOnWindowDeactivate() const
 
 QRect PlasmoidItem::screenGeometry() const
 {
+    // qFatal("screen Geometry");
+
     if (!applet() || !applet()->containment() || !applet()->containment()->corona() || applet()->containment()->screen() < 0) {
         return QRect();
     }
@@ -269,6 +271,7 @@ QRect PlasmoidItem::screenGeometry() const
 QVariantList PlasmoidItem::availableScreenRegion() const
 {
     QVariantList regVal;
+    // qFatal("available screen region");
 
     if (!applet()->containment() || !applet()->containment()->corona()) {
         return regVal;
@@ -297,6 +300,7 @@ QRect PlasmoidItem::availableScreenRect() const
     if (!applet()->containment() || !applet()->containment()->corona()) {
         return QRect();
     }
+    qFatal("available screen rect");
 
     QRect rect(0, 0, width(), height());
 

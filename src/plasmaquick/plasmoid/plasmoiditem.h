@@ -82,31 +82,12 @@ class PlasmoidItem : public PlasmaQuick::AppletQuickItem
     Q_PROPERTY(int screen READ screen NOTIFY screenChanged)
 
     /**
-     * Provides access to the geometry of the applet is in.
-     * Can be useful to figure out what's the absolute position of the applet.
-     * TODO: move in containment
-     */
-    Q_PROPERTY(QRect screenGeometry READ screenGeometry NOTIFY screenGeometryChanged)
-
-    /**
      * Whether the dialog should be hidden when the dialog loses focus.
      *
      * The default value is @c false.
      * TODO KF6: move to Applet? probably not
      **/
     Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
-
-    /**
-     * screen area free of panels: the coordinates are relative to the containment,
-     * it's independent from the screen position
-     * For more precise available geometry use availableScreenRegion()
-     */
-    Q_PROPERTY(QRect availableScreenRect READ availableScreenRect NOTIFY availableScreenRectChanged)
-
-    /**
-     * The available region of this screen, panels excluded. It's a list of rectanglesO: from containment
-     */
-    Q_PROPERTY(QVariantList availableScreenRegion READ availableScreenRegion NOTIFY availableScreenRegionChanged)
 
 public:
     PlasmoidItem(QQuickItem *parent = nullptr);
@@ -121,10 +102,6 @@ public:
      * @since 5.58
      */
     Q_INVOKABLE void prepareContextualActions();
-
-    QVariantList availableScreenRegion() const;
-
-    QRect availableScreenRect() const;
 
     // PROPERTY ACCESSORS-------------------------------------------------------------------
     QString pluginName() const;
@@ -142,7 +119,6 @@ public:
     void setToolTipItem(QQuickItem *toolTipItem);
 
     int screen() const;
-    QRect screenGeometry() const;
 
     bool hideOnWindowDeactivate() const;
     void setHideOnWindowDeactivate(bool hide);
@@ -168,10 +144,7 @@ Q_SIGNALS:
     void toolTipTextFormatChanged();
     void toolTipItemChanged();
     void screenChanged();
-    void screenGeometryChanged();
     void hideOnWindowDeactivateChanged();
-    void availableScreenRegionChanged();
-    void availableScreenRectChanged();
     void contextualActionsChanged();
 
 protected:

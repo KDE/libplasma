@@ -69,22 +69,6 @@ void Containment::init()
 {
     Applet::init();
 
-    connect(corona(), &Plasma::Corona::availableScreenRectChanged, this, [this](int screenId) {
-        if (screenId == screen() || screenId == lastScreen()) {
-            Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
-        }
-    });
-    connect(corona(), &Plasma::Corona::availableScreenRegionChanged, this, [this](int screenId) {
-        if (screenId == screen() || screenId == lastScreen()) {
-            Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
-        }
-    });
-    connect(corona(), &Plasma::Corona::screenGeometryChanged, this, [this](int screenId) {
-        if (screenId == screen()) {
-            Q_EMIT screenGeometryChanged(screenGeometry());
-        }
-    });
-
     QMap<QString, QAction *> actions = static_cast<Applet *>(this)->d->actions;
     // connect actions
     ContainmentPrivate::addDefaultActions(actions, this);
@@ -482,29 +466,6 @@ int Containment::lastScreen() const
 
 QRectF Containment::availableRelativeScreenRect() const
 {
-    if (!corona()) {
-        return {};
-    }
-
-    int screenId = screen();
-
-    // If corona returned an invalid screenId, try to use lastScreen value if it is valid
-    if (screenId == -1 && lastScreen() > -1) {
-        screenId = lastScreen();
-        // Is this a screen not actually valid?
-        if (screenId >= corona()->numScreens()) {
-            screenId = -1;
-        }
-    }
-
-    if (screenId > -1) {
-        QRectF rect = corona()->availableScreenRect(screenId);
-        // make it relative
-        QRectF geometry = corona()->screenGeometry(screenId);
-        rect.moveTo(rect.topLeft() - geometry.topLeft());
-        return rect;
-    }
-
     return {};
 }
 
@@ -512,36 +473,12 @@ QList<QRectF> Containment::availableRelativeScreenRegion() const
 {
     QList<QRectF> regVal;
 
-    if (!containment() || !containment()->corona()) {
-        return regVal;
-    }
-
-    QRegion reg = QRect(QPoint(0, 0), screenGeometry().size().toSize());
-    int screenId = screen();
-    if (screenId < 0) {
-        return {};
-    }
-    reg = containment()->corona()->availableScreenRegion(screenId);
-
-    auto it = reg.begin();
-    const auto itEnd = reg.end();
-    QRect geometry = containment()->corona()->screenGeometry(screenId);
-    for (; it != itEnd; ++it) {
-        QRect rect = *it;
-        // make it relative
-        rect.moveTo(rect.topLeft() - geometry.topLeft());
-        regVal << QRectF(rect);
-    }
     return regVal;
 }
 
 QRectF Containment::screenGeometry() const
 {
-    if (!corona() || screen() < 0) {
-        return {};
-    }
-
-    return corona()->screenGeometry(screen());
+    return {};
 }
 
 void Containment::setWallpaperPlugin(const QString &pluginName)

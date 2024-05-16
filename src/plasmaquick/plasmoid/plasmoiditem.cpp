@@ -65,18 +65,6 @@ void PlasmoidItem::init()
 
     if (applet->containment()) {
         connect(applet->containment(), &Plasma::Containment::screenChanged, this, &PlasmoidItem::screenChanged);
-
-        // Screen change implies geo change for good measure.
-        connect(applet->containment(), &Plasma::Containment::screenChanged, this, &PlasmoidItem::screenGeometryChanged);
-
-        connect(applet->containment()->corona(), &Plasma::Corona::screenGeometryChanged, this, [this](int id) {
-            if (id == AppletQuickItem::applet()->containment()->screen()) {
-                Q_EMIT screenGeometryChanged();
-            }
-        });
-
-        connect(applet->containment()->corona(), &Plasma::Corona::availableScreenRegionChanged, this, &ContainmentItem::availableScreenRegionChanged);
-        connect(applet->containment()->corona(), &Plasma::Corona::availableScreenRectChanged, this, &ContainmentItem::availableScreenRectChanged);
     }
 
     connect(this, &PlasmoidItem::expandedChanged, [=, this](bool expanded) {
@@ -255,74 +243,6 @@ void PlasmoidItem::setHideOnWindowDeactivate(bool hide)
 bool PlasmoidItem::hideOnWindowDeactivate() const
 {
     return m_hideOnDeactivate;
-}
-
-QRect PlasmoidItem::screenGeometry() const
-{
-    // qFatal("screen Geometry");
-
-    if (!applet() || !applet()->containment() || !applet()->containment()->corona() || applet()->containment()->screen() < 0) {
-        return QRect();
-    }
-
-    return applet()->containment()->corona()->screenGeometry(applet()->containment()->screen());
-}
-
-QVariantList PlasmoidItem::availableScreenRegion() const
-{
-    QVariantList regVal;
-    // qFatal("available screen region");
-
-    if (!applet()->containment() || !applet()->containment()->corona()) {
-        return regVal;
-    }
-
-    QRegion reg = QRect(0, 0, width(), height());
-    int screenId = screen();
-    if (screenId > -1) {
-        reg = applet()->containment()->corona()->availableScreenRegion(screenId);
-    }
-
-    auto it = reg.begin();
-    const auto itEnd = reg.end();
-    for (; it != itEnd; ++it) {
-        QRect rect = *it;
-        // make it relative
-        QRect geometry = applet()->containment()->corona()->screenGeometry(screenId);
-        rect.moveTo(rect.topLeft() - geometry.topLeft());
-        regVal << QVariant::fromValue(QRectF(rect));
-    }
-    return regVal;
-}
-
-QRect PlasmoidItem::availableScreenRect() const
-{
-    if (!applet()->containment() || !applet()->containment()->corona()) {
-        return QRect();
-    }
-    qFatal("available screen rect");
-
-    QRect rect(0, 0, width(), height());
-
-    int screenId = screen();
-
-    // If corona returned an invalid screenId, try to use lastScreen value if it is valid
-    if (screenId == -1 && applet()->containment()->lastScreen() > -1) {
-        screenId = applet()->containment()->lastScreen();
-        // Is this a screen not actually valid?
-        if (screenId >= applet()->containment()->corona()->numScreens()) {
-            screenId = -1;
-        }
-    }
-
-    if (screenId > -1) {
-        rect = applet()->containment()->corona()->availableScreenRect(screenId);
-        // make it relative
-        QRect geometry = applet()->containment()->corona()->screenGeometry(screenId);
-        rect.moveTo(rect.topLeft() - geometry.topLeft());
-    }
-
-    return rect;
 }
 
 bool PlasmoidItem::event(QEvent *event)

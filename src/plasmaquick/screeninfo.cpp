@@ -52,10 +52,8 @@ void ScreenWorkAreaBackend::removeScreenEdgeRecord(QWindow *window)
     }
 }
 
-QRect ScreenWorkAreaBackend::usableScreenArea(QScreen *screen)
+QMargins ScreenWorkAreaBackend::screenEdgeMargins(QScreen *screen)
 {
-    QRect screenRect = QRect(QPoint(0, 0), screen->geometry().size());
-
     QMargins margins;
     for (const auto r : d->m_workAreaBlockers) {
         QMargins reservedEdge;
@@ -78,7 +76,13 @@ QRect ScreenWorkAreaBackend::usableScreenArea(QScreen *screen)
         }
         margins = margins | reservedEdge;
     }
-    return screenRect.marginsRemoved(margins);
+    return margins;
+}
+
+QRect ScreenWorkAreaBackend::usableScreenArea(QScreen *screen)
+{
+    QRect screenRect = screen->geometry();
+    return screenRect.marginsRemoved(screenEdgeMargins(screen));
 }
 
 ScreenWorkArea::ScreenWorkArea(QObject *parent)
@@ -114,4 +118,36 @@ QRect ScreenWorkArea::usableArea() const
         return QRect();
     }
     return ScreenWorkAreaBackend::self()->usableScreenArea(m_screen);
+}
+
+int ScreenWorkArea::topMargin() const
+{
+    if (!m_screen) {
+        return 0;
+    }
+    return ScreenWorkAreaBackend::self()->screenEdgeMargins(m_screen).top();
+}
+
+int ScreenWorkArea::bottomMargin() const
+{
+    if (!m_screen) {
+        return 0;
+    }
+    return ScreenWorkAreaBackend::self()->screenEdgeMargins(m_screen).bottom();
+}
+
+int ScreenWorkArea::leftMargin() const
+{
+    if (!m_screen) {
+        return 0;
+    }
+    return ScreenWorkAreaBackend::self()->screenEdgeMargins(m_screen).left();
+}
+
+int ScreenWorkArea::rightMargin() const
+{
+    if (!m_screen) {
+        return 0;
+    }
+    return ScreenWorkAreaBackend::self()->screenEdgeMargins(m_screen).right();
 }

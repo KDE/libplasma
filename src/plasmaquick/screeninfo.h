@@ -27,6 +27,7 @@ public:
     void updateScreenEdgeRecord(QWindow *window, QScreen *screen, Qt::Edges edge, int size);
     void removeScreenEdgeRecord(QWindow *window);
 
+    QMargins screenEdgeMargins(QScreen *screen);
     QRect usableScreenArea(QScreen *screen);
 Q_SIGNALS:
     void usableScreenAreaChanged(QScreen *screen);
@@ -41,6 +42,10 @@ class PLASMAQUICK_EXPORT ScreenWorkArea : public QObject
     Q_OBJECT
     Q_PROPERTY(QScreen *screen READ screen WRITE setScreen NOTIFY screenChanged)
     Q_PROPERTY(QRect usableArea READ usableArea NOTIFY usableAreaChanged)
+    Q_PROPERTY(int topMargin READ topMargin NOTIFY usableAreaChanged)
+    Q_PROPERTY(int bottomMargin READ bottomMargin NOTIFY usableAreaChanged)
+    Q_PROPERTY(int leftMargin READ leftMargin NOTIFY usableAreaChanged)
+    Q_PROPERTY(int rightMargin READ rightMargin NOTIFY usableAreaChanged)
 
 public:
     ScreenWorkArea(QObject *parent = nullptr);
@@ -48,6 +53,10 @@ public:
     QScreen *screen() const;
     void setScreen(QScreen *screen);
     QRect usableArea() const;
+    int topMargin() const;
+    int bottomMargin() const;
+    int leftMargin() const;
+    int rightMargin() const;
 Q_SIGNALS:
     void screenChanged();
     void usableAreaChanged();

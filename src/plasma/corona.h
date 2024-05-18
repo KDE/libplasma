@@ -38,7 +38,7 @@ public:
     /**
      * Accessor for the associated Package object if any.
      * A Corona package defines how Containments are laid out in a View,
-     * ToolBoxes, default layout, error messages
+     * default layout, error messages
      * and in genelal all the furniture specific of a particular
      * device form factor.
      *

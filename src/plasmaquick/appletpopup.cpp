@@ -261,8 +261,13 @@ void AppletPopup::updateSize()
         return;
     }
     const QSize wantedSize = m_layoutChangedProxy->implicitSize().grownBy(padding());
-    QSize size = {std::clamp(wantedSize.width(), minimumSize().width(), maximumSize().width()),
-                  std::clamp(wantedSize.height(), minimumSize().height(), maximumSize().height())};
+
+    // NOTE: not using std::clamp as it might assert due to (possible) malformed values, sich as min > max
+    QSize size = {
+        std::min(std::max(minimumSize().width(), wantedSize.width()), maximumSize().width()),
+        std::min(std::max(minimumSize().height(), wantedSize.height()), maximumSize().height())
+    };
+
     resize(size);
 }
 

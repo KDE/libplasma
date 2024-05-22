@@ -4,13 +4,13 @@
 #
 # Malcolm Hunter <malcolm.hunter@gmx.co.uk>, 2008.
 # Andrew Coles <andrew_coles@yahoo.co.uk>, 2009, 2010.
-# Steve Allewell <steve.allewell@gmail.com>, 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2023-06-17 12:03+0100\n"
+"PO-Revision-Date: 2024-05-21 19:17+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -55,7 +55,7 @@ msgstr "Search"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "Clear search"
 
 #: plasma/applet.cpp:296
 #, kde-format
@@ -193,10 +193,9 @@ msgid "Could not find requested component: %1"
 msgstr "Could not find requested component: %1"
 
 #: plasmaquick/appletquickitem.cpp:512
-#, fuzzy, kde-format
-#| msgid "The root item of %1 must be of type ContaimentItem"
+#, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr "The root item of %1 must be of type ContaimentItem"
+msgstr "The root item of %1 must be of type ContainmentItem"
 
 #: plasmaquick/appletquickitem.cpp:517
 #, kde-format
@@ -215,12 +214,15 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"This Widget was written for an unknown older version of Plasma and is not "
+"compatible with Plasma %1. Please contact the widget's author for an updated "
+"version."
 
 #: plasmaquick/appletquickitem.cpp:541 plasmaquick/appletquickitem.cpp:548
 #: plasmaquick/appletquickitem.cpp:554
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 is not compatible with Plasma %2"
 
 #: plasmaquick/appletquickitem.cpp:545
 #, kde-format
@@ -228,6 +230,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
+"Please contact the widget's author for an updated version."
 
 #: plasmaquick/appletquickitem.cpp:551
 #, kde-format
@@ -235,11 +239,13 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
+"Please update Plasma in order to use the widget."
 
 #: plasmaquick/appletquickitem.cpp:560
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Sorry! There was an error loading %1."
 
 #: plasmaquick/appletquickitem.cpp:577
 #, kde-format
@@ -247,16 +253,14 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Error loading QML file: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:580
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
-msgstr "Error loading Applet: package inexistent. %1"
+msgstr "Error loading Applet: package does not exist. %1"
 
 #: plasmaquick/configview.cpp:231
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "%1 Settings"
+msgstr "%1 — %2 Settings"
 
 #: plasmaquick/configview.cpp:232
 #, kde-format

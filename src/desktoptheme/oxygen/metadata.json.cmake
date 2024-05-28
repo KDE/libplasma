@@ -7,7 +7,7 @@
                 "Name[az]": "Oxygen layihəsi",
                 "Name[be]": "Праект \"Oxygen\"",
                 "Name[bg]": "Проектът Oxygen",
-                "Name[ca@valencia]": "The Oxygen Project",
+                "Name[ca@valencia]": "El projecte Oxygen",
                 "Name[ca]": "The Oxygen Project",
                 "Name[cs]": "Projekt Oxygen",
                 "Name[de]": "Das Oxygen-Projekt",

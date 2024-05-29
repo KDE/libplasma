@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-27 05:30+0000\n"
-"PO-Revision-Date: 2022-07-31 09:00+0200\n"
+"PO-Revision-Date: 2024-03-02 12:48+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.03.70\n"
 
 #: declarativeimports/calendar/eventdatadecorator.cpp:51
 #, kde-format
@@ -139,12 +138,12 @@ msgstr "Hasło"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:68
 #, kde-format
 msgid "Search…"
-msgstr "Szukaj..."
+msgstr "Poszukaj..."
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:70
 #, kde-format
 msgid "Search"
-msgstr "Szukaj"
+msgstr "Poszukaj"
 
 #: plasma/applet.cpp:379
 #, kde-format
@@ -543,7 +542,7 @@ msgstr "Błąd wczytywania apletu: pakiet nie istnieje. %1"
 #: plasmaquick/configview.cpp:92
 #, kde-format
 msgid "%1 Settings"
-msgstr "%1 Ustawienia "
+msgstr "%1 Ustawienia"
 
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:603
 #, kde-format
@@ -558,7 +557,7 @@ msgstr "Wgraj"
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:620
 #, kde-format
 msgid "Package Installation Failed"
-msgstr "Niepowodzenia wgrywania pakietu"
+msgstr "Nie udało się wgrać pakietu"
 
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:643
 #, kde-format

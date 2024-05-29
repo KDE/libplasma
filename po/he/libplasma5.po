@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-27 05:30+0000\n"
-"PO-Revision-Date: 2024-04-01 00:13+0300\n"
+"PO-Revision-Date: 2024-05-27 19:43+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: declarativeimports/calendar/eventdatadecorator.cpp:51
 #, kde-format
@@ -231,7 +231,7 @@ msgstr "תמונות לפי נושא"
 #: plasma/packagestructure/packages.cpp:76
 #, kde-format
 msgid "Configuration Definitions"
-msgstr ""
+msgstr "הגדרות תצורה"
 
 #: plasma/packagestructure/packages.cpp:81
 #, kde-format
@@ -264,7 +264,7 @@ msgstr "תרגומים"
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:30
 #, kde-format
 msgid "Configuration UI pages model"
-msgstr ""
+msgstr "דגם עמודי ממשק משתמש תצורה"
 
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:31
 #, kde-format
@@ -274,7 +274,7 @@ msgstr "קובץ XML הגדרות"
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:47
 #, kde-format
 msgid "Custom expander for compact applets"
-msgstr ""
+msgstr "מרחיב מותאם אישית ליישומונים מצומצמים"
 
 #: plasma/packagestructure/plasma_dataengine_packagestructure.cpp:36
 #, kde-format
@@ -290,13 +290,13 @@ msgstr "תמונות לחלוניות"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:32
 #, kde-format
 msgid "Generic dialog background"
-msgstr ""
+msgstr "רקע חלונית כללית"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:33
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:34
 #, kde-format
 msgid "Theme for the logout dialog"
-msgstr ""
+msgstr "ערכת עיצוב לחלונית יציאה מהמערכת"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:36
 #, kde-format
@@ -330,13 +330,13 @@ msgstr "תמונת רקע ללוחות"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:46
 #, kde-format
 msgid "Background for graphing widgets"
-msgstr ""
+msgstr "רקע לווידג׳טים של ציור"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:47
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:48
 #, kde-format
 msgid "Background image for tooltips"
-msgstr ""
+msgstr "תמונת רקע לחלוניות עצה"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:50
 #, kde-format
@@ -347,7 +347,7 @@ msgstr "תמונות אטומות לחלוניות"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:52
 #, kde-format
 msgid "Opaque generic dialog background"
-msgstr ""
+msgstr "רקע חלונית כללית אטום"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:55
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:58

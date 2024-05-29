@@ -84,7 +84,16 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     if (isContainmentMetaData(p.metadata())) {
         applet = new Containment(nullptr, p.metadata(), allArgs);
     } else {
-        applet = new Applet(nullptr, p.metadata(), allArgs);
+        KPluginMetaData metadata = p.metadata();
+        if (metadata.pluginId().isEmpty()) {
+            // Add fake extension to parse completeBaseName() as pluginId
+            // without having to construct a fake JSON metadata object.
+            // This would help with better error messages which would
+            // at least show the missing applet's ID.
+            const auto fakeFileName = name + u'.';
+            metadata = KPluginMetaData(QJsonObject(), fakeFileName);
+        }
+        applet = new Applet(nullptr, metadata, allArgs);
     }
 
     const QString localePath = p.filePath("translations");

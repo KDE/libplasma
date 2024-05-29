@@ -85,47 +85,6 @@ void ContainmentItem::init()
         Q_EMIT appletsChanged();
     }
 
-    // Create the ToolBox
-    if (m_containment && m_containment->isContainment()) {
-        KConfigGroup defaults;
-        if (m_containment->containmentType() == Plasma::Containment::Type::Desktop) {
-            defaults = KConfigGroup(KSharedConfig::openConfig(m_containment->corona()->kPackage().filePath("defaults")), QStringLiteral("Desktop"));
-        } else if (m_containment->containmentType() == Plasma::Containment::Type::Panel) {
-            defaults = KConfigGroup(KSharedConfig::openConfig(m_containment->corona()->kPackage().filePath("defaults")), QStringLiteral("Panel"));
-        }
-
-        if (defaults.isValid()) {
-            KPackage::Package pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Generic"));
-            pkg.setDefaultPackageRoot(QStringLiteral("plasma/packages"));
-
-            if (defaults.isValid()) {
-                pkg.setPath(defaults.readEntry("ToolBox", "org.kde.desktoptoolbox"));
-            } else {
-                pkg.setPath(QStringLiteral("org.kde.desktoptoolbox"));
-            }
-
-            if (pkg.metadata().isValid() && !pkg.metadata().isHidden()) {
-                if (pkg.isValid()) {
-                    QObject *containmentGraphicObject = qmlObject()->rootObject();
-
-                    QVariantHash toolboxProperties;
-                    toolboxProperties[QStringLiteral("parent")] = QVariant::fromValue(this);
-                    QObject *toolBoxObject = qmlObject()->createObjectFromSource(pkg.fileUrl("mainscript"), nullptr, toolboxProperties);
-                    if (toolBoxObject && containmentGraphicObject) {
-                        connect(this, &QObject::destroyed, [toolBoxObject]() {
-                            delete toolBoxObject;
-                        });
-                        containmentGraphicObject->setProperty("toolBox", QVariant::fromValue(toolBoxObject));
-                    }
-                } else {
-                    qWarning() << "Could not load toolbox package." << pkg.path();
-                }
-            } else {
-                qWarning() << "Toolbox not loading, toolbox package is either invalid or disabled.";
-            }
-        }
-    }
-
     connect(m_containment.data(), &Plasma::Containment::wallpaperPluginChanged, this, &ContainmentItem::loadWallpaper);
 
     connect(m_containment, &Plasma::Containment::internalActionsChanged, this, &ContainmentItem::actionsChanged);

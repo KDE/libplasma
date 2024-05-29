@@ -14,7 +14,6 @@ set(PLASMA_DATA_INSTALL_DIR "${KDE_INSTALL_DATADIR}/${PLASMA_RELATIVE_DATA_INSTA
 #
 # Examples:
 # plasma_install_package(mywidget org.kde.plasma.mywidget) # installs an applet
-# plasma_install_package(declarativetoolbox org.kde.toolbox packages package) # installs a generic package
 #
 macro(plasma_install_package dir component)
    set(root ${ARGV2})

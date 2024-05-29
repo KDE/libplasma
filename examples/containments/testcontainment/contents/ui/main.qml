@@ -14,8 +14,6 @@ Item {
     width: 640
     height: 480
 
-    property Item toolBox
-
     function addApplet(applet, x, y) {
         var component = Qt.createComponent("PlasmoidContainer.qml")
         var plasmoidContainer = component.createObject(root, {"x": x, "y": y});

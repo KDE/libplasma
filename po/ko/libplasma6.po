@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-31 00:40+0000\n"
 "PO-Revision-Date: 2024-02-17 15:11+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -204,7 +204,7 @@ msgstr "%1의 루트 항목은 PlasmoidItem 형식이어야 함"
 msgid "Unknown Applet"
 msgstr "알 수 없는 애플릿"
 
-#: plasmaquick/appletquickitem.cpp:538
+#: plasmaquick/appletquickitem.cpp:539
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -214,13 +214,13 @@ msgstr ""
 "이 위젯은 알 수 없는 과거 Plasma 버전을 위해서 작성되었으며 Plasma %1 버전과 "
 "호환되지 않습니다. 위젯 개발자에게 업데이트된 버전에 대해서 문의하십시오."
 
-#: plasmaquick/appletquickitem.cpp:541 plasmaquick/appletquickitem.cpp:548
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:542 plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:546
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -229,7 +229,7 @@ msgstr ""
 "이 위젯은 Plasma %1 버전을 위해서 작성되었으며 Plasma %2 버전과 호환되지 않습"
 "니다. 위젯 개발자에게 업데이트된 버전에 대해서 문의하십시오."
 
-#: plasmaquick/appletquickitem.cpp:551
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -238,19 +238,20 @@ msgstr ""
 "이 위젯은 Plasma %1 버전을 위해서 작성되었으며 Plasma %2 버전과 호환되지 않습"
 "니다. 위젯을 사용하려면 Plasma를 업데이트하십시오."
 
-#: plasmaquick/appletquickitem.cpp:560
+#: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:577
+#: plasmaquick/appletquickitem.cpp:578
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "QML 파일을 불러오는 중 오류 발생: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:580
-#, kde-format
-msgid "Error loading Applet: package does not exist. %1"
+#: plasmaquick/appletquickitem.cpp:581
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package does not exist. %1"
+msgid "Error loading Applet: package %1 does not exist."
 msgstr "애플릿을 불러오는 중 오류 발생: 패키지가 없음. %1"
 
 #: plasmaquick/configview.cpp:231

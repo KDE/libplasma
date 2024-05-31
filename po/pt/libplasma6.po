@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-31 00:40+0000\n"
 "PO-Revision-Date: 2022-07-25 09:37+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -202,7 +202,7 @@ msgstr ""
 msgid "Unknown Applet"
 msgstr "Elemento Desconhecido"
 
-#: plasmaquick/appletquickitem.cpp:538
+#: plasmaquick/appletquickitem.cpp:539
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -210,40 +210,40 @@ msgid ""
 "version."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:541 plasmaquick/appletquickitem.cpp:548
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:542 plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:546
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:551
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:560
+#: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:577
+#: plasmaquick/appletquickitem.cpp:578
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Erro ao carregar o ficheiro QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:580
+#: plasmaquick/appletquickitem.cpp:581
 #, fuzzy, kde-format
 #| msgid "Error loading Applet: package inexistent. %1"
-msgid "Error loading Applet: package does not exist. %1"
+msgid "Error loading Applet: package %1 does not exist."
 msgstr "Erro ao carregar a 'applet': o pacote é inexistente. %1"
 
 #: plasmaquick/configview.cpp:231

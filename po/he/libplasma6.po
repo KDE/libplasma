@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-31 00:40+0000\n"
 "PO-Revision-Date: 2024-03-02 20:07+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -207,7 +207,7 @@ msgstr "פריט הבסיס של %1 חייב להיות מסוג PlasmoidItem"
 msgid "Unknown Applet"
 msgstr "יישומון לא ידוע"
 
-#: plasmaquick/appletquickitem.cpp:538
+#: plasmaquick/appletquickitem.cpp:539
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -217,13 +217,13 @@ msgstr ""
 "היישומון הזה נכתב לגרסה ישנה יותר ולא ידועה של פלזמה ואין נתמך בפלזמה %1. נא "
 "ליצור קשר עם יוצרי היישומון לאספקת גרסה עדכנית."
 
-#: plasmaquick/appletquickitem.cpp:541 plasmaquick/appletquickitem.cpp:548
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:542 plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 לא נתמך בפלזמה %2"
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:546
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -232,7 +232,7 @@ msgstr ""
 "היישומון נכתב לפלזמה %1 ואינו נתמך בפלזמה %2. נא ליצור קשר עם יוצרי היישומון "
 "לאספקת גרסה עדכנית"
 
-#: plasmaquick/appletquickitem.cpp:551
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -241,19 +241,20 @@ msgstr ""
 "היישומון הזה נכתב לפלזמה %1 ואינו נתמך בפלזמה %2. נא לעדכן את פלזמה כדי "
 "להשתמש ביישומון."
 
-#: plasmaquick/appletquickitem.cpp:560
+#: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "הייתה שגיאה בטעינת %1, עמך הסליחה!"
 
-#: plasmaquick/appletquickitem.cpp:577
+#: plasmaquick/appletquickitem.cpp:578
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "שגיאה בטעינת קובץ QML‏: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:580
-#, kde-format
-msgid "Error loading Applet: package does not exist. %1"
+#: plasmaquick/appletquickitem.cpp:581
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package does not exist. %1"
+msgid "Error loading Applet: package %1 does not exist."
 msgstr "שגיאה בטעינת יישומונית: החבילה לא קיימת. %1"
 
 #: plasmaquick/configview.cpp:231

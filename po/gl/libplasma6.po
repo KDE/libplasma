@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-31 00:40+0000\n"
 "PO-Revision-Date: 2024-03-03 10:41+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -206,7 +206,7 @@ msgstr "O elemento raíz de %1 debe ser de tipo «PlasmoidItem»."
 msgid "Unknown Applet"
 msgstr "Trebello descoñecido"
 
-#: plasmaquick/appletquickitem.cpp:538
+#: plasmaquick/appletquickitem.cpp:539
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -217,13 +217,13 @@ msgstr ""
 "non é compatíbel con Plasma %1. Solicite a quen fixo o trebello unha versión "
 "actualizada."
 
-#: plasmaquick/appletquickitem.cpp:541 plasmaquick/appletquickitem.cpp:548
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:542 plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 non é compatíbel con Plasma %2"
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:546
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -232,7 +232,7 @@ msgstr ""
 "O trebello escribiuse para Plasma %1 e non é compatíbel con Plasma %2. "
 "Solicite a quen fixo o trebello unha versión actualizada."
 
-#: plasmaquick/appletquickitem.cpp:551
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -241,19 +241,20 @@ msgstr ""
 "O trebello escribiuse para Plasma %1 e non é compatíbel con Plasma %2. "
 "Actualice Plasma para usar o trebello."
 
-#: plasmaquick/appletquickitem.cpp:560
+#: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Produciuse un erro ao cargar %1."
 
-#: plasmaquick/appletquickitem.cpp:577
+#: plasmaquick/appletquickitem.cpp:578
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Produciuse un erro ao cargar o ficheiro QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:580
-#, kde-format
-msgid "Error loading Applet: package does not exist. %1"
+#: plasmaquick/appletquickitem.cpp:581
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package does not exist. %1"
+msgid "Error loading Applet: package %1 does not exist."
 msgstr ""
 "Produciuse un erro ao cargar o miniaplicativo: o paquete non existe. %1"
 

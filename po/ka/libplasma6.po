@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-31 00:40+0000\n"
 "PO-Revision-Date: 2024-03-02 02:55+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -205,7 +205,7 @@ msgstr "%1-ის ძირეული ელემენტის ტიპი
 msgid "Unknown Applet"
 msgstr "უცნობი აპლეტი"
 
-#: plasmaquick/appletquickitem.cpp:538
+#: plasmaquick/appletquickitem.cpp:539
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -215,13 +215,13 @@ msgstr ""
 "ვიჯეტი დაწერილია Plasma-ის უცნობი, ძველი ვერსიისთვის და Plasma %1-სთან "
 "თავსებადი არაა. ვიჯეტის განახლებული ვერსიისთვის დაუკავშირდით ავტორს."
 
-#: plasmaquick/appletquickitem.cpp:541 plasmaquick/appletquickitem.cpp:548
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:542 plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 თავსებადი არაა Plasma %2-სთან"
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:546
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -230,7 +230,7 @@ msgstr ""
 "ვიჯეტი დაწერილია Plasma %1-სთვს და Plasma %2-სთან თავსებადი არაა. ვიჯეტის "
 "განახლებული ვერსიისთვის ავტორს დაუკავშირდით."
 
-#: plasmaquick/appletquickitem.cpp:551
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -239,19 +239,20 @@ msgstr ""
 "ვიჯეტი დაწერილია Plasma %1-სთვის და Plasma %2-თან თავსებადი არაა. ვიჯეტის "
 "გამოსაყენებლად განაახლეთ Plasma."
 
-#: plasmaquick/appletquickitem.cpp:560
+#: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "%1-ის ჩატვირთვის შეცდომა."
 
-#: plasmaquick/appletquickitem.cpp:577
+#: plasmaquick/appletquickitem.cpp:578
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "QML ფაილის ჩატვირთვის შეცდომა: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:580
-#, kde-format
-msgid "Error loading Applet: package does not exist. %1"
+#: plasmaquick/appletquickitem.cpp:581
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package does not exist. %1"
+msgid "Error loading Applet: package %1 does not exist."
 msgstr "აპლეტის ჩატვირთვის შეცდომა: პაკეტი არ არსებობს. %1"
 
 #: plasmaquick/configview.cpp:231

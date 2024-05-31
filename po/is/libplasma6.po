@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-31 00:40+0000\n"
 "PO-Revision-Date: 2024-03-18 15:34+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -204,7 +204,7 @@ msgstr "Rótaratriðið %1 verður að vera af gerðinni PlasmoidItem"
 msgid "Unknown Applet"
 msgstr "Óþekkt smáforrit"
 
-#: plasmaquick/appletquickitem.cpp:538
+#: plasmaquick/appletquickitem.cpp:539
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -214,13 +214,13 @@ msgstr ""
 "Þessi græja var gerð fyrir óþekkta eldri útgáfu af Plasma og virkar ekki í "
 "Plasma %1. Hafðu samband við höfund græjunnar til að fá uppfærða útgáfu."
 
-#: plasmaquick/appletquickitem.cpp:541 plasmaquick/appletquickitem.cpp:548
-#: plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:542 plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 er ekki samhæfð við Plasma %2"
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:546
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -229,7 +229,7 @@ msgstr ""
 "Þessi græja var gerð fyrir %1 og virkar ekki í %2. Hafðu samband við höfund "
 "græjunnar til að fá uppfærða útgáfu."
 
-#: plasmaquick/appletquickitem.cpp:551
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -238,19 +238,20 @@ msgstr ""
 "Þessi græja var gerð fyrir Plasma %1 og virkar ekki í Plasma %2. Uppfærðu "
 "Plasma til að geta notað græjuna."
 
-#: plasmaquick/appletquickitem.cpp:560
+#: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Því miður kom upp villa við að hlaða inn %1."
 
-#: plasmaquick/appletquickitem.cpp:577
+#: plasmaquick/appletquickitem.cpp:578
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Villa við að hlaða inn QML-skrá: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:580
-#, kde-format
-msgid "Error loading Applet: package does not exist. %1"
+#: plasmaquick/appletquickitem.cpp:581
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package does not exist. %1"
+msgid "Error loading Applet: package %1 does not exist."
 msgstr "Villa við að hlaða inn smáforriti: pakki er ekki til. %1"
 
 #: plasmaquick/configview.cpp:231

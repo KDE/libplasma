@@ -315,24 +315,3 @@ msgstr "Задаване на %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Съдържанието е пуснато"
-
-#~ msgctxt "Package file, name of the widget"
-#~ msgid "Could not open the %1 package required for the %2 widget."
-#~ msgstr "Неуспешно отваряне на пакета %1, необходим за уиджета %2."
-
-#~ msgid ""
-#~ "Sharing a widget on the network allows you to access this widget from "
-#~ "another computer as a remote control."
-#~ msgstr ""
-#~ "Споделянето на уиджета в мрежата ви позволява да получите достъп до него "
-#~ "от друг компютър като отдалечено управление."
-
-#~ msgid "Share this widget on the network"
-#~ msgstr "Споделяне на този уиджет в мрежата"
-
-#~ msgid "Allow everybody to freely access this widget"
-#~ msgstr "Позволяване на всички да имат свободен достъп до този уиджет"
-
-#~ msgctxt "Error message, tried to start an invalid service"
-#~ msgid "Invalid (null) service, can not perform any operations."
-#~ msgstr "Невалидна (нулева) услуга, не може да извършва никакви операции."

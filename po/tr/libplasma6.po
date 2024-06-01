@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:40+0000\n"
-"PO-Revision-Date: 2024-04-30 00:20+0300\n"
+"PO-Revision-Date: 2024-05-31 14:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -253,10 +253,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "QML dosyası yüklenirken hata: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:581
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "Uygulamacık yüklenirken hata: Paket yok. %1"
+msgstr "Uygulamacık yüklenirken hata: %1 paketi yok."
 
 #: plasmaquick/configview.cpp:231
 #, kde-format

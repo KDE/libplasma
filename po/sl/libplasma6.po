@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:40+0000\n"
-"PO-Revision-Date: 2024-03-02 07:56+0100\n"
+"PO-Revision-Date: 2024-05-31 10:09+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: LUGOS\n"
 "Language: sl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -256,10 +256,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Napaka pri nalaganju datoteke QML: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:581
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "Napaka med nalaganjem apleta: paket ne obstaja. %1"
+msgstr "Napaka med nalaganjem apleta: paket %1 ne obstaja."
 
 #: plasmaquick/configview.cpp:231
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:40+0000\n"
-"PO-Revision-Date: 2024-03-02 11:47+0100\n"
+"PO-Revision-Date: 2024-05-31 12:54+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -251,10 +251,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Fout bij het laden van QML-bestand: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:581
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "Fout bij laden van Applet: pakket bestaat niet. %1"
+msgstr "Fout bij laden van Applet: pakket %1 bestaat niet."
 
 #: plasmaquick/configview.cpp:231
 #, kde-format

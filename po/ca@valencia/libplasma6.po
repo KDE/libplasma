@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:40+0000\n"
-"PO-Revision-Date: 2024-03-02 11:23+0100\n"
+"PO-Revision-Date: 2024-05-31 09:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -78,7 +78,7 @@ msgstr "Elimina %1"
 #: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:478
 #, kde-format
 msgid "Enter Edit Mode"
-msgstr "Entra en el mode d'edició"
+msgstr "Entra en el mode edició"
 
 #: plasma/containment.cpp:106 plasma/private/applet_p.cpp:104
 #, kde-format
@@ -99,7 +99,7 @@ msgstr "Desbloqueja els ginys"
 #: plasma/corona.cpp:358
 #, kde-format
 msgid "Exit Edit Mode"
-msgstr "Ix del mode d'edició"
+msgstr "Ix del mode edició"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
@@ -256,11 +256,10 @@ msgid "Error loading QML file: %1 %2"
 msgstr "S'ha produït un error en carregar el fitxer en QML: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:581
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr ""
-"S'ha produït un error en carregar la miniaplicació: el paquet no existix. %1"
+"S'ha produït un error en carregar la miniaplicació: el paquet %1 no existix."
 
 #: plasmaquick/configview.cpp:231
 #, kde-format

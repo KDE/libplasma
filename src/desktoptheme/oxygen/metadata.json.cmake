@@ -36,7 +36,7 @@
                 "Name[uk]": "Проєкт Oxygen",
                 "Name[vi]": "Dự án Oxygen",
                 "Name[x-test]": "xxThe Oxygen Projectxx",
-                "Name[zh_CN]": "Oxygen 项目",
+                "Name[zh_CN]": "Oxygen 轻氧项目",
                 "Name[zh_TW]": "Oxygen 專案"
             }
         ],

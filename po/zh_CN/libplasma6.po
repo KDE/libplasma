@@ -250,7 +250,7 @@ msgstr "加载 QML 文件出错：%1 %2"
 #: plasmaquick/appletquickitem.cpp:581
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr ""
+msgstr "加载小程序出错：软件包 %1 不存在。"
 
 #: plasmaquick/configview.cpp:231
 #, kde-format

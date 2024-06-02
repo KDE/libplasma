@@ -45,7 +45,7 @@ msgstr "其他"
 #, kde-format
 msgctxt "Format: month year"
 msgid "%1 %2"
-msgstr "%2年%1"
+msgstr "%2 年 %1"
 
 #: declarativeimports/calendar/qml/MonthView.qml:255
 #, kde-format
@@ -170,7 +170,7 @@ msgstr "进入编辑模式"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "配置%1..."
+msgstr "配置 %1..."
 
 #: plasma/corona.cpp:355 plasma/corona.cpp:482
 #, kde-format
@@ -383,7 +383,7 @@ msgstr "其他"
 #: plasma/private/applet_p.cpp:126
 #, kde-format
 msgid "The %1 widget did not define which ScriptEngine to use."
-msgstr "挂件 %1 并未定义使用何种脚本引擎。"
+msgstr "挂件 %1 没有定义使用何种脚本引擎。"
 
 #: plasma/private/applet_p.cpp:145
 #, kde-format

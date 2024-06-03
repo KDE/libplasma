@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:40+0000\n"
-"PO-Revision-Date: 2024-05-21 19:17+0100\n"
+"PO-Revision-Date: 2024-06-02 11:35+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -253,10 +253,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Error loading QML file: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:581
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "Error loading Applet: package does not exist. %1"
+msgstr "Error loading Applet: package %1 does not exist."
 
 #: plasmaquick/configview.cpp:231
 #, kde-format

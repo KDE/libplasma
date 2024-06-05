@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the libplasma5 package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014, 2015, 2017, 2018.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-27 05:30+0000\n"
-"PO-Revision-Date: 2022-12-24 18:30+0400\n"
+"PO-Revision-Date: 2024-02-19 17:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,8 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.12.3\n"
-"X-Project-Style: kde\n"
 
 #: declarativeimports/calendar/eventdatadecorator.cpp:51
 #, kde-format
@@ -561,7 +559,7 @@ msgstr "فشل تثبيت الحزمة"
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:643
 #, kde-format
 msgid "The package you just dropped is invalid."
-msgstr ""
+msgstr "الحزمة التي أسقطتها غير صالحة."
 
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:652
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:721
@@ -596,7 +594,7 @@ msgstr "عيّن %1"
 #: scriptengines/qml/plasmoid/dropmenu.cpp:28
 #, kde-format
 msgid "Content dropped"
-msgstr ""
+msgstr "أسقط المحتوى"
 
 #~ msgid "Accessibility"
 #~ msgstr "الإتاحة"

@@ -4,6 +4,7 @@
             {
                 "Email": "%{EMAIL}",
                 "Name": "%{AUTHOR}",
+                "Name[ar]": "%{المؤلف}",
                 "Name[az]": "%{MÜƏLLİF}",
                 "Name[be]": "%{AUTHOR}",
                 "Name[bg]": "%{AUTHOR}",
@@ -80,6 +81,7 @@
         "Id": "org.kde.plasma.%{APPNAMELC}",
         "License": "LGPL-2.1+",
         "Name": "%{APPNAME}",
+        "Name[ar]": "%{اسم_التطبيق}",
         "Name[az]": "%{TƏTBİQ_ADI}",
         "Name[be]": "%{APPNAME}",
         "Name[bg]": "%{APPNAME}",

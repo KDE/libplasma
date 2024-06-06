@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:40+0000\n"
-"PO-Revision-Date: 2024-02-23 13:34\n"
+"PO-Revision-Date: 2024-06-04 19:02\n"
 "Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian\n"
 "Language: be\n"
@@ -247,7 +247,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Выбачайце! Не ўдалося загрузіць %1."
 
 #: plasmaquick/appletquickitem.cpp:578
 #, kde-format
@@ -255,10 +255,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Не ўдалося загрузіць файл QML: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:581
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "Не ўдалося загрузіць аплет: пакунак не існуе. %1"
+msgstr ""
 
 #: plasmaquick/configview.cpp:231
 #, kde-format
@@ -273,7 +272,7 @@ msgstr "%1 Налады"
 #: plasmaquick/plasmoid/containmentitem.cpp:543
 #, kde-format
 msgid "Plasma Package"
-msgstr "Пакунак Plasma"
+msgstr "Пакет Plasma"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:547
 #, kde-format
@@ -283,12 +282,12 @@ msgstr "Усталяваць"
 #: plasmaquick/plasmoid/containmentitem.cpp:558
 #, kde-format
 msgid "Package Installation Failed"
-msgstr "Не ўдалося ўсталяваць пакунак"
+msgstr "Не ўдалося ўсталяваць пакет"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format
 msgid "The package you just dropped is invalid."
-msgstr "Пакунак, які вы толькі што перацягнулі, хібны."
+msgstr "Пакет, які вы толькі што перацягнулі, хібны."
 
 #: plasmaquick/plasmoid/containmentitem.cpp:583
 #: plasmaquick/plasmoid/containmentitem.cpp:652

@@ -47,6 +47,7 @@ RowLayout {
             implicitHeight: root.button.icon.height > 0 ? root.button.icon.height : root.defaultIconSize
             visible: source.length > 0 && root.button.display !== T.Button.TextOnly
             source: root.button.icon ? (root.button.icon.name || root.button.icon.source) : ""
+            color: root.button.icon.color
             selected: root.usingFocusBackground
         }
         PlasmaComponents.Label {

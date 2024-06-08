@@ -264,6 +264,9 @@ Item {
      */
     readonly property bool hasExpandableContent: customExpandedViewContent !== null || __enabledContextualActions.length > 0
 
+    // @internal To fix usage with `pragma ComponentBehavior: Bound`
+    property int index
+
     /*
      * expand()
      * Show the expanded view, growing the list item to its taller size.
@@ -371,7 +374,7 @@ Item {
         acceptedPointerTypes: PointerDevice.Generic | PointerDevice.Finger
 
         onSingleTapped: {
-            listItem.ListView.view.currentIndex = index
+            listItem.ListView.view.currentIndex = listItem.index
             listItem.toggleExpanded()
         }
     }
@@ -391,10 +394,10 @@ Item {
             // this is a workaround till https://bugreports.qt.io/browse/QTBUG-114574 gets fixed
             // which would allow a proper solution
             if (parent.y - listItem.ListView.view.contentY >= 0 && parent.y - listItem.ListView.view.contentY + parent.height  + 1 /* border */ < listItem.ListView.view.height) {
-                listItem.ListView.view.currentIndex = (containsMouse ? index : -1)
+                listItem.ListView.view.currentIndex = (containsMouse ? listItem.index : -1)
             }
         }
-        onExited: if (listItem.ListView.view.currentIndex === index) {
+        onExited: if (listItem.ListView.view.currentIndex === listItem.index) {
             listItem.ListView.view.currentIndex = -1;
         }
 

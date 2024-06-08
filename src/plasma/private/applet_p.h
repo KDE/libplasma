@@ -45,6 +45,7 @@ public:
 
     QString globalName() const;
     void scheduleConstraintsUpdate(Applet::Constraints c);
+    void scheduleModificationNotification();
     KConfigGroup *mainConfigGroup();
     void resetConfigurationObject();
     void globalShortcutChanged();
@@ -98,6 +99,7 @@ public:
 
     // timerEvent bookkeeping
     QBasicTimer constraintsTimer;
+    QBasicTimer *modificationsTimer;
 
     QPointer<KNotification> deleteNotification;
     QTimer *deleteNotificationTimer;

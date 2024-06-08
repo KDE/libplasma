@@ -48,6 +48,7 @@ AppletPrivate::AppletPrivate(const KPluginMetaData &info, int uniqueID, Applet *
     , actions(AppletPrivate::defaultActions(applet))
     , activationAction(nullptr)
     , itemStatus(Types::UnknownStatus)
+    , modificationsTimer(nullptr)
     , deleteNotificationTimer(nullptr)
     , hasConfigurationInterface(false)
     , failed(false)
@@ -84,6 +85,7 @@ AppletPrivate::~AppletPrivate()
     configLoader = nullptr;
     delete mainConfig;
     mainConfig = nullptr;
+    delete modificationsTimer;
 }
 
 void AppletPrivate::init(const QVariantList &args)
@@ -317,7 +319,7 @@ void AppletPrivate::globalShortcutChanged()
     QString oldShortCut = shortcutConfig.readEntry("global", QString());
     if (newShortCut != oldShortCut) {
         shortcutConfig.writeEntry("global", newShortCut);
-        Q_EMIT q->configNeedsSaving();
+        scheduleModificationNotification();
     }
     // qCDebug(LOG_PLASMA) << "after" << shortcut.primary() << d->activationAction->globalShortcut().primary();
 }
@@ -463,6 +465,15 @@ void AppletPrivate::scheduleConstraintsUpdate(Applet::Constraints c)
     }
 
     pendingConstraints |= c;
+}
+
+void AppletPrivate::scheduleModificationNotification()
+{
+    // modificationsTimer is not allocated until we get our notice of being started
+    if (modificationsTimer) {
+        // schedule a save
+        modificationsTimer->start(1000, q);
+    }
 }
 
 KConfigGroup *AppletPrivate::mainConfigGroup()

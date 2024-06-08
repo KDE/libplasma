@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:40+0000\n"
-"PO-Revision-Date: 2024-02-14 18:57+0200\n"
+"PO-Revision-Date: 2024-04-08 19:58+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -227,7 +227,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 ei ole yhteensopiva Plasma-version %2 kanssa"
 
 #: plasmaquick/appletquickitem.cpp:546
 #, kde-format
@@ -250,7 +250,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Pahoittelut! Latauksessa tapahtui virhe: %1."
 
 #: plasmaquick/appletquickitem.cpp:578
 #, kde-format

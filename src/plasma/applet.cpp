@@ -262,7 +262,9 @@ KConfigPropertyMap *Applet::configuration()
 {
     if (!d->configPropertyMap) {
         d->configPropertyMap = new KConfigPropertyMap(configScheme(), this);
-        connect(d->configPropertyMap, &KConfigPropertyMap::valueChanged, this, &Applet::configNeedsSaving);
+        connect(d->configPropertyMap, &KConfigPropertyMap::valueChanged, this, [this]() {
+            d->scheduleModificationNotification();
+        });
     }
     return d->configPropertyMap;
 }

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022, 2024 Stefan Asserhäll <stefan.asserhall@bredband.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2022-08-03 09:42+0200\n"
+"PO-Revision-Date: 2024-06-08 20:04+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -52,7 +52,7 @@ msgstr "Sök"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "Rensa sökning"
 
 #: plasma/applet.cpp:296
 #, kde-format
@@ -192,12 +192,12 @@ msgstr "Kunde inte hitta begärd komponent: %1"
 #: plasmaquick/appletquickitem.cpp:512
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr ""
+msgstr "Rotobjekt för %1 måste ha typen ContainmentItem"
 
 #: plasmaquick/appletquickitem.cpp:517
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
-msgstr ""
+msgstr "Rotobjekt för %1 måste ha typen PlasmoidItem"
 
 #: plasmaquick/appletquickitem.cpp:525
 #, kde-format
@@ -211,12 +211,15 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"Den här grafiska komponenten är skriven för en okänd äldre version av Plasma "
+"och är inte kompatibel med Plasma %1. Kontakta komponentens upphovsman för "
+"en uppdaterad version."
 
 #: plasmaquick/appletquickitem.cpp:541 plasmaquick/appletquickitem.cpp:548
 #: plasmaquick/appletquickitem.cpp:554
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 är  inte kompatibel med Plasma %2"
 
 #: plasmaquick/appletquickitem.cpp:545
 #, kde-format
@@ -224,6 +227,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"Den här grafiska komponenten är skriven för Plasma %1 och är inte kompatibel "
+"med Plasma %2. Kontakta komponentens upphovsman för en uppdaterad version."
 
 #: plasmaquick/appletquickitem.cpp:551
 #, kde-format
@@ -231,11 +236,13 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"Den här grafiska komponenten är skriven för Plasma %1 och är inte kompatibel "
+"med Plasma %2. Uppdatera Plasma för att kunna använda komponenten."
 
 #: plasmaquick/appletquickitem.cpp:560
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Tyvärr uppstod ett fel vid laddning av %1."
 
 #: plasmaquick/appletquickitem.cpp:577
 #, kde-format
@@ -243,16 +250,14 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Fel vid inläsning av QML-fil: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:580
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "Fel vid inläsning av miniprogram: Paketet finns inte. %1"
 
 #: plasmaquick/configview.cpp:231
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "Inställningar av %1"
+msgstr "%1 — %2 inställningar"
 
 #: plasmaquick/configview.cpp:232
 #, kde-format

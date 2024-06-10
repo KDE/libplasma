@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2024-02-24 18:10+0000\n"
+"PO-Revision-Date: 2024-06-09 14:53+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -221,7 +221,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:554
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 nu e compatibil cu Plasma %2"
 
 #: plasmaquick/appletquickitem.cpp:545
 #, kde-format
@@ -244,7 +244,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:560
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Scuze! A intervenit o eroare la încărcarea %1."
 
 #: plasmaquick/appletquickitem.cpp:577
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:40+0000\n"
-"PO-Revision-Date: 2024-02-24 18:10+0000\n"
+"PO-Revision-Date: 2024-06-09 14:53+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -221,7 +221,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:555
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 nu e compatibil cu Plasma %2"
 
 #: plasmaquick/appletquickitem.cpp:546
 #, kde-format
@@ -244,7 +244,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "Scuze! A intervenit o eroare la încărcarea %1."
 
 #: plasmaquick/appletquickitem.cpp:578
 #, kde-format
@@ -252,10 +252,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Eroare la încărcarea fișierului QML: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:581
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "Eroare la încărcarea miniaplicației: pachetul nu există. %1"
+msgstr "Eroare la încărcarea miniaplicației: pachetul %1 nu există."
 
 #: plasmaquick/configview.cpp:231
 #, kde-format

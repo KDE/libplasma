@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:40+0000\n"
-"PO-Revision-Date: 2024-02-19 17:55+0400\n"
+"PO-Revision-Date: 2024-06-08 13:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -211,6 +212,8 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"كُتبت هذه الأداة لإصدار أقدم غير معروف من بلازما وهي غير متوافقة مع بلازما "
+"%1. يرجى الاتصال بمؤلف الودجة للحصول على نسخة محدثة."
 
 #: plasmaquick/appletquickitem.cpp:542 plasmaquick/appletquickitem.cpp:549
 #: plasmaquick/appletquickitem.cpp:555
@@ -224,6 +227,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"كُتبت هذه الأداة لإصدار بلازما %1 وهي غير متوافقة مع بلازما  %2.  . يرجى "
+"الاتصال بمؤلف الودجة للحصول على نسخة محدثة."
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
@@ -231,11 +236,13 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"كُتبت هذه الأداة لإصدار بلازما %1 وهي غير متوافقة مع بلازما %2. يرجى تحديث "
+"بلازما لتستخدم هذه الودجة."
 
 #: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "للأسف! حصل خطأ أثناء تحميل %1."
 
 #: plasmaquick/appletquickitem.cpp:578
 #, kde-format
@@ -243,10 +250,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "خطأ في تحميل ملف QML:‏ %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:581
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "خطأ في تحميل البريمج: الحزمة غير موجودة. %1"
+msgstr "خطأ في تحميل البريمج: الحزمة %1غير موجودة."
 
 #: plasmaquick/configview.cpp:231
 #, kde-format

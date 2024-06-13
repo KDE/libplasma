@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:40+0000\n"
+"POT-Creation-Date: 2024-06-13 00:40+0000\n"
 "PO-Revision-Date: 2021-09-05 15:52+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -55,17 +55,17 @@ msgstr ""
 msgid "Clear search"
 msgstr ""
 
-#: plasma/applet.cpp:296
+#: plasma/applet.cpp:298
 #, kde-format
 msgid "Unknown"
 msgstr "Tundmatu"
 
-#: plasma/applet.cpp:728
+#: plasma/applet.cpp:741
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Aktiveeri %1 vidin"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:99
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -76,7 +76,7 @@ msgstr "Eemalda %1"
 msgid "Enter Edit Mode"
 msgstr "Sisene kohandamisrežiimi"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:104
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -115,52 +115,52 @@ msgstr ""
 "hajusfailiga, nii et maksimaalset suurust küllap ei kasutatagi. Seepärast "
 "võib suurema suuruse määramist pidada üpris turvaliseks valikuks."
 
-#: plasma/private/applet_p.cpp:117
+#: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Näita alternatiive ..."
 
-#: plasma/private/applet_p.cpp:228
+#: plasma/private/applet_p.cpp:230
 #, kde-format
 msgid "Widget Removed"
 msgstr "Vidin eemaldatud"
 
-#: plasma/private/applet_p.cpp:229
+#: plasma/private/applet_p.cpp:231
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Vidin \"%1\" eemaldati."
 
-#: plasma/private/applet_p.cpp:233
+#: plasma/private/applet_p.cpp:235
 #, kde-format
 msgid "Panel Removed"
 msgstr "Paneel eemaldatud"
 
-#: plasma/private/applet_p.cpp:234
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Paneel eemaldati."
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Töölaud eemaldatud"
 
-#: plasma/private/applet_p.cpp:238
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Töölaud eemaldati."
 
-#: plasma/private/applet_p.cpp:241
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "Undo"
 msgstr "Võta tagasi"
 
-#: plasma/private/applet_p.cpp:332
+#: plasma/private/applet_p.cpp:334
 #, kde-format
 msgid "Widget Settings"
 msgstr "Vidina seadistused"
 
-#: plasma/private/applet_p.cpp:339
+#: plasma/private/applet_p.cpp:341
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Eemalda see vidin"

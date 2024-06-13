@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:40+0000\n"
+"POT-Creation-Date: 2024-06-13 00:40+0000\n"
 "PO-Revision-Date: 2023-02-19 15:12+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -54,17 +54,17 @@ msgstr "Axtarış"
 msgid "Clear search"
 msgstr ""
 
-#: plasma/applet.cpp:296
+#: plasma/applet.cpp:298
 #, kde-format
 msgid "Unknown"
 msgstr "Naməlum"
 
-#: plasma/applet.cpp:728
+#: plasma/applet.cpp:741
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "%1 Vidjetin aktiv edilməsi"
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:99
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -75,7 +75,7 @@ msgstr "%1 silinməsi"
 msgid "Enter Edit Mode"
 msgstr "Düzəliş rejimi"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:104
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -114,52 +114,52 @@ msgstr ""
 "seyrək fayllardır, bu halda maksimum ölçü istifadə olunmaya bilər. Buna görə "
 "daha böyük bir ölçü qurmaq əslində daha etibarlıdır."
 
-#: plasma/private/applet_p.cpp:117
+#: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Alternativ Vidjetləri göstər..."
 
-#: plasma/private/applet_p.cpp:228
+#: plasma/private/applet_p.cpp:230
 #, kde-format
 msgid "Widget Removed"
 msgstr "Vidjet ləğv edildi"
 
-#: plasma/private/applet_p.cpp:229
+#: plasma/private/applet_p.cpp:231
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "\"%1\" vidjeti ləğv edildi"
 
-#: plasma/private/applet_p.cpp:233
+#: plasma/private/applet_p.cpp:235
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panel ləğv edildi"
 
-#: plasma/private/applet_p.cpp:234
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Panel ləğv edildi"
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Masaüstü ləğv edildi"
 
-#: plasma/private/applet_p.cpp:238
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Masaüstü ləğv edildi"
 
-#: plasma/private/applet_p.cpp:241
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "Undo"
 msgstr "Geri qaytar"
 
-#: plasma/private/applet_p.cpp:332
+#: plasma/private/applet_p.cpp:334
 #, kde-format
 msgid "Widget Settings"
 msgstr "Vidjet ayarları"
 
-#: plasma/private/applet_p.cpp:339
+#: plasma/private/applet_p.cpp:341
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Bu vidjeti sil"

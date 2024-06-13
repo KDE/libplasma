@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:40+0000\n"
+"POT-Creation-Date: 2024-06-13 00:40+0000\n"
 "PO-Revision-Date: 2024-06-06 19:00\n"
 "Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -59,17 +59,17 @@ msgstr "Пошук"
 msgid "Clear search"
 msgstr "Ачысціць пошук"
 
-#: plasma/applet.cpp:296
+#: plasma/applet.cpp:298
 #, kde-format
 msgid "Unknown"
 msgstr "Невядома"
 
-#: plasma/applet.cpp:728
+#: plasma/applet.cpp:741
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Актываваць віджэт \"%1\""
 
-#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:99
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -80,7 +80,7 @@ msgstr "Выдаліць \"%1\""
 msgid "Enter Edit Mode"
 msgstr "Увайсці ў рэжым рэдагавання"
 
-#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:104
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -119,52 +119,52 @@ msgstr ""
 "што гэтыя файлы разрэджаныя, таму максімальны памер можа не выкарыстоўвацца. "
 "Таму вызначэнне большага памеру не стварае небяспекі."
 
-#: plasma/private/applet_p.cpp:117
+#: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Паказаць альтэрнатыўныя варыянты..."
 
-#: plasma/private/applet_p.cpp:228
+#: plasma/private/applet_p.cpp:230
 #, kde-format
 msgid "Widget Removed"
 msgstr "Віджэт выдалены"
 
-#: plasma/private/applet_p.cpp:229
+#: plasma/private/applet_p.cpp:231
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Віджэт \"%1\" быў выдалены."
 
-#: plasma/private/applet_p.cpp:233
+#: plasma/private/applet_p.cpp:235
 #, kde-format
 msgid "Panel Removed"
 msgstr "Панэль выдаленая"
 
-#: plasma/private/applet_p.cpp:234
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Панэль была выдаленая."
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Працоўны стол выдалены"
 
-#: plasma/private/applet_p.cpp:238
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Працоўны стол быў выдалены."
 
-#: plasma/private/applet_p.cpp:241
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "Undo"
 msgstr "Адрабіць"
 
-#: plasma/private/applet_p.cpp:332
+#: plasma/private/applet_p.cpp:334
 #, kde-format
 msgid "Widget Settings"
 msgstr "Налады віджэтаў"
 
-#: plasma/private/applet_p.cpp:339
+#: plasma/private/applet_p.cpp:341
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Выдаліць гэты віджэт"

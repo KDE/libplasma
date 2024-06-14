@@ -6,7 +6,7 @@
 
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls as QQC2
+import QtQuick.Templates as T
 
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.kirigami as Kirigami
@@ -214,7 +214,7 @@ ColumnLayout {
      *
      * @since 5.72
      */
-    property QQC2.Action helpfulAction
+    property T.Action helpfulAction
 
     spacing: Kirigami.Units.gridUnit
 

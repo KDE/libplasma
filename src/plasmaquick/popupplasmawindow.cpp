@@ -119,15 +119,16 @@ void PopupPlasmaWindowPrivate::updatePosition()
     QRectF parentAnchorRect = QRectF(m_visualParent->mapToScene(QPointF(0, 0)), m_visualParent->size());
 
     if (!m_floating) {
+        QRect windowVisibleRect = m_visualParent->window()->mask().boundingRect();
         // pad parentAnchorRect to the window it's in, so that the popup appears outside the panel
         // even if the tooltip area does not fill it
         if (m_popupDirection == Qt::TopEdge || m_popupDirection == Qt::BottomEdge) {
-            parentAnchorRect.setTop(0);
-            parentAnchorRect.setBottom(m_visualParent->window()->height());
+            parentAnchorRect.setTop(windowVisibleRect.top());
+            parentAnchorRect.setBottom(windowVisibleRect.height());
         }
         if (m_popupDirection == Qt::LeftEdge || m_popupDirection == Qt::RightEdge) {
-            parentAnchorRect.setLeft(0);
-            parentAnchorRect.setRight(m_visualParent->window()->width());
+            parentAnchorRect.setLeft(windowVisibleRect.left());
+            parentAnchorRect.setRight(windowVisibleRect.width());
         }
     }
 

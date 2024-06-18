@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-13 00:40+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2024-03-03 22:23+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -192,22 +192,22 @@ msgstr "Felületi elemek hozzáadása…"
 msgid "Could not find requested component: %1"
 msgstr "A kért komponens nem található: %1"
 
-#: plasmaquick/appletquickitem.cpp:512
+#: plasmaquick/appletquickitem.cpp:517
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "A(z) %1 gyökérelemének ContainmentItem típusúnak kell lennie"
 
-#: plasmaquick/appletquickitem.cpp:517
+#: plasmaquick/appletquickitem.cpp:522
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "A(z) %1 gyökérelemének PlasmoidItem típusúnak kell lennie"
 
-#: plasmaquick/appletquickitem.cpp:525
+#: plasmaquick/appletquickitem.cpp:530
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Ismeretlen kisalkalmazás"
 
-#: plasmaquick/appletquickitem.cpp:539
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -218,13 +218,13 @@ msgstr ""
 "kompatibilis a Plasma %1 verzióval. Lépjen kapcsolatba a szerzőjével egy "
 "frissített verzióért."
 
-#: plasmaquick/appletquickitem.cpp:542 plasmaquick/appletquickitem.cpp:549
-#: plasmaquick/appletquickitem.cpp:555
+#: plasmaquick/appletquickitem.cpp:547 plasmaquick/appletquickitem.cpp:554
+#: plasmaquick/appletquickitem.cpp:560
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "A(z) %1 nem kompatibilis a Plasma %2 verzióval"
 
-#: plasmaquick/appletquickitem.cpp:546
+#: plasmaquick/appletquickitem.cpp:551
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -233,7 +233,7 @@ msgstr ""
 "Az elem a Plasma %1 verziójához készült, és nem kompatibilis a Plasma %2 "
 "verzióval. Lépjen kapcsolatba a szerzőjével egy frissített verzióért."
 
-#: plasmaquick/appletquickitem.cpp:552
+#: plasmaquick/appletquickitem.cpp:557
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -242,17 +242,17 @@ msgstr ""
 "Az elem a Plasma %1 verziójához készült, és nem kompatibilis a Plasma %2 "
 "verzióval. Frissítse a Plasmát az elem használatához."
 
-#: plasmaquick/appletquickitem.cpp:561 plasmaquick/appletquickitem.cpp:583
+#: plasmaquick/appletquickitem.cpp:566 plasmaquick/appletquickitem.cpp:588
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Hiba történt a(z) %1 betöltésekor."
 
-#: plasmaquick/appletquickitem.cpp:578
+#: plasmaquick/appletquickitem.cpp:583
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Hiba a QML fájl betöltése közben: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:581
+#: plasmaquick/appletquickitem.cpp:586
 #, fuzzy, kde-format
 #| msgid "Error loading Applet: package does not exist. %1"
 msgid "Error loading Applet: package %1 does not exist."

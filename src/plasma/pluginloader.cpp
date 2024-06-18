@@ -50,7 +50,11 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
         appletId = ++AppletPrivate::s_maxAppletId;
     }
 
-    KPluginMetaData plugin(QStringLiteral("plasma/applets/") + name, KPluginMetaData::AllowEmptyMetaData);
+    // name can be either an actual applet name or an absolute path, in the
+    // latter case, ensure we only use the name part of the path.
+    const QString pluginName = name.section(QLatin1Char('/'), -1);
+
+    KPluginMetaData plugin(QStringLiteral("plasma/applets/") + pluginName, KPluginMetaData::AllowEmptyMetaData);
     const KPackage::Package p = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Applet"), name);
 
     if (!p.isValid()) {

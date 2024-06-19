@@ -344,7 +344,10 @@ Item {
     Keys.onDownPressed: event => {
         if (!actionsListLoader.item || ListView.view.currentIndex < 0) {
             ListView.view.incrementCurrentIndex();
-            ListView.view.currentItem.forceActiveFocus(Qt.TabFocusReason);
+            const item = ListView.view.currentItem;
+            if (item) {
+                item.forceActiveFocus(Qt.TabFocusReason);
+            }
             event.accepted = true;
             return;
         }
@@ -355,7 +358,11 @@ Item {
             event.accepted = false;
         } else {
             ListView.view.decrementCurrentIndex();
-            ListView.view.currentItem.forceActiveFocus(Qt.BacktabFocusReason);
+            const item = ListView.view.currentItem;
+            if (item) {
+                item.forceActiveFocus(Qt.BacktabFocusReason);
+            }
+            event.accepted = true;
         }
     }
 

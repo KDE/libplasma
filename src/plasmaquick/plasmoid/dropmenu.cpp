@@ -17,6 +17,7 @@
 #include <QUrl>
 
 #include <KIO/DropJob>
+#include <KJobWidgets>
 #include <KLocalizedString>
 
 DropMenu::DropMenu(KIO::DropJob *dropJob, const QPoint &dropPoint, ContainmentItem *parent)
@@ -31,9 +32,6 @@ DropMenu::DropMenu(KIO::DropJob *dropJob, const QPoint &dropPoint, ContainmentIt
         // of the window which will have no effect when the native window has already been created.
         m_menu->ensurePolished();
 
-        if (m_menu->winId()) {
-            m_menu->windowHandle()->setTransientParent(parent->window());
-        }
         connect(m_menu, &QMenu::aboutToHide, this, &QObject::deleteLater);
     } else {
         connect(m_dropJob, &QObject::destroyed, this, &QObject::deleteLater);
@@ -64,10 +62,20 @@ QPoint DropMenu::dropPoint() const
 
 void DropMenu::show()
 {
+    QWindow *transientParent = nullptr;
+    if (auto containmentItem = qobject_cast<ContainmentItem *>(parent())) {
+        transientParent = containmentItem->window();
+    }
+
     if (m_dropJob) {
+        KJobWidgets::setWindowHandle(m_dropJob, transientParent);
+
         m_dropJob->setApplicationActions(m_dropActions);
         m_dropJob->showMenu(m_dropPoint);
     } else if (m_menu) {
+        if (m_menu->winId()) {
+            m_menu->windowHandle()->setTransientParent(transientParent);
+        }
         m_menu->addActions(m_dropActions);
         m_menu->popup(m_dropPoint);
     }

@@ -628,8 +628,11 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
         qmlObject->rootContext()->setContextProperty(QStringLiteral("plasmoid"), applet);
     }
 
-    applet->connect(applet, &Plasma::Applet::appletDeleted, applet, [](Plasma::Applet *applet) {
-        delete AppletQuickItemPrivate::s_itemsForApplet[applet];
+    QObject::connect(applet, &Plasma::Applet::appletDeleted, item, [qmlObject](Plasma::Applet *applet) {
+        // Deleting qmlObject will also delete the instantiated plasmoidItem
+        // deleteing just the plasmoiditem will cause a double deletion when qmlObject
+        // gets deleted by applet deletion
+        delete qmlObject;
         AppletQuickItemPrivate::s_itemsForApplet.remove(applet);
     });
 

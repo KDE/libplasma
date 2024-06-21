@@ -357,6 +357,8 @@ void AppletQuickItemPrivate::compactRepresentationCheck()
                 compactRepresentationExpanderItem->setVisible(false);
             }
 
+            const bool fullRepresentationWasVisible = fullRepresentationItem->parentItem() == q;
+
             // the fullrepresentation being the complete AppletItem is actually allowed when the main ui
             // is child of the root item (like many panel applets)
             if (item != q) {
@@ -371,7 +373,7 @@ void AppletQuickItemPrivate::compactRepresentationCheck()
             currentRepresentationItem = item;
             connectLayoutAttached(item);
 
-            if (!expanded) {
+            if (!expanded && !fullRepresentationWasVisible) {
                 expanded = true;
                 Q_EMIT q->expandedChanged(true);
             }
@@ -389,7 +391,10 @@ void AppletQuickItemPrivate::compactRepresentationCheck()
             compactExpanderItem->setVisible(true);
             anchorsFillParent(compactExpanderItem, q);
 
-            if (fullRepresentationItem) {
+            // only reparent full representation to null if it was parented to the applet
+            // if it was already in the expander, leave it where it is
+            const bool fullRepresentationWasVisible = fullRepresentationItem && fullRepresentationItem->parentItem() == q;
+            if (fullRepresentationItem && fullRepresentationWasVisible) {
                 fullRepresentationItem->setProperty("parent", QVariant());
             }
 
@@ -400,7 +405,9 @@ void AppletQuickItemPrivate::compactRepresentationCheck()
             currentRepresentationItem = compactItem;
             connectLayoutAttached(compactItem);
 
-            if (expanded) {
+            // set Expanded to false only if the expanded cause was the full representation
+            // in the applet item, not if the full representation was in the popup and the popup was open
+            if (expanded && fullRepresentationWasVisible) {
                 expanded = false;
                 Q_EMIT q->expandedChanged(false);
             }

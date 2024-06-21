@@ -74,11 +74,13 @@ Applet::~Applet()
     for (QAction *a : d->contextualActions) {
         disconnect(a, nullptr, this, nullptr);
     }
+
+    // let people know that i will die
+    Q_EMIT appletDeleted(this);
+
     if (d->transient) {
         d->resetConfigurationObject();
     }
-    // let people know that i will die
-    Q_EMIT appletDeleted(this);
 
     // ConfigLoader is deleted when AppletPrivate closes not Applet
     // It saves on closure and emits a signal.

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 02:37+0000\n"
+"POT-Creation-Date: 2024-06-22 02:39+0000\n"
 "PO-Revision-Date: 2024-03-02 23:47+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -57,12 +57,12 @@ msgstr "Cerca"
 msgid "Clear search"
 msgstr "Cancella la ricerca"
 
-#: plasma/applet.cpp:298
+#: plasma/applet.cpp:300
 #, kde-format
 msgid "Unknown"
 msgstr "Sconosciuto"
 
-#: plasma/applet.cpp:741
+#: plasma/applet.cpp:743
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Attiva oggetto %1"

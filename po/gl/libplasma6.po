@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 02:37+0000\n"
+"POT-Creation-Date: 2024-06-22 02:39+0000\n"
 "PO-Revision-Date: 2024-03-03 10:41+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -56,12 +56,12 @@ msgstr "Buscar"
 msgid "Clear search"
 msgstr "Borrar a busca"
 
-#: plasma/applet.cpp:298
+#: plasma/applet.cpp:300
 #, kde-format
 msgid "Unknown"
 msgstr "Descoñecido"
 
-#: plasma/applet.cpp:741
+#: plasma/applet.cpp:743
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Activar o trebello de %1"

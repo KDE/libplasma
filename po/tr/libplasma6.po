@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 00:40+0000\n"
+"POT-Creation-Date: 2024-06-22 00:40+0000\n"
 "PO-Revision-Date: 2024-05-31 14:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -57,12 +57,12 @@ msgstr "Ara"
 msgid "Clear search"
 msgstr "Aramayı temizle"
 
-#: plasma/applet.cpp:298
+#: plasma/applet.cpp:300
 #, kde-format
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: plasma/applet.cpp:741
+#: plasma/applet.cpp:743
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Araç takımını etkinleştir: %1"
@@ -192,22 +192,22 @@ msgstr "Araç Takımları Ekle…"
 msgid "Could not find requested component: %1"
 msgstr "İstenilen bileşen bulunamadı: %1"
 
-#: plasmaquick/appletquickitem.cpp:517
+#: plasmaquick/appletquickitem.cpp:524
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "%1 kök ögesi, ContainmentItem türünde olmalıdır"
 
-#: plasmaquick/appletquickitem.cpp:522
+#: plasmaquick/appletquickitem.cpp:529
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "%1 kök ögesi, PlasmoidItem türünde olmalıdır"
 
-#: plasmaquick/appletquickitem.cpp:530
+#: plasmaquick/appletquickitem.cpp:537
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Bilinmeyen Uygulamacık"
 
-#: plasmaquick/appletquickitem.cpp:544
+#: plasmaquick/appletquickitem.cpp:551
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -218,13 +218,13 @@ msgstr ""
 "%1 ile uyumlu değil. Güncel bir sürüm için araç takımının yazarıyla "
 "iletişime geçin."
 
-#: plasmaquick/appletquickitem.cpp:547 plasmaquick/appletquickitem.cpp:554
-#: plasmaquick/appletquickitem.cpp:560
+#: plasmaquick/appletquickitem.cpp:554 plasmaquick/appletquickitem.cpp:561
+#: plasmaquick/appletquickitem.cpp:567
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1, Plasma %2 ile uyumlu değil"
 
-#: plasmaquick/appletquickitem.cpp:551
+#: plasmaquick/appletquickitem.cpp:558
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -233,7 +233,7 @@ msgstr ""
 "Bu araç takımı Plasma %1 için yazıldı ve Plasma %2 ile uyumlu değil. Güncel "
 "bir sürüm için araç takımının yazarıyla iletişime geçin."
 
-#: plasmaquick/appletquickitem.cpp:557
+#: plasmaquick/appletquickitem.cpp:564
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -242,17 +242,17 @@ msgstr ""
 "Bu araç takımı Plasma %1 için yazıldı ve Plasma %2 ile uyumlu değil. Araç "
 "takımını kullanmak için lütfen Plasma’yı güncelleyin."
 
-#: plasmaquick/appletquickitem.cpp:566 plasmaquick/appletquickitem.cpp:588
+#: plasmaquick/appletquickitem.cpp:573 plasmaquick/appletquickitem.cpp:595
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Üzgünüm! %1 yüklenirken bir hata oluştu."
 
-#: plasmaquick/appletquickitem.cpp:583
+#: plasmaquick/appletquickitem.cpp:590
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "QML dosyası yüklenirken hata: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:586
+#: plasmaquick/appletquickitem.cpp:593
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Uygulamacık yüklenirken hata: %1 paketi yok."

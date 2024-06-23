@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-22 02:39+0000\n"
-"PO-Revision-Date: 2024-05-21 22:44+0300\n"
+"PO-Revision-Date: 2024-06-22 11:39+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -275,10 +275,9 @@ msgstr "Ошибка загрузки виджета: пакет не сущес
 
 # BUGME: what is the context? window title or page header? --aspotashev
 #: plasmaquick/configview.cpp:231
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "Настройка виджета «%1»"
+msgstr "%1 — параметры %2"
 
 # BUGME: what is the context? window title or page header? --aspotashev
 #: plasmaquick/configview.cpp:232

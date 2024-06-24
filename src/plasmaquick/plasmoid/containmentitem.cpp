@@ -374,8 +374,38 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
         QList<QUrl> urls = {QUrl(QString::fromUtf8(mimeData->data(QStringLiteral("text/x-orgkdeplasmataskmanager_taskurl"))))};
         mimeData->setUrls(urls);
     }
+    if (mimeData->hasFormat(QStringLiteral("text/x-plasmoidinstanceid"))) {
+        QString data = QString::fromUtf8(mimeData->data(QStringLiteral("text/x-plasmoidinstanceid")));
+        const QStringList splitData = data.split(QLatin1Char(':'), Qt::SkipEmptyParts);
+        if (splitData.count() != 2)
+            return;
 
-    if (mimeData->hasFormat(QStringLiteral("text/x-plasmoidservicename"))) {
+        bool ok1, ok2;
+        uint containmentId = splitData[0].toInt(&ok1);
+        uint appletId = splitData[1].toInt(&ok2);
+        if (!ok1 || !ok2)
+            return;
+
+        auto corona = m_containment->corona();
+        auto containments = corona->containments();
+        for (auto containment : containments) {
+            if (containment->id() == containmentId) {
+                for (auto applet : containment->applets()) {
+                    if (applet->id() == appletId) {
+                        PlasmaQuick::AppletQuickItem *appletItem = PlasmaQuick::AppletQuickItem::itemForApplet(applet);
+                        // Set parent to null and free up from old container only if we are dropping on a different containment
+                        if (applet->containment() != m_containment) {
+                            appletItem->setParentItem(nullptr);
+                        }
+                        m_containment->addApplet(applet, QRect(x, y, -1, -1));
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        delete m_dropMenu.data();
+    } else if (mimeData->hasFormat(QStringLiteral("text/x-plasmoidservicename"))) {
         QString data = QString::fromUtf8(mimeData->data(QStringLiteral("text/x-plasmoidservicename")));
         const QStringList appletNames = data.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
         for (const QString &appletName : appletNames) {
@@ -708,7 +738,9 @@ void ContainmentItem::appletRemovedForward(Plasma::Applet *applet)
     PlasmoidItem *appletGraphicObject = qobject_cast<PlasmoidItem *>(AppletQuickItem::itemForApplet(applet));
     if (appletGraphicObject) {
         m_plasmoidItems.removeAll(appletGraphicObject);
-        appletGraphicObject->m_positionBeforeRemoval = appletGraphicObject->mapToItem(this, QPointF());
+        if (appletGraphicObject->parentItem()) {
+            appletGraphicObject->m_positionBeforeRemoval = appletGraphicObject->mapToItem(this, QPointF());
+        }
     }
 }
 

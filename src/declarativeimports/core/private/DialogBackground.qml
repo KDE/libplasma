@@ -7,6 +7,10 @@
 import QtQuick
 import org.kde.ksvg as KSvg
 
+/**
+ * Internal type used by DialogBackground in plasmaquick to load the actual
+ * background SVG.
+ */
 KSvg.FrameSvgItem {
     anchors.fill: parent
     imagePath: "widgets/background"

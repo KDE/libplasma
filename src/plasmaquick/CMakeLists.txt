@@ -14,8 +14,6 @@ set_target_properties(PlasmaQuick PROPERTIES
     EXPORT_NAME PlasmaQuick
 )
 
-qt_add_resources(RESOURCES resources.qrc)
-
 target_sources(PlasmaQuick PRIVATE
     appletcontext.cpp
     appletquickitem.cpp
@@ -42,7 +40,6 @@ target_sources(PlasmaQuick PRIVATE
     plasmoid/containmentitem.cpp
     plasmoid/dropmenu.cpp
     plasmoid/wallpaperitem.cpp
-    ${RESOURCES}
 )
 
 qt_generate_wayland_protocol_client_sources(PlasmaQuick

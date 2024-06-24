@@ -18,7 +18,7 @@ DialogBackground::DialogBackground(QQuickItem *parent)
     : QQuickItem(parent)
     , m_sharedEngine(new SharedQmlEngine(this))
 {
-    QQmlComponent component(m_sharedEngine->engine().get(), QStringLiteral(":/DialogBackground.qml"));
+    QQmlComponent component(m_sharedEngine->engine().get(), "org.kde.plasma.core", "DialogBackground");
 
     QVariantHash props({{QStringLiteral("parent"), QVariant::fromValue(this)}});
     QObject *object = m_sharedEngine->createObjectFromComponent(&component, m_sharedEngine->rootContext(), props);

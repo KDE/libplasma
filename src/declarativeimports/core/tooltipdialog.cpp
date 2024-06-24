@@ -80,7 +80,7 @@ QQuickItem *ToolTipDialog::loadDefaultItem()
     }
 
     if (!m_qmlObject->rootObject()) {
-        m_qmlObject->setSource(QUrl(QStringLiteral("qrc:/plasma/DefaultToolTip.qml")));
+        m_qmlObject->setSourceFromModule("org.kde.plasma.core", "DefaultToolTip");
     }
 
     return qobject_cast<QQuickItem *>(m_qmlObject->rootObject());

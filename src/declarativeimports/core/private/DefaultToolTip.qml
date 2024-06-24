@@ -9,6 +9,9 @@ import QtQuick.Layouts
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.kirigami as Kirigami
 
+/**
+ * Internal type containing the default layout of a tooltip.
+ */
 Item {
     property Item toolTip
     property int preferredTextWidth: Kirigami.Units.gridUnit * 20

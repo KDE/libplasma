@@ -8,8 +8,6 @@ configure_file(config-x11.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-x11.h)
 
 ecm_add_qml_module(corebindingsplugin URI "org.kde.plasma.core" VERSION 2.0 DEPENDENCIES QtCore QtQuick)
 
-qt_add_resources(RESOURCES private/resources.qrc)
-
 target_sources(corebindingsplugin PRIVATE
     action.cpp
     corebindingsplugin.cpp
@@ -20,7 +18,10 @@ target_sources(corebindingsplugin PRIVATE
     ${RESOURCES}
 )
 
-ecm_target_qml_sources(corebindingsplugin SOURCES private/DialogBackground.qml)
+ecm_target_qml_sources(corebindingsplugin SOURCES
+    private/DefaultToolTip.qml
+    private/DialogBackground.qml
+)
 
 target_link_libraries(corebindingsplugin PRIVATE
         Qt6::Quick

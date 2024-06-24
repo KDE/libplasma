@@ -57,7 +57,7 @@ public:
     QUrl source;
 
     QPointer<QObject> rootObject;
-    QQmlComponent *component;
+    std::unique_ptr<QQmlComponent> component;
     QTimer *executionEndTimer;
     KLocalizedContext *context{nullptr};
     QQmlContext *rootContext;
@@ -100,9 +100,8 @@ void SharedQmlEnginePrivate::execute(const QUrl &source)
         return;
     }
 
-    delete component;
-    component = new QQmlComponent(m_engine.get(), q);
-    QObject::connect(component, &QQmlComponent::statusChanged, q, &SharedQmlEngine::statusChanged, Qt::QueuedConnection);
+    component = std::make_unique<QQmlComponent>(m_engine.get(), source);
+    QObject::connect(component.get(), &QQmlComponent::statusChanged, q, &SharedQmlEngine::statusChanged, Qt::QueuedConnection);
 
     component->loadUrl(source);
     rootObject = component->beginCreate(rootContext);
@@ -119,7 +118,7 @@ void SharedQmlEnginePrivate::scheduleExecutionEnd()
     if (component->isReady() || component->isError()) {
         q->completeInitialization();
     } else {
-        QObject::connect(component, &QQmlComponent::statusChanged, q, [this]() {
+        QObject::connect(component.get(), &QQmlComponent::statusChanged, q, [this]() {
             q->completeInitialization();
         });
     }
@@ -148,7 +147,6 @@ SharedQmlEngine::SharedQmlEngine(Plasma::Applet *applet, QObject *parent)
 
 SharedQmlEngine::~SharedQmlEngine()
 {
-    delete d->component;
     if (QJSEngine::objectOwnership(d->rootObject) == QJSEngine::CppOwnership) {
         delete d->rootObject;
     }
@@ -197,7 +195,7 @@ QObject *SharedQmlEngine::rootObject() const
 
 QQmlComponent *SharedQmlEngine::mainComponent() const
 {
-    return d->component;
+    return d->component.get();
 }
 
 QQmlContext *SharedQmlEngine::rootContext() const
@@ -228,7 +226,7 @@ void SharedQmlEngine::completeInitialization(const QVariantHash &initialProperti
     }
 
     if (d->component->status() != QQmlComponent::Ready || d->component->isError()) {
-        d->errorPrint(d->component);
+        d->errorPrint(d->component.get());
         return;
     }
 

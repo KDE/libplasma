@@ -90,6 +90,14 @@ public:
     void setSource(const QUrl &source);
 
     /**
+     * Sets the QML source to execute from a type in a module.
+     *
+     * @param module The module to load the type from.
+     * @param type The type to load from the module.
+     */
+    void setSourceFromModule(QAnyStringView module, QAnyStringView type);
+
+    /**
      * @return the absolute path of the current QML file
      */
     QUrl source() const;

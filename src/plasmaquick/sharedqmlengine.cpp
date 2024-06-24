@@ -43,7 +43,9 @@ public:
     ~SharedQmlEnginePrivate() = default;
 
     void errorPrint(QQmlComponent *component);
-    void execute(const QUrl &source);
+    void beginExecute(const QUrl &source);
+    void beginExecute(QAnyStringView module, QAnyStringView type);
+    void endExecute();
     void scheduleExecutionEnd();
     void minimumWidthChanged();
     void minimumHeightChanged();
@@ -53,8 +55,6 @@ public:
     void preferredHeightChanged();
 
     SharedQmlEngine *q;
-
-    QUrl source;
 
     QPointer<QObject> rootObject;
     std::unique_ptr<QQmlComponent> component;
@@ -93,17 +93,42 @@ void SharedQmlEnginePrivate::errorPrint(QQmlComponent *component)
     qWarning(LOG_PLASMAQUICK) << component->url().toString() << '\n' << errorStr;
 }
 
-void SharedQmlEnginePrivate::execute(const QUrl &source)
+void SharedQmlEnginePrivate::beginExecute(const QUrl &source)
 {
     if (source.isEmpty()) {
         qWarning(LOG_PLASMAQUICK) << "File name empty!";
         return;
     }
 
-    component = std::make_unique<QQmlComponent>(m_engine.get(), source);
+    component = std::make_unique<QQmlComponent>(m_engine.get());
+    // Important! Some parts of Plasma are extremely sensitive to status changed
+    // signal being emit in exactly the same way QQmlComponent does it. So this
+    // connection needs to happen before any loading of the component happens.
     QObject::connect(component.get(), &QQmlComponent::statusChanged, q, &SharedQmlEngine::statusChanged, Qt::QueuedConnection);
-
     component->loadUrl(source);
+
+    endExecute();
+}
+
+void SharedQmlEnginePrivate::beginExecute(QAnyStringView module, QAnyStringView type)
+{
+    if (module.isEmpty() || type.isEmpty()) {
+        qWarning(LOG_PLASMAQUICK) << "No module or type specified";
+        return;
+    }
+
+    component = std::make_unique<QQmlComponent>(m_engine.get());
+    // Important! Some parts of Plasma are extremely sensitive to status changed
+    // signal being emit in exactly the same way QQmlComponent does it. So this
+    // connection needs to happen before any loading of the component happens.
+    QObject::connect(component.get(), &QQmlComponent::statusChanged, q, &SharedQmlEngine::statusChanged, Qt::QueuedConnection);
+    component->loadFromModule(module, type);
+
+    endExecute();
+}
+
+void SharedQmlEnginePrivate::endExecute()
+{
     rootObject = component->beginCreate(rootContext);
 
     if (delay) {
@@ -164,13 +189,20 @@ QString SharedQmlEngine::translationDomain() const
 
 void SharedQmlEngine::setSource(const QUrl &source)
 {
-    d->source = source;
-    d->execute(source);
+    d->beginExecute(source);
+}
+
+void SharedQmlEngine::setSourceFromModule(QAnyStringView module, QAnyStringView type)
+{
+    d->beginExecute(module, type);
 }
 
 QUrl SharedQmlEngine::source() const
 {
-    return d->source;
+    if (d->component) {
+        return d->component->url();
+    }
+    return QUrl{};
 }
 
 void SharedQmlEngine::setInitializationDelayed(const bool delay)

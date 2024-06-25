@@ -632,8 +632,11 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
         // Deleting qmlObject will also delete the instantiated plasmoidItem
         // deleteing just the plasmoiditem will cause a double deletion when qmlObject
         // gets deleted by applet deletion
-        delete qmlObject;
-        AppletQuickItemPrivate::s_itemsForApplet.remove(applet);
+        if (qmlObject->parent() == applet) {
+            // appletDelete can also be emitted by a containment for one of its children
+            delete qmlObject;
+            AppletQuickItemPrivate::s_itemsForApplet.remove(applet);
+        }
     });
 
     applet->setProperty("_plasmoid", QVariant::fromValue(item));

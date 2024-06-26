@@ -32,6 +32,7 @@ DialogBackground::DialogBackground(QQuickItem *parent)
 
 DialogBackground::~DialogBackground()
 {
+    delete m_frameSvgItem;
 }
 
 QString DialogBackground::imagePath() const

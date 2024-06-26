@@ -82,7 +82,7 @@ int AppletQuickItemPrivate::preloadWeight() const
                   100);
 }
 
-QObject *AppletQuickItemPrivate::searchLayoutAttached(QObject *parent)
+QObject *AppletQuickItemPrivate::searchLayoutAttached(QObject *parent) const
 {
     QObject *layout = nullptr;
     // Search a child that has the needed Layout properties
@@ -186,7 +186,7 @@ void AppletQuickItemPrivate::connectLayoutAttached(QObject *item)
 void AppletQuickItemPrivate::propagateSizeHint(const QByteArray &layoutProperty)
 {
     if (ownLayout && representationLayout) {
-        ownLayout->setProperty(layoutProperty.constData(), representationLayout->property(layoutProperty.constData()));
+        ownLayout->setProperty(layoutProperty.constData(), representationLayout->property(layoutProperty.constData()).toReal());
     }
 }
 
@@ -266,6 +266,26 @@ bool AppletQuickItemPrivate::appletShouldBeExpanded() const
             return true;
         }
         if (switchWidth > 0 && switchHeight > 0) {
+            // This code checks against the following edge case:
+            // The compact representation preferred size is bigger than both the switch
+            // size, and the full representation preferred size.
+            // this can cause in the panel (when is quite big) an infinite resize loop, because
+            // the applet size is bigger than the switch size, then it switches to full
+            // representaiton that has a smaller hint. this causes a resize that will make it
+            // switch to compact representation, making it grow again and switch again
+            if (compactRepresentationItem && fullRepresentationItem) {
+                QObject *compactLayout = searchLayoutAttached(compactRepresentationItem);
+                QObject *fullLayout = searchLayoutAttached(fullRepresentationItem);
+                if (compactLayout && fullLayout) {
+                    QSizeF compactPreferred = {compactLayout->property("preferredWidth").toReal(), compactLayout->property("preferredHeight").toReal()};
+                    QSizeF fullPreferred = {fullLayout->property("preferredWidth").toReal(), fullLayout->property("preferredHeight").toReal()};
+
+                    if ((compactPreferred.width() > fullPreferred.width() && compactPreferred.width() > switchWidth) ||
+                        (compactPreferred.height() > fullPreferred.height()  && compactPreferred.height() > switchHeight)) {
+                        return false;
+                    }
+                }
+            }
             return q->width() > switchWidth && q->height() > switchHeight;
 
             // if a size to switch wasn't set, determine what representation to always chose

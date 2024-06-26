@@ -70,7 +70,7 @@ public:
     void preloadForExpansion();
 
     // look into item, and return the Layout attached property, if found
-    QObject *searchLayoutAttached(QObject *parent);
+    QObject *searchLayoutAttached(QObject *parent) const;
     void connectLayoutAttached(QObject *item);
     void propagateSizeHint(const QByteArray &layoutProperty);
 

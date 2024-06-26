@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2023-10-24 10:41+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -311,7 +311,7 @@ msgctxt "Set wallpaper"
 msgid "Set %1"
 msgstr "Đặt %1"
 
-#: plasmaquick/plasmoid/dropmenu.cpp:28
+#: plasmaquick/plasmoid/dropmenu.cpp:29
 #, kde-format
 msgid "Content dropped"
 msgstr "Nội dung được thả"

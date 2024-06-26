@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2024-05-31 14:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -317,7 +317,7 @@ msgctxt "Set wallpaper"
 msgid "Set %1"
 msgstr "Ayarla: %1"
 
-#: plasmaquick/plasmoid/dropmenu.cpp:28
+#: plasmaquick/plasmoid/dropmenu.cpp:29
 #, kde-format
 msgid "Content dropped"
 msgstr "İçerik bırakıldı"

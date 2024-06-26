@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2024-03-03 22:23+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -318,7 +318,7 @@ msgctxt "Set wallpaper"
 msgid "Set %1"
 msgstr "A(z) %1 beállítása"
 
-#: plasmaquick/plasmoid/dropmenu.cpp:28
+#: plasmaquick/plasmoid/dropmenu.cpp:29
 #, kde-format
 msgid "Content dropped"
 msgstr "Tartalom ejtve"

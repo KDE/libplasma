@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-25 00:39+0000\n"
+"POT-Creation-Date: 2024-06-26 00:40+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -312,7 +312,7 @@ msgctxt "Set wallpaper"
 msgid "Set %1"
 msgstr "设置 %1"
 
-#: plasmaquick/plasmoid/dropmenu.cpp:28
+#: plasmaquick/plasmoid/dropmenu.cpp:29
 #, kde-format
 msgid "Content dropped"
 msgstr "内容已拖放"

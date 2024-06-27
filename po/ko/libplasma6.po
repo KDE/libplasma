@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-22 02:39+0000\n"
+"POT-Creation-Date: 2024-06-27 02:33+0000\n"
 "PO-Revision-Date: 2024-02-17 15:11+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -189,22 +189,22 @@ msgstr "위젯 추가..."
 msgid "Could not find requested component: %1"
 msgstr "요청한 구성 요소를 찾을 수 없습니다: %1"
 
-#: plasmaquick/appletquickitem.cpp:517
+#: plasmaquick/appletquickitem.cpp:537
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "%1의 루트 항목은 ContainmentItem 형식이어야 함"
 
-#: plasmaquick/appletquickitem.cpp:522
+#: plasmaquick/appletquickitem.cpp:542
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "%1의 루트 항목은 PlasmoidItem 형식이어야 함"
 
-#: plasmaquick/appletquickitem.cpp:530
+#: plasmaquick/appletquickitem.cpp:550
 #, kde-format
 msgid "Unknown Applet"
 msgstr "알 수 없는 애플릿"
 
-#: plasmaquick/appletquickitem.cpp:543
+#: plasmaquick/appletquickitem.cpp:563
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -214,13 +214,13 @@ msgstr ""
 "이 위젯은 알 수 없는 과거 Plasma 버전을 위해서 작성되었으며 Plasma %1 버전과 "
 "호환되지 않습니다. 위젯 개발자에게 업데이트된 버전에 대해서 문의하십시오."
 
-#: plasmaquick/appletquickitem.cpp:546 plasmaquick/appletquickitem.cpp:553
-#: plasmaquick/appletquickitem.cpp:559
+#: plasmaquick/appletquickitem.cpp:566 plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:579
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:550
+#: plasmaquick/appletquickitem.cpp:570
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -229,7 +229,7 @@ msgstr ""
 "이 위젯은 Plasma %1 버전을 위해서 작성되었으며 Plasma %2 버전과 호환되지 않습"
 "니다. 위젯 개발자에게 업데이트된 버전에 대해서 문의하십시오."
 
-#: plasmaquick/appletquickitem.cpp:556
+#: plasmaquick/appletquickitem.cpp:576
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -238,17 +238,17 @@ msgstr ""
 "이 위젯은 Plasma %1 버전을 위해서 작성되었으며 Plasma %2 버전과 호환되지 않습"
 "니다. 위젯을 사용하려면 Plasma를 업데이트하십시오."
 
-#: plasmaquick/appletquickitem.cpp:565
+#: plasmaquick/appletquickitem.cpp:585
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr ""
 
-#: plasmaquick/appletquickitem.cpp:582
+#: plasmaquick/appletquickitem.cpp:602
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "QML 파일을 불러오는 중 오류 발생: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:585
+#: plasmaquick/appletquickitem.cpp:605
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "애플릿을 불러오는 중 오류 발생: 패키지가 없음. %1"

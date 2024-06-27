@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-22 02:39+0000\n"
+"POT-Creation-Date: 2024-06-27 02:33+0000\n"
 "PO-Revision-Date: 2024-03-08 03:32+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -192,22 +192,22 @@ msgstr "新增元件..."
 msgid "Could not find requested component: %1"
 msgstr "找不到請求的組件：%1"
 
-#: plasmaquick/appletquickitem.cpp:517
+#: plasmaquick/appletquickitem.cpp:537
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "%1 的根項目必須為型態 ContainmentItem"
 
-#: plasmaquick/appletquickitem.cpp:522
+#: plasmaquick/appletquickitem.cpp:542
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "%1 的根項目必須為型態 PlasmoidItem"
 
-#: plasmaquick/appletquickitem.cpp:530
+#: plasmaquick/appletquickitem.cpp:550
 #, kde-format
 msgid "Unknown Applet"
 msgstr "不明小程式"
 
-#: plasmaquick/appletquickitem.cpp:543
+#: plasmaquick/appletquickitem.cpp:563
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -217,13 +217,13 @@ msgstr ""
 "這個元件是供某個未知的舊版 Plasma 用的，與 Plasma %1 不相容。請與元件作者聯"
 "絡，待其發佈更新版本。"
 
-#: plasmaquick/appletquickitem.cpp:546 plasmaquick/appletquickitem.cpp:553
-#: plasmaquick/appletquickitem.cpp:559
+#: plasmaquick/appletquickitem.cpp:566 plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:579
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 與 Plasma %2 不相容"
 
-#: plasmaquick/appletquickitem.cpp:550
+#: plasmaquick/appletquickitem.cpp:570
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -232,7 +232,7 @@ msgstr ""
 "這個元件是供 Plasma %1 用的，與 Plasma %2 不相容。請與元件作者聯絡，待其發佈"
 "更新版本。"
 
-#: plasmaquick/appletquickitem.cpp:556
+#: plasmaquick/appletquickitem.cpp:576
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -240,17 +240,17 @@ msgid ""
 msgstr ""
 "這個元件是供 Plasma %1 用的，與 Plasma %2 不相容。請更新 Plasma 來使用它。"
 
-#: plasmaquick/appletquickitem.cpp:565
+#: plasmaquick/appletquickitem.cpp:585
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "很抱歉！載入 %1 時發生錯誤。"
 
-#: plasmaquick/appletquickitem.cpp:582
+#: plasmaquick/appletquickitem.cpp:602
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "載入 QML 檔時發生錯誤：%1 %2"
 
-#: plasmaquick/appletquickitem.cpp:585
+#: plasmaquick/appletquickitem.cpp:605
 #, kde-format
 msgid "Error loading Applet: package does not exist. %1"
 msgstr "載入小程式發生錯誤：軟體包不存在。%1"

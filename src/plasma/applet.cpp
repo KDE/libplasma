@@ -63,7 +63,6 @@ Applet::Applet(QObject *parentObject, const KPluginMetaData &data, const QVarian
     // WARNING: do not access config() OR globalConfig() in this method!
     //          that requires a scene, which is not available at this point
     d->init(args.mid(2));
-    d->setupPackage();
 }
 
 Applet::~Applet()

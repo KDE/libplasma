@@ -41,8 +41,6 @@ public:
     void askDestroy();
     virtual void cleanUpAndDelete();
 
-    void setupPackage();
-
     QString globalName() const;
     void scheduleConstraintsUpdate(Applet::Constraints c);
     void scheduleModificationNotification();

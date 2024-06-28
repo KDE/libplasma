@@ -424,24 +424,6 @@ void AppletPrivate::setUiReady()
     }
 }
 
-// put all setup routines for script here. at this point we can assume that
-// package exists and that we have a script engine
-void AppletPrivate::setupPackage()
-{
-    if (!package.isValid()) {
-        return;
-    }
-
-#ifndef NDEBUG
-    // qCDebug(LOG_PLASMA) << "setting up script support, package is in" << package->path()
-    //         << ", main script is" << package->filePath("mainscript");
-#endif
-
-    if (!package.filePath("mainconfigui").isEmpty()) {
-        q->setHasConfigurationInterface(true);
-    }
-}
-
 QString AppletPrivate::globalName() const
 {
     if (!appletDescription.isValid()) {

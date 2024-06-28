@@ -187,6 +187,8 @@ void AppletPrivate::setDestroyed(bool destroyed)
 {
     transient = destroyed;
     if (destroyed) {
+        // If the user was configuring, "destroying" it will also remove access to all configuration ui
+        q->setUserConfiguring(false);
         mainConfig->writeEntry(QStringLiteral("transient"), true);
     } else {
         mainConfig->deleteEntry(QStringLiteral("transient"));

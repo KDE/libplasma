@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-27 00:40+0000\n"
+"POT-Creation-Date: 2024-06-29 00:40+0000\n"
 "PO-Revision-Date: 2023-01-11 11:24+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -120,47 +120,47 @@ msgstr ""
 msgid "Show Alternatives..."
 msgstr "Zobraziť alternatívy..."
 
-#: plasma/private/applet_p.cpp:230
+#: plasma/private/applet_p.cpp:232
 #, kde-format
 msgid "Widget Removed"
 msgstr "Miniaplikácia bola odstránená"
 
-#: plasma/private/applet_p.cpp:231
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Miniaplikácia \"%1\" bola odstránená."
 
-#: plasma/private/applet_p.cpp:235
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panel odstránený"
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Panel bol odstránený."
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Pracovná plocha odstránená"
 
-#: plasma/private/applet_p.cpp:240
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Plocha bola odstránená."
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:245
 #, kde-format
 msgid "Undo"
 msgstr "Späť"
 
-#: plasma/private/applet_p.cpp:334
+#: plasma/private/applet_p.cpp:336
 #, kde-format
 msgid "Widget Settings"
 msgstr "Nastavenia miniaplikácie"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:343
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Odstrániť túto miniaplikáciu"

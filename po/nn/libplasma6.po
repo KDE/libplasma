@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-27 00:40+0000\n"
+"POT-Creation-Date: 2024-06-29 00:40+0000\n"
 "PO-Revision-Date: 2024-03-23 12:19+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -135,47 +135,47 @@ msgstr ""
 msgid "Show Alternatives..."
 msgstr "Vis alternativ …"
 
-#: plasma/private/applet_p.cpp:230
+#: plasma/private/applet_p.cpp:232
 #, kde-format
 msgid "Widget Removed"
 msgstr "Skjermelement fjerna"
 
-#: plasma/private/applet_p.cpp:231
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Skjermelementet «%1» vart fjerna."
 
-#: plasma/private/applet_p.cpp:235
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panel fjerna"
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Eit panel vart fjerna."
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Skrivebord fjerna"
 
-#: plasma/private/applet_p.cpp:240
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Eit skrivebord vart fjerna."
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:245
 #, kde-format
 msgid "Undo"
 msgstr "Angra"
 
-#: plasma/private/applet_p.cpp:334
+#: plasma/private/applet_p.cpp:336
 #, kde-format
 msgid "Widget Settings"
 msgstr "Set opp element"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:343
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Fjern dette elementet"

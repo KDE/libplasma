@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-27 02:33+0000\n"
+"POT-Creation-Date: 2024-06-29 02:27+0000\n"
 "PO-Revision-Date: 2024-04-08 19:58+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -127,47 +127,47 @@ msgstr ""
 msgid "Show Alternatives..."
 msgstr "Näytä vaihtoehdot…"
 
-#: plasma/private/applet_p.cpp:230
+#: plasma/private/applet_p.cpp:232
 #, kde-format
 msgid "Widget Removed"
 msgstr "Sovelma poistettu"
 
-#: plasma/private/applet_p.cpp:231
+#: plasma/private/applet_p.cpp:233
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Sovelma ”%1” on poistettu."
 
-#: plasma/private/applet_p.cpp:235
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Panel Removed"
 msgstr "Paneeli poistettu"
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Paneeli on poistettu."
 
-#: plasma/private/applet_p.cpp:239
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Työpöytä poistettu"
 
-#: plasma/private/applet_p.cpp:240
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Työpöytä on poistettu."
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:245
 #, kde-format
 msgid "Undo"
 msgstr "Kumoa"
 
-#: plasma/private/applet_p.cpp:334
+#: plasma/private/applet_p.cpp:336
 #, kde-format
 msgid "Widget Settings"
 msgstr "Sovelman asetukset"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:343
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Poista tämä sovelma"

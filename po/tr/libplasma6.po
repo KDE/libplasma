@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-29 00:40+0000\n"
-"PO-Revision-Date: 2024-05-31 14:24+0300\n"
+"PO-Revision-Date: 2024-07-02 01:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -82,7 +82,7 @@ msgstr "Düzenleme Kipine Gir"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "%1 Uygulamacığını Yapılandır…"
+msgstr "Yapılandır: %1…"
 
 #: plasma/corona.cpp:309 plasma/corona.cpp:463
 #, kde-format

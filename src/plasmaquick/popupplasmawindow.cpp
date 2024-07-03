@@ -124,11 +124,13 @@ void PopupPlasmaWindowPrivate::updatePosition()
         // even if the tooltip area does not fill it
         if (m_popupDirection == Qt::TopEdge || m_popupDirection == Qt::BottomEdge) {
             parentAnchorRect.setTop(windowVisibleRect.top());
-            parentAnchorRect.setBottom(windowVisibleRect.height());
+            // QRect::bottom() is off by one
+            parentAnchorRect.setBottom(windowVisibleRect.bottom() + 1);
         }
         if (m_popupDirection == Qt::LeftEdge || m_popupDirection == Qt::RightEdge) {
             parentAnchorRect.setLeft(windowVisibleRect.left());
-            parentAnchorRect.setRight(windowVisibleRect.width());
+            // QRect::right() is off by one
+            parentAnchorRect.setRight(windowVisibleRect.right() + 1);
         }
     }
 

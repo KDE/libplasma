@@ -361,9 +361,6 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
         return;
     }
     m_dropMenu = QPointer<DropMenu>(new DropMenu(dropJob, mapToGlobal(QPoint(x, y)).toPoint(), this));
-    if (dropJob) {
-        dropJob->setParent(m_dropMenu);
-    }
 
     // const QMimeData *mimeData = data;
 
@@ -444,7 +441,6 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
         // It may be a directory or a file, let's stat
         KIO::JobFlags flags = KIO::HideProgressInfo;
         KIO::MimetypeJob *job = KIO::mimetype(m_dropMenu->urls().at(0), flags);
-        job->setParent(m_dropMenu.data());
 
         QObject::connect(job, &KJob::result, this, &ContainmentItem::dropJobResult);
         QObject::connect(job, &KIO::MimetypeJob::mimeTypeFound, this, &ContainmentItem::mimeTypeRetrieved);

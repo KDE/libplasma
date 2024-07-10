@@ -10,12 +10,6 @@ include(ECMAddTests)
 find_package(KF6CoreAddons REQUIRED)
 find_package(Qt6 COMPONENTS QuickTest Widgets REQUIRED)
 
-# add_definitions( -DKDESRCDIR=${CMAKE_CURRENT_SOURCE_DIR} )
-
-if(KDE_PLATFORM_FEATURE_BINARY_COMPATIBLE_FEATURE_REDUCTION)
-    set(PLASMA_NO_PACKAGE_EXTRADATA TRUE)
-endif()
-
 MACRO(PLASMA_UNIT_TESTS)
        FOREACH(_testname ${ARGN})
                set(libs Qt6::Qml Qt6::Test Plasma::Plasma Plasma::PlasmaQuick

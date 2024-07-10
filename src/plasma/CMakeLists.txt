@@ -1,9 +1,5 @@
 add_subdirectory(packagestructure)
 
-if(KDE_PLATFORM_FEATURE_BINARY_COMPATIBLE_FEATURE_REDUCTION)
-    set(PLASMA_NO_PACKAGE_EXTRADATA TRUE)
-endif()
-
 # Consumer's include dir which has to be explicitly used to make headers of this lib visible to documented includes
 # Results in duplicate of prefix-dir & C++ namespace below, but part of different things, so by design:
 # <visibility-layer>/<C++ namespace>/class header files

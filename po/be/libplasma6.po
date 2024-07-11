@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-09 00:40+0000\n"
+"POT-Creation-Date: 2024-07-11 00:40+0000\n"
 "PO-Revision-Date: 2024-06-06 19:00\n"
 "Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -59,12 +59,12 @@ msgstr "Пошук"
 msgid "Clear search"
 msgstr "Ачысціць пошук"
 
-#: plasma/applet.cpp:300
+#: plasma/applet.cpp:299
 #, kde-format
 msgid "Unknown"
 msgstr "Невядома"
 
-#: plasma/applet.cpp:743
+#: plasma/applet.cpp:742
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Актываваць віджэт \"%1\""

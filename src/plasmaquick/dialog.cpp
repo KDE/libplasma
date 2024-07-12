@@ -709,7 +709,7 @@ QPointF DialogPrivate::positionAdjustedForMainItem(const QPointF &point) const
 
 void DialogPrivate::applyType()
 {
-    /*QXcbWindowFunctions::WmWindowType*/ int wmType = 0;
+    auto wmType = QNativeInterface::Private::QXcbWindow::None;
 
 #if HAVE_X11
     if (KWindowSystem::isPlatformX11()) {
@@ -739,9 +739,10 @@ void DialogPrivate::applyType()
             break;
         }
 
-        if (wmType) {
-            // QXcbWindow isn't installed and thus inaccessible to us, but it does read this magic property from the window...
-            q->setProperty("_q_xcb_wm_window_type", wmType);
+        q->create();
+        auto xcbWindow = q->nativeInterface<QNativeInterface::Private::QXcbWindow>();
+        if (wmType != QNativeInterface::Private::QXcbWindow::None && xcbWindow) {
+            xcbWindow->setWindowType(wmType);
         }
     }
 #endif

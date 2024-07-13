@@ -12,20 +12,15 @@
 
 #include "config-plasma.h"
 
-#include <QAbstractButton>
-#include <QActionGroup>
 #include <QDebug>
 #include <QFile>
 #include <QJSEngine>
 #include <QList>
-#include <QMessageBox>
 #include <QMetaEnum>
 
 #include <KAuthorized>
-#include <KColorScheme>
 #include <KConfigLoader>
 #include <KConfigPropertyMap>
-#include <KDesktopFile>
 #include <KGlobalAccel>
 #include <KLocalizedString>
 #include <KPackage/Package>
@@ -40,7 +35,6 @@
 
 #include <cmath>
 #include <limits>
-#include <qaction.h>
 
 namespace Plasma
 {

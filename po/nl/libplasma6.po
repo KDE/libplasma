@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:40+0000\n"
+"POT-Creation-Date: 2024-07-14 00:39+0000\n"
 "PO-Revision-Date: 2024-05-31 12:54+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -54,12 +54,12 @@ msgstr "Zoeken"
 msgid "Clear search"
 msgstr "Zoeken wissen"
 
-#: plasma/applet.cpp:299
+#: plasma/applet.cpp:293
 #, kde-format
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: plasma/applet.cpp:742
+#: plasma/applet.cpp:736
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Widget %1 activeren"

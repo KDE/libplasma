@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:40+0000\n"
+"POT-Creation-Date: 2024-07-14 00:39+0000\n"
 "PO-Revision-Date: 2024-06-08 13:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -55,12 +55,12 @@ msgstr "ابحث"
 msgid "Clear search"
 msgstr "مسح سجل البحث"
 
-#: plasma/applet.cpp:299
+#: plasma/applet.cpp:293
 #, kde-format
 msgid "Unknown"
 msgstr "مجهول"
 
-#: plasma/applet.cpp:742
+#: plasma/applet.cpp:736
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "فعّل الودجة %1"

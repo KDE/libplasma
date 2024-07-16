@@ -94,6 +94,7 @@ target_link_libraries(PlasmaQuick
         KF6::Notifications
         KF6::KCMUtilsQuick
         KF6::Svg
+        KF6::GuiAddons
 )
 
 if(HAVE_X11)

@@ -17,7 +17,7 @@
 #include <QUrl>
 
 #include <KIO/DropJob>
-#include <KJobWidgets>
+#include <KJobWindows>
 #include <KLocalizedString>
 
 DropMenu::DropMenu(KIO::DropJob *dropJob, const QPoint &dropPoint, ContainmentItem *parent)
@@ -68,7 +68,7 @@ void DropMenu::show()
     }
 
     if (m_dropJob) {
-        KJobWidgets::setWindowHandle(m_dropJob, transientParent);
+        KJobWindows::setWindow(m_dropJob, transientParent);
 
         m_dropJob->setApplicationActions(m_dropActions);
         m_dropJob->showMenu(m_dropPoint);

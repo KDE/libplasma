@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-14 00:39+0000\n"
-"PO-Revision-Date: 2024-06-02 18:00+0900\n"
+"PO-Revision-Date: 2024-07-18 17:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -79,11 +79,13 @@ msgstr "移除 %1"
 msgid "Enter Edit Mode"
 msgstr "進入編輯模式"
 
+# %1 是譯文，沒有空格比較好。如果有遇到太多是原文而需要空格或標點符號的情況的話可以改用「設定「%1」…」之類的。
+# --Kisaragi
 #: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "設定 %1…"
+msgstr "設定%1…"
 
 #: plasma/corona.cpp:309 plasma/corona.cpp:463
 #, kde-format

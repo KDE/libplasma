@@ -363,7 +363,9 @@ void ThemePrivate::colorsChanged()
 {
     // in the case the theme follows the desktop settings, refetch the colorschemes
     // and discard the svg pixmap cache
-    if (!colors) {
+    if (colors != nullptr) {
+        colors->reparseConfiguration();
+    } else {
         KSharedConfig::openConfig()->reparseConfiguration();
     }
     colorScheme = KColorScheme(QPalette::Active, KColorScheme::Window, colors);

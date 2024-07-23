@@ -31,4 +31,3 @@ T.SwipeView {
         maximumFlickVelocity: 4 * (control.orientation === Qt.Horizontal ? width : height)
     }
 }
-

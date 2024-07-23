@@ -28,4 +28,3 @@ KSvg.FrameSvgItem {
         opacity: background.control.hovered && !background.control.down ? 1 : 0
     }
 }
-

@@ -88,9 +88,9 @@ T.ComboBox {
         }
 
         onTextChanged: MobileTextSelection.MobileTextActionsToolBar.shouldBeVisible = false;
-        onPressed: MobileTextSelection.MobileTextActionsToolBar.shouldBeVisible = true;
+        onPressed: event => MobileTextSelection.MobileTextActionsToolBar.shouldBeVisible = true;
 
-        onPressAndHold: {
+        onPressAndHold: event => {
             if (!Kirigami.Settings.tabletMode) {
                 return;
             }
@@ -155,7 +155,7 @@ T.ComboBox {
                 rightMargin: control.rightPadding
             }
             acceptedButtons: Qt.NoButton
-            onWheel: {
+            onWheel: wheel => {
                 if (wheel.pixelDelta.y < 0 || wheel.angleDelta.y < 0) {
                     control.currentIndex = Math.min(control.currentIndex + 1, delegateModel.count -1);
                 } else {

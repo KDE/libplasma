@@ -88,7 +88,7 @@ T.TextField {
     }
 
     onTextChanged: MobileTextSelection.MobileTextActionsToolBar.shouldBeVisible = false;
-    onPressed: MobileTextSelection.MobileTextActionsToolBar.shouldBeVisible = true;
+    onPressed: event => MobileTextSelection.MobileTextActionsToolBar.shouldBeVisible = true;
 
     onPressAndHold: event => {
         if (!Kirigami.Settings.tabletMode) {
@@ -171,7 +171,7 @@ T.TextField {
             }
             MouseArea {
                 anchors.fill: parent
-                onClicked: {
+                onClicked: mouse => {
                     control.clear()
                     control.forceActiveFocus()
                 }

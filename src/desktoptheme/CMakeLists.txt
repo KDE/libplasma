@@ -99,7 +99,6 @@ function(PLASMA_INSTALL_DESKTOPTHEME_SVGS theme_name)
 endfunction()
 
 
-add_subdirectory( oxygen )
 add_subdirectory( breeze )
 add_subdirectory( breeze-dark )
 add_subdirectory( breeze-light )

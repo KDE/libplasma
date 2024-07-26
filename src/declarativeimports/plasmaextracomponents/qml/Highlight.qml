@@ -66,7 +66,10 @@ Item {
      */
     property bool active: true
 
-    width: ListView.view?.width ?? undefined
+    width: {
+        const view = ListView.view;
+        return view ? view.width - view.leftMargin - view.rightMargin : undefined;
+    }
 
     KSvg.FrameSvgItem {
         id: background

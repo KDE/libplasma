@@ -37,9 +37,8 @@ ToolTip::ToolTip(QQuickItem *parent)
     setAcceptHoverEvents(true);
     setFiltersChildMouseEvents(true);
 
-    m_showTimer = new QTimer(this);
-    m_showTimer->setSingleShot(true);
-    connect(m_showTimer, &QTimer::timeout, this, &ToolTip::showToolTip);
+    m_showTimer.setSingleShot(true);
+    connect(&m_showTimer, &QTimer::timeout, this, &ToolTip::showToolTip);
 
     loadSettings();
 
@@ -287,13 +286,13 @@ void ToolTip::setTimeout(int timeout)
 
 void ToolTip::hideToolTip()
 {
-    m_showTimer->stop();
+    m_showTimer.stop();
     tooltipDialogInstance()->dismiss();
 }
 
 void ToolTip::hideImmediately()
 {
-    m_showTimer->stop();
+    m_showTimer.stop();
     tooltipDialogInstance()->setVisible(false);
 }
 
@@ -376,7 +375,7 @@ void ToolTip::hoverEnterEvent(QHoverEvent *event)
             showToolTip();
         }
     } else {
-        m_showTimer->start(m_interval);
+        m_showTimer.start(m_interval);
     }
 }
 
@@ -384,7 +383,7 @@ void ToolTip::hoverLeaveEvent(QHoverEvent *event)
 {
     Q_UNUSED(event)
     setContainsMouse(false);
-    m_showTimer->stop();
+    m_showTimer.stop();
 }
 
 bool ToolTip::childMouseEventFilter(QQuickItem *item, QEvent *event)

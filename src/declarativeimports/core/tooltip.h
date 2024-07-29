@@ -12,6 +12,7 @@
 #include <Plasma/Plasma>
 #include <QPointer>
 #include <QQuickItem>
+#include <QTimer>
 #include <QVariant>
 
 class QQuickItem;
@@ -217,7 +218,7 @@ private:
     bool m_containsMouse;
     Plasma::Types::Location m_location;
     QPointer<QQuickItem> m_mainItem;
-    QTimer *m_showTimer;
+    QTimer m_showTimer;
     QString m_mainText;
     QString m_subText;
     int m_textFormat;

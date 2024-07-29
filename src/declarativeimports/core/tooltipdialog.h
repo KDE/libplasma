@@ -61,7 +61,7 @@ private:
 
     QPointer<QQuickItem> m_lastMainItem;
     PlasmaQuick::SharedQmlEngine *m_qmlObject;
-    QTimer *m_showTimer;
+    QTimer m_showTimer;
     int m_hideTimeout;
     bool m_interactive;
     QObject *m_owner;

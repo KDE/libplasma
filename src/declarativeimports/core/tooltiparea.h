@@ -48,10 +48,10 @@ class ToolTipDialog;
  * @code import org.kde.plasma.core @endcode
  * @version 2.0
  */
-class ToolTip : public QQuickItem
+class ToolTipArea : public QQuickItem
 {
     Q_OBJECT
-    QML_NAMED_ELEMENT(ToolTipArea)
+    QML_ELEMENT
 
     /**
      * The item shown inside the tooltip.
@@ -121,8 +121,8 @@ class ToolTip : public QQuickItem
 
 public:
     /// @cond INTERNAL_DOCS
-    explicit ToolTip(QQuickItem *parent = nullptr);
-    ~ToolTip() override;
+    explicit ToolTipArea(QQuickItem *parent = nullptr);
+    ~ToolTipArea() override;
 
     QQuickItem *mainItem() const;
     void setMainItem(QQuickItem *mainItem);

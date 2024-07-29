@@ -12,7 +12,7 @@ target_sources(corebindingsplugin PRIVATE
     action.cpp
     corebindingsplugin.cpp
     quicktheme.cpp
-    tooltip.cpp
+    tooltiparea.cpp
     tooltipdialog.cpp
     windowthumbnail.cpp
     ${RESOURCES}

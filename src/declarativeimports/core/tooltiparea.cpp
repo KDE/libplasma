@@ -7,7 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "tooltip.h"
+#include "tooltiparea.h"
 #include "appletquickitem.h"
 #include "tooltipdialog.h"
 
@@ -20,10 +20,10 @@
 #include <KWindowEffects>
 #include <Plasma/Applet>
 
-ToolTipDialog *ToolTip::s_dialog = nullptr;
-int ToolTip::s_dialogUsers = 0;
+ToolTipDialog *ToolTipArea::s_dialog = nullptr;
+int ToolTipArea::s_dialogUsers = 0;
 
-ToolTip::ToolTip(QQuickItem *parent)
+ToolTipArea::ToolTipArea(QQuickItem *parent)
     : QQuickItem(parent)
     , m_tooltipsEnabledGlobally(false)
     , m_containsMouse(false)
@@ -38,17 +38,17 @@ ToolTip::ToolTip(QQuickItem *parent)
     setFiltersChildMouseEvents(true);
 
     m_showTimer.setSingleShot(true);
-    connect(&m_showTimer, &QTimer::timeout, this, &ToolTip::showToolTip);
+    connect(&m_showTimer, &QTimer::timeout, this, &ToolTipArea::showToolTip);
 
     loadSettings();
 
     const QString configFile = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QStringLiteral("/plasmarc");
     KDirWatch::self()->addFile(configFile);
-    QObject::connect(KDirWatch::self(), &KDirWatch::created, this, &ToolTip::settingsChanged);
-    QObject::connect(KDirWatch::self(), &KDirWatch::dirty, this, &ToolTip::settingsChanged);
+    QObject::connect(KDirWatch::self(), &KDirWatch::created, this, &ToolTipArea::settingsChanged);
+    QObject::connect(KDirWatch::self(), &KDirWatch::dirty, this, &ToolTipArea::settingsChanged);
 }
 
-ToolTip::~ToolTip()
+ToolTipArea::~ToolTipArea()
 {
     if (s_dialog && s_dialog->owner() == this) {
         s_dialog->setVisible(false);
@@ -64,7 +64,7 @@ ToolTip::~ToolTip()
     }
 }
 
-void ToolTip::settingsChanged(const QString &file)
+void ToolTipArea::settingsChanged(const QString &file)
 {
     if (!file.endsWith(QLatin1String("plasmarc"))) {
         return;
@@ -74,19 +74,19 @@ void ToolTip::settingsChanged(const QString &file)
     loadSettings();
 }
 
-void ToolTip::loadSettings()
+void ToolTipArea::loadSettings()
 {
     KConfigGroup cfg = KConfigGroup(KSharedConfig::openConfig(QStringLiteral("plasmarc")), QStringLiteral("PlasmaToolTips"));
     m_interval = cfg.readEntry("Delay", 700);
     m_tooltipsEnabledGlobally = (m_interval > 0);
 }
 
-QQuickItem *ToolTip::mainItem() const
+QQuickItem *ToolTipArea::mainItem() const
 {
     return m_mainItem.data();
 }
 
-ToolTipDialog *ToolTip::tooltipDialogInstance()
+ToolTipDialog *ToolTipArea::tooltipDialogInstance()
 {
     if (!s_dialog) {
         s_dialog = new ToolTipDialog;
@@ -100,7 +100,7 @@ ToolTipDialog *ToolTip::tooltipDialogInstance()
     return s_dialog;
 }
 
-void ToolTip::setMainItem(QQuickItem *mainItem)
+void ToolTipArea::setMainItem(QQuickItem *mainItem)
 {
     if (m_mainItem.data() != mainItem) {
         m_mainItem = mainItem;
@@ -113,7 +113,7 @@ void ToolTip::setMainItem(QQuickItem *mainItem)
     }
 }
 
-void ToolTip::showToolTip()
+void ToolTipArea::showToolTip()
 {
     if (!m_active) {
         return;
@@ -148,7 +148,7 @@ void ToolTip::showToolTip()
         mainItem()->setVisible(true);
     }
 
-    connect(dlg, &ToolTipDialog::visibleChanged, this, &ToolTip::toolTipVisibleChanged, Qt::UniqueConnection);
+    connect(dlg, &ToolTipDialog::visibleChanged, this, &ToolTipArea::toolTipVisibleChanged, Qt::UniqueConnection);
 
     dlg->setHideTimeout(m_timeout);
     dlg->setOwner(this);
@@ -188,12 +188,12 @@ void ToolTip::showToolTip()
     dlg->keepalive();
 }
 
-QString ToolTip::mainText() const
+QString ToolTipArea::mainText() const
 {
     return m_mainText;
 }
 
-void ToolTip::setMainText(const QString &mainText)
+void ToolTipArea::setMainText(const QString &mainText)
 {
     if (mainText == m_mainText) {
         return;
@@ -207,12 +207,12 @@ void ToolTip::setMainText(const QString &mainText)
     }
 }
 
-QString ToolTip::subText() const
+QString ToolTipArea::subText() const
 {
     return m_subText;
 }
 
-void ToolTip::setSubText(const QString &subText)
+void ToolTipArea::setSubText(const QString &subText)
 {
     if (subText == m_subText) {
         return;
@@ -226,12 +226,12 @@ void ToolTip::setSubText(const QString &subText)
     }
 }
 
-int ToolTip::textFormat() const
+int ToolTipArea::textFormat() const
 {
     return m_textFormat;
 }
 
-void ToolTip::setTextFormat(int format)
+void ToolTipArea::setTextFormat(int format)
 {
     if (m_textFormat == format) {
         return;
@@ -241,12 +241,12 @@ void ToolTip::setTextFormat(int format)
     Q_EMIT textFormatChanged();
 }
 
-Plasma::Types::Location ToolTip::location() const
+Plasma::Types::Location ToolTipArea::location() const
 {
     return m_location;
 }
 
-void ToolTip::setLocation(Plasma::Types::Location location)
+void ToolTipArea::setLocation(Plasma::Types::Location location)
 {
     if (m_location == location) {
         return;
@@ -255,7 +255,7 @@ void ToolTip::setLocation(Plasma::Types::Location location)
     Q_EMIT locationChanged();
 }
 
-void ToolTip::setActive(bool active)
+void ToolTipArea::setActive(bool active)
 {
     if (m_active == active) {
         return;
@@ -268,7 +268,7 @@ void ToolTip::setActive(bool active)
     Q_EMIT activeChanged();
 }
 
-void ToolTip::setInteractive(bool interactive)
+void ToolTipArea::setInteractive(bool interactive)
 {
     if (m_interactive == interactive) {
         return;
@@ -279,24 +279,24 @@ void ToolTip::setInteractive(bool interactive)
     Q_EMIT interactiveChanged();
 }
 
-void ToolTip::setTimeout(int timeout)
+void ToolTipArea::setTimeout(int timeout)
 {
     m_timeout = timeout;
 }
 
-void ToolTip::hideToolTip()
+void ToolTipArea::hideToolTip()
 {
     m_showTimer.stop();
     tooltipDialogInstance()->dismiss();
 }
 
-void ToolTip::hideImmediately()
+void ToolTipArea::hideImmediately()
 {
     m_showTimer.stop();
     tooltipDialogInstance()->setVisible(false);
 }
 
-QVariant ToolTip::icon() const
+QVariant ToolTipArea::icon() const
 {
     if (m_icon.isValid()) {
         return m_icon;
@@ -305,7 +305,7 @@ QVariant ToolTip::icon() const
     }
 }
 
-void ToolTip::setIcon(const QVariant &icon)
+void ToolTipArea::setIcon(const QVariant &icon)
 {
     if (icon == m_icon) {
         return;
@@ -315,7 +315,7 @@ void ToolTip::setIcon(const QVariant &icon)
     Q_EMIT iconChanged();
 }
 
-QVariant ToolTip::image() const
+QVariant ToolTipArea::image() const
 {
     if (m_image.isValid()) {
         return m_image;
@@ -324,7 +324,7 @@ QVariant ToolTip::image() const
     }
 }
 
-void ToolTip::setImage(const QVariant &image)
+void ToolTipArea::setImage(const QVariant &image)
 {
     if (image == m_image) {
         return;
@@ -334,12 +334,12 @@ void ToolTip::setImage(const QVariant &image)
     Q_EMIT imageChanged();
 }
 
-bool ToolTip::containsMouse() const
+bool ToolTipArea::containsMouse() const
 {
     return m_containsMouse;
 }
 
-void ToolTip::setContainsMouse(bool contains)
+void ToolTipArea::setContainsMouse(bool contains)
 {
     if (m_containsMouse != contains) {
         m_containsMouse = contains;
@@ -350,7 +350,7 @@ void ToolTip::setContainsMouse(bool contains)
     }
 }
 
-void ToolTip::hoverEnterEvent(QHoverEvent *event)
+void ToolTipArea::hoverEnterEvent(QHoverEvent *event)
 {
     Q_UNUSED(event)
     setContainsMouse(true);
@@ -379,14 +379,14 @@ void ToolTip::hoverEnterEvent(QHoverEvent *event)
     }
 }
 
-void ToolTip::hoverLeaveEvent(QHoverEvent *event)
+void ToolTipArea::hoverLeaveEvent(QHoverEvent *event)
 {
     Q_UNUSED(event)
     setContainsMouse(false);
     m_showTimer.stop();
 }
 
-bool ToolTip::childMouseEventFilter(QQuickItem *item, QEvent *event)
+bool ToolTipArea::childMouseEventFilter(QQuickItem *item, QEvent *event)
 {
     if (event->type() == QEvent::MouseButtonPress) {
         hideToolTip();
@@ -394,9 +394,9 @@ bool ToolTip::childMouseEventFilter(QQuickItem *item, QEvent *event)
     return QQuickItem::childMouseEventFilter(item, event);
 }
 
-bool ToolTip::isValid() const
+bool ToolTipArea::isValid() const
 {
     return m_mainItem || !mainText().isEmpty() || !subText().isEmpty();
 }
 
-#include "moc_tooltip.cpp"
+#include "moc_tooltiparea.cpp"

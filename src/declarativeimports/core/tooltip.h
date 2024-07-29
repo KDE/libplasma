@@ -229,7 +229,7 @@ private:
     int m_timeout;
 
     // ToolTipDialog is not a Q_GLOBAL_STATIC because QQuickwindows as global static
-    // are deleted too later after some stuff in the qml runtime has already been deleted,
+    // are deleted too late after some stuff in the qml runtime has already been deleted,
     // causing a crash on exit
     bool m_usingDialog : 1;
     static ToolTipDialog *s_dialog;

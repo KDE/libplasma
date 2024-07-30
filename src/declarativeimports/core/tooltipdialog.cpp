@@ -45,11 +45,11 @@ ToolTipDialog::ToolTipDialog()
         }
         m_lastMainItem = mainItem();
 
-        if (!mainItem()) {
+        if (!m_lastMainItem) {
             return;
         }
-        connect(mainItem(), &QQuickItem::implicitWidthChanged, this, &ToolTipDialog::updateSize);
-        connect(mainItem(), &QQuickItem::implicitHeightChanged, this, &ToolTipDialog::updateSize);
+        connect(m_lastMainItem, &QQuickItem::implicitWidthChanged, this, &ToolTipDialog::updateSize);
+        connect(m_lastMainItem, &QQuickItem::implicitHeightChanged, this, &ToolTipDialog::updateSize);
         updateSize();
     });
 }

@@ -306,9 +306,9 @@ void QMenuProxy::rebuildMenu()
             m_menu->addAction(item->action());
             if (item->action()->menu()) {
                 // This ensures existence of the QWindow
-                m_menu->winId();
-                item->action()->menu()->winId();
-                item->action()->menu()->windowHandle()->setTransientParent(m_menu->windowHandle());
+                // m_menu->winId();
+                // item->action()->menu()->winId();
+                // item->action()->menu()->windowHandle()->setTransientParent(m_menu->windowHandle());
             }
         }
     }

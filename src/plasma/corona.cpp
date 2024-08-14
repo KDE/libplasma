@@ -447,7 +447,10 @@ CoronaPrivate::CoronaPrivate(Corona *corona)
 
 CoronaPrivate::~CoronaPrivate()
 {
-    qDeleteAll(containments);
+    // Do not qDeleteAll. The list gets mutated as objects are destroyed because we are connected to the destroyed signal!
+    while (!containments.isEmpty()) {
+        delete containments.takeAt(0);
+    }
 }
 
 void CoronaPrivate::init()

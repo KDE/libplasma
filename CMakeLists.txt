@@ -125,8 +125,8 @@ endif()
 #########################################################################
 
 ecm_set_disabled_deprecation_versions(
-    QT 6.4
-    KF 5.102
+    QT 6.7
+    KF 6.5
 )
 
 #add_definitions(-Wno-deprecated)

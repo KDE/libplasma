@@ -33,8 +33,8 @@ ToolTipDialog::ToolTipDialog()
     }
     setFlags(flags);
 
-    m_showTimer.setSingleShot(true);
-    connect(&m_showTimer, &QTimer::timeout, this, [this]() {
+    m_hideTimer.setSingleShot(true);
+    connect(&m_hideTimer, &QTimer::timeout, this, [this]() {
         setVisible(false);
     });
 
@@ -94,8 +94,7 @@ void ToolTipDialog::showEvent(QShowEvent *event)
 
 void ToolTipDialog::hideEvent(QHideEvent *event)
 {
-    m_showTimer.stop();
-
+    m_hideTimer.stop();
     PlasmaQuick::PopupPlasmaWindow::hideEvent(event);
 }
 
@@ -103,7 +102,7 @@ bool ToolTipDialog::event(QEvent *e)
 {
     if (e->type() == QEvent::Enter) {
         if (m_interactive) {
-            m_showTimer.stop();
+            m_hideTimer.stop();
         }
     } else if (e->type() == QEvent::Leave) {
         dismiss();
@@ -124,15 +123,15 @@ void ToolTipDialog::setOwner(QObject *owner)
 
 void ToolTipDialog::dismiss()
 {
-    m_showTimer.start(200);
+    m_hideTimer.start(200);
 }
 
 void ToolTipDialog::keepalive()
 {
     if (m_hideTimeout > 0) {
-        m_showTimer.start(m_hideTimeout);
+        m_hideTimer.start(m_hideTimeout);
     } else {
-        m_showTimer.stop();
+        m_hideTimer.stop();
     }
 }
 

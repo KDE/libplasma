@@ -345,7 +345,7 @@ void ToolTipArea::setContainsMouse(bool contains)
         m_containsMouse = contains;
         Q_EMIT containsMouseChanged();
     }
-    if (!contains) {
+    if (!contains && tooltipDialogInstance()->owner() == this) {
         tooltipDialogInstance()->dismiss();
     }
 }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:39+0000\n"
+"POT-Creation-Date: 2024-08-20 00:41+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -72,7 +72,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "بۇ %1 نى چىقىرىۋەت"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:478
+#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:481
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr ""
@@ -83,7 +83,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr ""
 
-#: plasma/corona.cpp:309 plasma/corona.cpp:463
+#: plasma/corona.cpp:309 plasma/corona.cpp:466
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Widget قۇلۇپلا"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:39+0000\n"
-"PO-Revision-Date: 2024-02-17 15:11+0100\n"
+"POT-Creation-Date: 2024-08-20 00:41+0000\n"
+"PO-Revision-Date: 2024-08-20 00:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -71,7 +71,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "%1 삭제"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:478
+#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:481
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "편집 모드 들어가기"
@@ -82,7 +82,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "%1 설정..."
 
-#: plasma/corona.cpp:309 plasma/corona.cpp:463
+#: plasma/corona.cpp:309 plasma/corona.cpp:466
 #, kde-format
 msgid "Lock Widgets"
 msgstr "위젯 잠금"
@@ -218,7 +218,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:587
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1은(는) Plasma %2와(과) 호환되지 않음"
 
 #: plasmaquick/appletquickitem.cpp:578
 #, kde-format
@@ -241,7 +241,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:593 plasmaquick/appletquickitem.cpp:615
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "죄송합니다! %1을(를) 불러오는 동안 오류가 발생했습니다."
 
 #: plasmaquick/appletquickitem.cpp:610
 #, kde-format
@@ -249,10 +249,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "QML 파일을 불러오는 중 오류 발생: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:613
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "애플릿을 불러오는 중 오류 발생: 패키지가 없음. %1"
+msgstr "애플릿을 불러오는 중 오류 발생: %1 패키지가 없음."
 
 #: plasmaquick/configview.cpp:231
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:39+0000\n"
+"POT-Creation-Date: 2024-08-20 00:41+0000\n"
 "PO-Revision-Date: 2019-12-14 15:16+0530\n"
 "Last-Translator: Nithin S Sabu <nithinsn@protonmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -71,7 +71,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "%1 കളയുക"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:478
+#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:481
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr ""
@@ -82,7 +82,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "%1 സജ്ജീകരിക്കുക..."
 
-#: plasma/corona.cpp:309 plasma/corona.cpp:463
+#: plasma/corona.cpp:309 plasma/corona.cpp:466
 #, kde-format
 msgid "Lock Widgets"
 msgstr "വിഡ്ജറ്റുകൾ വെച്ചുറപ്പിക്കുക"

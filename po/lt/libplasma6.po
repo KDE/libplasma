@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:39+0000\n"
+"POT-Creation-Date: 2024-08-20 00:41+0000\n"
 "PO-Revision-Date: 2024-07-06 01:53+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -74,7 +74,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Pašalinti %1|/|Pašalinti $[get-case galininkas %1]"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:478
+#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:481
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Įjungti taisymo veikseną"
@@ -85,7 +85,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Konfigūruoti %1...|/|Konfigūruoti $[get-case galininkas %1]..."
 
-#: plasma/corona.cpp:309 plasma/corona.cpp:463
+#: plasma/corona.cpp:309 plasma/corona.cpp:466
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Užrakinti valdiklius"

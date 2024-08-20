@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:39+0000\n"
+"POT-Creation-Date: 2024-08-20 00:41+0000\n"
 "PO-Revision-Date: 2024-06-02 11:49+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -72,7 +72,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Retirar %1"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:478
+#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:481
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Activar o modo de edición"
@@ -83,7 +83,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Configurar %1…"
 
-#: plasma/corona.cpp:309 plasma/corona.cpp:463
+#: plasma/corona.cpp:309 plasma/corona.cpp:466
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Trancar os trebellos"

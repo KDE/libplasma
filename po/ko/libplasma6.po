@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-09 02:26+0000\n"
-"PO-Revision-Date: 2024-02-17 15:11+0100\n"
+"PO-Revision-Date: 2024-08-20 00:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -218,7 +218,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:579
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1은(는) Plasma %2와(과) 호환되지 않음"
 
 #: plasmaquick/appletquickitem.cpp:570
 #, kde-format
@@ -241,7 +241,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:585
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "죄송합니다! %1을(를) 불러오는 동안 오류가 발생했습니다."
 
 #: plasmaquick/appletquickitem.cpp:602
 #, kde-format

@@ -75,8 +75,8 @@ void ContainmentPrivate::addDefaultActions(QMap<QString, QAction *> &actions, Co
     }
     actions[QStringLiteral("add widgets")] = appletBrowserAction;
     appletBrowserAction->setAutoRepeat(false);
-    appletBrowserAction->setText(i18n("Add Widgets..."));
-    appletBrowserAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    appletBrowserAction->setText(i18n("Add or Manage Widgets…"));
+    appletBrowserAction->setIcon(QIcon::fromTheme(QStringLiteral("view-group-symbolic")));
     appletBrowserAction->setShortcut(QKeySequence(Qt::ALT | Qt::Key_D, Qt::Key_A));
 
     if (c) {

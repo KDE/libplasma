@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 00:41+0000\n"
+"POT-Creation-Date: 2024-08-23 00:41+0000\n"
 "PO-Revision-Date: 2024-05-31 17:31+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -184,9 +184,10 @@ msgid "Activity Settings"
 msgstr "Impostazioni delle attività"
 
 #: plasma/private/containment_p.cpp:78
-#, kde-format
-msgid "Add Widgets..."
-msgstr "Aggiungi oggetti..."
+#, fuzzy, kde-format
+#| msgid "Add Widgets"
+msgid "Add or Manage Widgets…"
+msgstr "Aggiungi plasmoidi"
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -322,6 +323,9 @@ msgstr "Imposta %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Contenuto scartato"
+
+#~ msgid "Add Widgets..."
+#~ msgstr "Aggiungi oggetti..."
 
 #~ msgctxt "Package file, name of the widget"
 #~ msgid "Could not open the %1 package required for the %2 widget."
@@ -1422,9 +1426,6 @@ msgstr "Contenuto scartato"
 
 #~ msgid "Original author"
 #~ msgstr "Autore originale"
-
-#~ msgid "Add Widgets"
-#~ msgstr "Aggiungi plasmoidi"
 
 #~ msgid "Back- and foregrounds for clickable icons"
 #~ msgstr "Sfondo e primo piano per le icone cliccabili"

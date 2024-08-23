@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 00:41+0000\n"
+"POT-Creation-Date: 2024-08-23 00:41+0000\n"
 "PO-Revision-Date: 2024-06-02 11:49+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -183,8 +183,8 @@ msgstr "Configuración da actividade"
 
 #: plasma/private/containment_p.cpp:78
 #, kde-format
-msgid "Add Widgets..."
-msgstr "Engadir trebellos…"
+msgid "Add or Manage Widgets…"
+msgstr ""
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -321,6 +321,9 @@ msgstr "Definir %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Soltouse contido"
+
+#~ msgid "Add Widgets..."
+#~ msgstr "Engadir trebellos…"
 
 #~ msgctxt "Package file, name of the widget"
 #~ msgid "Could not open the %1 package required for the %2 widget."

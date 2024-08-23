@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 00:41+0000\n"
+"POT-Creation-Date: 2024-08-23 00:41+0000\n"
 "PO-Revision-Date: 2024-06-01 02:19+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -182,8 +182,8 @@ msgstr "Preferencias de la actividad"
 
 #: plasma/private/containment_p.cpp:78
 #, kde-format
-msgid "Add Widgets..."
-msgstr "Añadir elementos gráficos..."
+msgid "Add or Manage Widgets…"
+msgstr ""
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -320,6 +320,9 @@ msgstr "Definir %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Contenido soltado"
+
+#~ msgid "Add Widgets..."
+#~ msgstr "Añadir elementos gráficos..."
 
 #~ msgctxt "Package file, name of the widget"
 #~ msgid "Could not open the %1 package required for the %2 widget."

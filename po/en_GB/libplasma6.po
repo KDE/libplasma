@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 00:41+0000\n"
+"POT-Creation-Date: 2024-08-23 00:41+0000\n"
 "PO-Revision-Date: 2024-06-02 11:35+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -184,8 +184,8 @@ msgstr "Activity Settings"
 
 #: plasma/private/containment_p.cpp:78
 #, kde-format
-msgid "Add Widgets..."
-msgstr "Add Widgets..."
+msgid "Add or Manage Widgets…"
+msgstr ""
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -321,6 +321,9 @@ msgstr "Set %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Content dropped"
+
+#~ msgid "Add Widgets..."
+#~ msgstr "Add Widgets..."
 
 #~ msgctxt "Package file, name of the widget"
 #~ msgid "Could not open the %1 package required for the %2 widget."

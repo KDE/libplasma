@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 00:41+0000\n"
+"POT-Creation-Date: 2024-08-23 00:41+0000\n"
 "PO-Revision-Date: 2016-09-22 16:19+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -185,8 +185,8 @@ msgstr "Ρυθμίσεις δραστηριοτήτων"
 
 #: plasma/private/containment_p.cpp:78
 #, kde-format
-msgid "Add Widgets..."
-msgstr "Προσθήκη γραφικών συστατικών..."
+msgid "Add or Manage Widgets…"
+msgstr ""
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -320,6 +320,9 @@ msgstr ""
 #, kde-format
 msgid "Content dropped"
 msgstr ""
+
+#~ msgid "Add Widgets..."
+#~ msgstr "Προσθήκη γραφικών συστατικών..."
 
 #~ msgctxt "Package file, name of the widget"
 #~ msgid "Could not open the %1 package required for the %2 widget."

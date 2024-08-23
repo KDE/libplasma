@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 00:41+0000\n"
+"POT-Creation-Date: 2024-08-23 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -180,8 +180,8 @@ msgstr "活动设置"
 
 #: plasma/private/containment_p.cpp:78
 #, kde-format
-msgid "Add Widgets..."
-msgstr "添加挂件..."
+msgid "Add or Manage Widgets…"
+msgstr ""
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -316,3 +316,6 @@ msgstr "设置 %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "内容已拖放"
+
+#~ msgid "Add Widgets..."
+#~ msgstr "添加挂件..."

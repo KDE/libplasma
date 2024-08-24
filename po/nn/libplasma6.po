@@ -336,6 +336,3 @@ msgstr "Set %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Innhald sleppt"
-
-#~ msgid "Add Widgets..."
-#~ msgstr "Legg til element …"

@@ -316,6 +316,3 @@ msgstr ""
 #, kde-format
 msgid "Content dropped"
 msgstr ""
-
-#~ msgid "Add Widgets..."
-#~ msgstr "Legg til skjermelementer …"

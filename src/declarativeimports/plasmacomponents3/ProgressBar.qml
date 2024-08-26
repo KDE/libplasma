@@ -46,8 +46,8 @@ T.ProgressBar {
 
             // unlike Slider, this width is allowed to be less than its minimum (margins) size, in which case it would not render at all.
             width: control.indeterminate ? indeterminateWidth : Math.round(control.position * control.availableWidth)
-            height: barSvg.hasElement("hint-bar-size")
-                ? barSvg.elementSize("hint-bar-size").height
+            height: barSvg.elements.has("hint-bar-size")
+                ? barSvg.elements.size("hint-bar-size").height
                 : fixedMargins.top + fixedMargins.bottom
 
             visible: width >= fixedMargins.left + fixedMargins.right
@@ -80,8 +80,8 @@ T.ProgressBar {
 
             anchors.centerIn: parent
             width: Math.max(parent.width, fixedMargins.left + fixedMargins.right)
-            height: barSvg.hasElement("hint-bar-size")
-                ? barSvg.elementSize("hint-bar-size").height
+            height: barSvg.elements.has("hint-bar-size")
+                ? barSvg.elements.size("hint-bar-size").height
                 : fixedMargins.top + fixedMargins.bottom
         }
     }

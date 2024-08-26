@@ -17,7 +17,7 @@ RowLayout {
     required property string labelText
     required property T.Button button
 
-    readonly property bool usingFocusBackground: !button.flat && buttonSvg.hasElement("hint-focus-highlighted-background") && button.visualFocus && !(button.pressed || button.checked)
+    readonly property bool usingFocusBackground: !button.flat && buttonSvg.elements.has("hint-focus-highlighted-background") && button.visualFocus && !(button.pressed || button.checked)
     readonly property int defaultIconSize: button.flat ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.small
 
     // Can't rely on the transient Item::visible property

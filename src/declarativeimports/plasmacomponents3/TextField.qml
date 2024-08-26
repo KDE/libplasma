@@ -206,7 +206,7 @@ T.TextField {
             }
         }
         KSvg.FrameSvgItem {
-            z: hasElement("hint-focus-over-base") ? 0 : -1
+            z: elements.has("hint-focus-over-base") ? 0 : -1
             anchors {
                 fill: parent
                 leftMargin: -margins.left
@@ -215,7 +215,7 @@ T.TextField {
                 bottomMargin: -margins.bottom
             }
             imagePath: "widgets/lineedit"
-            prefix: control.visualFocus && hasElement("focusframe-center") ? "focusframe" : "focus"
+            prefix: control.visualFocus && elements.has("focusframe-center") ? "focusframe" : "focus"
             visible: opacity > 0
             opacity: control.visualFocus || control.activeFocus
             Behavior on opacity {

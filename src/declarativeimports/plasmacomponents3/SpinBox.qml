@@ -199,7 +199,7 @@ T.SpinBox {
                             control.contentItem.focusReason == Qt.BacktabFocusReason ||
                             control.contentItem.focusReason == Qt.ShortcutFocusReason)
                     )
-                    z: lineEditSvg.hasElement("hint-focus-over-base") ? 0 : -1
+                    z: lineEditSvg.elements.has("hint-focus-over-base") ? 0 : -1
                     anchors {
                         fill: parent
                         leftMargin: -margins.left
@@ -208,7 +208,7 @@ T.SpinBox {
                         bottomMargin: -margins.bottom
                     }
                     imagePath: "widgets/lineedit"
-                    prefix: visualFocus && lineEditSvg.hasElement("focusframe-center") ? "focusframe" : "focus"
+                    prefix: visualFocus && lineEditSvg.elements.has("focusframe-center") ? "focusframe" : "focus"
                     visible: opacity > 0
                     opacity: visualFocus || control.activeFocus || control.contentItem.activeFocus
                     Behavior on opacity {

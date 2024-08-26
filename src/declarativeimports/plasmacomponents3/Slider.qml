@@ -76,8 +76,8 @@ T.Slider {
         x: Math.round(control.leftPadding + (horizontal ? control.visualPosition * (control.availableWidth - width) : (control.availableWidth - width) / 2))
         y: Math.round(control.topPadding + (horizontal ? (control.availableHeight - height) / 2 : control.visualPosition * (control.availableHeight - height)))
 
-        implicitWidth: sliderSvg.hasElement("hint-handle-size") ? sliderSvg.elementSize("hint-handle-size").width : firstHandle.implicitWidth
-        implicitHeight: sliderSvg.hasElement("hint-handle-size") ? sliderSvg.elementSize("hint-handle-size").height : firstHandle.implicitHeight
+        implicitWidth: sliderSvg.elements.has("hint-handle-size") ? sliderSvg.elements.size("hint-handle-size").width : firstHandle.implicitWidth
+        implicitHeight: sliderSvg.elements.has("hint-handle-size") ? sliderSvg.elements.size("hint-handle-size").height : firstHandle.implicitHeight
 
         KSvg.SvgItem {
             id: shadow

@@ -29,8 +29,8 @@ T.RangeSlider {
         x: Math.round(control.leftPadding + (horizontal ? control.first.visualPosition * (control.availableWidth - width) : (control.availableWidth - width) / 2))
         y: Math.round(control.topPadding + (horizontal ? (control.availableHeight - height) / 2 : control.first.visualPosition * (control.availableHeight - height)))
 
-        width: grooveSvg.hasElement("hint-handle-size") ? grooveSvg.elementSize("hint-handle-size").width : firstHandle.width
-        height: grooveSvg.hasElement("hint-handle-size") ? grooveSvg.elementSize("hint-handle-size").height : firstHandle.height
+        width: grooveSvg.elements.has("hint-handle-size") ? grooveSvg.elements.size("hint-handle-size").width : firstHandle.width
+        height: grooveSvg.elements.has("hint-handle-size") ? grooveSvg.elements.size("hint-handle-size").height : firstHandle.height
 
         Private.RoundShadow {
             anchors.fill: firstHandle
@@ -55,8 +55,8 @@ T.RangeSlider {
         x: control.leftPadding + (horizontal ? control.second.visualPosition * (control.availableWidth - width) : (control.availableWidth - width) / 2)
         y: control.topPadding + (horizontal ? (control.availableHeight - height) / 2 : control.second.visualPosition * (control.availableHeight - height))
 
-        width: grooveSvg.hasElement("hint-handle-size") ? grooveSvg.elementSize("hint-handle-size").width : secondHandle.width
-        height: grooveSvg.hasElement("hint-handle-size") ? grooveSvg.elementSize("hint-handle-size").height : secondHandle.height
+        width: grooveSvg.elements.has("hint-handle-size") ? grooveSvg.elements.size("hint-handle-size").width : secondHandle.width
+        height: grooveSvg.elements.has("hint-handle-size") ? grooveSvg.elements.size("hint-handle-size").height : secondHandle.height
 
         Private.RoundShadow {
             anchors.fill: secondHandle

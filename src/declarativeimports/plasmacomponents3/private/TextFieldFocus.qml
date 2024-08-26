@@ -13,25 +13,11 @@ Item {
     id: main
     state: parent.state
 
+    z: lineEditSvg.elements.has("hint-focus-over-base") ? 800 : 0
+
     KSvg.Svg {
         id: lineEditSvg
-        property bool hasFocusFrame: lineEditSvg.hasElement("focusframe-center")
-        property bool hasFocusOverBase: lineEditSvg.hasElement("hint-focus-over-base")
         imagePath: "widgets/lineedit"
-        onRepaintNeeded: {
-            if (hasFocusOverBase) {
-                main.z = 800
-            } else {
-                main.z = 0
-            }
-        }
-        Component.onCompleted: {
-            if (hasFocusOverBase) {
-                main.z = 800
-            } else {
-                main.z = 0
-            }
-        }
     }
 
     KSvg.FrameSvgItem {
@@ -72,7 +58,7 @@ Item {
             PropertyChanges {
                 target: hover
                 opacity: 1
-                prefix: lineEditSvg.hasFocusFrame ? "focusframe" : "focus"
+                prefix: lineEditSvg.elements.has("focusframe-center") ? "focusframe" : "focus"
             }
         },
         State {

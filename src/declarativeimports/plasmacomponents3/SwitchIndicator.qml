@@ -38,12 +38,15 @@ Item {
             rightMargin: 1
             verticalCenter: parent.verticalCenter
         }
-        implicitHeight: switchSvg.hasElement("hint-bar-size")
-                ? switchSvg.elementSize("hint-bar-size").height
-                : button.implicitHeight
-        implicitWidth: switchSvg.hasElement("hint-bar-size")
-                ? switchSvg.elementSize("hint-bar-size").width
-                : root.implicitHeight * 2
+
+        implicitHeight: switchSvg.elements.has("hint-bar-size")
+            ? switchSvg.elements.size("hint-bar-size").height
+            : button.implicitHeight
+
+        implicitWidth: switchSvg.elements.has("hint-bar-size")
+            ? switchSvg.elements.size("hint-bar-size").width
+            : root.implicitHeight * 2
+
         imagePath: "widgets/switch"
         prefix: "inactive"
     }

@@ -20,8 +20,8 @@ Item {
 
     required property T.AbstractButton control
 
-    property size hintSize: radioButtonSvg.fromCurrentImageSet && radioButtonSvg.hasElement("hint-size")
-        ? radioButtonSvg.elementSize("hint-size")
+    readonly property size hintSize: radioButtonSvg.fromCurrentImageSet && radioButtonSvg.elements.has("hint-size")
+        ? radioButtonSvg.elements.size("hint-size")
         : Qt.size(Kirigami.Units.iconSizes.small, Kirigami.Units.iconSizes.small)
 
     implicitWidth: hintSize.width

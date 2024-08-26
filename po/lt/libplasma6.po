@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-23 00:41+0000\n"
-"PO-Revision-Date: 2024-07-06 01:53+0300\n"
+"PO-Revision-Date: 2024-08-25 23:28+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -186,7 +186,7 @@ msgstr "Veiklos nuostatos"
 #: plasma/private/containment_p.cpp:78
 #, kde-format
 msgid "Add or Manage Widgets…"
-msgstr ""
+msgstr "Pridėti ar tvarkyti valdiklius…"
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format

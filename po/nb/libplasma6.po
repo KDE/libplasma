@@ -247,13 +247,11 @@ msgstr ""
 
 #: plasmaquick/appletquickitem.cpp:613
 #, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Feil ved lasting av miniprogram: pakke finnes ikke: %1"
 
 #: plasmaquick/configview.cpp:231
 #, fuzzy, kde-format
-#| msgid "%1 Settings"
 msgid "%1 — %2 Settings"
 msgstr "%1-innstillinger"
 

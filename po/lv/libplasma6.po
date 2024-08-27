@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-23 00:41+0000\n"
-"PO-Revision-Date: 2024-03-04 16:03+0200\n"
+"PO-Revision-Date: 2024-08-22 16:58+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -44,7 +44,7 @@ msgstr "Parole"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:60
 #, kde-format
 msgid "Search…"
-msgstr "Meklēt..."
+msgstr "Meklēt…"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
@@ -81,7 +81,7 @@ msgstr "Ieslēgt rediģēšanas režīmu"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "Konfigurēt „%1“..."
+msgstr "Konfigurēt „%1“…"
 
 #: plasma/corona.cpp:309 plasma/corona.cpp:466
 #, kde-format
@@ -119,7 +119,7 @@ msgstr ""
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "Parādīt alternatīvas..."
+msgstr "Parādīt alternatīvas…"
 
 #: plasma/private/applet_p.cpp:232
 #, kde-format
@@ -252,10 +252,9 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Kļūda, ielādējot QML datni: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:613
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "Kļūda, ielādējot lietotni: pakotne neeksistē. %1"
+msgstr "Kļūda, ielādējot sīklietotni: „%1“ nepastāv."
 
 #: plasmaquick/configview.cpp:231
 #, kde-format
@@ -323,7 +322,7 @@ msgid "Content dropped"
 msgstr "Saturs ir nomests"
 
 #~ msgid "Add Widgets..."
-#~ msgstr "Pievienot logdaļas..."
+#~ msgstr "Pievienot logdaļas…"
 
 #~ msgctxt "Package file, name of the widget"
 #~ msgid "Could not open the %1 package required for the %2 widget."

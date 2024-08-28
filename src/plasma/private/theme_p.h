@@ -58,7 +58,6 @@ public:
     QString findInTheme(const QString &image, const QString &theme, bool cache = true);
     void discardCache(CacheTypes caches);
     void scheduleThemeChangeNotification(CacheTypes caches);
-    bool useCache();
     void setThemeName(const QString &themeName, bool writeSettings, bool emitChanged);
     void processWallpaperSettings(const KSharedConfigPtr &metadata);
     void processContrastSettings(const KSharedConfigPtr &metadata);

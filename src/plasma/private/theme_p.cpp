@@ -114,11 +114,6 @@ ThemePrivate::ThemePrivate(QObject *parent)
     kSvgImageSet = std::unique_ptr<KSvg::ImageSet>(new KSvg::ImageSet);
     kSvgImageSet->setBasePath(QStringLiteral(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/"));
 
-    pixmapSaveTimer = new QTimer(this);
-    pixmapSaveTimer->setSingleShot(true);
-    pixmapSaveTimer->setInterval(600);
-    QObject::connect(pixmapSaveTimer, &QTimer::timeout, this, &ThemePrivate::scheduledCacheUpdate);
-
     updateNotificationTimer = new QTimer(this);
     updateNotificationTimer->setSingleShot(true);
     updateNotificationTimer->setInterval(100);
@@ -242,10 +237,6 @@ void ThemePrivate::discardCache(CacheTypes caches)
     if (caches & SvgElementsCache) {
         discoveries.clear();
     }
-}
-
-void ThemePrivate::scheduledCacheUpdate()
-{
 }
 
 void ThemePrivate::colorsChanged()

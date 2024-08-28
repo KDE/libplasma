@@ -68,7 +68,6 @@ public Q_SLOTS:
     void compositingChanged(bool active);
     void colorsChanged();
     void settingsFileChanged(const QString &settings);
-    void scheduledCacheUpdate();
     void notifyOfChanged();
     void settingsChanged(bool emitChanges);
 
@@ -109,7 +108,6 @@ public:
     int defaultWallpaperWidth;
     int defaultWallpaperHeight;
     QHash<QString, QString> discoveries;
-    QTimer *pixmapSaveTimer;
     QTimer *updateNotificationTimer;
     unsigned cacheSize;
     CacheTypes cachesToDiscard;

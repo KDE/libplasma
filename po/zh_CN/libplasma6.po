@@ -316,6 +316,3 @@ msgstr "设置 %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "内容已拖放"
-
-#~ msgid "Add Widgets..."
-#~ msgstr "添加挂件..."

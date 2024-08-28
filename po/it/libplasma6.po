@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-23 00:41+0000\n"
-"PO-Revision-Date: 2024-05-31 17:31+0200\n"
+"PO-Revision-Date: 2024-08-24 10:45+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -184,10 +184,9 @@ msgid "Activity Settings"
 msgstr "Impostazioni delle attività"
 
 #: plasma/private/containment_p.cpp:78
-#, fuzzy, kde-format
-#| msgid "Add Widgets"
+#, kde-format
 msgid "Add or Manage Widgets…"
-msgstr "Aggiungi plasmoidi"
+msgstr "Aggiungi o gestisci oggetti..."
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format

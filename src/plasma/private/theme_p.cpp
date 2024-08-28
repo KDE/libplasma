@@ -11,17 +11,16 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <QFontDatabase>
 #include <QGuiApplication>
 
 #include <KDirWatch>
 #include <KIconLoader>
-#include <KIconTheme>
 #include <KSharedConfig>
 #include <KWindowEffects>
 #include <KWindowSystem>
 #include <KX11Extras>
-#include <kpluginmetadata.h>
+
+#include "libplasma-theme-global.h"
 
 namespace Plasma
 {

@@ -9,22 +9,19 @@
 #define PLASMA_THEME_P_H
 
 #include "theme.h"
-#include <QHash>
 
 #include <KColorScheme>
-#include <KImageCache>
+#include <KConfigGroup>
 #include <KPluginMetaData>
-#include <KSharedDataCache>
+#include <KSvg/ImageSet>
+
 #include <QDebug>
+#include <QHash>
 #include <QTimer>
 
 #include <config-plasma.h>
 
 #include "private/contrasteffectwatcher_p.h"
-
-#include "libplasma-theme-global.h"
-
-#include <KSvg/ImageSet>
 
 namespace Plasma
 {

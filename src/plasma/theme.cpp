@@ -63,11 +63,7 @@ Theme::Theme(const QString &themeName, QObject *parent)
     priv->ref.ref();
     d = priv;
 
-    // turn off caching so we don't accidentally trigger unnecessary disk activity at this point
-    bool useCache = d->cacheTheme;
-    d->cacheTheme = false;
     d->setThemeName(themeName, false, false);
-    d->cacheTheme = useCache;
     d->fixedName = true;
     connect(d, &ThemePrivate::themeChanged, this, &Theme::themeChanged);
 }

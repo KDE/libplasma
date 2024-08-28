@@ -111,7 +111,6 @@ ThemePrivate::ThemePrivate(QObject *parent)
     }
 
     ThemeConfig config;
-    cacheTheme = config.cacheTheme();
     kSvgImageSet = std::unique_ptr<KSvg::ImageSet>(new KSvg::ImageSet);
     kSvgImageSet->setBasePath(QStringLiteral(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/"));
 
@@ -185,7 +184,6 @@ KConfigGroup &ThemePrivate::config()
 
 void ThemePrivate::onAppExitCleanup()
 {
-    cacheTheme = false;
 }
 
 QString ThemePrivate::imagePath(const QString &theme, const QString &type, const QString &image)

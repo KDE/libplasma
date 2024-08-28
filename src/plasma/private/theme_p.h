@@ -125,7 +125,6 @@ public:
     bool isDefault : 1;
     bool useGlobal : 1;
     bool hasWallpapers : 1;
-    bool cacheTheme : 1;
     bool fixedName : 1;
 
     qreal backgroundContrast;

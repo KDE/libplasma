@@ -68,7 +68,6 @@ public:
 public Q_SLOTS:
     void colorsChanged();
     void settingsFileChanged(const QString &settings);
-    void onAppExitCleanup();
     void notifyOfChanged();
     void settingsChanged(bool emitChanges);
 

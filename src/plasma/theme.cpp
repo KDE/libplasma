@@ -37,9 +37,6 @@ Theme::Theme(QObject *parent)
     if (!ThemePrivate::globalTheme) {
         ThemePrivate::globalTheme = new ThemePrivate;
         ThemePrivate::globalTheme->settingsChanged(false);
-        if (QCoreApplication::instance()) {
-            connect(QCoreApplication::instance(), &QCoreApplication::aboutToQuit, ThemePrivate::globalTheme, &ThemePrivate::onAppExitCleanup);
-        }
     }
     ThemePrivate::globalTheme->ref.ref();
     d = ThemePrivate::globalTheme;
@@ -55,9 +52,6 @@ Theme::Theme(const QString &themeName, QObject *parent)
     auto &priv = ThemePrivate::themes[themeName];
     if (!priv) {
         priv = new ThemePrivate;
-        if (QCoreApplication::instance()) {
-            connect(QCoreApplication::instance(), &QCoreApplication::aboutToQuit, priv, &ThemePrivate::onAppExitCleanup);
-        }
     }
 
     priv->ref.ref();
@@ -99,9 +93,6 @@ void Theme::setThemeName(const QString &themeName)
         auto &priv = ThemePrivate::themes[themeName];
         if (!priv) {
             priv = new ThemePrivate;
-            if (QCoreApplication::instance()) {
-                connect(QCoreApplication::instance(), &QCoreApplication::aboutToQuit, priv, &ThemePrivate::onAppExitCleanup);
-            }
         }
         priv->ref.ref();
         d = priv;

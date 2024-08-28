@@ -181,10 +181,6 @@ KConfigGroup &ThemePrivate::config()
     return cfg;
 }
 
-void ThemePrivate::onAppExitCleanup()
-{
-}
-
 QString ThemePrivate::imagePath(const QString &theme, const QString &type, const QString &image)
 {
     QString subdir = QLatin1String(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/") % theme % type % image;

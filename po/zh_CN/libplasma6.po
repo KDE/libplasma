@@ -181,7 +181,7 @@ msgstr "活动设置"
 #: plasma/private/containment_p.cpp:78
 #, kde-format
 msgid "Add or Manage Widgets…"
-msgstr ""
+msgstr "添加或者管理挂件…"
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format

@@ -9,6 +9,7 @@
 #include "appletcontext_p.h"
 
 #include <KLocalizedContext>
+#include <QCoreApplication>
 #include <QDebug>
 #include <QQmlContext>
 #include <QQmlEngine>
@@ -70,6 +71,13 @@ private:
         if (auto locked = s_engine.lock()) {
             return locked;
         }
+
+        auto applicationEngine = QCoreApplication::instance()->property("__qmlEngine").value<std::weak_ptr<QQmlEngine>>();
+        if (auto locked = applicationEngine.lock(); locked) {
+            s_engine = locked;
+            return locked;
+        }
+
         auto createdEngine = std::make_shared<QQmlEngine>();
         s_engine = createdEngine;
         return createdEngine;

@@ -235,7 +235,9 @@ void AppletPopup::updateMinSize()
     // https://codereview.qt-project.org/c/qt/qtwayland/+/527831
     // which fixes and conforms to the wayland protocol specification.
     // This workaround is needed as the bug is in the protocol itself
-    resize(std::max(size().width(), minimumSize().width()), std::max(size().height(), minimumSize().height()));
+    if (!size().isEmpty()) {
+        resize(std::max(size().width(), minimumSize().width()), std::max(size().height(), minimumSize().height()));
+    }
 }
 
 void AppletPopup::updateMaxSize()
@@ -249,7 +251,9 @@ void AppletPopup::updateMaxSize()
         maxSize.setHeight(std::min(maxSize.height(), int(std::round(screen()->geometry().height() * 0.95))));
     }
     setMaximumSize(maxSize);
-    resize(std::min(size().width(), maxSize.width()), std::min(size().height(), maxSize.height()));
+    if (!size().isEmpty() && !maxSize.isEmpty()) {
+        resize(std::min(size().width(), maxSize.width()), std::min(size().height(), maxSize.height()));
+    }
 }
 
 void AppletPopup::updateSize()

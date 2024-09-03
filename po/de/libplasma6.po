@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2023, 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 # Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2014, 2016, 2022, 2023.
+# SPDX-FileCopyrightText: 2024 Frank Steinmetzger <dev-kde@felsenfleischer.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -111,9 +112,9 @@ msgid ""
 "larger size is therefore often quite safe."
 msgstr ""
 "Die maximale Größe des Design-Zwischenspeichers auf dem Datenträger. "
-"Beachten Sie, dass diese Dateien selten verwendet werden, sodass die "
-"maximale Größe wahrscheinlich nicht erreicht wird. Ein höheres Limit zu "
-"setzen, ist hier daher oft eine gute Wahl."
+"Beachten Sie, dass dies „Sparse-Dateien“ sind, sodass die maximale Größe "
+"wahrscheinlich nicht erreicht wird. Ein höheres Limit zu setzen, ist hier "
+"daher oft eine gute Wahl."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format

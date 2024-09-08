@@ -318,6 +318,10 @@ Item {
 
     onEnabledChanged: if (!listItem.enabled) { collapse() }
 
+    PlasmaComponents3.ToolTip.text: title + (subtitle.length > 0 ? "\n\n" + subtitle : "")
+    PlasmaComponents3.ToolTip.visible: mouseArea.containsMouse && (listItemTitle.truncated || listItemSubtitle.truncated)
+    PlasmaComponents3.ToolTip.delay: Kirigami.Units.toolTipDelay
+
     Keys.onPressed: event => {
         if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
             if (defaultActionButtonAction) {
@@ -384,6 +388,7 @@ Item {
     }
 
     MouseArea {
+        id: mouseArea
         anchors.fill: parent
 
         // This MouseArea used to intercept RightButton to open a context

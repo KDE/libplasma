@@ -733,6 +733,9 @@ Q_SIGNALS:
      */
     void locationChanged(Plasma::Types::Location location);
 
+    /**
+     * Emitted when the containment display hints change
+     */
     void containmentDisplayHintsChanged(Plasma::Types::ContainmentDisplayHints hints);
 
     /**
@@ -753,7 +756,7 @@ Q_SIGNALS:
      * Emitted when the constraint hints changed
      * @see setConstraintHints
      */
-    void constraintHintsChanged(ConstraintHints constraintHints);
+    void constraintHintsChanged(Plasma::Applet::ConstraintHints constraintHints);
 
     /**
      * Emitted when the containment changes

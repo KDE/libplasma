@@ -94,7 +94,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
             // without having to construct a fake JSON metadata object.
             // This would help with better error messages which would
             // at least show the missing applet's ID.
-            const auto fakeFileName = name + u'.';
+            const QString fakeFileName = name + u'.';
             metadata = KPluginMetaData(QJsonObject(), fakeFileName);
         }
         applet = new Applet(nullptr, metadata, allArgs);
@@ -109,6 +109,8 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
 
 ContainmentActions *PluginLoader::loadContainmentActions(Containment *parent, const QString &name, const QVariantList &args)
 {
+    Q_UNUSED(parent)
+    Q_UNUSED(args)
     if (name.isEmpty()) {
         return nullptr;
     }

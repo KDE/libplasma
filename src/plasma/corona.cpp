@@ -589,7 +589,7 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
     }
 
     // make sure the containments are sorted by id
-    auto position = std::lower_bound(containments.begin(), containments.end(), containment, [](Plasma::Containment *c1, Plasma::Containment *c2) {
+    const auto position = std::lower_bound(containments.begin(), containments.end(), containment, [](Plasma::Containment *c1, Plasma::Containment *c2) {
         return c1->id() < c2->id();
     });
     containments.insert(position, containment);

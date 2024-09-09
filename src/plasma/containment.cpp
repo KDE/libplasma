@@ -417,7 +417,7 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
     }
 
     // make sure the applets are sorted by id
-    auto position = std::lower_bound(d->applets.begin(), d->applets.end(), applet, [](Plasma::Applet *a1, Plasma::Applet *a2) {
+    const auto position = std::lower_bound(d->applets.begin(), d->applets.end(), applet, [](Plasma::Applet *a1, Plasma::Applet *a2) {
         return a1->id() < a2->id();
     });
     Q_EMIT appletAboutToBeAdded(applet, geometryHint);

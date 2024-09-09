@@ -61,17 +61,15 @@ KPluginMetaData metaDataForTheme(const QString &theme)
     }
     if (QFileInfo::exists(packageBasePath + QLatin1String("/metadata.json"))) {
         return KPluginMetaData::fromJsonFile(packageBasePath + QLatin1String("/metadata.json"));
-    } else if (QFileInfo::exists(packageBasePath + QLatin1String("/metadata.desktop"))) {
-        QString metadataPath = packageBasePath + QLatin1String("/metadata.desktop");
-        KConfigGroup cg(KSharedConfig::openConfig(packageBasePath + QLatin1String("/metadata.desktop"), KConfig::SimpleConfig),
-                        QStringLiteral("Desktop Entry"));
+    } else if (QString metadataPath = packageBasePath + QLatin1String("/metadata.desktop"); QFileInfo::exists(metadataPath)) {
+        KConfigGroup cg(KSharedConfig::openConfig(metadataPath, KConfig::SimpleConfig), QStringLiteral("Desktop Entry"));
         QJsonObject obj = {};
         for (const QString &key : cg.keyList()) {
             obj[key] = cg.readEntry(key);
         }
         qWarning(LOG_PLASMA) << "The theme" << theme
                              << "uses the legacy metadata.desktop. Consider contacting the author and asking them update it to use the newer JSON format.";
-        return KPluginMetaData(obj, packageBasePath + QLatin1String("/metadata.desktop"));
+        return KPluginMetaData(obj, metadataPath);
     } else {
         qCWarning(LOG_PLASMA) << "Could not locate metadata for theme" << theme;
         return {};

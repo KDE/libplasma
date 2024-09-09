@@ -31,8 +31,8 @@
 
 namespace Plasma
 {
-Theme::Theme(QObject *parent)
-    : QObject(parent)
+
+void Plasma::Theme::instantiateGlobalTheme()
 {
     if (!ThemePrivate::globalTheme) {
         ThemePrivate::globalTheme = new ThemePrivate;
@@ -41,6 +41,13 @@ Theme::Theme(QObject *parent)
             connect(QCoreApplication::instance(), &QCoreApplication::aboutToQuit, ThemePrivate::globalTheme, &ThemePrivate::onAppExitCleanup);
         }
     }
+}
+
+Theme::Theme(QObject *parent)
+    : QObject(parent)
+{
+    instantiateGlobalTheme();
+
     ThemePrivate::globalTheme->ref.ref();
     d = ThemePrivate::globalTheme;
 
@@ -168,19 +175,13 @@ QPalette Theme::palette() const
 
 QPalette Theme::globalPalette()
 {
-    if (!ThemePrivate::globalTheme) {
-        ThemePrivate::globalTheme = new ThemePrivate;
-        ThemePrivate::globalTheme->settingsChanged(false);
-    }
+    instantiateGlobalTheme();
     return ThemePrivate::globalTheme->palette;
 }
 
 KSharedConfigPtr Theme::globalColorScheme()
 {
-    if (!ThemePrivate::globalTheme) {
-        ThemePrivate::globalTheme = new ThemePrivate;
-        ThemePrivate::globalTheme->settingsChanged(false);
-    }
+    instantiateGlobalTheme();
     return ThemePrivate::globalTheme->colors;
 }
 

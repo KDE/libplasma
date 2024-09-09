@@ -308,6 +308,8 @@ Q_SIGNALS:
     void smallestFontChanged();
 
 private:
+    static void instantiateGlobalTheme();
+
     friend class SvgPrivate;
     friend class FrameSvg;
     friend class FrameSvgPrivate;

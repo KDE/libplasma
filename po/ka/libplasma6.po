@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-23 00:41+0000\n"
-"PO-Revision-Date: 2024-08-23 06:24+0200\n"
+"PO-Revision-Date: 2024-09-11 05:26+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -74,7 +74,7 @@ msgstr "%1-ის წაშლა"
 #: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:481
 #, kde-format
 msgid "Enter Edit Mode"
-msgstr "რედაქტირების რეჟიმში გადასვლა"
+msgstr "ჩასწორების რეჟიმი"
 
 #: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
 #, kde-format
@@ -95,7 +95,7 @@ msgstr "ვიჯეტების განბლოკვა"
 #: plasma/corona.cpp:358
 #, kde-format
 msgid "Exit Edit Mode"
-msgstr "რედაქტირების რეჟიმიდან გასვლა"
+msgstr "ჩასწორების რეჟიმიდან გასვლა"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9

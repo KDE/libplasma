@@ -323,27 +323,3 @@ msgstr "Estableix el %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Contingut descartat"
-
-#~ msgid "Add Widgets..."
-#~ msgstr "Afegeix ginys..."
-
-#~ msgctxt "Package file, name of the widget"
-#~ msgid "Could not open the %1 package required for the %2 widget."
-#~ msgstr "No s'ha pogut obrir el paquet %1 requerit pel giny %2."
-
-#~ msgid ""
-#~ "Sharing a widget on the network allows you to access this widget from "
-#~ "another computer as a remote control."
-#~ msgstr ""
-#~ "La compartició d'un giny en la xarxa permet accedir-hi des de qualsevol "
-#~ "altre ordinador, com si es tractés d'un control remot."
-
-#~ msgid "Share this widget on the network"
-#~ msgstr "Comparteix aquest giny per la xarxa"
-
-#~ msgid "Allow everybody to freely access this widget"
-#~ msgstr "Permet a tothom l'accés lliure a aquest giny"
-
-#~ msgctxt "Error message, tried to start an invalid service"
-#~ msgid "Invalid (null) service, can not perform any operations."
-#~ msgstr "Servei no vàlid (nul), no pot executar cap operació."

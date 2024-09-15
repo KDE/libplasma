@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-23 00:41+0000\n"
-"PO-Revision-Date: 2023-02-22 21:27+0900\n"
-"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
+"PO-Revision-Date: 2024-09-11 19:39+0900\n"
+"Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -54,7 +54,7 @@ msgstr "検索"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "検索をクリア"
 
 #: plasma/applet.cpp:293
 #, kde-format
@@ -185,7 +185,7 @@ msgstr "アクティビティの設定"
 #: plasma/private/containment_p.cpp:78
 #, kde-format
 msgid "Add or Manage Widgets…"
-msgstr ""
+msgstr "ウィジェットを追加または管理..."
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -195,17 +195,17 @@ msgstr "要求されたコンポーネントが見つかりませんでした: %
 #: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr ""
+msgstr "%1 のルート項目は ContainmentItem タイプである必要があります"
 
 #: plasmaquick/appletquickitem.cpp:549
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
-msgstr ""
+msgstr "%1 のルート項目は PlasmoidItem タイプである必要があります"
 
 #: plasmaquick/appletquickitem.cpp:557
 #, kde-format
 msgid "Unknown Applet"
-msgstr "不明のアプレット"
+msgstr "不明なアプレット"
 
 #: plasmaquick/appletquickitem.cpp:571
 #, kde-format
@@ -214,12 +214,15 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"このウィジェットは不明な古いバージョンの Plasma 用に作成されているため、"
+"Plasma %1 とは互換性がありません。アップデート版についてはウィジェットの作成"
+"者に問い合わせてください。"
 
 #: plasmaquick/appletquickitem.cpp:574 plasmaquick/appletquickitem.cpp:581
 #: plasmaquick/appletquickitem.cpp:587
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 は Plasma %2 と互換性がありません"
 
 #: plasmaquick/appletquickitem.cpp:578
 #, kde-format
@@ -227,6 +230,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"このウィジェットは Plasma %1 用に作成されており、Plasma %2 とは互換性がありま"
+"せん。アップデート版についてはウィジェットの作成者に問い合わせてください。"
 
 #: plasmaquick/appletquickitem.cpp:584
 #, kde-format
@@ -234,11 +239,13 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"このウィジェットは Plasma %1 用に作成されているため、Plasma %2 とは互換性があ"
+"りません。ウィジェットを使用するには Plasma をアップデートしてください。"
 
 #: plasmaquick/appletquickitem.cpp:593 plasmaquick/appletquickitem.cpp:615
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "申し訳ありません。%1 の読み込み中にエラーが発生しました。"
 
 #: plasmaquick/appletquickitem.cpp:610
 #, kde-format
@@ -246,17 +253,15 @@ msgid "Error loading QML file: %1 %2"
 msgstr "QML ファイルの読み込みに失敗しました: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:613
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package inexistent. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr ""
-"アプレットの読み込み中にエラーが発生しました: パッケージが存在しません。%1"
+"アプレットの読み込み中にエラーが発生しました: パッケージ %1 は存在しません。"
 
 #: plasmaquick/configview.cpp:231
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "%1 の設定"
+msgstr "%1 — %2 設定"
 
 #: plasmaquick/configview.cpp:232
 #, kde-format
@@ -317,27 +322,3 @@ msgstr "%1 を設定"
 #, kde-format
 msgid "Content dropped"
 msgstr "コンテンツがドロップされました"
-
-#~ msgid "Add Widgets..."
-#~ msgstr "ウィジェットを追加..."
-
-#~ msgctxt "Package file, name of the widget"
-#~ msgid "Could not open the %1 package required for the %2 widget."
-#~ msgstr "%2 ウィジェットに必要なパッケージ %1 を開けませんでした。"
-
-#~ msgid ""
-#~ "Sharing a widget on the network allows you to access this widget from "
-#~ "another computer as a remote control."
-#~ msgstr ""
-#~ "ネットワークでウィジェットを共有すると、他のコンピュータからこのウィジェッ"
-#~ "トにアクセスして遠隔操作することができます。"
-
-#~ msgid "Share this widget on the network"
-#~ msgstr "このウィジェットをネットワークで共有する"
-
-#~ msgid "Allow everybody to freely access this widget"
-#~ msgstr "誰でも自由にこのウィジェットにアクセスできるようにする"
-
-#~ msgctxt "Error message, tried to start an invalid service"
-#~ msgid "Invalid (null) service, can not perform any operations."
-#~ msgstr "無効 (ヌル) なサービスです。操作を実行できません。"

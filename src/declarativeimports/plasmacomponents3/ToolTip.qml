@@ -18,7 +18,13 @@ T.ToolTip {
     x: parent ? Math.round((parent.width - implicitWidth) / 2) : 0
     y: -implicitHeight - 3
 
-    visible: parent instanceof T.AbstractButton && (Kirigami.Settings.tabletMode ? parent.pressed : parent.hovered) && text.length > 0
+    Binding {
+        target: control
+        property: "visible"
+        delayed: true
+        value: parent.hovered, parent.pressed, parent instanceof T.AbstractButton && (Kirigami.Settings.tabletMode ? parent.pressed : parent.hovered) && text.length > 0
+    }
+
     delay: Kirigami.Settings.tabletMode ? Qt.styleHints.mousePressAndHoldInterval : Kirigami.Units.toolTipDelay
     // Never time out while being hovered; it's annoying
     timeout: -1

@@ -48,10 +48,10 @@ T.ToolBar {
         const windowBorders = popup.borders;
         let borders = Qt.TopEdge | Qt.BottomEdge;
 
-        if (windowBorders & Qt.LeftEdge && background.Kirigami.ScenePosition.x <= 0) {
+        if (windowBorders & Qt.LeftEdge && Math.floor(background.Kirigami.ScenePosition.x) <= 0) {
             borders |= Qt.LeftEdge;
         }
-        if (windowBorders & Qt.RightEdge && background.Kirigami.ScenePosition.x + background.width >= w.width) {
+        if (windowBorders & Qt.RightEdge && Math.ceil(background.Kirigami.ScenePosition.x + background.width) >= w.width) {
             borders |= Qt.RightEdge;
         }
 

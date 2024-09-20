@@ -668,26 +668,10 @@ void ContainmentItem::mimeTypeRetrieved(KIO::Job *job, const QString &mimetype)
                     });
                 }
             }
-        } else {
             // case in which we created the menu ourselves, just the "fetching type entry, directly create the icon applet
-            if (!m_dropMenu->isDropjobMenu()) {
-                Plasma::Applet *applet = createApplet(QStringLiteral("org.kde.plasma.icon"), QVariantList(), QRect(m_dropMenu->dropPoint(), QSize(-1, -1)));
-                setAppletArgs(applet, mimetype, tjob->url());
-            } else {
-                QAction *action;
-                QAction *sep = new QAction(i18n("Widgets"), m_dropMenu);
-                sep->setSeparator(true);
-                m_dropMenu->addAction(sep);
-                // we can at least create an icon as a link to the URL
-                action = new QAction(i18nc("Add icon widget", "Add Icon"), m_dropMenu);
-                m_dropMenu->addAction(action);
-
-                const QUrl url = tjob->url();
-                connect(action, &QAction::triggered, this, [this, mimetype, url]() {
-                    Plasma::Applet *applet = createApplet(QStringLiteral("org.kde.plasma.icon"), QVariantList(), QRect(m_dropMenu->dropPoint(), QSize(-1, -1)));
-                    setAppletArgs(applet, mimetype, url);
-                });
-            }
+        } else if (!m_dropMenu->isDropjobMenu()) {
+            Plasma::Applet *applet = createApplet(QStringLiteral("org.kde.plasma.icon"), QVariantList(), QRect(m_dropMenu->dropPoint(), QSize(-1, -1)));
+            setAppletArgs(applet, mimetype, tjob->url());
         }
         clearDataForMimeJob(tjob);
     }

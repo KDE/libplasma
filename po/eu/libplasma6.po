@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:41+0000\n"
+"POT-Creation-Date: 2024-09-23 00:40+0000\n"
 "PO-Revision-Date: 2024-08-23 10:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -291,7 +291,6 @@ msgid "The package you just dropped is invalid."
 msgstr "Jaregin duzun paketea baliogabea da."
 
 #: plasmaquick/plasmoid/containmentitem.cpp:609
-#: plasmaquick/plasmoid/containmentitem.cpp:678
 #, kde-format
 msgid "Widgets"
 msgstr "Trepetak"
@@ -303,7 +302,6 @@ msgid "Add %1"
 msgstr "Erantsi %1"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:628
-#: plasmaquick/plasmoid/containmentitem.cpp:682
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"

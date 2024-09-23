@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:41+0000\n"
+"POT-Creation-Date: 2024-09-23 00:40+0000\n"
 "PO-Revision-Date: 2024-09-15 13:46+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -307,7 +307,6 @@ msgid "The package you just dropped is invalid."
 msgstr "Некорректный пакет."
 
 #: plasmaquick/plasmoid/containmentitem.cpp:609
-#: plasmaquick/plasmoid/containmentitem.cpp:678
 #, kde-format
 msgid "Widgets"
 msgstr "Виджеты"
@@ -319,7 +318,6 @@ msgid "Add %1"
 msgstr "Добавить виджет «%1»"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:628
-#: plasmaquick/plasmoid/containmentitem.cpp:682
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"

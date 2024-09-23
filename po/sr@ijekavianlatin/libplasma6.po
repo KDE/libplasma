@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:41+0000\n"
+"POT-Creation-Date: 2024-09-23 00:40+0000\n"
 "PO-Revision-Date: 2016-03-20 15:24+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -294,7 +294,6 @@ msgstr "Paket koji ste upravo ispustili nije dobar."
 
 # >> @title
 #: plasmaquick/plasmoid/containmentitem.cpp:609
-#: plasmaquick/plasmoid/containmentitem.cpp:678
 #, kde-format
 msgid "Widgets"
 msgstr "Vidžeti"
@@ -307,7 +306,6 @@ msgstr ""
 
 # >> @action
 #: plasmaquick/plasmoid/containmentitem.cpp:628
-#: plasmaquick/plasmoid/containmentitem.cpp:682
 #, fuzzy, kde-format
 #| msgid "Icon"
 msgctxt "Add icon widget"

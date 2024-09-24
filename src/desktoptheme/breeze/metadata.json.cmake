@@ -92,7 +92,7 @@
         "Description[sl]": "Sapica od KDE VDG",
         "Description[sv]": "Breeze av KDE:s visuella designgrupp",
         "Description[ta]": "கே.டீ.யீ. VDG வழங்கும் பிரீஸ்",
-        "Description[tr]": "KDE VDG tarafından Esinti",
+        "Description[tr]": "KDE VDG’den Esinti",
         "Description[uk]": "Breeze, автори — KDE VDG",
         "Description[vi]": "Breeze, do KDE VDG",
         "Description[x-test]": "xxBreeze by the KDE VDGxx",

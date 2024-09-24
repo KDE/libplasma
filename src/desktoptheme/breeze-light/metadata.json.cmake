@@ -92,7 +92,7 @@
         "Description[sl]": "Svetla sapica od KDE VDG",
         "Description[sv]": "Breeze ljus av KDE:s visuella designgrupp",
         "Description[ta]": "கே.டீ.யீ. VDG வழங்கும் வெளிர் பிரீஸ்",
-        "Description[tr]": "KDE VDG tarafından Esinti Açık",
+        "Description[tr]": "KDE VDG’den Esinti Açık",
         "Description[uk]": "Світла Breeze, автори — KDE VDG",
         "Description[vi]": "Breeze Sáng, do KDE VDG",
         "Description[x-test]": "xxBreeze Light by the KDE VDGxx",

@@ -92,7 +92,7 @@
         "Description[sl]": "Temna sapica od KDE VDG",
         "Description[sv]": "Breeze mörk av KDE:s visuella designgrupp",
         "Description[ta]": "கே.டீ.யீ. VDG வழங்கும் கரும் பிரீஸ்",
-        "Description[tr]": "KDE VDG tarafından Esinti Koyu",
+        "Description[tr]": "KDE VDG’den Esinti Koyu",
         "Description[uk]": "Темна Breeze, автори — KDE VDG",
         "Description[vi]": "Breeze Tối, do KDE VDG",
         "Description[x-test]": "xxBreeze Dark by the KDE VDGxx",

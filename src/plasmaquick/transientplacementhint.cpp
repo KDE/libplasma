@@ -192,11 +192,6 @@ QRect TransientPlacementHelper::popupRect(QWindow *w, const TransientPlacementHi
 
     QRect screenArea = screen->geometry();
 
-    QVariant restrictedPopupGeometry = w->property("restrictedPopupGeometry");
-    if (restrictedPopupGeometry.canConvert<QRect>()) {
-        screenArea = restrictedPopupGeometry.toRect();
-    }
-
     if (placement.constrainByAnchorWindow()) {
         if (placement.parentAnchor() == Qt::TopEdge || placement.parentAnchor() == Qt::BottomEdge) {
             screenArea.setRight(w->transientParent()->geometry().right());
@@ -205,6 +200,11 @@ QRect TransientPlacementHelper::popupRect(QWindow *w, const TransientPlacementHi
             screenArea.setTop(w->transientParent()->geometry().top());
             screenArea.setBottom(w->transientParent()->geometry().bottom());
         }
+    }
+
+    QVariant restrictedPopupGeometry = w->property("restrictedPopupGeometry");
+    if (restrictedPopupGeometry.canConvert<QRect>()) {
+        screenArea = restrictedPopupGeometry.toRect();
     }
 
     auto inScreenArea = [screenArea](const QRect &target, Qt::Edges edges = Qt::LeftEdge | Qt::RightEdge | Qt::TopEdge | Qt::BottomEdge) -> bool {

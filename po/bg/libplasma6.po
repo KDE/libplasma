@@ -315,6 +315,3 @@ msgstr "Задаване на %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Съдържанието е пуснато"
-
-#~ msgid "Add Widgets..."
-#~ msgstr "Добавяне на уиджети..."

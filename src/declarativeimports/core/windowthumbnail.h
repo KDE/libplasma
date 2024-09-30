@@ -138,8 +138,8 @@ private:
     int m_depth = 0;
     xcb_pixmap_t m_glxPixmap = XCB_PIXMAP_NONE;
     xcb_visualid_t m_visualid = XCB_NONE;
-    QFunctionPointer m_bindTexImage;
-    QFunctionPointer m_releaseTexImage;
+    QFunctionPointer m_bindTexImage = nullptr;
+    QFunctionPointer m_releaseTexImage = nullptr;
 #endif // HAVE_GLX
 #if HAVE_EGL
     bool xcbWindowToTextureEGL(WindowTextureProvider *textureProvider);
@@ -147,9 +147,9 @@ private:
     void bindEGLTexture();
     bool m_eglFunctionsResolved = false;
     EGLImageKHR m_image = EGL_NO_IMAGE_KHR;
-    QFunctionPointer m_eglCreateImageKHR;
-    QFunctionPointer m_eglDestroyImageKHR;
-    QFunctionPointer m_glEGLImageTargetTexture2DOES;
+    QFunctionPointer m_eglCreateImageKHR = nullptr;
+    QFunctionPointer m_eglDestroyImageKHR = nullptr;
+    QFunctionPointer m_glEGLImageTargetTexture2DOES = nullptr;
 #endif // HAVE_EGL
 #endif
 };

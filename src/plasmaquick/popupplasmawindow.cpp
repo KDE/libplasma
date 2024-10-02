@@ -85,7 +85,9 @@ void PopupPlasmaWindowPrivate::updateEffectivePopupDirection(const QRect &anchor
 void PopupPlasmaWindowPrivate::updateSlideEffect()
 {
     KWindowEffects::SlideFromLocation slideLocation = KWindowEffects::NoEdge;
-    if (!m_animated) {
+    // Popups that are not touching their parent element will
+    // look broken if the sliding effect is applied.
+    if (!m_animated || m_margin > 0) {
         KWindowEffects::slideWindow(q, slideLocation);
         return;
     }

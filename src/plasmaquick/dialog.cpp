@@ -1249,6 +1249,9 @@ void Dialog::setFramelessFlags(Qt::WindowFlags flags)
 
 void Dialog::adjustGeometry(const QRect &geom)
 {
+    if (isExposed()) {
+        Q_ASSERT(!geom.isEmpty());
+    }
     setGeometry(geom);
 }
 

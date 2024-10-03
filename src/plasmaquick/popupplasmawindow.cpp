@@ -27,7 +27,7 @@ public:
     PopupPlasmaWindowPrivate(PopupPlasmaWindow *_q);
 
     void updateEffectivePopupDirection(const QRect &anchorRect, const QRect &relativePopupPosition);
-    void updateSlideEffect();
+    void updateSlideEffect(const QRect &globalPosition);
     void updatePosition();
     void updatePositionX11(const QPoint &position);
     void updatePositionWayland(const QPoint &position);
@@ -82,9 +82,30 @@ void PopupPlasmaWindowPrivate::updateEffectivePopupDirection(const QRect &anchor
     }
 }
 
-void PopupPlasmaWindowPrivate::updateSlideEffect()
+void PopupPlasmaWindowPrivate::updateSlideEffect(const QRect &globalPosition)
 {
     KWindowEffects::SlideFromLocation slideLocation = KWindowEffects::NoEdge;
+
+    int slideOffset = -1;
+    QScreen *screen = QGuiApplication::screenAt(globalPosition.center());
+    if (screen && m_margin > 0) {
+        const QRect screenGeometry = screen->geometry();
+        switch (m_effectivePopupDirection) {
+        case Qt::TopEdge:
+            slideOffset = screenGeometry.bottom() - globalPosition.bottom() - m_margin;
+            break;
+        case Qt::BottomEdge:
+            slideOffset = globalPosition.top() - screenGeometry.top() - m_margin;
+            break;
+        case Qt::LeftEdge:
+            slideOffset = screenGeometry.right() - globalPosition.right() - m_margin;
+            break;
+        case Qt::RightEdge:
+            slideOffset = globalPosition.left() - screenGeometry.left() - m_margin;
+            break;
+        }
+    }
+
     if (!m_animated) {
         KWindowEffects::slideWindow(q, slideLocation);
         return;
@@ -103,7 +124,7 @@ void PopupPlasmaWindowPrivate::updateSlideEffect()
         slideLocation = KWindowEffects::LeftEdge;
         break;
     }
-    KWindowEffects::slideWindow(q, slideLocation);
+    KWindowEffects::slideWindow(q, slideLocation, slideOffset);
 }
 
 void PopupPlasmaWindowPrivate::updatePosition()
@@ -148,7 +169,7 @@ void PopupPlasmaWindowPrivate::updatePosition()
         relativePopupPosition = relativePopupPosition.translated(-m_visualParent->window()->position());
     }
     updateEffectivePopupDirection(parentAnchorRect.toRect(), relativePopupPosition);
-    updateSlideEffect();
+    updateSlideEffect(popupPosition);
 
     if (KWindowSystem::isPlatformX11()) {
         updatePositionX11(popupPosition.topLeft());

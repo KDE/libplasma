@@ -272,7 +272,10 @@ void AppletPopup::updateSize()
         std::min(std::max(minimumSize().height(), wantedSize.height()), maximumSize().height())
     };
 
-    resize(size);
+    Q_ASSERT(!size.isEmpty());
+    if (!size.isEmpty()) {
+        resize(size);
+    }
 }
 
 LayoutChangedProxy::LayoutChangedProxy(QQuickItem *item)

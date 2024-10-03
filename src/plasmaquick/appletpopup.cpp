@@ -90,9 +90,7 @@ AppletPopup::AppletPopup()
     });
 
     auto updateWindowResizerEdges = [windowResizer, this]() {
-        Qt::Edges activeEdges = borders();
-        activeEdges.setFlag(PlasmaQuickPrivate::oppositeEdge(effectivePopupDirection()), false);
-        windowResizer->setActiveEdges(activeEdges);
+        windowResizer->setActiveEdges(~nearbyBorders());
     };
     updateWindowResizerEdges();
     connect(this, &PlasmaWindow::bordersChanged, this, updateWindowResizerEdges);

@@ -44,6 +44,7 @@ public:
     int m_margin = 0;
     Qt::Edge m_popupDirection = Qt::TopEdge;
     Qt::Edge m_effectivePopupDirection = Qt::TopEdge;
+    Qt::Edges m_nearbyBorders;
 };
 
 PopupPlasmaWindowPrivate::PopupPlasmaWindowPrivate(PopupPlasmaWindow *_q)
@@ -185,22 +186,17 @@ void PopupPlasmaWindowPrivate::updateBorders(const QRect &globalPosition)
 
     Qt::Edges enabledBorders = Qt::LeftEdge | Qt::RightEdge | Qt::TopEdge | Qt::BottomEdge;
 
-    if (m_margin) {
-        q->setBorders(enabledBorders);
-        return;
-    }
-
     if (m_removeBorderStrategy & PopupPlasmaWindow::AtScreenEdges) {
-        if (globalPosition.top() <= screenGeometry.top()) {
+        if (globalPosition.top() - m_margin <= screenGeometry.top()) {
             enabledBorders.setFlag(Qt::TopEdge, false);
         }
-        if (globalPosition.bottom() >= screenGeometry.bottom()) {
+        if (globalPosition.bottom() + m_margin >= screenGeometry.bottom()) {
             enabledBorders.setFlag(Qt::BottomEdge, false);
         }
-        if (globalPosition.left() <= screenGeometry.left()) {
+        if (globalPosition.left() - m_margin <= screenGeometry.left()) {
             enabledBorders.setFlag(Qt::LeftEdge, false);
         }
-        if (globalPosition.right() >= screenGeometry.right()) {
+        if (globalPosition.right() + m_margin >= screenGeometry.right()) {
             enabledBorders.setFlag(Qt::RightEdge, false);
         }
     }
@@ -221,6 +217,23 @@ void PopupPlasmaWindowPrivate::updateBorders(const QRect &globalPosition)
             break;
         }
     }
+
+    m_nearbyBorders = ~enabledBorders;
+    if (m_nearbyBorders.testFlag(Qt::LeftEdge) && m_nearbyBorders.testFlag(Qt::RightEdge)) {
+        m_nearbyBorders.setFlag(Qt::LeftEdge, false);
+        m_nearbyBorders.setFlag(Qt::RightEdge, false);
+    }
+    if (m_nearbyBorders.testFlag(Qt::TopEdge) && m_nearbyBorders.testFlag(Qt::BottomEdge)) {
+        m_nearbyBorders.setFlag(Qt::TopEdge, false);
+        m_nearbyBorders.setFlag(Qt::BottomEdge, false);
+    }
+    m_nearbyBorders.setFlag(PlasmaQuickPrivate::oppositeEdge(m_effectivePopupDirection), true);
+
+    if (m_margin) {
+        q->setBorders(Qt::LeftEdge | Qt::RightEdge | Qt::TopEdge | Qt::BottomEdge);
+        return;
+    }
+
     q->setBorders(enabledBorders);
 }
 
@@ -346,6 +359,11 @@ void PopupPlasmaWindow::setRemoveBorderStrategy(PopupPlasmaWindow::RemoveBorders
 int PopupPlasmaWindow::margin() const
 {
     return d->m_margin;
+}
+
+Qt::Edges PopupPlasmaWindow::nearbyBorders() const
+{
+    return d->m_nearbyBorders;
 }
 
 void PopupPlasmaWindow::setMargin(int margin)

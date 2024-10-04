@@ -486,10 +486,6 @@ AppletQuickItem::AppletQuickItem(QQuickItem *parent)
 AppletQuickItem::~AppletQuickItem()
 {
     AppletQuickItemPrivate::s_itemsForApplet.remove(d->applet);
-    // decrease weight
-    if (d->s_preloadPolicy >= AppletQuickItemPrivate::Adaptive) {
-        d->applet->config().writeEntry(QStringLiteral("PreloadWeight"), qMax(0, d->preloadWeight() - AppletQuickItemPrivate::PreloadWeightDecrement));
-    }
 
     // Here the order is important
     delete d->compactRepresentationItem;
@@ -730,7 +726,9 @@ void AppletQuickItem::init()
     if (!d->applet->isContainment() && d->applet->containment()) {
         connect(d->applet->containment(), &Plasma::Containment::uiReadyChanged, this, [this](bool uiReady) {
             if (uiReady && d->s_preloadPolicy >= AppletQuickItemPrivate::Adaptive) {
-                const int preloadWeight = d->preloadWeight();
+                // decrease weight for the last exit
+                const int preloadWeight = std::max(0, d->preloadWeight() - AppletQuickItemPrivate::PreloadWeightDecrement);
+                d->applet->config().writeEntry(QStringLiteral("PreloadWeight"), preloadWeight);
                 qCDebug(LOG_PLASMAQUICK) << "New Applet " << d->applet->title() << "with a weight of" << preloadWeight;
 
                 // don't preload applets less then a certain weight

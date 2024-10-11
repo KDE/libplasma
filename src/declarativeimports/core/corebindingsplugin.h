@@ -32,6 +32,12 @@ struct PropertyMapForeign {
     QML_FOREIGN(QQmlPropertyMap)
 };
 
+struct PlasmaWindowForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(Window)
+    QML_FOREIGN(PlasmaQuick::PlasmaWindow)
+};
+
 struct AppletPopupForeign {
     Q_GADGET
     QML_NAMED_ELEMENT(AppletPopup)

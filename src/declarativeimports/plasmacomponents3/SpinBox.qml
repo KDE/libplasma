@@ -63,7 +63,7 @@ T.SpinBox {
             anchors.centerIn: parent
             implicitWidth: Kirigami.Units.iconSizes.sizeForLabels
             implicitHeight: Kirigami.Units.iconSizes.sizeForLabels
-            source: "spinbox-increase"
+            source: "value-increase"
             fallback: "list-add"
         }
         KSvg.SvgItem {
@@ -95,7 +95,7 @@ T.SpinBox {
             anchors.centerIn: parent
             implicitWidth: Kirigami.Units.iconSizes.sizeForLabels
             implicitHeight: Kirigami.Units.iconSizes.sizeForLabels
-            source: "spinbox-decrease"
+            source: "value-decrease"
             fallback: "list-remove"
         }
         KSvg.SvgItem {

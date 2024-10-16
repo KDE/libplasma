@@ -52,10 +52,10 @@ AppletQuickItemPrivate::AppletQuickItemPrivate(AppletQuickItem *item)
         s_preloadPolicy = Adaptive;
 
         if (qEnvironmentVariableIsSet("PLASMA_PRELOAD_POLICY")) {
-            const QString policy = QString::fromUtf8(qgetenv("PLASMA_PRELOAD_POLICY")).toLower();
-            if (policy == QLatin1String("aggressive")) {
+            const QString policy = qEnvironmentVariable("PLASMA_PRELOAD_POLICY");
+            if (policy.compare(QLatin1String("aggressive"), Qt::CaseInsensitive)) {
                 s_preloadPolicy = Aggressive;
-            } else if (policy == QLatin1String("none")) {
+            } else if (policy.compare(QLatin1String("none"), Qt::CaseInsensitive)) {
                 s_preloadPolicy = None;
             }
         }

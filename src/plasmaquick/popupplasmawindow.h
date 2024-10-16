@@ -91,6 +91,12 @@ public:
 
     bool event(QEvent *event) override;
 
+    // Popups that have positive margin won't be directly touching
+    // any screen edge or panel, so they will not have disabled borders.
+    // However, knowing which borders the margin leans on is still
+    // useful, as an example, to correctly set the resize handle edges.
+    Qt::Edges nearbyBorders() const;
+
 Q_SIGNALS:
     void visualParentChanged();
     void popupDirectionChanged();
@@ -99,6 +105,7 @@ Q_SIGNALS:
     void animatedChanged();
     void removeBorderStrategyChanged();
     void marginChanged();
+    void nearbyBordersChanged();
 
 protected Q_SLOTS:
     void queuePositionUpdate();

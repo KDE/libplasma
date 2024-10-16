@@ -53,9 +53,9 @@ AppletQuickItemPrivate::AppletQuickItemPrivate(AppletQuickItem *item)
 
         if (qEnvironmentVariableIsSet("PLASMA_PRELOAD_POLICY")) {
             const QString policy = qEnvironmentVariable("PLASMA_PRELOAD_POLICY");
-            if (policy.compare(QLatin1String("aggressive"), Qt::CaseInsensitive)) {
+            if (policy.compare(QLatin1String("aggressive"), Qt::CaseInsensitive) == 0) {
                 s_preloadPolicy = Aggressive;
-            } else if (policy.compare(QLatin1String("none"), Qt::CaseInsensitive)) {
+            } else if (policy.compare(QLatin1String("none"), Qt::CaseInsensitive) == 0) {
                 s_preloadPolicy = None;
             }
         }

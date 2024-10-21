@@ -392,7 +392,7 @@ bool PopupPlasmaWindow::event(QEvent *event)
         d->updatePosition();
         break;
     case QEvent::Resize:
-        d->updatePosition();
+        queuePositionUpdate();
         break;
     default:
         break;

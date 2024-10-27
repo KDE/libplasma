@@ -45,3 +45,5 @@ target_link_libraries(plasmaextracomponentsplugin PRIVATE
         Plasma::Plasma)
 
 ecm_finalize_qml_module(plasmaextracomponentsplugin DESTINATION ${KDE_INSTALL_QMLDIR})
+
+ecm_generate_qdoc(plasmaextracomponentsplugin plasmaextras.qdocconf)

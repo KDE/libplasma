@@ -20,7 +20,7 @@ namespace PlasmaQuick
 class SharedQmlEngine;
 }
 
-/**
+/*!
  * Internally used by Tooltip
  */
 class ToolTipDialog : public PlasmaQuick::PopupPlasmaWindow
@@ -42,7 +42,7 @@ public:
     int hideTimeout() const;
     void setHideTimeout(int timeout);
 
-    /**
+    /*!
      * Basically the last one who has shown the dialog
      */
     QObject *owner() const;

@@ -22,8 +22,12 @@ class ContainmentActions;
 // * add loadWallpaper
 // * add KPluginInfo listing support for Containments (already loaded via the applet loading code)
 
-/**
- * @class PluginLoader plasma/pluginloader.h <Plasma/PluginLoader>
+/*!
+ * \class Plasma::PluginLoader
+ * \inheaderfile Plasma/PluginLoader
+ * \inmodule Plasma
+ *
+ * \brief Loader for Plasma plugins.
  *
  * This is an abstract base class which defines an interface to which Plasma's
  * Applet Loading logic can communicate with a parent application. The plugin loader
@@ -33,99 +37,97 @@ class ContainmentActions;
  * hang on to it. The associated methods will be called only when a component of Plasma
  * needs to load a _new_ plugin.
  *
- * @author Ryan Rix <ry@n.rix.si>
- * @since 4.6
+ * \since 4.6
  **/
 class PLASMA_EXPORT PluginLoader
 {
 public:
-    /**
+    /*!
      * Load an Applet plugin.
      *
-     * @param name the plugin name, as returned by KPluginInfo::pluginName()
-     * @param appletId unique ID to assign the applet, or zero to have one
+     * \a name the plugin name, as returned by KPluginInfo::pluginName()
+     *
+     * \a appletId unique ID to assign the applet, or zero to have one
      *        assigned automatically.
-     * @param args to send the applet extra arguments
-     * @return a pointer to the loaded applet, or 0 on load failure
+     *
+     * \a args to send the applet extra arguments
+     *
+     * Returns a pointer to the loaded applet, or 0 on load failure
      **/
     Applet *loadApplet(const QString &name, uint appletId = 0, const QVariantList &args = QVariantList());
 
-    /**
+    /*!
      * Load a ContainmentActions plugin.
      *
      * Returns a pointer to the containmentactions if successful.
      * The caller takes responsibility for the containmentactions, including
      * deleting it when no longer needed.
      *
-     * @param parent the parent containment. @since 4.6 null is allowed.
-     * @param name the plugin name, as returned by KPluginInfo::pluginName()
-     * @param args to send the containmentactions extra arguments
-     * @return a ContainmentActions object
+     * \a parent the parent containment. Since 4.6 null is allowed.
+     *
+     * \a name the plugin name, as returned by KPluginInfo::pluginName()
+     *
+     * \a args to send the containmentactions extra arguments
+     *
+     * Returns a ContainmentActions object
      **/
     ContainmentActions *loadContainmentActions(Containment *parent, const QString &containmentActionsName, const QVariantList &args = QVariantList());
 
-    /**
+    /*!
      * Returns a list of all known applets.
      * This may skip applets based on security settings and ExcludeCategories in the application's config.
      *
-     * @param category Only applets matching this category will be returned.
+     * \a category Only applets matching this category will be returned.
      *                 If "Misc" is passed in, then applets without a
      *                 Categories= entry are also returned.
      *                 If an empty string is passed in, all applets are
      *                 returned.
-     * @return list of applets
+     * Returns list of applets
      *
-     * @since 5.28
+     * \since 5.28
      **/
     QList<KPluginMetaData> listAppletMetaData(const QString &category);
 
-    /**
+    /*!
      * Returns a list of all known applets associated with a certain mimetype.
      *
-     * @return list of applets
-     * @since 5.36
+     * \since 5.36
      **/
     QList<KPluginMetaData> listAppletMetaDataForMimeType(const QString &mimetype);
 
-    /**
+    /*!
      * Returns a list of all known applets associated with a certain URL.
      *
-     * @return list of applets
-     * @since 5.36
+     * \since 5.36
      **/
     QList<KPluginMetaData> listAppletMetaDataForUrl(const QUrl &url);
 
-    /**
+    /*!
      * Returns a list of all known containments.
      *
-     * @param filter An optional predicate that can be used for filtering.
-     *
-     * @return list of containments
+     * \a filter An optional predicate that can be used for filtering.
      */
     static QList<KPluginMetaData> listContainmentsMetaData(std::function<bool(const KPluginMetaData &)> filter = {});
 
-    /**
+    /*!
      * Returns a list of containments of the specified type.
      *
-     * @param type The target containment type
-     *
-     * @return list of containments
+     * \a type The target containment type
      */
     static QList<KPluginMetaData> listContainmentsMetaDataOfType(const QString &type);
 
-    /**
+    /*!
      * Returns a list of all known ContainmentActions.
      *
-     * @param parentApp the application to filter ContainmentActions on. Uses the
+     * \a parentApp the application to filter ContainmentActions on. Uses the
      *                  X-KDE-ParentApp entry (if any) in the plugin metadata.
      *                  The default value of QString() will result in a
      *                  list of all ContainmentActions.
-     * @return list of ContainmentActions
-     * @since 5.77
+     * \since 5.77
      **/
     QList<KPluginMetaData> listContainmentActionsMetaData(const QString &parentApp);
 
-    /**
+    /*!
      * Return the active plugin loader
      **/
     static PluginLoader *self();

@@ -10,59 +10,60 @@ import QtQuick
 import org.kde.ksvg as KSvg
 import org.kde.kirigami as Kirigami
 
-/**
- * @brief Highlight for a list or grid item.
- *
- * Highlight provides the highlight used to indicate the active
- * item in a model view. It is typically used in conjunction with
- * the @sa QtQuick.ListView::highlight or the
- * @sa QtQuick.GridView::highlight properties.
- *
- * Provides built-in animation of Behavior on opacity Easing.OutQuad for a
- * duration of 50ms (defined in Kirigami.Units.veryShortDuration).
- *
- * @code{.qml}
- * import QtQuick
- * import org.kde.plasma.extras as PlasmaExtras
- *
- * ListView {
- *     highlightFollowsCurrentItem: true
- *     highlight: PlasmaExtras.Highlight { }
- *     highlightMoveDuration: 0
- *     highlightResizeDuration: 0
- *     currentIndex: -1
- * }
- *
- * @endcode
- *
- * @inherit QtQuick.Item
+/*!
+  \qmltype Highlight
+  \inqmlmodule org.kde.plasma.extras
+
+  \brief Highlight for a list or grid item.
+
+  Highlight provides the highlight used to indicate the active
+  item in a model view. It is typically used in conjunction with
+  the ListView::highlight or the
+  GridView::highlight properties.
+
+  Provides built-in animation of Behavior on opacity Easing.OutQuad for a
+  duration of 50ms (defined in Kirigami.Units.veryShortDuration).
+
+  \qml
+  import QtQuick
+  import org.kde.plasma.extras as PlasmaExtras
+
+  ListView {
+      highlightFollowsCurrentItem: true
+      highlight: PlasmaExtras.Highlight { }
+      highlightMoveDuration: 0
+      highlightResizeDuration: 0
+      currentIndex: -1
+  }
+
+  \endqml
  */
 Item {
     id: highlight
 
-    /**
-     * This property holds whether the control is hovered.
-     *
-     * This is set automatically when used in a ListView and GridView.
+    /*!
+      This property holds whether the control is hovered.
+
+      This is set automatically when used in a ListView and GridView.
      */
     property bool hovered: ListView.view !== null || GridView.view !== null
 
-    /**
-     * This property holds whether the highlight has a pressed appearance.
+    /*!
+      This property holds whether the highlight has a pressed appearance.
      */
     property bool pressed: false
 
-    /**
-	 * This property holds the margin hints used by the background.
-     *
-	 * @property int marginHints
-	 */
+    /*!
+      \qmlproperty int Highlight::marginHints
+
+      This property holds the margin hints used by the background.
+    */
     property alias marginHints: background.margins
 
-    /**
-     * This property holds whether the item is active. True by default. Set it to
-     * false to visually mark an item that's in the "current item" or "selected"
-     * state but is not currently being hovered.
+    /*!
+      This property holds whether the item is active. True by default. Set it to
+      false to visually mark an item that's in the "current item" or "selected"
+      state but is not currently being hovered.
      */
     property bool active: true
 

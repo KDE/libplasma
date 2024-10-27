@@ -30,34 +30,35 @@ namespace Plasma
 class ConfigLoader;
 } // namespace Plasma
 
-/**
- * @class PlasmoidItem
+/*!
+ * \qmltype PlasmoidItem
+ * \inqmlmodule org.kde.plasma.plasmoid
+ * \inherits Item
  *
- * <b>Import Statement</b>
- * @code import org.kde.plasma.plasmoid @endcode
- * @version 2.0
+ *
  */
 class PlasmoidItem : public PlasmaQuick::AppletQuickItem
 {
     Q_OBJECT
 
-    /**
+    /*
      * The QML root object defined in the applet main.qml will be direct child of an PlasmoidItem instance
      */
 
-    /**
+    /*!
+     * \qmlproperty string PlasmoidItem::toolTipMainText
      * Main title for the plasmoid tooltip or other means of quick information:
      * it's the same as the title property by default, but it can be personalized
      */
     Q_PROPERTY(QString toolTipMainText READ toolTipMainText WRITE setToolTipMainText NOTIFY toolTipMainTextChanged)
 
-    /**
+    /*!
      * Description for the plasmoid tooltip or other means of quick information:
      * it comes from the pluginifo comment by default, but it can be personalized
      */
     Q_PROPERTY(QString toolTipSubText READ toolTipSubText WRITE setToolTipSubText NOTIFY toolTipSubTextChanged)
 
-    /**
+    /*!
      * how to handle the text format of the tooltip subtext:
      * * Text.AutoText (default)
      * * Text.PlainText
@@ -67,7 +68,7 @@ class PlasmoidItem : public PlasmaQuick::AppletQuickItem
      */
     Q_PROPERTY(int toolTipTextFormat READ toolTipTextFormat WRITE setToolTipTextFormat NOTIFY toolTipTextFormatChanged)
 
-    /**
+    /*!
      * This allows to set fully custom QML item as the tooltip.
      * It will ignore all texts set by setToolTipMainText or setToolTipSubText
      *
@@ -81,14 +82,14 @@ class PlasmoidItem : public PlasmaQuick::AppletQuickItem
     // would be preferable if found.
     Q_PROPERTY(int screen READ screen NOTIFY screenChanged)
 
-    /**
+    /*!
      * Provides access to the geometry of the applet is in.
      * Can be useful to figure out what's the absolute position of the applet.
      * TODO: move in containment
      */
     Q_PROPERTY(QRect screenGeometry READ screenGeometry NOTIFY screenGeometryChanged)
 
-    /**
+    /*!
      * Whether the dialog should be hidden when the dialog loses focus.
      *
      * The default value is @c false.
@@ -96,14 +97,14 @@ class PlasmoidItem : public PlasmaQuick::AppletQuickItem
      **/
     Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
 
-    /**
+    /*!
      * screen area free of panels: the coordinates are relative to the containment,
      * it's independent from the screen position
      * For more precise available geometry use availableScreenRegion()
      */
     Q_PROPERTY(QRect availableScreenRect READ availableScreenRect NOTIFY availableScreenRectChanged)
 
-    /**
+    /*!
      * The available region of this screen, panels excluded. It's a list of rectanglesO: from containment
      */
     Q_PROPERTY(QVariantList availableScreenRegion READ availableScreenRegion NOTIFY availableScreenRegionChanged)
@@ -114,7 +115,7 @@ public:
 
     // QML API-------------------------------------------------------------------
 
-    /**
+    /*!
      * Should be called before retrieving any action
      * to ensure contents are up to date
      * @see contextualActionsAboutToShow
@@ -148,14 +149,14 @@ public:
     void setHideOnWindowDeactivate(bool hide);
 
 Q_SIGNALS:
-    /**
+    /*!
      * somebody else, usually the containment sent some data to the applet
      * @param mimetype the mime type of the data such as text/plain
      * @param data either the actual data or an URL representing it
      */
     void externalData(const QString &mimetype, const QVariant &data);
 
-    /**
+    /*!
      * Emitted just before the contextual actions are about to show
      * For instance just before the context menu containing the actions
      * added with setAction() is shown

@@ -35,7 +35,7 @@ namespace Plasma
 {
 class WindowTextureProvider;
 
-/**
+/*!
  * @brief Renders a thumbnail for the window specified by the @c winId property.
  *
  * This declarative item is able to render a live updating thumbnail for the

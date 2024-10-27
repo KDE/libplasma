@@ -20,7 +20,7 @@
 class QDeclarativeItem;
 class QQuickItem;
 
-/**
+/*!
  * @class Menu
  *
  * An Item provides a menu for use in context specific situations.
@@ -65,13 +65,13 @@ class QMenuProxy : public QObject
     Q_PROPERTY(QQmlListProperty<QMenuItem> content READ content CONSTANT)
     Q_CLASSINFO("DefaultProperty", "content")
 
-    /**
+    /*!
      * This is a hint to the window manager that this window is a dialog or pop-up on
      * behalf of the given window.
      */
     Q_PROPERTY(QWindow *transientParent READ transientParent WRITE setTransientParent NOTIFY transientParentChanged)
 
-    /**
+    /*!
      * The visualParent is used to position the menu. it can be an item on the
      * scene, like a button (that will open the menu on clicked) or another menuitem
      * (in this case this will be a submenu).
@@ -79,7 +79,7 @@ class QMenuProxy : public QObject
     Q_PROPERTY(QObject *visualParent READ visualParent WRITE setVisualParent NOTIFY visualParentChanged())
     Q_PROPERTY(Status status READ status NOTIFY statusChanged)
 
-    /**
+    /*!
      * This property holds the requested placement for the menu. It will be
      * automatically flipped horizontally in Right-to-left User Interfaces.
      * Additionally it may be flipped to the other side in any direction if
@@ -87,19 +87,19 @@ class QMenuProxy : public QObject
      */
     Q_PROPERTY(PopupPlacement placement READ placement WRITE setPlacement NOTIFY placementChanged)
 
-    /**
+    /*!
      * This property allows to request a seamless appearance in the direction
      * adjacent to the visualParent item, as determined by the menu's placement
      * policy.
      */
     Q_PROPERTY(bool preferSeamlessEdges READ preferSeamlessEdges WRITE setPreferSeamlessEdges NOTIFY preferSeamlessEdgesChanged)
 
-    /**
+    /*!
      * A minimum width for the menu.
      */
     Q_PROPERTY(int minimumWidth READ minimumWidth WRITE setMinimumWidth NOTIFY minimumWidthChanged)
 
-    /**
+    /*!
      * A maximum width for the menu.
      *
      * @since 5.31
@@ -107,27 +107,27 @@ class QMenuProxy : public QObject
     Q_PROPERTY(int maximumWidth READ maximumWidth WRITE setMaximumWidth RESET resetMaximumWidth NOTIFY maximumWidthChanged)
 
 public:
-    /**
+    /*!
      * The popup position enumeration relatively to his attached widget
      *
      **/
     enum PopupPlacement {
-        FloatingPopup = 0, /**< Free floating, non attached popup */
-        TopPosedLeftAlignedPopup, /**< Popup positioned on the top, aligned
+        FloatingPopup = 0, /*!< Free floating, non attached popup */
+        TopPosedLeftAlignedPopup, /*!< Popup positioned on the top, aligned
                                  to the left of the widget */
-        TopPosedRightAlignedPopup, /**< Popup positioned on the top, aligned
+        TopPosedRightAlignedPopup, /*!< Popup positioned on the top, aligned
                                   to the right of the widget */
-        LeftPosedTopAlignedPopup, /**< Popup positioned on the left, aligned
+        LeftPosedTopAlignedPopup, /*!< Popup positioned on the left, aligned
                                  to the top of the widget */
-        LeftPosedBottomAlignedPopup, /**< Popup positioned on the left, aligned
+        LeftPosedBottomAlignedPopup, /*!< Popup positioned on the left, aligned
                                     to the bottom of the widget */
-        BottomPosedLeftAlignedPopup, /**< Popup positioned on the bottom, aligned
+        BottomPosedLeftAlignedPopup, /*!< Popup positioned on the bottom, aligned
                                     to the left of the widget */
-        BottomPosedRightAlignedPopup, /**< Popup positioned on the bottom, aligned
+        BottomPosedRightAlignedPopup, /*!< Popup positioned on the bottom, aligned
                                      to the right of the widget */
-        RightPosedTopAlignedPopup, /**< Popup positioned on the right, aligned
+        RightPosedTopAlignedPopup, /*!< Popup positioned on the right, aligned
                                   to the top of the widget */
-        RightPosedBottomAlignedPopup, /**< Popup positioned on the right, aligned
+        RightPosedBottomAlignedPopup, /*!< Popup positioned on the right, aligned
                                     to the bottom of the widget */
     };
     Q_ENUM(PopupPlacement)
@@ -167,27 +167,27 @@ public:
     void setMaximumWidth(int maximumWidth);
     void resetMaximumWidth();
 
-    /**
+    /*!
      * This opens the menu at position x,y on the given visualParent. By default x and y are set to 0
      */
     Q_INVOKABLE void open(int x = 0, int y = 0);
-    /**
+    /*!
      * This opens the menu at the specified placement relative to the visualParent.
      */
     Q_INVOKABLE void openRelative();
-    /**
+    /*!
      * This closes the menu
      */
     Q_INVOKABLE void close();
-    /**
+    /*!
      * This removes all menuItems inside the menu
      */
     Q_INVOKABLE void clearMenuItems();
-    /**
+    /*!
      * This adds a menu item from a String
      */
     Q_INVOKABLE void addMenuItem(const QString &text);
-    /**
+    /*!
      * This adds MenuItem 'item' to the menu before MenuItem 'before'.
      * If MenuItem 'before' is 0 or does not exist in the menu, 'item'
      * is appended to the menu instead.
@@ -195,12 +195,12 @@ public:
      * inserted at the new position.
      */
     Q_INVOKABLE void addMenuItem(QMenuItem *item, QMenuItem *before = nullptr);
-    /**
+    /*!
      * This adds a section header with a string used as name for the section
      */
     Q_INVOKABLE void addSection(const QString &text);
 
-    /**
+    /*!
      * This removes MenuItem 'item'
      *
      * @since 5.27

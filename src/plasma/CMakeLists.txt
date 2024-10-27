@@ -123,6 +123,8 @@ target_include_directories(Plasma
         "$<INSTALL_INTERFACE:${PLASMA_INSTALL_INCLUDEDIR}>"
 )
 
+ecm_generate_qdoc(Plasma plasma.qdocconf)
+
 ########### install files ###############
 ecm_generate_headers(Plasma_CamelCase_HEADERS
     HEADER_NAMES

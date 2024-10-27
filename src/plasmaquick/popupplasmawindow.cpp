@@ -52,7 +52,7 @@ PopupPlasmaWindowPrivate::PopupPlasmaWindowPrivate(PopupPlasmaWindow *_q)
 {
 }
 
-/**
+/*!
  * PopupPlasmaWindowPrivate::updateSlideEffect
  * @param anchorRect - the rect around where the popup should be placed relative to the parent window
  * @param relativePopupPosition - the final rect of the popup relative to the parent window

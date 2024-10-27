@@ -33,7 +33,7 @@ public:
 
 protected Q_SLOTS:
 
-    /**
+    /*!
     Finds the parent id of the string with id @p searchId.
 
     Returns -1 if not found.
@@ -149,7 +149,7 @@ protected:
     int m_destRow;
 };
 
-/**
+/*!
   A command which does a move and emits a reset signal.
 */
 class ModelResetCommand : public ModelMoveCommand
@@ -164,7 +164,7 @@ public:
     void emitPostSignal() override;
 };
 
-/**
+/*!
   A command which does a move and emits a beginResetModel and endResetModel signals.
 */
 class ModelResetCommandFixed : public ModelMoveCommand

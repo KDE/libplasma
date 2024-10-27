@@ -17,7 +17,7 @@ import "private" as Private
 T.TextField {
     id: control
 
-    /**
+    /*!
      * Whether the button to clear the text from TextField is visible.
      * @since 5.73
      * @deprecated since 5.93 Use SearchField instead

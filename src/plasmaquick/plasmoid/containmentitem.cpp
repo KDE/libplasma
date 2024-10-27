@@ -364,7 +364,9 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
 
     // const QMimeData *mimeData = data;
 
-    qDebug() << "Arrived mimeData" << mimeData->urls() << mimeData->formats() << "at" << x << ", " << y;
+    qDebug() << "Arrived mimeData" << mimeData->urls() << mimeData->formats() << "at" << x << ", " << y << mimeData->hasUrls() << mimeData->urls();
+
+    mimeData->setUrls({QUrl(QStringLiteral("https://user1@nico-virtualbox/auth-kerberos"))});
 
     // Catch drops from a Task Manager and convert to usable URL.
     if (!mimeData->hasUrls() && mimeData->hasFormat(QStringLiteral("text/x-orgkdeplasmataskmanager_taskurl"))) {
@@ -416,6 +418,7 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
         }
         delete m_dropMenu.data();
     } else if (mimeData->hasUrls()) {
+        qWarning() << "urls" << mimeData->urls();
         // TODO: collect the mimetypes of available script engines and offer
         //      to create widgets out of the matching URLs, if any
         const QList<QUrl> urls = KUrlMimeData::urlsFromMimeData(mimeData);
@@ -520,6 +523,8 @@ void ContainmentItem::clearDataForMimeJob(KIO::Job *job)
 
 void ContainmentItem::dropJobResult(KJob *job)
 {
+    qWarning() << "error" << job->error();
+
     if (job->error()) {
         qDebug() << "ERROR" << job->error() << ' ' << job->errorString();
         clearDataForMimeJob(dynamic_cast<KIO::Job *>(job));

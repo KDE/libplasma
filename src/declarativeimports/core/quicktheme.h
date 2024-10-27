@@ -15,7 +15,7 @@
 
 namespace Plasma
 {
-/**
+/*!
  * @short Interface to the Plasma theme
  *
  *
@@ -89,253 +89,253 @@ public:
     explicit QuickTheme(QObject *parent = nullptr);
     ~QuickTheme() override;
 
-    /**
+    /*!
      * @return The theme's colorscheme's text color
      * @since 5.0
      */
     QColor textColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's highlight color
      * @since 5.0
      */
     QColor highlightColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's highlighted text color
      * @since 5.22
      */
     QColor highlightedTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's positive text color
      * @since 5.22
      */
     QColor positiveTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's neutral text color
      * @since 5.22
      */
     QColor neutralTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's negative text color
      * @since 5.22
      */
     QColor negativeTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's disabled text color
      * @since 5.64
      */
     QColor disabledTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's background color
      * @since 5.0
      */
     QColor backgroundColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's color for text on buttons
      * @since 5.0
      */
     QColor buttonTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's background color color of buttons
      * @since 5.0
      */
     QColor buttonBackgroundColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's positive text color of buttons
      * @since 5.22
      */
     QColor buttonPositiveTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's neutral text color of buttons
      * @since 5.22
      */
     QColor buttonNeutralTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's negative text color of buttons
      * @since 5.22
      */
     QColor buttonNegativeTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's link color
      * @since 5.0
      */
     QColor linkColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's text color for visited links
      * @since 5.0
      */
     QColor visitedLinkColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's color of hovered buttons
      * @since 5.0
      */
     QColor buttonHoverColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's color of focused buttons
      * @since 5.0
      */
     QColor buttonFocusColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's highlighted text color for buttons
      * @since 5.22
      */
     QColor buttonHighlightedTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's text color in views
      * @since 5.0
      */
     QColor viewTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's background color of views
      * @since 5.0
      */
     QColor viewBackgroundColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's color of hovered views
      * @since 5.0
      */
     QColor viewHoverColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's color of focused views
      * @since 5.0
      */
     QColor viewFocusColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's highlighted text color for views
      * @since 5.22
      */
     QColor viewHighlightedTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's positive text color of view
      * @since 5.22
      */
     QColor viewPositiveTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's neutral text color of view
      * @since 5.22
      */
     QColor viewNeutralTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's negative text color of view
      * @since 5.22
      */
     QColor viewNegativeTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's text color of "complementary" areas
      * @since 5.0
      */
     QColor complementaryTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's background color of "complementary" areas
      * @since 5.0
      */
     QColor complementaryBackgroundColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's color of hovered "complementary" areas
      * @since 5.0
      */
     QColor complementaryHoverColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's color of focused "complementary" areas
      * @since 5.0
      */
     QColor complementaryFocusColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's highlighted text color for "complementary" areas
      * @since 5.22
      */
     QColor complementaryHighlightedTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's positive text color of complementary
      * @since 5.22
      */
     QColor complementaryPositiveTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's neutral text color of complementary
      * @since 5.22
      */
     QColor complementaryNeutralTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's negative text color of complementary
      * @since 5.22
      */
     QColor complementaryNegativeTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's text color of "header" areas
      * @since 5.0
      */
     QColor headerTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's background color of "header" areas
      * @since 5.0
      */
     QColor headerBackgroundColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's color of hovered "header" areas
      * @since 5.0
      */
     QColor headerHoverColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's color of focused "header" areas
      * @since 5.0
      */
     QColor headerFocusColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's highlighted text color for "header" areas
      * @since 5.22
      */
     QColor headerHighlightedTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's positive text color of header
      * @since 5.22
      */
     QColor headerPositiveTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's neutral text color of header
      * @since 5.22
      */
     QColor headerNeutralTextColor() const;
 
-    /**
+    /*!
      * @return The theme's colorscheme's negative text color of header
      * @since 5.22
      */

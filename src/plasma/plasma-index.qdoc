@@ -1,0 +1,28 @@
+/*!
+    \page plasma-index.html
+    \title Plasma
+
+    Stuff for Plasma
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake} {XmlGui}
+
+    \section1 API Reference
+
+    \list
+        \li \l{Plasma C++ Classes}
+        \li \l{Plasma Quick C++ Classes}
+        \li \l{Plasma Core QML Types}
+        \li \l{Plasma Extras QML Types}
+        \li \l{Plasmoid QML Types}
+    \endlist
+
+    \section1 Licenses
+
+    TODO
+*/

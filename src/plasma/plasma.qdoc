@@ -1,0 +1,10 @@
+/*!
+    \module Plasma
+    \title Plasma C++ Classes
+    \ingroup modules
+    \cmakepackage Plasma
+
+    \brief Plasma.
+
+    Stuff
+*/

@@ -1,0 +1,23 @@
+/*!
+    \module PlasmaQuick
+    \title Plasma Quick C++ Classes
+    \ingroup modules
+    \cmakepackage PlasmaQuick
+    \cmaketargetitem Plasma::PlasmaQuick
+
+    \brief Plasma.
+
+    Stuff
+*/
+
+/*!
+    \qmlmodule org.kde.plasma.core
+    \title Plasma Core QML Types
+    \brief Plasma Stuff
+*/
+
+/*!
+    \qmlmodule org.kde.plasma.plasmoid
+    \title Plasmoid QML Types
+    \brief Plasma Stuff
+*/

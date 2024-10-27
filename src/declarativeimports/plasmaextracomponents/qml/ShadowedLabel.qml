@@ -14,29 +14,30 @@ import Qt5Compat.GraphicalEffects
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.kirigami as Kirigami
 
-/**
- * @brief White text label with a black shadow behind it
- *
- * A standardized label with white text and a black shadow behind it. When using
- * software rendering such that the shadow is not available, a black rounded
- * rectangle is used in its stead.
- *
- * By default it elides text on the right, wraps in a way that prefers word
- * boundaries, and uses plain text formatting.
- *
- * The most important property is "text", which applies to the text property of
- * the underlying Label component. See the Label component from QtQuick.Controls
- * 2 and primitive QML Text element API for additional properties, methods, and
- * signals.
- *
- * @inherit org.kde.plasma.components.Label
+/*!
+  \qmltype ShadowLabel
+  \inqmlmodule org.kde.plasma.extras
+
+  \brief White text label with a black shadow behind it.
+
+  A standardized label with white text and a black shadow behind it. When using
+  software rendering such that the shadow is not available, a black rounded
+  rectangle is used in its stead.
+
+  By default it elides text on the right, wraps in a way that prefers word
+  boundaries, and uses plain text formatting.
+
+  The most important property is "text", which applies to the text property of
+  the underlying Label component. See the Label component from QtQuick.Controls
+  2 and primitive QML Text element API for additional properties, methods, and
+  signals.
  */
 PlasmaComponents3.Label {
-    /**
+    /*!
      * This property can be used to conditionally *not* render the shadow, even
      * when it's technically possible to render it.
      *
-     * default: ``true``
+     * default: \c true
      */
     property bool renderShadow: true
 

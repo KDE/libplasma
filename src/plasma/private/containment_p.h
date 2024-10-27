@@ -40,7 +40,7 @@ public:
     void triggerShowAddWidgets();
     void checkStatus(Plasma::Types::ItemStatus status);
 
-    /**
+    /*
      * Called when constraints have been updated on this containment to provide
      * constraint services common to all containments. Containments should still
      * implement their own constraintsEvent method
@@ -53,14 +53,13 @@ public:
 
     Applet *createApplet(const QString &name, const QVariantList &args = QVariantList(), uint id = 0, const QRectF &geometryHint = QRectF(-1, -1, 0, 0));
 
-    /**
+    /*
      * FIXME: this should completely go from here
-     * @return the config group that containmentactions plugins go in
-     * @since 4.6
+     * the config group that containmentactions plugins go in
      */
     KConfigGroup containmentActionsConfig() const;
 
-    /**
+    /*
      * add the regular actions & keyboard shortcuts onto Applet's collection
      */
     static void addDefaultActions(QMap<QString, QAction *> &actions, Containment *c = nullptr, Corona *cor = nullptr);

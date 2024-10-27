@@ -14,20 +14,21 @@ import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.kirigami as Kirigami
 
- /**
-  * A standard basic header for plasmoids which has title, a config button and
-  * a popup menu with all extra plasmoid actions.
-  *
-  * By default, it will be invisible when the plasmoid is in the system tray,
-  * as it provides a replacement header with the same features
-  *
-  * @inherit PlasmoidHeading
+ /*!
+   \qmltype BasicPlasmoidHeading
+   \inqmlmodule org.kde.plasma.extras
+
+   \brief A standard basic header for plasmoids which has title, a config button and
+   a popup menu with all extra plasmoid actions.
+
+   By default, it will be invisible when the plasmoid is in the system tray,
+   as it provides a replacement header with the same features
   */
 PlasmoidHeading {
-    /**
-     * extraControls: list<QtObject>
-     *
-     * Any extra control and button that may be inserted in the heading
+    /*!
+      \qmlproperty list<QtObject> BasicPlasmoidHeading::extraControls
+
+      Any extra control and button that may be inserted in the heading
      */
     default property alias extraControls: extraControlsLayout.data
 

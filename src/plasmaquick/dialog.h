@@ -38,7 +38,7 @@ namespace PlasmaQuick
 {
 class DialogPrivate;
 
-/**
+/*!
  * Dialog creates a Plasma themed top level window that can contain any QML component.
  *
  * It can be automatically positioned relative to a visual parent
@@ -73,47 +73,47 @@ class PLASMAQUICK_EXPORT Dialog : public QQuickWindow, public QQmlParserStatus
     Q_OBJECT
     Q_INTERFACES(QQmlParserStatus)
 
-    /**
+    /*!
      * The main QML item that will be displayed in the Dialog
      */
     Q_PROPERTY(QQuickItem *mainItem READ mainItem WRITE setMainItem NOTIFY mainItemChanged)
 
-    /**
+    /*!
      * The main QML item that will be displayed in the Dialog
      */
     Q_PROPERTY(QQuickItem *visualParent READ visualParent WRITE setVisualParent NOTIFY visualParentChanged)
 
-    /**
+    /*!
      * Margins of the dialog around the mainItem.
      * @see DialogMargins
      */
     Q_PROPERTY(QObject *margins READ margins CONSTANT)
 
-    /**
+    /*!
      * Margins where the dialog background actually starts, excluiding things like shadows or borders
      * @see DialogMargins
      * @since 5.77
      */
     Q_PROPERTY(QObject *inset READ inset CONSTANT)
 
-    /**
+    /*!
      * Plasma Location of the dialog window. Useful if this dialog is a popup for a panel
      */
     Q_PROPERTY(Plasma::Types::Location location READ location WRITE setLocation NOTIFY locationChanged)
 
-    /**
+    /*!
      * Type of the window
      */
     Q_PROPERTY(WindowType type READ type WRITE setType NOTIFY typeChanged)
 
-    /**
+    /*!
      * Whether the dialog should be hidden when the dialog loses focus.
      *
      * The default value is @c false.
      **/
     Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
 
-    /**
+    /*!
      * Whether the dialog is output only. Default value is @c false. If it is @c true
      * the dialog does not accept input and all pointer events are not accepted, thus the dialog
      * is click through.
@@ -123,7 +123,7 @@ class PLASMAQUICK_EXPORT Dialog : public QQuickWindow, public QQmlParserStatus
      **/
     Q_PROPERTY(bool outputOnly READ isOutputOnly WRITE setOutputOnly NOTIFY outputOnlyChanged)
 
-    /**
+    /*!
      * This property holds the window flags of the window.
      * The window flags control the window's appearance in the windowing system,
      * whether it's a dialog, popup, or a regular window, and whether it should
@@ -133,7 +133,7 @@ class PLASMAQUICK_EXPORT Dialog : public QQuickWindow, public QQmlParserStatus
      */
     Q_PROPERTY(Qt::WindowFlags flags READ flags WRITE setFramelessFlags NOTIFY flagsChanged)
 
-    /**
+    /*!
      * This property holds how (and if at all) the dialog should draw its own background
      * or if it is complete responsibility of the content item to render a background.
      * Note that in case of NoBackground it loses kwin side shadows and blur
@@ -142,14 +142,14 @@ class PLASMAQUICK_EXPORT Dialog : public QQuickWindow, public QQmlParserStatus
 
     Q_PROPERTY(bool visible READ isVisible WRITE setVisible NOTIFY visibleChangedProxy)
 
-    /**
+    /*!
      * This property holds by how much the applet should be floating even if the location
      * is set to a certain screen side; if this value is positive, the dialog will draw
      * all four sides and maintain the required distance from the screen borders.
      */
     Q_PROPERTY(int floating READ floating WRITE setFloating NOTIFY floatingChanged)
 
-    /**
+    /*!
      * This property holds a pointer to the AppletInterface used by an applet. It is
      * null when the dialog is not used for an applet.
      */
@@ -173,9 +173,9 @@ public:
     Q_ENUM(WindowType)
 
     enum BackgroundHints {
-        NoBackground = 0, /**< Not drawing a background under the applet, the dialog has its own implementation */
-        StandardBackground = 1, /**< The standard background from the theme is drawn */
-        SolidBackground = 2, /**< The solid version of the background is preferred */
+        NoBackground = 0, /*!< Not drawing a background under the applet, the dialog has its own implementation */
+        StandardBackground = 1, /*!< The standard background from the theme is drawn */
+        SolidBackground = 2, /*!< The solid version of the background is preferred */
     };
     Q_ENUM(BackgroundHints)
 
@@ -218,7 +218,7 @@ public:
     QQuickItem *appletInterface() const;
     void setAppletInterface(QQuickItem *appletInterface);
 
-    /**
+    /*!
      * @returns The suggested screen position for the popup
      * @param item the item the popup has to be positioned relatively to. if null, the popup will be positioned in the center of the window
      * @param size the size that the popup will have, which influences the final position
@@ -237,14 +237,14 @@ Q_SIGNALS:
     void backgroundHintsChanged();
     void visibleChangedProxy(); // redeclaration of QQuickWindow::visibleChanged
     void appletInterfaceChanged();
-    /**
+    /*!
      * Emitted when the @see hideOnWindowDeactivate property is @c true and this dialog lost focus to a
      * window that is neither a parent dialog to nor a child dialog of this dialog.
      */
     void windowDeactivated();
 
 protected:
-    /**
+    /*!
      * set the dialog position. subclasses may change it. ToolTipDialog adjusts the position in an animated way
      */
     virtual void adjustGeometry(const QRect &geom);

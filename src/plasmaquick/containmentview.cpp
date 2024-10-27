@@ -29,7 +29,7 @@ public:
     Plasma::Types::Location location() const;
     void showConfigurationInterface(Plasma::Applet *applet);
     void updateDestroyed(bool destroyed);
-    /**
+    /*!
      * Reconnects the relevant signals after a screen change
      **/
     void reactToScreenChange();

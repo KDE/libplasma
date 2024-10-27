@@ -36,7 +36,7 @@ class PlasmoidAttached : public QObject
     Q_OBJECT
 
 public:
-    /** TODO: When the migration to the new action api is done, remove this enum
+    /*! TODO: When the migration to the new action api is done, remove this enum
      */
     enum ActionPriority {
         LowPriorityAction = QAction::LowPriority,

@@ -19,16 +19,16 @@ class QMenuItem : public QObject
     QML_ELEMENT
     QML_NAMED_ELEMENT(MenuItem)
 
-    /**
+    /*!
      * The parent object
      */
     Q_PROPERTY(QObject *parent READ parent WRITE setParent)
 
-    /**
+    /*!
      * If true, the menu item will behave like a separator
      */
     Q_PROPERTY(bool separator READ separator WRITE setSeparator NOTIFY separatorChanged)
-    /**
+    /*!
      * If true, the menu item will behave like a section
      */
     Q_PROPERTY(bool section READ section WRITE setSection NOTIFY sectionChanged)

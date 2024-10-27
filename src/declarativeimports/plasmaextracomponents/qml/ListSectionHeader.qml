@@ -10,43 +10,48 @@ import org.kde.kirigami as Kirigami
 import org.kde.ksvg as KSvg
 import org.kde.plasma.components as PlasmaComponents
 
-/**
- * @brief A section delegate for the primitive ListView component.
- *
- * It's intended to make all listviews look coherent, mirroring the style
- * of the Kirigami version, but with the separator line being an SVG from the
- * Plasma theme rather than a simple line.
- *
- * Any additional content items will be positioned in a row at the trailing side
- * of this component.
- *
- *
- * Example usage:
- * @code
- * import QtQuick
- * import org.kde.plasma.components as PlasmaComponents
- * import org.kde.plasma.extras as PlasmaExtras
- *
- * ListView {
- *     section.delegate: PlasmaExtras.ListSectionHeader {
- *         label: section
- *
- *         PlasmaComponents.Button {
- *             text: "Button 1"
- *         }
- *         PlasmaComponents.Button {
- *             text: "Button 2"
- *         }
- *     }
- * }
- * @endcode
+/*!
+  \qmltype ListSectionHeader
+  \inqmlmodule org.kde.plasma.extras
+
+  \brief A section delegate for the primitive ListView component.
+
+  It's intended to make all listviews look coherent, mirroring the style
+  of the Kirigami version, but with the separator line being an SVG from the
+  Plasma theme rather than a simple line.
+
+  Any additional content items will be positioned in a row at the trailing side
+  of this component.
+
+
+  Example usage:
+  \qml
+  import QtQuick
+  import org.kde.plasma.components as PlasmaComponents
+  import org.kde.plasma.extras as PlasmaExtras
+
+  ListView {
+      section.delegate: PlasmaExtras.ListSectionHeader {
+          label: section
+
+          PlasmaComponents.Button {
+              text: "Button 1"
+          }
+          PlasmaComponents.Button {
+              text: "Button 2"
+          }
+      }
+  }
+  \endqml
+
+  TODO qdoc how to document inheritance
  */
 PlasmaComponents.ItemDelegate {
     id: listSection
 
-    /**
-     * @brief This property sets the text of the ListView's section header.
-     * @property string label
+    /*!
+      \qmlproperty string ListSectionHeader::label
+      This property sets the text of the ListView's section header.
      */
     property alias label: listSection.text
 

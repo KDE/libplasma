@@ -27,32 +27,48 @@ namespace PlasmaQuick
 class SharedQmlEngine;
 }
 
-/**
- * @brief This class is exposed to wallpapers as the WallpaperItem root qml item
+/*!
+ * \qmltype WallpaperItem
+ * \inqmlmodule org.kde.plasma.plasmoid
+ * \inherits Item
  *
- * <b>Import Statement</b>
- * @code import org.kde.plasma.plasmoid @endcode
- * @version 2.0
+ * \brief This class is exposed to wallpapers as the WallpaperItem root qml item.
  */
 class WallpaperItem : public QQuickItem
 {
     Q_OBJECT
 
+    /*!
+     * \qmlproperty string WallpaperItem::pluginName
+     */
     Q_PROPERTY(QString pluginName READ pluginName CONSTANT)
+
+    /*!
+     * \qmlproperty KConfigPropertyMap WallpaperItem::configuration
+     */
     Q_PROPERTY(KConfigPropertyMap *configuration READ configuration CONSTANT)
-    /**
+
+    /*!
+     * \qmlproperty list<QAction> WallpaperItem::contextualActions
+     *
      * Actions to be added in the desktop context menu. To instantiate QActions in a declarative way,
      * PlasmaCore.Action {} can be used
      */
     Q_PROPERTY(QQmlListProperty<QAction> contextualActions READ qmlContextualActions NOTIFY contextualActionsChanged)
+
+    /*!
+     * \qmlproperty bool WallpaperItem::loading
+     */
     Q_PROPERTY(bool loading MEMBER m_loading NOTIFY isLoadingChanged)
 
-    /*
+    /*!
+     * \qmlproperty color WallpaperItem::accentColor
+     *
      * The accent color manually set by the wallpaper plugin.
      * By default it's transparent, which means either the dominant color is used
      * when "Accent Color From Wallpaper" is enabled, or the theme color is used.
      *
-     * @since 6.0
+     * \since 6.0
      */
     Q_PROPERTY(QColor accentColor READ accentColor WRITE setAccentColor NOTIFY accentColorChanged RESET resetAccentColor)
 
@@ -63,15 +79,15 @@ public:
     void classBegin() override;
     void componentComplete() override;
 
-    /**
+    /*
      * Returns a list of all known wallpapers that can accept the given mimetype
-     * @param mimetype the mimetype to search for
-     * @param formFactor the format of the wallpaper being search for (e.g. desktop)
-     * @return list of wallpapers
+     * mimetype the mimetype to search for
+     * formFactor the format of the wallpaper being search for (e.g. desktop)
+     * Returns list of wallpapers
      */
     static QList<KPluginMetaData> listWallpaperMetadataForMimetype(const QString &mimetype, const QString &formFactor = QString());
 
-    /**
+    /*
      * Instantiate the WallpaperItem for a given containment, using the proper plugin
      */
     static WallpaperItem *loadWallpaper(ContainmentItem *ContainmentItem);
@@ -101,9 +117,13 @@ public:
 
 Q_SIGNALS:
     void isLoadingChanged();
-    void openUrlRequested(const QUrl &url);
     void contextualActionsChanged(const QList<QAction *> &actions);
     void accentColorChanged();
+
+    /*!
+     *
+     */
+    void openUrlRequested(const QUrl &url);
 
 private:
     static void contextualActions_append(QQmlListProperty<QAction> *prop, QAction *action);

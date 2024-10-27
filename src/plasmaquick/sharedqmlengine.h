@@ -29,7 +29,7 @@ namespace PlasmaQuick
 {
 class SharedQmlEnginePrivate;
 
-/**
+/*!
  * @short An object that instantiates an entire QML context, with its own declarative engine
  *
  * PlasmaQuick::SharedQmlEngine provides a class to conveniently use QML based
@@ -50,7 +50,7 @@ class PLASMAQUICK_EXPORT SharedQmlEngine : public QObject
     Q_PROPERTY(QQmlComponent::Status status READ status NOTIFY statusChanged)
 
 public:
-    /**
+    /*!
      * Construct a new PlasmaQuick::SharedQmlEngine
      *
      * @param parent The QObject parent for this object.
@@ -60,7 +60,7 @@ public:
 
     ~SharedQmlEngine() override;
 
-    /**
+    /*!
      * Call this method before calling setupBindings to install a translation domain for all
      * i18n global functions. If a translation domain is set all i18n calls delegate to the
      * matching i18nd calls with the provided translation domain.
@@ -77,19 +77,19 @@ public:
      */
     void setTranslationDomain(const QString &translationDomain);
 
-    /**
+    /*!
      * @return the translation domain for the i18n calls done in this QML engine
      */
     QString translationDomain() const;
 
-    /**
+    /*!
      * Sets the path of the QML file to parse and execute
      *
      * @param path the absolute path of a QML file
      */
     void setSource(const QUrl &source);
 
-    /**
+    /*!
      * Sets the QML source to execute from a type in a module.
      *
      * @param module The module to load the type from.
@@ -97,12 +97,12 @@ public:
      */
     void setSourceFromModule(QAnyStringView module, QAnyStringView type);
 
-    /**
+    /*!
      * @return the absolute path of the current QML file
      */
     QUrl source() const;
 
-    /**
+    /*!
      * Sets whether the execution of the QML file has to be delayed later in the event loop. It has to be called before setQmlPath().
      * In this case it will be possible to assign new objects in the main engine context
      * before the main component gets initialized.
@@ -115,38 +115,38 @@ public:
      */
     void setInitializationDelayed(const bool delay);
 
-    /**
+    /*!
      * @return true if the initialization of the QML file will be delayed
      *              at the end of the event loop
      */
     bool isInitializationDelayed() const;
 
-    /**
+    /*!
      * @return the declarative engine that runs the qml file assigned to this widget.
      */
     std::shared_ptr<QQmlEngine> engine();
 
-    /**
+    /*!
      * @return the root object of the declarative object tree
      */
     QObject *rootObject() const;
 
-    /**
+    /*!
      * @return the main QQmlComponent of the engine
      */
     QQmlComponent *mainComponent() const;
 
-    /**
+    /*!
      * The components's creation context.
      */
     QQmlContext *rootContext() const;
 
-    /**
+    /*!
      * The component's current status.
      */
     QQmlComponent::Status status() const;
 
-    /**
+    /*!
      * Creates and returns an object based on the provided url to a Qml file
      * with the same QQmlEngine and the same root context as the main object,
      * that will be the parent of the newly created object
@@ -159,7 +159,7 @@ public:
      */
     QObject *createObjectFromSource(const QUrl &source, QQmlContext *context = nullptr, const QVariantHash &initialProperties = QVariantHash());
 
-    /**
+    /*!
      * Creates and returns an object based on the provided QQmlComponent
      * with the same QQmlEngine and the same root context as the admin object,
      * that will be the parent of the newly created object
@@ -173,7 +173,7 @@ public:
     QObject *createObjectFromComponent(QQmlComponent *component, QQmlContext *context = nullptr, const QVariantHash &initialProperties = QVariantHash());
 
 public Q_SLOTS:
-    /**
+    /*!
      * Finishes the process of initialization.
      * If isInitializationDelayed() is false, calling this will have no effect.
      * @param initialProperties optional properties that will be set on
@@ -183,7 +183,7 @@ public Q_SLOTS:
     void completeInitialization(const QVariantHash &initialProperties = QVariantHash());
 
 Q_SIGNALS:
-    /**
+    /*!
      * Emitted when the parsing and execution of the QML file is terminated
      */
     void finished();

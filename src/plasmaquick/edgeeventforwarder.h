@@ -18,7 +18,7 @@ class EdgeEventForwarderPrivate;
 namespace PlasmaQuick
 {
 
-/**
+/*!
  * @brief The EdgeEventForwarder class
  * This class forwards edge events to be replayed within the given margin
  * This is useful if children do not touch the edge of a window, but want to get input events
@@ -27,7 +27,7 @@ class PLASMAQUICK_EXPORT EdgeEventForwarder : public QObject
 {
     Q_OBJECT
 public:
-    /**
+    /*!
      * @brief EdgeEventForwarder constructor
      * @param window The window to intercept and filter
      * The event forwarder is parented to the window
@@ -35,13 +35,13 @@ public:
     EdgeEventForwarder(QWindow *parent);
     ~EdgeEventForwarder() override;
 
-    /**
+    /*!
      * @brief setMargins sets the margins to use for the event forwarding
      */
     void setMargins(const QMargins &margins);
     QMargins margins();
 
-    /**
+    /*!
      * @brief setActiveEdges sets which margins should be active for edge forwarding
      * typically this should match edges touching a screen edge
      */

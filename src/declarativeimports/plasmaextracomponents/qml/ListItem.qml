@@ -9,36 +9,34 @@ import org.kde.plasma.components as PC3
 import org.kde.kirigami as Kirigami
 import org.kde.ksvg as KSvg
 
+/*!
+  \qmltype ListItem
+  \inqmlmodule org.kde.plasma.extras
+
+  TODO qdoc how to document inheritance
+ */
 PC3.ItemDelegate {
     id: __listItem
 
-    /**
-     * content: list<Object>
-     *
-     * The content of this ListItem.
+    /*!
+      \qmlproperty list<Object> ListItem::content
+
+      The content of this ListItem.
      */
     default property alias content: __innerItem.data
 
-    /**
-     * separatorVisible: bool
-     *
-     * Whether this ListItem displays a separator.
+    /*!
+      Whether this ListItem displays a separator.
      */
     property bool separatorVisible: true
 
-    /**
-     * sectionDelegate: bool
-     *
-     * Whether this ListItem renders as a section header.
+    /*!
+      Whether this ListItem renders as a section header.
      */
     property bool sectionDelegate: false
 
-    /**
-     * containsMouse: bool
-     *
-     * Whether this ListItem contains the mouse.
-     *
-     * Alias of Control.hovered.
+    /*!
+      Whether this ListItem contains the mouse.
      */
     readonly property bool containsMouse: hovered
 

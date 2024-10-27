@@ -172,6 +172,8 @@ ecm_generate_headers(PlasmaQuick_CamelCase_HEADERS
     PREFIX PlasmaQuick
 )
 
+ecm_generate_qdoc(PlasmaQuick plasmaquick.qdocconf)
+
 install(
     FILES ${plasmaquick_LIB_INCLUDES}
     DESTINATION ${PLASMAQUICK_INSTALL_INCLUDEDIR}/plasmaquick

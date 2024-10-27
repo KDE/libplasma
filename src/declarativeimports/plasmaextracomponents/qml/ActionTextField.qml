@@ -7,71 +7,72 @@ import QtQuick.Templates as T
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.kirigami as Kirigami
 
-/**
- * This is advanced textfield. It is recommended to use this class when there
- * is a need to create a create a textfield with action buttons (e.g a clear
- * action).
- *
- * For common pattern like, a search field or a password field, prefer using the
- * more specifig org::kde::extras::SearchField or org::kde::extras::PasswordField.
- *
- * Example usage for a search field:
- * @code
- * import QtQuick.Controls as QQC2
- * import org.kde.plasma.extras as PlasmaExtras
- *
- * PlasmaExtras.ActionTextField {
- *     id: searchField
- *
- *     placeholderText: "Search…"
- *
- *     focusSequence: StandardKey.Find
- *
- *     rightActions: [
- *         QQC2.Action {
- *             icon.name: "edit-clear"
- *             enabled: searchField.text !== ""
- *             onTriggered: {
- *                 searchField.clear()
- *                 searchField.accepted()
- *             }
- *         }
- *     ]
- *
- *     onAccepted: console.log("Search text is " + searchField.text)
- * }
- * @endcode
- *
- * @inherit QtQuick.Controls.TextField
- * @since 5.93
- * @author Carl Schwan <carl@carlschwan.eu>
+/*!
+  \qmltype ActionTextField
+  \inqmlmodule org.kde.plasma.extras
+
+  \brief This is advanced textfield. It is recommended to use this class when there
+  is a need to create a create a textfield with action buttons (e.g a clear
+  action).
+
+  For common pattern like, a search field or a password field, prefer using the
+  more specifig SearchField or PasswordField.
+
+  Example usage for a search field:
+  \qml
+  import QtQuick.Controls as QQC2
+  import org.kde.plasma.extras as PlasmaExtras
+
+  PlasmaExtras.ActionTextField {
+      id: searchField
+
+      placeholderText: "Search…"
+
+      focusSequence: StandardKey.Find
+
+      rightActions: [
+          QQC2.Action {
+              icon.name: "edit-clear"
+              enabled: searchField.text !== ""
+              onTriggered: {
+                  searchField.clear()
+                  searchField.accepted()
+              }
+          }
+      ]
+
+      onAccepted: console.log("Search text is " + searchField.text)
+  }
+  \endqml
+
+  \since 5.93
  */
 PlasmaComponents3.TextField {
     id: root
 
-    /**
-     * This property holds a shortcut sequence that will focus the text field.
-     *
-     * @property QtQuick.Shortcut.sequence focusSequence
-     * @since 5.93
-     */
+    /*!
+      \qmlproperty keysequence ActionTextField::focusSequence
+      This property holds a shortcut sequence that will focus the text field.
+
+      \since 5.93
+    */
     property alias focusSequence: focusShortcut.sequence
 
-    /**
-     * This property holds a list of actions that will be displayed on the left side of the text field.
-     *
-     * By default this list is empty.
-     *
-     * @since 5.93
+    /*!
+      This property holds a list of actions that will be displayed on the left side of the text field.
+
+      By default this list is empty.
+
+      \since 5.93
      */
     property list<T.Action> leftActions
 
-    /**
-     * This property holds a list of actions that will be displayed on the right side of the text field.
-     *
-     * By default this list is empty.
-     *
-     * @since 5.93
+    /*!
+      This property holds a list of actions that will be displayed on the right side of the text field.
+
+      By default this list is empty.
+
+      \since 5.93
      */
     property list<T.Action> rightActions
 

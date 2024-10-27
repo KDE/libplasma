@@ -7,34 +7,35 @@ import org.kde.plasma.extras as PlasmaExtras
 import org.kde.config as KConfig
 import org.kde.kirigami as Kirigami
 
-/**
- * This is a standard password text field.
- *
- * Example usage for the password field component:
- *
- * @code{.qml}
- * import org.kde.plasma.extras as PlasmaExtras
- *
- * PlasmaExtras.PasswordField {
- *     id: passwordField
- *     onAccepted: {
- *         // check if passwordField.text is valid
- *     }
- * }
- * @endcode
- *
- * @since 5.93
- * @inherit org::kde::plasma::extras::ActionTextField
- * @author Carl Schwan <carl@carlschwan.eu>
+/*!
+  \qmltype PasswordField
+  \inqmlmodule org.kde.plasma.extras
+
+  \brief This is a standard password text field.
+
+  Example usage for the password field component:
+
+  \qml
+  import org.kde.plasma.extras as PlasmaExtras
+
+  PlasmaExtras.PasswordField {
+      id: passwordField
+      onAccepted: {
+          // check if passwordField.text is valid
+      }
+  }
+  \endqml
+
+  \since 5.93
  */
 PlasmaExtras.ActionTextField {
     id: root
 
-    /**
-     * This property holds whether we show the clear text password.
-     *
-     * By default, it's false.
-     * @since 5.93
+    /*!
+      This property holds whether we show the clear text password.
+
+      By default, it's false.
+      \since 5.93
      */
     property bool showPassword: false
 

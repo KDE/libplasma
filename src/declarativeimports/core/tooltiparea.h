@@ -21,7 +21,7 @@
 class QQuickItem;
 class ToolTipDialog;
 
-/**
+/*!
  * An Item managing a Plasma-themed tooltip. It is rendered in its own window.
  * You can either specify icon, mainText and subText, or a custom Component
  * that will be put inside the tooltip. By default the tooltip will be
@@ -56,22 +56,22 @@ class ToolTipArea : public QQuickItem
     Q_OBJECT
     QML_ELEMENT
 
-    /**
+    /*!
      * The item shown inside the tooltip.
      */
     Q_PROPERTY(QQuickItem *mainItem READ mainItem WRITE setMainItem NOTIFY mainItemChanged)
 
-    /**
+    /*!
      * The main text of this tooltip
      */
     Q_PROPERTY(QString mainText READ mainText WRITE setMainText NOTIFY mainTextChanged)
 
-    /**
+    /*!
      * The description of this tooltip
      */
     Q_PROPERTY(QString subText READ subText WRITE setSubText NOTIFY subTextChanged)
 
-    /**
+    /*!
      * how to handle the text format of the tooltip subtext:
      * * Text.AutoText (default)
      * * Text.PlainText
@@ -81,34 +81,34 @@ class ToolTipArea : public QQuickItem
      */
     Q_PROPERTY(int textFormat READ textFormat WRITE setTextFormat NOTIFY textFormatChanged)
 
-    /**
+    /*!
      * An icon for this tooltip, accepted values are an icon name, a QIcon, QImage or QPixmap
      */
     Q_PROPERTY(QVariant icon READ icon WRITE setIcon NOTIFY iconChanged)
 
-    /**
+    /*!
      * Returns whether the mouse is inside the item
      */
     Q_PROPERTY(bool containsMouse READ containsMouse NOTIFY containsMouseChanged)
 
-    /**
+    /*!
      * Plasma Location of the dialog window. Useful if this dialog is a popup for a panel
      */
     Q_PROPERTY(Plasma::Types::Location location READ location WRITE setLocation NOTIFY locationChanged)
 
-    /**
+    /*!
      * TODO: single property for images?
      * An image for this tooltip, accepted values are an icon name, a QIcon, QImage or QPixmap
      */
     Q_PROPERTY(QVariant image READ image WRITE setImage NOTIFY imageChanged)
 
-    /**
+    /*!
      * Property that controls if a tooltips will show on mouse over.
      * The default is true.
      */
     Q_PROPERTY(bool active MEMBER m_active WRITE setActive NOTIFY activeChanged)
 
-    /**
+    /*!
      * If interactive is false (default), the tooltip will automatically hide
      * itself as soon as the mouse leaves the tooltiparea, if is true, if the
      * mouse leaves tooltiparea and goes over the tooltip itself, the tooltip
@@ -116,7 +116,7 @@ class ToolTipArea : public QQuickItem
      */
     Q_PROPERTY(bool interactive MEMBER m_interactive WRITE setInteractive NOTIFY interactiveChanged)
 
-    /**
+    /*!
      * Timeout in milliseconds after which the tooltip will hide itself.
      * Set this value to -1 to never hide the tooltip automatically.
      */
@@ -160,18 +160,18 @@ public:
 
 public Q_SLOTS:
 
-    /**
+    /*!
      * Shows the tooltip.
      * @since 5.73
      */
     void showToolTip();
 
-    /**
+    /*!
      * Hides the tooltip after a grace period if shown. Does not affect whether the tooltip area is active.
      */
     void hideToolTip();
 
-    /**
+    /*!
      * Hides the tooltip immediately, in comparison to hideToolTip.
      * @since 5.84
      */
@@ -197,13 +197,13 @@ Q_SIGNALS:
     void locationChanged();
     void activeChanged();
     void interactiveChanged();
-    /**
+    /*!
      * Emitted just before the tooltip dialog is shown.
      *
      * @since 5.45
      */
     void aboutToShow();
-    /**
+    /*!
      * Emitted when the tooltip's visibility changes.
      *
      * @since 5.88

@@ -13,10 +13,11 @@ import org.kde.ksvg as KSvg
 import org.kde.plasma.plasmoid
 import org.kde.kirigami as Kirigami
 
-/**
- * Item to be used as a header or footer in plasmoids
- *
- * @inherit QtQuick.Templates.ToolBar
+/*!
+  \qmltype PlasmoidHeading
+  \inqmlmodule org.kde.plasma.extras
+
+  \brief Item to be used as a header or footer in plasmoids.
  */
 T.ToolBar {
     id: control

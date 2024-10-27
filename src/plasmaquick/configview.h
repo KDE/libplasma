@@ -42,7 +42,7 @@ class PLASMAQUICK_EXPORT ConfigView : public QQuickWindow
     Q_PROPERTY(QString appletGlobalShortcut READ appletGlobalShortcut WRITE setAppletGlobalShortcut NOTIFY appletGlobalShortcutChanged)
 
 public:
-    /**
+    /*!
      * @param applet the applet of this ConfigView
      * @param parent the QWindow in which this ConfigView is parented to
      **/
@@ -61,7 +61,7 @@ public:
     QString appletGlobalShortcut() const;
     void setAppletGlobalShortcut(const QString &shortcut);
 
-    /**
+    /*!
      * @return the ConfigModel of the ConfigView
      **/
     PlasmaQuick::ConfigModel *configModel() const;

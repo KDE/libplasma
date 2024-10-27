@@ -1,0 +1,18 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = PlasmaExtras
+description = Plasma Extra Stuff
+
+documentationinheaders = true
+
+headerdirs = .
+sourcedirs = .
+
+outputformats = HTML
+
+depends += \
+    qtcore \
+    qtgui \
+    qtwidgets \
+    qtquick \
+    qtquickcontrols

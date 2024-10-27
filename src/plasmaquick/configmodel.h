@@ -38,7 +38,7 @@ class ConfigCategoryPrivate;
 class ConfigModelPrivate;
 class ConfigCategory;
 
-/**
+/*!
  * This model contains all the possible config categories for a dialog,
  * such as categories of the config dialog for an Applet
  * TODO: it should probably become an import instead of a library?
@@ -67,7 +67,7 @@ public:
     explicit ConfigModel(QObject *parent = nullptr);
     ~ConfigModel() override;
 
-    /**
+    /*!
      * add a new category in the model
      * @param ConfigCategory the new category
      **/
@@ -80,7 +80,7 @@ public:
     Q_INVOKABLE void removeCategory(PlasmaQuick::ConfigCategory *category);
     Q_INVOKABLE void removeCategoryAt(int index);
 
-    /**
+    /*!
      * clears the model
      **/
     void clear();
@@ -96,19 +96,19 @@ public:
     QVariant data(const QModelIndex &, int) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    /**
+    /*!
      * @param row the row for which the data will be returned
      * @return the data of the specified row
      **/
     Q_INVOKABLE QVariant get(int row) const;
 
-    /**
+    /*!
      * @return the categories of the model
      **/
     QQmlListProperty<ConfigCategory> categories();
 
 Q_SIGNALS:
-    /**
+    /*!
      * emitted when the count is changed
      **/
     void countChanged();

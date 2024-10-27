@@ -68,7 +68,7 @@ public:
     }
 
     // SLOTS
-    /**
+    /*!
      * Sync Borders updates the enabled borders of the dialogBackground depending
      * on the geometry of the window.
      *
@@ -77,7 +77,7 @@ public:
      */
     void syncBorders(const QRect &windowGeometry);
 
-    /**
+    /*!
      * This function sets the blurBehind, background contrast and shadows. It
      * does so wrt the dialogBackground. So make sure the dialogBackground is the
      * correct size before calling this function.
@@ -92,12 +92,12 @@ public:
     void updateResizableEdges();
     void updateSizeFromAppletInterface();
 
-    /**
+    /*!
      * Gets the maximum and minimum size hints for the window based on the contents. it doesn't actually resize anything
      */
     void getSizeHints(QSize &min, QSize &max) const;
 
-    /**
+    /*!
      * This function is an optimized version of updateMaximumHeight,
      * updateMaximumWidth,updateMinimumWidth and updateMinimumHeight.
      * It should be called when you need to call all 4 of these functions
@@ -107,7 +107,7 @@ public:
 
     QRect availableScreenGeometryForPosition(const QPoint &pos) const;
 
-    /**
+    /*!
      * This function checks the current position of the dialog and repositions
      * it so that no part of it is not on the screen
      */

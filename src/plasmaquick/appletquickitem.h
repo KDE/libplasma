@@ -36,20 +36,40 @@ namespace PlasmaQuick
 class AppletQuickItemPrivate;
 class SharedQmlEngine;
 
+// TODO qdoc should this be documented indepdendently or as part of PlasmoidItem
+
 class PLASMAQUICK_EXPORT AppletQuickItem : public QQuickItem
 {
     Q_OBJECT
 
+    /*!
+     * \qmlproperty int PlasmoidItem::switchWidth
+     */
     Q_PROPERTY(int switchWidth READ switchWidth WRITE setSwitchWidth NOTIFY switchWidthChanged)
+    /*!
+     * \qmlproperty int PlasmoidItem::switchHeight
+     */
     Q_PROPERTY(int switchHeight READ switchHeight WRITE setSwitchHeight NOTIFY switchHeightChanged)
 
+    /*!
+     * \qmlproperty Component PlasmoidItem::compactRepresentation
+     */
     Q_PROPERTY(QQmlComponent *compactRepresentation READ compactRepresentation WRITE setCompactRepresentation NOTIFY compactRepresentationChanged)
+    /*!
+     * \qmlproperty Item PlasmoidItem::compactRepresentationItem
+     */
     Q_PROPERTY(QQuickItem *compactRepresentationItem READ compactRepresentationItem NOTIFY compactRepresentationItemChanged)
 
+    /*!
+     * \qmlproperty Component PlasmoidItem::fullRepresentation
+     */
     Q_PROPERTY(QQmlComponent *fullRepresentation READ fullRepresentation WRITE setFullRepresentation NOTIFY fullRepresentationChanged)
+    /*!
+     * \qmlproperty Item PlasmoidItem::fullRepresentationItem
+     */
     Q_PROPERTY(QQuickItem *fullRepresentationItem READ fullRepresentationItem NOTIFY fullRepresentationItemChanged)
 
-    /**
+    /*!
      * When true the full representation will be loaded immediately together with the main plasmoid.
      * Note that this will have a negative impact on plasmoid loading times
      * This is needed only when some important logic has to live inside the full representation and
@@ -58,42 +78,42 @@ class PLASMAQUICK_EXPORT AppletQuickItem : public QQuickItem
      */
     Q_PROPERTY(bool preloadFullRepresentation READ preloadFullRepresentation WRITE setPreloadFullRepresentation NOTIFY preloadFullRepresentationChanged)
 
-    /**
+    /*!
      * this is supposed to be either one between compactRepresentation or fullRepresentation
      */
     Q_PROPERTY(QQmlComponent *preferredRepresentation READ preferredRepresentation WRITE setPreferredRepresentation NOTIFY preferredRepresentationChanged)
 
-    /**
+    /*!
      * Hint set to true if the applet should be displayed as expanded, such as the main popup open
      */
     Q_PROPERTY(bool expanded READ isExpanded WRITE setExpanded NOTIFY expandedChanged)
 
-    /**
+    /*!
      * True when the applet wants the activation signal act in toggle mode, i.e. while being expanded
      * the signal shrinks the applet to its not expanded state instead of reexpanding it.
      */
     Q_PROPERTY(bool activationTogglesExpanded WRITE setActivationTogglesExpanded READ isActivationTogglesExpanded NOTIFY activationTogglesExpandedChanged)
 
-    /**
+    /*!
      * Whether the dialog should be hidden when the dialog loses focus.
      *
-     * The default value is @c false.
+     * The default value is \c false.
      **/
     Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
 
-    /**
+    /*!
      * True if this applet will open its FullRepresentation when something is
      * dragged over its CompactRepresentation (only has any effect when using
      * the default CompactRepresentation).
      */
     Q_PROPERTY(bool expandedOnDragHover READ expandedOnDragHover WRITE setExpandedOnDragHover NOTIFY expandedOnDragHoverChanged)
 
-    /**
+    /*!
      * Gives compatibility to the old plasmoid.* api
      */
     Q_PROPERTY(QObject *plasmoid READ applet CONSTANT)
 
-    /**
+    /*!
      * Text to display in a badge overlay on top of the applet's icon. If empty,
      * no badge will be displayed.
      *

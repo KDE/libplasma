@@ -22,9 +22,9 @@ class EffectWatcher : public QObject, public QAbstractNativeEventFilter
 
 public:
     explicit EffectWatcher(const QString &property, QObject *parent = nullptr);
+    bool isEffectActive() const;
 
 protected:
-    bool isEffectActive() const;
     bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *) override;
 
 Q_SIGNALS:

@@ -133,6 +133,14 @@ ThemePrivate::ThemePrivate(QObject *parent)
             s_backgroundContrastEffectWatcher = new EffectWatcher(QStringLiteral("_KDE_NET_WM_BACKGROUND_CONTRAST_REGION"));
         }
 
+        if (s_backgroundContrastEffectWatcher->isEffectActive()) {
+            kSvgImageSet->setSelectors({QStringLiteral("translucent")});
+        } else {
+            kSvgImageSet->setSelectors({});
+        }
+        backgroundContrastActive = s_backgroundContrastEffectWatcher->isEffectActive();
+        scheduleThemeChangeNotification(PixmapCache | SvgElementsCache);
+
         QObject::connect(s_backgroundContrastEffectWatcher, &EffectWatcher::effectChanged, this, [this](bool active) {
             if (backgroundContrastActive != active) {
                 backgroundContrastActive = active;
@@ -140,6 +148,10 @@ ThemePrivate::ThemePrivate(QObject *parent)
                 kSvgImageSet->setSelectors({QStringLiteral("translucent")});
             }
         });
+#else
+        kSvgImageSet->setSelectors({QStringLiteral("translucent")});
+        backgroundContrastActive = s_backgroundContrastEffectWatcher->isEffectActive();
+        scheduleThemeChangeNotification(PixmapCache | SvgElementsCache);
 #endif
     }
     QCoreApplication::instance()->installEventFilter(this);

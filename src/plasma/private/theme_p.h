@@ -19,9 +19,8 @@
 #include <QTimer>
 
 #include <config-plasma.h>
-#if HAVE_X11
-#include "private/effectwatcher_p.h"
-#endif
+
+#include "private/contrasteffectwatcher_p.h"
 
 #include "libplasma-theme-global.h"
 
@@ -68,11 +67,11 @@ public:
 
     QColor color(Theme::ColorRole role, Theme::ColorGroup group = Theme::NormalColorGroup) const;
 
+    void updateKSvgSelectors(CacheTypes notify);
+
 public Q_SLOTS:
-    void compositingChanged(bool active);
     void colorsChanged();
     void settingsFileChanged(const QString &settings);
-    void scheduledCacheUpdate();
     void onAppExitCleanup();
     void notifyOfChanged();
     void settingsChanged(bool emitChanges);
@@ -87,9 +86,9 @@ public:
     static const char defaultTheme[];
     static const char systemColorsTheme[];
     static const char themeRcFile[];
-#if HAVE_X11
-    static EffectWatcher *s_backgroundContrastEffectWatcher;
-#endif
+
+    static ContrastEffectWatcher *s_backgroundContrastEffectWatcher;
+
     // Ref counting of ThemePrivate instances
     static ThemePrivate *globalTheme;
     static QHash<QString, ThemePrivate *> themes;
@@ -114,7 +113,7 @@ public:
     int defaultWallpaperWidth;
     int defaultWallpaperHeight;
     QHash<QString, QString> discoveries;
-    QTimer *pixmapSaveTimer;
+    QTimer *selectorsUpdateTimer;
     QTimer *updateNotificationTimer;
     unsigned cacheSize;
     CacheTypes cachesToDiscard;

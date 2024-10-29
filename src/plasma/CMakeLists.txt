@@ -34,11 +34,8 @@ target_sources(Plasma PRIVATE
 #graphics
     theme.cpp
     private/theme_p.cpp
+    private/contrasteffectwatcher.cpp
 )
-
-if(HAVE_X11)
-    target_sources(Plasma PRIVATE private/effectwatcher.cpp)
-endif()
 
 kconfig_add_kcfg_files(Plasma data/kconfigxt/libplasma-theme-global.kcfgc)
 

@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef EFFECTWATCHER_P_H
-#define EFFECTWATCHER_P_H
+#ifndef ContrastEffectWatcher_P_H
+#define ContrastEffectWatcher_P_H
 
 #include <QGuiApplication>
 #include <QObject>
@@ -14,27 +14,36 @@
 
 #include <xcb/xcb.h>
 
+#include <config-plasma.h>
+
 namespace Plasma
 {
-class EffectWatcher : public QObject, public QAbstractNativeEventFilter
+
+class ContrastEffectWatcher : public QObject, public QAbstractNativeEventFilter
 {
     Q_OBJECT
 
 public:
-    explicit EffectWatcher(const QString &property, QObject *parent = nullptr);
+    explicit ContrastEffectWatcher(QObject *parent = nullptr);
+    bool isEffectActive() const;
 
 protected:
-    bool isEffectActive() const;
+#if HAVE_X11
     bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *) override;
+#endif
 
 Q_SIGNALS:
     void effectChanged(bool on);
 
 private:
-    void init(const QString &property);
+    void init();
+    bool fetchEffectActive() const;
+#if HAVE_X11
     xcb_atom_t m_property;
-    bool m_effectActive;
     QNativeInterface::QX11Application *m_x11Interface = nullptr;
+#endif
+    bool m_isWayland = false;
+    bool m_effectActive = false;
 };
 
 } // namespace Plasma

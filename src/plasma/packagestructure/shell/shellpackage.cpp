@@ -74,7 +74,7 @@ public:
 
         const QString pluginName = package->metadata().pluginId();
         if (!pluginName.isEmpty() && pluginName != QStringLiteral(DEFAULT_SHELL)) {
-            const QString fallback = package->metadata().value(QStringLiteral("X-Plasma-FallbackPackage"), QStringLiteral(DEFAULT_SHELL));
+            const QString fallback = package->metadata().value(u"X-Plasma-FallbackPackage", QStringLiteral(DEFAULT_SHELL));
 
             KPackage::Package pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Shell"), fallback);
             package->setFallbackPackage(pkg);

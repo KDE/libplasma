@@ -49,7 +49,7 @@ Containment::Containment(QObject *parentObject, const KPluginMetaData &data, con
     setHasConfigurationInterface(true);
 
     // Try to determine the containment type. It must be done as soon as possible
-    const QString type = pluginMetaData().value(QStringLiteral("X-Plasma-ContainmentType"));
+    const QString type = pluginMetaData().value(u"X-Plasma-ContainmentType");
     QMetaEnum metaEnum = QMetaEnum::fromType<Plasma::Containment::Type>();
     d->type = (Plasma::Containment::Type)metaEnum.keyToValue(type.toLocal8Bit().constData());
     if (d->type == Plasma::Containment::Type::NoContainment) {

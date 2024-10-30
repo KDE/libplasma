@@ -138,7 +138,7 @@ void ConfigViewPrivate::init()
         delete object;
     }
 
-    QStringList kcms = applet.data()->pluginMetaData().value(QStringLiteral("X-Plasma-ConfigPlugins"), QStringList());
+    QStringList kcms = applet.data()->pluginMetaData().value(u"X-Plasma-ConfigPlugins", QStringList());
 
     // filter out non-authorized KCMs
     // KAuthorized expects KCMs with .desktop suffix, so we can't just pass everything

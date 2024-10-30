@@ -72,10 +72,10 @@ void WallpaperItem::componentComplete()
 QList<KPluginMetaData> WallpaperItem::listWallpaperMetadataForMimetype(const QString &mimetype, const QString &formFactor)
 {
     auto filter = [&mimetype, &formFactor](const KPluginMetaData &md) -> bool {
-        if (!formFactor.isEmpty() && !md.value(QStringLiteral("X-Plasma-FormFactors")).contains(formFactor)) {
+        if (!formFactor.isEmpty() && !md.value(u"X-Plasma-FormFactors").contains(formFactor)) {
             return false;
         }
-        return md.value(QStringLiteral("X-Plasma-DropMimeTypes"), QStringList()).contains(mimetype);
+        return md.value(u"X-Plasma-DropMimeTypes", QStringList()).contains(mimetype);
     };
     return KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Wallpaper"), QString(), filter);
 }
@@ -136,7 +136,7 @@ WallpaperItem *WallpaperItem::loadWallpaper(ContainmentItem *containmentItem)
     PlasmaQuick::SharedQmlEngine *qmlObject = new PlasmaQuick::SharedQmlEngine(containmentItem->containment());
     qmlObject->setInitializationDelayed(true);
 
-    const QString rootPath = pkg.metadata().value(QStringLiteral("X-Plasma-RootPath"));
+    const QString rootPath = pkg.metadata().value(u"X-Plasma-RootPath");
     if (!rootPath.isEmpty()) {
         qmlObject->setTranslationDomain(QLatin1String("plasma_wallpaper_") + rootPath);
     } else {
@@ -194,7 +194,7 @@ QQmlListProperty<QAction> WallpaperItem::qmlContextualActions()
 
 bool WallpaperItem::supportsMimetype(const QString &mimetype) const
 {
-    return m_pkg.metadata().value(QStringLiteral("X-Plasma-DropMimeTypes"), QStringList()).contains(mimetype);
+    return m_pkg.metadata().value(u"X-Plasma-DropMimeTypes", QStringList()).contains(mimetype);
 }
 
 bool WallpaperItem::isLoading() const

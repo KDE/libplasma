@@ -63,7 +63,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
 
     // If the applet is using another applet package, search for the plugin of the other applet
     if (!plugin.isValid()) {
-        const QString parentPlugin = p.metadata().value(QStringLiteral("X-Plasma-RootPath"));
+        const QString parentPlugin = p.metadata().value(u"X-Plasma-RootPath");
         if (!parentPlugin.isEmpty()) {
             plugin = KPluginMetaData(QStringLiteral("plasma/applets/") + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
         }
@@ -188,7 +188,7 @@ QList<KPluginMetaData> PluginLoader::listAppletMetaData(const QString &category)
 QList<KPluginMetaData> PluginLoader::listAppletMetaDataForMimeType(const QString &mimeType)
 {
     auto filter = [&mimeType](const KPluginMetaData &md) -> bool {
-        return md.value(QStringLiteral("X-Plasma-DropMimeTypes"), QStringList()).contains(mimeType);
+        return md.value(u"X-Plasma-DropMimeTypes", QStringList()).contains(mimeType);
     };
     return KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Applet"), QString(), filter);
 }
@@ -196,13 +196,13 @@ QList<KPluginMetaData> PluginLoader::listAppletMetaDataForMimeType(const QString
 QList<KPluginMetaData> PluginLoader::listAppletMetaDataForUrl(const QUrl &url)
 {
     auto filter = [](const KPluginMetaData &md) -> bool {
-        return !md.value(QStringLiteral("X-Plasma-DropUrlPatterns"), QStringList()).isEmpty();
+        return !md.value(u"X-Plasma-DropUrlPatterns", QStringList()).isEmpty();
     };
     const QList<KPluginMetaData> allApplets = KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Applet"), QString(), filter);
 
     QList<KPluginMetaData> filtered;
     for (const KPluginMetaData &md : allApplets) {
-        const QStringList urlPatterns = md.value(QStringLiteral("X-Plasma-DropUrlPatterns"), QStringList());
+        const QStringList urlPatterns = md.value(u"X-Plasma-DropUrlPatterns", QStringList());
         for (const QString &glob : urlPatterns) {
             QRegularExpression rx(QRegularExpression::anchoredPattern(QRegularExpression::wildcardToRegularExpression(glob)));
             if (rx.match(url.toString()).hasMatch()) {
@@ -226,7 +226,7 @@ QList<KPluginMetaData> PluginLoader::listContainmentsMetaData(std::function<bool
 QList<KPluginMetaData> PluginLoader::listContainmentsMetaDataOfType(const QString &type)
 {
     auto filter = [type](const KPluginMetaData &md) -> bool {
-        return md.value(QStringLiteral("X-Plasma-ContainmentType")) == type;
+        return md.value(u"X-Plasma-ContainmentType") == type;
     };
 
     return listContainmentsMetaData(filter);
@@ -235,7 +235,7 @@ QList<KPluginMetaData> PluginLoader::listContainmentsMetaDataOfType(const QStrin
 QList<KPluginMetaData> PluginLoader::listContainmentActionsMetaData(const QString &parentApp)
 {
     auto filter = [&parentApp](const KPluginMetaData &md) -> bool {
-        return md.value(QStringLiteral("X-KDE-ParentApp")) == parentApp;
+        return md.value(u"X-KDE-ParentApp") == parentApp;
     };
 
     QList<KPluginMetaData> plugins;

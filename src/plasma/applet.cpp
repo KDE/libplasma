@@ -877,7 +877,7 @@ bool Applet::isContainment() const
 
 QString Applet::translationDomain() const
 {
-    const QString rootPath = d->appletDescription.value(QStringLiteral("X-Plasma-RootPath"));
+    const QString rootPath = d->appletDescription.value(u"X-Plasma-RootPath");
     if (!rootPath.isEmpty()) {
         return QLatin1String("plasma_applet_") + rootPath;
     } else {

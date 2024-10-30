@@ -653,7 +653,7 @@ void ThemePrivate::setThemeName(const QString &tempThemeName, bool writeSettings
 
         // Check for what Plasma version the theme has been done
         // There are some behavioral differences between KDE4 Plasma and Plasma 5
-        const QString apiVersion = pluginMetaData.value(QStringLiteral("X-Plasma-API"));
+        const QString apiVersion = pluginMetaData.value(u"X-Plasma-API");
         apiMajor = 1;
         apiMinor = 0;
         apiRevision = 0;

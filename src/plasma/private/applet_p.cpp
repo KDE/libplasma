@@ -128,7 +128,7 @@ void AppletPrivate::init(const QVariantList &args)
         QObject::connect(q, &Applet::contextualActionsAboutToShow, a, [=, this]() {
             bool hasAlternatives = false;
 
-            const QStringList provides = q->pluginMetaData().value(QStringLiteral("X-Plasma-Provides"), QStringList());
+            const QStringList provides = q->pluginMetaData().value(u"X-Plasma-Provides", QStringList());
             if (!provides.isEmpty() && q->immutability() == Types::Mutable) {
                 const auto applets = Plasma::PluginLoader::self()->listAppletMetaData(QString());
 
@@ -138,7 +138,7 @@ void AppletPrivate::init(const QVariantList &args)
                         return false;
                     }
 
-                    const QStringList provided = md.value(QStringLiteral("X-Plasma-Provides"), QStringList());
+                    const QStringList provided = md.value(u"X-Plasma-Provides", QStringList());
                     for (const QString &p : provides) {
                         if (provided.contains(p)) {
                             return true;

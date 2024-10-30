@@ -84,7 +84,7 @@ void DialogNativeTest::size()
     QCOMPARE(m_content->width(), content1Width);
     QCOMPARE(m_content->height(), content1Height);
 
-    constexpr qreal themeFixedMargin = 4.0;
+    constexpr qreal themeFixedMargin = 6.0;
     QCOMPARE(m_dialog->margins()->property("left").value<qreal>(), themeFixedMargin);
     QCOMPARE(m_dialog->margins()->property("top").value<qreal>(), themeFixedMargin);
     QCOMPARE(m_dialog->margins()->property("right").value<qreal>(), themeFixedMargin);
@@ -115,12 +115,12 @@ void DialogNativeTest::position()
 
     m_dialog->setVisualParent(m_panel2->contentItem());
     // this derives from the center point of the current panel, I am too lazy to calculate this - sitter, 2023
-    QCOMPARE(m_dialog->x(), 71);
+    QCOMPARE(m_dialog->x(), 69);
     QCOMPARE(m_dialog->y(), anchorY);
 
     m_panel3->setMask(QRect(0, 0, panelWidth, panelHeight / 2));
     m_dialog->setVisualParent(m_content2);
-    QCOMPARE(m_dialog->x(), 171);
+    QCOMPARE(m_dialog->x(), 169);
     QCOMPARE(m_dialog->y(), panelHeight / 2 - offset);
 }
 

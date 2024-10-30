@@ -6,14 +6,33 @@
 
 #include "contrasteffectwatcher_p.h"
 
+#include <QWaylandClientExtensionTemplate>
+
 #include <KWindowSystem>
 
 #if HAVE_X11
 #include <X11/Xlib.h>
 #endif
 
+#include "qwayland-contrast.h"
+
 namespace Plasma
 {
+
+class ContrastManager : public QWaylandClientExtensionTemplate<ContrastManager>, public QtWayland::org_kde_kwin_contrast_manager
+{
+public:
+    ContrastManager()
+        : QWaylandClientExtensionTemplate<ContrastManager>(2)
+    {
+    }
+    ~ContrastManager()
+    {
+        if (object()) {
+            org_kde_kwin_contrast_manager_destroy(object());
+        }
+    }
+};
 
 ContrastEffectWatcher::ContrastEffectWatcher(QObject *parent)
     : QObject(parent)
@@ -22,12 +41,26 @@ ContrastEffectWatcher::ContrastEffectWatcher(QObject *parent)
     , m_x11Interface(qGuiApp->nativeInterface<QNativeInterface::QX11Application>())
 #endif
 {
+    if (KWindowSystem::isPlatformWayland()) {
+        m_contrastManager = std::make_unique<ContrastManager>();
+    }
+
     init();
+}
+
+ContrastEffectWatcher::~ContrastEffectWatcher()
+{
 }
 
 void ContrastEffectWatcher::init()
 {
-    if (KWindowSystem::isPlatformX11()) {
+    if (KWindowSystem::isPlatformWayland()) {
+        connect(m_contrastManager.get(), &ContrastManager::activeChanged, this, [this]() {
+            m_effectActive = m_contrastManager->isActive();
+            Q_EMIT effectChanged(m_effectActive);
+        });
+        m_effectActive = m_contrastManager->isActive();
+    } else if (KWindowSystem::isPlatformX11()) {
 #if HAVE_X11
         if (!m_x11Interface) {
             return;
@@ -97,7 +130,7 @@ bool ContrastEffectWatcher::isEffectActive() const
 bool ContrastEffectWatcher::fetchEffectActive() const
 {
     if (KWindowSystem::isPlatformWayland()) {
-        return true;
+        return m_contrastManager->isActive();
     }
 
     if (m_property == XCB_ATOM_NONE || !m_x11Interface) {

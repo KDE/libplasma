@@ -50,6 +50,10 @@ class PLASMA_EXPORT Theme : public QObject
 
     Q_PROPERTY(QPalette palette READ palette NOTIFY themeChanged)
 
+    Q_PROPERTY(qreal backgroundContrast READ backgroundContrast NOTIFY themeChanged)
+    Q_PROPERTY(qreal backgroundIntensity READ backgroundIntensity NOTIFY themeChanged)
+    Q_PROPERTY(qreal backgroundSaturation READ backgroundSaturation NOTIFY themeChanged)
+
 public:
     enum ColorRole {
         TextColor = 0, /**<  the text color to be used by items resting on the background */

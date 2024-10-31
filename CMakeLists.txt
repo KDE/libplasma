@@ -49,7 +49,6 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
     COMPONENTS
         Archive
         Config
-        ConfigWidgets
         CoreAddons
         GlobalAccel
         GuiAddons

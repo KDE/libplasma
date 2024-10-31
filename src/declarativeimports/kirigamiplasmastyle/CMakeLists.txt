@@ -14,7 +14,7 @@ target_link_libraries(KirigamiPlasmaStyle
     PRIVATE
         Qt6::Qml
         Qt6::Quick
-        KF6::ConfigWidgets
+        KF6::ColorScheme
         KF6::IconThemes
         Plasma::Plasma
 )

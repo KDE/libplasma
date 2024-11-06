@@ -146,6 +146,7 @@ PlasmaShellWaylandIntegration::PlasmaShellWaylandIntegration(QWindow *window)
         return;
     }
     d->m_window->installEventFilter(this);
+    d->m_window->setProperty("_q_showWithoutActivating", !d->m_takesFocus);
     d->platformSurfaceCreated(window);
 }
 
@@ -204,6 +205,7 @@ void PlasmaShellWaylandIntegration::setTakesFocus(bool takesFocus)
         return;
     }
     d->m_takesFocus = takesFocus;
+    d->m_window->setProperty("_q_showWithoutActivating", !d->m_takesFocus);
     if (d->m_shellSurface) {
         d->m_shellSurface->set_panel_takes_focus(takesFocus);
     }

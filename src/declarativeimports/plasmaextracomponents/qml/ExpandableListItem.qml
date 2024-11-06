@@ -132,6 +132,15 @@ Item {
      */
     property bool subtitleCanWrap: false
 
+    /**
+     * subtitleMaximumLineCount: int
+     * The maximum number of lines the subtitle can have when subtitleCanWrap is true.
+     * @since 6.9
+     *
+     * Optional, defaults to -1, which means no limit.
+     */
+    property int subtitleMaximumLineCount: -1
+
     /*
      * subtitleColor: color
      * The color of the subtitle text
@@ -483,7 +492,7 @@ Item {
 
                         textFormat: listItem.allowStyledText ? Text.StyledText : Text.PlainText
                         elide: Text.ElideRight
-                        maximumLineCount: subtitleCanWrap ? 9999 : 1
+                        maximumLineCount: subtitleCanWrap ? (subtitleMaximumLineCount === -1 ? undefined : subtitleMaximumLineCount) : 1
                         wrapMode: subtitleCanWrap ? Text.WordWrap : Text.NoWrap
                     }
                 }

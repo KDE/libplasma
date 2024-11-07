@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-23 00:40+0000\n"
+"POT-Creation-Date: 2024-11-07 00:41+0000\n"
 "PO-Revision-Date: 2024-08-23 15:37+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -26,13 +26,13 @@ msgstr ""
 msgid "More actions"
 msgstr "Další činnosti"
 
-#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:524
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:533
 #, kde-format
 msgctxt "@action:button"
 msgid "Collapse"
 msgstr "Svinout"
 
-#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:524
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:533
 #, kde-format
 msgctxt "@action:button"
 msgid "Expand"

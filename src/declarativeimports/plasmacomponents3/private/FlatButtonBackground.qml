@@ -55,7 +55,7 @@ Item {
         opacity: root.checked || root.pressed ? 1 : 0
         Behavior on opacity {
             enabled: Kirigami.Units.shortDuration > 0
-            OpacityAnimator { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutQuad }
+            NumberAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutQuad }
         }
     }
 }

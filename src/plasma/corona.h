@@ -30,13 +30,14 @@ class PLASMA_EXPORT Corona : public QObject
     Q_PROPERTY(bool isStartupCompleted READ isStartupCompleted NOTIFY startupCompleted)
     Q_PROPERTY(bool editMode READ isEditMode WRITE setEditMode NOTIFY editModeChanged)
     Q_PROPERTY(KPackage::Package kPackage READ kPackage NOTIFY kPackageChanged)
+    Q_PROPERTY(KPackage::Package lookAndFeelPackage READ lookAndFeelPackage NOTIFY lookAndFeelPackageChanged)
 
 public:
     explicit Corona(QObject *parent = nullptr);
     ~Corona() override;
 
     /**
-     * Accessor for the associated Package object if any.
+     * Accessor for the associated Shell Package object if any.
      * A Corona package defines how Containments are laid out in a View,
      * ToolBoxes, default layout, error messages
      * and in general all the furniture specific of a particular
@@ -52,6 +53,14 @@ public:
      * @since 5.5
      */
     void setKPackage(const KPackage::Package &package);
+
+    /**
+     * Accessor for the associated LookAndFeel Package.
+     * A look and feel package defines things like default
+     * desktop layout, default colors, icon themes and so on.
+     * @since 6.3
+     */
+    KPackage::Package lookAndFeelPackage();
 
     /**
      * @return all containments on this Corona
@@ -345,6 +354,16 @@ Q_SIGNALS:
      * @param package the new package that defines the Corona furniture and behavior
      */
     void kPackageChanged(const KPackage::Package &package);
+
+    /**
+     * Emitted when the look and feel package changes.
+     * At that point defaults such as desktop layout colors, icons
+     * and so on will be different than what they used to be
+     *
+     * @param package the new package
+     * @since 6.3
+     */
+    void lookAndFeelPackageChanged(const KPackage::Package &package);
 
     /**
      * Emitted when the startup phase has been completed

@@ -19,6 +19,8 @@
 #include <QTimer>
 
 #include <KLocalizedString>
+#include <KPackage/Package>
+#include <KPackage/PackageLoader>
 
 #include <cmath>
 
@@ -37,6 +39,24 @@ Corona::Corona(QObject *parent)
     , d(new CoronaPrivate(this))
 {
     d->init();
+
+    KSharedConfigPtr globalConfig = KSharedConfig::openConfig(QStringLiteral("kdeglobals"));
+    KConfigGroup cg(globalConfig, QStringLiteral("KDE"));
+    const QString packageName = cg.readEntry("LookAndFeelPackage", QString());
+    d->lookAndFeelPackage = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/LookAndFeel"), packageName);
+
+    d->kdeGlobalsConfigWatcher = KConfigWatcher::create(globalConfig);
+    connect(d->kdeGlobalsConfigWatcher.data(), &KConfigWatcher::configChanged, this, [this](const KConfigGroup &group, const QByteArrayList &names) {
+        if (names.contains(QByteArrayLiteral("LookAndFeelPackage"))) {
+            const QString packageName = group.readEntry("LookAndFeelPackage", QString());
+            KPackage::Package newPack = d->lookAndFeelPackage;
+            newPack.setPath(packageName);
+            if (newPack.isValid()) {
+                d->lookAndFeelPackage.setPath(packageName);
+                Q_EMIT lookAndFeelPackageChanged(d->lookAndFeelPackage);
+            }
+        }
+    });
 }
 
 Corona::~Corona()
@@ -56,6 +76,11 @@ void Corona::setKPackage(const KPackage::Package &package)
 {
     d->package = package;
     Q_EMIT kPackageChanged(package);
+}
+
+KPackage::Package Corona::lookAndFeelPackage()
+{
+    return d->lookAndFeelPackage;
 }
 
 void Corona::saveLayout(const QString &configName) const

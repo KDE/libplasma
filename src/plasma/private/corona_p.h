@@ -9,6 +9,7 @@
 
 #include <QTimer>
 
+#include <KConfigWatcher>
 #include <KPackage/Package>
 
 namespace Plasma
@@ -34,10 +35,12 @@ public:
 
     Corona *q;
     KPackage::Package package;
+    KPackage::Package lookAndFeelPackage;
     KConfigGroup desktopDefaultsConfig;
     Types::ImmutabilityType immutability;
     QString configName;
     KSharedConfigPtr config;
+    KConfigWatcher::Ptr kdeGlobalsConfigWatcher;
     QTimer *configSyncTimer;
     QList<Containment *> containments;
     // It's a map to have values() as a stable list

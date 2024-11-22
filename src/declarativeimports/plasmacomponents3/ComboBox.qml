@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Templates as T
 import QtQuick.Controls as Controls
@@ -36,8 +38,11 @@ T.ComboBox {
     spacing: Kirigami.Units.smallSpacing
 
     delegate: ItemDelegate {
-        width: control.popup.width
-        text: control.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+        required property var model
+        required property int index
+
+        width: ListView.view.width
+        text: model[control.textRole]
         highlighted: control.highlightedIndex == index
         property bool separatorVisible: false
     }

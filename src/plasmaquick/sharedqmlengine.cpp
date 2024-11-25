@@ -97,7 +97,6 @@ void SharedQmlEnginePrivate::beginExecute(const QUrl &source)
 {
     if (source.isEmpty()) {
         qWarning(LOG_PLASMAQUICK) << "File name empty!";
-        return;
     }
 
     component = std::make_unique<QQmlComponent>(m_engine.get());

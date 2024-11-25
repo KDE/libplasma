@@ -538,19 +538,22 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
 
     AppletQuickItem *item = nullptr;
     qmlObject->setSource(applet->mainScript());
+
+    Q_ASSERT(qmlObject->mainComponent());
+
     if (pc && pc->isContainment()) {
         item = qobject_cast<ContainmentItem *>(qmlObject->rootObject());
-        if (!item && qmlObject->mainComponent() && !qmlObject->mainComponent()->isError()) {
+        if (!item && !qmlObject->mainComponent()->isError()) {
             applet->setLaunchErrorMessage(i18n("The root item of %1 must be of type ContainmentItem", applet->mainScript().toString()));
         }
     } else {
         item = qobject_cast<PlasmoidItem *>(qmlObject->rootObject());
-        if (!item && qmlObject->mainComponent() && !qmlObject->mainComponent()->isError()) {
+        if (!item && !qmlObject->mainComponent()->isError()) {
             applet->setLaunchErrorMessage(i18n("The root item of %1 must be of type PlasmoidItem", applet->mainScript().toString()));
         }
     }
 
-    if (!item || !qmlObject->mainComponent() || qmlObject->mainComponent()->isError() || applet->failedToLaunch()) {
+    if (!item || qmlObject->mainComponent()->isError() || applet->failedToLaunch()) {
         QString reason;
         QString compactReason;
         QJsonObject errorData;

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:41+0000\n"
+"POT-Creation-Date: 2024-11-27 02:33+0000\n"
 "PO-Revision-Date: 2024-09-11 05:26+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -190,22 +190,22 @@ msgstr "ვიჯეტების დამატება და მართ
 msgid "Could not find requested component: %1"
 msgstr "მოთხოვნილი კომპონენტის პოვნა ვერ მოხერხდა: %1"
 
-#: plasmaquick/appletquickitem.cpp:544
+#: plasmaquick/appletquickitem.cpp:547
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "%1-ის ძირეული ელემენტის ტიპი ContaimentItem უნდა იყოს"
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "%1-ის ძირეული ელემენტის ტიპი PlasmoidItem უნდა იყოს"
 
-#: plasmaquick/appletquickitem.cpp:557
+#: plasmaquick/appletquickitem.cpp:560
 #, kde-format
 msgid "Unknown Applet"
 msgstr "უცნობი აპლეტი"
 
-#: plasmaquick/appletquickitem.cpp:571
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -215,13 +215,13 @@ msgstr ""
 "ვიჯეტი დაწერილია Plasma-ის უცნობი, ძველი ვერსიისთვის და Plasma %1-სთან "
 "თავსებადი არაა. ვიჯეტის განახლებული ვერსიისთვის დაუკავშირდით ავტორს."
 
-#: plasmaquick/appletquickitem.cpp:574 plasmaquick/appletquickitem.cpp:581
-#: plasmaquick/appletquickitem.cpp:587
+#: plasmaquick/appletquickitem.cpp:577 plasmaquick/appletquickitem.cpp:584
+#: plasmaquick/appletquickitem.cpp:590
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 თავსებადი არაა Plasma %2-სთან"
 
-#: plasmaquick/appletquickitem.cpp:578
+#: plasmaquick/appletquickitem.cpp:581
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -230,7 +230,7 @@ msgstr ""
 "ვიჯეტი დაწერილია Plasma %1-სთვს და Plasma %2-სთან თავსებადი არაა. ვიჯეტის "
 "განახლებული ვერსიისთვის ავტორს დაუკავშირდით."
 
-#: plasmaquick/appletquickitem.cpp:584
+#: plasmaquick/appletquickitem.cpp:587
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -239,17 +239,17 @@ msgstr ""
 "ვიჯეტი დაწერილია Plasma %1-სთვის და Plasma %2-თან თავსებადი არაა. ვიჯეტის "
 "გამოსაყენებლად განაახლეთ Plasma."
 
-#: plasmaquick/appletquickitem.cpp:593 plasmaquick/appletquickitem.cpp:615
+#: plasmaquick/appletquickitem.cpp:596 plasmaquick/appletquickitem.cpp:618
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "%1-ის ჩატვირთვის შეცდომა."
 
-#: plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:613
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "QML ფაილის ჩატვირთვის შეცდომა: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:613
+#: plasmaquick/appletquickitem.cpp:616
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "აპლეტის ჩატვირთვის შეცდომა: პაკეტი %1 არ არსებობს."

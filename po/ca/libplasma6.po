@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:41+0000\n"
+"POT-Creation-Date: 2024-11-27 02:33+0000\n"
 "PO-Revision-Date: 2024-08-23 11:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -194,22 +194,22 @@ msgstr "Afegeix o gestiona ginys…"
 msgid "Could not find requested component: %1"
 msgstr "No s'ha pogut trobar el component sol·licitat: %1"
 
-#: plasmaquick/appletquickitem.cpp:544
+#: plasmaquick/appletquickitem.cpp:547
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "L'element arrel de %1 cal que sigui del tipus ContainmentItem"
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "L'element arrel de %1 cal que sigui del tipus PlasmoidItem"
 
-#: plasmaquick/appletquickitem.cpp:557
+#: plasmaquick/appletquickitem.cpp:560
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Miniaplicació desconeguda"
 
-#: plasmaquick/appletquickitem.cpp:571
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -220,13 +220,13 @@ msgstr ""
 "és compatible amb el Plasma %1. Poseu-vos en contacte amb l'autor del giny "
 "per a una versió actualitzada."
 
-#: plasmaquick/appletquickitem.cpp:574 plasmaquick/appletquickitem.cpp:581
-#: plasmaquick/appletquickitem.cpp:587
+#: plasmaquick/appletquickitem.cpp:577 plasmaquick/appletquickitem.cpp:584
+#: plasmaquick/appletquickitem.cpp:590
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 no és compatible amb el Plasma %2"
 
-#: plasmaquick/appletquickitem.cpp:578
+#: plasmaquick/appletquickitem.cpp:581
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -235,7 +235,7 @@ msgstr ""
 "Aquest giny s'ha escrit per al Plasma %1 i no és compatible amb el Plasma "
 "%2. Poseu-vos en contacte amb l'autor del giny per a una versió actualitzada."
 
-#: plasmaquick/appletquickitem.cpp:584
+#: plasmaquick/appletquickitem.cpp:587
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -244,17 +244,17 @@ msgstr ""
 "Aquest giny s'ha escrit per al Plasma %1 i no és compatible amb el Plasma "
 "%2. Actualitzeu el Plasma per tal de fer servir el giny."
 
-#: plasmaquick/appletquickitem.cpp:593 plasmaquick/appletquickitem.cpp:615
+#: plasmaquick/appletquickitem.cpp:596 plasmaquick/appletquickitem.cpp:618
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "S'ha produït un error en carregar %1."
 
-#: plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:613
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Error en carregar el fitxer QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:613
+#: plasmaquick/appletquickitem.cpp:616
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Error en carregar la miniaplicació: el paquet %1 no existeix."

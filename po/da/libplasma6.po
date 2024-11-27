@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:41+0000\n"
+"POT-Creation-Date: 2024-11-27 02:33+0000\n"
 "PO-Revision-Date: 2024-07-30 12:27+0200\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -190,22 +190,22 @@ msgstr ""
 msgid "Could not find requested component: %1"
 msgstr "Kunne ikke finde den anmodede komponent: %1"
 
-#: plasmaquick/appletquickitem.cpp:544
+#: plasmaquick/appletquickitem.cpp:547
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "Rodelementet af %1 skal være af type ContainmentItem"
 
-#: plasmaquick/appletquickitem.cpp:549
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "Rodelementet af %1 skal være af type PlasmoidItem"
 
-#: plasmaquick/appletquickitem.cpp:557
+#: plasmaquick/appletquickitem.cpp:560
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Ukendt applet"
 
-#: plasmaquick/appletquickitem.cpp:571
+#: plasmaquick/appletquickitem.cpp:574
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -216,13 +216,13 @@ msgstr ""
 "ikke kompatibel med Plasma %1. Venligst kontakt forfatteren af widgeten for "
 "en opdateret version."
 
-#: plasmaquick/appletquickitem.cpp:574 plasmaquick/appletquickitem.cpp:581
-#: plasmaquick/appletquickitem.cpp:587
+#: plasmaquick/appletquickitem.cpp:577 plasmaquick/appletquickitem.cpp:584
+#: plasmaquick/appletquickitem.cpp:590
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 er ikke kompatibel med Plasma %2"
 
-#: plasmaquick/appletquickitem.cpp:578
+#: plasmaquick/appletquickitem.cpp:581
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -231,7 +231,7 @@ msgstr ""
 "Denne widget var skrevet til Plasma %1 og er ikke kompatibel med Plasma %2. "
 "Kontakt venligst forfatteren af widgeten for en opdateret version."
 
-#: plasmaquick/appletquickitem.cpp:584
+#: plasmaquick/appletquickitem.cpp:587
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -240,17 +240,17 @@ msgstr ""
 "Denne widget var skrevet til Plasma %1 og er ikke kompatibel med Plasma %2. "
 "Opdatér venligst Plasma for at bruge widgeten."
 
-#: plasmaquick/appletquickitem.cpp:593 plasmaquick/appletquickitem.cpp:615
+#: plasmaquick/appletquickitem.cpp:596 plasmaquick/appletquickitem.cpp:618
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Undskyld! Der var en fejl under indlæsning af %1."
 
-#: plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:613
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Fejl ved indlæsning af QML-fil: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:613
+#: plasmaquick/appletquickitem.cpp:616
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Fejl ved indlæsning af applet. Pakken %1 eksisterer ikke."

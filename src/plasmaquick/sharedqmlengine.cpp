@@ -64,6 +64,15 @@ public:
     bool delay;
     std::shared_ptr<QQmlEngine> m_engine;
 
+    static QVariantMap hashToMap(const QVariantHash &hash)
+    {
+        QVariantMap map;
+        for (const auto &[key, value] : hash.asKeyValueRange()) {
+            map.insert(key, value);
+        }
+        return map;
+    }
+
 private:
     static std::shared_ptr<QQmlEngine> engine()
     {
@@ -247,7 +256,7 @@ QQmlComponent::Status SharedQmlEngine::status() const
     return QQmlComponent::Status(d->component->status());
 }
 
-void SharedQmlEngine::completeInitialization(const QVariantHash &initialProperties)
+void SharedQmlEngine::completeInitialization(const QVariantMap &initialProperties)
 {
     d->executionEndTimer->stop();
 
@@ -261,15 +270,18 @@ void SharedQmlEngine::completeInitialization(const QVariantHash &initialProperti
         return;
     }
 
-    for (auto it = initialProperties.constBegin(); it != initialProperties.constEnd(); ++it) {
-        d->rootObject->setProperty(it.key().toUtf8().data(), it.value());
-    }
-
+    d->component->setInitialProperties(d->rootObject, initialProperties);
     d->component->completeCreate();
     Q_EMIT finished();
 }
 
-QObject *SharedQmlEngine::createObjectFromSource(const QUrl &source, QQmlContext *context, const QVariantHash &initialProperties)
+void SharedQmlEngine::completeInitialization(const QVariantHash &initialProperties)
+{
+    const auto initialPropertiesMap = SharedQmlEnginePrivate::hashToMap(initialProperties);
+    completeInitialization(initialPropertiesMap);
+}
+
+QObject *SharedQmlEngine::createObjectFromSource(const QUrl &source, QQmlContext *context, const QVariantMap &initialProperties)
 {
     QQmlComponent *component = new QQmlComponent(d->m_engine.get(), this);
     component->loadUrl(source);
@@ -277,13 +289,17 @@ QObject *SharedQmlEngine::createObjectFromSource(const QUrl &source, QQmlContext
     return createObjectFromComponent(component, context, initialProperties);
 }
 
-QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQmlContext *context, const QVariantHash &initialProperties)
+QObject *SharedQmlEngine::createObjectFromSource(const QUrl &source, QQmlContext *context, const QVariantHash &initialProperties)
+{
+    const auto initialPropertiesMap = SharedQmlEnginePrivate::hashToMap(initialProperties);
+    return createObjectFromSource(source, context, initialPropertiesMap);
+}
+
+QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQmlContext *context, const QVariantMap &initialProperties)
 {
     QObject *object = component->beginCreate(context ? context : d->rootContext);
 
-    for (auto it = initialProperties.constBegin(); it != initialProperties.constEnd(); ++it) {
-        object->setProperty(it.key().toUtf8().data(), it.value());
-    }
+    component->setInitialProperties(object, initialProperties);
     component->completeCreate();
 
     if (!component->isError() && object) {
@@ -305,6 +321,12 @@ QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQ
         delete object;
         return nullptr;
     }
+}
+
+QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQmlContext *context, const QVariantHash &initialProperties)
+{
+    const auto initialPropertiesMap = SharedQmlEnginePrivate::hashToMap(initialProperties);
+    return createObjectFromComponent(component, context, initialPropertiesMap);
 }
 }
 

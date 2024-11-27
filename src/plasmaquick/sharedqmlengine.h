@@ -157,7 +157,10 @@ public:
      *             the object when created (and before Component.onCompleted
      *             gets emitted
      */
-    QObject *createObjectFromSource(const QUrl &source, QQmlContext *context = nullptr, const QVariantHash &initialProperties = QVariantHash());
+    QObject *createObjectFromSource(const QUrl &source, QQmlContext *context = nullptr, const QVariantMap &initialProperties = QVariantMap());
+
+    [[deprecated("Use QVariantMap overload")]]
+    QObject *createObjectFromSource(const QUrl &source, QQmlContext *context, const QVariantHash &initialProperties);
 
     /**
      * Creates and returns an object based on the provided QQmlComponent
@@ -170,7 +173,10 @@ public:
      *             the object when created (and before Component.onCompleted
      *             gets emitted
      */
-    QObject *createObjectFromComponent(QQmlComponent *component, QQmlContext *context = nullptr, const QVariantHash &initialProperties = QVariantHash());
+    QObject *createObjectFromComponent(QQmlComponent *component, QQmlContext *context = nullptr, const QVariantMap &initialProperties = QVariantMap());
+
+    [[deprecated("Use QVariantMap overload")]]
+    QObject *createObjectFromComponent(QQmlComponent *component, QQmlContext *context, const QVariantHash &initialProperties);
 
 public Q_SLOTS:
     /**
@@ -180,7 +186,10 @@ public Q_SLOTS:
      *             the object when created (and before Component.onCompleted
      *             gets emitted
      */
-    void completeInitialization(const QVariantHash &initialProperties = QVariantHash());
+    void completeInitialization(const QVariantMap &initialProperties = QVariantMap());
+
+    [[deprecated("Use QVariantMap overload")]]
+    void completeInitialization(const QVariantHash &initialProperties);
 
 Q_SIGNALS:
     /**

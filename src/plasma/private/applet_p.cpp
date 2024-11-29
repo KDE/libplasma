@@ -203,6 +203,16 @@ void AppletPrivate::setDestroyed(bool destroyed)
         for (Applet *a : lstApplets) {
             a->d->setDestroyed(destroyed);
         }
+    } else {
+        const auto children = q->children();
+        for (QObject *child : children) {
+            // Some non-containment applets can have another applet as child to
+            // emulate nested containments, such as the systray and grouping plasmoid
+            Plasma::Applet *applet = qobject_cast<Plasma::Applet *>(child);
+            if (applet) {
+                applet->d->setDestroyed(destroyed);
+            }
+        }
     }
     Q_EMIT q->configNeedsSaving();
 }

@@ -4,6 +4,7 @@
             {
                 "Email": "kde-artists@kde.org",
                 "Name": "The Oxygen Project",
+                "Name[ar]": "مشروع أكسجين",
                 "Name[az]": "Oxygen layihəsi",
                 "Name[be]": "Праект \"Oxygen\"",
                 "Name[bg]": "Проектът Oxygen",
@@ -43,6 +44,7 @@
         ],
         "Category": "",
         "Description": "Theme done in the Oxygen style",
+        "Description[ar]": "سمة بواسطة نمط أوكسجين",
         "Description[az]": "Mövzu Oxygen stilində hazırlanıb",
         "Description[be]": "Тэма створаная ў стылі Oxygen",
         "Description[bg]": "Тема в стил Oxygen",

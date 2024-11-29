@@ -51,6 +51,7 @@ Name[x-test]=xxPlasma QML Appletxx
 Name[zh_CN]=Plasma QML 小程序
 Name[zh_TW]=Plasma QML 小程式
 Comment=Plasma QML Applet template: a Plasma applet template displaying a SVG picture and a text
+Comment[ar]=قالب بريمج بلازما QML: قالب بريمج بلازما يعرض صورة SVG ونصًا
 Comment[az]=Plasma QML əlavəsi nümunəsi: Plasma əlavəsi nümunəsi SVG şəkli və mətn kimi görünür
 Comment[be]=Шаблон аплета QML для Plasma: шаблон аплета Plasma, які паказвае выяву SVG і тэкст
 Comment[bg]=Шаблон на QML приставка на Plasma: показване на SVG изображение и текст

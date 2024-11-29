@@ -4,6 +4,7 @@
             {
                 "Email": "kde-artists@kde.org",
                 "Name": "The Oxygen Project",
+                "Name[ar]": "مشروع أكسجين",
                 "Name[az]": "Oxygen layihəsi",
                 "Name[be]": "Праект \"Oxygen\"",
                 "Name[bg]": "Проектът Oxygen",
@@ -82,6 +83,7 @@
         "Id": "air",
         "License": "GPL",
         "Name": "Air",
+        "Name[ar]": "هواء",
         "Name[az]": "Air",
         "Name[be]": "Air",
         "Name[bg]": "Air",

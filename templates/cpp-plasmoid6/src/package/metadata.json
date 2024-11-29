@@ -54,6 +54,7 @@
         ],
         "Category": "Utilities",
         "Description": "what your app does in a few words",
+        "Description[ar]": "ما يفعله تطبيقك في بضع كلمات",
         "Description[az]": "Bu proqramın nə işə yaradığı haqqında bir neçə söz",
         "Description[be]": "кароткае апісанне працы вашай праграмы",
         "Description[bg]": "какво прави вашето приложение с няколко думи",

@@ -40,6 +40,7 @@ Name[x-test]=xxPlasma QML Applet with QML extension (Qt6)xx
 Name[zh_CN]=带有 QML 扩展的 Plasma QML 小程序 (Qt6)
 Name[zh_TW]=含有 QML 延伸元件的 Plasma QML 小程式 (Qt6)
 Comment=A template for a Plasma applet which uses custom API provided by an own QML extension plugin
+Comment[ar]=قالب لتطبيق بلازما الذي يستخدم واجهة برمجة تطبيقات مخصصة يوفرها مكون إضافي لامتداد QML
 Comment[az]=QML əlavəsi kimi təqdim edilən öz APİ -sini istifadə edən Plasma üçün divar kağızı nümunələri
 Comment[be]=Шаблон аплета для Plasma, які выкарыстоўвае уласны API з дапамогай ўласнай убудовы пашырэння QML
 Comment[bg]=Шаблон за аплет на Plasma, който използва потребителски API, предоставен от собствена QML приставка на разширение

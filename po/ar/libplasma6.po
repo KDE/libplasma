@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-27 00:41+0000\n"
-"PO-Revision-Date: 2024-06-08 13:47+0400\n"
+"PO-Revision-Date: 2024-11-28 07:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -183,7 +183,7 @@ msgstr "إعدادات النشاط"
 #: plasma/private/containment_p.cpp:78
 #, kde-format
 msgid "Add or Manage Widgets…"
-msgstr ""
+msgstr "أضف أو أدر الودجات…"
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -193,12 +193,12 @@ msgstr "تعذر العثور على المكون المطلوب: %1"
 #: plasmaquick/appletquickitem.cpp:547
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr ""
+msgstr "يجب أن يكون العنصر الجذر لـ %1 من نوع ContainmentItem"
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
-msgstr ""
+msgstr "يجب أن يكون العنصر الجذر لـ %1 من نوع PlasmoidItem"
 
 #: plasmaquick/appletquickitem.cpp:560
 #, kde-format
@@ -219,7 +219,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:590
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 غير متوافق مع بلازما %2"
 
 #: plasmaquick/appletquickitem.cpp:581
 #, kde-format

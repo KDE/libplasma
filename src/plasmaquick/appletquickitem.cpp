@@ -922,6 +922,21 @@ void AppletQuickItem::setPreloadFullRepresentation(bool preload)
     Q_EMIT preloadFullRepresentationChanged(preload);
 }
 
+bool AppletQuickItem::expandedOnDragHover() const
+{
+    return d->expandedOnDragHover;
+}
+
+void AppletQuickItem::setExpandedOnDragHover(bool expandedOnDragHover)
+{
+    if (expandedOnDragHover == d->expandedOnDragHover) {
+        return;
+    }
+
+    d->expandedOnDragHover = expandedOnDragHover;
+    Q_EMIT expandedOnDragHoverChanged(expandedOnDragHover);
+}
+
 ////////////Internals
 
 PlasmaQuick::SharedQmlEngine *AppletQuickItem::qmlObject()

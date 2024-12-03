@@ -115,6 +115,7 @@ public:
     bool expanded = false;
     bool hideOnWindowDeactivate = false;
     bool preloadFullRepresentation = false;
+    bool expandedOnDragHover = false;
     bool activationTogglesExpanded = true;
     bool initComplete : 1;
     bool compactRepresentationCheckGuard : 1;

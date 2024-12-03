@@ -82,6 +82,13 @@ class PLASMAQUICK_EXPORT AppletQuickItem : public QQuickItem
     Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
 
     /**
+     * True if this applet will open its FullRepresentation when something is
+     * dragged over its CompactRepresentation (only has any effect when using
+     * the default CompactRepresentation).
+     */
+    Q_PROPERTY(bool expandedOnDragHover READ expandedOnDragHover WRITE setExpandedOnDragHover NOTIFY expandedOnDragHoverChanged)
+
+    /**
      * Gives compatibility to the old plasmoid.* api
      */
     Q_PROPERTY(QObject *plasmoid READ applet CONSTANT)
@@ -127,6 +134,9 @@ public:
     bool preloadFullRepresentation() const;
     void setPreloadFullRepresentation(bool preload);
 
+    bool expandedOnDragHover() const;
+    void setExpandedOnDragHover(bool expandedOnDragHover);
+
     static bool hasItemForApplet(Plasma::Applet *applet);
     static AppletQuickItem *itemForApplet(Plasma::Applet *applet);
 
@@ -148,6 +158,8 @@ Q_SIGNALS:
     void fullRepresentationItemChanged(QObject *fullRepresentationItem);
 
     void preloadFullRepresentationChanged(bool preload);
+
+    void expandedOnDragHoverChanged(bool expandedOnDragHover);
 
 protected:
     // Initializations that need to be executed after classBegin()

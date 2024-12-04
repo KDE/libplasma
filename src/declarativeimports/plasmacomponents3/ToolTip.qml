@@ -23,10 +23,17 @@ T.ToolTip {
     // Never time out while being hovered; it's annoying
     timeout: -1
 
+    popupType: T.Popup.Window
+
     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset, contentHeight + topPadding + bottomPadding)
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset, contentWidth + leftPadding + rightPadding)
 
     margins: Kirigami.Units.smallSpacing
+
+    topInset: -shadowItem.margins.top
+    leftInset: -shadowItem.margins.left
+    rightInset: -shadowItem.margins.right
+    bottomInset: -shadowItem.margins.bottom
 
     topPadding: backgroundItem.margins.top
     leftPadding: backgroundItem.margins.left
@@ -88,13 +95,8 @@ T.ToolTip {
         implicitWidth: Kirigami.Units.gridUnit + backgroundItem.margins.left + backgroundItem.margins.right
 
         KSvg.FrameSvgItem {
-            anchors {
-                fill: parent
-                topMargin: -margins.top
-                leftMargin: -margins.left
-                rightMargin: -margins.right
-                bottomMargin: -margins.bottom
-            }
+            id: shadowItem
+            anchors.fill: parent
             imagePath: "solid/widgets/tooltip"
             prefix: "shadow"
             Kirigami.Theme.colorGroup: Kirigami.Theme.Tooltip
@@ -103,7 +105,13 @@ T.ToolTip {
 
         KSvg.FrameSvgItem {
             id: backgroundItem
-            anchors.fill: parent
+            anchors {
+                fill: parent
+                topMargin: shadowItem.margins.top
+                leftMargin: shadowItem.margins.left
+                rightMargin: shadowItem.margins.right
+                bottomMargin: shadowItem.margins.bottom
+            }
             // Because the transparent one doesn't match the appearance of all
             // other ones
             imagePath: "solid/widgets/tooltip"

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(plasma-%{APPNAMELC})
 
-find_package(ECM 1.4.0 REQUIRED NO_MODULE)
+find_package(ECM 6.0.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -11,7 +11,6 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(FeatureSummary)
 
 find_package(KF6 REQUIRED COMPONENTS
-    Plasma
     I18n
 )
 
@@ -20,6 +19,8 @@ find_package(Qt6 CONFIG REQUIRED COMPONENTS
     Gui
     Core
 )
+
+find_package(Plasma CONFIG REQUIRED)
 
 # wallpaper applet
 # TODO: adapt "org.kde.plasma" here & elsewhere if needed (see README)

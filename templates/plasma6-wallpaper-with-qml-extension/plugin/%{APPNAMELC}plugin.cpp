@@ -17,15 +17,13 @@ static QJSValue singletonTypeExampleProvider(QQmlEngine* engine, QJSEngine* scri
     Q_UNUSED(engine)
 
     QJSValue helloWorld = scriptEngine->newObject();
-    helloWorld.setProperty("text", i18n("Hello world!"));
+    helloWorld.setProperty(QStringLiteral("text"), i18n("Hello world!"));
     return helloWorld;
 }
 
 
 void %{APPNAME}Plugin::registerTypes(const char* uri)
 {
-    Q_ASSERT(uri == QLatin1String("org.kde.plasma.private.%{APPNAMELC}"));
-
     qmlRegisterSingletonType(uri, 1, 0, "HelloWorld", singletonTypeExampleProvider);
 }
 

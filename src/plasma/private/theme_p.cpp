@@ -23,7 +23,7 @@ namespace Plasma
 {
 const char ThemePrivate::defaultTheme[] = "default";
 
-ContrastEffectWatcher *ThemePrivate::s_backgroundContrastEffectWatcher = nullptr;
+BlurEffectWatcher *ThemePrivate::s_blurEffectWatcher = nullptr;
 
 ThemePrivate *ThemePrivate::globalTheme = nullptr;
 QHash<QString, ThemePrivate *> ThemePrivate::themes = QHash<QString, ThemePrivate *>();
@@ -121,11 +121,11 @@ ThemePrivate::ThemePrivate(QObject *parent)
 
     if (QPixmap::defaultDepth() > 8) {
         // watch for background contrast effect property changes as well
-        if (!s_backgroundContrastEffectWatcher) {
-            s_backgroundContrastEffectWatcher = new ContrastEffectWatcher();
+        if (!s_blurEffectWatcher) {
+            s_blurEffectWatcher = new BlurEffectWatcher();
         }
 
-        QObject::connect(s_backgroundContrastEffectWatcher, &ContrastEffectWatcher::effectChanged, selectorsUpdateTimer, qOverload<>(&QTimer::start));
+        QObject::connect(s_blurEffectWatcher, &BlurEffectWatcher::effectChanged, selectorsUpdateTimer, qOverload<>(&QTimer::start));
     }
     QCoreApplication::instance()->installEventFilter(this);
 
@@ -206,7 +206,7 @@ void ThemePrivate::updateKSvgSelectors()
 #else
     compositingActive = true;
 #endif
-    backgroundContrastActive = s_backgroundContrastEffectWatcher->isEffectActive();
+    backgroundContrastActive = s_blurEffectWatcher->isEffectActive();
 
     if (compositingActive) {
         if (backgroundContrastActive) {

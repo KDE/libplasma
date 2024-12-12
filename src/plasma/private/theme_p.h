@@ -22,7 +22,7 @@
 
 #include <config-plasma.h>
 
-#include "private/contrasteffectwatcher_p.h"
+#include "private/blureffectwatcher_p.h"
 
 namespace Plasma
 {
@@ -71,7 +71,7 @@ Q_SIGNALS:
 public:
     static const char defaultTheme[];
 
-    static ContrastEffectWatcher *s_backgroundContrastEffectWatcher;
+    static BlurEffectWatcher *s_blurEffectWatcher;
 
     // Ref counting of ThemePrivate instances
     static ThemePrivate *globalTheme;

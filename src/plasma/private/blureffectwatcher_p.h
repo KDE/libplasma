@@ -18,15 +18,15 @@
 
 namespace Plasma
 {
-class ContrastManager;
+class BlurManager;
 
-class ContrastEffectWatcher : public QObject, public QAbstractNativeEventFilter
+class BlurEffectWatcher : public QObject, public QAbstractNativeEventFilter
 {
     Q_OBJECT
 
 public:
-    explicit ContrastEffectWatcher(QObject *parent = nullptr);
-    ~ContrastEffectWatcher() override;
+    explicit BlurEffectWatcher(QObject *parent = nullptr);
+    ~BlurEffectWatcher();
     bool isEffectActive() const;
 
 protected:
@@ -44,7 +44,7 @@ private:
     xcb_atom_t m_property;
     QNativeInterface::QX11Application *m_x11Interface = nullptr;
 #endif
-    std::unique_ptr<ContrastManager> m_contrastManager;
+    std::unique_ptr<BlurManager> m_blurManager;
     bool m_effectActive = false;
 };
 

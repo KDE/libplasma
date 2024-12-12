@@ -34,7 +34,7 @@ target_sources(Plasma PRIVATE
 #graphics
     theme.cpp
     private/theme_p.cpp
-    private/contrasteffectwatcher.cpp
+    private/blureffectwatcher.cpp
 )
 
 if (Qt6_VERSION VERSION_GREATER_EQUAL "6.8.0")
@@ -43,7 +43,7 @@ endif()
 qt6_generate_wayland_protocol_client_sources(Plasma
     ${private_code_option}
     FILES
-        ${PLASMA_WAYLAND_PROTOCOLS_DIR}/contrast.xml
+        ${PLASMA_WAYLAND_PROTOCOLS_DIR}/blur.xml
 )
 
 kconfig_add_kcfg_files(Plasma data/kconfigxt/libplasma-theme-global.kcfgc)

@@ -34,7 +34,7 @@ target_sources(Plasma PRIVATE
 #graphics
     theme.cpp
     private/theme_p.cpp
-    private/contrasteffectwatcher.cpp
+    private/blureffectwatcher.cpp
 
     plasma.h
     pluginloader.h
@@ -50,7 +50,7 @@ target_sources(Plasma PRIVATE
 #graphics
     theme.h
     private/theme_p.h
-    private/contrasteffectwatcher_p.h
+    private/blureffectwatcher_p.h
 )
 
 if (Qt6_VERSION VERSION_GREATER_EQUAL "6.8.0")
@@ -59,7 +59,7 @@ endif()
 qt6_generate_wayland_protocol_client_sources(Plasma
     ${private_code_option}
     FILES
-        ${PLASMA_WAYLAND_PROTOCOLS_DIR}/contrast.xml
+        ${PLASMA_WAYLAND_PROTOCOLS_DIR}/blur.xml
 )
 
 ecm_qt_declare_logging_category(Plasma

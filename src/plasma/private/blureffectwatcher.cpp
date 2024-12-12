@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "contrasteffectwatcher_p.h"
+#include "blureffectwatcher_p.h"
 
 #include <QWaylandClientExtensionTemplate>
 
@@ -14,27 +14,27 @@
 #include <X11/Xlib.h>
 #endif
 
-#include "qwayland-contrast.h"
+#include "qwayland-blur.h"
 
 namespace Plasma
 {
 
-class ContrastManager : public QWaylandClientExtensionTemplate<ContrastManager>, public QtWayland::org_kde_kwin_contrast_manager
+class BlurManager : public QWaylandClientExtensionTemplate<BlurManager>, public QtWayland::org_kde_kwin_blur_manager
 {
 public:
-    ContrastManager()
-        : QWaylandClientExtensionTemplate<ContrastManager>(2)
+    BlurManager()
+        : QWaylandClientExtensionTemplate<BlurManager>(2)
     {
     }
-    ~ContrastManager()
+    ~BlurManager()
     {
         if (object()) {
-            org_kde_kwin_contrast_manager_destroy(object());
+            org_kde_kwin_blur_manager_destroy(object());
         }
     }
 };
 
-ContrastEffectWatcher::ContrastEffectWatcher(QObject *parent)
+BlurEffectWatcher::BlurEffectWatcher(QObject *parent)
     : QObject(parent)
 #if HAVE_X11
     , m_property(XCB_ATOM_NONE)
@@ -42,24 +42,24 @@ ContrastEffectWatcher::ContrastEffectWatcher(QObject *parent)
 #endif
 {
     if (KWindowSystem::isPlatformWayland()) {
-        m_contrastManager = std::make_unique<ContrastManager>();
+        m_blurManager = std::make_unique<BlurManager>();
     }
 
     init();
 }
 
-ContrastEffectWatcher::~ContrastEffectWatcher()
+BlurEffectWatcher::~BlurEffectWatcher()
 {
 }
 
-void ContrastEffectWatcher::init()
+void BlurEffectWatcher::init()
 {
     if (KWindowSystem::isPlatformWayland()) {
-        connect(m_contrastManager.get(), &ContrastManager::activeChanged, this, [this]() {
-            m_effectActive = m_contrastManager->isActive();
+        connect(m_blurManager.get(), &BlurManager::activeChanged, this, [this]() {
+            m_effectActive = m_blurManager->isActive();
             Q_EMIT effectChanged(m_effectActive);
         });
-        m_effectActive = m_contrastManager->isActive();
+        m_effectActive = m_blurManager->isActive();
     } else if (KWindowSystem::isPlatformX11()) {
 #if HAVE_X11
         if (!m_x11Interface) {
@@ -89,7 +89,7 @@ void ContrastEffectWatcher::init()
 }
 
 #if HAVE_X11
-bool ContrastEffectWatcher::nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result)
+bool BlurEffectWatcher::nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result)
 {
     if (KWindowSystem::isPlatformWayland()) {
         return false;
@@ -122,15 +122,15 @@ bool ContrastEffectWatcher::nativeEventFilter(const QByteArray &eventType, void 
 }
 #endif
 
-bool ContrastEffectWatcher::isEffectActive() const
+bool BlurEffectWatcher::isEffectActive() const
 {
     return m_effectActive;
 }
 
-bool ContrastEffectWatcher::fetchEffectActive() const
+bool BlurEffectWatcher::fetchEffectActive() const
 {
     if (KWindowSystem::isPlatformWayland()) {
-        return m_contrastManager->isActive();
+        return m_blurManager->isActive();
     }
 
     if (m_property == XCB_ATOM_NONE || !m_x11Interface) {

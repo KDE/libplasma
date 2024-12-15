@@ -53,7 +53,7 @@ msgstr "अन्वेषण"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr ""
+msgstr "अन्वेषणं स्वच्छं कुर्वन्तु"
 
 #: plasma/applet.cpp:293
 #, kde-format
@@ -183,7 +183,7 @@ msgstr "क्रियाकलाप समायोजननि"
 #: plasma/private/containment_p.cpp:78
 #, kde-format
 msgid "Add or Manage Widgets…"
-msgstr ""
+msgstr "विजेट् योजयन्तु वा प्रबन्धयन्तु वा..."
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -213,12 +213,14 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"इदं विजेट् प्लाज्मा इत्यस्य अज्ञातस्य प्राचीनसंस्करणस्य कृते लिखितम् अस्ति तथा च प्लाज्मा %1 "
+"इत्यनेन सह सङ्गतं नास्ति । अद्यतनसंस्करणार्थं विजेट्-लेखकस्य सम्पर्कं कुर्वन्तु ।"
 
 #: plasmaquick/appletquickitem.cpp:577 plasmaquick/appletquickitem.cpp:584
 #: plasmaquick/appletquickitem.cpp:590
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr ""
+msgstr "%1 प्लाज्मा %2 इत्यनेन सह सङ्गतं नास्ति"
 
 #: plasmaquick/appletquickitem.cpp:581
 #, kde-format
@@ -226,6 +228,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"इदं विजेट् प्लाज्मा %1 कृते लिखितम् अस्ति तथा च प्लाज्मा %2 इत्यनेन सह सङ्गतं नास्ति । "
+"अद्यतनसंस्करणार्थं विजेट्-लेखकस्य सम्पर्कं कुर्वन्तु ।"
 
 #: plasmaquick/appletquickitem.cpp:587
 #, kde-format
@@ -233,11 +237,13 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"इदं विजेट् प्लाज्मा %1 कृते लिखितम् अस्ति तथा च प्लाज्मा %2 इत्यनेन सह सङ्गतं नास्ति । कृपया "
+"विजेट् इत्यस्य उपयोगाय प्लाज्मा अपडेट् कुर्वन्तु ।"
 
 #: plasmaquick/appletquickitem.cpp:596 plasmaquick/appletquickitem.cpp:618
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr ""
+msgstr "क्षम्यताम्‌! %1 लोड् करणं त्रुटिः आसीत् ।"
 
 #: plasmaquick/appletquickitem.cpp:613
 #, kde-format
@@ -313,30 +319,3 @@ msgstr "%1 निरूपयतु"
 #, kde-format
 msgid "Content dropped"
 msgstr "सामग्रीं पातितम्"
-
-#~ msgid "Add Widgets..."
-#~ msgstr "विजेट्स् योजयन्तु..."
-
-#~ msgctxt "Package file, name of the widget"
-#~ msgid "Could not open the %1 package required for the %2 widget."
-#~ msgstr "%2 विजेट् कृते आवश्यकं %1 संकुलं उद्घाटयितुं न शक्तम् ।."
-
-#~ msgid ""
-#~ "Sharing a widget on the network allows you to access this widget from "
-#~ "another computer as a remote control."
-#~ msgstr ""
-#~ "जालपुटे विजेट् साझाकरणेन अन्यस्मात् सङ्गणकात् दूरनियन्त्रणरूपेण एतत् विजेट् प्राप्तुं शक्यते ।."
-
-#~ msgid "Share this widget on the network"
-#~ msgstr "एतत् विजेट् संजाले साझां कुर्वन्तु"
-
-#~ msgid "Allow everybody to freely access this widget"
-#~ msgstr "सर्वेषां कृते एतत् विजेट् स्वतन्त्रतया प्राप्तुं अनुमतिं ददातु"
-
-#~ msgctxt "Error message, tried to start an invalid service"
-#~ msgid "Invalid (null) service, can not perform any operations."
-#~ msgstr "अमान्य (लुप्तमूल्य) सेवा, किमपि कार्यं कर्तुं न शक्नोति ।."
-
-#~ msgid "The %1 widget did not define which ScriptEngine to use."
-#~ msgstr ""
-#~ "%1 विजेट् इत्यनेन कस्य ScriptEngine इत्यस्य उपयोगः करणीयः इति न परिभाषितम् ।."

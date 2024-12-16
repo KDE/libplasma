@@ -5,6 +5,8 @@
 */
 
 #include "configview.h"
+#include <KLocalizedQmlContext>
+
 #include "Plasma/Applet"
 #include "Plasma/Containment"
 #include "appletcontext_p.h"
@@ -91,7 +93,7 @@ void ConfigViewPrivate::init()
 
     applet.data()->setUserConfiguring(true);
 
-    KLocalizedContext *localizedContextObject = new KLocalizedContext(q->engine());
+    KLocalizedQmlContext *localizedContextObject = new KLocalizedQmlContext(q->engine());
     localizedContextObject->setTranslationDomain(applet->translationDomain());
     rootContext->setContextObject(localizedContextObject);
 

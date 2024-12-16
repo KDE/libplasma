@@ -20,6 +20,8 @@
 
 #include "debug_p.h"
 
+#include <KLocalizedQmlContext>
+
 namespace PlasmaQuick
 {
 
@@ -59,7 +61,7 @@ public:
     QPointer<QObject> rootObject;
     std::unique_ptr<QQmlComponent> component;
     QTimer *executionEndTimer;
-    KLocalizedContext *context{nullptr};
+    KLocalizedQmlContext *context{nullptr};
     QQmlContext *rootContext;
     bool delay;
     std::shared_ptr<QQmlEngine> m_engine;
@@ -155,7 +157,7 @@ SharedQmlEngine::SharedQmlEngine(QObject *parent)
     d->rootContext = new QQmlContext(engine().get());
     d->rootContext->setParent(this); // Delete the context when deleting the shared engine
 
-    d->context = new KLocalizedContext(d->rootContext);
+    d->context = new KLocalizedQmlContext(d->rootContext);
     d->rootContext->setContextObject(d->context);
 }
 
@@ -165,7 +167,7 @@ SharedQmlEngine::SharedQmlEngine(Plasma::Applet *applet, QObject *parent)
 {
     d->rootContext = new AppletContext(engine().get(), applet, this);
 
-    d->context = new KLocalizedContext(d->rootContext);
+    d->context = new KLocalizedQmlContext(d->rootContext);
     d->rootContext->setContextObject(d->context);
 }
 

@@ -40,6 +40,32 @@ target_sources(PlasmaQuick PRIVATE
     plasmoid/containmentitem.cpp
     plasmoid/dropmenu.cpp
     plasmoid/wallpaperitem.cpp
+
+    appletcontext_p.h
+    appletquickitem.h
+    appletpopup.h
+    debug_p.h
+    dialog.h
+    dialogshadows_p.h
+    containmentview.h
+    configmodel.h
+    configview.h
+    edgeeventforwarder.h
+    plasmashellwaylandintegration.h
+    sharedqmlengine.h
+    quickviewsharedengine.h
+    plasmawindow.h
+    popupplasmawindow.h
+    transientplacementhint_p.h
+    windowresizehandler.h
+    configcategory_p.h
+    plasmoidattached_p.h
+    dialogbackground_p.h
+    utils.h
+    plasmoid/plasmoiditem.h
+    plasmoid/containmentitem.h
+    plasmoid/dropmenu.h
+    plasmoid/wallpaperitem.h
 )
 
 if (Qt6_VERSION VERSION_GREATER_EQUAL "6.8.0")

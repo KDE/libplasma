@@ -5,6 +5,9 @@ target_sources(KirigamiPlasmaStyle PRIVATE
     plugin.cpp
     units.cpp
     plasmatheme.cpp
+    plugin.h
+    units.h
+    plasmatheme.h
 )
 
 target_link_libraries(KirigamiPlasmaStyle

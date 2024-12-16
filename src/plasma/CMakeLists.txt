@@ -35,6 +35,22 @@ target_sources(Plasma PRIVATE
     theme.cpp
     private/theme_p.cpp
     private/contrasteffectwatcher.cpp
+
+    plasma.h
+    pluginloader.h
+
+#applets,containments,corona
+    applet.h
+    containment.h
+    containmentactions.h
+    corona.h
+    private/applet_p.h
+    private/containment_p.h
+
+#graphics
+    theme.h
+    private/theme_p.h
+    private/contrasteffectwatcher_p.h
 )
 
 if (Qt6_VERSION VERSION_GREATER_EQUAL "6.8.0")

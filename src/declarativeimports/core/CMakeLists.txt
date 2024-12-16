@@ -15,6 +15,13 @@ target_sources(corebindingsplugin PRIVATE
     tooltiparea.cpp
     tooltipdialog.cpp
     windowthumbnail.cpp
+
+    action.h
+    corebindingsplugin.h
+    quicktheme.h
+    tooltiparea.h
+    tooltipdialog.h
+    windowthumbnail.h
     ${RESOURCES}
 )
 

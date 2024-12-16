@@ -347,3 +347,5 @@ QSize LayoutChangedProxy::minimumSize() const
 }
 
 #include "appletpopup.moc"
+
+#include "moc_appletpopup.cpp"

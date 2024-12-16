@@ -181,3 +181,5 @@ QPointF EdgeEventForwarderPrivate::positionAdjustedForMainItem(const QPointF &po
     const QRectF itemRect = QRectF(QPointF(0, 0), window->size()).marginsRemoved(activeMargins());
     return QPointF(qBound(itemRect.left(), position.x(), itemRect.right()), qBound(itemRect.top(), position.y(), itemRect.bottom()));
 }
+
+#include "moc_edgeeventforwarder.cpp"

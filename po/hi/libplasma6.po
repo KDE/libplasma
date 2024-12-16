@@ -1,107 +1,105 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
-# This file is distributed under the same license as the plasma-framework package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Hindi translations for libplasma package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the libplasma package.
+# Kali <EMAIL@ADDRESS>, 2024.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: plasma-framework\n"
+"Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-30 00:41+0000\n"
-"PO-Revision-Date: 2024-12-15 22:18+0530\n"
-"Last-Translator: \n"
-"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
-"Language: sa\n"
+"PO-Revision-Date: 2024-12-15 17:36+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
-"X-Generator: Poedit 3.5\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
 msgid "More actions"
-msgstr "अधिकानि क्रियाः"
+msgstr "अधिक क्रियाएँ"
 
 #: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:533
 #, kde-format
 msgctxt "@action:button"
 msgid "Collapse"
-msgstr "संव्लीयते"
+msgstr "गिर जाना"
 
 #: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:533
 #, kde-format
 msgctxt "@action:button"
 msgid "Expand"
-msgstr "वर्धयति"
+msgstr "बढ़ाना"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:49
 #, kde-format
 msgid "Password"
-msgstr "गुप्तपद"
+msgstr "पासवर्ड"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:60
 #, kde-format
 msgid "Search…"
-msgstr "अन्वेषण…"
+msgstr "खोजना…"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
 msgid "Search"
-msgstr "अन्वेषण"
+msgstr "खोज"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
 #, kde-format
 msgid "Clear search"
-msgstr "अन्वेषणं स्वच्छं कुर्वन्तु"
+msgstr "खोज साफ़ करें"
 
 #: plasma/applet.cpp:293
 #, kde-format
 msgid "Unknown"
-msgstr "अज्ञात्"
+msgstr "अज्ञात"
 
 #: plasma/applet.cpp:736
 #, kde-format
 msgid "Activate %1 Widget"
-msgstr "%1 विजेट् सक्रियताम्"
+msgstr "%1 विजेट सक्रिय करें"
 
 #: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
-msgstr "%1 निष्कासयन्तु"
+msgstr "%1 हटाएं"
 
 #: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:481
 #, kde-format
 msgid "Enter Edit Mode"
-msgstr "सम्पादनविधिं प्रविशन्तु"
+msgstr "संपादन मोड में प्रवेश करें"
 
 #: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "%1 विन्यस्यताम्..."
+msgstr "%1 कॉन्फ़िगर करें..."
 
 #: plasma/corona.cpp:309 plasma/corona.cpp:466
 #, kde-format
 msgid "Lock Widgets"
-msgstr "विजेट् तालान्"
+msgstr "विजेट लॉक करें"
 
 #: plasma/corona.cpp:309
 #, kde-format
 msgid "Unlock Widgets"
-msgstr "विजेट् मुक्तं कुर्वन्तु"
+msgstr "विजेट अनलॉक करें"
 
 #: plasma/corona.cpp:358
 #, kde-format
 msgid "Exit Edit Mode"
-msgstr "सम्पादन विधितः निर्गच्छन्तु"
+msgstr "संपादन मोड से बाहर निकलें"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
 #, kde-format
 msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "विषयस्य कृते भण्डारणसञ्चयस्य निर्माणं कर्तव्यं वा न वा।."
+msgstr "थीम के लिए ऑन-डिस्क कैश बनाना है या नहीं।"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
@@ -111,99 +109,99 @@ msgid ""
 "files are sparse files, so the maximum size may not be used. Setting a "
 "larger size is therefore often quite safe."
 msgstr ""
-"भण्डारणस्थस्य विषयसञ्चयस्य अधिकतमः आकारः kilobyte मध्ये । ध्यानं कुर्वन्तु यत् एताः "
-"सञ्चिकाः विरलसञ्चिकाः सन्ति, अतः अधिकतमस्य आकारस्य उपयोगः न भवितुं शक्नोति । अतः "
-"बृहत्तरं आकारं निरूपयत् करणं प्रायः अत्यन्तं सुरक्षितं भवति ।."
+"ऑन-डिस्क थीम कैश का अधिकतम आकार किलोबाइट में। ध्यान दें कि ये फ़ाइलें विरल फ़ाइलें हैं, "
+"इसलिए अधिकतम आकार का उपयोग नहीं किया जा सकता है। इसलिए बड़ा आकार सेट करना अक्सर "
+"काफी सुरक्षित होता है।"
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "विकल्पान् दर्शयतु..."
+msgstr "विकल्प दिखाएं..."
 
 #: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "Widget Removed"
-msgstr "विजेट् निष्कासितम्"
+msgstr "विजेट हटाया गया"
 
 #: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "The widget \"%1\" has been removed."
-msgstr "\"%1\" इति विजेट् निष्कासितम् ।."
+msgstr "विजेट \"%1\" हटा दिया गया है."
 
 #: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "Panel Removed"
-msgstr "फलकं निष्कासितम्"
+msgstr "पैनल हटाया गया"
 
 #: plasma/private/applet_p.cpp:248
 #, kde-format
 msgid "A panel has been removed."
-msgstr "एकं फलकं निष्कासितम् अस्ति।."
+msgstr "एक पैनल हटा दिया गया है."
 
 #: plasma/private/applet_p.cpp:251
 #, kde-format
 msgid "Desktop Removed"
-msgstr "कार्यमुखं निष्कासितम्"
+msgstr "डेस्कटॉप हटाया गया"
 
 #: plasma/private/applet_p.cpp:252
 #, kde-format
 msgid "A desktop has been removed."
-msgstr "एकः कार्यमुखः निष्कासितः अस्ति।."
+msgstr "एक डेस्कटॉप हटा दिया गया है."
 
 #: plasma/private/applet_p.cpp:255
 #, kde-format
 msgid "Undo"
-msgstr "अपाकरोति"
+msgstr "पूर्ववत"
 
 #: plasma/private/applet_p.cpp:346
 #, kde-format
 msgid "Widget Settings"
-msgstr "विजेट् समायोजननि"
+msgstr "विजेट सेटिंग्स"
 
 #: plasma/private/applet_p.cpp:353
 #, kde-format
 msgid "Remove this Widget"
-msgstr "एतत् विजेट् निष्कासयन्तु"
+msgstr "यह विजेट हटाएँ"
 
 #: plasma/private/containment_p.cpp:58
 #, kde-format
 msgid "Remove this Panel"
-msgstr "एतत् फलकं निष्कासयन्तु"
+msgstr "इस पैनल को हटाएँ"
 
 #: plasma/private/containment_p.cpp:60
 #, kde-format
 msgid "Remove this Activity"
-msgstr "एतत् क्रियाकलापं निष्कासयन्तु"
+msgstr "इस गतिविधि को हटाएँ"
 
 #: plasma/private/containment_p.cpp:66
 #, kde-format
 msgid "Activity Settings"
-msgstr "क्रियाकलाप समायोजननि"
+msgstr "गतिविधि सेटिंग्स"
 
 #: plasma/private/containment_p.cpp:78
 #, kde-format
 msgid "Add or Manage Widgets…"
-msgstr "विजेट् योजयन्तु वा प्रबन्धयन्तु वा..."
+msgstr "विजेट जोड़ें या प्रबंधित करें…"
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
 msgid "Could not find requested component: %1"
-msgstr "अनुरोधितं घटकं न प्राप्नोत्: %1"
+msgstr "अनुरोधित घटक नहीं मिल सका: %1"
 
 #: plasmaquick/appletquickitem.cpp:547
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr "%1 इत्यस्य मूलवस्तु ContaimentItem इति प्रकारस्य भवितुमर्हति"
+msgstr "%1 का मूल आइटम ContainmentItem प्रकार का होना चाहिए"
 
 #: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
-msgstr "%1 इत्यस्य मूलवस्तु PlasmoidItem प्रकारस्य भवितुम् अर्हति"
+msgstr "%1 का मूल आइटम प्लास्मॉइडआइटम प्रकार का होना चाहिए"
 
 #: plasmaquick/appletquickitem.cpp:560
 #, kde-format
 msgid "Unknown Applet"
-msgstr "अज्ञात् Applet"
+msgstr "अज्ञात एप्लेट"
 
 #: plasmaquick/appletquickitem.cpp:574
 #, kde-format
@@ -212,14 +210,14 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
-"इदं विजेट् प्लाज्मा इत्यस्य अज्ञातस्य प्राचीनसंस्करणस्य कृते लिखितम् अस्ति तथा च प्लाज्मा %1 "
-"इत्यनेन सह सङ्गतं नास्ति । अद्यतनसंस्करणार्थं विजेट्-लेखकस्य सम्पर्कं कुर्वन्तु ।"
+"यह विजेट प्लाज़्मा के किसी अज्ञात पुराने संस्करण के लिए लिखा गया था और यह प्लाज़्मा %1 के "
+"साथ संगत नहीं है। कृपया अपडेटेड संस्करण के लिए विजेट के लेखक से संपर्क करें।"
 
 #: plasmaquick/appletquickitem.cpp:577 plasmaquick/appletquickitem.cpp:584
 #: plasmaquick/appletquickitem.cpp:590
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr "%1 प्लाज्मा %2 इत्यनेन सह सङ्गतं नास्ति"
+msgstr "%1 प्लाज़्मा %2 के साथ संगत नहीं है"
 
 #: plasmaquick/appletquickitem.cpp:581
 #, kde-format
@@ -227,8 +225,8 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
-"इदं विजेट् प्लाज्मा %1 कृते लिखितम् अस्ति तथा च प्लाज्मा %2 इत्यनेन सह सङ्गतं नास्ति । "
-"अद्यतनसंस्करणार्थं विजेट्-लेखकस्य सम्पर्कं कुर्वन्तु ।"
+"यह विजेट प्लाज़्मा %1 के लिए लिखा गया था और प्लाज़्मा %2 के साथ संगत नहीं है। कृपया अपडेटेड "
+"वर्शन के लिए विजेट के लेखक से संपर्क करें।"
 
 #: plasmaquick/appletquickitem.cpp:587
 #, kde-format
@@ -236,83 +234,83 @@ msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
-"इदं विजेट् प्लाज्मा %1 कृते लिखितम् अस्ति तथा च प्लाज्मा %2 इत्यनेन सह सङ्गतं नास्ति । कृपया "
-"विजेट् इत्यस्य उपयोगाय प्लाज्मा अपडेट् कुर्वन्तु ।"
+"यह विजेट प्लाज़्मा %1 के लिए लिखा गया था और प्लाज़्मा %2 के साथ संगत नहीं है। विजेट का "
+"उपयोग करने के लिए कृपया प्लाज़्मा को अपडेट करें।"
 
 #: plasmaquick/appletquickitem.cpp:596 plasmaquick/appletquickitem.cpp:618
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr "क्षम्यताम्‌! %1 लोड् करणं त्रुटिः आसीत् ।"
+msgstr "क्षमा करें! %1 लोड करते समय त्रुटि हुई।"
 
 #: plasmaquick/appletquickitem.cpp:613
 #, kde-format
 msgid "Error loading QML file: %1 %2"
-msgstr "QML सञ्चिकायाः आरोपयने त्रुटिः: %1 %2"
+msgstr "QML फ़ाइल लोड करते समय त्रुटि: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:616
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "Applet आरोपयने त्रुटिः: संकुल %1 नास्ति ।"
+msgstr "एप्लेट लोड करते समय त्रुटि: पैकेज %1 मौजूद नहीं है."
 
 #: plasmaquick/configview.cpp:231
 #, kde-format
 msgid "%1 — %2 Settings"
-msgstr "%1 — %2 समायोजननि"
+msgstr "%1 — %2 सेटिंग्स"
 
 #: plasmaquick/configview.cpp:232
 #, kde-format
 msgid "%1 Settings"
-msgstr "%1 समायोजननि"
+msgstr "%1 सेटिंग्स"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:569
 #, kde-format
 msgid "Plasma Package"
-msgstr "Plasma सम्पुट"
+msgstr "प्लाज्मा पैकेज"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:573
 #, kde-format
 msgid "Install"
-msgstr "प्रतिस्थायतु"
+msgstr "स्थापित करना"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:584
 #, kde-format
 msgid "Package Installation Failed"
-msgstr "संकुलस्थापनं विफलम्"
+msgstr "पैकेज स्थापना विफल"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:600
 #, kde-format
 msgid "The package you just dropped is invalid."
-msgstr "भवता इदानीं यत् संकुलं पातितम् तत् अमान्यम् अस्ति ।."
+msgstr "आपके द्वारा अभी-अभी छोड़ा गया पैकेज अमान्य है."
 
 #: plasmaquick/plasmoid/containmentitem.cpp:609
 #, kde-format
 msgid "Widgets"
-msgstr "विजेटस्"
+msgstr "विजेट"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:614
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
-msgstr "%1 योजयन्तु"
+msgstr "%1जोड़ें"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:628
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
-msgstr "चिह्नं योजयतु"
+msgstr "आइकन जोड़ें"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:640
 #, kde-format
 msgid "Wallpaper"
-msgstr "दीवार्पत्तिः"
+msgstr "वॉलपेपर"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:650
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"
-msgstr "%1 निरूपयतु"
+msgstr "%1 सेट करें"
 
 #: plasmaquick/plasmoid/dropmenu.cpp:29
 #, kde-format
 msgid "Content dropped"
-msgstr "सामग्रीं पातितम्"
+msgstr "सामग्री हटा दी गई"

@@ -39,7 +39,7 @@ public:
      * A valid instance will always returned, it will no-op on unsupported platforms
      */
     static PlasmaShellWaylandIntegration *get(QWindow *window);
-    ~PlasmaShellWaylandIntegration();
+    ~PlasmaShellWaylandIntegration() override;
 
     void setPosition(const QPoint &position);
     void setPanelBehavior(QtWayland::org_kde_plasma_surface::panel_behavior panelBehavior);

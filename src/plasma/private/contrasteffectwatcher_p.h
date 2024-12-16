@@ -26,7 +26,7 @@ class ContrastEffectWatcher : public QObject, public QAbstractNativeEventFilter
 
 public:
     explicit ContrastEffectWatcher(QObject *parent = nullptr);
-    ~ContrastEffectWatcher();
+    ~ContrastEffectWatcher() override;
     bool isEffectActive() const;
 
 protected:

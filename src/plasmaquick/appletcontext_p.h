@@ -24,7 +24,7 @@ class AppletContext : public QQmlContext
     Q_OBJECT
 public:
     AppletContext(QQmlEngine *engine, Plasma::Applet *applet, SharedQmlEngine *parent);
-    ~AppletContext();
+    ~AppletContext() override;
 
     Plasma::Applet *applet() const;
     SharedQmlEngine *sharedQmlEngine() const;

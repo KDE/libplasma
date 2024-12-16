@@ -33,7 +33,7 @@ public:
      * The event forwarder is parented to the window
      */
     EdgeEventForwarder(QWindow *parent);
-    ~EdgeEventForwarder();
+    ~EdgeEventForwarder() override;
 
     /**
      * @brief setMargins sets the margins to use for the event forwarding

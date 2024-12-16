@@ -29,7 +29,7 @@ class PLASMAQUICK_EXPORT WindowResizeHandler : public QObject
     Q_OBJECT
 public:
     WindowResizeHandler(QWindow *parent);
-    ~WindowResizeHandler();
+    ~WindowResizeHandler() override;
 
     void setMargins(const QMargins &margins);
     QMargins margins() const;

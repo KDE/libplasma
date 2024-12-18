@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:42+0000\n"
 "PO-Revision-Date: 2024-09-21 10:41+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -255,12 +255,12 @@ msgstr "Eraro dum ŝargo de QML-dosiero: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Eraro dum ŝargo de Apleto: pako %1 ne ekzistas."
 
-#: plasmaquick/configview.cpp:231
+#: plasmaquick/configview.cpp:233
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — %2 Agordoj"
 
-#: plasmaquick/configview.cpp:232
+#: plasmaquick/configview.cpp:234
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 Agordoj"

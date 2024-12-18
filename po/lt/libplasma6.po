@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:42+0000\n"
 "PO-Revision-Date: 2024-08-25 23:28+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -259,12 +259,12 @@ msgstr "Klaida įkeliant QML failą: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Klaida įkeliant programėlę: paketo %1 nėra."
 
-#: plasmaquick/configview.cpp:231
+#: plasmaquick/configview.cpp:233
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 – Nuostatos: %2|/|%1 – $[get-case Kilmininkas %2] nuostatos"
 
-#: plasmaquick/configview.cpp:232
+#: plasmaquick/configview.cpp:234
 #, kde-format
 msgid "%1 Settings"
 msgstr "Nuostatos: %1|/|$[get-case Kilmininkas %1] nuostatos"

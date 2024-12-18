@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:42+0000\n"
 "PO-Revision-Date: 2024-08-25 12:18+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -272,12 +272,12 @@ msgid "Error loading Applet: package %1 does not exist."
 msgstr "Feil ved lasting av skjermelement: pakken %1 finst ikkje."
 
 # i18n("%1 — %2 Settings", itemTitle.toString(), applet.data()->title())
-#: plasmaquick/configview.cpp:231
+#: plasmaquick/configview.cpp:233
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 – innstillingar for %2"
 
-#: plasmaquick/configview.cpp:232
+#: plasmaquick/configview.cpp:234
 #, kde-format
 msgid "%1 Settings"
 msgstr "Set opp «%1»|/|Set opp $[dobbelbest %1]$[bunden %1]"

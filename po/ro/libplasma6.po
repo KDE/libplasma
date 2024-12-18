@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:42+0000\n"
 "PO-Revision-Date: 2024-06-09 14:53+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -256,12 +256,12 @@ msgstr "Eroare la încărcarea fișierului QML: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Eroare la încărcarea miniaplicației: pachetul %1 nu există."
 
-#: plasmaquick/configview.cpp:231
+#: plasmaquick/configview.cpp:233
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — Configurări %2"
 
-#: plasmaquick/configview.cpp:232
+#: plasmaquick/configview.cpp:234
 #, kde-format
 msgid "%1 Settings"
 msgstr "Configurări %1"

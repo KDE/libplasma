@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:42+0000\n"
 "PO-Revision-Date: 2024-06-06 19:00\n"
 "Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -259,12 +259,12 @@ msgstr "Не ўдалося загрузіць файл QML: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Не ўдалося загрузіць аплет: пакет %1 не існуе."
 
-#: plasmaquick/configview.cpp:231
+#: plasmaquick/configview.cpp:233
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — %2 Налады"
 
-#: plasmaquick/configview.cpp:232
+#: plasmaquick/configview.cpp:234
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 Налады"

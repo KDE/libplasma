@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:42+0000\n"
 "PO-Revision-Date: 2023-02-19 15:12+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -248,13 +248,13 @@ msgstr "QML faylının yüklənməsi xətası: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Vidjetin yüklənməsində xəta: paket mövcud olmayan paket: %1"
 
-#: plasmaquick/configview.cpp:231
+#: plasmaquick/configview.cpp:233
 #, fuzzy, kde-format
 #| msgid "%1 Settings"
 msgid "%1 — %2 Settings"
 msgstr "%1 Ayarları"
 
-#: plasmaquick/configview.cpp:232
+#: plasmaquick/configview.cpp:234
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 Ayarları"

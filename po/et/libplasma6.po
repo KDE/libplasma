@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-30 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:42+0000\n"
 "PO-Revision-Date: 2021-09-05 15:52+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -249,13 +249,13 @@ msgstr "Tõrge QML-faili laadimisel: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Tõrge apleti laadimisel: paketti ei ole olemas. %1"
 
-#: plasmaquick/configview.cpp:231
+#: plasmaquick/configview.cpp:233
 #, fuzzy, kde-format
 #| msgid "%1 Settings"
 msgid "%1 — %2 Settings"
 msgstr "%1 seadistused"
 
-#: plasmaquick/configview.cpp:232
+#: plasmaquick/configview.cpp:234
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 seadistused"

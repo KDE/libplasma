@@ -40,7 +40,7 @@ T.ToolButton {
         //in case of explicit & the button manages it by itself
         enabled: !(RegExp(/\&[^\&]/).test(control.text))
         sequence: control.Kirigami.MnemonicData.sequence
-        onActivated: control.clicked()
+        onActivated: control.animateClick()
     }
 
     flat: true

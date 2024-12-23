@@ -47,16 +47,7 @@ T.TabButton {
         //in case of explicit & the button manages it by itself
         enabled: !(RegExp(/\&[^\&]/).test(control.text))
         sequence: control.Kirigami.MnemonicData.sequence
-        onActivated: if (control.action) {
-            control.action.trigger()
-        } else if (control.checkable && !control.checked) {
-            // A checkable AbstractButton clicked by a user would normally
-            // change the checked state first before emitting clicked().
-            control.toggle()
-            // Manually emit clicked() because action.trigger() is the only
-            // button related function that automatically emits clicked()
-            control.clicked()
-        }
+        onActivated: control.animateClick()
     }
 
     contentItem: Private.IconLabel {

@@ -28,6 +28,17 @@ T.Switch {
     icon.width: Kirigami.Units.iconSizes.sizeForLabels
     icon.height: Kirigami.Units.iconSizes.sizeForLabels
 
+    Kirigami.MnemonicData.enabled: control.enabled && control.visible
+    Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.ActionElement
+    Kirigami.MnemonicData.label: control.text
+
+    Shortcut {
+        //in case of explicit & the button manages it by itself
+        enabled: !(RegExp(/\&[^\&]/).test(control.text))
+        sequence: control.Kirigami.MnemonicData.sequence
+        onActivated: control.animateClick()
+    }
+
     indicator: SwitchIndicator {
         x: (control.text || control.icon.name || control.icon.source)
             ? (control.mirrored ? control.width - width - control.rightPadding : control.leftPadding)
@@ -52,6 +63,6 @@ T.Switch {
         iconItem.implicitWidth: control.icon.width
         iconItem.implicitHeight: control.icon.height
         iconItem.source: control.icon.name || control.icon.source
-        label.text: control.text
+        label.text: control.Kirigami.MnemonicData.richTextLabel
     }
 }

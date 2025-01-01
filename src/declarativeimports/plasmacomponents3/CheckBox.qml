@@ -29,6 +29,16 @@ T.CheckBox {
     icon.width: Kirigami.Units.iconSizes.smallMedium
     icon.height: Kirigami.Units.iconSizes.smallMedium
 
+    Kirigami.MnemonicData.enabled: enabled && visible
+    Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.ActionElement
+    Kirigami.MnemonicData.label: text
+    Shortcut {
+        //in case of explicit & the button manages it by itself
+        enabled: !(RegExp(/\&[^\&]/).test(control.text))
+        sequence: control.Kirigami.MnemonicData.sequence
+        onActivated: control.animateClick()
+    }
+
     indicator: CheckIndicator {
         x: (control.text || control.icon.name || control.icon.source)
             ? (control.mirrored ? control.width - width - control.rightPadding : control.leftPadding)
@@ -53,7 +63,7 @@ T.CheckBox {
         iconItem.implicitWidth: control.icon.width
         iconItem.implicitHeight: control.icon.height
         iconItem.source: control.icon.name || control.icon.source
-        label.text: control.text
+        label.text: control.Kirigami.MnemonicData.richTextLabel
 
         Rectangle { // As long as we don't enable antialiasing, not rounding should be fine
             parent: control.contentItem.label

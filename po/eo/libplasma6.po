@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-30 02:30+0000\n"
-"PO-Revision-Date: 2024-05-31 13:26+0200\n"
+"PO-Revision-Date: 2024-09-21 10:41+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -183,7 +183,7 @@ msgstr "Agado-Agordoj"
 #: plasma/private/containment_p.cpp:78
 #, kde-format
 msgid "Add or Manage Widgets…"
-msgstr ""
+msgstr "Aldoni aŭ Mastrumi Fenestraĵojn…"
 
 #: plasma/private/containment_p.cpp:197
 #, kde-format
@@ -319,27 +319,3 @@ msgstr "Agordi %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Enhavo perdiĝis"
-
-#~ msgid "Add Widgets..."
-#~ msgstr "Aldoni fenestraĵojn..."
-
-#~ msgctxt "Package file, name of the widget"
-#~ msgid "Could not open the %1 package required for the %2 widget."
-#~ msgstr "Ne eblis malfermi la %1 pakaĵon necesan por la %2 fenestraĵo."
-
-#~ msgid ""
-#~ "Sharing a widget on the network allows you to access this widget from "
-#~ "another computer as a remote control."
-#~ msgstr ""
-#~ "Kunhavigi fenestraĵon en la reto permesas al vi aliri ĉi tiun fenestraĵon "
-#~ "de alia komputilo kiel teleregilo."
-
-#~ msgid "Share this widget on the network"
-#~ msgstr "Kunhavigi ĉi tiun fenestraĵon en la reto"
-
-#~ msgid "Allow everybody to freely access this widget"
-#~ msgstr "Permesi al ĉiuj libere aliri ĉi tiun fenestraĵon"
-
-#~ msgctxt "Error message, tried to start an invalid service"
-#~ msgid "Invalid (null) service, can not perform any operations."
-#~ msgstr "Nevalida (nula) servo, ne povas fari ajnajn operaciojn."

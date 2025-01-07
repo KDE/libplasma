@@ -13,7 +13,6 @@
 #include <QFileInfo>
 #include <QGuiApplication>
 
-#include <KDirWatch>
 #include <KIconLoader>
 #include <KSharedConfig>
 #include <KWindowEffects>
@@ -23,7 +22,6 @@
 namespace Plasma
 {
 const char ThemePrivate::defaultTheme[] = "default";
-const char ThemePrivate::themeRcFile[] = "plasmarc";
 // the system colors theme is used to cache unthemed svgs with colorization needs
 // these svgs do not follow the theme's colors, but rather the system colors
 const char ThemePrivate::systemColorsTheme[] = "internal-system-colors";
@@ -134,13 +132,11 @@ ThemePrivate::ThemePrivate(QObject *parent)
     }
     QCoreApplication::instance()->installEventFilter(this);
 
-    const QString configFile = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QLatin1Char('/') + QLatin1String(themeRcFile);
-    KDirWatch::self()->addFile(configFile);
+    plasmaRcWatcher = KConfigWatcher::create(KSharedConfig::openConfig(QStringLiteral("plasmarc")));
 
-    // Catch both, direct changes to the config file ...
-    connect(KDirWatch::self(), &KDirWatch::dirty, this, &ThemePrivate::settingsFileChanged);
-    // ... but also remove/recreate cycles, like KConfig does it
-    connect(KDirWatch::self(), &KDirWatch::created, this, &ThemePrivate::settingsFileChanged);
+    connect(plasmaRcWatcher.get(), &KConfigWatcher::configChanged, this, [this] {
+        settingsChanged(true);
+    });
 
     QObject::connect(KIconLoader::global(), &KIconLoader::iconChanged, this, [this]() {
         scheduleThemeChangeNotification();
@@ -171,7 +167,7 @@ KConfigGroup &ThemePrivate::config()
                 groupName.append(QLatin1Char('-')).append(app);
             }
         }
-        cfg = KConfigGroup(KSharedConfig::openConfig(QFile::decodeName(themeRcFile)), groupName);
+        cfg = plasmaRcWatcher->config()->group(groupName);
     }
 
     return cfg;
@@ -254,15 +250,6 @@ void ThemePrivate::scheduleThemeChangeNotification()
 void ThemePrivate::notifyOfChanged()
 {
     Q_EMIT themeChanged();
-}
-
-void ThemePrivate::settingsFileChanged(const QString &file)
-{
-    qCDebug(LOG_PLASMA) << "settingsFile: " << file;
-    if (file.endsWith(QLatin1String(themeRcFile))) {
-        config().config()->reparseConfiguration();
-        settingsChanged(true);
-    }
 }
 
 void ThemePrivate::settingsChanged(bool emitChanges)

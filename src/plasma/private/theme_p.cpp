@@ -20,8 +20,6 @@
 #include <KWindowSystem>
 #include <KX11Extras>
 
-#include "libplasma-theme-global.h"
-
 namespace Plasma
 {
 const char ThemePrivate::defaultTheme[] = "default";
@@ -109,7 +107,6 @@ ThemePrivate::ThemePrivate(QObject *parent)
         compositingActive = KX11Extras::self()->compositingActive();
     }
 
-    ThemeConfig config;
     kSvgImageSet = std::unique_ptr<KSvg::ImageSet>(new KSvg::ImageSet);
     kSvgImageSet->setBasePath(QStringLiteral(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/"));
 

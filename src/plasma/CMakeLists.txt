@@ -62,8 +62,6 @@ qt6_generate_wayland_protocol_client_sources(Plasma
         ${PLASMA_WAYLAND_PROTOCOLS_DIR}/contrast.xml
 )
 
-kconfig_add_kcfg_files(Plasma data/kconfigxt/libplasma-theme-global.kcfgc)
-
 ecm_qt_declare_logging_category(Plasma
     HEADER debug_p.h
     IDENTIFIER LOG_PLASMA

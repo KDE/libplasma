@@ -22,9 +22,6 @@
 namespace Plasma
 {
 const char ThemePrivate::defaultTheme[] = "default";
-// the system colors theme is used to cache unthemed svgs with colorization needs
-// these svgs do not follow the theme's colors, but rather the system colors
-const char ThemePrivate::systemColorsTheme[] = "internal-system-colors";
 
 ContrastEffectWatcher *ThemePrivate::s_backgroundContrastEffectWatcher = nullptr;
 
@@ -418,19 +415,14 @@ void ThemePrivate::setThemeName(const QString &tempThemeName, bool writeSettings
         }
     }
 
-    // we have one special theme: essentially a dummy theme used to cache things with
-    // the system colors.
-    bool realTheme = theme != QLatin1String(systemColorsTheme);
-    if (realTheme) {
-        KPluginMetaData data = metaDataForTheme(theme);
+    KPluginMetaData data = metaDataForTheme(theme);
+    if (!data.isValid()) {
+        data = metaDataForTheme(QStringLiteral("default"));
         if (!data.isValid()) {
-            data = metaDataForTheme(QStringLiteral("default"));
-            if (!data.isValid()) {
-                return;
-            }
-
-            theme = QLatin1String(ThemePrivate::defaultTheme);
+            return;
         }
+
+        theme = QLatin1String(ThemePrivate::defaultTheme);
     }
 
     // check again as ThemePrivate::defaultTheme might be empty
@@ -441,10 +433,8 @@ void ThemePrivate::setThemeName(const QString &tempThemeName, bool writeSettings
     themeName = theme;
 
     // load the color scheme config
-    const QString colorsFile = realTheme
-        ? QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                 QLatin1String(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/") % theme % QLatin1String("/colors"))
-        : QString();
+    const QString colorsFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                      QLatin1String(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/") % theme % QLatin1String("/colors"));
 
     // qCDebug(LOG_PLASMA) << "we're going for..." << colorsFile << "*******************";
 
@@ -466,58 +456,56 @@ void ThemePrivate::setThemeName(const QString &tempThemeName, bool writeSettings
     hasWallpapers = !QStandardPaths::locate(QStandardPaths::GenericDataLocation, wallpaperPath, QStandardPaths::LocateDirectory).isEmpty();
 
     // load the wallpaper settings, if any
-    if (realTheme) {
-        pluginMetaData = metaDataForTheme(theme);
-        KSharedConfigPtr metadata = configForTheme(theme);
+    pluginMetaData = metaDataForTheme(theme);
+    KSharedConfigPtr metadata = configForTheme(theme);
 
-        processContrastSettings(metadata);
-        processBlurBehindSettings(metadata);
-        processAdaptiveTransparencySettings(metadata);
+    processContrastSettings(metadata);
+    processBlurBehindSettings(metadata);
+    processAdaptiveTransparencySettings(metadata);
 
-        processWallpaperSettings(metadata);
+    processWallpaperSettings(metadata);
 
+    KConfigGroup cg(metadata, QStringLiteral("Settings"));
+    QString fallback = cg.readEntry("FallbackTheme", QString());
+
+    fallbackThemes.clear();
+    while (!fallback.isEmpty() && !fallbackThemes.contains(fallback)) {
+        fallbackThemes.append(fallback);
+
+        KSharedConfigPtr metadata = configForTheme(fallback);
         KConfigGroup cg(metadata, QStringLiteral("Settings"));
-        QString fallback = cg.readEntry("FallbackTheme", QString());
+        fallback = cg.readEntry("FallbackTheme", QString());
+    }
 
-        fallbackThemes.clear();
-        while (!fallback.isEmpty() && !fallbackThemes.contains(fallback)) {
-            fallbackThemes.append(fallback);
+    if (!fallbackThemes.contains(QLatin1String(ThemePrivate::defaultTheme))) {
+        fallbackThemes.append(QLatin1String(ThemePrivate::defaultTheme));
+    }
 
-            KSharedConfigPtr metadata = configForTheme(fallback);
-            KConfigGroup cg(metadata, QStringLiteral("Settings"));
-            fallback = cg.readEntry("FallbackTheme", QString());
+    for (const QString &theme : std::as_const(fallbackThemes)) {
+        KSharedConfigPtr metadata = configForTheme(theme);
+        processWallpaperSettings(metadata);
+    }
+
+    // Check for what Plasma version the theme has been done
+    // There are some behavioral differences between KDE4 Plasma and Plasma 5
+    const QString apiVersion = pluginMetaData.value(u"X-Plasma-API");
+    apiMajor = 1;
+    apiMinor = 0;
+    apiRevision = 0;
+    if (!apiVersion.isEmpty()) {
+        const QList<QStringView> parts = QStringView(apiVersion).split(QLatin1Char('.'));
+        if (!parts.isEmpty()) {
+            apiMajor = parts.value(0).toInt();
         }
-
-        if (!fallbackThemes.contains(QLatin1String(ThemePrivate::defaultTheme))) {
-            fallbackThemes.append(QLatin1String(ThemePrivate::defaultTheme));
+        if (parts.count() > 1) {
+            apiMinor = parts.value(1).toInt();
         }
-
-        for (const QString &theme : std::as_const(fallbackThemes)) {
-            KSharedConfigPtr metadata = configForTheme(theme);
-            processWallpaperSettings(metadata);
-        }
-
-        // Check for what Plasma version the theme has been done
-        // There are some behavioral differences between KDE4 Plasma and Plasma 5
-        const QString apiVersion = pluginMetaData.value(u"X-Plasma-API");
-        apiMajor = 1;
-        apiMinor = 0;
-        apiRevision = 0;
-        if (!apiVersion.isEmpty()) {
-            const QList<QStringView> parts = QStringView(apiVersion).split(QLatin1Char('.'));
-            if (!parts.isEmpty()) {
-                apiMajor = parts.value(0).toInt();
-            }
-            if (parts.count() > 1) {
-                apiMinor = parts.value(1).toInt();
-            }
-            if (parts.count() > 2) {
-                apiRevision = parts.value(2).toInt();
-            }
+        if (parts.count() > 2) {
+            apiRevision = parts.value(2).toInt();
         }
     }
 
-    if (realTheme && isDefault && writeSettings) {
+    if (isDefault && writeSettings) {
         // we're the default theme, let's save our status
         KConfigGroup &cg = config();
         cg.writeEntry("name", themeName);

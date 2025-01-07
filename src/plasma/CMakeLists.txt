@@ -99,7 +99,6 @@ PRIVATE
     KF6::ColorScheme
     KF6::ConfigQml
     KF6::Archive
-    KF6::GuiAddons #kimagecache
     KF6::I18n
     KF6::WindowSystem #compositingActive
     KF6::GlobalAccel #Applet::setGlobalShortcut

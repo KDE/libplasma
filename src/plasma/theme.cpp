@@ -22,7 +22,6 @@
 #include <KColorScheme>
 #include <KConfigGroup>
 #include <KDirWatch>
-#include <KImageCache>
 #include <KWindowEffects>
 #include <QDebug>
 #include <QStandardPaths>

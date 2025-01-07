@@ -101,7 +101,6 @@ public:
     QTimer *selectorsUpdateTimer;
     QTimer *updateNotificationTimer;
     QString themeVersion;
-    QString themeMetadataPath;
 
     bool compositingActive : 1;
     bool backgroundContrastActive : 1;

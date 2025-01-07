@@ -100,7 +100,6 @@ public:
     int defaultWallpaperHeight;
     QTimer *selectorsUpdateTimer;
     QTimer *updateNotificationTimer;
-    QString themeVersion;
 
     bool compositingActive : 1;
     bool backgroundContrastActive : 1;

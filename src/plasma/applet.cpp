@@ -708,7 +708,7 @@ Types::ContainmentDisplayHints Applet::containmentDisplayHints() const
 Containment *Applet::containment() const
 {
     Containment *c = qobject_cast<Containment *>(const_cast<Applet *>(this));
-    if (c && c->isContainment()) {
+    if (c && c->isContainment() && c->containmentType() != Containment::NestedContainment) {
         return c;
     } else {
         c = nullptr;
@@ -872,7 +872,12 @@ bool Applet::isContainment() const
         return true;
     }
     // normal "acting as a containment" condition
-    return qobject_cast<const Containment *>(this) && qobject_cast<Corona *>(parent());
+    const Containment *cont = qobject_cast<const Containment *>(this);
+    if (!cont) {
+        return false;
+    }
+    return qobject_cast<Corona *>(parent())
+        || (cont->containmentType() == Containment::NestedContainment && parent() && qobject_cast<Corona *>(parent()->parent()));
 }
 
 QString Applet::translationDomain() const

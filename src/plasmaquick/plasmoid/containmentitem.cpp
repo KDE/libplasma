@@ -61,7 +61,7 @@ void ContainmentItem::classBegin()
     }
 
     connect(m_containment.data(), &Plasma::Containment::appletAboutToBeRemoved, this, &ContainmentItem::appletRemovedForward);
-    connect(m_containment.data(), &Plasma::Containment::appletAboutToBeAdded, this, &ContainmentItem::appletAddedForward);
+    connect(m_containment.data(), &Plasma::Containment::appletAdded, this, &ContainmentItem::appletAddedForward);
 
     connect(m_containment->corona(), &Plasma::Corona::editModeChanged, this, &ContainmentItem::editModeChanged);
 }

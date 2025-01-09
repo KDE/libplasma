@@ -485,7 +485,7 @@ KConfigGroup *AppletPrivate::mainConfigGroup()
         parentApplet = qobject_cast<Plasma::Applet *>(c->parent());
     }
 
-    if (q->isContainment()) {
+    if (q->isContainment() && static_cast<Containment *>(q)->containmentType() != Containment::NestedContainment) {
         Corona *corona = static_cast<Containment *>(q)->corona();
         KConfigGroup containmentConfig;
         // qCDebug(LOG_PLASMA) << "got a corona, baby?" << (QObject*)corona << (QObject*)q;

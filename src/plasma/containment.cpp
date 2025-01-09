@@ -378,7 +378,7 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
         // qCDebug(LOG_PLASMA) << "already have this applet!";
     }
 #endif
-
+    qWarning() << "ADDAPPLET" << applet->title();
     Containment *currentContainment = applet->containment();
 
     if (currentContainment && currentContainment != this) {
@@ -416,6 +416,10 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
         applet->setParent(this);
     }
 
+    Containment *asCont = qobject_cast<Containment *>(applet);
+    if (asCont && asCont->containmentType() == Containment::NestedContainment) {
+        asCont->init();
+    }
     // make sure the applets are sorted by id
     const auto position = std::lower_bound(d->applets.begin(), d->applets.end(), applet, [](Plasma::Applet *a1, Plasma::Applet *a2) {
         return a1->id() < a2->id();
@@ -439,7 +443,9 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
             applet->restore(*applet->d->mainConfigGroup());
         }
 
-        applet->init();
+        if (!asCont || asCont->containmentType() != Containment::NestedContainment) {
+            applet->init();
+        }
 
         if (isNew) {
             applet->save(*applet->d->mainConfigGroup());

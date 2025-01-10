@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-08-23 15:37+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -99,21 +99,6 @@ msgstr "Odemknout widgety"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Ukončit režim úprav"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Zda pro motiv vytvářet nebo nevytvářet mezipaměť na disku."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -310,3 +295,6 @@ msgstr "Nastavit %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Obsah byl zahozen"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Zda pro motiv vytvářet nebo nevytvářet mezipaměť na disku."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -95,23 +95,6 @@ msgstr "解锁挂件"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "退出编辑模式"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "是否创建主题的磁盘缓存。"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"保存在磁盘中的主题缓存的最大体积，单位为 KB。注意：缓存文件是稀疏文件，因此不"
-"一定能够完全利用设置的最大体积。设置一个较大的体积会比较安全。"
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -314,3 +297,14 @@ msgstr "设置 %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "内容已拖放"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "是否创建主题的磁盘缓存。"
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "保存在磁盘中的主题缓存的最大体积，单位为 KB。注意：缓存文件是稀疏文件，因"
+#~ "此不一定能够完全利用设置的最大体积。设置一个较大的体积会比较安全。"

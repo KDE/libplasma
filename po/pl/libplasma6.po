@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-08-24 11:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -96,25 +96,6 @@ msgstr "Uwolnij elementy interfejsu"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Wyjdź z trybu dostosowywania"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Określa czy tworzyć pamięć podręczną dla dysku dla wystroju."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Największy rozmiar pamięci podręcznej na dysku w kilobajtach dla wystrojów. "
-"Miej na uwadze, że pliki te są niewielki i największy rozmiar może zostać "
-"niewykorzystany. Ustawienie większego rozmiaru jest zazwyczaj całkiem "
-"bezpieczne."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -319,6 +300,19 @@ msgstr "Ustaw %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Upuszczono zawartość"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Określa czy tworzyć pamięć podręczną dla dysku dla wystroju."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Największy rozmiar pamięci podręcznej na dysku w kilobajtach dla "
+#~ "wystrojów. Miej na uwadze, że pliki te są niewielki i największy rozmiar "
+#~ "może zostać niewykorzystany. Ustawienie większego rozmiaru jest zazwyczaj "
+#~ "całkiem bezpieczne."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Dodaj elementy interfejsu..."

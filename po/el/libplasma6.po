@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-08-31 12:02+0300\n"
 "Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -96,25 +96,6 @@ msgstr "Ξεκλείδωμα συστατικών"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Έξοδος επεξεργασίας"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Δημιουργία ή όχι λανθάνουσας μνήμης δίσκου για το θέμα."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Το μέγιστο μέγεθος της λανθάνουσας μνήμης του Θέματος στον δίσκο, σε "
-"kilobytes. Σημειώστε πως αυτά τα αρχεία έχουν μεγάλο βαθμό διασποράς, "
-"επομένως ενδέχεται να μη χρησιμοποιηθεί το μέγιστο μέγεθος. Συνεπώς, ο "
-"ορισμός ενός μεγάλου μεγέθους είναι συχνά μια αρκετά ασφαλής επιλογή."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -320,6 +301,19 @@ msgstr "Ορισμός %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Περιεχόμενο αφέθηκε"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Δημιουργία ή όχι λανθάνουσας μνήμης δίσκου για το θέμα."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Το μέγιστο μέγεθος της λανθάνουσας μνήμης του Θέματος στον δίσκο, σε "
+#~ "kilobytes. Σημειώστε πως αυτά τα αρχεία έχουν μεγάλο βαθμό διασποράς, "
+#~ "επομένως ενδέχεται να μη χρησιμοποιηθεί το μέγιστο μέγεθος. Συνεπώς, ο "
+#~ "ορισμός ενός μεγάλου μεγέθους είναι συχνά μια αρκετά ασφαλής επιλογή."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Προσθήκη γραφικών συστατικών..."

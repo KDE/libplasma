@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-08-24 10:45+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -98,25 +98,6 @@ msgstr "Sblocca oggetti"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Esci dalla modalità di modifica"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Se creare o meno una cache su disco per il tema"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"La dimensione massima della cache su disco del tema in kilobyte. Nota che "
-"questi file sono file sparsi, perciò la dimensione massima potrebbe non "
-"essere utilizzata. L'impostazione di una dimensione maggiore è sicura nella "
-"maggior parte dei casi."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -320,6 +301,19 @@ msgstr "Imposta %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Contenuto scartato"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Se creare o meno una cache su disco per il tema"
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "La dimensione massima della cache su disco del tema in kilobyte. Nota che "
+#~ "questi file sono file sparsi, perciò la dimensione massima potrebbe non "
+#~ "essere utilizzata. L'impostazione di una dimensione maggiore è sicura "
+#~ "nella maggior parte dei casi."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Aggiungi oggetti..."

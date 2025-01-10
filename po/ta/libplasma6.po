@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-09-07 21:00+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -95,21 +95,6 @@ msgstr "பிளாஸ்மாய்டுகளை திருத்தவ�
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "திருத்தும் பயன்முறையிலிருந்து வெளியேறு"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "தோற்றத்திட்டத்திற்கு வட்டில் தற்காலிக நினைவிடத்தை உருவாக்க வேண்டுமா."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -312,6 +297,9 @@ msgstr "%1 தனை அமை"
 #, kde-format
 msgid "Content dropped"
 msgstr "உள்ளடக்கம் போடப்பட்டது"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "தோற்றத்திட்டத்திற்கு வட்டில் தற்காலிக நினைவிடத்தை உருவாக்க வேண்டுமா."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "பிளாஸ்மாய்டுகளை சேர்..."

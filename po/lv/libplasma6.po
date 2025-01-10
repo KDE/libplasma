@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-10-29 11:45+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -97,24 +97,6 @@ msgstr "Atslēgt logdaļas"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Iziet no rediģēšanas režīma"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Vai izveidot motīva kešatmiņu uz diska."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Maksimālais motīva kešatmiņas izmērs uz diska kilobaitos. Ņemiet vērā, ka "
-"parasti šīs datnes ir nelielas un tādēļ maksimālais izmērs var netikt "
-"izmantots. Tāpēc parasti ir droši norādīt lielu izmēru."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -318,6 +300,18 @@ msgstr "Uzlikt „%1“"
 #, kde-format
 msgid "Content dropped"
 msgstr "Saturs ir nomests"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Vai izveidot motīva kešatmiņu uz diska."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Maksimālais motīva kešatmiņas izmērs uz diska kilobaitos. Ņemiet vērā, ka "
+#~ "parasti šīs datnes ir nelielas un tādēļ maksimālais izmērs var netikt "
+#~ "izmantots. Tāpēc parasti ir droši norādīt lielu izmēru."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Pievienot logdaļas…"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-11-09 20:06+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -92,24 +92,6 @@ msgstr "Отключване на уиджети"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Излизане от режима за редактиране"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Създаване на кеш на диска за темата."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Максималният размер на кеша на темата на диска в килобайта. Имайте предвид, "
-"че тези файлове са малки файлове, така че максималният размер може да не се "
-"използва. Следователно задаване на по-голям размер често е безопасно."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -313,3 +295,16 @@ msgstr "Задаване на %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Съдържанието е пуснато"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Създаване на кеш на диска за темата."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Максималният размер на кеша на темата на диска в килобайта. Имайте "
+#~ "предвид, че тези файлове са малки файлове, така че максималният размер "
+#~ "може да не се използва. Следователно задаване на по-голям размер често е "
+#~ "безопасно."

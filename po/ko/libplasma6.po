@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-12-24 17:51+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -96,23 +96,6 @@ msgstr "위젯 잠금 풀기"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "편집 모드 끝내기"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "테마의 디스크 캐시를 생성할 수 있는지 여부입니다."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"킬로바이트 단위의 디스크 테마 캐시 최대 크기입니다. 이 파일은 스파스 파일이므"
-"로 최대 크기까지 도달하지 않을 수도 있습니다. 크게 설정하여도 무방합니다."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -315,6 +298,18 @@ msgstr "%1 설정"
 #, kde-format
 msgid "Content dropped"
 msgstr "내용 드롭됨"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "테마의 디스크 캐시를 생성할 수 있는지 여부입니다."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "킬로바이트 단위의 디스크 테마 캐시 최대 크기입니다. 이 파일은 스파스 파일"
+#~ "이므로 최대 크기까지 도달하지 않을 수도 있습니다. 크게 설정하여도 무방합니"
+#~ "다."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "위젯 추가..."

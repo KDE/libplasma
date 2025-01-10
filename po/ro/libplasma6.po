@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-06-09 14:53+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -96,25 +96,6 @@ msgstr "Deblochează controalele"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Ieși din regim de modificare"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Dacă să fie creată sau nu o prestocare pe disc a tematicii."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Dimensiunea maximă pe disc a prestocării tematicilor, în kilo-octeți. "
-"Rețineți că acestea sunt fișiere „împrăștiate” (engleză: sparse), deci "
-"dimensiunea maximă poate să nu fie utilizată. Stabilirea unei dimensiuni mai "
-"mari este de obicei sigură."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -318,6 +299,19 @@ msgstr "Stabilește %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Conținut lăsat"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Dacă să fie creată sau nu o prestocare pe disc a tematicii."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Dimensiunea maximă pe disc a prestocării tematicilor, în kilo-octeți. "
+#~ "Rețineți că acestea sunt fișiere „împrăștiate” (engleză: sparse), deci "
+#~ "dimensiunea maximă poate să nu fie utilizată. Stabilirea unei dimensiuni "
+#~ "mai mari este de obicei sigură."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Adaugă controale…"

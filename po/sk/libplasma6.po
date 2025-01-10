@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2023-01-11 11:24+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -96,24 +96,6 @@ msgstr "Odomknúť miniaplikácie"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Ukončiť režim úprav"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Či vytvoriť cache na disku pre tému."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Maximálna veľkosť cache na disku pre tému v kilobajtoch. Tieto súbory sú "
-"dosť riedke, teda maximálna veľkosť sa nemusí použiť. Nastavenie väčšej "
-"veľkosti je však bezpečné."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -312,6 +294,18 @@ msgstr "Nastaviť %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Obsah zahodený"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Či vytvoriť cache na disku pre tému."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Maximálna veľkosť cache na disku pre tému v kilobajtoch. Tieto súbory sú "
+#~ "dosť riedke, teda maximálna veľkosť sa nemusí použiť. Nastavenie väčšej "
+#~ "veľkosti je však bezpečné."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Pridať miniaplikácie..."

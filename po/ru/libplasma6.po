@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-09-15 13:46+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -112,24 +112,6 @@ msgstr "Разблокировать виджеты"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Выйти из режима редактирования"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Создавать ли на диске кэш для темы."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Максимальный размер кэша темы на диске в килобайтах. Кэш хранится в "
-"разреженных файлах, и на диске может быть не использован указанный "
-"максимальный объём. Поэтому увеличение этого параметра обычно безопасно."
 
 # In context menu of a widget. --aspotashev
 #: plasma/private/applet_p.cpp:119
@@ -338,6 +320,18 @@ msgstr "Использовать «%1»"
 #, kde-format
 msgid "Content dropped"
 msgstr "Перетаскивание элемента"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Создавать ли на диске кэш для темы."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Максимальный размер кэша темы на диске в килобайтах. Кэш хранится в "
+#~ "разреженных файлах, и на диске может быть не использован указанный "
+#~ "максимальный объём. Поэтому увеличение этого параметра обычно безопасно."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Добавить виджеты..."

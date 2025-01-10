@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-09-11 05:26+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -96,24 +96,6 @@ msgstr "ვიჯეტების განბლოკვა"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "ჩასწორების რეჟიმიდან გასვლა"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "თემისთვის დისკზე მდებარე ქეშის შეიქმნება, თუ არა."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"დისკზე მდებარე თემის ქეშის მაქსიმალური ზომა, კილობაიტებში. დაიმახსოვრეთ, რომ "
-"ეს ფაილები დამატებითი ფაილებია, ასე რომ მაქსიმალურ ზომას ვერ მიუთითეთ. ასე "
-"რომ, უფრო მეტი ზომის მითითება ჩვეულებრივ საკმაოდ უსაფრთხოა."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -316,6 +298,18 @@ msgstr "%1-ის დაყენება"
 #, kde-format
 msgid "Content dropped"
 msgstr "შემცველობა მოცილებულია"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "თემისთვის დისკზე მდებარე ქეშის შეიქმნება, თუ არა."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "დისკზე მდებარე თემის ქეშის მაქსიმალური ზომა, კილობაიტებში. დაიმახსოვრეთ, "
+#~ "რომ ეს ფაილები დამატებითი ფაილებია, ასე რომ მაქსიმალურ ზომას ვერ "
+#~ "მიუთითეთ. ასე რომ, უფრო მეტი ზომის მითითება ჩვეულებრივ საკმაოდ უსაფრთხოა."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "ვიჯეტების დამატება..."

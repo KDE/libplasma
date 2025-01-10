@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-08-23 07:06+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -98,24 +98,6 @@ msgstr "שחרור יישומונים"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "יציאה ממצב עריכה"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "האם ליצור מטמון בכונן לערכת העיצוב."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"הגודל המרבי של מטמון ערכות עיצוב על הכונן הוא בקילובתים. נא לשים שהקבצים "
-"האלה הם דלילים, לכן סביר להניח שלא ייעשה שימוש במלוא הגודל שהוגדר. הגדרת "
-"גודל גדול יותר היא בדרך כלל די בטוחה."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -318,6 +300,18 @@ msgstr "הגדרת %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "התוכן נגרר"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "האם ליצור מטמון בכונן לערכת העיצוב."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "הגודל המרבי של מטמון ערכות עיצוב על הכונן הוא בקילובתים. נא לשים שהקבצים "
+#~ "האלה הם דלילים, לכן סביר להניח שלא ייעשה שימוש במלוא הגודל שהוגדר. הגדרת "
+#~ "גודל גדול יותר היא בדרך כלל די בטוחה."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "הוספת יישומונים…"

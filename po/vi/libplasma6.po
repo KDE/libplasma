@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2023-10-24 10:41+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -95,25 +95,6 @@ msgstr "Bỏ khoá các phụ kiện"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Thoát khỏi chế độ sửa"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Có tạo bộ nhớ sẵn trên đĩa cho chủ đề này hay không."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Kích thước tối đa của bộ nhớ sẵn trên đĩa cho chủ đề, tính theo ki-lô byte. "
-"Lưu ý rằng các tệp này là các tệp thưa, nên kích thước tối đa kia có thể sẽ "
-"không bị đạt đến. Vì vậy, đặt một kích thước lớn thường cũng không gây vấn "
-"đề gì."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -313,6 +294,19 @@ msgstr "Đặt %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Nội dung được thả"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Có tạo bộ nhớ sẵn trên đĩa cho chủ đề này hay không."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Kích thước tối đa của bộ nhớ sẵn trên đĩa cho chủ đề, tính theo ki-lô "
+#~ "byte. Lưu ý rằng các tệp này là các tệp thưa, nên kích thước tối đa kia "
+#~ "có thể sẽ không bị đạt đến. Vì vậy, đặt một kích thước lớn thường cũng "
+#~ "không gây vấn đề gì."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Thêm phụ kiện..."

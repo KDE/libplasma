@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -95,24 +95,6 @@ msgstr "विजेट अनलॉक करें"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "संपादन मोड से बाहर निकलें"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "थीम के लिए ऑन-डिस्क कैश बनाना है या नहीं।"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"ऑन-डिस्क थीम कैश का अधिकतम आकार किलोबाइट में। ध्यान दें कि ये फ़ाइलें विरल फ़ाइलें हैं, "
-"इसलिए अधिकतम आकार का उपयोग नहीं किया जा सकता है। इसलिए बड़ा आकार सेट करना अक्सर "
-"काफी सुरक्षित होता है।"
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -315,3 +297,15 @@ msgstr "%1 सेट करें"
 #, kde-format
 msgid "Content dropped"
 msgstr "सामग्री हटा दी गई"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "थीम के लिए ऑन-डिस्क कैश बनाना है या नहीं।"
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "ऑन-डिस्क थीम कैश का अधिकतम आकार किलोबाइट में। ध्यान दें कि ये फ़ाइलें विरल फ़ाइलें हैं, "
+#~ "इसलिए अधिकतम आकार का उपयोग नहीं किया जा सकता है। इसलिए बड़ा आकार सेट करना "
+#~ "अक्सर काफी सुरक्षित होता है।"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2016-03-20 15:24+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -101,25 +101,6 @@ msgstr "Откључај виџете"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr ""
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Да ли направити кеш на диску за тему."
-
-# skip-rule: t-setting
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Највећа величина кеша теме на диску у килобајтима. Имајте на уму да су ови "
-"фајлови ретки, тако да задата величина не мора бити потпуно искоришћена. "
-"Зато је задавање веће вредности често сасвим безбедно."
 
 #: plasma/private/applet_p.cpp:119
 #, fuzzy, kde-format
@@ -328,6 +309,19 @@ msgstr ""
 #, kde-format
 msgid "Content dropped"
 msgstr "Садржај превучен"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Да ли направити кеш на диску за тему."
+
+# skip-rule: t-setting
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Највећа величина кеша теме на диску у килобајтима. Имајте на уму да су "
+#~ "ови фајлови ретки, тако да задата величина не мора бити потпуно "
+#~ "искоришћена. Зато је задавање веће вредности често сасвим безбедно."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Додај виџете..."

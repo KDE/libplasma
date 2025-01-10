@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-08-25 12:18+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -111,24 +111,6 @@ msgstr "Lås opp elementa"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Avslutt tilpassing"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Om det skal lagast eit snøgglager på disken for temaet."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Maksstorleiken på snøgglageret for temaet i kilobyte. Merk at desse filene "
-"er kompakte, så maksstorleiken vert gjerne ikkje brukt. Det er derfor ofte "
-"trygt å bruka ein stor verdi her."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -334,3 +316,15 @@ msgstr "Set %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Innhald sleppt"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Om det skal lagast eit snøgglager på disken for temaet."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Maksstorleiken på snøgglageret for temaet i kilobyte. Merk at desse "
+#~ "filene er kompakte, så maksstorleiken vert gjerne ikkje brukt. Det er "
+#~ "derfor ofte trygt å bruka ein stor verdi her."

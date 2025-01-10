@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-11-28 07:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -96,24 +96,6 @@ msgstr "أزِل قفل الودجات"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "اخرج من نمط التحرير"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "فيما إذا كان يجب إنشاء خبيئة على القرص للسمة."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"الحد الأقصى لحجم ذاكرة التخزين المؤقت للسمة على القرص بالكيلو بايت. لاحظ أن "
-"هذه الملفات هي ملفات متفرقة ، لذا قد لا يتم استخدام الحجم الأقصى. لذلك فإن "
-"تحديد حجم أكبر غالبًا ما يكون آمنًا تمامًا."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -316,6 +298,18 @@ msgstr "عيّن %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "أسقط المحتوى"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "فيما إذا كان يجب إنشاء خبيئة على القرص للسمة."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "الحد الأقصى لحجم ذاكرة التخزين المؤقت للسمة على القرص بالكيلو بايت. لاحظ "
+#~ "أن هذه الملفات هي ملفات متفرقة ، لذا قد لا يتم استخدام الحجم الأقصى. لذلك "
+#~ "فإن تحديد حجم أكبر غالبًا ما يكون آمنًا تمامًا."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "أضف ودجات…"

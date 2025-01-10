@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-12-15 22:18+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -96,24 +96,6 @@ msgstr "विजेट् मुक्तं कुर्वन्तु"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "सम्पादन विधितः निर्गच्छन्तु"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "विषयस्य कृते भण्डारणसञ्चयस्य निर्माणं कर्तव्यं वा न वा।."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"भण्डारणस्थस्य विषयसञ्चयस्य अधिकतमः आकारः kilobyte मध्ये । ध्यानं कुर्वन्तु यत् एताः "
-"सञ्चिकाः विरलसञ्चिकाः सन्ति, अतः अधिकतमस्य आकारस्य उपयोगः न भवितुं शक्नोति । अतः "
-"बृहत्तरं आकारं निरूपयत् करणं प्रायः अत्यन्तं सुरक्षितं भवति ।."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -316,3 +298,15 @@ msgstr "%1 निरूपयतु"
 #, kde-format
 msgid "Content dropped"
 msgstr "सामग्रीं पातितम्"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "विषयस्य कृते भण्डारणसञ्चयस्य निर्माणं कर्तव्यं वा न वा।."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "भण्डारणस्थस्य विषयसञ्चयस्य अधिकतमः आकारः kilobyte मध्ये । ध्यानं कुर्वन्तु यत् एताः "
+#~ "सञ्चिकाः विरलसञ्चिकाः सन्ति, अतः अधिकतमस्य आकारस्य उपयोगः न भवितुं शक्नोति । अतः "
+#~ "बृहत्तरं आकारं निरूपयत् करणं प्रायः अत्यन्तं सुरक्षितं भवति ।."

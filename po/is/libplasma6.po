@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-03-18 15:34+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -95,24 +95,6 @@ msgstr "Aflæsa græjum"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Loka breytiham"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Hvort það eigi að útbúa biðminni á diski fyrir þemað eða ekki."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Hámarksstærð biðminnis á diski fyrir þema í kílóbætum. Athugaðu að þessar "
-"skrár eru strjálar og ná því líklega sjaldan hámarksstærðinni. Það er því "
-"oftast öruggt að velja stærri stærð."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -316,6 +298,18 @@ msgstr "Velja %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Innihaldi sleppt"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Hvort það eigi að útbúa biðminni á diski fyrir þemað eða ekki."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Hámarksstærð biðminnis á diski fyrir þema í kílóbætum. Athugaðu að þessar "
+#~ "skrár eru strjálar og ná því líklega sjaldan hámarksstærðinni. Það er því "
+#~ "oftast öruggt að velja stærri stærð."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Bæta við græju..."

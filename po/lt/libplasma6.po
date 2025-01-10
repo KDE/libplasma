@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-08-25 23:28+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -99,24 +99,6 @@ msgstr "Atrakinti valdiklius"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Išjungti taisymo veikseną"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Ar įrašyti apipavidalinimo podėlį diske."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Didžiausias apipavidalinimo podėlio dydis diske, kilobaitais. Atminkite, kad "
-"failai yra reti masyvai, tad didžiausias dydis gali būti ir nenaudojamas. "
-"Dažniausiai, yra saugiau nurodyti didesnį dydį."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -321,6 +303,18 @@ msgstr "Nustatyti %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Numestas turinys"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Ar įrašyti apipavidalinimo podėlį diske."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Didžiausias apipavidalinimo podėlio dydis diske, kilobaitais. Atminkite, "
+#~ "kad failai yra reti masyvai, tad didžiausias dydis gali būti ir "
+#~ "nenaudojamas. Dažniausiai, yra saugiau nurodyti didesnį dydį."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Pridėti valdiklių..."

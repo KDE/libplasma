@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-08-25 15:42+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -97,24 +97,6 @@ msgstr "Desatrancar os trebellos"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Desactivar o modo de edición"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Indica se debe ou non crearse unha caché no disco para o tema."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"O tamaño máximo da caché en disco do tema, en kilobytes. Lembre que estes "
-"ficheiros son dispersos, polo que poida que non se use o tamaño máximo, polo "
-"que pór un tamaño maior a miúdo é seguro."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -319,6 +301,18 @@ msgstr "Definir %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Soltouse contido"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Indica se debe ou non crearse unha caché no disco para o tema."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "O tamaño máximo da caché en disco do tema, en kilobytes. Lembre que estes "
+#~ "ficheiros son dispersos, polo que poida que non se use o tamaño máximo, "
+#~ "polo que pór un tamaño maior a miúdo é seguro."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Engadir trebellos…"

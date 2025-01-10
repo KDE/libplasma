@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2024-08-24 12:23+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -95,25 +95,6 @@ msgstr "Desbloquear elementos gráficos"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Salir del modo de edición"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Si se debe crear o no una caché en el disco para el tema."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"El tamaño máximo en kilobytes de la caché en disco para el tema. Tenga en "
-"cuenta que estos archivos están muy dispersos, por lo que es posible que no "
-"se utilice el tamaño máximo. Por este motivo, suele ser bastante seguro "
-"especificar un tamaño mayor."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -318,6 +299,19 @@ msgstr "Definir %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Contenido soltado"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Si se debe crear o no una caché en el disco para el tema."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "El tamaño máximo en kilobytes de la caché en disco para el tema. Tenga en "
+#~ "cuenta que estos archivos están muy dispersos, por lo que es posible que "
+#~ "no se utilice el tamaño máximo. Por este motivo, suele ser bastante "
+#~ "seguro especificar un tamaño mayor."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Añadir elementos gráficos..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:29+0000\n"
 "PO-Revision-Date: 2021-09-05 15:52+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -96,24 +96,6 @@ msgstr "Eemalda vidinate lukustus"
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Välju kohandamisrežiimist"
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9
-#, kde-format
-msgid "Whether or not to create an on-disk cache for the theme."
-msgstr "Kas luua teemale kettal puhver või mitte."
-
-#. i18n: ectx: label, entry, group (CachePolicies)
-#: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
-#, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Teema kettapuhvri maksimaalne suurus kilobaitides. Pane tähele, et tegu on "
-"hajusfailiga, nii et maksimaalset suurust küllap ei kasutatagi. Seepärast "
-"võib suurema suuruse määramist pidada üpris turvaliseks valikuks."
 
 #: plasma/private/applet_p.cpp:119
 #, kde-format
@@ -312,6 +294,19 @@ msgstr "Määra taustapildiks %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Kohale lohistati sisu"
+
+#~ msgid "Whether or not to create an on-disk cache for the theme."
+#~ msgstr "Kas luua teemale kettal puhver või mitte."
+
+#~ msgid ""
+#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
+#~ "files are sparse files, so the maximum size may not be used. Setting a "
+#~ "larger size is therefore often quite safe."
+#~ msgstr ""
+#~ "Teema kettapuhvri maksimaalne suurus kilobaitides. Pane tähele, et tegu "
+#~ "on hajusfailiga, nii et maksimaalset suurust küllap ei kasutatagi. "
+#~ "Seepärast võib suurema suuruse määramist pidada üpris turvaliseks "
+#~ "valikuks."
 
 #~ msgid "Add Widgets..."
 #~ msgstr "Lisa vidinaid ..."

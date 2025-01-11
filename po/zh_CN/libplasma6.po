@@ -297,14 +297,3 @@ msgstr "设置 %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "内容已拖放"
-
-#~ msgid "Whether or not to create an on-disk cache for the theme."
-#~ msgstr "是否创建主题的磁盘缓存。"
-
-#~ msgid ""
-#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-#~ "files are sparse files, so the maximum size may not be used. Setting a "
-#~ "larger size is therefore often quite safe."
-#~ msgstr ""
-#~ "保存在磁盘中的主题缓存的最大体积，单位为 KB。注意：缓存文件是稀疏文件，因"
-#~ "此不一定能够完全利用设置的最大体积。设置一个较大的体积会比较安全。"

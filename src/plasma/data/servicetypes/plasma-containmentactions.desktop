@@ -3,6 +3,7 @@ Type=ServiceType
 X-KDE-ServiceType=Plasma/ContainmentActions
 
 Comment=Plasma ContainmentActions
+Comment[ar]=إجراءات احتواء البلازما
 Comment[az]=Plasma tutumu üçün hərəkətlər
 Comment[be]=Дзеянні кантэйнера Plasma
 Comment[bg]=Plasma ContainmentActions

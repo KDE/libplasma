@@ -399,7 +399,12 @@ void PopupPlasmaWindow::setMargin(int margin)
     }
 
     d->m_margin = margin;
+    // Margin is used to animate applets when the panel switches
+    // from floating to not floating, so we immediately update the
+    // position instead of using queuePositionUpdate, which would
+    // only run at the end of the animation.
     queuePositionUpdate();
+    update();
     Q_EMIT marginChanged();
 }
 

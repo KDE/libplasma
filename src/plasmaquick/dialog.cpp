@@ -1389,8 +1389,10 @@ bool Dialog::event(QEvent *event)
         d->updateVisibility(false);
         d->needsSetupNextExpose = true;
     } else if (event->type() == QEvent::Move) {
-        QMoveEvent *me = static_cast<QMoveEvent *>(event);
-        PlasmaShellWaylandIntegration::get(this)->setPosition(me->pos());
+        if (d->type != Dialog::OnScreenDisplay) {
+            QMoveEvent *me = static_cast<QMoveEvent *>(event);
+            PlasmaShellWaylandIntegration::get(this)->setPosition(me->pos());
+        }
     }
 
     /*Fitt's law: if the containment has margins, and the mouse cursor clicked

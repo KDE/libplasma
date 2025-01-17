@@ -29,6 +29,7 @@ RowLayout {
     GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
+        Layout.alignment: Qt.AlignCenter
         columns: root.button.display == T.Button.TextBesideIcon ? 2 : 1
         rowSpacing: root.button.spacing
         columnSpacing: rowSpacing

@@ -9,6 +9,8 @@
 
 #include <KPluginMetaData>
 
+#include "containment.h"
+
 namespace Plasma
 {
 

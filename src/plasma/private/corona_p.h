@@ -11,6 +11,8 @@
 
 #include <KPackage/Package>
 
+#include "corona.h"
+
 namespace Plasma
 {
 class Containment;

@@ -50,6 +50,20 @@ public:
     ~ContainmentActions() override;
 
     /**
+     * Returns the ID of this plugin
+     *
+     * \since 6.4
+     */
+    QString id() const;
+
+    /**
+     * Returns whether this plugin has a configuration UI
+     *
+     * \since 6.4
+     */
+    bool hasConfigurationInterface() const;
+
+    /**
      * @return metadata for this ContainmentActions instance
      *         including name, pluginName and icon
      * @since 5.67

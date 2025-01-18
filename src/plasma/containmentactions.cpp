@@ -45,6 +45,16 @@ ContainmentActions::~ContainmentActions()
     delete d;
 }
 
+QString ContainmentActions::id() const
+{
+    return d->containmentActionsDescription.pluginId();
+}
+
+bool ContainmentActions::hasConfigurationInterface() const
+{
+    return d->containmentActionsDescription.rawData().value(QStringLiteral("X-Plasma-HasConfigurationInterface")).toBool();
+}
+
 KPluginMetaData ContainmentActions::metadata() const
 {
     return d->containmentActionsDescription;

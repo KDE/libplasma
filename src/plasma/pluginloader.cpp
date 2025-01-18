@@ -7,17 +7,14 @@
 #include "pluginloader.h"
 
 #include <QDebug>
-#include <QGuiApplication>
-#include <QPluginLoader>
-#include <QPointer>
 #include <QRegularExpression>
-#include <QStandardPaths>
 
-#include <KLazyLocalizedString>
+#include <KConfigGroup>
+#include <KLocalizedString>
 #include <KPackage/PackageLoader>
+#include <KPluginFactory>
 #include <KRuntimePlatform>
-
-#include "config-plasma.h"
+#include <KSharedConfig>
 
 #include "applet.h"
 #include "containment.h"

@@ -37,7 +37,14 @@ T.Button {
         //in case of explicit & the button manages it by itself
         enabled: !(RegExp(/\&[^\&]/).test(control.text))
         sequence: control.Kirigami.MnemonicData.sequence
-        onActivated: control.animateClick()
+        onActivated: {
+            // TODO Remove check once we depend on Qt 6.8.
+            if (typeof control.animateClick === "function") {
+                control.animateClick();
+            } else {
+                control.clicked();
+            }
+        }
     }
 
     Kirigami.Theme.inherit: flat

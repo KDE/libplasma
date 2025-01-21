@@ -99,6 +99,32 @@ ComponentBase {
             }
 
             PlasmaComponents.Label {
+                text: "fixed icon size\nicon should be 48px and centered within the button"
+            }
+
+            RowLayout {
+                PlasmaComponents.Button {
+                    icon.name: "application-menu"
+                    icon.width: 48
+                    icon.height: 48
+                }
+                PlasmaComponents.Button {
+                    icon.name: "application-menu"
+                    Layout.minimumWidth: 100
+                    icon.width: 48
+                    icon.height: 48
+                }
+                PlasmaComponents.Button {
+                    icon.name: "application-menu"
+                    Layout.minimumWidth: 100
+                    icon.width: 48
+                    icon.height: 48
+                    text: "Test"
+                    display: PlasmaComponents.Button.IconOnly
+                }
+            }
+
+            PlasmaComponents.Label {
                 text: "Display property"
             }
             RowLayout {

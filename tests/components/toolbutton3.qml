@@ -122,6 +122,36 @@ ComponentBase {
                 text: "Text"
             }
         }
+        RowLayout {
+            Layout.fillWidth: true
+            PlasmaComponents.Label {
+                Layout.fillWidth: true
+                text: "Fixed icon size\nicon should be 48px and centered within the button"
+            }
+
+            PlasmaComponents.ToolButton {
+                icon.name: "window-close"
+                icon.width: 48
+                icon.height: 48
+                flat: false
+            }
+            PlasmaComponents.ToolButton {
+                icon.name: "window-close"
+                Layout.minimumWidth: 100
+                icon.width: 48
+                icon.height: 48
+                flat: false
+            }
+            PlasmaComponents.ToolButton {
+                icon.name: "window-close"
+                Layout.minimumWidth: 100
+                icon.width: 48
+                icon.height: 48
+                flat: false
+                text: "Test"
+                display: PlasmaComponents.ToolButton.IconOnly
+            }
+        }
     }
 }
 

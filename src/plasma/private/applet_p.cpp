@@ -345,14 +345,12 @@ QMap<QString, QAction *> AppletPrivate::defaultActions(QObject *parent)
     configAction->setAutoRepeat(false);
     configAction->setText(i18n("Widget Settings"));
     configAction->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
-    configAction->setShortcut(QKeySequence(QStringLiteral("alt+d, s")));
 
     QAction *closeApplet = new QAction(parent);
     actions[QStringLiteral("remove")] = closeApplet;
     closeApplet->setAutoRepeat(false);
     closeApplet->setText(i18n("Remove this Widget"));
     closeApplet->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
-    closeApplet->setShortcut(QKeySequence(QStringLiteral("alt+d, r")));
 
     return actions;
 }

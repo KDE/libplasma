@@ -481,7 +481,6 @@ void CoronaPrivate::init()
     editAction->setText(i18n("Enter Edit Mode"));
     editAction->setAutoRepeat(true);
     editAction->setIcon(QIcon::fromTheme(QStringLiteral("document-edit")));
-    editAction->setShortcut(QKeySequence(QStringLiteral("alt+d, e")));
     editAction->setShortcutContext(Qt::ApplicationShortcut);
 }
 

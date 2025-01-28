@@ -53,7 +53,6 @@ void ContainmentPrivate::addDefaultActions(QMap<QString, QAction *> &actions, Co
 {
     // adjust applet actions
     QAction *appAction = actions.value(QStringLiteral("remove"));
-    appAction->setShortcut(QKeySequence(Qt::ALT | Qt::Key_D, Qt::ALT | Qt::Key_R));
     if (c && c->d->isPanelContainment()) {
         appAction->setText(i18n("Remove this Panel"));
     } else {
@@ -62,7 +61,6 @@ void ContainmentPrivate::addDefaultActions(QMap<QString, QAction *> &actions, Co
 
     appAction = actions.value(QStringLiteral("configure"));
     if (appAction) {
-        appAction->setShortcut(QKeySequence(Qt::ALT | Qt::Key_D, Qt::ALT | Qt::Key_S));
         appAction->setText(i18n("Activity Settings"));
     }
 
@@ -77,7 +75,6 @@ void ContainmentPrivate::addDefaultActions(QMap<QString, QAction *> &actions, Co
     appletBrowserAction->setAutoRepeat(false);
     appletBrowserAction->setText(i18n("Add or Manage Widgets…"));
     appletBrowserAction->setIcon(QIcon::fromTheme(QStringLiteral("view-group-symbolic")));
-    appletBrowserAction->setShortcut(QKeySequence(Qt::ALT | Qt::Key_D, Qt::Key_A));
 
     if (c) {
         static_cast<Plasma::Applet *>(c)->d->actions.insert(actions);

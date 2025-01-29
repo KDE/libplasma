@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"POT-Creation-Date: 2025-01-29 00:42+0000\n"
 "PO-Revision-Date: 2024-03-18 15:34+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -141,32 +141,32 @@ msgstr "Afturkalla"
 msgid "Widget Settings"
 msgstr "Græjustillingar"
 
-#: plasma/private/applet_p.cpp:353
+#: plasma/private/applet_p.cpp:352
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Fjarlægja þessa græju"
 
-#: plasma/private/containment_p.cpp:58
+#: plasma/private/containment_p.cpp:57
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Fjarlægja þessa skjáborðsstiku"
 
-#: plasma/private/containment_p.cpp:60
+#: plasma/private/containment_p.cpp:59
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Fjarlægja þessa athöfn"
 
-#: plasma/private/containment_p.cpp:66
+#: plasma/private/containment_p.cpp:64
 #, kde-format
 msgid "Activity Settings"
 msgstr "Athafnastillingar"
 
-#: plasma/private/containment_p.cpp:78
+#: plasma/private/containment_p.cpp:76
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr ""
 
-#: plasma/private/containment_p.cpp:197
+#: plasma/private/containment_p.cpp:194
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Fann ekki umbeðna einingu: %1"

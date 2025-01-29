@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"POT-Creation-Date: 2025-01-29 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -141,32 +141,32 @@ msgstr "पूर्ववत"
 msgid "Widget Settings"
 msgstr "विजेट सेटिंग्स"
 
-#: plasma/private/applet_p.cpp:353
+#: plasma/private/applet_p.cpp:352
 #, kde-format
 msgid "Remove this Widget"
 msgstr "यह विजेट हटाएँ"
 
-#: plasma/private/containment_p.cpp:58
+#: plasma/private/containment_p.cpp:57
 #, kde-format
 msgid "Remove this Panel"
 msgstr "इस पैनल को हटाएँ"
 
-#: plasma/private/containment_p.cpp:60
+#: plasma/private/containment_p.cpp:59
 #, kde-format
 msgid "Remove this Activity"
 msgstr "इस गतिविधि को हटाएँ"
 
-#: plasma/private/containment_p.cpp:66
+#: plasma/private/containment_p.cpp:64
 #, kde-format
 msgid "Activity Settings"
 msgstr "गतिविधि सेटिंग्स"
 
-#: plasma/private/containment_p.cpp:78
+#: plasma/private/containment_p.cpp:76
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "विजेट जोड़ें या प्रबंधित करें…"
 
-#: plasma/private/containment_p.cpp:197
+#: plasma/private/containment_p.cpp:194
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "अनुरोधित घटक नहीं मिल सका: %1"

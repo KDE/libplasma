@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"POT-Creation-Date: 2025-01-29 00:42+0000\n"
 "PO-Revision-Date: 2020-09-19 11:42+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -141,32 +141,32 @@ msgstr "Ботил сохтан"
 msgid "Widget Settings"
 msgstr "Танзимоти виҷетҳо"
 
-#: plasma/private/applet_p.cpp:353
+#: plasma/private/applet_p.cpp:352
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Тоза кардани ин виҷет"
 
-#: plasma/private/containment_p.cpp:58
+#: plasma/private/containment_p.cpp:57
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Тоза кардани ин лавҳа"
 
-#: plasma/private/containment_p.cpp:60
+#: plasma/private/containment_p.cpp:59
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Тоза кардани ин фаъолият"
 
-#: plasma/private/containment_p.cpp:66
+#: plasma/private/containment_p.cpp:64
 #, kde-format
 msgid "Activity Settings"
 msgstr "Танзимоти фаъолиятҳо"
 
-#: plasma/private/containment_p.cpp:78
+#: plasma/private/containment_p.cpp:76
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr ""
 
-#: plasma/private/containment_p.cpp:197
+#: plasma/private/containment_p.cpp:194
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Унсури дархостшуда ёфт нашуд: %1"

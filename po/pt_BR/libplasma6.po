@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:29+0000\n"
+"POT-Creation-Date: 2025-01-29 00:42+0000\n"
 "PO-Revision-Date: 2024-03-23 19:06-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -143,32 +143,32 @@ msgstr "Desfazer"
 msgid "Widget Settings"
 msgstr "Configurações do widget"
 
-#: plasma/private/applet_p.cpp:353
+#: plasma/private/applet_p.cpp:352
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Remover este widget"
 
-#: plasma/private/containment_p.cpp:58
+#: plasma/private/containment_p.cpp:57
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Remover este painel"
 
-#: plasma/private/containment_p.cpp:60
+#: plasma/private/containment_p.cpp:59
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Remover esta atividade"
 
-#: plasma/private/containment_p.cpp:66
+#: plasma/private/containment_p.cpp:64
 #, kde-format
 msgid "Activity Settings"
 msgstr "Configurações da atividade"
 
-#: plasma/private/containment_p.cpp:78
+#: plasma/private/containment_p.cpp:76
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr ""
 
-#: plasma/private/containment_p.cpp:197
+#: plasma/private/containment_p.cpp:194
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Não foi possível encontrar o componente requisitado: %1"

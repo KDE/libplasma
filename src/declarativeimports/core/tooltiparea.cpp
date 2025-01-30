@@ -15,10 +15,11 @@
 #include <QQmlEngine>
 #include <QStandardPaths>
 
-#include <KDirWatch>
 #include <KSharedConfig>
 #include <KWindowEffects>
 #include <Plasma/Applet>
+
+using namespace Qt::Literals;
 
 ToolTipDialog *ToolTipArea::s_dialog = nullptr;
 int ToolTipArea::s_dialogUsers = 0;
@@ -40,12 +41,9 @@ ToolTipArea::ToolTipArea(QQuickItem *parent)
     m_showTimer.setSingleShot(true);
     connect(&m_showTimer, &QTimer::timeout, this, &ToolTipArea::showToolTip);
 
-    loadSettings();
-
-    const QString configFile = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QStringLiteral("/plasmarc");
-    KDirWatch::self()->addFile(configFile);
-    QObject::connect(KDirWatch::self(), &KDirWatch::created, this, &ToolTipArea::settingsChanged);
-    QObject::connect(KDirWatch::self(), &KDirWatch::dirty, this, &ToolTipArea::settingsChanged);
+    m_plasmarcWatcher = KConfigWatcher::create(KSharedConfig::openConfig(u"plasmarc"_s));
+    connect(m_plasmarcWatcher.get(), &KConfigWatcher::configChanged, this, &ToolTipArea::settingsChanged);
+    loadSettings(m_plasmarcWatcher->config()->group(u"PlasmaToolTips"_s));
 }
 
 ToolTipArea::~ToolTipArea()
@@ -64,19 +62,15 @@ ToolTipArea::~ToolTipArea()
     }
 }
 
-void ToolTipArea::settingsChanged(const QString &file)
+void ToolTipArea::settingsChanged(const KConfigGroup &group, const QByteArrayList & /*names*/)
 {
-    if (!file.endsWith(QLatin1String("plasmarc"))) {
-        return;
+    if (group.name() == u"PlasmaToolTips") {
+        loadSettings(group);
     }
-
-    KSharedConfig::openConfig(QStringLiteral("plasmarc"))->reparseConfiguration();
-    loadSettings();
 }
 
-void ToolTipArea::loadSettings()
+void ToolTipArea::loadSettings(const KConfigGroup &cfg)
 {
-    KConfigGroup cfg = KConfigGroup(KSharedConfig::openConfig(QStringLiteral("plasmarc")), QStringLiteral("PlasmaToolTips"));
     m_interval = cfg.readEntry("Delay", 700);
     m_tooltipsEnabledGlobally = (m_interval > 0);
 }

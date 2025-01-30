@@ -10,10 +10,13 @@
 #define TOOLTIPOBJECT_H
 
 #include <Plasma/Plasma>
+
 #include <QPointer>
 #include <QQuickItem>
 #include <QTimer>
 #include <QVariant>
+
+#include <KConfigWatcher>
 
 class QQuickItem;
 class ToolTipDialog;
@@ -208,12 +211,12 @@ Q_SIGNALS:
     void toolTipVisibleChanged(bool toolTipVisible);
 
 private Q_SLOTS:
-    void settingsChanged(const QString &file);
+    void settingsChanged(const KConfigGroup &group, const QByteArrayList &names);
 
 private:
     bool isValid() const;
 
-    void loadSettings();
+    void loadSettings(const KConfigGroup &cfg);
     bool m_tooltipsEnabledGlobally;
     bool m_containsMouse;
     Plasma::Types::Location m_location;
@@ -235,6 +238,8 @@ private:
     bool m_usingDialog : 1;
     static ToolTipDialog *s_dialog;
     static int s_dialogUsers;
+
+    KConfigWatcher::Ptr m_plasmarcWatcher;
 };
 
 #endif

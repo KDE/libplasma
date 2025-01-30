@@ -21,7 +21,6 @@
 
 #include <KColorScheme>
 #include <KConfigGroup>
-#include <KDirWatch>
 #include <KWindowEffects>
 #include <QDebug>
 #include <QStandardPaths>

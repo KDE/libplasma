@@ -65,7 +65,7 @@ public:
 
 private:
     uint m_texture;
-    QFunctionPointer m_releaseTexImage;
+    QFunctionPointer m_releaseTexImage = nullptr;
     xcb_pixmap_t m_glxPixmap;
 };
 

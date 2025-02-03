@@ -4,20 +4,21 @@
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2013, 2014, 2015, 2016, 2018, 2019.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2018, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-29 00:42+0000\n"
-"PO-Revision-Date: 2024-03-23 19:06-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"PO-Revision-Date: 2025-02-02 02:38-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
 #, kde-format
@@ -44,7 +45,7 @@ msgstr "Senha"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:60
 #, kde-format
 msgid "Search…"
-msgstr "Pesquisar..."
+msgstr "Pesquisar…"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
@@ -81,7 +82,7 @@ msgstr "Entrar no modo de edição"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "Configurar %1..."
+msgstr "Configurar %1…"
 
 #: plasma/corona.cpp:309 plasma/corona.cpp:466
 #, kde-format
@@ -101,7 +102,7 @@ msgstr "Sair do modo de edição"
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "Mostrar alternativas..."
+msgstr "Mostrar alternativas…"
 
 #: plasma/private/applet_p.cpp:242
 #, kde-format
@@ -166,7 +167,7 @@ msgstr "Configurações da atividade"
 #: plasma/private/containment_p.cpp:76
 #, kde-format
 msgid "Add or Manage Widgets…"
-msgstr ""
+msgstr "Adicionar ou gerenciar widgets…"
 
 #: plasma/private/containment_p.cpp:194
 #, kde-format
@@ -234,16 +235,14 @@ msgid "Error loading QML file: %1 %2"
 msgstr "Ocorreu um erro ao carregar o arquivo QML: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:616
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package does not exist. %1"
+#, kde-format
 msgid "Error loading Applet: package %1 does not exist."
-msgstr "Erro ao carregar o miniaplicativo: O pacote não existe. %1"
+msgstr "Erro ao carregar o miniaplicativo: O pacote %1 não existe."
 
 #: plasmaquick/configview.cpp:233
-#, fuzzy, kde-format
-#| msgid "%1 Settings"
+#, kde-format
 msgid "%1 — %2 Settings"
-msgstr "Configurações de %1"
+msgstr "Configurações de %1 — %2"
 
 #: plasmaquick/configview.cpp:234
 #, kde-format

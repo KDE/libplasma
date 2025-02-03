@@ -8,8 +8,8 @@ portingAid: false
 deprecated: false
 release: true
 libraries:
- - cmake: KF6::Plasma
- - cmake: KF6::PlasmaQuick
+    - cmake: KF6::Plasma
+    - cmake: KF6::PlasmaQuick
 cmakename: KF6Plasma
 
 public_lib: true

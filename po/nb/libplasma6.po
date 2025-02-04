@@ -294,15 +294,3 @@ msgstr ""
 #, kde-format
 msgid "Content dropped"
 msgstr ""
-
-#~ msgid "Whether or not to create an on-disk cache for the theme."
-#~ msgstr "Om et mellomlager på disk skal opprettes for temaet."
-
-#~ msgid ""
-#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-#~ "files are sparse files, so the maximum size may not be used. Setting a "
-#~ "larger size is therefore often quite safe."
-#~ msgstr ""
-#~ "Maksimal størrelse for tema-mellomlager på disk i kilobyte. Merk at disse "
-#~ "filene har mye tomrom, så maksimal størrelse blir kanskje ikke brukt. Det "
-#~ "er derfor ofte ganske trygt å oppgi stor størrelse."

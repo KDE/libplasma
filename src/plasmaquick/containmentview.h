@@ -117,7 +117,7 @@ Q_SIGNALS:
     void screenGeometryChanged();
 
 private:
-    ContainmentViewPrivate *const d;
+    const std::unique_ptr<ContainmentViewPrivate> d;
     Q_PRIVATE_SLOT(d, void updateDestroyed(bool))
     friend class ContainmentViewPrivate;
 };

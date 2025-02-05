@@ -222,7 +222,6 @@ ContainmentView::ContainmentView(Plasma::Corona *corona, QWindow *parent)
 
 ContainmentView::~ContainmentView()
 {
-    delete d;
 }
 
 void ContainmentView::destroy()

@@ -10,9 +10,15 @@
 #include <QQmlProperty>
 #include <qpa/qplatformwindow.h> // for QWINDOWSIZE_MAX
 
+#include "config-plasmaquick.h"
+
 #include <KConfigGroup>
 #include <KWindowSystem>
-#include <KX11Extras>
+
+#if HAVE_X11
+    #include <KX11Extras>
+#endif
+
 #include <QSize>
 
 #include "applet.h"
@@ -65,11 +71,13 @@ AppletPopup::AppletPopup()
     setAnimated(true);
     setFlags(flags() | Qt::Dialog);
 
+#if HAVE_X11
     if (KWindowSystem::isPlatformX11()) {
         KX11Extras::setType(winId(), NET::AppletPopup);
     } else {
         PlasmaShellWaylandIntegration::get(this)->setRole(QtWayland::org_kde_plasma_surface::role::role_appletpopup);
     }
+#endif
 
     auto edgeForwarder = new EdgeEventForwarder(this);
     edgeForwarder->setMargins(padding());

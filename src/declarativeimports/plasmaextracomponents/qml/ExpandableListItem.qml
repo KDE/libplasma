@@ -379,6 +379,12 @@ Item {
     Accessible.name: title
     Accessible.description: subtitle
 
+    PlasmaComponents3.ToolTip {
+        text: listItem.title + (listItem.subtitle.length > 0 ? "\n" + listItem.subtitle : "")
+        visible: mouseArea.containsMouse && (listItemTitle.truncated || listItemSubtitle.truncated)
+        textFormat: listItem.allowStyledText ? Text.StyledText : Text.PlainText
+    }
+
     // Handle left clicks and taps; don't accept stylus input or else it steals
     // events from the buttons on the list item
     TapHandler {
@@ -393,6 +399,7 @@ Item {
     }
 
     MouseArea {
+        id: mouseArea
         anchors.fill: parent
 
         // This MouseArea used to intercept RightButton to open a context

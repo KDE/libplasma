@@ -12,9 +12,11 @@
 
 #include <QAbstractNativeEventFilter>
 
-#include <xcb/xcb.h>
-
 #include <config-plasma.h>
+
+#if HAVE_X11
+    #include <xcb/xcb.h>
+#endif
 
 namespace Plasma
 {
@@ -30,9 +32,7 @@ public:
     bool isEffectActive() const;
 
 protected:
-#if HAVE_X11
     bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *) override;
-#endif
 
 Q_SIGNALS:
     void effectChanged(bool on);

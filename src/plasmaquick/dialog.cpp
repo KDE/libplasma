@@ -710,7 +710,7 @@ QPointF DialogPrivate::positionAdjustedForMainItem(const QPointF &point) const
 void DialogPrivate::applyType()
 {
     /*QXcbWindowFunctions::WmWindowType*/ int wmType = 0;
-
+    Q_UNUSED(wmType);
 #if HAVE_X11
     if (KWindowSystem::isPlatformX11()) {
         switch (type) {

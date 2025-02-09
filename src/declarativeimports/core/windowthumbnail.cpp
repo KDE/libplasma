@@ -210,6 +210,7 @@ void WindowThumbnail::itemChange(ItemChange change, const ItemChangeData &data)
 void WindowThumbnail::releaseResources()
 {
     QQuickWindow::RenderStage m_renderStage = QQuickWindow::NoStage;
+    Q_UNUSED(m_renderStage);
     if (m_textureProvider) {
         window()->scheduleRenderJob(new DiscardTextureProviderRunnable(m_textureProvider), QQuickWindow::AfterSynchronizingStage);
         m_textureProvider = nullptr;

@@ -95,6 +95,7 @@ bool ContrastEffectWatcher::nativeEventFilter(const QByteArray &eventType, void 
         return false;
     }
 
+    Q_UNUSED(message);
     Q_UNUSED(result);
     // A faster comparison than eventType != "xcb_generic_event_t"
     // given that eventType can only have the following values:

@@ -7,13 +7,17 @@
 
 #include "dialogbackground_p.h"
 #include "dialogshadows_p.h"
+#include "config-plasmaquick.h"
 
 #include <QMarginsF>
 #include <QQuickItem>
 
 #include <KWindowEffects>
 #include <KWindowSystem>
-#include <KX11Extras>
+
+#if HAVE_X11
+    #include <KX11Extras>
+#endif
 
 #include <Plasma/Theme>
 
@@ -141,11 +145,14 @@ Qt::Edges PlasmaWindow::borders()
 
 void PlasmaWindow::showEvent(QShowEvent *e)
 {
+#if HAVE_X11
     // EWMH states that the state is reset every hide
     // Qt supports external factors setting state before the next show
     if (KWindowSystem::isPlatformX11()) {
         KX11Extras::setState(winId(), NET::SkipTaskbar | NET::SkipPager | NET::SkipSwitcher);
     }
+#endif
+
     QQuickWindow::showEvent(e);
 }
 
@@ -171,11 +178,13 @@ void PlasmaWindowPrivate::handleFrameChanged()
                                              theme.backgroundSaturation(),
                                              mask);
 
+#if HAVE_X11
     if (!KWindowSystem::isPlatformX11() || KX11Extras::compositingActive()) {
         q->setMask(QRegion());
     } else {
         q->setMask(mask);
     }
+#endif
 }
 
 void PlasmaWindowPrivate::updateMainItemGeometry()

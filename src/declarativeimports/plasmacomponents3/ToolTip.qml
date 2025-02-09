@@ -15,6 +15,8 @@ import org.kde.kirigami as Kirigami
 T.ToolTip {
     id: control
 
+    property alias textFormat: label.textFormat
+
     x: parent ? Math.round((parent.width - implicitWidth) / 2) : 0
     y: -implicitHeight - 3
 

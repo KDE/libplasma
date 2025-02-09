@@ -3,6 +3,8 @@
 # <visibility-layer>/<C++ namespace>/class header files
 set(PLASMAQUICK_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR}/PlasmaQuick")
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-plasmaquick.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-plasmaquick.h)
+
 add_library(PlasmaQuick SHARED)
 add_library(Plasma::PlasmaQuick ALIAS PlasmaQuick)
 

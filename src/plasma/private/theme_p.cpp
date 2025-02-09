@@ -96,9 +96,11 @@ ThemePrivate::ThemePrivate(QObject *parent)
     , apiMinor(0)
     , apiRevision(0)
 {
+#if HAVE_X11
     if (KWindowSystem::isPlatformX11()) {
         compositingActive = KX11Extras::self()->compositingActive();
     }
+#endif
 
     kSvgImageSet = std::unique_ptr<KSvg::ImageSet>(new KSvg::ImageSet);
     kSvgImageSet->setBasePath(QStringLiteral(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/"));
@@ -139,9 +141,11 @@ ThemePrivate::ThemePrivate(QObject *parent)
         scheduleThemeChangeNotification();
     });
 
+#if HAVE_X11
     if (KWindowSystem::isPlatformX11()) {
         connect(KX11Extras::self(), &KX11Extras::compositingChanged, selectorsUpdateTimer, qOverload<>(&QTimer::start));
     }
+#endif
     updateKSvgSelectors();
 }
 

@@ -251,6 +251,7 @@ void WindowThumbnail::invalidateSceneGraph()
 {
     delete m_textureProvider;
     m_textureProvider = nullptr;
+#if HAVE_XCB_COMPOSITE
 #if HAVE_GLX
     if (m_glxPixmap != XCB_PIXMAP_NONE) {
         // runnable used just to share code with releaseResources, we're already in the render thread
@@ -268,6 +269,7 @@ void WindowThumbnail::invalidateSceneGraph()
         m_image = EGL_NO_IMAGE_KHR;
         m_texture = 0;
     }
+#endif
 #endif
 }
 

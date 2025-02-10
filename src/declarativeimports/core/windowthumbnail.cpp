@@ -6,7 +6,9 @@
 #include "windowthumbnail.h"
 // KF5
 #include <KWindowSystem>
-#include <KX11Extras>
+#if HAVE_X11
+    #include <KX11Extras>
+#endif
 // Qt
 #include <QGuiApplication>
 #include <QIcon>
@@ -283,10 +285,12 @@ void WindowThumbnail::setWinId(uint32_t winId)
     if (m_winId == winId) {
         return;
     }
+#if HAVE_X11
     if (KWindowSystem::isPlatformX11() && !KX11Extras::self()->hasWId(winId)) {
         // invalid Id, don't updated
         return;
     }
+#endif
     if (window() && winId == window()->winId()) {
         // don't redirect to yourself
         return;
@@ -396,12 +400,14 @@ bool WindowThumbnail::nativeEventFilter(const QByteArray &eventType, void *messa
 void WindowThumbnail::iconToTexture(WindowTextureProvider *textureProvider)
 {
     QIcon icon;
+#if HAVE_X11
     if (KWindowSystem::isPlatformX11() && KX11Extras::self()->hasWId(m_winId)) {
         icon = KX11Extras::self()->icon(m_winId, boundingRect().width(), boundingRect().height());
     } else {
         // fallback to plasma icon
         icon = QIcon::fromTheme(QStringLiteral("plasma"));
     }
+#endif
     QImage image = icon.pixmap(boundingRect().size().toSize(), window()->devicePixelRatio()).toImage();
     textureProvider->setTexture(window()->createTextureFromImage(image, QQuickWindow::TextureCanUseAtlas));
 }

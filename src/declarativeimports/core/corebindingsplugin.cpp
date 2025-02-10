@@ -11,11 +11,14 @@
 
 #include <QDebug>
 #include <QQmlContext>
+#include <QString>
 #include <QWindow>
 
 #include <KLocalizedContext>
 
 #include "action.h"
+#include "applet.h"
+#include "containment.h"
 #include <KLocalizedQmlContext>
 
 void CoreBindingsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
@@ -40,6 +43,8 @@ void CoreBindingsPlugin::registerTypes(const char *uri)
     qmlRegisterRevision<QWindow, 1>(uri, 2, 0);
     qmlRegisterRevision<QQuickItem, 1>(uri, 2, 0);
     qmlRegisterExtendedType<QAction, ActionExtension>(uri, 2, 0, "Action");
+    qmlRegisterUncreatableType<Plasma::Containment>(uri, 2, 1, "Containment", QString::fromUtf8("To be used to access enums"));
+    qmlRegisterUncreatableType<Plasma::Applet>(uri, 2, 1, "Applet", QString::fromUtf8("To be used to access enums"));
 }
 
 #include "moc_corebindingsplugin.cpp"

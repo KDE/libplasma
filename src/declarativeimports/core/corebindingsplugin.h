@@ -16,7 +16,9 @@
 
 #include <Plasma/Plasma>
 
+#include "applet.h"
 #include "appletpopup.h"
+#include "containment.h"
 #include "dialog.h"
 
 struct TypesForeign {
@@ -54,6 +56,20 @@ struct DialogForeign {
     Q_GADGET
     QML_NAMED_ELEMENT(Dialog)
     QML_FOREIGN(PlasmaQuick::Dialog)
+};
+
+struct ContainmentForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(Containment)
+    QML_UNCREATABLE("")
+    QML_FOREIGN(Plasma::Containment)
+};
+
+struct AppletForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(Applet)
+    QML_UNCREATABLE("")
+    QML_FOREIGN(Plasma::Applet)
 };
 
 class CoreBindingsPlugin : public QQmlExtensionPlugin

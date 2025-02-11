@@ -295,6 +295,3 @@ msgstr "Nastavit %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Obsah byl zahozen"
-
-#~ msgid "Whether or not to create an on-disk cache for the theme."
-#~ msgstr "Zda pro motiv vytvářet nebo nevytvářet mezipaměť na disku."

@@ -4,6 +4,7 @@
             {
                 "Email": "menard@kde.org",
                 "Name": "Alexis Menard",
+                "Name[ar]": "أليكسيس مينارد",
                 "Name[az]": "Alexis Menard",
                 "Name[be]": "Alexis Menard",
                 "Name[bg]": "Alexis Menard",
@@ -43,6 +44,7 @@
         ],
         "Category": "Examples",
         "Description": "Native Plasma widget written in QML and JavaScript",
+        "Description[ar]": "أداة بلازما أصلية مكتوبة بلغة QML و JavaScript",
         "Description[az]": "QML və JavaScript-də yazılmış yerli plazma widgetı",
         "Description[be]": "Уласны віджэт Plasma, напісаны на QML і JavaScript",
         "Description[bg]": "Нативно приложение на Plasma, написано с QML и JavaScript",
@@ -82,6 +84,7 @@
         "Id": "qmlscript",
         "License": "LGPL",
         "Name": "Declarative widget",
+        "Name[ar]": "بريمج تعريفي",
         "Name[az]": "Deklarativ vidjet",
         "Name[be]": "Дэкларатыўны віджэт",
         "Name[bg]": "Декларативни инструменти",

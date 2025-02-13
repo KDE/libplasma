@@ -44,6 +44,7 @@
         ],
         "Category": "",
         "Description": "A breath of fresh air",
+        "Description[ar]": "نسمة من الهواء النقي",
         "Description[az]": "Bir nəfəs təmiz hava",
         "Description[be]": "Глыток свежага паветра",
         "Description[bg]": "Глътка свеж въздух",

@@ -10,6 +10,7 @@
 
 #include "debug_p.h"
 #include <QGuiApplication>
+#include <QScopedValueRollback>
 #include <QScreen>
 #include <qnamespace.h>
 #include <qtmetamacros.h>
@@ -39,6 +40,7 @@ public:
     QPointer<QQuickWindow> m_visualParentWindow;
     PopupPlasmaWindow::RemoveBorders m_removeBorderStrategy = PopupPlasmaWindow::Never;
     bool m_needsReposition = false;
+    bool m_isUpdatingPosition = false;
     bool m_floating = false;
     bool m_animated = false;
     int m_margin = 0;
@@ -130,6 +132,10 @@ void PopupPlasmaWindowPrivate::updateSlideEffect(const QRect &globalPosition)
 
 void PopupPlasmaWindowPrivate::updatePosition()
 {
+    if (m_isUpdatingPosition) {
+        return;
+    }
+    QScopedValueRollback updateGuard(m_isUpdatingPosition, true);
     m_needsReposition = false;
 
     if (!m_visualParent || !m_visualParent->window()) {

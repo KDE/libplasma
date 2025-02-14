@@ -826,15 +826,11 @@ FbConfigInfo *getConfig(xcb_visualid_t visual)
     XFree(configs);
 
     std::stable_sort(candidates.begin(), candidates.end(), [](const FBConfig &left, const FBConfig &right) {
-        if (left.depth < right.depth) {
-            return true;
+        if (left.depth != right.depth) {
+            return left.depth < right.depth;
         }
 
-        if (left.stencil < right.stencil) {
-            return true;
-        }
-
-        return false;
+        return left.stencil < right.stencil;
     });
 
     FbConfigInfo *info = nullptr;

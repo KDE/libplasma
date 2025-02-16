@@ -304,17 +304,3 @@ msgstr "Establix %1"
 #, kde-format
 msgid "Content dropped"
 msgstr "Contingut descartat"
-
-#~ msgid "Whether or not to create an on-disk cache for the theme."
-#~ msgstr ""
-#~ "Determina si s'ha de crear o no una memòria cau en el disc per al tema."
-
-#~ msgid ""
-#~ "The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-#~ "files are sparse files, so the maximum size may not be used. Setting a "
-#~ "larger size is therefore often quite safe."
-#~ msgstr ""
-#~ "La mida màxima de la memòria cau en el disc per al tema en kilobytes. Cal "
-#~ "tindre en compte que estos fitxers són fitxers dispersos, per tant, quasi "
-#~ "no s'utilitzarà la mida màxima. Per tant, es força segur definir una mida "
-#~ "gran."

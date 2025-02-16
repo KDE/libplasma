@@ -169,7 +169,7 @@ msgstr "Elimina %1"
 #: plasma/containment.cpp:121 plasma/corona.cpp:406 plasma/corona.cpp:496
 #, kde-format
 msgid "Enter Edit Mode"
-msgstr "Entra en el mode d'edició"
+msgstr "Entra en el mode edició"
 
 #: plasma/containment.cpp:124 plasma/private/applet_p.cpp:111
 #, kde-format
@@ -190,7 +190,7 @@ msgstr "Desbloqueja els ginys"
 #: plasma/corona.cpp:404
 #, kde-format
 msgid "Exit Edit Mode"
-msgstr "Ix del mode d'edició"
+msgstr "Ix del mode edició"
 
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:9

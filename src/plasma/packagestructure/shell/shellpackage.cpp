@@ -63,6 +63,9 @@ public:
         package->addDirectoryDefinition("lockscreen", QStringLiteral("lockscreen"));
         package->addFileDefinition("lockscreenmainscript", QStringLiteral("lockscreen/LockScreen.qml"));
 
+        package->addDirectoryDefinition("logout", QStringLiteral("logout"));
+        package->addFileDefinition("logoutmainscript", QStringLiteral("logout/Logout.qml"));
+
         package->addFileDefinition("interactiveconsole", QStringLiteral("InteractiveConsole.qml"));
     }
 

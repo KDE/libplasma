@@ -53,6 +53,7 @@ Item {
             top: inactive.top
             bottom: inactive.bottom
             right: button.right
+            rightMargin: Math.round(button.width / 2)
         }
         imagePath: "widgets/switch"
         prefix: "active"

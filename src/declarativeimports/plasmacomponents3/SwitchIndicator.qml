@@ -53,6 +53,11 @@ Item {
             top: inactive.top
             bottom: inactive.bottom
             right: button.right
+            // This is to avoid the switch underneath
+            // to be seen on the edge of the switch
+            // button due to e.g. antialiasing
+            rightMargin: 1
+            leftMargin: 1
         }
         imagePath: "widgets/switch"
         prefix: "active"

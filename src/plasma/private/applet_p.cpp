@@ -185,6 +185,11 @@ void AppletPrivate::cleanUpAndDelete()
 
 void AppletPrivate::setDestroyed(bool destroyed)
 {
+    // don't double emit destroyedChanged
+    if (transient == destroyed) {
+        return;
+    }
+
     transient = destroyed;
     if (destroyed) {
         // If the user was configuring, "destroying" it will also remove access to all configuration ui

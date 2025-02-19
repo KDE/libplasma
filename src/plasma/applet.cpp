@@ -222,8 +222,18 @@ KConfigGroup Applet::globalConfig() const
 
 void Applet::destroy()
 {
-    if (immutability() != Types::Mutable || d->transient || !d->started) {
-        return; // don't double delete
+    Corona *cor = nullptr;
+    Containment *cont = containment();
+    if (cont) {
+        cor = cont->corona();
+    }
+
+    if (d->transient) {
+        // If the applet is transient, we can delete it anyways, unless
+        // Corona itself is immutable
+        if (!d->started || (cor && cor->immutability() != Types::Mutable)) {
+            return;
+        }
     }
 
     d->setDestroyed(true);

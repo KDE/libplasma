@@ -215,6 +215,12 @@ public:
     Types::ImmutabilityType immutability() const;
 
     /**
+     * @return true if immutability() is not Types::Mutable
+     * @since 6.4
+     */
+    bool immutable() const;
+
+    /**
      * Set the Corona globally into "edit mode"
      * Only when the corona is of mutable type can be set of edit mode.
      * This indicates the UI to make easy for the user to manipulate applets.

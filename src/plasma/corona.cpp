@@ -284,6 +284,11 @@ Types::ImmutabilityType Corona::immutability() const
     return d->immutability;
 }
 
+bool Corona::immutable() const
+{
+    return d->immutability != Types::Mutable;
+}
+
 void Corona::setImmutability(const Types::ImmutabilityType immutable)
 {
     if (d->immutability == immutable || d->immutability == Types::SystemImmutable) {

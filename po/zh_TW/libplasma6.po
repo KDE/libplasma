@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-02-20 02:36+0000\n"
 "PO-Revision-Date: 2024-08-25 01:44+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -58,12 +58,12 @@ msgstr "搜尋"
 msgid "Clear search"
 msgstr "清除搜尋"
 
-#: plasma/applet.cpp:293
+#: plasma/applet.cpp:303
 #, kde-format
 msgid "Unknown"
 msgstr "未知"
 
-#: plasma/applet.cpp:736
+#: plasma/applet.cpp:746
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "啟動 %1 元件"
@@ -74,7 +74,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "移除 %1"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:481
+#: plasma/containment.cpp:103 plasma/corona.cpp:365 plasma/corona.cpp:486
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "進入編輯模式"
@@ -87,17 +87,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "設定%1…"
 
-#: plasma/corona.cpp:309 plasma/corona.cpp:466
+#: plasma/corona.cpp:314 plasma/corona.cpp:471
 #, kde-format
 msgid "Lock Widgets"
 msgstr "鎖定元件"
 
-#: plasma/corona.cpp:309
+#: plasma/corona.cpp:314
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "解除鎖定元件"
 
-#: plasma/corona.cpp:358
+#: plasma/corona.cpp:363
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "離開編輯模式"
@@ -124,47 +124,47 @@ msgstr ""
 msgid "Show Alternatives..."
 msgstr "顯示替代選擇…"
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "Widget Removed"
 msgstr "元件已移除"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:248
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "元件 \"%1\" 已移除。"
 
-#: plasma/private/applet_p.cpp:247
+#: plasma/private/applet_p.cpp:252
 #, kde-format
 msgid "Panel Removed"
 msgstr "面板已移除"
 
-#: plasma/private/applet_p.cpp:248
+#: plasma/private/applet_p.cpp:253
 #, kde-format
 msgid "A panel has been removed."
 msgstr "面板已被移除。"
 
-#: plasma/private/applet_p.cpp:251
+#: plasma/private/applet_p.cpp:256
 #, kde-format
 msgid "Desktop Removed"
 msgstr "桌面已移除"
 
-#: plasma/private/applet_p.cpp:252
+#: plasma/private/applet_p.cpp:257
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "桌面已被移除。"
 
-#: plasma/private/applet_p.cpp:255
+#: plasma/private/applet_p.cpp:260
 #, kde-format
 msgid "Undo"
 msgstr "復原"
 
-#: plasma/private/applet_p.cpp:346
+#: plasma/private/applet_p.cpp:351
 #, kde-format
 msgid "Widget Settings"
 msgstr "元件設定"
 
-#: plasma/private/applet_p.cpp:353
+#: plasma/private/applet_p.cpp:358
 #, kde-format
 msgid "Remove this Widget"
 msgstr "移除此元件"

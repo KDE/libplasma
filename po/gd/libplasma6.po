@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:42+0000\n"
+"POT-Creation-Date: 2025-02-20 02:36+0000\n"
 "PO-Revision-Date: 2016-04-30 12:08+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
@@ -56,12 +56,12 @@ msgstr ""
 msgid "Clear search"
 msgstr ""
 
-#: plasma/applet.cpp:293
+#: plasma/applet.cpp:303
 #, kde-format
 msgid "Unknown"
 msgstr "Chan eil fhios"
 
-#: plasma/applet.cpp:736
+#: plasma/applet.cpp:746
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Gnìomhach Widget %1"
@@ -74,7 +74,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Thoir air falbh an %1 seo"
 
-#: plasma/containment.cpp:103 plasma/corona.cpp:360 plasma/corona.cpp:481
+#: plasma/containment.cpp:103 plasma/corona.cpp:365 plasma/corona.cpp:486
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr ""
@@ -85,17 +85,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr ""
 
-#: plasma/corona.cpp:309 plasma/corona.cpp:466
+#: plasma/corona.cpp:314 plasma/corona.cpp:471
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Glais na Widgets"
 
-#: plasma/corona.cpp:309
+#: plasma/corona.cpp:314
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Thoir a' ghlas far Widgets"
 
-#: plasma/corona.cpp:358
+#: plasma/corona.cpp:363
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr ""
@@ -127,47 +127,47 @@ msgstr ""
 msgid "Show Alternatives..."
 msgstr "Roghainnean eile..."
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "Widget Removed"
 msgstr "Chaidh widget a thoirt air falbh"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:248
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Chaidh an widget \"%1\" a thoirt air falbh."
 
-#: plasma/private/applet_p.cpp:247
+#: plasma/private/applet_p.cpp:252
 #, kde-format
 msgid "Panel Removed"
 msgstr "Chaidh panail a thoirt air falbh"
 
-#: plasma/private/applet_p.cpp:248
+#: plasma/private/applet_p.cpp:253
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Chaidh panail a thoirt air falbh."
 
-#: plasma/private/applet_p.cpp:251
+#: plasma/private/applet_p.cpp:256
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Chaidh deasg a thoirt air falbh"
 
-#: plasma/private/applet_p.cpp:252
+#: plasma/private/applet_p.cpp:257
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Chaidh deasg a thoirt air falbh."
 
-#: plasma/private/applet_p.cpp:255
+#: plasma/private/applet_p.cpp:260
 #, kde-format
 msgid "Undo"
 msgstr "Neo-dhèan"
 
-#: plasma/private/applet_p.cpp:346
+#: plasma/private/applet_p.cpp:351
 #, kde-format
 msgid "Widget Settings"
 msgstr "Roghainnean an widget"
 
-#: plasma/private/applet_p.cpp:353
+#: plasma/private/applet_p.cpp:358
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Thoir air falbh an widget seo"

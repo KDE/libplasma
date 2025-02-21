@@ -68,6 +68,7 @@ PlasmaComponents3.Label {
         color: "black"
         radius: Kirigami.Units.smallSpacing
         opacity: 0.45
+        z: -1
 
         visible: GraphicsInfo.api === GraphicsInfo.Software
     }

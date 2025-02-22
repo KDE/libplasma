@@ -154,7 +154,7 @@ T.SpinBox {
         Component {
             id: noneditableBg
             P.RaisedButtonBackground {
-                hovered: control.hovered
+                hovered: control.enabled && control.hovered
                 focused: control.visualFocus || (control.contentItem.activeFocus && (
                     control.contentItem.focusReason == Qt.TabFocusReason ||
                     control.contentItem.focusReason == Qt.BacktabFocusReason ||
@@ -184,9 +184,9 @@ T.SpinBox {
                     imagePath: "widgets/lineedit"
                     prefix: "hover"
                     visible: opacity > 0
-                    opacity: control.hovered
+                    opacity: control.enabled && control.hovered
                     Behavior on opacity {
-                        enabled: control.hovered && Kirigami.Units.longDuration > 0
+                        enabled: control.enabled && control.hovered && Kirigami.Units.longDuration > 0
                         NumberAnimation {
                             duration: Kirigami.Units.longDuration
                             easing.type: Easing.OutCubic

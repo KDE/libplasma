@@ -60,7 +60,7 @@ T.ScrollBar {
         implicitHeight: Math.max(scrollbarSvg.elementSize("hint-scrollbar-size").height, fixedMargins.top + fixedMargins.bottom)
         imagePath:"widgets/scrollbar"
         prefix: controlRoot.horizontal ? "background-horizontal" : "background-vertical"
-        opacity: controlRoot.hovered && controlRoot.interactive
+        opacity: controlRoot.enabled && controlRoot.hovered && controlRoot.interactive
         visible: opacity > 0
         Behavior on opacity {
             enabled: Kirigami.Units.longDuration > 0
@@ -98,7 +98,7 @@ T.ScrollBar {
         imagePath:"widgets/scrollbar"
         implicitWidth: Math.max(scrollbarSvg.elementSize("hint-scrollbar-size").width, fixedMargins.left + fixedMargins.right)
         implicitHeight: Math.max(scrollbarSvg.elementSize("hint-scrollbar-size").height, fixedMargins.top + fixedMargins.bottom)
-        prefix: controlRoot.interactive && (controlRoot.pressed || controlRoot.hovered) && controlRoot.enabled ? "mouseover-slider" : "slider"
+        prefix: controlRoot.interactive && (controlRoot.pressed || (controlRoot.enabled && controlRoot.hovered) ) && controlRoot.enabled ? "mouseover-slider" : "slider"
         opacity: enabled ? 1 : 0.5
     }
 

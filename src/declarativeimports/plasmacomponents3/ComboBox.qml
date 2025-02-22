@@ -139,7 +139,7 @@ T.ComboBox {
         Private.TextFieldFocus {
             visible: control.editable
             z: -1
-            state: control.activeFocus ? "focus" : (control.hovered ? "hover" : "hidden")
+            state: control.activeFocus ? "focus" : (control.enabled && control.hovered ? "hover" : "hidden")
             anchors.fill: parent
         }
 
@@ -150,7 +150,7 @@ T.ComboBox {
 
         Private.ButtonHover {
             anchors.fill: parent
-            showHover: control.hovered && !control.down
+            showHover: control.enabled && control.hovered && !control.down
         }
 
         MouseArea {

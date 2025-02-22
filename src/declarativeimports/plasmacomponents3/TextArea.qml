@@ -91,7 +91,7 @@ T.TextArea {
 
     background: Item {
         Private.TextFieldFocus {
-            state: control.activeFocus ? "focus" : (control.hovered ? "hover" : "hidden")
+            state: control.activeFocus ? "focus" : (control.enabled && control.hovered ? "hover" : "hidden")
             anchors.fill: parent
         }
         KSvg.FrameSvgItem {

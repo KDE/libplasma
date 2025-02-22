@@ -27,10 +27,19 @@ ComponentBase {
             }
 
             PlasmaComponents.Label {
-                text: "icon alone, should look small and square"
+                text: "icon alone, should look small and round"
             }
 
             PlasmaComponents.RoundButton {
+                icon.name: "start-here-kde-plasma"
+            }
+
+            PlasmaComponents.Label {
+                text: "icon alone, should not highlight on hover"
+            }
+
+            PlasmaComponents.RoundButton {
+                enabled: false
                 icon.name: "start-here-kde-plasma"
             }
 
@@ -153,10 +162,20 @@ ComponentBase {
             }
 
             PlasmaComponents.Label {
-                text: "icon alone, should look small and square"
+                text: "icon alone, should look small and round"
             }
 
             PlasmaComponents.RoundButton {
+                icon.name: "start-here-kde-plasma"
+                flat: true
+            }
+
+            PlasmaComponents.Label {
+                text: "icon alone, should not highlight on hover"
+            }
+
+            PlasmaComponents.RoundButton {
+                enabled: false
                 icon.name: "start-here-kde-plasma"
                 flat: true
             }

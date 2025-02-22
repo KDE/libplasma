@@ -38,5 +38,11 @@ ComponentBase {
             width: 150
             height: 100
         }
+        PlasmaComponents.TextArea {
+            text: "this is a disabled TextArea"
+            enabled: false
+            width: 150
+            height: 100
+        }
     }
 }

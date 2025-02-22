@@ -120,9 +120,9 @@ T.Slider {
             svg: sliderSvg
             elementId: control.horizontal ? "horizontal-slider-hover" : "vertical-slider-hover"
             visible: opacity > 0
-            opacity: control.hovered
+            opacity: control.enabled && control.hovered
             Behavior on opacity {
-                enabled: control.hovered && Kirigami.Units.longDuration > 0
+                enabled: control.enabled && control.hovered && Kirigami.Units.longDuration > 0
                 NumberAnimation {
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.OutCubic

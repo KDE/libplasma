@@ -29,5 +29,10 @@ ComponentBase {
             model: demoModel
             textRole: "text"
         }
+        ComboBox {
+            enabled: false
+            model: demoModel
+            textRole: "text"
+        }
     }
 }

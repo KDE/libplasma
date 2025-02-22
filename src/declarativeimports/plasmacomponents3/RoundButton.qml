@@ -76,7 +76,7 @@ T.RoundButton {
             state: {
                 if (control.down) {
                     return "hidden"
-                } else if (control.hovered) {
+                } else if (control.enabled && control.hovered) {
                     return "hover"
                 } else if (control.activeFocus || control.highlighted) {
                     return "focus"
@@ -92,7 +92,7 @@ T.RoundButton {
             elementId: (control.down || control.checked) ? "pressed" : "normal"
             anchors.fill: parent
             //internal: if there is no hover status, don't paint on mouse over in touchscreens
-            opacity: (control.down || control.checked || !control.flat || (roundShadow.hasOverState && control.hovered)) ? 1 : 0
+            opacity: (control.down || control.checked || !control.flat || (roundShadow.hasOverState && control.enabled && control.hovered)) ? 1 : 0
             Behavior on opacity {
                 enabled: Kirigami.Units.longDuration > 0
                 PropertyAnimation { duration: Kirigami.Units.longDuration }
@@ -114,7 +114,7 @@ T.RoundButton {
             anchors.fill: parent
             imagePath: "widgets/button"
             prefix: "normal"
-            opacity: backgroundItem.useNormalButton && (!control.flat || control.hovered) && (!control.down || !control.checked) ? 1 : 0
+            opacity: backgroundItem.useNormalButton && (!control.flat || (control.enabled && control.hovered) ) && (!control.down || !control.checked) ? 1 : 0
             Behavior on opacity {
                 enabled: Kirigami.Units.longDuration > 0
                 OpacityAnimator {
@@ -131,7 +131,7 @@ T.RoundButton {
 
         Private.ButtonHover {
             anchors.fill: parent
-            showHover: backgroundItem.useNormalButton && control.hovered && !control.down
+            showHover: backgroundItem.useNormalButton && control.enabled && control.hovered && !control.down
         }
 
         KSvg.FrameSvgItem {

@@ -33,5 +33,10 @@ ComponentBase {
             text: root.longText
             echoMode: TextInput.Password
         }
+
+        PlasmaComponents.TextField {
+            text: "this is a disabled text field"
+            enabled: false
+        }
     }
 }

@@ -38,7 +38,7 @@ T.RangeSlider {
             focusElement: parent.horizontal ? "horizontal-slider-focus" : "vertical-slider-focus"
             hoverElement: parent.horizontal ? "horizontal-slider-hover" : "vertical-slider-hover"
             shadowElement: parent.horizontal ? "horizontal-slider-shadow" : "vertical-slider-shadow"
-            state: control.activeFocus ? "focus" : (control.hovered ? "hover" : "shadow")
+            state: control.activeFocus ? "focus" : (control.enabled && control.hovered ? "hover" : "shadow")
         }
         KSvg.SvgItem {
             id: firstHandle
@@ -64,7 +64,7 @@ T.RangeSlider {
             focusElement: parent.horizontal ? "horizontal-slider-focus" : "vertical-slider-focus"
             hoverElement: parent.horizontal ? "horizontal-slider-hover" : "vertical-slider-hover"
             shadowElement: parent.horizontal ? "horizontal-slider-shadow" : "vertical-slider-shadow"
-            state: control.activeFocus ? "focus" : (control.hovered ? "hover" : "shadow")
+            state: control.activeFocus ? "focus" : (control.enabled && control.hovered ? "hover" : "shadow")
         }
         KSvg.SvgItem {
             id: secondHandle

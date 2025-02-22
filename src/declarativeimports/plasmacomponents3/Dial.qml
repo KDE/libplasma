@@ -66,7 +66,7 @@ T.Dial {
             state: {
                 if (control.pressed) {
                     return "hidden"
-                } else if (control.hovered) {
+                } else if (control.enabled && control.hovered) {
                     return "hover"
                 } else if (control.activeFocus) {
                     return "focus"

@@ -36,7 +36,7 @@ Item {
         id: flatButtonBackground
         FlatButtonBackground {
             anchors.fill: parent
-            hovered: root.button.hovered
+            hovered: root.button.enabled && root.button.hovered
             pressed: root.button.down
             checked: root.button.checked
             focused: root.button.visualFocus
@@ -47,7 +47,7 @@ Item {
         id: raisedButtonBackground
         RaisedButtonBackground {
             anchors.fill: parent
-            hovered: root.button.hovered
+            hovered: root.button.enabled && root.button.hovered
             pressed: root.button.down
             checked: root.button.checked
             focused: root.button.visualFocus

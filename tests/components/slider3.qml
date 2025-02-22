@@ -39,6 +39,16 @@ ComponentBase {
         }
 
         PlasmaComponents.Label {
+            text: "Horizontal slider, disabled"
+        }
+        PlasmaComponents.Slider {
+            enabled: false
+            from: minSpinBox.value
+            to: maxSpinBox.value
+            stepSize: stepSizeSpinBox.value
+        }
+
+        PlasmaComponents.Label {
             text: "from: "
         }
         PlasmaComponents.SpinBox {
@@ -65,6 +75,16 @@ ComponentBase {
         }
         PlasmaComponents.SpinBox {
             id: stepSizeSpinBox
+            value: 1
+            to: 999
+            editable: true
+        }
+
+        PlasmaComponents.Label {
+            text: "disabled: "
+        }
+        PlasmaComponents.SpinBox {
+            enabled: false
             value: 1
             to: 999
             editable: true

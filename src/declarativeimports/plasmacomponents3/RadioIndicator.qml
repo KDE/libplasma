@@ -111,9 +111,9 @@ Item {
                 implicitWidth: naturalSize.width
                 implicitHeight: naturalSize.height
                 visible: opacity > 0
-                opacity: root.control.hovered
+                opacity: root.control.enabled && root.control.hovered
                 Behavior on opacity {
-                    enabled: root.control.hovered && Kirigami.Units.longDuration > 0
+                    enabled: root.control.enabled && root.control.hovered && Kirigami.Units.longDuration > 0
                     NumberAnimation {
                         duration: Kirigami.Units.longDuration
                         easing.type: Easing.OutCubic
@@ -176,7 +176,7 @@ Item {
             P.RoundShadow {
                 anchors.fill: parent
                 z: -1
-                state: root.control.activeFocus ? "focus" : (root.control.hovered ? "hover" : "shadow")
+                state: root.control.activeFocus ? "focus" : (root.control.enabled && root.control.hovered ? "hover" : "shadow")
             }
         }
     }

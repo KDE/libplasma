@@ -118,5 +118,18 @@ ComponentBase {
                 PlasmaExtras.MenuItem { text: "I am not empty" }
             }
         }
+
+        PC3.Button {
+            text: "Disabled menu items"
+            onClicked: disabledMenuItemsMenu.open(0, height)
+
+            PlasmaExtras.Menu {
+                id: disabledMenuItemsMenu
+
+                PlasmaExtras.MenuItem { text: "I'm disabled"; enabled: false }
+                PlasmaExtras.MenuItem { text: "And I'm enabled"}
+                PlasmaExtras.MenuItem { text: "I'm disabled too"; enabled: false }
+            }
+        }
     }
 }

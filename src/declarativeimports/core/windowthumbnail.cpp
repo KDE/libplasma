@@ -519,7 +519,6 @@ void WindowThumbnail::resolveEGLFunctions()
     }
 
     if (s_hasPixmapExtension.value()) {
-        qDebug() << "Have EGL texture from pixmap";
         m_eglCreateImageKHR = context->getProcAddress(QByteArrayLiteral("eglCreateImageKHR"));
         m_eglDestroyImageKHR = context->getProcAddress(QByteArrayLiteral("eglDestroyImageKHR"));
         m_glEGLImageTargetTexture2DOES = context->getProcAddress(QByteArrayLiteral("glEGLImageTargetTexture2DOES"));

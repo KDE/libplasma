@@ -17,8 +17,9 @@
 #include <KSharedConfig>
 #include <KWindowEffects>
 #include <KWindowSystem>
-#include <KX11Extras>
-
+#if HAVE_X11
+    #include <KX11Extras>
+#endif
 namespace Plasma
 {
 const char ThemePrivate::defaultTheme[] = "default";

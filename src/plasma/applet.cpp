@@ -705,6 +705,9 @@ Types::FormFactor Applet::formFactor() const
         parentApplet = qobject_cast<Plasma::Applet *>(pw);
     }
 
+    if (parentApplet) {
+        return parentApplet->formFactor();
+    }
     return c ? c->d->formFactor : Plasma::Types::Planar;
 }
 

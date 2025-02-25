@@ -378,7 +378,6 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
         // qCDebug(LOG_PLASMA) << "already have this applet!";
     }
 #endif
-    qWarning() << "ADDAPPLET" << applet->title();
     Containment *currentContainment = applet->containment();
 
     if (currentContainment && currentContainment != this) {
@@ -477,7 +476,9 @@ QList<Applet *> Containment::applets() const
 int Containment::screen() const
 {
     Q_ASSERT(corona());
-    if (Corona *c = corona()) {
+    if (Containment *pc = qobject_cast<Containment *>(parent()); pc && isContainment()) {
+        return pc->screen();
+    } else if (Corona *c = corona()) {
         return c->screenForContainment(this);
     } else {
         return -1;
@@ -486,6 +487,9 @@ int Containment::screen() const
 
 int Containment::lastScreen() const
 {
+    if (Containment *pc = qobject_cast<Containment *>(parent()); pc && isContainment()) {
+        return pc->lastScreen();
+    }
     return d->lastScreen;
 }
 

@@ -429,11 +429,14 @@ void AppletPrivate::propagateConfigChanged()
 void AppletPrivate::setUiReady()
 {
     // am i the containment?
-    Containment *c = qobject_cast<Containment *>(q);
-    if (c && c->isContainment()) {
-        c->d->setUiReady();
-    } else if (Containment *cc = q->containment()) {
-        cc->d->appletLoaded(q);
+    Containment *thisContainment = qobject_cast<Containment *>(q);
+    if (thisContainment && thisContainment->isContainment()) {
+        thisContainment->d->setUiReady();
+    }
+
+    Containment *parentContainment = q->containment();
+    if (parentContainment && parentContainment != thisContainment) {
+        parentContainment->d->appletLoaded(q);
     }
 }
 

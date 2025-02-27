@@ -56,13 +56,13 @@ Q_SIGNALS:
 
 protected:
     void hideEvent(QHideEvent *event) override;
-    void focusOutEvent(QFocusEvent *event) override;
 
 private:
     void onMainItemChanged();
     void updateMinSize();
     void updateMaxSize();
     void updateSize();
+    void handleFocusChange();
 
     QPointer<AppletQuickItem> m_appletInterface;
     QPointer<QScreen> m_oldScreen;

@@ -111,6 +111,8 @@ AppletPopup::AppletPopup()
         m_oldScreen = screen;
         updateMaxSize();
     });
+
+    QObject::connect(static_cast<QGuiApplication *>(QCoreApplication::instance()), &QGuiApplication::focusWindowChanged, this, &AppletPopup::handleFocusChange);
 }
 
 AppletPopup::~AppletPopup()
@@ -175,9 +177,10 @@ void AppletPopup::hideEvent(QHideEvent *event)
     PopupPlasmaWindow::hideEvent(event);
 }
 
-void AppletPopup::focusOutEvent(QFocusEvent *ev)
+void AppletPopup::handleFocusChange()
 {
-    if (m_hideOnWindowDeactivate) {
+    const QWindow *focusWindow = QGuiApplication::focusWindow();
+    if (m_hideOnWindowDeactivate && focusWindow != this) {
         bool parentHasFocus = false;
 
         QWindow *parentWindow = transientParent();
@@ -191,7 +194,6 @@ void AppletPopup::focusOutEvent(QFocusEvent *ev)
             parentWindow = parentWindow->transientParent();
         }
 
-        const QWindow *focusWindow = QGuiApplication::focusWindow();
         bool childHasFocus = focusWindow && ((focusWindow->isActive() && isAncestorOf(focusWindow)) || (focusWindow->type() & Qt::Popup) == Qt::Popup);
 
         const bool viewClicked = qobject_cast<const PlasmaQuick::SharedQmlEngine *>(focusWindow) || qobject_cast<const ConfigView *>(focusWindow);
@@ -200,8 +202,6 @@ void AppletPopup::focusOutEvent(QFocusEvent *ev)
             setVisible(false);
         }
     }
-
-    PopupPlasmaWindow::focusOutEvent(ev);
 }
 
 void AppletPopup::onMainItemChanged()

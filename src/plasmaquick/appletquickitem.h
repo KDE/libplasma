@@ -93,6 +93,16 @@ class PLASMAQUICK_EXPORT AppletQuickItem : public QQuickItem
      */
     Q_PROPERTY(QObject *plasmoid READ applet CONSTANT)
 
+    /**
+     * Text to display in a badge overlay on top of the applet's icon. If empty,
+     * no badge will be displayed.
+     *
+     * The default value is an empty string.
+     *
+     * @since 6.4
+     */
+    Q_PROPERTY(QString badgeText READ badgeText WRITE setBadgeText NOTIFY badgeTextChanged)
+
 public:
     AppletQuickItem(QQuickItem *parent = nullptr);
     ~AppletQuickItem() override;
@@ -137,6 +147,9 @@ public:
     bool expandedOnDragHover() const;
     void setExpandedOnDragHover(bool expandedOnDragHover);
 
+    QString badgeText() const;
+    void setBadgeText(const QString &text);
+
     static bool hasItemForApplet(Plasma::Applet *applet);
     static AppletQuickItem *itemForApplet(Plasma::Applet *applet);
 
@@ -160,6 +173,8 @@ Q_SIGNALS:
     void preloadFullRepresentationChanged(bool preload);
 
     void expandedOnDragHoverChanged(bool expandedOnDragHover);
+
+    void badgeTextChanged(QString text);
 
 protected:
     // Initializations that need to be executed after classBegin()

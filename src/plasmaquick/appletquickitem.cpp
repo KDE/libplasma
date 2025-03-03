@@ -937,6 +937,21 @@ void AppletQuickItem::setExpandedOnDragHover(bool expandedOnDragHover)
     Q_EMIT expandedOnDragHoverChanged(expandedOnDragHover);
 }
 
+QString AppletQuickItem::badgeText() const
+{
+    return d->badgeText;
+}
+
+void AppletQuickItem::setBadgeText(const QString &text)
+{
+    if (text == d->badgeText) {
+        return;
+    }
+
+    d->badgeText = text;
+    Q_EMIT badgeTextChanged(text);
+}
+
 ////////////Internals
 
 PlasmaQuick::SharedQmlEngine *AppletQuickItem::qmlObject()

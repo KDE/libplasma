@@ -119,6 +119,8 @@ public:
     bool activationTogglesExpanded = true;
     bool initComplete : 1;
     bool compactRepresentationCheckGuard : 1;
+
+    QString badgeText;
 };
 
 }

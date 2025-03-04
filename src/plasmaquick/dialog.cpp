@@ -1076,10 +1076,14 @@ QPoint Dialog::popupPosition(QQuickItem *item, const QSize &size)
         return QPoint();
     }
 
-    // if the item is in a dock or in a window that ignores WM we want to position the popups outside of the dock
-    const KWindowInfo winInfo(item->window()->winId(), NET::WMWindowType);
-    const bool outsideParentWindow =
-        ((winInfo.windowType(NET::AllTypesMask) == NET::Dock) || (item->window()->flags() & Qt::X11BypassWindowManagerHint)) && item->window()->mask().isNull();
+    // if the item is in a window that ignores WM we want to position the popups outside
+    bool outsideParentWindow = (item->window()->flags() & Qt::X11BypassWindowManagerHint) && item->window()->mask().isNull();
+
+    if (KWindowSystem::isPlatformX11()) {
+        // on X11 we also consider windows with the type Dock
+        const KWindowInfo winInfo(item->window()->winId(), NET::WMWindowType);
+        outsideParentWindow = outsideParentWindow || (winInfo.windowType(NET::AllTypesMask) == NET::Dock && item->window()->mask().isNull());
+    }
 
     QRect parentGeometryBounds;
     if (outsideParentWindow) {

@@ -194,12 +194,22 @@ QRect TransientPlacementHelper::popupRect(QWindow *w, const TransientPlacementHi
 
     if (placement.constrainByAnchorWindow()) {
         QRect parentRect = w->transientParent()->geometry();
-        if ((placement.parentAnchor() == Qt::TopEdge || placement.parentAnchor() == Qt::BottomEdge) && popupRect.width() <= parentRect.width()) {
-            screenArea.setRight(parentRect.right());
-            screenArea.setLeft(parentRect.left());
-        } else if (popupRect.height() <= parentRect.height()) {
-            screenArea.setTop(parentRect.top());
-            screenArea.setBottom(parentRect.bottom());
+        if (placement.parentAnchor() == Qt::TopEdge || placement.parentAnchor() == Qt::BottomEdge) {
+            if (popupRect.width() <= parentRect.width()) {
+                screenArea.setRight(parentRect.right());
+                screenArea.setLeft(parentRect.left());
+            } else {
+                screenArea.setWidth(popupRect.width());
+                screenArea.moveLeft(parentRect.center().x() - screenArea.width() / 2);
+            }
+        } else {
+            if (popupRect.height() <= parentRect.height()) {
+                screenArea.setTop(parentRect.top());
+                screenArea.setBottom(parentRect.bottom());
+            } else {
+                screenArea.setHeight(popupRect.height());
+                screenArea.moveTop(parentRect.center().y() - screenArea.height() / 2);
+            }
         }
     }
 

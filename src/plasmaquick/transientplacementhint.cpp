@@ -194,13 +194,34 @@ QRect TransientPlacementHelper::popupRect(QWindow *w, const TransientPlacementHi
 
     if (placement.constrainByAnchorWindow()) {
         QRect parentRect = w->transientParent()->geometry();
-        if ((placement.parentAnchor() == Qt::TopEdge || placement.parentAnchor() == Qt::BottomEdge) && popupRect.width() <= parentRect.width()) {
-            screenArea.setRight(parentRect.right());
-            screenArea.setLeft(parentRect.left());
-        } else if (popupRect.height() <= parentRect.height()) {
-            screenArea.setTop(parentRect.top());
-            screenArea.setBottom(parentRect.bottom());
+        if (placement.parentAnchor() == Qt::TopEdge || placement.parentAnchor() == Qt::BottomEdge) {
+            if (popupRect.width() > parentRect.width()) {
+                parentRect.moveLeft(parentRect.center().x() - popupRect.width() / 2);
+                parentRect.setWidth(popupRect.width());
+            }
+            if (parentRect.left() < screenArea.left()) {
+                parentRect.moveLeft(screenArea.left());
+            }
+            if (parentRect.right() > screenArea.right()) {
+                parentRect.moveRight(screenArea.right());
+            }
+            parentRect.setHeight(screenArea.height());
+            parentRect.moveTop(screenArea.top());
+        } else {
+            if (popupRect.height() > parentRect.height()) {
+                parentRect.moveTop(parentRect.center().y() - popupRect.height() / 2);
+                parentRect.setHeight(popupRect.height());
+            }
+            if (parentRect.top() < screenArea.top()) {
+                parentRect.moveTop(screenArea.top());
+            }
+            if (parentRect.bottom() > screenArea.bottom()) {
+                parentRect.moveBottom(screenArea.bottom());
+            }
+            parentRect.setWidth(screenArea.width());
+            parentRect.moveLeft(screenArea.left());
         }
+        screenArea = parentRect;
     }
 
     QVariant restrictedPopupGeometry = w->property("restrictedPopupGeometry");

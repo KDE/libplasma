@@ -140,6 +140,15 @@ void PopupPlasmaWindowPrivate::updatePosition()
     TransientPlacementHint placementHint;
     QRectF parentAnchorRect = QRectF(m_visualParent->mapToScene(QPointF(0, 0)), m_visualParent->size());
 
+    // Snap the window positioning to the exact center of the
+    // parent window if the popupPlasmaWindow would still
+    // covers the original visual parent.
+    auto parentWindowGeometry = m_visualParent->window()->geometry();
+    QPointF centerDistance = parentAnchorRect.center() - parentWindowGeometry.center() + parentWindowGeometry.topLeft();
+    if (qAbs(centerDistance.x()) < q->width() / 2 && qAbs(centerDistance.y()) < q->height() / 2) {
+        parentAnchorRect.moveCenter(QPoint(parentWindowGeometry.width() / 2, parentWindowGeometry.height() / 2));
+    }
+
     if (!m_floating) {
         QRect windowVisibleRect = m_visualParent->window()->mask().boundingRect();
         // pad parentAnchorRect to the window it's in, so that the popup appears outside the panel

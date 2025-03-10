@@ -438,7 +438,9 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
     if (!currentContainment) {
         const bool isNew = applet->d->mainConfigGroup()->entryMap().isEmpty();
 
-        if (!isNew) {
+        // If the applet is a nested containment restore even if new, to
+        // have the same behavior of Corona::addContainment
+        if (!isNew || applet->isContainment()) {
             applet->restore(*applet->d->mainConfigGroup());
         }
 

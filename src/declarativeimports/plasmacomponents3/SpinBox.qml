@@ -18,13 +18,13 @@ T.SpinBox {
     id: control
 
     implicitWidth: Math.max(
-        implicitBackgroundWidth + leftInset + rightInset,
+        (bgLoader.status === Loader.Ready ? implicitBackgroundWidth : 0) + leftInset + rightInset,
         Math.max(implicitContentWidth, Kirigami.Units.gridUnit)
             + spacing * 2 + leftPadding + rightPadding,
         up.implicitIndicatorWidth + down.implicitIndicatorWidth
     )
     implicitHeight: Math.max(
-        implicitBackgroundHeight + topInset + bottomInset,
+        (bgLoader.status === Loader.Ready ? implicitBackgroundHeight : 0) + topInset + bottomInset,
         implicitContentHeight + topPadding + bottomPadding,
         up.implicitIndicatorHeight,
         down.implicitIndicatorHeight

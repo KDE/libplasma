@@ -21,7 +21,7 @@ T.ScrollBar {
 
     hoverEnabled: interactive
 
-    visible: (size > 0 && size < 1 && policy === T.ScrollBar.AsNeeded) || policy === T.ScrollBar.AlwaysOn
+    visible: policy === T.ScrollBar.AlwaysOn || (policy === T.ScrollBar.AsNeeded && size > 0 && size < 1)
     minimumSize: horizontal ? height / width : width / height
 
     // Working around weird default values for `margins` (== `fixedMargins`) and `inset` (== -1)

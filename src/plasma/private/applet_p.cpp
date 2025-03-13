@@ -209,6 +209,7 @@ void AppletPrivate::setDestroyed(bool destroyed)
             a->d->setDestroyed(destroyed);
         }
     } else {
+        // TODO: should be possible to remove this branch
         const auto children = q->children();
         for (QObject *child : children) {
             // Some non-containment applets can have another applet as child to
@@ -491,7 +492,7 @@ KConfigGroup *AppletPrivate::mainConfigGroup()
         parentApplet = qobject_cast<Plasma::Applet *>(c->parent());
     }
 
-    if (q->isContainment() && static_cast<Containment *>(q)->containmentType() != Containment::NestedContainment) {
+    if (q->isContainment() && static_cast<Containment *>(q)->containmentType() != Containment::CustomEmbedded) {
         Corona *corona = static_cast<Containment *>(q)->corona();
         KConfigGroup containmentConfig;
         // qCDebug(LOG_PLASMA) << "got a corona, baby?" << (QObject*)corona << (QObject*)q;

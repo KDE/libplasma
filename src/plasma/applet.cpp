@@ -721,7 +721,7 @@ Types::ContainmentDisplayHints Applet::containmentDisplayHints() const
 Containment *Applet::containment() const
 {
     Containment *c = qobject_cast<Containment *>(const_cast<Applet *>(this));
-    if (c && c->isContainment() && c->containmentType() != Containment::NestedContainment) {
+    if (c && c->isContainment() && c->containmentType() != Containment::CustomEmbedded) {
         return c;
     } else {
         c = nullptr;
@@ -878,19 +878,13 @@ void Applet::timerEvent(QTimerEvent *event)
 
 bool Applet::isContainment() const
 {
-    // HACK: this is a special case for the systray
-    // containment in an applet that is not a containment
-    Applet *pa = qobject_cast<Applet *>(parent());
-    if (pa && !pa->isContainment()) {
-        return true;
-    }
     // normal "acting as a containment" condition
     const Containment *cont = qobject_cast<const Containment *>(this);
     if (!cont) {
         return false;
     }
     return qobject_cast<Corona *>(parent())
-        || (cont->containmentType() == Containment::NestedContainment && parent() && qobject_cast<Corona *>(parent()->parent()));
+        || (cont->containmentType() == Containment::CustomEmbedded && parent() && qobject_cast<Corona *>(parent()->parent()));
 }
 
 QString Applet::translationDomain() const

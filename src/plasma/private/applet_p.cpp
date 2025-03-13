@@ -428,12 +428,15 @@ void AppletPrivate::propagateConfigChanged()
 
 void AppletPrivate::setUiReady()
 {
-    // am i the containment?
+    // If we a re a containment, call setUiReady
     Containment *thisContainment = qobject_cast<Containment *>(q);
     if (thisContainment && thisContainment->isContainment()) {
         thisContainment->d->setUiReady();
     }
 
+    // If we are inside a containment, call appletLoaded on the containment
+    // Note that q->containment() might be a different containment
+    // also for a containment as is possible to have nested containments, such as the systemtray
     Containment *parentContainment = q->containment();
     if (parentContainment && parentContainment != thisContainment) {
         parentContainment->d->appletLoaded(q);

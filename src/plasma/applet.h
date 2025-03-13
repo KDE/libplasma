@@ -298,7 +298,11 @@ public:
     bool destroyed() const;
 
     /**
-     * @return the Containment, if any, this applet belongs to
+     * @return the Containment, if any, this applet belongs to.
+     * A containment will return itself if is a first level
+     * containment such as a desktop or a panel, or will return the
+     * other containment is in if it's a nested containment such a
+     * system tray
      **/
     Containment *containment() const;
 

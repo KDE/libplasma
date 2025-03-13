@@ -137,8 +137,7 @@ public:
         Panel, /**< A desktop panel */
         Custom = 127, /**< A containment that is neither a desktop nor a panel but something application specific */
         CustomPanel = 128, /**< A customized desktop panel. "CustomPanel" in metadata */
-        CustomEmbedded = 129, /**< A customized containment embedded in another applet */
-        NestedContainment = 130, /**< A containment that is loaded inside another one, such as the systray */
+        CustomEmbedded = 129 /**< A customized containment embedded in another applet */
     };
     Q_ENUM(Type)
 

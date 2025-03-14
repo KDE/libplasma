@@ -307,7 +307,11 @@ public:
     Containment *containment() const;
 
     /**
-     * @return true if this Applet is currently being used as a Containment, false otherwise
+     * @return true if this Applet is currently being used as a Containment, false otherwise.
+     * Normally only first level Containments directly children of Corona can act
+     * as containments, except Containments of Type CustomEmbedded which can be
+     * containments also when inside another containment, such as a Systray
+     * inside a Panel.
      */
     bool isContainment() const;
 

@@ -121,14 +121,6 @@ void Containment::init()
             setInternalAction(QStringLiteral("lock widgets"), lockDesktopAction);
         }
     }
-
-    // HACK: this is valid only in the systray case
-    // TODO: Test if htis is still necessary
-    connect(this, &Containment::configureRequested, this, [this](Plasma::Applet *a) {
-        if (Plasma::Applet *p = qobject_cast<Plasma::Applet *>(parent())) {
-            Q_EMIT p->containment()->configureRequested(a);
-        }
-    });
 }
 
 // helper function for sorting the list of applets

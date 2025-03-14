@@ -103,18 +103,11 @@ void ConfigViewPrivate::init()
     q->setColor(Qt::transparent);
     updateTitle();
 
-    // systray case
-    if (!applet.data()->containment()->corona()) {
-        Plasma::Applet *a = qobject_cast<Plasma::Applet *>(applet.data()->containment()->parent());
-        if (a) {
-            corona = a->containment()->corona();
-        }
-    } else {
-        if (!applet.data()->containment()->corona()->kPackage().isValid()) {
-            qCWarning(LOG_PLASMAQUICK) << "Invalid home screen package";
-        }
-        corona = applet.data()->containment()->corona();
+    if (!applet.data()->containment()->corona()->kPackage().isValid()) {
+        qCWarning(LOG_PLASMAQUICK) << "Invalid home screen package";
     }
+    corona = applet.data()->containment()->corona();
+
     if (!corona) {
         qCWarning(LOG_PLASMAQUICK) << "Cannot find a Corona, this should never happen!";
         return;

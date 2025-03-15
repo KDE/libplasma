@@ -6,10 +6,12 @@
 
 #include "containmentview.h"
 #include "configview.h"
+#include "debug_p.h"
 #include "plasmoid/containmentitem.h"
 
 #include <KPackage/Package>
 #include <QDebug>
+#include <QLoggingCategory>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickItem>
@@ -126,10 +128,10 @@ void ContainmentViewPrivate::setContainment(Plasma::Containment *cont)
                 q->rootObject()->setProperty("wallpaper", QVariant::fromValue(wpGraphicObject));
             }
         } else {
-            qWarning() << "Could not set containment property on rootObject";
+            qCWarning(LOG_PLASMAQUICK) << "Could not set containment property on rootObject";
         }
     } else {
-        qWarning() << "Containment graphic object not valid";
+        qCWarning(LOG_PLASMAQUICK) << "Containment graphic object not valid";
     }
 }
 
@@ -211,10 +213,10 @@ ContainmentView::ContainmentView(Plasma::Corona *corona, QWindow *parent)
         if (info.isValid()) {
             setTranslationDomain(QStringLiteral("plasma_shell_") + info.pluginId());
         } else {
-            qWarning() << "Invalid corona package metadata";
+            qCWarning(LOG_PLASMAQUICK) << "Invalid corona package metadata";
         }
     } else {
-        qWarning() << "Invalid home screen package";
+        qCWarning(LOG_PLASMAQUICK) << "Invalid home screen package";
     }
 
     setResizeMode(ContainmentView::SizeRootObjectToView);

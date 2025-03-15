@@ -13,9 +13,11 @@
 #include "appletquickitem.h"
 #include "configcategory_p.h"
 #include "configmodel.h"
+#include "debug_p.h"
 
 #include <QDebug>
 #include <QDir>
+#include <QLoggingCategory>
 #include <QQmlComponent>
 #include <QQmlContext>
 #include <QQmlEngine>
@@ -77,11 +79,11 @@ ConfigViewPrivate::ConfigViewPrivate(Plasma::Applet *appl, ConfigView *view)
 void ConfigViewPrivate::init()
 {
     if (!applet) {
-        qWarning() << "Null applet passed to constructor";
+        qCWarning(LOG_PLASMAQUICK) << "Null applet passed to constructor";
         return;
     }
     if (!applet.data()->pluginMetaData().isValid()) {
-        qWarning() << "Invalid applet passed to constructor";
+        qCWarning(LOG_PLASMAQUICK) << "Invalid applet passed to constructor";
         if (applet->containment()) {
             corona = applet->containment()->corona();
         }
@@ -109,12 +111,12 @@ void ConfigViewPrivate::init()
         }
     } else {
         if (!applet.data()->containment()->corona()->kPackage().isValid()) {
-            qWarning() << "Invalid home screen package";
+            qCWarning(LOG_PLASMAQUICK) << "Invalid home screen package";
         }
         corona = applet.data()->containment()->corona();
     }
     if (!corona) {
-        qWarning() << "Cannot find a Corona, this should never happen!";
+        qCWarning(LOG_PLASMAQUICK) << "Cannot find a Corona, this should never happen!";
         return;
     }
 
@@ -163,8 +165,9 @@ void ConfigViewPrivate::init()
             KPluginMetaData md(QLatin1String("kcms/") + kcm);
 
             if (!md.isValid()) {
-                qWarning() << "Could not find" << kcm
-                           << "requested by X-Plasma-ConfigPlugins. Ensure that it exists, is a QML KCM, and lives in the 'kcms/' subdirectory.";
+                qCWarning(LOG_PLASMAQUICK)
+                    << "Could not find" << kcm
+                    << "requested by X-Plasma-ConfigPlugins. Ensure that it exists, is a QML KCM, and lives in the 'kcms/' subdirectory.";
                 continue;
             }
 
@@ -315,7 +318,7 @@ void ConfigView::setSource(const QUrl &src)
     QQmlComponent uiComponent(engine(), src);
     if (uiComponent.isError()) {
         for (const auto &error : uiComponent.errors()) {
-            qWarning() << error;
+            qCWarning(LOG_PLASMAQUICK) << error;
         }
     }
 

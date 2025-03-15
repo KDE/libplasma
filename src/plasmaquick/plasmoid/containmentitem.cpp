@@ -10,6 +10,7 @@
 
 #include "appletquickitem_p.h"
 #include "containmentitem.h"
+#include "debug_p.h"
 #include "dropmenu.h"
 #include "sharedqmlengine.h"
 #include "wallpaperitem.h"
@@ -28,6 +29,7 @@
 #include <KNotification>
 #include <KUrlMimeData>
 #include <QDebug>
+#include <QLoggingCategory>
 #include <QMimeDatabase>
 
 #include <KIO/DropJob>
@@ -118,10 +120,10 @@ void ContainmentItem::init()
                         containmentGraphicObject->setProperty("toolBox", QVariant::fromValue(toolBoxObject));
                     }
                 } else {
-                    qWarning() << "Could not load toolbox package." << pkg.path();
+                    qCWarning(LOG_PLASMAQUICK) << "Could not load toolbox package." << pkg.path();
                 }
             } else {
-                qWarning() << "Toolbox not loading, toolbox package is either invalid or disabled.";
+                qCWarning(LOG_PLASMAQUICK) << "Toolbox not loading, toolbox package is either invalid or disabled.";
             }
         }
     }
@@ -364,7 +366,7 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
 
     // const QMimeData *mimeData = data;
 
-    qDebug() << "Arrived mimeData" << mimeData->urls() << mimeData->formats() << "at" << x << ", " << y;
+    qCDebug(LOG_PLASMAQUICK) << "Arrived mimeData" << mimeData->urls() << mimeData->formats() << "at" << x << ", " << y;
 
     // Catch drops from a Task Manager and convert to usable URL.
     if (!mimeData->hasUrls() && mimeData->hasFormat(QStringLiteral("text/x-orgkdeplasmataskmanager_taskurl"))) {
@@ -406,7 +408,7 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
         QString data = QString::fromUtf8(mimeData->data(QStringLiteral("text/x-plasmoidservicename")));
         const QStringList appletNames = data.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
         for (const QString &appletName : appletNames) {
-            qDebug() << "adding" << appletName;
+            qCDebug(LOG_PLASMAQUICK) << "adding" << appletName;
             metaObject()->invokeMethod(this,
                                        "createApplet",
                                        Qt::QueuedConnection,
@@ -521,18 +523,18 @@ void ContainmentItem::clearDataForMimeJob(KIO::Job *job)
 void ContainmentItem::dropJobResult(KJob *job)
 {
     if (job->error()) {
-        qDebug() << "ERROR" << job->error() << ' ' << job->errorString();
+        qCDebug(LOG_PLASMAQUICK) << "ERROR" << job->error() << ' ' << job->errorString();
         clearDataForMimeJob(dynamic_cast<KIO::Job *>(job));
     }
 }
 
 void ContainmentItem::mimeTypeRetrieved(KIO::Job *job, const QString &mimetype)
 {
-    qDebug() << "Mimetype Job returns." << mimetype;
+    qCDebug(LOG_PLASMAQUICK) << "Mimetype Job returns." << mimetype;
 
     KIO::TransferJob *tjob = dynamic_cast<KIO::TransferJob *>(job);
     if (!tjob) {
-        qDebug() << "job should be a TransferJob, but isn't";
+        qCDebug(LOG_PLASMAQUICK) << "job should be a TransferJob, but isn't";
         clearDataForMimeJob(job);
         return;
     }
@@ -540,13 +542,13 @@ void ContainmentItem::mimeTypeRetrieved(KIO::Job *job, const QString &mimetype)
     QList<KPluginMetaData> appletList = Plasma::PluginLoader::self()->listAppletMetaDataForUrl(tjob->url());
     if (mimetype.isEmpty() && appletList.isEmpty()) {
         clearDataForMimeJob(job);
-        qDebug() << "No applets found matching the url (" << tjob->url() << ") or the mimetype (" << mimetype << ")";
+        qCDebug(LOG_PLASMAQUICK) << "No applets found matching the url (" << tjob->url() << ") or the mimetype (" << mimetype << ")";
         return;
     } else {
-        qDebug() << "Received a suitable dropEvent at " << m_dropMenu->dropPoint();
-        qDebug() << "Bailing out. Cannot find associated dropEvent related to the TransferJob";
+        qCDebug(LOG_PLASMAQUICK) << "Received a suitable dropEvent at " << m_dropMenu->dropPoint();
+        qCDebug(LOG_PLASMAQUICK) << "Bailing out. Cannot find associated dropEvent related to the TransferJob";
 
-        qDebug() << "Creating menu for: " << mimetype;
+        qCDebug(LOG_PLASMAQUICK) << "Creating menu for: " << mimetype;
 
         appletList << Plasma::PluginLoader::self()->listAppletMetaDataForMimeType(mimetype);
 

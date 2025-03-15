@@ -12,6 +12,7 @@
 #include "appletquickitem.h"
 #include "config-plasma.h"
 #include "configview.h"
+#include "debug_p.h"
 #include "dialogbackground_p.h"
 #include "dialogshadows_p.h"
 #include "sharedqmlengine.h"
@@ -615,7 +616,7 @@ void DialogPrivate::syncToMainItemSize()
         return;
     }
     if (mainItem->width() <= 0 || mainItem->height() <= 0) {
-        qWarning() << "trying to show an empty dialog";
+        qCWarning(LOG_PLASMAQUICK) << "trying to show an empty dialog";
     }
 
     updateTheme();

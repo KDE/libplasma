@@ -16,6 +16,7 @@
 
 #include <QDebug>
 #include <QFile>
+#include <QLoggingCategory>
 #include <QQmlContext>
 #include <QQmlExpression>
 #include <QQmlProperty>
@@ -129,7 +130,7 @@ WallpaperItem *WallpaperItem::loadWallpaper(ContainmentItem *containmentItem)
     KPackage::Package pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Wallpaper"));
     pkg.setPath(containmentItem->containment()->wallpaperPlugin());
     if (!pkg.isValid()) {
-        qWarning() << "Error loading the wallpaper, no valid package loaded";
+        qCWarning(LOG_PLASMAQUICK) << "Error loading the wallpaper, no valid package loaded";
         return nullptr;
     }
 
@@ -152,10 +153,10 @@ WallpaperItem *WallpaperItem::loadWallpaper(ContainmentItem *containmentItem)
     WallpaperItem *wallpaper = qobject_cast<WallpaperItem *>(qmlObject->rootObject());
     if (!wallpaper) {
         if (qmlObject->mainComponent() && qmlObject->mainComponent()->isError()) {
-            qWarning() << "Error loading the wallpaper" << qmlObject->mainComponent()->errors();
+            qCWarning(LOG_PLASMAQUICK) << "Error loading the wallpaper" << qmlObject->mainComponent()->errors();
         } else if (qmlObject->rootObject()) {
-            qWarning() << "Root item of wallpaper" << containmentItem->containment()->wallpaperPlugin() << "not a WallpaperItem instance, instead is"
-                       << qmlObject->rootObject();
+            qCWarning(LOG_PLASMAQUICK) << "Root item of wallpaper" << containmentItem->containment()->wallpaperPlugin()
+                                       << "not a WallpaperItem instance, instead is" << qmlObject->rootObject();
         }
         qmlObject->completeInitialization();
         delete qmlObject->rootObject();

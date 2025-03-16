@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-03-16 00:43+0000\n"
 "PO-Revision-Date: 2025-01-31 11:31+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -233,59 +233,59 @@ msgstr "Грешка при зареждането на QML файл: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Грешка при зареждането на аплета: пакетът не съществува. %1"
 
-#: plasmaquick/configview.cpp:233
+#: plasmaquick/configview.cpp:236
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — %2 настройки"
 
-#: plasmaquick/configview.cpp:234
+#: plasmaquick/configview.cpp:237
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 Настройки"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:569
+#: plasmaquick/plasmoid/containmentitem.cpp:571
 #, kde-format
 msgid "Plasma Package"
 msgstr "Пакет на Plasma"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:575
 #, kde-format
 msgid "Install"
 msgstr "Инсталиране"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:584
+#: plasmaquick/plasmoid/containmentitem.cpp:586
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Инсталацията на пакета е неуспешна"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:600
+#: plasmaquick/plasmoid/containmentitem.cpp:602
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Пакетът, който току-що пуснахте, е невалиден."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:609
+#: plasmaquick/plasmoid/containmentitem.cpp:611
 #, kde-format
 msgid "Widgets"
 msgstr "Уиджети"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:614
+#: plasmaquick/plasmoid/containmentitem.cpp:616
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Добавяне %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:628
+#: plasmaquick/plasmoid/containmentitem.cpp:630
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Добавяне на икона"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:640
+#: plasmaquick/plasmoid/containmentitem.cpp:642
 #, kde-format
 msgid "Wallpaper"
 msgstr "Тапет"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:650
+#: plasmaquick/plasmoid/containmentitem.cpp:652
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

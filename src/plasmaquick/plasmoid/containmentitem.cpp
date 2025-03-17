@@ -88,23 +88,14 @@ void ContainmentItem::init()
     }
 
     // Create the ToolBox
-    if (m_containment && m_containment->isContainment()) {
+    if (m_containment && m_containment->isContainment() && m_containment->containmentType() == Plasma::Containment::Type::Panel) {
         KConfigGroup defaults;
-        if (m_containment->containmentType() == Plasma::Containment::Type::Desktop) {
-            defaults = KConfigGroup(KSharedConfig::openConfig(m_containment->corona()->kPackage().filePath("defaults")), QStringLiteral("Desktop"));
-        } else if (m_containment->containmentType() == Plasma::Containment::Type::Panel) {
-            defaults = KConfigGroup(KSharedConfig::openConfig(m_containment->corona()->kPackage().filePath("defaults")), QStringLiteral("Panel"));
-        }
+        defaults = KConfigGroup(KSharedConfig::openConfig(m_containment->corona()->kPackage().filePath("defaults")), QStringLiteral("Panel"));
 
         if (defaults.isValid()) {
             KPackage::Package pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Generic"));
             pkg.setDefaultPackageRoot(QStringLiteral("plasma/packages"));
-
-            if (defaults.isValid()) {
-                pkg.setPath(defaults.readEntry("ToolBox", "org.kde.desktoptoolbox"));
-            } else {
-                pkg.setPath(QStringLiteral("org.kde.desktoptoolbox"));
-            }
+            pkg.setPath(defaults.readEntry("ToolBox"));
 
             if (pkg.metadata().isValid() && !pkg.metadata().isHidden()) {
                 if (pkg.isValid()) {

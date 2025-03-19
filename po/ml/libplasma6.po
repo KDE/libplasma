@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-16 00:43+0000\n"
+"POT-Creation-Date: 2025-03-19 00:43+0000\n"
 "PO-Revision-Date: 2019-12-14 15:16+0530\n"
 "Last-Translator: Nithin S Sabu <nithinsn@protonmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -244,49 +244,49 @@ msgstr "%1 ക്രമീകരണങ്ങള്‍"
 msgid "%1 Settings"
 msgstr "%1 ക്രമീകരണങ്ങള്‍"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:571
+#: plasmaquick/plasmoid/containmentitem.cpp:562
 #, kde-format
 msgid "Plasma Package"
 msgstr "പ്ലാസ്മ പാക്കേജ്"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:575
+#: plasmaquick/plasmoid/containmentitem.cpp:566
 #, kde-format
 msgid "Install"
 msgstr "ഇന്‍സ്റ്റാള്‍"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:586
+#: plasmaquick/plasmoid/containmentitem.cpp:577
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "പാക്കേജ് ഇന്‍സ്റ്റാളേഷന്‍ പരാജയപ്പെട്ടു"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:602
+#: plasmaquick/plasmoid/containmentitem.cpp:593
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "നിങ്ങളിപ്പോള്‍ നല്‍കിയ പാക്കേജ് സ്വീകാര്യമല്ല."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:611
+#: plasmaquick/plasmoid/containmentitem.cpp:602
 #, kde-format
 msgid "Widgets"
 msgstr "വിഡ്ജറ്റുകള്‍"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:616
+#: plasmaquick/plasmoid/containmentitem.cpp:607
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "%1 ചേര്‍ക്കുക [വിഡ്ജറ്റ് ചേര്‍ക്കുക]"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:630
+#: plasmaquick/plasmoid/containmentitem.cpp:621
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "സൂചനാചിത്രങ്ങള്‍ ചേര്‍ക്കുക"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:642
+#: plasmaquick/plasmoid/containmentitem.cpp:633
 #, kde-format
 msgid "Wallpaper"
 msgstr "പശ്ചാത്തലചിത്രം"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:652
+#: plasmaquick/plasmoid/containmentitem.cpp:643
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-16 00:43+0000\n"
+"POT-Creation-Date: 2025-03-19 00:43+0000\n"
 "PO-Revision-Date: 2024-08-25 11:46+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -263,49 +263,49 @@ msgstr "Paramètres %1 — %2"
 msgid "%1 Settings"
 msgstr "Paramètres %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:571
+#: plasmaquick/plasmoid/containmentitem.cpp:562
 #, kde-format
 msgid "Plasma Package"
 msgstr "Paquet Plasma"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:575
+#: plasmaquick/plasmoid/containmentitem.cpp:566
 #, kde-format
 msgid "Install"
 msgstr "Installer"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:586
+#: plasmaquick/plasmoid/containmentitem.cpp:577
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Échec de l'installation du paquet"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:602
+#: plasmaquick/plasmoid/containmentitem.cpp:593
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Le paquet que vous venez de déposer n'est pas valable."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:611
+#: plasmaquick/plasmoid/containmentitem.cpp:602
 #, kde-format
 msgid "Widgets"
 msgstr "Composants graphiques"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:616
+#: plasmaquick/plasmoid/containmentitem.cpp:607
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Ajouter %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:630
+#: plasmaquick/plasmoid/containmentitem.cpp:621
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Ajouter une icône"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:642
+#: plasmaquick/plasmoid/containmentitem.cpp:633
 #, kde-format
 msgid "Wallpaper"
 msgstr "Fond d'écran"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:652
+#: plasmaquick/plasmoid/containmentitem.cpp:643
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-16 00:43+0000\n"
+"POT-Creation-Date: 2025-03-19 00:43+0000\n"
 "PO-Revision-Date: 2024-08-24 12:23+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -247,49 +247,49 @@ msgstr "%1 — Preferencias de %2"
 msgid "%1 Settings"
 msgstr "Preferencias de %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:571
+#: plasmaquick/plasmoid/containmentitem.cpp:562
 #, kde-format
 msgid "Plasma Package"
 msgstr "Paquete de Plasma"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:575
+#: plasmaquick/plasmoid/containmentitem.cpp:566
 #, kde-format
 msgid "Install"
 msgstr "Instalar"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:586
+#: plasmaquick/plasmoid/containmentitem.cpp:577
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "La instalación del paquete ha fallado"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:602
+#: plasmaquick/plasmoid/containmentitem.cpp:593
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "El paquete que acaba de soltar no es válido."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:611
+#: plasmaquick/plasmoid/containmentitem.cpp:602
 #, kde-format
 msgid "Widgets"
 msgstr "Elementos gráficos"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:616
+#: plasmaquick/plasmoid/containmentitem.cpp:607
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Añadir %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:630
+#: plasmaquick/plasmoid/containmentitem.cpp:621
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Añadir icono"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:642
+#: plasmaquick/plasmoid/containmentitem.cpp:633
 #, kde-format
 msgid "Wallpaper"
 msgstr "Fondo de escritorio"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:652
+#: plasmaquick/plasmoid/containmentitem.cpp:643
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

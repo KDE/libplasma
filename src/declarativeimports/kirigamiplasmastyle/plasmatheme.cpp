@@ -121,7 +121,7 @@ void PlasmaTheme::syncColors()
         }
         if (!parentItem->isEnabled()) {
             paletteGroup = QPalette::Disabled;
-            // Why also checking the window is exposed?
+            // Why also check if the window is exposed?
             // in the case of QQuickWidget the window() will never be active
             // and the widgets will always have the inactive palette.
             // better to always show it active than always show it inactive

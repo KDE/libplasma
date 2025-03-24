@@ -69,6 +69,8 @@ T.ComboBox {
         padding: 0
         text: control.editable ? control.editText : control.displayText
 
+        // We don't want a disabled text color when the control is not editable
+        Kirigami.Theme.textColor: control.Kirigami.Theme.textColor
         enabled: control.editable
         autoScroll: control.editable
 

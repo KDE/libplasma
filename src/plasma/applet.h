@@ -298,12 +298,20 @@ public:
     bool destroyed() const;
 
     /**
-     * @return the Containment, if any, this applet belongs to
+     * @return the Containment, if any, this applet belongs to.
+     * A containment will return itself if is a first level
+     * containment such as a desktop or a panel, or will return the
+     * other containment is in if it's a nested containment such a
+     * system tray
      **/
     Containment *containment() const;
 
     /**
-     * @return true if this Applet is currently being used as a Containment, false otherwise
+     * @return true if this Applet is currently being used as a Containment, false otherwise.
+     * Normally only first level Containments directly children of Corona can act
+     * as containments, except Containments of Type CustomEmbedded which can be
+     * containments also when inside another containment, such as a Systray
+     * inside a Panel.
      */
     bool isContainment() const;
 

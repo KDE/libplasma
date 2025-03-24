@@ -121,13 +121,6 @@ void Containment::init()
             setInternalAction(QStringLiteral("lock widgets"), lockDesktopAction);
         }
     }
-
-    // HACK: this is valid only in the systray case
-    connect(this, &Containment::configureRequested, this, [this](Plasma::Applet *a) {
-        if (Plasma::Applet *p = qobject_cast<Plasma::Applet *>(parent())) {
-            Q_EMIT p->containment()->configureRequested(a);
-        }
-    });
 }
 
 // helper function for sorting the list of applets
@@ -289,12 +282,9 @@ Plasma::Containment::Type Containment::containmentType() const
 
 Corona *Containment::corona() const
 {
-    // We are not sure where the corona parent is in the hyerarchy, because of... the systray.
-    // We are iterating over the parent tree here rather than casting the parent
-    // to applet then asking ofr its containment and corona, as this might break during
-    // teardown, as this can be invoked during dtor of one of the ancestors,
-    // see https://bugs.kde.org/show_bug.cgi?id=477067 where it happens during destruction
-    // of the panel (containment of the applet that contains the systray containment)
+    // We are not sure where the corona parent is in the hierarchy,
+    // because of nested containment, those of type CustomEmbedded
+    // will have containment->containment->corona
     for (auto candidate = parent(); candidate; candidate = candidate->parent()) {
         if (auto c = qobject_cast<Corona *>(candidate)) {
             return c;
@@ -378,7 +368,6 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
         // qCDebug(LOG_PLASMA) << "already have this applet!";
     }
 #endif
-
     Containment *currentContainment = applet->containment();
 
     if (currentContainment && currentContainment != this) {
@@ -416,6 +405,10 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
         applet->setParent(this);
     }
 
+    Containment *asCont = qobject_cast<Containment *>(applet);
+    if (asCont && asCont->containmentType() == Containment::CustomEmbedded) {
+        asCont->init();
+    }
     // make sure the applets are sorted by id
     const auto position = std::lower_bound(d->applets.begin(), d->applets.end(), applet, [](Plasma::Applet *a1, Plasma::Applet *a2) {
         return a1->id() < a2->id();
@@ -435,11 +428,15 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
     if (!currentContainment) {
         const bool isNew = applet->d->mainConfigGroup()->entryMap().isEmpty();
 
-        if (!isNew) {
+        // If the applet is a nested containment restore even if new, to
+        // have the same behavior of Corona::addContainment
+        if (!isNew || applet->isContainment()) {
             applet->restore(*applet->d->mainConfigGroup());
         }
 
-        applet->init();
+        if (!asCont || asCont->containmentType() != Containment::CustomEmbedded) {
+            applet->init();
+        }
 
         if (isNew) {
             applet->save(*applet->d->mainConfigGroup());
@@ -471,7 +468,9 @@ QList<Applet *> Containment::applets() const
 int Containment::screen() const
 {
     Q_ASSERT(corona());
-    if (Corona *c = corona()) {
+    if (Containment *pc = qobject_cast<Containment *>(parent()); pc && isContainment()) {
+        return pc->screen();
+    } else if (Corona *c = corona()) {
         return c->screenForContainment(this);
     } else {
         return -1;
@@ -480,6 +479,9 @@ int Containment::screen() const
 
 int Containment::lastScreen() const
 {
+    if (Containment *pc = qobject_cast<Containment *>(parent()); pc) {
+        return pc->lastScreen();
+    }
     return d->lastScreen;
 }
 

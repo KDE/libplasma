@@ -34,12 +34,6 @@ ContainmentPrivate::ContainmentPrivate(Containment *c)
     , uiReady(false)
     , appletsUiReady(false)
 {
-    // if the parent is an applet (i.e we are the systray)
-    // we want to follow screen changed signals from the parent's containment
-    auto appletParent = qobject_cast<Plasma::Applet *>(c->parent());
-    if (appletParent) {
-        QObject::connect(appletParent->containment(), &Containment::screenChanged, c, &Containment::screenChanged);
-    }
     activityInfo = new KActivities::Info(activityId, q);
     QObject::connect(activityInfo, &KActivities::Info::nameChanged, q, &Containment::activityNameChanged);
 }

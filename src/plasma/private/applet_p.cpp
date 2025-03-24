@@ -208,16 +208,6 @@ void AppletPrivate::setDestroyed(bool destroyed)
         for (Applet *a : lstApplets) {
             a->d->setDestroyed(destroyed);
         }
-    } else {
-        const auto children = q->children();
-        for (QObject *child : children) {
-            // Some non-containment applets can have another applet as child to
-            // emulate nested containments, such as the systray and grouping plasmoid
-            Plasma::Applet *applet = qobject_cast<Plasma::Applet *>(child);
-            if (applet) {
-                applet->d->setDestroyed(destroyed);
-            }
-        }
     }
     Q_EMIT q->configNeedsSaving();
 }
@@ -428,12 +418,18 @@ void AppletPrivate::propagateConfigChanged()
 
 void AppletPrivate::setUiReady()
 {
-    // am i the containment?
-    Containment *c = qobject_cast<Containment *>(q);
-    if (c && c->isContainment()) {
-        c->d->setUiReady();
-    } else if (Containment *cc = q->containment()) {
-        cc->d->appletLoaded(q);
+    // If we a re a containment, call setUiReady
+    Containment *thisContainment = qobject_cast<Containment *>(q);
+    if (thisContainment && thisContainment->isContainment()) {
+        thisContainment->d->setUiReady();
+    }
+
+    // If we are inside a containment, call appletLoaded on the containment
+    // Note that q->containment() might be a different containment
+    // also for a containment as is possible to have nested containments, such as the systemtray
+    Containment *parentContainment = q->containment();
+    if (parentContainment && parentContainment != thisContainment) {
+        parentContainment->d->appletLoaded(q);
     }
 }
 
@@ -485,7 +481,7 @@ KConfigGroup *AppletPrivate::mainConfigGroup()
         parentApplet = qobject_cast<Plasma::Applet *>(c->parent());
     }
 
-    if (q->isContainment()) {
+    if (q->isContainment() && static_cast<Containment *>(q)->containmentType() != Containment::CustomEmbedded) {
         Corona *corona = static_cast<Containment *>(q)->corona();
         KConfigGroup containmentConfig;
         // qCDebug(LOG_PLASMA) << "got a corona, baby?" << (QObject*)corona << (QObject*)q;

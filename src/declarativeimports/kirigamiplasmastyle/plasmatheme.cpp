@@ -11,6 +11,8 @@
 #include <QPalette>
 #include <QQmlContext>
 #include <QQmlEngine>
+#include <QQuickRenderControl>
+#include <QQuickWindow>
 #include <QScopeGuard>
 
 #include <KColorScheme>
@@ -24,6 +26,7 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
 
     auto parentItem = qobject_cast<QQuickItem *>(parent);
     if (parentItem) {
+        connect(parentItem, &QQuickItem::windowChanged, this, &PlasmaTheme::syncWindow);
         connect(parentItem, &QQuickItem::enabledChanged, this, &PlasmaTheme::syncColors);
         connect(parentItem, &QQuickItem::visibleChanged, this, [this, parentItem] {
             if (!parentItem->isVisible()) {
@@ -50,6 +53,7 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
         return smallFont;
     }()));
 
+    syncWindow();
     syncColors();
     connect(&m_theme, &Plasma::Theme::themeChanged, this, &PlasmaTheme::syncColors);
 }
@@ -75,10 +79,55 @@ QIcon PlasmaTheme::iconFromTheme(const QString &name, const QColor &customColor)
     return KDE::icon(name, colors);
 }
 
+void PlasmaTheme::syncWindow()
+{
+    if (m_window) {
+        disconnect(m_window.data(), &QWindow::activeChanged, this, &PlasmaTheme::syncColors);
+    }
+
+    QWindow *window = nullptr;
+
+    auto parentItem = qobject_cast<QQuickItem *>(parent());
+    if (parentItem) {
+        QQuickWindow *qw = parentItem->window();
+
+        window = QQuickRenderControl::renderWindowFor(qw);
+        if (!window) {
+            window = qw;
+        }
+        if (qw) {
+            connect(qw, &QQuickWindow::sceneGraphInitialized, this, &PlasmaTheme::syncWindow, Qt::UniqueConnection);
+        }
+    }
+    m_window = window;
+
+    if (window) {
+        connect(m_window.data(), &QWindow::activeChanged, this, &PlasmaTheme::syncColors);
+        syncColors();
+    }
+}
+
 void PlasmaTheme::syncColors()
 {
     if (QCoreApplication::closingDown()) {
         return;
+    }
+
+    QPalette::ColorGroup paletteGroup = (QPalette::ColorGroup)colorGroup();
+    auto parentItem = qobject_cast<QQuickItem *>(parent());
+    if (parentItem) {
+        if (!parentItem->isVisible()) {
+            return;
+        }
+        if (!parentItem->isEnabled()) {
+            paletteGroup = QPalette::Disabled;
+            // Why also check if the window is exposed?
+            // in the case of QQuickWidget the window() will never be active
+            // and the widgets will always have the inactive palette.
+            // better to always show it active than always show it inactive
+        } else if (m_window && !m_window->isActive() && m_window->isExposed()) {
+            paletteGroup = QPalette::Inactive;
+        }
     }
 
     Plasma::Theme::ColorGroup group;
@@ -105,7 +154,11 @@ void PlasmaTheme::syncColors()
     }
 
     // foreground
-    setTextColor(m_theme.color(Plasma::Theme::TextColor, group));
+    if (paletteGroup == QPalette::Disabled) {
+        setTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, group));
+    } else {
+        setTextColor(m_theme.color(Plasma::Theme::TextColor, group));
+    }
     setDisabledTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, group));
     setHighlightedTextColor(m_theme.color(Plasma::Theme::HighlightedTextColor, group));
     // Plasma::Theme doesn't have ActiveText, use PositiveTextColor

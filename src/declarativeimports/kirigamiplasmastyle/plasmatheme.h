@@ -28,6 +28,7 @@ public:
 
     Q_INVOKABLE QIcon iconFromTheme(const QString &name, const QColor &customColor = Qt::transparent) override;
 
+    void syncWindow();
     void syncColors();
 
 protected:
@@ -35,6 +36,7 @@ protected:
 
 private:
     Plasma::Theme m_theme;
+    QPointer<QWindow> m_window;
 };
 
 #endif // PLASMATHEME_H

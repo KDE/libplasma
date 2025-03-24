@@ -883,8 +883,7 @@ bool Applet::isContainment() const
     if (!cont) {
         return false;
     }
-    return qobject_cast<Corona *>(parent())
-        || (cont->containmentType() == Containment::CustomEmbedded && parent() && qobject_cast<Corona *>(parent()->parent()));
+    return qobject_cast<Corona *>(parent()) || cont->containmentType() == Containment::CustomEmbedded;
 }
 
 QString Applet::translationDomain() const

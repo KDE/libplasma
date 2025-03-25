@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-19 00:43+0000\n"
+"POT-Creation-Date: 2025-03-25 00:43+0000\n"
 "PO-Revision-Date: 2024-10-29 11:45+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -61,7 +61,7 @@ msgstr "Notīrīt meklēšanu"
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: plasma/applet.cpp:746
+#: plasma/applet.cpp:749
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Aktivēt „%1“ logdaļu"
@@ -103,72 +103,72 @@ msgstr "Iziet no rediģēšanas režīma"
 msgid "Show Alternatives..."
 msgstr "Parādīt alternatīvas…"
 
-#: plasma/private/applet_p.cpp:247
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Widget Removed"
 msgstr "Logdaļa ir noņemta"
 
-#: plasma/private/applet_p.cpp:248
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Logdaļa „%1“ ir noņemta."
 
-#: plasma/private/applet_p.cpp:252
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panelis ir noņemts"
 
-#: plasma/private/applet_p.cpp:253
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Ir noņemts panelis."
 
-#: plasma/private/applet_p.cpp:256
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Darbvirsma ir noņemta"
 
-#: plasma/private/applet_p.cpp:257
+#: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Ir noņemta darbvirsma."
 
-#: plasma/private/applet_p.cpp:260
+#: plasma/private/applet_p.cpp:250
 #, kde-format
 msgid "Undo"
 msgstr "Atsaukt"
 
-#: plasma/private/applet_p.cpp:351
+#: plasma/private/applet_p.cpp:341
 #, kde-format
 msgid "Widget Settings"
 msgstr "Logdaļas iestatījumi"
 
-#: plasma/private/applet_p.cpp:357
+#: plasma/private/applet_p.cpp:347
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Noņemt šo logdaļu"
 
-#: plasma/private/containment_p.cpp:57
+#: plasma/private/containment_p.cpp:51
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Noņemt šo paneli"
 
-#: plasma/private/containment_p.cpp:59
+#: plasma/private/containment_p.cpp:53
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Noņemt šo aktivitāti"
 
-#: plasma/private/containment_p.cpp:64
+#: plasma/private/containment_p.cpp:58
 #, kde-format
 msgid "Activity Settings"
 msgstr "Aktivitātes iestatījumi"
 
-#: plasma/private/containment_p.cpp:76
+#: plasma/private/containment_p.cpp:70
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Pievienot vai pārvaldīt logdaļas…"
 
-#: plasma/private/containment_p.cpp:194
+#: plasma/private/containment_p.cpp:188
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Neatrada pieprasīto komponenti: %1"
@@ -238,12 +238,12 @@ msgstr "Kļūda, ielādējot QML datni: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Kļūda, ielādējot sīklietotni: „%1“ nepastāv."
 
-#: plasmaquick/configview.cpp:236
+#: plasmaquick/configview.cpp:229
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "„%1“ — „%2“ Iestatījumi"
 
-#: plasmaquick/configview.cpp:237
+#: plasmaquick/configview.cpp:230
 #, kde-format
 msgid "%1 Settings"
 msgstr "„%1“ iestatījumi"

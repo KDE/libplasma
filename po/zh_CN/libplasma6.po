@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-19 00:43+0000\n"
+"POT-Creation-Date: 2025-03-25 00:43+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -59,7 +59,7 @@ msgstr "清除搜索内容"
 msgid "Unknown"
 msgstr "未知"
 
-#: plasma/applet.cpp:746
+#: plasma/applet.cpp:749
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "激活 %1 挂件"
@@ -101,72 +101,72 @@ msgstr "退出编辑模式"
 msgid "Show Alternatives..."
 msgstr "显示替代部件..."
 
-#: plasma/private/applet_p.cpp:247
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Widget Removed"
 msgstr "挂件已移除"
 
-#: plasma/private/applet_p.cpp:248
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "挂件“%1”已移除。"
 
-#: plasma/private/applet_p.cpp:252
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "Panel Removed"
 msgstr "面板已移除"
 
-#: plasma/private/applet_p.cpp:253
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "A panel has been removed."
 msgstr "已移除面板。"
 
-#: plasma/private/applet_p.cpp:256
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "Desktop Removed"
 msgstr "桌面已移除"
 
-#: plasma/private/applet_p.cpp:257
+#: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "已移除桌面。"
 
-#: plasma/private/applet_p.cpp:260
+#: plasma/private/applet_p.cpp:250
 #, kde-format
 msgid "Undo"
 msgstr "撤销"
 
-#: plasma/private/applet_p.cpp:351
+#: plasma/private/applet_p.cpp:341
 #, kde-format
 msgid "Widget Settings"
 msgstr "挂件设置"
 
-#: plasma/private/applet_p.cpp:357
+#: plasma/private/applet_p.cpp:347
 #, kde-format
 msgid "Remove this Widget"
 msgstr "移除此挂件"
 
-#: plasma/private/containment_p.cpp:57
+#: plasma/private/containment_p.cpp:51
 #, kde-format
 msgid "Remove this Panel"
 msgstr "移除此面板"
 
-#: plasma/private/containment_p.cpp:59
+#: plasma/private/containment_p.cpp:53
 #, kde-format
 msgid "Remove this Activity"
 msgstr "移除此活动"
 
-#: plasma/private/containment_p.cpp:64
+#: plasma/private/containment_p.cpp:58
 #, kde-format
 msgid "Activity Settings"
 msgstr "活动设置"
 
-#: plasma/private/containment_p.cpp:76
+#: plasma/private/containment_p.cpp:70
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "添加或者管理挂件…"
 
-#: plasma/private/containment_p.cpp:194
+#: plasma/private/containment_p.cpp:188
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "无法找到所需组件：%1"
@@ -235,12 +235,12 @@ msgstr "加载 QML 文件出错：%1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "加载小程序出错：软件包 %1 不存在。"
 
-#: plasmaquick/configview.cpp:236
+#: plasmaquick/configview.cpp:229
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — %2 设置"
 
-#: plasmaquick/configview.cpp:237
+#: plasmaquick/configview.cpp:230
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 设置"

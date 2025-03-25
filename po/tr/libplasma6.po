@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-19 00:43+0000\n"
+"POT-Creation-Date: 2025-03-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-25 20:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -62,7 +62,7 @@ msgstr "Aramayı temizle"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: plasma/applet.cpp:746
+#: plasma/applet.cpp:749
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Araç takımını etkinleştir: %1"
@@ -104,72 +104,72 @@ msgstr "Düzenleme Kipinden Çık"
 msgid "Show Alternatives..."
 msgstr "Alternatifleri Göster…"
 
-#: plasma/private/applet_p.cpp:247
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Widget Removed"
 msgstr "Araç Takımı Kaldırıldı"
 
-#: plasma/private/applet_p.cpp:248
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "“%1” araç takımı kaldırıldı."
 
-#: plasma/private/applet_p.cpp:252
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panel Kaldırıldı"
 
-#: plasma/private/applet_p.cpp:253
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Bir panel kaldırıldı."
 
-#: plasma/private/applet_p.cpp:256
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Masaüstü Kaldırıldı"
 
-#: plasma/private/applet_p.cpp:257
+#: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Bir masaüstü kaldırıldı."
 
-#: plasma/private/applet_p.cpp:260
+#: plasma/private/applet_p.cpp:250
 #, kde-format
 msgid "Undo"
 msgstr "Geri Al"
 
-#: plasma/private/applet_p.cpp:351
+#: plasma/private/applet_p.cpp:341
 #, kde-format
 msgid "Widget Settings"
 msgstr "Araç Takımı Ayarları"
 
-#: plasma/private/applet_p.cpp:357
+#: plasma/private/applet_p.cpp:347
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Bu araç takımını kaldır"
 
-#: plasma/private/containment_p.cpp:57
+#: plasma/private/containment_p.cpp:51
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Bu Paneli Kaldır"
 
-#: plasma/private/containment_p.cpp:59
+#: plasma/private/containment_p.cpp:53
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Bu Etkinliği Kaldır"
 
-#: plasma/private/containment_p.cpp:64
+#: plasma/private/containment_p.cpp:58
 #, kde-format
 msgid "Activity Settings"
 msgstr "Etkinlik Ayarları"
 
-#: plasma/private/containment_p.cpp:76
+#: plasma/private/containment_p.cpp:70
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Araç Takımları Ekle veya Yönet…"
 
-#: plasma/private/containment_p.cpp:194
+#: plasma/private/containment_p.cpp:188
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "İstenilen bileşen bulunamadı: %1"
@@ -239,12 +239,12 @@ msgstr "QML dosyası yüklenirken hata: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Uygulamacık yüklenirken hata: %1 paketi yok."
 
-#: plasmaquick/configview.cpp:236
+#: plasmaquick/configview.cpp:229
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — %2 Ayarları"
 
-#: plasmaquick/configview.cpp:237
+#: plasmaquick/configview.cpp:230
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 Ayarları"

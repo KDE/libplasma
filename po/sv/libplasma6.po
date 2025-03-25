@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-19 00:43+0000\n"
+"POT-Creation-Date: 2025-03-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-23 07:37+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -59,7 +59,7 @@ msgstr "Rensa sökning"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: plasma/applet.cpp:746
+#: plasma/applet.cpp:749
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Aktivera komponenten %1"
@@ -101,72 +101,72 @@ msgstr "Avsluta redigeringsläge"
 msgid "Show Alternatives..."
 msgstr "Visa alternativ..."
 
-#: plasma/private/applet_p.cpp:247
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Widget Removed"
 msgstr "Grafisk komponent borttagen"
 
-#: plasma/private/applet_p.cpp:248
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Den grafiska komponenten \"%1\" har tagits bort."
 
-#: plasma/private/applet_p.cpp:252
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "Panel Removed"
 msgstr "Panel borttagen"
 
-#: plasma/private/applet_p.cpp:253
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "A panel has been removed."
 msgstr "En panel har tagits bort."
 
-#: plasma/private/applet_p.cpp:256
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Skrivbord borttaget"
 
-#: plasma/private/applet_p.cpp:257
+#: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Ett skrivbord har tagits bort."
 
-#: plasma/private/applet_p.cpp:260
+#: plasma/private/applet_p.cpp:250
 #, kde-format
 msgid "Undo"
 msgstr "Ångra"
 
-#: plasma/private/applet_p.cpp:351
+#: plasma/private/applet_p.cpp:341
 #, kde-format
 msgid "Widget Settings"
 msgstr "Inställningar av grafiska komponenter"
 
-#: plasma/private/applet_p.cpp:357
+#: plasma/private/applet_p.cpp:347
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Ta bort den här grafiska komponenten"
 
-#: plasma/private/containment_p.cpp:57
+#: plasma/private/containment_p.cpp:51
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Ta bort panelen"
 
-#: plasma/private/containment_p.cpp:59
+#: plasma/private/containment_p.cpp:53
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Ta bort aktiviteten"
 
-#: plasma/private/containment_p.cpp:64
+#: plasma/private/containment_p.cpp:58
 #, kde-format
 msgid "Activity Settings"
 msgstr "Aktivitetsinställningar"
 
-#: plasma/private/containment_p.cpp:76
+#: plasma/private/containment_p.cpp:70
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Lägg till eller hantera grafiska komponenter…"
 
-#: plasma/private/containment_p.cpp:194
+#: plasma/private/containment_p.cpp:188
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Kunde inte hitta begärd komponent: %1"
@@ -236,12 +236,12 @@ msgstr "Fel vid inläsning av QML-fil: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Fel vid inläsning av miniprogram: paketet %1 finns inte."
 
-#: plasmaquick/configview.cpp:236
+#: plasmaquick/configview.cpp:229
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — %2 inställningar"
 
-#: plasmaquick/configview.cpp:237
+#: plasmaquick/configview.cpp:230
 #, kde-format
 msgid "%1 Settings"
 msgstr "Inställningar av %1"

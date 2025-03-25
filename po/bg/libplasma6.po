@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-19 00:43+0000\n"
+"POT-Creation-Date: 2025-03-25 00:43+0000\n"
 "PO-Revision-Date: 2025-01-31 11:31+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -56,7 +56,7 @@ msgstr "Изчистване на търсенето"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: plasma/applet.cpp:746
+#: plasma/applet.cpp:749
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Активиране на %1 Widget"
@@ -98,72 +98,72 @@ msgstr "Излизане от режима за редактиране"
 msgid "Show Alternatives..."
 msgstr "Показване на алтернативи..."
 
-#: plasma/private/applet_p.cpp:247
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "Widget Removed"
 msgstr "Уиджетът е премахнат"
 
-#: plasma/private/applet_p.cpp:248
+#: plasma/private/applet_p.cpp:238
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Уиджетът „%1“  е премахнат."
 
-#: plasma/private/applet_p.cpp:252
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "Panel Removed"
 msgstr "Панелът е премахнат"
 
-#: plasma/private/applet_p.cpp:253
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Панелът е премахнат."
 
-#: plasma/private/applet_p.cpp:256
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Работният плот е премахнат"
 
-#: plasma/private/applet_p.cpp:257
+#: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Работният плот е премахнат."
 
-#: plasma/private/applet_p.cpp:260
+#: plasma/private/applet_p.cpp:250
 #, kde-format
 msgid "Undo"
 msgstr "Отмяна"
 
-#: plasma/private/applet_p.cpp:351
+#: plasma/private/applet_p.cpp:341
 #, kde-format
 msgid "Widget Settings"
 msgstr "Настройки на уиджет"
 
-#: plasma/private/applet_p.cpp:357
+#: plasma/private/applet_p.cpp:347
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Премахване на този уиджет"
 
-#: plasma/private/containment_p.cpp:57
+#: plasma/private/containment_p.cpp:51
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Премахване на този панел"
 
-#: plasma/private/containment_p.cpp:59
+#: plasma/private/containment_p.cpp:53
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Премахване на тази дейност"
 
-#: plasma/private/containment_p.cpp:64
+#: plasma/private/containment_p.cpp:58
 #, kde-format
 msgid "Activity Settings"
 msgstr "Настройки на дейност"
 
-#: plasma/private/containment_p.cpp:76
+#: plasma/private/containment_p.cpp:70
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Добавяне или управление на уиджети…"
 
-#: plasma/private/containment_p.cpp:194
+#: plasma/private/containment_p.cpp:188
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Не можа да се намери заявения компонент:%1"
@@ -233,12 +233,12 @@ msgstr "Грешка при зареждането на QML файл: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Грешка при зареждането на аплета: пакетът не съществува. %1"
 
-#: plasmaquick/configview.cpp:236
+#: plasmaquick/configview.cpp:229
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — %2 настройки"
 
-#: plasmaquick/configview.cpp:237
+#: plasmaquick/configview.cpp:230
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 Настройки"

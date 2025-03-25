@@ -402,8 +402,13 @@ void AppletPrivate::contextualActions_removeLast(QQmlListProperty<QAction> *prop
 
 void AppletPrivate::requestConfiguration()
 {
-    if (q->containment()) {
-        Q_EMIT q->containment()->configureRequested(q);
+    Plasma::Containment *cont = q->containment();
+    // Containments can be arbitrarly nested, so find the top-most one which is in the view directly
+    while (cont && cont->containment() != cont) {
+        cont = cont->containment();
+    }
+    if (cont) {
+        Q_EMIT cont->configureRequested(q);
     }
 }
 

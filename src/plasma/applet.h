@@ -163,7 +163,7 @@ class PLASMA_EXPORT Applet : public QObject
 
     /**
      * If true the applet requires manual configuration from the user
-     * TODO KF6: having just a reson property and required would be string not empty? Uglier from c++ pov but more straight forward from qml pov
+     * TODO KF6: having just a reason property and required would be string not empty? Uglier from c++ pov but more straight forward from qml pov
      */
     Q_PROPERTY(bool configurationRequired READ configurationRequired WRITE setConfigurationRequired NOTIFY configurationRequiredChanged)
 

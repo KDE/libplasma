@@ -354,12 +354,14 @@ void AppletPrivate::contextualActions_append(QQmlListProperty<QAction> *prop, QA
 {
     Applet *a = static_cast<Plasma::Applet *>(prop->object);
     a->d->contextualActions.append(action);
-    QObject::connect(action, &QObject::destroyed, a, [a, action]() {
-        if (a->destroyed())
-            return;
-        a->d->contextualActions.removeAll(action);
-        Q_EMIT a->contextualActionsChanged(a->d->contextualActions);
-    });
+    if (action) { // some operations like inserting in the middle may append nullptr
+        QObject::connect(action, &QObject::destroyed, a, [a, action]() {
+            if (a->destroyed())
+                return;
+            a->d->contextualActions.removeAll(action);
+            Q_EMIT a->contextualActionsChanged(a->d->contextualActions);
+        });
+    }
     Q_EMIT a->contextualActionsChanged(a->d->contextualActions);
 };
 

@@ -697,18 +697,22 @@ QList<QAction *> Applet::internalActions() const
 Types::FormFactor Applet::formFactor() const
 {
     Containment *c = containment();
-    QObject *pw = qobject_cast<QObject *>(parent());
-    Plasma::Applet *parentApplet = qobject_cast<Plasma::Applet *>(pw);
-    // assumption: this loop is usually is -really- short or doesn't run at all
-    while (!parentApplet && pw && pw->parent()) {
-        pw = pw->parent();
-        parentApplet = qobject_cast<Plasma::Applet *>(pw);
+
+    if (!c) {
+        return Plasma::Types::Planar;
     }
 
-    if (parentApplet) {
-        return parentApplet->formFactor();
+    // Let's try to return the higher level formfactor in case of
+    // nested containments.
+    // c->containment() is guaranteed to exist except during teardown.
+    // if c is a toplevel containment,
+    // c == c->containment() else if is a nested one, it will be containment's
+    // containment
+    Containment *topC = c->containment();
+    if (topC) {
+        return topC->d->formFactor;
     }
-    return c ? c->d->formFactor : Plasma::Types::Planar;
+    return c->d->formFactor;
 }
 
 Types::ContainmentDisplayHints Applet::containmentDisplayHints() const
@@ -783,7 +787,22 @@ QKeySequence Applet::globalShortcut() const
 Types::Location Applet::location() const
 {
     Containment *c = containment();
-    return c ? c->d->location : Plasma::Types::Desktop;
+
+    if (!c) {
+        return Plasma::Types::Desktop;
+    }
+
+    // Let's try to return the higher level location in case of
+    // nested containments.
+    // c->containment() is guaranteed to exist except during teardown.
+    // if c is a toplevel containment,
+    // c == c->containment() else if is a nested one, it will be containment's
+    // containment
+    Containment *topC = c->containment();
+    if (topC) {
+        return topC->d->location;
+    }
+    return c->d->location;
 }
 
 bool Applet::hasConfigurationInterface() const

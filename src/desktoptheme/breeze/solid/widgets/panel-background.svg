@@ -673,4 +673,18 @@
        y="8.6755848"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.25217px;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';text-align:start;text-anchor:start;fill:#000000;stroke:none;stroke-width:5.72866"
        id="tspan1364">be covered by the svg.</tspan></text>
+  <rect
+      id="hint-side-margin"
+      height="4"
+      style="fill:#800080;stroke:none;stroke-width:0.999998"
+      width="4"
+      x="18"
+      y="30" />
+  <rect
+      id="hint-grid-spacing"
+      height="4"
+      style="fill:#800063;fill-opacity:1;stroke:none;stroke-width:0.999994"
+      width="4"
+      x="22"
+      y="30" />
 </svg>

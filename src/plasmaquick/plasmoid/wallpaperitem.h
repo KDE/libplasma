@@ -12,6 +12,8 @@
 
 #include <KPackage/Package>
 
+#include "plasmaquick_export.h"
+
 class KConfigLoader;
 class KConfigPropertyMap;
 
@@ -34,7 +36,7 @@ class SharedQmlEngine;
  * @code import org.kde.plasma.plasmoid @endcode
  * @version 2.0
  */
-class WallpaperItem : public QQuickItem
+class PLASMAQUICK_EXPORT WallpaperItem : public QQuickItem
 {
     Q_OBJECT
 

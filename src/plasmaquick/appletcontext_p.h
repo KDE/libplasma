@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include <plasmaquick_export.h>
+
 #include "sharedqmlengine.h"
 
 #include <QQmlContext>
@@ -19,7 +21,7 @@ class Applet;
 namespace PlasmaQuick
 {
 
-class AppletContext : public QQmlContext
+class PLASMAQUICK_EXPORT AppletContext : public QQmlContext
 {
     Q_OBJECT
 public:

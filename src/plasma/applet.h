@@ -194,7 +194,7 @@ class PLASMA_EXPORT Applet : public QObject
      * The hints that the applet gives to its constraint,
      * such as asking to fill all the available space ignoring margins.
      */
-    Q_PROPERTY(Applet::ConstraintHints constraintHints READ constraintHints WRITE setConstraintHints NOTIFY constraintHintsChanged FINAL)
+    Q_PROPERTY(Plasma::Applet::ConstraintHints constraintHints READ constraintHints WRITE setConstraintHints NOTIFY constraintHintsChanged FINAL)
 
     /*!
      * \property Plasma::Applet::metaData

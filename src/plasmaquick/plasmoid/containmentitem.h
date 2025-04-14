@@ -32,7 +32,7 @@ class DropJob;
  *
  * \brief This class is exposed to containments QML as the attached property Plasmoid.
  */
-class ContainmentItem : public PlasmoidItem
+class PLASMAQUICK_EXPORT ContainmentItem : public PlasmoidItem
 {
     Q_OBJECT
 

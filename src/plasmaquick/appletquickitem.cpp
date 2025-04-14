@@ -515,17 +515,6 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
         return nullptr;
     }
 
-    // TODO: move somewhere else? in plasmacore import?
-    if (AppletQuickItemPrivate::s_itemsForApplet.isEmpty()) {
-        const char *uri = "org.kde.plasma.plasmoid";
-        qmlRegisterExtendedType<Plasma::Applet, PlasmoidAttached>(uri, 2, 0, "Plasmoid");
-        qmlRegisterExtendedType<Plasma::Containment, ContainmentAttached>(uri, 2, 0, "Containment");
-
-        qmlRegisterType<PlasmoidItem>(uri, 2, 0, "PlasmoidItem");
-        qmlRegisterType<ContainmentItem>(uri, 2, 0, "ContainmentItem");
-        qmlRegisterType<WallpaperItem>(uri, 2, 0, "WallpaperItem");
-        qmlRegisterAnonymousType<Plasma::Corona>("org.kde.plasma.plasmoid", 1);
-    }
     auto it = AppletQuickItemPrivate::s_itemsForApplet.constFind(applet);
     if (it != AppletQuickItemPrivate::s_itemsForApplet.constEnd()) {
         return it.value();

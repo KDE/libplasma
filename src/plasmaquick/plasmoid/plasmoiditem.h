@@ -37,7 +37,7 @@ class ConfigLoader;
  *
  *
  */
-class PlasmoidItem : public PlasmaQuick::AppletQuickItem
+class PLASMAQUICK_EXPORT PlasmoidItem : public PlasmaQuick::AppletQuickItem
 {
     Q_OBJECT
 

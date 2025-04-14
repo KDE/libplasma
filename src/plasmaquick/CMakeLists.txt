@@ -33,7 +33,6 @@ target_sources(PlasmaQuick PRIVATE
     transientplacementhint.cpp
     windowresizehandler.cpp
     configcategory_p.cpp
-    plasmoidattached_p.cpp
     dialogbackground_p.cpp
     utils.cpp
     plasmoid/plasmoiditem.cpp
@@ -59,7 +58,6 @@ target_sources(PlasmaQuick PRIVATE
     transientplacementhint_p.h
     windowresizehandler.h
     configcategory_p.h
-    plasmoidattached_p.h
     dialogbackground_p.h
     utils.h
     plasmoid/plasmoiditem.h
@@ -172,6 +170,8 @@ ecm_generate_headers(PlasmaQuick_CamelCase_HEADERS
 )
 
 ecm_generate_qdoc(PlasmaQuick plasmaquick.qdocconf)
+
+add_subdirectory(plasmoid)
 
 install(
     FILES ${plasmaquick_LIB_INCLUDES}

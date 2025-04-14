@@ -6,7 +6,7 @@ endif()
 
 configure_file(config-x11.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-x11.h)
 
-ecm_add_qml_module(corebindingsplugin URI "org.kde.plasma.core" VERSION 2.0 DEPENDENCIES QtCore QtQuick)
+ecm_add_qml_module(corebindingsplugin URI "org.kde.plasma.core" VERSION 2.0 DEPENDENCIES QtCore QtQuick org.kde.config)
 
 target_sources(corebindingsplugin PRIVATE
     action.cpp

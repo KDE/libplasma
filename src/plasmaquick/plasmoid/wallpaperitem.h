@@ -12,6 +12,8 @@
 
 #include <KPackage/Package>
 
+#include "plasmaquick_export.h"
+
 class KConfigLoader;
 class KConfigPropertyMap;
 
@@ -34,7 +36,7 @@ class SharedQmlEngine;
  *
  * \brief This class is exposed to wallpapers as the WallpaperItem root qml item.
  */
-class WallpaperItem : public QQuickItem
+class PLASMAQUICK_EXPORT WallpaperItem : public QQuickItem
 {
     Q_OBJECT
 

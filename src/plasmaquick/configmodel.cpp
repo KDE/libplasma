@@ -183,7 +183,6 @@ QVariant ConfigModelPrivate::get(int row) const
     value[QStringLiteral("icon")] = categories.at(row)->icon();
     value[QStringLiteral("pluginName")] = categories.at(row)->pluginName();
     value[QStringLiteral("source")] = q->data(q->index(row, 0), ConfigModel::SourceRole);
-    value[QStringLiteral("includeMargins")] = categories.at(row)->includeMargins();
     value[QStringLiteral("visible")] = categories.at(row)->visible();
     value[QStringLiteral("kcm")] = q->data(q->index(row, 0), ConfigModel::KCMRole);
 
@@ -230,8 +229,6 @@ QVariant ConfigModel::data(const QModelIndex &index, int role) const
     }
     case PluginNameRole:
         return d->categories.at(index.row())->pluginName();
-    case IncludeMarginsRole:
-        return d->categories.at(index.row())->includeMargins();
     case VisibleRole:
         return d->categories.at(index.row())->visible();
     case KCMRole: {
@@ -272,7 +269,6 @@ QHash<int, QByteArray> ConfigModel::roleNames() const
         {IconRole, "icon"},
         {SourceRole, "source"},
         {PluginNameRole, "pluginName"},
-        {IncludeMarginsRole, "includeMargins"},
         {VisibleRole, "visible"},
         {KCMRole, "kcm"},
     };

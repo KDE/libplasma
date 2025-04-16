@@ -13,7 +13,6 @@ namespace PlasmaQuick
 
 ConfigCategory::ConfigCategory(QObject *parent)
     : QObject(parent)
-    , m_includeMargins(true)
     , m_visible(true)
 {
 }
@@ -80,21 +79,6 @@ void ConfigCategory::setPluginName(const QString &name)
 
     m_pluginName = name;
     Q_EMIT pluginNameChanged();
-}
-
-bool ConfigCategory::includeMargins() const
-{
-    return m_includeMargins;
-}
-
-void ConfigCategory::setIncludeMargins(bool includeMargins)
-{
-    if (m_includeMargins == includeMargins) {
-        return;
-    }
-
-    m_includeMargins = includeMargins;
-    Q_EMIT includeMarginsChanged();
 }
 
 bool ConfigCategory::visible() const

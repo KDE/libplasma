@@ -184,7 +184,6 @@ QVariant ConfigModelPrivate::get(int row) const
     value[QStringLiteral("pluginName")] = categories.at(row)->pluginName();
     value[QStringLiteral("source")] = q->data(q->index(row, 0), ConfigModel::SourceRole);
     value[QStringLiteral("visible")] = categories.at(row)->visible();
-    value[QStringLiteral("kcm")] = q->data(q->index(row, 0), ConfigModel::KCMRole);
 
     return value;
 }
@@ -231,32 +230,6 @@ QVariant ConfigModel::data(const QModelIndex &index, int role) const
         return d->categories.at(index.row())->pluginName();
     case VisibleRole:
         return d->categories.at(index.row())->visible();
-    case KCMRole: {
-        const QString pluginName = d->categories.at(index.row())->pluginName();
-        // no kcm is registered for this row, it's a normal qml-only entry
-        if (pluginName.isEmpty()) {
-            return QVariant();
-        }
-
-        if (d->kcms.contains(pluginName)) {
-            return QVariant::fromValue(d->kcms.value(pluginName));
-        }
-        auto parent = const_cast<ConfigModel *>(this);
-        auto engine = new PlasmaQuick::SharedQmlEngine(parent);
-        auto cmResult = KQuickConfigModuleLoader::loadModule(KPluginMetaData(pluginName), parent, QVariantList(), engine->engine());
-        if (KQuickConfigModule *cm = cmResult.plugin) {
-            if (QQmlContext *ctx = QQmlEngine::contextForObject(this)) {
-                // assign the ConfigModule the same QML context as we have so it can use the same QML engine as we do
-                QQmlEngine::setContextForObject(cmResult.plugin, ctx);
-            }
-
-            d->kcms[pluginName] = cm;
-            return QVariant::fromValue(cm);
-        } else {
-            qCDebug(LOG_PLASMAQUICK) << "Error loading KCM:" << cmResult.errorText;
-            return QVariant();
-        }
-    }
     default:
         return QVariant();
     }
@@ -270,7 +243,6 @@ QHash<int, QByteArray> ConfigModel::roleNames() const
         {SourceRole, "source"},
         {PluginNameRole, "pluginName"},
         {VisibleRole, "visible"},
-        {KCMRole, "kcm"},
     };
 }
 

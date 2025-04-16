@@ -60,8 +60,7 @@ public:
         IconRole,
         SourceRole,
         PluginNameRole,
-        VisibleRole,
-        KCMRole,
+        VisibleRole
     };
     Q_ENUM(Roles)
 

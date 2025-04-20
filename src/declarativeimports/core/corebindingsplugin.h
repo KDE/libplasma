@@ -19,6 +19,7 @@
 #include "applet.h"
 #include "appletpopup.h"
 #include "containment.h"
+#include "corona.h"
 #include "dialog.h"
 
 struct TypesForeign {
@@ -63,6 +64,12 @@ struct ContainmentForeign {
     QML_NAMED_ELEMENT(Containment)
     QML_UNCREATABLE("")
     QML_FOREIGN(Plasma::Containment)
+};
+
+struct CoronaForeign {
+    Q_GADGET
+    QML_ANONYMOUS
+    QML_FOREIGN(Plasma::Corona)
 };
 
 struct AppletForeign {

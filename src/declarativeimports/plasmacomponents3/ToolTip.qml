@@ -73,7 +73,7 @@ T.ToolTip {
             wrapMode: Text.WordWrap
             font: control.font
 
-            Kirigami.Theme.colorGroup: Kirigami.Theme.Tooltip
+            Kirigami.Theme.colorSet: Kirigami.Theme.Tooltip
             Kirigami.Theme.inherit: false
 
             // ensure that long text actually gets wrapped
@@ -99,7 +99,7 @@ T.ToolTip {
             }
             imagePath: "solid/widgets/tooltip"
             prefix: "shadow"
-            Kirigami.Theme.colorGroup: Kirigami.Theme.Tooltip
+            Kirigami.Theme.colorSet: Kirigami.Theme.Tooltip
             Kirigami.Theme.inherit: false
         }
 
@@ -109,7 +109,7 @@ T.ToolTip {
             // Because the transparent one doesn't match the appearance of all
             // other ones
             imagePath: "solid/widgets/tooltip"
-            Kirigami.Theme.colorGroup: Kirigami.Theme.Tooltip
+            Kirigami.Theme.colorSet: Kirigami.Theme.Tooltip
             Kirigami.Theme.inherit: false
         }
     }

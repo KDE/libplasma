@@ -54,33 +54,28 @@ Item {
         State {
             name: "hover"
             PropertyChanges {
-                target: hover
-                opacity: 1
-                prefix: "hover"
+                hover.opacity: 1
+                hover.prefix: "hover"
             }
         },
         State {
             name: "focus"
             PropertyChanges {
-                target: hover
-                opacity: 1
-                prefix: "focus"
+                hover.opacity: 1
+                hover.prefix: "focus"
             }
         },
         State {
             name: "focusframe"
             PropertyChanges {
-                target: hover
-                opacity: 1
-                prefix: lineEditSvg.hasFocusFrame ? "focusframe" : "focus"
+                hover.opacity: 1
+                hover.prefix: lineEditSvg.hasFocusFrame ? "focusframe" : "focus"
             }
         },
         State {
             name: "hidden"
             PropertyChanges {
-                target: hover
-                opacity: 0
-                prefix: "hover"
+                hover.prefix.opacity: 0
             }
         }
     ]

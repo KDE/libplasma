@@ -96,6 +96,33 @@ void ConfigCategory::setVisible(bool visible)
     Q_EMIT visibleChanged();
 }
 
+QString ConfigCategory::configUiModule() const
+{
+    return m_configUiModule;
+}
+
+void ConfigCategory::setConfigUiModule(const QString &configUiModule)
+{
+    if (m_configUiModule == configUiModule) {
+        return;
+    }
+    m_configUiModule = configUiModule;
+    Q_EMIT configUiModuleChanged();
+}
+
+QString ConfigCategory::configUiComponent() const
+{
+    return m_configUiComponent;
+}
+
+void ConfigCategory::setConfigUiComponent(const QString &configUiComponent)
+{
+    if (m_configUiComponent == configUiComponent) {
+        return;
+    }
+    m_configUiComponent = configUiComponent;
+    Q_EMIT configUiComponentChanged();
+}
 }
 
 #include "moc_configcategory_p.cpp"

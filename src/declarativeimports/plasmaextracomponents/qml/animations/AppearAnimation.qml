@@ -18,20 +18,20 @@ SequentialAnimation {
     // so explicitly set the item's opacity to 0 before starting the animation
     ScriptAction {
         script: {
-            targetItem.opacity = 0
+            appearAnimation.targetItem.opacity = 0
         }
     }
 
     ParallelAnimation {
         OpacityAnimator {
-            target: targetItem
+            target: appearAnimation.targetItem
             from: 0
             to: 1.0
             duration: appearAnimation.duration
             easing.type: Easing.InExpo
         }
         ScaleAnimator {
-            target: targetItem
+            target: appearAnimation.targetItem
             from: 0.8
             to: 1.0
             duration: appearAnimation.duration

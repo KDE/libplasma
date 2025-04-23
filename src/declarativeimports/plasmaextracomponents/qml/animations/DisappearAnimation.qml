@@ -33,7 +33,7 @@ SequentialAnimation {
 
     ScriptAction {
         script: {
-            targetItem.visible = false;
+            disappearAnimation.targetItem.visible = false;
         }
     }
 }

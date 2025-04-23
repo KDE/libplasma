@@ -15,18 +15,18 @@ SequentialAnimation {
     property int duration: Kirigami.Units.shortDuration
 
     // Fast scaling while we're animation == more FPS
-    ScriptAction { script: targetItem.smooth = false }
+    ScriptAction { script: releasedAnimation.targetItem.smooth = false }
 
     ParallelAnimation {
         PropertyAnimation {
-            target: targetItem
+            target: releasedAnimation.targetItem
             properties: "opacity"
             from: 0.8; to: 1.0
             duration: releasedAnimation.duration;
             easing.type: Easing.InExpo;
         }
         PropertyAnimation {
-            target: targetItem
+            target: releasedAnimation.targetItem
             properties: "scale"
             from: 0.95; to: 1.0
             duration: releasedAnimation.duration;
@@ -34,5 +34,5 @@ SequentialAnimation {
         }
     }
 
-    ScriptAction { script: targetItem.smooth = true }
+    ScriptAction { script: releasedAnimation.targetItem.smooth = true }
 }

@@ -15,10 +15,10 @@ SequentialAnimation {
     property int duration: Kirigami.Units.shortDuration
 
     // Fast scaling while we're animation == more FPS
-    ScriptAction { script: targetItem.smooth = false }
+    ScriptAction { script: activateAnimation.targetItem.smooth = false }
 
     PressedAnimation { targetItem: activateAnimation.targetItem }
     ReleasedAnimation  { targetItem: activateAnimation.targetItem }
 
-    ScriptAction { script: targetItem.smooth = true }
+    ScriptAction { script: activateAnimation.targetItem.smooth = true }
 }

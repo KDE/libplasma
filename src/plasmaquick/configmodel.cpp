@@ -126,6 +126,8 @@ void ConfigModelPrivate::appendCategory(ConfigCategory *c)
     QObject::connect(c, &ConfigCategory::sourceChanged, q, emitChange);
     QObject::connect(c, &ConfigCategory::pluginNameChanged, q, emitChange);
     QObject::connect(c, &ConfigCategory::visibleChanged, q, emitChange);
+    QObject::connect(c, &ConfigCategory::configUiComponentChanged, q, emitChange);
+    QObject::connect(c, &ConfigCategory::configUiModuleChanged, q, emitChange);
 
     q->endInsertRows();
     Q_EMIT q->countChanged();
@@ -168,6 +170,8 @@ QVariant ConfigModelPrivate::get(int row) const
     value[QStringLiteral("pluginName")] = categories.at(row)->pluginName();
     value[QStringLiteral("source")] = q->data(q->index(row, 0), ConfigModel::SourceRole);
     value[QStringLiteral("visible")] = categories.at(row)->visible();
+    value[QStringLiteral("configUiModule")] = q->data(q->index(row, 0), ConfigModel::ConfigUiModule);
+    value[QStringLiteral("configUiComponent")] = q->data(q->index(row, 0), ConfigModel::ConfigUiComponent);
 
     return value;
 }
@@ -214,6 +218,10 @@ QVariant ConfigModel::data(const QModelIndex &index, int role) const
         return d->categories.at(index.row())->pluginName();
     case VisibleRole:
         return d->categories.at(index.row())->visible();
+    case ConfigUiModule:
+        return d->categories.at(index.row())->configUiModule();
+    case ConfigUiComponent:
+        return d->categories.at(index.row())->configUiComponent();
     default:
         return QVariant();
     }
@@ -227,6 +235,8 @@ QHash<int, QByteArray> ConfigModel::roleNames() const
         {SourceRole, "source"},
         {PluginNameRole, "pluginName"},
         {VisibleRole, "visible"},
+        {ConfigUiModule, "configUiModule"},
+        {ConfigUiComponent, "configUiComponent"},
     };
 }
 

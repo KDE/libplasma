@@ -35,6 +35,8 @@ class PLASMAQUICK_EXPORT ConfigCategory : public QObject
     Q_PROPERTY(QString source READ source WRITE setSource NOTIFY sourceChanged)
     Q_PROPERTY(QString pluginName READ pluginName WRITE setPluginName NOTIFY pluginNameChanged)
     Q_PROPERTY(bool visible READ visible WRITE setVisible NOTIFY visibleChanged)
+    Q_PROPERTY(QString configUiModule READ configUiModule WRITE setConfigUiModule NOTIFY configUiModuleChanged)
+    Q_PROPERTY(QString configUiComponent READ configUiComponent WRITE setConfigUiComponent NOTIFY configUiComponentChanged)
 
 public:
     ConfigCategory(QObject *parent = nullptr);
@@ -55,12 +57,20 @@ public:
     bool visible() const;
     void setVisible(bool visible);
 
+    QString configUiModule() const;
+    void setConfigUiModule(const QString &configUiModule);
+
+    QString configUiComponent() const;
+    void setConfigUiComponent(const QString &configUiComponent);
+
 Q_SIGNALS:
     void nameChanged();
     void iconChanged();
     void sourceChanged();
     void pluginNameChanged();
     void visibleChanged();
+    void configUiModuleChanged();
+    void configUiComponentChanged();
 
 private:
     QString m_name;
@@ -68,6 +78,8 @@ private:
     QString m_source;
     QString m_pluginName;
     bool m_visible;
+    QString m_configUiModule;
+    QString m_configUiComponent;
 };
 
 }

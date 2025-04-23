@@ -61,7 +61,9 @@ public:
         IconRole,
         SourceRole,
         PluginNameRole,
-        VisibleRole
+        VisibleRole,
+        ConfigUiModule,
+        ConfigUiComponent,
     };
     Q_ENUM(Roles)
 

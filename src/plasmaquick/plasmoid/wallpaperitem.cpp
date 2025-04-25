@@ -46,18 +46,17 @@ void WallpaperItem::classBegin()
 {
     QQuickItem::classBegin();
     PlasmaQuick::AppletContext *ac = qobject_cast<PlasmaQuick::AppletContext *>(QQmlEngine::contextForObject(this)->parentContext());
-    Q_ASSERT(ac);
-    m_containment = ac->applet()->containment();
-    m_wallpaperPlugin = m_containment->wallpaperPlugin();
 
-    m_pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Wallpaper"));
-    m_pkg.setPath(m_wallpaperPlugin);
+    // if there is no applet context we are running inside the screen locker
+    if (ac) {
+        m_containment = ac->applet()->containment();
+        m_wallpaperPlugin = m_containment->wallpaperPlugin();
 
-    if (configScheme()) {
-        m_configuration = new KConfigPropertyMap(configScheme(), this);
+        m_pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Wallpaper"));
+        m_pkg.setPath(m_wallpaperPlugin);
+
+        connect(m_containment->corona(), &Plasma::Corona::startupCompleted, this, &WallpaperItem::accentColorChanged);
     }
-
-    connect(m_containment->corona(), &Plasma::Corona::startupCompleted, this, &WallpaperItem::accentColorChanged);
 }
 
 void WallpaperItem::componentComplete()
@@ -89,30 +88,15 @@ QString WallpaperItem::pluginName() const
     return m_wallpaperPlugin;
 }
 
+void WallpaperItem::setPluginName(const QString &pluginName)
+{
+    m_wallpaperPlugin = pluginName;
+    Q_EMIT pluginNameChanged();
+}
+
 KConfigPropertyMap *WallpaperItem::configuration() const
 {
     return m_configuration;
-}
-
-KConfigLoader *WallpaperItem::configScheme()
-{
-    if (!m_configLoader) {
-        // FIXME: do we need "mainconfigxml" in wallpaper packagestructures?
-        const QString xmlPath = m_pkg.filePath("config", QStringLiteral("main.xml"));
-
-        KConfigGroup cfg = m_containment->config();
-        cfg = KConfigGroup(&cfg, QStringLiteral("Wallpaper"));
-        cfg = KConfigGroup(&cfg, m_wallpaperPlugin);
-
-        if (xmlPath.isEmpty()) {
-            m_configLoader = new KConfigLoader(cfg, nullptr, this);
-        } else {
-            QFile file(xmlPath);
-            m_configLoader = new KConfigLoader(cfg, &file, this);
-        }
-    }
-
-    return m_configLoader;
 }
 
 void WallpaperItem::requestOpenUrl(const QUrl &url)
@@ -165,11 +149,30 @@ WallpaperItem *WallpaperItem::loadWallpaper(ContainmentItem *containmentItem)
         qmlObject->rootContext()->setContextProperty(QStringLiteral("wallpaper"), wallpaper);
     }
 
+    // FIXME: do we need "mainconfigxml" in wallpaper packagestructures?
+    const QString xmlPath = pkg.filePath("config", QStringLiteral("main.xml"));
+
+    KConfigGroup cfg = containmentItem->containment()->config();
+    cfg = KConfigGroup(&cfg, QStringLiteral("Wallpaper"));
+    cfg = KConfigGroup(&cfg, containmentItem->containment()->wallpaperPlugin());
+
+    KConfigLoader *m_configLoader;
+    if (xmlPath.isEmpty()) {
+        m_configLoader = new KConfigLoader(cfg, nullptr, wallpaper);
+    } else {
+        QFile file(xmlPath);
+        m_configLoader = new KConfigLoader(cfg, &file, wallpaper);
+    }
+
+    auto config = new KConfigPropertyMap(m_configLoader, wallpaper);
+
     // initialize with our size to avoid as much resize events as possible
     QVariantHash props;
     props[QStringLiteral("parent")] = QVariant::fromValue(containmentItem);
     props[QStringLiteral("width")] = containmentItem->width();
     props[QStringLiteral("height")] = containmentItem->height();
+    props[QStringLiteral("configuration")] = QVariant::fromValue(config);
+    props[QStringLiteral("pluginName")] = containmentItem->containment()->wallpaperPlugin();
     qmlObject->completeInitialization(props);
     return wallpaper;
 }
@@ -268,6 +271,12 @@ void WallpaperItem::contextualActions_removeLast(QQmlListProperty<QAction> *prop
     WallpaperItem *w = static_cast<WallpaperItem *>(prop->object);
     w->m_contextualActions.pop_back();
     Q_EMIT w->contextualActionsChanged(w->m_contextualActions);
+}
+
+void WallpaperItem::setConfiguration(KConfigPropertyMap *config)
+{
+    m_configuration = config;
+    Q_EMIT configurationChanged();
 }
 
 #include "moc_wallpaperitem.cpp"

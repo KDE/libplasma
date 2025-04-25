@@ -40,8 +40,8 @@ class PLASMAQUICK_EXPORT WallpaperItem : public QQuickItem
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString pluginName READ pluginName CONSTANT)
-    Q_PROPERTY(KConfigPropertyMap *configuration READ configuration CONSTANT)
+    Q_PROPERTY(QString pluginName READ pluginName WRITE setPluginName NOTIFY pluginNameChanged)
+    Q_PROPERTY(KConfigPropertyMap *configuration READ configuration WRITE setConfiguration NOTIFY configurationChanged)
     /**
      * Actions to be added in the desktop context menu. To instantiate QActions in a declarative way,
      * PlasmaCore.Action {} can be used
@@ -81,10 +81,10 @@ public:
     KPackage::Package kPackage() const;
 
     QString pluginName() const;
+    void setPluginName(const QString &pluginName);
 
     KConfigPropertyMap *configuration() const;
-
-    KConfigLoader *configScheme();
+    void setConfiguration(KConfigPropertyMap *config);
 
     void requestOpenUrl(const QUrl &url);
 
@@ -106,6 +106,8 @@ Q_SIGNALS:
     void openUrlRequested(const QUrl &url);
     void contextualActionsChanged(const QList<QAction *> &actions);
     void accentColorChanged();
+    void configurationChanged();
+    void pluginNameChanged();
 
 private:
     static void contextualActions_append(QQmlListProperty<QAction> *prop, QAction *action);
@@ -119,7 +121,6 @@ private:
     Plasma::Containment *m_containment = nullptr;
     KPackage::Package m_pkg;
     KConfigPropertyMap *m_configuration = nullptr;
-    KConfigLoader *m_configLoader = nullptr;
     QList<QAction *> m_contextualActions;
     bool m_loading = false;
     std::optional<QColor> m_accentColor;

@@ -1,26 +1,25 @@
-/*
-    SPDX-FileCopyrightText: %{CURRENT_YEAR} %{AUTHOR} <%{EMAIL}>
-    SPDX-License-Identifier: LGPL-2.1-or-later
-*/
+// SPDX-FileCopyrightText: %{CURRENT_YEAR} %{AUTHOR} <%{EMAIL}>
+// SPDX-License-Identifier: LGPL-2.1-or-later
 
 import QtQuick
 import QtQuick.Layouts
 import org.kde.plasma.plasmoid
-import org.kde.plasma.components as PlasmaComponents
+import org.kde.plasma.components as PC3
 
 PlasmoidItem {
     id: root
+
     fullRepresentation: ColumnLayout {
         anchors.fill: parent
         Image {
             Layout.fillHeight: true
             Layout.fillWidth: true
             fillMode: Image.PreserveAspectFit
-            source: "../images/pairs.svgz"
+            source: Qt.resolvedUrl("./pairs.svg")
         }
-        PlasmaComponents.Label {
+        PC3.Label {
             Layout.alignment: Qt.AlignCenter
-            text: "This is Plasma!"
+            text: HelloWorld.message
         }
     }
 }

@@ -1,0 +1,19 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "%{EMAIL}",
+                "Name": "%{AUTHOR}"
+            }
+        ],
+        "Category": "Utilities",
+        "Description": "what your app does in a few words",
+        "Icon": "applications-system",
+        "License": "LGPL-2.1+",
+        "Name": "%{APPNAME}",
+        "Version": "1.0",
+        "Website": "https://plasma.kde.org/"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

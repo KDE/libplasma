@@ -1,7 +1,6 @@
-Plasma Applet Template
-----------------------
+# Plasma Applet Template
 
--- Namespace adaption --
+## Namespace adaption
 
 Each Plasma plugin has a unique identifier, which is also used to find related
 resources (like the translation catalogs).
@@ -17,8 +16,7 @@ As this namespace is reserved for use by plugins part of Plasma modules, you wil
 need to adapt this namespace if you are writing a plugin which is not intended to
 end up in the Plasma modules.
 
-
--- Build instructions --
+## Build instructions
 
 cd /where/your/applet/is/generated
 mkdir build
@@ -38,7 +36,8 @@ plasmashell)
 or view it with 
 plasmoidviewer -a YourAppletName
 
--- Tutorials and resources --
+## Tutorials and resources
+
 The explanation of the template
 https://techbase.kde.org/Development/Tutorials/Plasma5/QML2/GettingStarted
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-08 00:43+0000\n"
+"POT-Creation-Date: 2025-04-25 00:43+0000\n"
 "PO-Revision-Date: 2024-03-18 15:34+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -54,12 +54,12 @@ msgstr "Leita"
 msgid "Clear search"
 msgstr "Hreinsa leit"
 
-#: plasma/applet.cpp:303
+#: plasma/applet.cpp:312
 #, kde-format
 msgid "Unknown"
 msgstr "Óþekkt"
 
-#: plasma/applet.cpp:753
+#: plasma/applet.cpp:762
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Virkja %1 græju"

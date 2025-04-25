@@ -43,12 +43,12 @@ class PLASMAQUICK_EXPORT WallpaperItem : public QQuickItem
     /*!
      * \qmlproperty string WallpaperItem::pluginName
      */
-    Q_PROPERTY(QString pluginName READ pluginName CONSTANT)
+    Q_PROPERTY(QString pluginName READ pluginName WRITE setPluginName NOTIFY pluginNameChanged)
 
     /*!
      * \qmlproperty KConfigPropertyMap WallpaperItem::configuration
      */
-    Q_PROPERTY(KConfigPropertyMap *configuration READ configuration CONSTANT)
+    Q_PROPERTY(KConfigPropertyMap *configuration READ configuration WRITE setConfiguration NOTIFY configurationChanged)
 
     /*!
      * \qmlproperty list<QAction> WallpaperItem::contextualActions
@@ -97,10 +97,10 @@ public:
     KPackage::Package kPackage() const;
 
     QString pluginName() const;
+    void setPluginName(const QString &pluginName);
 
     KConfigPropertyMap *configuration() const;
-
-    KConfigLoader *configScheme();
+    void setConfiguration(KConfigPropertyMap *config);
 
     void requestOpenUrl(const QUrl &url);
 
@@ -121,6 +121,8 @@ Q_SIGNALS:
     void isLoadingChanged();
     void contextualActionsChanged(const QList<QAction *> &actions);
     void accentColorChanged();
+    void configurationChanged();
+    void pluginNameChanged();
 
     /*!
      *
@@ -139,7 +141,6 @@ private:
     Plasma::Containment *m_containment = nullptr;
     KPackage::Package m_pkg;
     KConfigPropertyMap *m_configuration = nullptr;
-    KConfigLoader *m_configLoader = nullptr;
     QList<QAction *> m_contextualActions;
     bool m_loading = false;
     std::optional<QColor> m_accentColor;

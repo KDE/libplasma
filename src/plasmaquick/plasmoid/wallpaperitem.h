@@ -115,7 +115,6 @@ private:
 
     QString m_wallpaperPlugin;
     Plasma::Containment *m_containment = nullptr;
-    PlasmaQuick::SharedQmlEngine *m_qmlObject = nullptr;
     KPackage::Package m_pkg;
     KConfigPropertyMap *m_configuration = nullptr;
     KConfigLoader *m_configLoader = nullptr;

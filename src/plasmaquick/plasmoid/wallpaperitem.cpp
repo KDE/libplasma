@@ -49,8 +49,6 @@ void WallpaperItem::classBegin()
     Q_ASSERT(ac);
     m_containment = ac->applet()->containment();
     m_wallpaperPlugin = m_containment->wallpaperPlugin();
-    m_qmlObject = ac->sharedQmlEngine();
-    m_qmlObject->setParent(this);
 
     m_pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Wallpaper"));
     m_pkg.setPath(m_wallpaperPlugin);

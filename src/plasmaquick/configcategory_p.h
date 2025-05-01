@@ -10,6 +10,8 @@
 
 #include <QObject>
 
+#include "plasmaquick_export.h"
+
 //
 //  W A R N I N G
 //  -------------
@@ -25,7 +27,7 @@ namespace PlasmaQuick
 {
 // This class represents a single row item of the ConfigModel model in a QML friendly manner.
 // the properties contains all the data needed to represent an icon in the sidebar of a configuration dialog, of applets or containments
-class ConfigCategory : public QObject
+class PLASMAQUICK_EXPORT ConfigCategory : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)

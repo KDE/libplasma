@@ -135,6 +135,16 @@ if(HAVE_X11)
     )
 endif()
 
+ecm_add_qml_module(plasmaconfigplugin
+    URI "org.kde.plasma.configuration"
+    VERSION 2.0
+    GENERATE_PLUGIN_SOURCE
+    SOURCES configtypes.h
+    DEPENDENCIES QtCore
+)
+target_link_libraries(plasmaconfigplugin PRIVATE Plasma::PlasmaQuick)
+ecm_finalize_qml_module(plasmaconfigplugin)
+
 install(TARGETS PlasmaQuick EXPORT PlasmaQuickTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_export_header(PlasmaQuick

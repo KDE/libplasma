@@ -65,6 +65,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
         KirigamiPlatform
         KCMUtils
         Svg
+        ColorScheme
 )
 find_package(PlasmaActivities REQUIRED ${PROJECT_DEP_VERSION})
 

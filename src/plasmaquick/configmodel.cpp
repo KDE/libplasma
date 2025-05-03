@@ -41,7 +41,6 @@ public:
     ConfigModel *q;
     QList<ConfigCategory *> categories;
     QPointer<Plasma::Applet> appletInterface;
-    QHash<QString, KQuickConfigModule *> kcms;
 
     void appendCategory(ConfigCategory *c);
     void removeCategory(ConfigCategory *c);

@@ -58,7 +58,6 @@ public:
     ConfigView *q;
     QPointer<Plasma::Applet> applet;
     ConfigModel *configModel;
-    ConfigModel *kcmConfigModel;
     Plasma::Corona *corona;
     AppletContext *rootContext;
     QQmlEngine *engine = nullptr;
@@ -133,39 +132,6 @@ void ConfigViewPrivate::init()
         configModel->setParent(q);
     } else {
         delete object;
-    }
-
-    QStringList kcms = applet.data()->pluginMetaData().value(u"X-Plasma-ConfigPlugins", QStringList());
-
-    // filter out non-authorized KCMs
-    // KAuthorized expects KCMs with .desktop suffix, so we can't just pass everything
-    // to KAuthorized::authorizeControlModules verbatim
-    kcms.erase(std::remove_if(kcms.begin(),
-                              kcms.end(),
-                              [](const QString &kcm) {
-                                  return !KAuthorized::authorizeControlModule(kcm + QLatin1String(".desktop"));
-                              }),
-               kcms.end());
-
-    if (!kcms.isEmpty()) {
-        if (!configModel) {
-            configModel = new ConfigModel(q);
-        }
-
-        for (const QString &kcm : std::as_const(kcms)) {
-            // Only look for KCMs in the "kcms_" folder where new QML KCMs live
-            // because we don't support loading QWidgets KCMs
-            KPluginMetaData md(QLatin1String("kcms/") + kcm);
-
-            if (!md.isValid()) {
-                qCWarning(LOG_PLASMAQUICK)
-                    << "Could not find" << kcm
-                    << "requested by X-Plasma-ConfigPlugins. Ensure that it exists, is a QML KCM, and lives in the 'kcms/' subdirectory.";
-                continue;
-            }
-
-            configModel->appendCategory(md.iconName(), md.name(), QString(), QLatin1String("kcms/") + kcm);
-        }
     }
 }
 

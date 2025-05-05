@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:43+0000\n"
+"POT-Creation-Date: 2025-05-05 00:43+0000\n"
 "PO-Revision-Date: 2024-08-28 21:42+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -17,39 +17,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.11.70\n"
 
-#: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
+#: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
 msgid "More actions"
 msgstr "Weitere Aktionen"
 
-#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:540
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:551
 #, kde-format
 msgctxt "@action:button"
 msgid "Collapse"
 msgstr "Einklappen"
 
-#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:540
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:551
 #, kde-format
 msgctxt "@action:button"
 msgid "Expand"
 msgstr "Ausklappen"
 
-#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:49
+#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:50
 #, kde-format
 msgid "Password"
 msgstr "Passwort"
 
-#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:60
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
 msgid "Search…"
 msgstr "Suchen ..."
 
-#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:64
 #, kde-format
 msgid "Search"
 msgstr "Suchen"
 
-#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:75
 #, kde-format
 msgid "Clear search"
 msgstr "Suche leeren"
@@ -249,49 +249,49 @@ msgstr "%1 — Einstellungen für %2"
 msgid "%1 Settings"
 msgstr "Einstellungen für %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:562
+#: plasmaquick/plasmoid/containmentitem.cpp:565
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma-Paket"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:566
+#: plasmaquick/plasmoid/containmentitem.cpp:569
 #, kde-format
 msgid "Install"
 msgstr "Installieren"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:577
+#: plasmaquick/plasmoid/containmentitem.cpp:580
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Paketinstallation ist fehlgeschlagen"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:593
+#: plasmaquick/plasmoid/containmentitem.cpp:596
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Das gerade abhgelegte Paket ist ungültig."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:602
+#: plasmaquick/plasmoid/containmentitem.cpp:605
 #, kde-format
 msgid "Widgets"
 msgstr "Miniprogramme"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:607
+#: plasmaquick/plasmoid/containmentitem.cpp:610
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "%1 hinzufügen"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:621
+#: plasmaquick/plasmoid/containmentitem.cpp:624
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Symbol hinzufügen"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:633
+#: plasmaquick/plasmoid/containmentitem.cpp:636
 #, kde-format
 msgid "Wallpaper"
 msgstr "Hintergrundbild"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:643
+#: plasmaquick/plasmoid/containmentitem.cpp:646
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

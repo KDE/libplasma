@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:43+0000\n"
+"POT-Creation-Date: 2025-05-05 00:43+0000\n"
 "PO-Revision-Date: 2024-08-23 09:19+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -20,39 +20,39 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
+#: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
 msgid "More actions"
 msgstr "Додаткові дії"
 
-#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:540
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:551
 #, kde-format
 msgctxt "@action:button"
 msgid "Collapse"
 msgstr "Згорнути"
 
-#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:540
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:551
 #, kde-format
 msgctxt "@action:button"
 msgid "Expand"
 msgstr "Розгорнути"
 
-#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:49
+#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:50
 #, kde-format
 msgid "Password"
 msgstr "Пароль"
 
-#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:60
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
 msgid "Search…"
 msgstr "Шукати…"
 
-#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:64
 #, kde-format
 msgid "Search"
 msgstr "Пошук"
 
-#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:75
 #, kde-format
 msgid "Clear search"
 msgstr "Спорожнити поле пошуку"
@@ -249,49 +249,49 @@ msgstr "%1 — Параметри %2"
 msgid "%1 Settings"
 msgstr "Налаштувати віджет «%1»"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:562
+#: plasmaquick/plasmoid/containmentitem.cpp:565
 #, kde-format
 msgid "Plasma Package"
 msgstr "Пакунок Плазми"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:566
+#: plasmaquick/plasmoid/containmentitem.cpp:569
 #, kde-format
 msgid "Install"
 msgstr "Встановити"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:577
+#: plasmaquick/plasmoid/containmentitem.cpp:580
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Не вдалося встановити пакунок"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:593
+#: plasmaquick/plasmoid/containmentitem.cpp:596
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Скинутий вами пакунок є некоректним."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:602
+#: plasmaquick/plasmoid/containmentitem.cpp:605
 #, kde-format
 msgid "Widgets"
 msgstr "Віджети"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:607
+#: plasmaquick/plasmoid/containmentitem.cpp:610
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Додати %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:621
+#: plasmaquick/plasmoid/containmentitem.cpp:624
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Додати піктограму"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:633
+#: plasmaquick/plasmoid/containmentitem.cpp:636
 #, kde-format
 msgid "Wallpaper"
 msgstr "Шпалери"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:643
+#: plasmaquick/plasmoid/containmentitem.cpp:646
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

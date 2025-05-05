@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:43+0000\n"
+"POT-Creation-Date: 2025-05-05 00:43+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,39 +17,39 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/libplasma/libplasma6.pot\n"
 "X-Crowdin-File-ID: 48704\n"
 
-#: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:81
+#: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
 msgid "More actions"
 msgstr "更多操作"
 
-#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:540
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:551
 #, kde-format
 msgctxt "@action:button"
 msgid "Collapse"
 msgstr "折叠"
 
-#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:540
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:551
 #, kde-format
 msgctxt "@action:button"
 msgid "Expand"
 msgstr "展开"
 
-#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:49
+#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:50
 #, kde-format
 msgid "Password"
 msgstr "密码"
 
-#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:60
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
 msgid "Search…"
 msgstr "搜索…"
 
-#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:64
 #, kde-format
 msgid "Search"
 msgstr "搜索"
 
-#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:73
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:75
 #, kde-format
 msgid "Clear search"
 msgstr "清除搜索内容"
@@ -245,49 +245,49 @@ msgstr "%1 — %2 设置"
 msgid "%1 Settings"
 msgstr "%1 设置"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:562
+#: plasmaquick/plasmoid/containmentitem.cpp:565
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma 软件包"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:566
+#: plasmaquick/plasmoid/containmentitem.cpp:569
 #, kde-format
 msgid "Install"
 msgstr "安装"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:577
+#: plasmaquick/plasmoid/containmentitem.cpp:580
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "软件包安装失败"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:593
+#: plasmaquick/plasmoid/containmentitem.cpp:596
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "您刚刚拖放的软件包无效。"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:602
+#: plasmaquick/plasmoid/containmentitem.cpp:605
 #, kde-format
 msgid "Widgets"
 msgstr "挂件"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:607
+#: plasmaquick/plasmoid/containmentitem.cpp:610
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "添加 %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:621
+#: plasmaquick/plasmoid/containmentitem.cpp:624
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "添加图标"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:633
+#: plasmaquick/plasmoid/containmentitem.cpp:636
 #, kde-format
 msgid "Wallpaper"
 msgstr "壁纸"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:643
+#: plasmaquick/plasmoid/containmentitem.cpp:646
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

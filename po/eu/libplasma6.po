@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:43+0000\n"
+"POT-Creation-Date: 2025-05-08 00:43+0000\n"
 "PO-Revision-Date: 2024-08-23 10:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -242,12 +242,12 @@ msgstr "Errorea QML fitxategia zamatzean: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Aplikaziotxoa zamatzeko errorea: %1 paketea ez da existitzen."
 
-#: plasmaquick/configview.cpp:229
+#: plasmaquick/configview.cpp:195
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — %2 ezarpenak"
 
-#: plasmaquick/configview.cpp:230
+#: plasmaquick/configview.cpp:196
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 ezarpenak"

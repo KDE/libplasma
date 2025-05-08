@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:43+0000\n"
+"POT-Creation-Date: 2025-05-08 00:43+0000\n"
 "PO-Revision-Date: 2024-08-24 10:45+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -239,12 +239,12 @@ msgstr "Errore durante il caricamento del file QML: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Errore durante il caricamento dell'applet: il pacchetto %1 non esiste."
 
-#: plasmaquick/configview.cpp:229
+#: plasmaquick/configview.cpp:195
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — Impostazioni di %2"
 
-#: plasmaquick/configview.cpp:230
+#: plasmaquick/configview.cpp:196
 #, kde-format
 msgid "%1 Settings"
 msgstr "Impostazioni di %1"

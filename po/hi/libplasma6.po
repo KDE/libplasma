@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:43+0000\n"
+"POT-Creation-Date: 2025-05-08 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -235,12 +235,12 @@ msgstr "QML फ़ाइल लोड करते समय त्रुटि:
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "एप्लेट लोड करते समय त्रुटि: पैकेज %1 मौजूद नहीं है."
 
-#: plasmaquick/configview.cpp:229
+#: plasmaquick/configview.cpp:195
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — %2 सेटिंग्स"
 
-#: plasmaquick/configview.cpp:230
+#: plasmaquick/configview.cpp:196
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 सेटिंग्स"

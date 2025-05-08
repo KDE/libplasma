@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:43+0000\n"
+"POT-Creation-Date: 2025-05-08 00:43+0000\n"
 "PO-Revision-Date: 2024-08-25 01:44+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -240,12 +240,12 @@ msgstr "載入 QML 檔時發生錯誤：%1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "載入小程式時發生錯誤：軟體包 %1 不存在。"
 
-#: plasmaquick/configview.cpp:229
+#: plasmaquick/configview.cpp:195
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — %2 設定"
 
-#: plasmaquick/configview.cpp:230
+#: plasmaquick/configview.cpp:196
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1 設定"

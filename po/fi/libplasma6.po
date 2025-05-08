@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:43+0000\n"
+"POT-Creation-Date: 2025-05-08 00:43+0000\n"
 "PO-Revision-Date: 2024-10-17 13:50+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -243,12 +243,12 @@ msgstr "QML-tiedoston avaaminen epäonnistui: %1 %2"
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Virhe ladattaessa sovelmaa: pakettia %1 ei ole olemassa."
 
-#: plasmaquick/configview.cpp:229
+#: plasmaquick/configview.cpp:195
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 – Asetukset – %2"
 
-#: plasmaquick/configview.cpp:230
+#: plasmaquick/configview.cpp:196
 #, kde-format
 msgid "%1 Settings"
 msgstr "Asetukset: %1|/|$[gen %1] asetukset"

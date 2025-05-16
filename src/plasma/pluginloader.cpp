@@ -58,7 +58,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
      * - C++ with embedded QML
      */
 
-    KPluginMetaData plugin(u"plasma/applets/" + name, KPluginMetaData::AllowEmptyMetaData);
+    KPluginMetaData plugin(u"plasma/applets/" + pluginName, KPluginMetaData::AllowEmptyMetaData);
     const KPackage::Package package = KPackage::PackageLoader::self()->loadPackage(u"Plasma/Applet"_s, name);
 
     // If the applet is using another applet package, search for the plugin of the other applet

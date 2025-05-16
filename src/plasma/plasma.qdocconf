@@ -10,6 +10,8 @@ sourcedirs = .
 
 outputformats = HTML
 
+navigation.landingpage = "LibPlasma"
+
 depends += \
     qtcore \
     qtgui \

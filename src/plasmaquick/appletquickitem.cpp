@@ -34,6 +34,8 @@
 #include <Plasma/Corona>
 #include <qquickitem.h>
 
+using namespace Qt::StringLiterals;
+
 namespace PlasmaQuick
 {
 
@@ -242,14 +244,18 @@ QQuickItem *AppletQuickItemPrivate::createCompactRepresentationExpanderItem()
         return compactRepresentationExpanderItem;
     }
 
-    compactRepresentationExpanderItem = qobject_cast<QQuickItem *>(qmlObject->createObjectFromComponent(compactRepresentationExpander, qmlContext(q)));
+    // Ensure plasmoidItem is not null on creation to avoid ternary operator in QML
+    compactRepresentationExpanderItem = qobject_cast<QQuickItem *>(qmlObject->createObjectFromComponent(compactRepresentationExpander,
+                                                                                                        qmlContext(q),
+                                                                                                        {
+                                                                                                            {u"plasmoidItem"_s, QVariant::fromValue(q)},
+                                                                                                        }));
 
     if (!compactRepresentationExpanderItem) {
         return nullptr;
     }
 
     compactRepresentationExpanderItem->setProperty("compactRepresentation", QVariant::fromValue<QObject *>(createCompactRepresentationItem()));
-    compactRepresentationExpanderItem->setProperty("plasmoidItem", QVariant::fromValue(q));
 
     return compactRepresentationExpanderItem;
 }

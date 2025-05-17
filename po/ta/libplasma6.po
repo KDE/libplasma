@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-08 00:43+0000\n"
+"POT-Creation-Date: 2025-05-17 00:43+0000\n"
 "PO-Revision-Date: 2024-09-07 21:00+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -171,22 +171,22 @@ msgstr "பிளாஸ்மாய்டுகளை சேர் அல்ல�
 msgid "Could not find requested component: %1"
 msgstr "கோரிய கூறை கண்டுபிடிக்க முடியவில்லை: %1"
 
-#: plasmaquick/appletquickitem.cpp:547
+#: plasmaquick/appletquickitem.cpp:553
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "%1 தனின் தாய் உருப்படி ContainmentItem வகையாக இருக்க வேண்டும்"
 
-#: plasmaquick/appletquickitem.cpp:552
+#: plasmaquick/appletquickitem.cpp:558
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "%1 தனின் தாய் உருப்படி PlasmoidItem வகையாக இருக்க வேண்டும்"
 
-#: plasmaquick/appletquickitem.cpp:560
+#: plasmaquick/appletquickitem.cpp:566
 #, kde-format
 msgid "Unknown Applet"
 msgstr "தெரியாத பிளாஸ்மாய்ட்"
 
-#: plasmaquick/appletquickitem.cpp:574
+#: plasmaquick/appletquickitem.cpp:580
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -196,13 +196,13 @@ msgstr ""
 "பிளாஸ்மாவின் கண்டறிய முடியாத பழைய பதிப்பிற்கு இந்த பிளாஸ்மாய்ட் எழுதப்பட்டுள்ளதால் %1 "
 "பதிப்பில் இயங்காது. புதுப்பிக்கப்பட்ட பதிப்பை இதை இயற்றியவரிடம் கோரவும்."
 
-#: plasmaquick/appletquickitem.cpp:577 plasmaquick/appletquickitem.cpp:584
-#: plasmaquick/appletquickitem.cpp:590
+#: plasmaquick/appletquickitem.cpp:583 plasmaquick/appletquickitem.cpp:590
+#: plasmaquick/appletquickitem.cpp:596
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1, பிளாஸ்மா %2-க்கு ஏற்புடையதல்ல"
 
-#: plasmaquick/appletquickitem.cpp:581
+#: plasmaquick/appletquickitem.cpp:587
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -211,7 +211,7 @@ msgstr ""
 "பிளாஸ்மாவின் %1 பதிப்பிற்கு இந்த பிளாஸ்மாய்ட் எழுதப்பட்டுள்ளதால் தற்போதைய %2 பதிப்பில் "
 "இயங்காது. புதுப்பிக்கப்பட்ட பதிப்பை இதை இயற்றியவரிடம் கோரவும்."
 
-#: plasmaquick/appletquickitem.cpp:587
+#: plasmaquick/appletquickitem.cpp:593
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -220,17 +220,17 @@ msgstr ""
 "பிளாஸ்மாவின் %1 பதிப்பிற்கு இந்த பிளாஸ்மாய்ட் எழுதப்பட்டுள்ளதால் தற்போதைய %2 பதிப்பில் "
 "இயங்காது. இதைப் பயன்படுத்த பிளாஸ்மாவைப் புதுப்பிக்கவும்."
 
-#: plasmaquick/appletquickitem.cpp:596 plasmaquick/appletquickitem.cpp:618
+#: plasmaquick/appletquickitem.cpp:602 plasmaquick/appletquickitem.cpp:624
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "மன்னிக்கவும்! %1 என்பதை ஏற்றுவதில் சிக்கல் ஏற்பட்டது."
 
-#: plasmaquick/appletquickitem.cpp:613
+#: plasmaquick/appletquickitem.cpp:619
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "QML கோப்பை ஏற்றுவதில் சிக்கல்: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:616
+#: plasmaquick/appletquickitem.cpp:622
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "பிளாஸ்மாய்டை ஏற்றுவதில் சிக்கல்:  %1 எனும் தொகுப்பு (package) இல்லை."

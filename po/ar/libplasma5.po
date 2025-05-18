@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the libplasma5 package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014, 2015, 2017, 2018.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-27 05:30+0000\n"
-"PO-Revision-Date: 2024-06-08 13:47+0400\n"
+"PO-Revision-Date: 2025-05-17 11:10+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -263,7 +263,7 @@ msgstr "الترجمات"
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:30
 #, kde-format
 msgid "Configuration UI pages model"
-msgstr ""
+msgstr "نموذج صفحات واجهة المستخدم للضبط"
 
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:31
 #, kde-format
@@ -273,7 +273,7 @@ msgstr "ملف الضبط XML"
 #: plasma/packagestructure/plasma_applet_packagestructure.cpp:47
 #, kde-format
 msgid "Custom expander for compact applets"
-msgstr ""
+msgstr "موسع مخصص للتطبيقات المدمجة"
 
 #: plasma/packagestructure/plasma_dataengine_packagestructure.cpp:36
 #, kde-format
@@ -289,7 +289,7 @@ msgstr "صور الحواريّات"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:32
 #, kde-format
 msgid "Generic dialog background"
-msgstr ""
+msgstr "خلفية الحوار العامة"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:33
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:34
@@ -329,7 +329,7 @@ msgstr "صورة خلفية اللوحات"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:46
 #, kde-format
 msgid "Background for graphing widgets"
-msgstr ""
+msgstr "خلفية لأدوات الرسم البياني"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:47
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:48
@@ -340,36 +340,36 @@ msgstr "صورة خلفية التلميحات"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:50
 #, kde-format
 msgid "Opaque images for dialogs"
-msgstr ""
+msgstr "صور غير شفافة للحوارات"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:51
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:52
 #, kde-format
 msgid "Opaque generic dialog background"
-msgstr ""
+msgstr "خلفية حوار عامة غير شفافة"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:55
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:58
 #, kde-format
 msgid "Opaque theme for the logout dialog"
-msgstr ""
+msgstr "سمة غير شفاف لحوار تسجيل الخروج"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:60
 #, kde-format
 msgid "Opaque images for widgets"
-msgstr ""
+msgstr "صور غير شفافة للأدوات"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:63
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:66
 #, kde-format
 msgid "Opaque background image for panels"
-msgstr ""
+msgstr "صورة خلفية غير شفافة للألواح"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:67
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:68
 #, kde-format
 msgid "Opaque background image for tooltips"
-msgstr ""
+msgstr "صورة خلفية غير شفافة لأدوات التلميح"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:70
 #, kde-format

@@ -467,9 +467,10 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
             // directly create if only one offer only if the containment didn't pass an existing plugin
         } else if (seenPlugins.count() == 1) {
             selectedPlugin = seenPlugins.constBegin().key();
+            const QString mimeDataType = pluginFormats[selectedPlugin];
+            const QVariant mimeDataData = mimeData->data(mimeDataType);
             Plasma::Applet *applet = createApplet(selectedPlugin, QVariantList(), QRect(x, y, -1, -1));
-            setAppletArgs(applet, pluginFormats[selectedPlugin], mimeData->data(pluginFormats[selectedPlugin]));
-
+            setAppletArgs(applet, mimeDataType, mimeDataData);
         } else {
             QHash<QAction *, QString> actionsToPlugins;
             for (const auto &info : std::as_const(seenPlugins)) {
@@ -480,11 +481,13 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
                     action = new QAction(info.name(), m_dropMenu);
                 }
                 m_dropMenu->addAction(action);
-                action->setData(info.pluginId());
-                connect(action, &QAction::triggered, this, [this, x, y, mimeData, action]() {
-                    const QString selectedPlugin = action->data().toString();
+                const QString selectedPlugin = info.pluginId();
+                const QString mimeDataType = pluginFormats[selectedPlugin];
+                const QVariant mimeDataData = mimeData->data(mimeDataType);
+
+                connect(action, &QAction::triggered, this, [this, x, y, selectedPlugin, mimeDataType, mimeDataData]() {
                     Plasma::Applet *applet = createApplet(selectedPlugin, QVariantList(), QRect(x, y, -1, -1));
-                    setAppletArgs(applet, selectedPlugin, mimeData->data(selectedPlugin));
+                    setAppletArgs(applet, mimeDataType, mimeDataData);
                 });
 
                 actionsToPlugins.insert(action, info.pluginId());

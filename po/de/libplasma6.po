@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-08 00:43+0000\n"
+"POT-Creation-Date: 2025-05-21 02:41+0000\n"
 "PO-Revision-Date: 2024-08-28 21:42+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -249,49 +249,49 @@ msgstr "%1 — Einstellungen für %2"
 msgid "%1 Settings"
 msgstr "Einstellungen für %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:565
+#: plasmaquick/plasmoid/containmentitem.cpp:568
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma-Paket"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:569
+#: plasmaquick/plasmoid/containmentitem.cpp:572
 #, kde-format
 msgid "Install"
 msgstr "Installieren"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:580
+#: plasmaquick/plasmoid/containmentitem.cpp:583
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Paketinstallation ist fehlgeschlagen"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:596
+#: plasmaquick/plasmoid/containmentitem.cpp:599
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Das gerade abhgelegte Paket ist ungültig."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:605
+#: plasmaquick/plasmoid/containmentitem.cpp:608
 #, kde-format
 msgid "Widgets"
 msgstr "Miniprogramme"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:610
+#: plasmaquick/plasmoid/containmentitem.cpp:613
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "%1 hinzufügen"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:624
+#: plasmaquick/plasmoid/containmentitem.cpp:627
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Symbol hinzufügen"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:636
+#: plasmaquick/plasmoid/containmentitem.cpp:639
 #, kde-format
 msgid "Wallpaper"
 msgstr "Hintergrundbild"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:646
+#: plasmaquick/plasmoid/containmentitem.cpp:649
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

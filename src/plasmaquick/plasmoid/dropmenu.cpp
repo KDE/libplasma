@@ -20,9 +20,9 @@
 #include <KJobWindows>
 #include <KLocalizedString>
 
-DropMenu::DropMenu(KIO::DropJob *dropJob, const QPoint &dropPoint, ContainmentItem *parent)
+DropMenu::DropMenu(KIO::DropJob *dropJob, const QPoint &globalDropPoint, ContainmentItem *parent)
     : QObject(parent)
-    , m_dropPoint(dropPoint)
+    , m_globalDropPoint(globalDropPoint)
     , m_dropJob(dropJob)
 {
     if (!dropJob) {
@@ -55,9 +55,9 @@ void DropMenu::setUrls(const QList<QUrl> &urls)
     m_urls = urls;
 }
 
-QPoint DropMenu::dropPoint() const
+QPoint DropMenu::globalDropPoint() const
 {
-    return m_dropPoint;
+    return m_globalDropPoint;
 }
 
 void DropMenu::show()
@@ -71,7 +71,7 @@ void DropMenu::show()
         KJobWindows::setWindow(m_dropJob, transientParent);
 
         m_dropJob->setApplicationActions(m_dropActions);
-        m_dropJob->showMenu(m_dropPoint);
+        m_dropJob->showMenu(m_globalDropPoint);
     } else if (m_dropActions.isEmpty()) {
         // If this menu doesn't have actions, there is nothing to show, dismiss immediately
         // This happens in case of creating icon plasmoids
@@ -81,7 +81,7 @@ void DropMenu::show()
             m_menu->windowHandle()->setTransientParent(transientParent);
         }
         m_menu->addActions(m_dropActions);
-        m_menu->popup(m_dropPoint);
+        m_menu->popup(m_globalDropPoint);
     }
 }
 

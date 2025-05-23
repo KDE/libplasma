@@ -536,13 +536,19 @@ void ContainmentItem::mimeTypeRetrieved(KIO::Job *job, const QString &mimetype)
         return;
     }
 
+    QPoint sceneDropPoint = m_dropMenu->globalDropPoint();
+    if (window()) {
+        // Map The drop point in screen coordinates to scene coordinates
+        sceneDropPoint -= window()->position();
+    }
+
     QList<KPluginMetaData> appletList = Plasma::PluginLoader::self()->listAppletMetaDataForUrl(tjob->url());
     if (mimetype.isEmpty() && appletList.isEmpty()) {
         clearDataForMimeJob(job);
         qCDebug(LOG_PLASMAQUICK) << "No applets found matching the url (" << tjob->url() << ") or the mimetype (" << mimetype << ")";
         return;
     } else {
-        qCDebug(LOG_PLASMAQUICK) << "Received a suitable dropEvent at " << m_dropMenu->dropPoint();
+        qCDebug(LOG_PLASMAQUICK) << "Received a suitable dropEvent at global" << m_dropMenu->globalDropPoint() << "local" << sceneDropPoint;
         qCDebug(LOG_PLASMAQUICK) << "Bailing out. Cannot find associated dropEvent related to the TransferJob";
 
         qCDebug(LOG_PLASMAQUICK) << "Creating menu for: " << mimetype;
@@ -573,11 +579,11 @@ void ContainmentItem::mimeTypeRetrieved(KIO::Job *job, const QString &mimetype)
                 m_dropMenu->addAction(installPlasmaPackageAction);
 
                 const QString &packagePath = tjob->url().toLocalFile();
-                connect(installPlasmaPackageAction, &QAction::triggered, this, [this, packagePath]() {
+                connect(installPlasmaPackageAction, &QAction::triggered, this, [this, packagePath, sceneDropPoint]() {
                     using namespace KPackage;
 
                     PackageJob *job = PackageJob::update(QStringLiteral("Plasma/Applet"), packagePath);
-                    connect(job, &KJob::finished, this, [this, packagePath, job]() {
+                    connect(job, &KJob::finished, this, [this, packagePath, job, sceneDropPoint]() {
                         auto fail = [](const QString &text) {
                             KNotification::event(QStringLiteral("plasmoidInstallationFailed"),
                                                  i18n("Package Installation Failed"),
@@ -600,7 +606,7 @@ void ContainmentItem::mimeTypeRetrieved(KIO::Job *job, const QString &mimetype)
                             return;
                         }
 
-                        createApplet(package.metadata().pluginId(), QVariantList(), QRect(m_dropMenu->dropPoint(), QSize(-1, -1)));
+                        createApplet(package.metadata().pluginId(), QVariantList(), QRect(sceneDropPoint, QSize(-1, -1)));
                     });
                 });
             }
@@ -618,8 +624,8 @@ void ContainmentItem::mimeTypeRetrieved(KIO::Job *job, const QString &mimetype)
                 m_dropMenu->addAction(action);
                 action->setData(info.pluginId());
                 const QUrl url = tjob->url();
-                connect(action, &QAction::triggered, this, [this, action, mimetype, url]() {
-                    Plasma::Applet *applet = createApplet(action->data().toString(), QVariantList(), QRect(m_dropMenu->dropPoint(), QSize(-1, -1)));
+                connect(action, &QAction::triggered, this, [this, action, mimetype, url, sceneDropPoint]() {
+                    Plasma::Applet *applet = createApplet(action->data().toString(), QVariantList(), QRect(sceneDropPoint, QSize(-1, -1)));
                     setAppletArgs(applet, mimetype, url);
                 });
             }
@@ -628,8 +634,8 @@ void ContainmentItem::mimeTypeRetrieved(KIO::Job *job, const QString &mimetype)
                 m_dropMenu->addAction(action);
                 action->setData(QStringLiteral("org.kde.plasma.icon"));
                 const QUrl url = tjob->url();
-                connect(action, &QAction::triggered, this, [this, action, mimetype, url]() {
-                    Plasma::Applet *applet = createApplet(action->data().toString(), QVariantList(), QRect(m_dropMenu->dropPoint(), QSize(-1, -1)));
+                connect(action, &QAction::triggered, this, [this, action, mimetype, url, sceneDropPoint]() {
+                    Plasma::Applet *applet = createApplet(action->data().toString(), QVariantList(), QRect(sceneDropPoint, QSize(-1, -1)));
                     setAppletArgs(applet, mimetype, url);
                 });
             }
@@ -669,7 +675,7 @@ void ContainmentItem::mimeTypeRetrieved(KIO::Job *job, const QString &mimetype)
             }
             // case in which we created the menu ourselves, just the "fetching type entry, directly create the icon applet
         } else if (!m_dropMenu->isDropjobMenu()) {
-            Plasma::Applet *applet = createApplet(QStringLiteral("org.kde.plasma.icon"), QVariantList(), QRect(m_dropMenu->dropPoint(), QSize(-1, -1)));
+            Plasma::Applet *applet = createApplet(QStringLiteral("org.kde.plasma.icon"), QVariantList(), QRect(sceneDropPoint, QSize(-1, -1)));
             setAppletArgs(applet, mimetype, tjob->url());
         }
         clearDataForMimeJob(tjob);

@@ -27,11 +27,11 @@ class DropMenu : public QObject
     Q_OBJECT
 
 public:
-    DropMenu(KIO::DropJob *dropJob, const QPoint &dropPoint, ContainmentItem *parent = nullptr);
+    DropMenu(KIO::DropJob *dropJob, const QPoint &globalDropPoint, ContainmentItem *parent = nullptr);
     ~DropMenu() override;
 
     QList<QUrl> urls() const;
-    QPoint dropPoint() const;
+    QPoint globalDropPoint() const;
     void setUrls(const QList<QUrl> &urls);
     void setMultipleMimetypes(bool multipleMimetypes);
 
@@ -41,7 +41,7 @@ public:
     void show();
 
 private:
-    QPoint m_dropPoint;
+    QPoint m_globalDropPoint;
     QMenu *m_menu = nullptr;
     KIO::DropJob *m_dropJob = nullptr;
     QList<QAction *> m_dropActions = QList<QAction *>();

@@ -72,6 +72,10 @@ void DropMenu::show()
 
         m_dropJob->setApplicationActions(m_dropActions);
         m_dropJob->showMenu(m_dropPoint);
+    } else if (m_dropActions.isEmpty()) {
+        // If this menu doesn't have actions, there is nothing to show, dismiss immediately
+        // This happens in case of creating icon plasmoids
+        deleteLater();
     } else if (m_menu) {
         if (m_menu->winId()) {
             m_menu->windowHandle()->setTransientParent(transientParent);

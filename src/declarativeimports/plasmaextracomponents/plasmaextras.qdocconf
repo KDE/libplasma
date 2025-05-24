@@ -18,3 +18,5 @@ depends += \
     qtwidgets \
     qtquick \
     qtquickcontrols
+
+tagfile = plasmaextras.tags

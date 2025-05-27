@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-21 02:41+0000\n"
+"POT-Creation-Date: 2025-05-27 02:36+0000\n"
 "PO-Revision-Date: 2024-12-15 22:18+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -246,49 +246,49 @@ msgstr "%1 — %2 समायोजननि"
 msgid "%1 Settings"
 msgstr "%1 समायोजननि"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:568
+#: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma सम्पुट"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:572
+#: plasmaquick/plasmoid/containmentitem.cpp:578
 #, kde-format
 msgid "Install"
 msgstr "प्रतिस्थायतु"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:583
+#: plasmaquick/plasmoid/containmentitem.cpp:589
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "संकुलस्थापनं विफलम्"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:599
+#: plasmaquick/plasmoid/containmentitem.cpp:605
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "भवता इदानीं यत् संकुलं पातितम् तत् अमान्यम् अस्ति ।."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:608
+#: plasmaquick/plasmoid/containmentitem.cpp:614
 #, kde-format
 msgid "Widgets"
 msgstr "विजेटस्"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:613
+#: plasmaquick/plasmoid/containmentitem.cpp:619
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "%1 योजयन्तु"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:627
+#: plasmaquick/plasmoid/containmentitem.cpp:633
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "चिह्नं योजयतु"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:639
+#: plasmaquick/plasmoid/containmentitem.cpp:645
 #, kde-format
 msgid "Wallpaper"
 msgstr "दीवार्पत्तिः"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:649
+#: plasmaquick/plasmoid/containmentitem.cpp:655
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

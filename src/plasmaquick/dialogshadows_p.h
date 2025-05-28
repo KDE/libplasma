@@ -17,21 +17,18 @@ class DialogShadows : public KSvg::Svg
     Q_OBJECT
 
 public:
-    static DialogShadows *instance(const QString &prefix = QLatin1String("dialogs/background"));
-
-    explicit DialogShadows(QObject *parent, const QString &prefix);
     ~DialogShadows() override;
 
-    void addWindow(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders = KSvg::FrameSvg::AllBorders);
-    void removeWindow(QWindow *window);
-
-    void setEnabledBorders(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders = KSvg::FrameSvg::AllBorders);
-
-    bool enabled() const;
+    static void addWindow(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders = KSvg::FrameSvg::AllBorders, const QString &prefix = QLatin1String("dialogs/background"));
+    static void removeWindow(QWindow *window, const QString &prefix = QLatin1String("dialogs/background"));
+    static void setEnabledBorders(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders = KSvg::FrameSvg::AllBorders, const QString &prefix = QLatin1String("dialogs/background"));
 
 private:
     class Private;
     Private *const d;
+
+    static DialogShadows *instance(const QString &prefix);
+    explicit DialogShadows(const QString &prefix);
 
     Q_PRIVATE_SLOT(d, void updateShadows())
     Q_PRIVATE_SLOT(d, void windowDestroyed(QObject *deletedObject))

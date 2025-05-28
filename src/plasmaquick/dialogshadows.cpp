@@ -42,16 +42,25 @@ Q_GLOBAL_STATIC(DialogShadowHash, s_privateDialogShadowsInstances)
 
 DialogShadows *DialogShadows::instance(const QString &prefix)
 {
+    if (QGuiApplication::closingDown()) {
+        return nullptr;
+    }
+
     DialogShadows *&shadow = (*s_privateDialogShadowsInstances)[prefix];
     if (!shadow) {
-        shadow = new DialogShadows(qApp, prefix);
+        shadow = new DialogShadows(prefix);
+        if (s_privateDialogShadowsInstances->size() == 1) {
+            qAddPostRoutine([]() {
+                qDeleteAll(*s_privateDialogShadowsInstances);
+                s_privateDialogShadowsInstances->clear();
+            });
+        }
     }
     return shadow;
 }
 
-DialogShadows::DialogShadows(QObject *parent, const QString &prefix)
-    : KSvg::Svg(parent)
-    , d(new Private(this))
+DialogShadows::DialogShadows(const QString &prefix)
+    : d(new Private(this))
 {
     setImagePath(prefix);
     connect(this, SIGNAL(repaintNeeded()), this, SLOT(updateShadows()));
@@ -62,40 +71,55 @@ DialogShadows::~DialogShadows()
     delete d;
 }
 
-void DialogShadows::addWindow(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders)
+void DialogShadows::addWindow(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders, const QString &prefix)
 {
+    auto self = instance(prefix);
+    if (!self) {
+        return;
+    }
+
     if (!window) {
         return;
     }
 
-    d->m_windows[window] = enabledBorders;
-    d->updateShadow(window, enabledBorders);
-    connect(window, SIGNAL(destroyed(QObject *)), this, SLOT(windowDestroyed(QObject *)), Qt::UniqueConnection);
+    self->d->m_windows[window] = enabledBorders;
+    self->d->updateShadow(window, enabledBorders);
+    connect(window, SIGNAL(destroyed(QObject *)), self, SLOT(windowDestroyed(QObject *)), Qt::UniqueConnection);
 }
 
-void DialogShadows::removeWindow(QWindow *window)
+void DialogShadows::removeWindow(QWindow *window, const QString &prefix)
 {
-    if (!d->m_windows.contains(window)) {
+    auto self = instance(prefix);
+    if (!self) {
         return;
     }
 
-    d->m_windows.remove(window);
-    disconnect(window, nullptr, this, nullptr);
-    d->clearShadow(window);
-
-    if (d->m_windows.isEmpty()) {
-        d->clearTiles();
-    }
-}
-
-void DialogShadows::setEnabledBorders(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders)
-{
-    Q_ASSERT(d->m_windows.contains(window));
-    if (!window || !d->m_windows.contains(window)) {
+    if (!self->d->m_windows.contains(window)) {
         return;
     }
 
-    d->updateShadow(window, enabledBorders);
+    self->d->m_windows.remove(window);
+    disconnect(window, nullptr, self, nullptr);
+    self->d->clearShadow(window);
+
+    if (self->d->m_windows.isEmpty()) {
+        self->d->clearTiles();
+    }
+}
+
+void DialogShadows::setEnabledBorders(QWindow *window, KSvg::FrameSvg::EnabledBorders enabledBorders, const QString &prefix)
+{
+    auto self = instance(prefix);
+    if (!self) {
+        return;
+    }
+
+    Q_ASSERT(self->d->m_windows.contains(window));
+    if (!window || !self->d->m_windows.contains(window)) {
+        return;
+    }
+
+    self->d->updateShadow(window, enabledBorders);
 }
 
 void DialogShadows::Private::windowDestroyed(QObject *deletedObject)
@@ -261,11 +285,6 @@ void DialogShadows::Private::updateShadow(QWindow *window, KSvg::FrameSvg::Enabl
 void DialogShadows::Private::clearShadow(QWindow *window)
 {
     delete m_shadows.take(window);
-}
-
-bool DialogShadows::enabled() const
-{
-    return hasElement(QStringLiteral("shadow-left"));
 }
 
 #include "moc_dialogshadows_p.cpp"

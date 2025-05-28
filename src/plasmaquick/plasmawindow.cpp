@@ -31,7 +31,6 @@ public:
     void handleFrameChanged();
     void updateMainItemGeometry();
     PlasmaWindow *q;
-    DialogShadows *shadows;
     // Keep a theme instance as a memeber to create one as soon as possible,
     // as Theme creation will set KSvg to correctly fetch images form the Plasma Theme.
     // This makes sure elements are correct, both in the dialog surface and the shadows.
@@ -39,6 +38,7 @@ public:
     QPointer<QQuickItem> mainItem;
     DialogBackground *dialogBackground;
     PlasmaWindow::BackgroundHints backgroundHints = PlasmaWindow::StandardBackground;
+    QString svgPrefix;
 };
 
 PlasmaWindow::PlasmaWindow(const QString &svgPrefix)
@@ -48,7 +48,7 @@ PlasmaWindow::PlasmaWindow(const QString &svgPrefix)
     setColor(QColor(Qt::transparent));
     setFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
 
-    d->shadows = DialogShadows::instance(svgPrefix);
+    d->svgPrefix = svgPrefix;
     d->dialogBackground = new DialogBackground(contentItem());
     d->dialogBackground->setImagePath(svgPrefix);
     connect(d->dialogBackground, &DialogBackground::fixedMarginsChanged, this, [this]() {
@@ -59,7 +59,7 @@ PlasmaWindow::PlasmaWindow(const QString &svgPrefix)
         d->handleFrameChanged();
     });
 
-    d->shadows->addWindow(this, d->dialogBackground->enabledBorders());
+    DialogShadows::addWindow(this, d->dialogBackground->enabledBorders(), d->svgPrefix);
 }
 
 PlasmaWindow::~PlasmaWindow()
@@ -130,7 +130,7 @@ static Qt::Edges bordersToEdge(KSvg::FrameSvg::EnabledBorders borders)
 void PlasmaWindow::setBorders(Qt::Edges bordersToShow)
 {
     d->dialogBackground->setEnabledBorders(edgeToBorder(bordersToShow));
-    d->shadows->setEnabledBorders(this, d->dialogBackground->enabledBorders());
+    DialogShadows::setEnabledBorders(this, d->dialogBackground->enabledBorders(), d->svgPrefix);
     Q_EMIT bordersChanged();
 }
 

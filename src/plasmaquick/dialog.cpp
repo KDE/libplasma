@@ -231,7 +231,7 @@ void DialogPrivate::updateTheme()
         KWindowEffects::enableBlurBehind(q, false);
         KWindowEffects::enableBackgroundContrast(q, false);
         q->setMask(QRegion());
-        DialogShadows::instance()->removeWindow(q);
+        DialogShadows::removeWindow(q);
     } else {
         auto prefix = QStringLiteral("");
         if ((backgroundHints & Dialog::SolidBackground) == Dialog::SolidBackground) {
@@ -263,7 +263,7 @@ void DialogPrivate::updateTheme()
             q->setMask(dialogBackground->mask());
         }
         if (q->isVisible()) {
-            DialogShadows::instance()->addWindow(q, dialogBackground->enabledBorders());
+            DialogShadows::addWindow(q, dialogBackground->enabledBorders());
         }
     }
 }
@@ -1355,7 +1355,7 @@ void Dialog::showEvent(QShowEvent *event)
     d->updateSizeFromAppletInterface();
 
     if (d->backgroundHints != Dialog::NoBackground) {
-        DialogShadows::instance()->addWindow(this, d->dialogBackground->enabledBorders());
+        DialogShadows::addWindow(this, d->dialogBackground->enabledBorders());
     }
 
     if (KWindowSystem::isPlatformX11()) {

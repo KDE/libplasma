@@ -87,25 +87,12 @@ void PopupPlasmaWindowPrivate::updateSlideEffect(const QRect &globalPosition)
 {
     KWindowEffects::SlideFromLocation slideLocation = KWindowEffects::NoEdge;
 
-    int slideOffset = -1;
-    QScreen *screen = QGuiApplication::screenAt(globalPosition.center());
-    if (screen && m_margin > 0) {
-        const QRect screenGeometry = screen->geometry();
-        switch (m_effectivePopupDirection) {
-        case Qt::TopEdge:
-            slideOffset = screenGeometry.bottom() - globalPosition.bottom() - m_margin;
-            break;
-        case Qt::BottomEdge:
-            slideOffset = globalPosition.top() - screenGeometry.top() - m_margin;
-            break;
-        case Qt::LeftEdge:
-            slideOffset = screenGeometry.right() - globalPosition.right() - m_margin;
-            break;
-        case Qt::RightEdge:
-            slideOffset = globalPosition.left() - screenGeometry.left() - m_margin;
-            break;
-        }
-    }
+    // Setting the slide offset to zero makes the popup slide in/out from
+    // the screen edge. This is preferred over sliding from rectangle of
+    // this popup to avoid the slide animation to be cut off. This is
+    // especially important for e.g. applets in auto-hide panels, where
+    // the cutoff is particularly visible.
+    int slideOffset = 0;
 
     if (!m_animated) {
         KWindowEffects::slideWindow(q, slideLocation);

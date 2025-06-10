@@ -409,7 +409,7 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
         }
         delete m_dropMenu.data();
     } else if (mimeData->hasUrls()) {
-        qWarning() << "urls" << mimeData->urls();
+        qCDebug(LOG_PLASMAQUICK) << "urls" << mimeData->urls();
         // TODO: collect the mimetypes of available script engines and offer
         //      to create widgets out of the matching URLs, if any
         const QList<QUrl> urls = KUrlMimeData::urlsFromMimeData(mimeData);
@@ -517,8 +517,6 @@ void ContainmentItem::clearDataForMimeJob(KIO::Job *job)
 
 void ContainmentItem::dropJobResult(KJob *job)
 {
-    qWarning() << "error" << job->error();
-
     if (job->error()) {
         qCDebug(LOG_PLASMAQUICK) << "ERROR" << job->error() << ' ' << job->errorString();
         clearDataForMimeJob(dynamic_cast<KIO::Job *>(job));

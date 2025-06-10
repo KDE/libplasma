@@ -230,7 +230,7 @@ ColumnLayout {
         Layout.preferredWidth: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
         Layout.preferredHeight: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
 
-        source: root.iconName || null
+        source: root.iconName || undefined
     }
 
     Kirigami.Heading {

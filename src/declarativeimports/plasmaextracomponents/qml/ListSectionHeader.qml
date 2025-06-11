@@ -74,7 +74,7 @@ PlasmaComponents.ItemDelegate {
             Layout.maximumWidth: rowLayout.width
             Layout.alignment: Qt.AlignVCenter
 
-            opacity: 0.7
+            opacity: 0.75
             level: 5
             type: Kirigami.Heading.Primary
             text: listSection.text

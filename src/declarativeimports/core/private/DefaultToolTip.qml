@@ -66,7 +66,7 @@ Item {
                 wrapMode: Text.WordWrap
                 text: toolTip ? toolTip.subText : ""
                 textFormat: toolTip ? toolTip.textFormat : Text.AutoText
-                opacity: 0.6
+                opacity: 0.75
                 visible: text !== ""
                 maximumLineCount: 8
             }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-27 00:43+0000\n"
+"POT-Creation-Date: 2025-06-11 00:44+0000\n"
 "PO-Revision-Date: 2021-09-05 15:52+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -242,49 +242,49 @@ msgstr "%1 seadistused"
 msgid "%1 Settings"
 msgstr "%1 seadistused"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:574
+#: plasmaquick/plasmoid/containmentitem.cpp:572
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma pakett"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:578
+#: plasmaquick/plasmoid/containmentitem.cpp:576
 #, kde-format
 msgid "Install"
 msgstr "Paigalda"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:589
+#: plasmaquick/plasmoid/containmentitem.cpp:587
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Paketi paigaldamine nurjus"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:605
+#: plasmaquick/plasmoid/containmentitem.cpp:603
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Lohistatud pakett on vigane."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:614
+#: plasmaquick/plasmoid/containmentitem.cpp:612
 #, kde-format
 msgid "Widgets"
 msgstr "Vidinad"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:619
+#: plasmaquick/plasmoid/containmentitem.cpp:617
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Lisa %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:633
+#: plasmaquick/plasmoid/containmentitem.cpp:631
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Lisa ikoon"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:645
+#: plasmaquick/plasmoid/containmentitem.cpp:643
 #, kde-format
 msgid "Wallpaper"
 msgstr "Taustapilt"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:655
+#: plasmaquick/plasmoid/containmentitem.cpp:653
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

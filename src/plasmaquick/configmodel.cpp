@@ -21,12 +21,9 @@
 #include <QQuickItem>
 
 #include <KLocalizedString>
-#include <KQuickConfigModule>
-#include <KQuickConfigModuleLoader>
 
 #include <Plasma/Corona>
 #include <Plasma/PluginLoader>
-#include <kquickconfigmoduleloader.h>
 
 namespace PlasmaQuick
 {

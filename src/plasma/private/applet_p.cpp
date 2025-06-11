@@ -293,8 +293,8 @@ void AppletPrivate::askDestroy()
         deleteNotification->sendEvent();
         if (!deleteNotificationTimer) {
             deleteNotificationTimer = new QTimer(q);
-            // really delete after a minute
-            deleteNotificationTimer->setInterval(60 * 1000);
+            // really delete after an hour
+            deleteNotificationTimer->setInterval(60 * 60 * 1000);
             deleteNotificationTimer->setSingleShot(true);
             QObject::connect(deleteNotificationTimer, &QTimer::timeout, q, [=, this]() {
                 transient = true;

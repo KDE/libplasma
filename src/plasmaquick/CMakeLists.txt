@@ -122,7 +122,6 @@ target_link_libraries(PlasmaQuick
         KF6::KIOCore
         KF6::KIOWidgets
         KF6::Notifications
-        KF6::KCMUtilsQuick
         KF6::Svg
         KF6::GuiAddons
         KF6::I18nQml

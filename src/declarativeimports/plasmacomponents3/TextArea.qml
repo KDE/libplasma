@@ -80,8 +80,7 @@ T.TextArea {
 
         text: control.placeholderText
         font: control.font
-        color: Kirigami.Theme.textColor
-        opacity: 0.5
+        color: enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         enabled: false
         horizontalAlignment: control.horizontalAlignment
         verticalAlignment: control.verticalAlignment

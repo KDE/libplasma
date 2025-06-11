@@ -504,7 +504,7 @@ Item {
                         font: Kirigami.Theme.smallFont
 
                         // Otherwise colored text can be hard to see
-                        opacity: color === Kirigami.Theme.textColor ? 0.7 : 1.0
+                        opacity: color === Kirigami.Theme.textColor ? 0.75 : 1.0
 
                         Layout.fillWidth: true
 

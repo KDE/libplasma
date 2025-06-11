@@ -48,7 +48,7 @@ T.RoundButton {
             visible: text.length > 0
             text: control.text
             font: control.font
-            opacity: enabled || control.highlighted || control.checked ? 1 : 0.4
+            opacity: enabled || control.highlighted || control.checked ? 1 : 0.75
             color: Kirigami.Theme.textColor
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter

@@ -22,7 +22,7 @@ T.Label {
     color: Kirigami.Theme.textColor
     linkColor: Kirigami.Theme.linkColor
 
-    opacity: enabled ? 1 : 0.6
+    opacity: enabled ? 1 : 0.75
 
     Accessible.role: Accessible.StaticText
     Accessible.name: text

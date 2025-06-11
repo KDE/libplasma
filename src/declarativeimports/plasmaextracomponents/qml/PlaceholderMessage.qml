@@ -224,7 +224,7 @@ ColumnLayout {
 
     Kirigami.Icon {
         visible: source !== undefined
-        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.5
+        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.75
 
         Layout.alignment: Qt.AlignHCenter
         Layout.preferredWidth: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
@@ -236,7 +236,7 @@ ColumnLayout {
     Kirigami.Heading {
         text: root.text
         visible: text.length > 0
-        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.65
+        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.75
 
         type: Kirigami.Heading.Primary
 
@@ -249,7 +249,7 @@ ColumnLayout {
     PlasmaComponents3.Label {
         text: root.explanation
         visible:  root.explanation !== ""
-        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.65
+        opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.75
 
         horizontalAlignment: Qt.AlignHCenter
         wrapMode: Text.WordWrap

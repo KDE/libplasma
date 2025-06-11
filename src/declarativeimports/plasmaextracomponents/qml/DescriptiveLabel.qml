@@ -42,5 +42,6 @@ Label {
      */
     property bool active: false
 
-    opacity: active ? 0.8 : 0.6
+    opacity: active ? 0.85 : 0.75
+
 }

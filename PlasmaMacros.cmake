@@ -38,7 +38,8 @@ endmacro()
 # QML_SOURCES: A list of QML files for this applet
 # CPP_SOURCES: A list of C++ sources for this applet
 # RESOURCES: A list of files to be added to the applet's QRC
-# GENERATE_APPLET_CLASS: Pass this to automatically generate a Plasma::Applet subclass if no non-trivial class is needed.
+# GENERATE_APPLET_CLASS: Pass this to automatically generate a Plasma::Applet subclass if no non-trivial class is needed
+# QML_ARGS: These will be forwarded as arguments to the interal qt_add_qml_module call. See https://doc.qt.io/qt-6/qt-add-qml-module.html for available arguments
 #
 # This creates a CMake target named after the given id which can be manipulated further using CMake API
 #
@@ -52,7 +53,7 @@ endmacro()
 function(plasma_add_applet id)
    set(options GENERATE_APPLET_CLASS)
    set(oneValueArgs)
-   set(multiValueArgs QML_SOURCES CPP_SOURCES RESOURCES)
+   set(multiValueArgs QML_SOURCES CPP_SOURCES RESOURCES QML_ARGS)
    cmake_parse_arguments(ARGS "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
    # not using MODULE because of https://bugreports.qt.io/browse/QTBUG-117159
@@ -61,7 +62,7 @@ function(plasma_add_applet id)
    set_target_properties(${id} PROPERTIES PREFIX "")
 
    include(ECMQmlModule)
-   ecm_add_qml_module(${id} URI "plasma.applet.${id}" QT_NO_PLUGIN)
+   ecm_add_qml_module(${id} URI "plasma.applet.${id}" QT_NO_PLUGIN ${ARGS_QML_ARGS})
 
    ecm_target_qml_sources(${id} SOURCES ${ARGS_QML_SOURCES} RESOURCES ${ARGS_RESOURCES})
 

@@ -95,5 +95,7 @@ K_PLUGIN_CLASS_WITH_JSON(${CLASS_NAME}_Plugin, \"metadata.json\")
 
    target_sources(${id} PRIVATE ${ARGS_CPP_SOURCES})
 
+   target_compile_definitions(${id} PRIVATE TRANSLATION_DOMAIN="plasma_applet_${id}")
+
    install(TARGETS ${id} DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/applets)
 endfunction()

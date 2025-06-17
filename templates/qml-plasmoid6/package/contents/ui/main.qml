@@ -8,8 +8,9 @@ import QtQuick.Layouts
 import org.kde.plasma.plasmoid
 import org.kde.plasma.components as PlasmaComponents
 
-Item {
-    Plasmoid.fullRepresentation: ColumnLayout {
+PlasmoidItem {
+    id: root
+    fullRepresentation: ColumnLayout {
         anchors.fill: parent
         Image {
             Layout.fillHeight: true

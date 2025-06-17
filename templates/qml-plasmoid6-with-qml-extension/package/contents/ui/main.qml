@@ -10,8 +10,9 @@ import org.kde.plasma.components as PlasmaComponents
 
 import org.kde.plasma.private.%{APPNAMELC} 1.0
 
-Item {
-    Plasmoid.fullRepresentation: ColumnLayout {
+PlasmoidItem {
+    id: root
+    fullRepresentation: ColumnLayout {
         anchors.fill: parent
         PlasmaComponents.Label {
             Layout.alignment: Qt.AlignCenter

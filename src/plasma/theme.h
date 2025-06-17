@@ -104,6 +104,11 @@ public:
         NeutralTextColor = 9,
         NegativeTextColor = 10,
         DisabledTextColor = 11,
+        ActiveTextColor,
+        ActiveBackgroundColor,
+        PositiveBackgroundColor,
+        NeutralBackgroundColor,
+        NegativeBackgroundColor,
     };
 
     /*!

@@ -174,14 +174,13 @@ void PlasmaTheme::syncColors()
     setHighlightColor(m_theme.color(Plasma::Theme::HighlightColor, group));
     // Plasma::Theme doesn't have AlternateBackground
     setAlternateBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
-
-    // Plasma::Theme doesn't have any different background color type
-    setActiveBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
+    setActiveBackgroundColor(m_theme.color(Plasma::Theme::ActiveBackgroundColor, group));
+    // Plasma::Theme doesn't have link backgrounds.
     setLinkBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
     setVisitedLinkBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
-    setNegativeBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
-    setNeutralBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
-    setPositiveBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
+    setNegativeBackgroundColor(m_theme.color(Plasma::Theme::NegativeBackgroundColor, group));
+    setNeutralBackgroundColor(m_theme.color(Plasma::Theme::NeutralBackgroundColor, group));
+    setPositiveBackgroundColor(m_theme.color(Plasma::Theme::PositiveBackgroundColor, group));
 
     // decoration
     setHoverColor(m_theme.color(Plasma::Theme::HoverColor, group));

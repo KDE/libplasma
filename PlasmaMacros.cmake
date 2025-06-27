@@ -39,6 +39,7 @@ endmacro()
 # CPP_SOURCES: A list of C++ sources for this applet
 # RESOURCES: A list of files to be added to the applet's QRC
 # GENERATE_APPLET_CLASS: Pass this to automatically generate a Plasma::Applet subclass if no non-trivial class is needed
+# GENERATE_CONTAINMENT_CLASS: Pass this to automatically generate a Plasma::Containment subclass if no non-trivial class is needed.
 # QML_ARGS: These will be forwarded as arguments to the interal qt_add_qml_module call. See https://doc.qt.io/qt-6/qt-add-qml-module.html for available arguments
 #
 # This creates a CMake target named after the given id which can be manipulated further using CMake API
@@ -51,7 +52,7 @@ endmacro()
 # )
 #
 function(plasma_add_applet id)
-   set(options GENERATE_APPLET_CLASS)
+   set(options GENERATE_APPLET_CLASS GENERATE_CONTAINMENT_CLASS)
    set(oneValueArgs)
    set(multiValueArgs QML_SOURCES CPP_SOURCES RESOURCES QML_ARGS)
    cmake_parse_arguments(ARGS "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
@@ -66,20 +67,26 @@ function(plasma_add_applet id)
 
    ecm_target_qml_sources(${id} SOURCES ${ARGS_QML_SOURCES} RESOURCES ${ARGS_RESOURCES})
 
-   if(ARGS_GENERATE_APPLET_CLASS)
+   if(ARGS_GENERATE_APPLET_CLASS OR ARGS_GENERATE_CONTAINMENT_CLASS)
 
       string(REPLACE "." "_" CLASS_NAME ${id})
+
+      if (ARGS_GENERATE_APPLET_CLASS)
+          set(CLASS_TYPE "Applet")
+      elseif (ARGS_GENERATE_CONTAINMENT_CLASS)
+          set(CLASS_TYPE "Containment")
+      endif()
 
       set(PLUGIN_SRC
 "
 #include <KPluginFactory>
-#include <Plasma/Applet>
+#include <Plasma/${CLASS_TYPE}>
 
-class ${CLASS_NAME}_Plugin : public Plasma::Applet {
+class ${CLASS_NAME}_Plugin : public Plasma::${CLASS_TYPE} {
    Q_OBJECT
 public:
    ${CLASS_NAME}_Plugin(QObject *parent, const KPluginMetaData &data, const QVariantList &args)
-      : Plasma::Applet(parent, data, args) {}
+      : Plasma::${CLASS_TYPE}(parent, data, args) {}
 }\;
 
 K_PLUGIN_CLASS_WITH_JSON(${CLASS_NAME}_Plugin, \"metadata.json\")

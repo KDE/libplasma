@@ -23,7 +23,7 @@ class BlurManager : public QWaylandClientExtensionTemplate<BlurManager>, public 
 {
 public:
     BlurManager()
-        : QWaylandClientExtensionTemplate<BlurManager>(2)
+        : QWaylandClientExtensionTemplate<BlurManager>(1)
     {
     }
     ~BlurManager()

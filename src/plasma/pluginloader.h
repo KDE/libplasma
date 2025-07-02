@@ -25,13 +25,7 @@ class ContainmentActions;
  *
  * \brief Loader for Plasma plugins.
  *
- * This is an abstract base class which defines an interface to which Plasma's
- * Applet Loading logic can communicate with a parent application. The plugin loader
- * must be set before any plugins are loaded, otherwise (for safety reasons), the
- * default PluginLoader implementation will be used. The reimplemented version should
- * not do more than simply returning a loaded plugin. It should not init() it, and it should not
- * hang on to it. The associated methods will be called only when a component of Plasma
- * needs to load a _new_ plugin.
+ * This class is used to list and load various Plasma-related plugins.
  *
  * \since 4.6
  **/
@@ -41,14 +35,14 @@ public:
     /*!
      * Load an Applet plugin.
      *
-     * \a name the plugin name, as returned by KPluginInfo::pluginName()
+     * \a name the plugin id, as returned by KPluginMetaData::pluginId()
      *
      * \a appletId unique ID to assign the applet, or zero to have one
      *        assigned automatically.
      *
      * \a args to send the applet extra arguments
      *
-     * Returns a pointer to the loaded applet, or 0 on load failure
+     * Returns a pointer to the loaded applet, or \c nullptr on load failure
      **/
     Applet *loadApplet(const QString &name, uint appletId = 0, const QVariantList &args = QVariantList());
 
@@ -56,21 +50,22 @@ public:
      * Load a ContainmentActions plugin.
      *
      * Returns a pointer to the containmentactions if successful.
+     *
      * The caller takes responsibility for the containmentactions, including
      * deleting it when no longer needed.
      *
-     * \a parent the parent containment. Since 4.6 null is allowed.
+     * \a parent the parent containment, or \c nullptr
      *
-     * \a name the plugin name, as returned by KPluginInfo::pluginName()
+     * \a name the plugin name, as returned by KPluginMetaData::pluginId()
      *
      * \a args to send the containmentactions extra arguments
      *
-     * Returns a ContainmentActions object
      **/
     ContainmentActions *loadContainmentActions(Containment *parent, const QString &containmentActionsName, const QVariantList &args = QVariantList());
 
     /*!
      * Returns a list of all known applets.
+     *
      * This may skip applets based on security settings and ExcludeCategories in the application's config.
      *
      * \a category Only applets matching this category will be returned.
@@ -78,7 +73,6 @@ public:
      *                 Categories= entry are also returned.
      *                 If an empty string is passed in, all applets are
      *                 returned.
-     * Returns list of applets
      *
      * \since 5.28
      **/
@@ -124,7 +118,7 @@ public:
     QList<KPluginMetaData> listContainmentActionsMetaData(const QString &parentApp);
 
     /*!
-     * Return the active plugin loader
+     * Return the plugin loader instance
      **/
     static PluginLoader *self();
 

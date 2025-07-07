@@ -39,6 +39,7 @@ void CoreBindingsPlugin::registerTypes(const char *uri)
     // HACK make properties like "opacity" work that are in REVISION 1 of QWindow
     qmlRegisterRevision<QWindow, 1>(uri, 2, 0);
     qmlRegisterRevision<QQuickItem, 1>(uri, 2, 0);
+    qmlRegisterRevision<QQuickWindow, 2>(uri, 2, 0);
     qmlRegisterExtendedType<QAction, ActionExtension>(uri, 2, 0, "Action");
 }
 

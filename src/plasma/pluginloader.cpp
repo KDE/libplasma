@@ -95,13 +95,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
 
         KPluginFactory *factory = KPluginFactory::loadFactory(plugin).plugin;
 
-        if (plugin.rawData().isEmpty()) {
-            // Plugin has empty metadata, use metadata from KPackage
-            factory->setMetaData(package.metadata());
-        } else {
-            // Plugin has its own metadata
-            factory->setMetaData(plugin);
-        }
+        factory->setMetaData(package.metadata());
         return factory->create<Plasma::Applet>(nullptr, allArgs);
     }
 

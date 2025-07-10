@@ -92,7 +92,7 @@ class PLASMAQUICK_EXPORT PlasmoidItem : public PlasmaQuick::AppletQuickItem
     /*!
      * Whether the dialog should be hidden when the dialog loses focus.
      *
-     * The default value is @c false.
+     * The default value is @c true.
      * TODO KF6: move to Applet? probably not
      **/
     Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)

@@ -283,6 +283,11 @@ QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQ
 {
     QObject *object = component->beginCreate(context ? context : d->rootContext);
 
+    if (!object) {
+        d->errorPrint(component);
+        return nullptr;
+    }
+
     for (auto it = initialProperties.constBegin(); it != initialProperties.constEnd(); ++it) {
         object->setProperty(it.key().toUtf8().data(), it.value());
     }

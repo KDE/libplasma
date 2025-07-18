@@ -27,6 +27,7 @@ private Q_SLOTS:
 
         QTest::addRow("simple") << u"org.kde.plasma.testapplet"_s;
         QTest::addRow("withcpp") << u"org.kde.plasma.testapplet2"_s;
+        QTest::addRow("simplecontainment") << u"org.kde.plasma.testcontainment"_s;
     }
 
     void testLoad()

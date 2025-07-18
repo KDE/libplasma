@@ -4,6 +4,7 @@
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
+#include <QDirIterator>
 #include <QStandardPaths>
 #include <QTest>
 
@@ -21,6 +22,33 @@ class AppletTest : public QObject
 
 private Q_SLOTS:
 
+    void copyDirectory(const QString &srcDir, const QString &dstDir)
+    {
+        QDir targetDir(dstDir);
+        QDirIterator it(srcDir, QDir::Filters(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot | QDir::Name), QDirIterator::Subdirectories);
+        while (it.hasNext()) {
+            it.next();
+            QString path = it.filePath();
+            QString relDestPath = path.last(it.filePath().length() - srcDir.length() - 1);
+            if (it.fileInfo().isDir()) {
+                QVERIFY(targetDir.mkpath(relDestPath));
+            } else {
+                QVERIFY(QFile::copy(path, dstDir + '/' + relDestPath));
+            }
+        }
+    }
+
+    void initTestCase()
+    {
+        QStandardPaths::setTestModeEnabled(true);
+
+        const QString appletDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/plasma/plasmoids/org.kde.plasma.testkpackage";
+        QDir(appletDir).mkpath(".");
+        QDir(appletDir).removeRecursively();
+
+        copyDirectory(QFINDTESTDATA("kpackage/package"), appletDir);
+    }
+
     void testLoad_data()
     {
         QTest::addColumn<QString>("id");
@@ -28,13 +56,12 @@ private Q_SLOTS:
         QTest::addRow("simple") << u"org.kde.plasma.testapplet"_s;
         QTest::addRow("withcpp") << u"org.kde.plasma.testapplet2"_s;
         QTest::addRow("simplecontainment") << u"org.kde.plasma.testcontainment"_s;
+        QTest::addRow("kpackage") << u"org.kde.plasma.testkpackage"_s;
     }
 
     void testLoad()
     {
         QFETCH(QString, id);
-
-        QStandardPaths::setTestModeEnabled(true);
 
         auto applets = Plasma::PluginLoader::self()->listAppletMetaData(QString());
 

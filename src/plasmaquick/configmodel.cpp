@@ -6,24 +6,12 @@
 */
 
 #include "configmodel.h"
-#include "Plasma/Applet"
-#include "Plasma/Containment"
+
+#include "applet.h"
 #include "configcategory_p.h"
-#include "configview.h"
-#include "debug_p.h"
-#include "sharedqmlengine.h"
 
 #include <QDebug>
-#include <QDir>
-#include <QQmlComponent>
-#include <QQmlContext>
-#include <QQmlEngine>
-#include <QQuickItem>
-
-#include <KLocalizedString>
-
-#include <Plasma/Corona>
-#include <Plasma/PluginLoader>
+#include <QPointer>
 
 namespace PlasmaQuick
 {

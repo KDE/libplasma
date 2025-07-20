@@ -21,6 +21,7 @@
 #include <QQmlExpression>
 #include <QQmlProperty>
 #include <QScreen>
+#include <QTimer>
 #include <QVersionNumber>
 
 #include <KAcceleratorManager>

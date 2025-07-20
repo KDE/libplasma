@@ -8,12 +8,12 @@
 
 #include <QGuiApplication>
 #include <QQmlProperty>
+#include <QSize>
 #include <qpa/qplatformwindow.h> // for QWINDOWSIZE_MAX
 
 #include <KConfigGroup>
 #include <KWindowSystem>
 #include <KX11Extras>
-#include <QSize>
 
 #include "applet.h"
 #include "appletquickitem.h"
@@ -24,7 +24,6 @@
 // used in detecting if focus passes to config UI
 #include "configview.h"
 #include "sharedqmlengine.h"
-#include "utils.h"
 
 // This is a proxy object that connects to the Layout attached property of an item
 // it also handles turning properties to proper defaults

@@ -8,10 +8,7 @@
 #define APPLETQUICKITEM_H
 
 #include <QQmlComponent>
-#include <QQmlEngine>
-#include <QQmlParserStatus>
 #include <QQuickItem>
-#include <QTimer>
 
 #include <plasmaquick/plasmaquick_export.h>
 

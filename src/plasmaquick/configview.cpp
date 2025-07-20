@@ -5,14 +5,13 @@
 */
 
 #include "configview.h"
-#include <KLocalizedQmlContext>
 
-#include "Plasma/Applet"
-#include "Plasma/Containment"
+#include "applet.h"
 #include "appletcontext_p.h"
 #include "appletquickitem.h"
 #include "configcategory_p.h"
 #include "configmodel.h"
+#include "corona.h"
 #include "debug_p.h"
 
 #include <QDebug>
@@ -24,14 +23,9 @@
 #include <QQmlFileSelector>
 #include <QQuickItem>
 
-#include <KAuthorized>
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <KPackage/Package>
-
-#include <Plasma/Corona>
-#include <Plasma/PluginLoader>
-#include <qqmlengine.h>
 
 // Unfortunately QWINDOWSIZE_MAX is not exported
 #define DIALOGSIZE_MAX ((1 << 24) - 1)

@@ -6,22 +6,7 @@
 
 #include "appletcontext_p.h"
 
-#include <QJsonArray>
-#include <QQmlContext>
-#include <QQmlExpression>
-#include <QQmlProperty>
-#include <QQuickWindow>
-#include <QRandomGenerator>
-
-#include <QDebug>
-
-#include <KLocalizedString>
-
 #include <Plasma/Applet>
-#include <Plasma/Containment>
-#include <Plasma/Corona>
-
-#include <qloggingcategory.h>
 
 namespace PlasmaQuick
 {

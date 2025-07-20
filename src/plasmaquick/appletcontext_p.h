@@ -11,7 +11,6 @@
 #include "sharedqmlengine.h"
 
 #include <QQmlContext>
-#include <qstringlistmodel.h>
 
 namespace Plasma
 {

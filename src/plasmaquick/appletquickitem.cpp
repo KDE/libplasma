@@ -5,34 +5,21 @@
 */
 
 #include "appletquickitem.h"
-#include "applet.h"
-#include "appletcontext_p.h"
 #include "appletquickitem_p.h"
-#include "configview.h"
+
+#include "appletcontext_p.h"
 #include "containment.h"
 #include "debug_p.h"
-#include "plasma_version.h"
 #include "plasmoid/containmentitem.h"
 #include "plasmoid/plasmoiditem.h"
-#include "plasmoid/wallpaperitem.h"
-#include "plasmoidattached_p.h"
 #include "sharedqmlengine.h"
 
 #include <QJsonArray>
-#include <QQmlContext>
-#include <QQmlExpression>
 #include <QQmlProperty>
-#include <QQuickWindow>
 #include <QRandomGenerator>
-
-#include <QDebug>
+#include <QTimer>
 
 #include <KLocalizedString>
-
-#include <Plasma/Applet>
-#include <Plasma/Containment>
-#include <Plasma/Corona>
-#include <qquickitem.h>
 
 using namespace Qt::StringLiterals;
 

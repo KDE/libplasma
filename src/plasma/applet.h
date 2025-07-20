@@ -939,7 +939,7 @@ protected:
     void timerEvent(QTimerEvent *event) override;
 
 private:
-    QUrl fileUrl(const QByteArray &key, const QString &filename) const;
+    QUrl fileUrl(const QString &filename) const;
     QUrl mainScript() const;
     QUrl configModel() const;
     bool sourceValid() const;

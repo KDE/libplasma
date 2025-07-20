@@ -251,12 +251,13 @@ KConfigLoader *Applet::configScheme() const
     if (!d->configLoader) {
         QString xmlPath;
 
-        if (d->package.isValid()) {
-            xmlPath = d->package.filePath("mainconfigxml");
-        } else {
-            if (QFile::exists(qrcPath() + QLatin1String("main.xml"))) {
-                xmlPath = qrcPath() + QLatin1String("main.xml");
+        if (QFile::exists(qrcPath())) {
+            const QString path = qrcPath() + QLatin1String("main.xml");
+            if (QFile::exists(path)) {
+                xmlPath = path;
             }
+        } else if (d->package.isValid()) {
+            xmlPath = d->package.filePath("mainconfigxml");
         }
 
         KConfigGroup cfg = config();
@@ -846,13 +847,17 @@ void Applet::configChanged()
     }
 }
 
-QUrl Applet::fileUrl(const QByteArray &key, const QString &filename) const
+QUrl Applet::fileUrl(const QString &filename) const
 {
-    if (d->package.isValid()) {
-        return d->package.fileUrl(key, filename);
-    } else {
+    if (QFile::exists(qrcPath())) {
         return QUrl(QLatin1String("qrc") + qrcPath() + filename);
     }
+
+    if (d->package.isValid()) {
+        return d->package.fileUrl("ui", filename);
+    }
+
+    return QUrl();
 }
 
 QUrl Applet::mainScript() const
@@ -871,13 +876,13 @@ QUrl Applet::mainScript() const
 
 QUrl Applet::configModel() const
 {
-    if (d->package.isValid()) {
-        return d->package.fileUrl("configmodel");
-    } else {
+    if (QFile::exists(qrcPath())) {
         const QString path = qrcPath() + QLatin1String("config.qml");
         if (QFile::exists(path)) {
             return QUrl(QLatin1String("qrc") + path);
         }
+    } else if (d->package.isValid()) {
+        return d->package.fileUrl("configmodel");
     }
 
     return QUrl();

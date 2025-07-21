@@ -25,6 +25,7 @@ private Q_SLOTS:
     void copyDirectory(const QString &srcDir, const QString &dstDir)
     {
         QDir targetDir(dstDir);
+        targetDir.mkpath(".");
         QDirIterator it(srcDir, QDir::Filters(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot | QDir::Name), QDirIterator::Subdirectories);
         while (it.hasNext()) {
             it.next();

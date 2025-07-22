@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:43+0000\n"
+"POT-Creation-Date: 2025-07-22 00:44+0000\n"
 "PO-Revision-Date: 2025-02-02 02:38-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -57,12 +57,12 @@ msgstr "Pesquisar"
 msgid "Clear search"
 msgstr "Limpar pesquisa"
 
-#: plasma/applet.cpp:312
+#: plasma/applet.cpp:313
 #, kde-format
 msgid "Unknown"
 msgstr "Desconhecido"
 
-#: plasma/applet.cpp:762
+#: plasma/applet.cpp:763
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Ativar o widget %1"

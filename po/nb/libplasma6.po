@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 00:44+0000\n"
+"POT-Creation-Date: 2025-07-25 00:44+0000\n"
 "PO-Revision-Date: 2025-03-10 20:01+0100\n"
 "Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -174,22 +174,22 @@ msgstr "Legg til eller håndter elementer …"
 msgid "Could not find requested component: %1"
 msgstr "Fant ikke den etterspurte komponenten: %1"
 
-#: plasmaquick/appletquickitem.cpp:542
+#: plasmaquick/appletquickitem.cpp:529
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "Rotelementet til %1 må være av typen ContainmentItem"
 
-#: plasmaquick/appletquickitem.cpp:547
+#: plasmaquick/appletquickitem.cpp:534
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "Rotelementet til %1 må være av typen PlasmoidItem"
 
-#: plasmaquick/appletquickitem.cpp:555
+#: plasmaquick/appletquickitem.cpp:542
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Ukjent element"
 
-#: plasmaquick/appletquickitem.cpp:569
+#: plasmaquick/appletquickitem.cpp:556
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -200,13 +200,13 @@ msgstr ""
 "kompatibelt med Plasma %1. Ta kontakt med utvikleren av skjermelementet for "
 "å skaffe en oppdatert versjon."
 
-#: plasmaquick/appletquickitem.cpp:572 plasmaquick/appletquickitem.cpp:579
-#: plasmaquick/appletquickitem.cpp:585
+#: plasmaquick/appletquickitem.cpp:559 plasmaquick/appletquickitem.cpp:566
+#: plasmaquick/appletquickitem.cpp:572
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 er ikke kompatibel med Plasma %2"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:563
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -216,7 +216,7 @@ msgstr ""
 "med Plasma %2. Ta kontakt med utvikleren av skjermelementet for å skaffe en "
 "oppdatert versjon."
 
-#: plasmaquick/appletquickitem.cpp:582
+#: plasmaquick/appletquickitem.cpp:569
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -225,74 +225,74 @@ msgstr ""
 "Dette skjermelementet er laget for Plasma versjon %1 og er ikke kompatibelt "
 "med Plasma %2. Oppdater Plasma-versjonen din for å ta elementet i bruk."
 
-#: plasmaquick/appletquickitem.cpp:591 plasmaquick/appletquickitem.cpp:613
+#: plasmaquick/appletquickitem.cpp:578 plasmaquick/appletquickitem.cpp:600
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Det oppstod dessverre en feil ved lasting av %1."
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:595
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Feil ved lasting av QML-fil: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:611
+#: plasmaquick/appletquickitem.cpp:598
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Feil ved lasting av skjermelement: pakken %1 finnes ikke."
 
-#: plasmaquick/configview.cpp:195
+#: plasmaquick/configview.cpp:189
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 – innstillinger for %2"
 
-#: plasmaquick/configview.cpp:196
+#: plasmaquick/configview.cpp:190
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1-innstillinger"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:572
+#: plasmaquick/plasmoid/containmentitem.cpp:573
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma-pakke"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:576
+#: plasmaquick/plasmoid/containmentitem.cpp:577
 #, kde-format
 msgid "Install"
 msgstr "Installer"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:587
+#: plasmaquick/plasmoid/containmentitem.cpp:588
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Feil ved pakkeinstallering"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:603
+#: plasmaquick/plasmoid/containmentitem.cpp:604
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Pakken du slapp er ugyldig."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:612
+#: plasmaquick/plasmoid/containmentitem.cpp:613
 #, kde-format
 msgid "Widgets"
 msgstr "Skjermelementer"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:617
+#: plasmaquick/plasmoid/containmentitem.cpp:618
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Legg til %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:631
+#: plasmaquick/plasmoid/containmentitem.cpp:632
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Legg til ikon"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:643
+#: plasmaquick/plasmoid/containmentitem.cpp:644
 #, kde-format
 msgid "Wallpaper"
 msgstr "Bakgrunnsbilde"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:653
+#: plasmaquick/plasmoid/containmentitem.cpp:654
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

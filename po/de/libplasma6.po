@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 00:44+0000\n"
+"POT-Creation-Date: 2025-07-25 00:44+0000\n"
 "PO-Revision-Date: 2024-08-28 21:42+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -171,22 +171,22 @@ msgstr "Miniprogramme hinzufügen oder verwalten …"
 msgid "Could not find requested component: %1"
 msgstr "Die angeforderte Komponente ist nicht auffindbar: %1"
 
-#: plasmaquick/appletquickitem.cpp:542
+#: plasmaquick/appletquickitem.cpp:529
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "Das Wurzelelement von %1 muss vom Typ ContainmentItem sein"
 
-#: plasmaquick/appletquickitem.cpp:547
+#: plasmaquick/appletquickitem.cpp:534
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "Das Wurzelelement von %1 muss vom Typ PlasmoidItem sein"
 
-#: plasmaquick/appletquickitem.cpp:555
+#: plasmaquick/appletquickitem.cpp:542
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Unbekanntes Miniprogramm"
 
-#: plasmaquick/appletquickitem.cpp:569
+#: plasmaquick/appletquickitem.cpp:556
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -198,13 +198,13 @@ msgstr ""
 "Autor des Miniprogramms Kontakt auf und bitten diesen um eine aktualisierte "
 "Version."
 
-#: plasmaquick/appletquickitem.cpp:572 plasmaquick/appletquickitem.cpp:579
-#: plasmaquick/appletquickitem.cpp:585
+#: plasmaquick/appletquickitem.cpp:559 plasmaquick/appletquickitem.cpp:566
+#: plasmaquick/appletquickitem.cpp:572
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 ist mit Plasma %2 nicht kompatibel"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:563
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -214,7 +214,7 @@ msgstr ""
 "%2 kompatibel. Bitte nehmen Sie mit dem Autor des Miniprogramms Kontakt auf "
 "und bitten diesen um eine aktualisierte Version."
 
-#: plasmaquick/appletquickitem.cpp:582
+#: plasmaquick/appletquickitem.cpp:569
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -224,74 +224,74 @@ msgstr ""
 "%2 kompatibel. Bitte aktualisieren Plasma, damit das Miniprogramm verwendet "
 "werden kann."
 
-#: plasmaquick/appletquickitem.cpp:591 plasmaquick/appletquickitem.cpp:613
+#: plasmaquick/appletquickitem.cpp:578 plasmaquick/appletquickitem.cpp:600
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Leider ist beim Laden von %1 ein Fehler aufgetreten."
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:595
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Fehler beim Laden der QML-Datei: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:611
+#: plasmaquick/appletquickitem.cpp:598
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Fehler beim Laden des Miniprogramms: Das Paket %1 existiert nicht."
 
-#: plasmaquick/configview.cpp:195
+#: plasmaquick/configview.cpp:189
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — Einstellungen für %2"
 
-#: plasmaquick/configview.cpp:196
+#: plasmaquick/configview.cpp:190
 #, kde-format
 msgid "%1 Settings"
 msgstr "Einstellungen für %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:572
+#: plasmaquick/plasmoid/containmentitem.cpp:573
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma-Paket"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:576
+#: plasmaquick/plasmoid/containmentitem.cpp:577
 #, kde-format
 msgid "Install"
 msgstr "Installieren"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:587
+#: plasmaquick/plasmoid/containmentitem.cpp:588
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Paketinstallation ist fehlgeschlagen"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:603
+#: plasmaquick/plasmoid/containmentitem.cpp:604
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Das gerade abhgelegte Paket ist ungültig."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:612
+#: plasmaquick/plasmoid/containmentitem.cpp:613
 #, kde-format
 msgid "Widgets"
 msgstr "Miniprogramme"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:617
+#: plasmaquick/plasmoid/containmentitem.cpp:618
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "%1 hinzufügen"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:631
+#: plasmaquick/plasmoid/containmentitem.cpp:632
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Symbol hinzufügen"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:643
+#: plasmaquick/plasmoid/containmentitem.cpp:644
 #, kde-format
 msgid "Wallpaper"
 msgstr "Hintergrundbild"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:653
+#: plasmaquick/plasmoid/containmentitem.cpp:654
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

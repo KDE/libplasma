@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 00:44+0000\n"
+"POT-Creation-Date: 2025-07-25 00:44+0000\n"
 "PO-Revision-Date: 2024-08-25 23:28+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -175,22 +175,22 @@ msgstr "Pridėti ar tvarkyti valdiklius…"
 msgid "Could not find requested component: %1"
 msgstr "Nepavyko rasti užklausto komponento: %1"
 
-#: plasmaquick/appletquickitem.cpp:542
+#: plasmaquick/appletquickitem.cpp:529
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "%1 šakninis elementas privalo būti ContainmentItem tipo"
 
-#: plasmaquick/appletquickitem.cpp:547
+#: plasmaquick/appletquickitem.cpp:534
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "%1 šakninis elementas privalo būti PlasmoidItem tipo"
 
-#: plasmaquick/appletquickitem.cpp:555
+#: plasmaquick/appletquickitem.cpp:542
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Nežinoma programėlė"
 
-#: plasmaquick/appletquickitem.cpp:569
+#: plasmaquick/appletquickitem.cpp:556
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -201,13 +201,13 @@ msgstr ""
 "suderinamas su Plasma %1. Norėdami gauti atnaujintą valdiklio versiją, "
 "susisiekite su valdiklio kūrėju."
 
-#: plasmaquick/appletquickitem.cpp:572 plasmaquick/appletquickitem.cpp:579
-#: plasmaquick/appletquickitem.cpp:585
+#: plasmaquick/appletquickitem.cpp:559 plasmaquick/appletquickitem.cpp:566
+#: plasmaquick/appletquickitem.cpp:572
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 yra nesuderinamas su Plasma %2"
 
-#: plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:563
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -217,7 +217,7 @@ msgstr ""
 "%2. Norėdami gauti atnaujintą valdiklio versiją, susisiekite su valdiklio "
 "kūrėju."
 
-#: plasmaquick/appletquickitem.cpp:582
+#: plasmaquick/appletquickitem.cpp:569
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -226,74 +226,74 @@ msgstr ""
 "Šis valdiklis buvo sukurtas Plasma %1 versijai ir nėra suderinamas su Plasma "
 "%2. Norėdami naudoti valdiklį, atnaujinkite Plasma versiją."
 
-#: plasmaquick/appletquickitem.cpp:591 plasmaquick/appletquickitem.cpp:613
+#: plasmaquick/appletquickitem.cpp:578 plasmaquick/appletquickitem.cpp:600
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Apgailestaujame! Įkeliant %1, įvyko klaida."
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:595
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Klaida įkeliant QML failą: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:611
+#: plasmaquick/appletquickitem.cpp:598
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Klaida įkeliant programėlę: paketo %1 nėra."
 
-#: plasmaquick/configview.cpp:195
+#: plasmaquick/configview.cpp:189
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 – Nuostatos: %2|/|%1 – $[get-case Kilmininkas %2] nuostatos"
 
-#: plasmaquick/configview.cpp:196
+#: plasmaquick/configview.cpp:190
 #, kde-format
 msgid "%1 Settings"
 msgstr "Nuostatos: %1|/|$[get-case Kilmininkas %1] nuostatos"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:572
+#: plasmaquick/plasmoid/containmentitem.cpp:573
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma paketas"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:576
+#: plasmaquick/plasmoid/containmentitem.cpp:577
 #, kde-format
 msgid "Install"
 msgstr "Įdiegti"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:587
+#: plasmaquick/plasmoid/containmentitem.cpp:588
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Nepavyko įdiegti paketo"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:603
+#: plasmaquick/plasmoid/containmentitem.cpp:604
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Jūsų numestas paketas yra neteisingas."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:612
+#: plasmaquick/plasmoid/containmentitem.cpp:613
 #, kde-format
 msgid "Widgets"
 msgstr "Valdikliai"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:617
+#: plasmaquick/plasmoid/containmentitem.cpp:618
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Pridėti %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:631
+#: plasmaquick/plasmoid/containmentitem.cpp:632
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Pridėti piktogramą"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:643
+#: plasmaquick/plasmoid/containmentitem.cpp:644
 #, kde-format
 msgid "Wallpaper"
 msgstr "Darbalaukio fonas"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:653
+#: plasmaquick/plasmoid/containmentitem.cpp:654
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

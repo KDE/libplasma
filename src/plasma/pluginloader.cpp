@@ -95,6 +95,10 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
 
         KPluginFactory *factory = KPluginFactory::loadFactory(plugin).plugin;
 
+        if (!factory) {
+            return nullptr;
+        }
+
         factory->setMetaData(package.metadata());
         return factory->create<Plasma::Applet>(nullptr, allArgs);
     }

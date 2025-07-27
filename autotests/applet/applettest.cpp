@@ -102,6 +102,24 @@ private Q_SLOTS:
         QVERIFY(notAContainment == containments.cend());
     }
 
+    void testListContainmentOfType()
+    {
+        auto containments = Plasma::PluginLoader::listContainmentsMetaDataOfType("Custom");
+        QVERIFY(!containments.isEmpty());
+
+        auto testContainment = std::find_if(containments.cbegin(), containments.cend(), [](const KPluginMetaData &md) {
+            return md.pluginId() == "org.kde.plasma.testcontainment";
+        });
+
+        QVERIFY(testContainment != containments.cend());
+
+        auto notAContainment = std::find_if(containments.cbegin(), containments.cend(), [](const KPluginMetaData &md) {
+            return md.pluginId() == "org.kde.plasma.testapplet";
+        });
+
+        QVERIFY(notAContainment == containments.cend());
+    }
+
     void testDropMime()
     {
         auto applets = Plasma::PluginLoader::self()->listAppletMetaDataForMimeType("image/jpeg");

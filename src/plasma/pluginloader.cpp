@@ -240,11 +240,15 @@ QList<KPluginMetaData> PluginLoader::listAppletMetaDataForUrl(const QUrl &url)
 
 QList<KPluginMetaData> PluginLoader::listContainmentsMetaData(std::function<bool(const KPluginMetaData &)> filter)
 {
-    auto ownFilter = [filter](const KPluginMetaData &md) -> bool {
-        return isContainmentMetaData(md) && (!filter || filter(md));
-    };
+    const auto applets = self()->listAppletMetaData(QString());
 
-    return KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Applet"), QString(), ownFilter);
+    QList<KPluginMetaData> containments;
+
+    std::copy_if(applets.cbegin(), applets.cend(), std::back_inserter(containments), [filter](const KPluginMetaData &md) {
+        return isContainmentMetaData(md) && (!filter || filter(md));
+    });
+
+    return containments;
 }
 
 QList<KPluginMetaData> PluginLoader::listContainmentsMetaDataOfType(const QString &type)

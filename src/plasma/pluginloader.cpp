@@ -241,7 +241,7 @@ QList<KPluginMetaData> PluginLoader::listAppletMetaDataForUrl(const QUrl &url)
 QList<KPluginMetaData> PluginLoader::listContainmentsMetaData(std::function<bool(const KPluginMetaData &)> filter)
 {
     auto ownFilter = [filter](const KPluginMetaData &md) -> bool {
-        return isContainmentMetaData(md) && filter(md);
+        return isContainmentMetaData(md) && (!filter || filter(md));
     };
 
     return KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Applet"), QString(), ownFilter);

@@ -140,7 +140,6 @@ QList<KPluginMetaData> PluginLoader::listAppletMetaData(const QString &category)
         platforms.clear();
     }
 
-    // FIXME: this assumes we are always use packages.. no pure c++
     std::function<bool(const KPluginMetaData &)> filter;
     if (category.isEmpty()) { // use all but the excluded categories
         KConfigGroup group(KSharedConfig::openConfig(), QStringLiteral("General"));

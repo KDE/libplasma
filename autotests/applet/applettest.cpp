@@ -101,6 +101,40 @@ private Q_SLOTS:
 
         QVERIFY(notAContainment == containments.cend());
     }
+
+    void testDropMime()
+    {
+        auto applets = Plasma::PluginLoader::self()->listAppletMetaDataForMimeType("image/jpeg");
+
+        auto shouldBeFound = std::find_if(applets.cbegin(), applets.cend(), [](const KPluginMetaData &md) {
+            return md.pluginId() == "org.kde.plasma.testapplet2";
+        });
+
+        QVERIFY(shouldBeFound != applets.cend());
+
+        auto shouldNotBeFound = std::find_if(applets.cbegin(), applets.cend(), [](const KPluginMetaData &md) {
+            return md.pluginId() == "org.kde.plasma.testapplet";
+        });
+
+        QVERIFY(shouldNotBeFound == applets.cend());
+    }
+
+    void testDropPattern()
+    {
+        auto applets = Plasma::PluginLoader::self()->listAppletMetaDataForUrl(QUrl("test:/"));
+
+        auto shouldBeFound = std::find_if(applets.cbegin(), applets.cend(), [](const KPluginMetaData &md) {
+            return md.pluginId() == "org.kde.plasma.testapplet";
+        });
+
+        QVERIFY(shouldBeFound != applets.cend());
+
+        auto shouldNotBeFound = std::find_if(applets.cbegin(), applets.cend(), [](const KPluginMetaData &md) {
+            return md.pluginId() == "org.kde.plasma.testapplet2";
+        });
+
+        QVERIFY(shouldNotBeFound == applets.cend());
+    }
 };
 
 QTEST_MAIN(AppletTest);

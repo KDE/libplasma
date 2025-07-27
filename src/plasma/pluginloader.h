@@ -18,10 +18,6 @@ class Applet;
 class Containment;
 class ContainmentActions;
 
-// TODO:
-// * add loadWallpaper
-// * add KPluginInfo listing support for Containments (already loaded via the applet loading code)
-
 /*!
  * \class Plasma::PluginLoader
  * \inheaderfile Plasma/PluginLoader

@@ -83,6 +83,11 @@ private Q_SLOTS:
 
         QCOMPARE(item->applet(), applet);
     }
+
+    void testListContainment()
+    {
+        auto containments = Plasma::PluginLoader::listContainmentsMetaData();
+    }
 };
 
 QTEST_MAIN(AppletTest);

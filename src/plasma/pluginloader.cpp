@@ -211,21 +211,27 @@ QList<KPluginMetaData> PluginLoader::listAppletMetaData(const QString &category)
 
 QList<KPluginMetaData> PluginLoader::listAppletMetaDataForMimeType(const QString &mimeType)
 {
-    auto filter = [&mimeType](const KPluginMetaData &md) -> bool {
+    const auto allApplets = self()->listAppletMetaData(QString());
+
+    QList<KPluginMetaData> applets;
+
+    std::copy_if(allApplets.cbegin(), allApplets.cend(), std::back_inserter(applets), [mimeType](const KPluginMetaData &md) {
         return md.value(u"X-Plasma-DropMimeTypes", QStringList()).contains(mimeType);
-    };
-    return KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Applet"), QString(), filter);
+    });
+
+    return applets;
 }
 
 QList<KPluginMetaData> PluginLoader::listAppletMetaDataForUrl(const QUrl &url)
 {
-    auto filter = [](const KPluginMetaData &md) -> bool {
-        return !md.value(u"X-Plasma-DropUrlPatterns", QStringList()).isEmpty();
-    };
-    const QList<KPluginMetaData> allApplets = KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Applet"), QString(), filter);
+    const QList<KPluginMetaData> allApplets = self()->listAppletMetaData(QString());
 
     QList<KPluginMetaData> filtered;
     for (const KPluginMetaData &md : allApplets) {
+        if (md.value(u"X-Plasma-DropUrlPatterns", QStringList()).isEmpty()) {
+            continue;
+        }
+
         const QStringList urlPatterns = md.value(u"X-Plasma-DropUrlPatterns", QStringList());
         for (const QString &glob : urlPatterns) {
             QRegularExpression rx(QRegularExpression::anchoredPattern(QRegularExpression::wildcardToRegularExpression(glob)));

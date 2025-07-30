@@ -68,6 +68,7 @@ AppletPopup::AppletPopup()
         KX11Extras::setType(winId(), NET::AppletPopup);
     } else {
         PlasmaShellWaylandIntegration::get(this)->setRole(QtWayland::org_kde_plasma_surface::role::role_appletpopup);
+        PlasmaShellWaylandIntegration::get(this)->setTakesFocus(true);
     }
 
     auto edgeForwarder = new EdgeEventForwarder(this);

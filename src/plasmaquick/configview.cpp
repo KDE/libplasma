@@ -192,6 +192,10 @@ void ConfigViewPrivate::updateTitle()
 
 void ConfigViewPrivate::mainItemLoaded()
 {
+    if (rootItem->implicitHeight() > 0 || rootItem->implicitWidth() > 0) {
+        q->resize(QSize(rootItem->implicitWidth(), rootItem->implicitHeight()));
+    }
+
     if (applet) {
         KConfigGroup cg = applet.data()->config();
         cg = KConfigGroup(&cg, QStringLiteral("ConfigDialog"));
@@ -280,9 +284,6 @@ void ConfigView::setSource(const QUrl &src)
     Q_UNUSED(object.release());
     d->mainItemLoaded();
 
-    if (d->rootItem->implicitHeight() > 0 || d->rootItem->implicitWidth() > 0) {
-        resize(QSize(d->rootItem->implicitWidth(), d->rootItem->implicitHeight()));
-    }
     d->rootItem->setSize(QSizeF(width(), height()));
 
     connect(d->rootItem, &QQuickItem::implicitWidthChanged, this, [this]() {

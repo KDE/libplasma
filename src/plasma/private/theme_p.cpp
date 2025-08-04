@@ -413,31 +413,22 @@ void ThemePrivate::processBlurBehindSettings(const KSharedConfigPtr &metadata)
     }
 }
 
-void ThemePrivate::setThemeName(const QString &tempThemeName, bool writeSettings, bool emitChanged)
+void ThemePrivate::setThemeName(const QString &theme, bool writeSettings, bool emitChanged)
 {
-    kSvgImageSet->setImageSetName(tempThemeName);
-    QString theme = tempThemeName;
-    if (theme.isEmpty() || theme == themeName) {
-        // let's try and get the default theme at least
-        if (themeName.isEmpty()) {
-            theme = QLatin1String(ThemePrivate::defaultTheme);
-        } else {
-            return;
-        }
+    if (theme.isEmpty()) {
+        qCWarning(LOG_PLASMA) << "Empty theme name passed to ThemePrivate::setThemeName";
+        return;
     }
 
-    KPluginMetaData data = metaDataForTheme(theme);
-    if (!data.isValid()) {
-        data = metaDataForTheme(QStringLiteral("default"));
-        if (!data.isValid()) {
-            return;
-        }
-
-        theme = QLatin1String(ThemePrivate::defaultTheme);
-    }
-
-    // check again as ThemePrivate::defaultTheme might be empty
     if (themeName == theme) {
+        return;
+    }
+
+    kSvgImageSet->setImageSetName(theme);
+
+    pluginMetaData = metaDataForTheme(theme);
+    if (!pluginMetaData.isValid()) {
+        // metaDataForTheme already prints a warning
         return;
     }
 
@@ -467,7 +458,6 @@ void ThemePrivate::setThemeName(const QString &tempThemeName, bool writeSettings
     hasWallpapers = !QStandardPaths::locate(QStandardPaths::GenericDataLocation, wallpaperPath, QStandardPaths::LocateDirectory).isEmpty();
 
     // load the wallpaper settings, if any
-    pluginMetaData = metaDataForTheme(theme);
     KSharedConfigPtr metadata = configForTheme(theme);
 
     processContrastSettings(metadata);

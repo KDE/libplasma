@@ -944,6 +944,7 @@ private:
     QUrl configModel() const;
     bool sourceValid() const;
     QString qrcPath() const;
+    void setRootPath(const QString &rootPath);
 
     // TODO KF6: drop Q_PRIVATE_SLOT
     Q_PRIVATE_SLOT(d, void cleanUpAndDelete())

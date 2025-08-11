@@ -862,6 +862,8 @@ QUrl Applet::fileUrl(const QString &filename) const
 
 QUrl Applet::mainScript() const
 {
+    qWarning() << "main";
+
     const QString path = qrcPath() + QLatin1String("main.qml");
 
     if (QFile::exists(path)) {
@@ -947,7 +949,18 @@ QString Applet::translationDomain() const
 
 QString Applet::qrcPath() const
 {
+    // QString rootPath = d->appletDescription.value(u"X-Plasma-RootPath");
+    qWarning() << "qrc" << d->rootPath;
+    if (!d->rootPath.isEmpty()) {
+        QLatin1String(":/qt/qml/plasma/applet/") + QString(d->rootPath).replace(QLatin1Char('.'), QLatin1Char('/')) + QLatin1String("/");
+    }
+
     return QLatin1String(":/qt/qml/plasma/applet/") + pluginName().replace(QLatin1Char('.'), QLatin1Char('/')) + QLatin1String("/");
+}
+
+void Applet::setRootPath(const QString &rootPath)
+{
+    d->rootPath = rootPath;
 }
 
 } // Plasma namespace

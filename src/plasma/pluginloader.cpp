@@ -50,6 +50,8 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     // latter case, ensure we only use the name part of the path.
     const QString pluginName = name.section(QLatin1Char('/'), -1);
 
+    qWarning() << "loading" << pluginName;
+
     /*
      * Cases:
      * - Pure KPackage
@@ -61,10 +63,16 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     KPluginMetaData plugin(u"plasma/applets/" + pluginName, KPluginMetaData::AllowEmptyMetaData);
     const KPackage::Package package = KPackage::PackageLoader::self()->loadPackage(u"Plasma/Applet"_s, name);
 
+    qWarning() << "valid" << package.isValid();
+
     // If the applet is using another applet package, search for the plugin of the other applet
     const QString parentPlugin = package.metadata().value(u"X-Plasma-RootPath");
     if (!parentPlugin.isEmpty()) {
+        qWarning() << "parent" << parentPlugin;
         plugin = KPluginMetaData(u"plasma/applets/" + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
+        if (!plugin.isValid()) {
+            qWarning() << "invalid parent" << parentPlugin;
+        }
     }
 
     // pure KPackage
@@ -84,27 +92,33 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
         if (!localePath.isEmpty()) {
             KLocalizedString::addDomainLocaleDir(QByteArray("plasma_applet_") + name.toLatin1(), localePath);
         }
-
+        qWarning() << "pure package";
         return applet;
     }
 
     // KPackage + C++
-    if (package.isValid()) {
+    if (package.isValid() || !package.metadata().value(QStringLiteral("X-Plasma-RootPath")).isEmpty()) {
         QVariantList allArgs;
         allArgs << QVariant::fromValue(package) << appletId << args;
 
         KPluginFactory *factory = KPluginFactory::loadFactory(plugin).plugin;
 
         if (!factory) {
+            qWarning() << "pewpfijewfpew";
             return nullptr;
         }
 
         factory->setMetaData(package.metadata());
-        return factory->create<Plasma::Applet>(nullptr, allArgs);
+        auto applet = factory->create<Plasma::Applet>(nullptr, allArgs);
+        qWarning() << "create" << name << package.metadata().value(u"X-Plasma-RootPath");
+        applet->setRootPath(package.metadata().value(u"X-Plasma-RootPath"));
+        qWarning() << "miiiiiixed";
+        return applet;
     }
 
     // C++ with embedded QML
     if (plugin.isValid()) {
+        qWarning() << "hä";
         return KPluginFactory::instantiatePlugin<Plasma::Applet>(plugin, nullptr, {{}, appletId}).plugin;
     }
 

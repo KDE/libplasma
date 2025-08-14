@@ -233,7 +233,7 @@ void AppletPrivate::askDestroy()
         deleteNotification->setIconName(q->icon());
         Plasma::Containment *asContainment = qobject_cast<Plasma::Containment *>(q);
 
-        if (!q->isContainment()) {
+        if (!q->isContainment() || (asContainment && asContainment->containmentType() == Containment::Type::CustomEmbedded)) {
             deleteNotification->setTitle(i18n("Widget Removed"));
             deleteNotification->setText(i18n("The widget \"%1\" has been removed.", q->title().toHtmlEscaped()));
         } else if (asContainment

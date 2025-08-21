@@ -416,7 +416,16 @@ KPluginMetaData Applet::pluginMetaData() const
 
 QString Applet::pluginName() const
 {
-    return d->appletDescription.isValid() ? d->appletDescription.pluginId() : QString();
+    if (!d->appletDescription.isValid()) {
+        return {};
+    }
+
+    const QString originalPlugin = d->appletDescription.value(u"X-Plasma-OriginalPluginId");
+    if (!originalPlugin.isEmpty()) {
+        return originalPlugin;
+    }
+
+    return d->appletDescription.pluginId();
 }
 
 Types::ImmutabilityType Applet::immutability() const
@@ -947,7 +956,7 @@ QString Applet::translationDomain() const
 
 QString Applet::qrcPath() const
 {
-    return QLatin1String(":/qt/qml/plasma/applet/") + pluginName().replace(QLatin1Char('.'), QLatin1Char('/')) + QLatin1String("/");
+    return QLatin1String(":/qt/qml/plasma/applet/") + d->appletDescription.pluginId().replace(QLatin1Char('.'), QLatin1Char('/')) + QLatin1String("/");
 }
 
 } // Plasma namespace

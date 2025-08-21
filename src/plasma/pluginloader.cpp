@@ -15,6 +15,7 @@
 #include <KPluginFactory>
 #include <KRuntimePlatform>
 #include <KSharedConfig>
+#include <kpluginmetadata.h>
 
 #include "applet.h"
 #include "containment.h"
@@ -65,6 +66,10 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     const QString parentPlugin = package.metadata().value(u"X-Plasma-RootPath");
     if (!parentPlugin.isEmpty()) {
         plugin = KPluginMetaData(u"plasma/applets/" + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
+        QJsonObject rawPlugin = plugin.rawData();
+        // Insert a reference to the original plugin name in the parent plugin metadata
+        rawPlugin.insert(u"X-Plasma-OriginalPluginId", pluginName);
+        plugin = KPluginMetaData(rawPlugin, plugin.fileName());
     }
 
     // pure KPackage

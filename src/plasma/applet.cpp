@@ -418,16 +418,7 @@ KPluginMetaData Applet::pluginMetaData() const
 
 QString Applet::pluginName() const
 {
-    if (!d->appletDescription.isValid()) {
-        return {};
-    }
-
-    const QString originalPlugin = d->appletDescription.value(u"X-Plasma-OriginalPluginId");
-    if (!originalPlugin.isEmpty()) {
-        return originalPlugin;
-    }
-
-    return d->appletDescription.pluginId();
+    return d->appletDescription.isValid() ? d->appletDescription.pluginId() : QString();
 }
 
 Types::ImmutabilityType Applet::immutability() const

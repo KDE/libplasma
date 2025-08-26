@@ -65,10 +65,6 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     const QString parentPlugin = package.metadata().value(u"X-Plasma-RootPath");
     if (!parentPlugin.isEmpty()) {
         plugin = KPluginMetaData(u"plasma/applets/" + parentPlugin, KPluginMetaData::AllowEmptyMetaData);
-        QJsonObject rawPlugin = plugin.rawData();
-        // Insert a reference to the original plugin name in the parent plugin metadata
-        rawPlugin.insert(u"X-Plasma-OriginalPluginId", pluginName);
-        plugin = KPluginMetaData(rawPlugin, plugin.fileName());
     }
 
     // pure KPackage
@@ -93,7 +89,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     }
 
     // KPackage + C++
-    if (package.isValid()) {
+    if (package.isValid() || !package.metadata().value(QStringLiteral("X-Plasma-RootPath")).isEmpty()) {
         QVariantList allArgs;
         allArgs << QVariant::fromValue(package) << appletId << args;
 

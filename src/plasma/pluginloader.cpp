@@ -89,7 +89,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     }
 
     // KPackage + C++
-    if (package.isValid()) {
+    if (package.isValid() || !package.metadata().value(QStringLiteral("X-Plasma-RootPath")).isEmpty()) {
         QVariantList allArgs;
         allArgs << QVariant::fromValue(package) << appletId << args;
 

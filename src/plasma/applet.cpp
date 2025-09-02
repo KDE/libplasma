@@ -114,7 +114,9 @@ void Applet::save(KConfigGroup &g) const
     // we call the dptr member directly for locked since isImmutable()
     // also checks kiosk and parent containers
     group.writeEntry("immutability", (int)d->immutability);
-    group.writeEntry("plugin", d->appletDescription.pluginId());
+    // Use pluginName as might be different from d->appletDescription.pluginId()
+    // In case X-Plasma-RootPath is used
+    group.writeEntry("plugin", pluginName());
 
     if (!d->started) {
         return;
@@ -947,7 +949,11 @@ QString Applet::translationDomain() const
 
 QString Applet::qrcPath() const
 {
-    return QLatin1String(":/qt/qml/plasma/applet/") + pluginName().replace(QLatin1Char('.'), QLatin1Char('/')) + QLatin1String("/");
+    QString rootPath = d->appletDescription.value(u"X-Plasma-RootPath");
+    if (rootPath.isEmpty()) {
+        rootPath = d->appletDescription.pluginId();
+    }
+    return QLatin1String(":/qt/qml/plasma/applet/") + rootPath.replace(QLatin1Char('.'), QLatin1Char('/')) + QLatin1String("/");
 }
 
 } // Plasma namespace

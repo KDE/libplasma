@@ -1,0 +1,20 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "plasma-devel@kde.org",
+                "Name": "The Plasma Team"
+            }
+        ],
+        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=plasmashell&component=Pager%20widget",
+        "Category": "Windows and Tasks",
+        "Description": "A fallback test applet",
+        "Icon": "user-desktop",
+        "Id": "org.kde.plasma.testrootpath",
+        "License": "GPL-2.0+",
+        "Name": "Test KPackage"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-RootPath": "org.kde.plasma.testapplet"
+}

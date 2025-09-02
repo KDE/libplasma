@@ -43,11 +43,19 @@ private Q_SLOTS:
     {
         QStandardPaths::setTestModeEnabled(true);
 
-        const QString appletDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/plasma/plasmoids/org.kde.plasma.testkpackage";
+        // Copy pure kpackage
+        QString appletDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/plasma/plasmoids/org.kde.plasma.testkpackage";
         QDir(appletDir).mkpath(".");
         QDir(appletDir).removeRecursively();
 
         copyDirectory(QFINDTESTDATA("kpackage/package"), appletDir);
+
+        // Copy the kpackage falling back to simple
+        appletDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/plasma/plasmoids/org.kde.plasma.testrootpath";
+        QDir(appletDir).mkpath(".");
+        QDir(appletDir).removeRecursively();
+
+        copyDirectory(QFINDTESTDATA("rootpath/package"), appletDir);
     }
 
     void testLoad_data()
@@ -58,6 +66,7 @@ private Q_SLOTS:
         QTest::addRow("withcpp") << u"org.kde.plasma.testapplet2"_s;
         QTest::addRow("simplecontainment") << u"org.kde.plasma.testcontainment"_s;
         QTest::addRow("kpackage") << u"org.kde.plasma.testkpackage"_s;
+        QTest::addRow("rootpath") << u"org.kde.plasma.testrootpath"_s;
     }
 
     void testLoad()
@@ -76,6 +85,8 @@ private Q_SLOTS:
         QVERIFY(applet);
 
         QCOMPARE(applet->pluginName(), id);
+
+        QVERIFY(applet->launchErrorMessage().isEmpty());
 
         PlasmaQuick::AppletQuickItem *item = PlasmaQuick::AppletQuickItem::itemForApplet(applet);
 

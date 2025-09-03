@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-25 00:44+0000\n"
+"POT-Creation-Date: 2025-09-03 00:45+0000\n"
 "PO-Revision-Date: 2022-06-14 10:56+0700\n"
 "Last-Translator: Aziz Adam Adrian <4.adam.adrian@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -58,12 +58,12 @@ msgstr "Cari"
 msgid "Clear search"
 msgstr ""
 
-#: plasma/applet.cpp:313
+#: plasma/applet.cpp:315
 #, kde-format
 msgid "Unknown"
 msgstr "Tidak diketahui"
 
-#: plasma/applet.cpp:763
+#: plasma/applet.cpp:765
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Aktifkan Widget %1"

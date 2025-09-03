@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-25 00:44+0000\n"
+"POT-Creation-Date: 2025-09-03 00:45+0000\n"
 "PO-Revision-Date: 2024-09-11 05:26+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -55,12 +55,12 @@ msgstr "ძებნა"
 msgid "Clear search"
 msgstr "ძიების გასუფთავება"
 
-#: plasma/applet.cpp:313
+#: plasma/applet.cpp:315
 #, kde-format
 msgid "Unknown"
 msgstr "უცნობი"
 
-#: plasma/applet.cpp:763
+#: plasma/applet.cpp:765
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "ვიჯეტის აქტივაცია: %1"

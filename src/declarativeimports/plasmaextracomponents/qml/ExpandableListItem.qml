@@ -411,11 +411,12 @@ Item {
 
     MouseArea {
         id: mouseArea
+
+        property PlasmaExtras.Menu contextMenu: null
+
         anchors.fill: parent
 
-        // This MouseArea used to intercept RightButton to open a context
-        // menu, but that has been removed, and now it's only used for hover
-        acceptedButtons: Qt.NoButton
+        acceptedButtons: !listItem.expanded && listItem.__enabledContextualActions.length > 0 ? Qt.RightButton : Qt.NoButton
         hoverEnabled: true
 
         // using onPositionChanged instead of onContainsMouseChanged so this doesn't trigger when the list reflows
@@ -428,8 +429,37 @@ Item {
                 listItem.ListView.view.currentIndex = (containsMouse ? index : -1)
             }
         }
-        onExited: if (listItem.ListView.view.currentIndex === index) {
+        onPressed: (mouse) => {
+            contextMenu = menuComponent.createObject(listItem);
+            for (let action of listItem.__enabledContextualActions) {
+                const menuItem = menuItemComponent.createObject(contextMenu, {
+                    // Unfortunately cannot just assign action to menuItem.action.
+                    text: action.text,
+                    icon: action.icon.name,
+                });
+                menuItem.clicked.connect(action.trigger);
+            }
+            contextMenu.open(mouse.x, mouse.y);
+        }
+        onExited: if (listItem.ListView.view.currentIndex === index && contextMenu?.status !== PlasmaExtras.Menu.Open) {
             listItem.ListView.view.currentIndex = -1;
+        }
+
+        Component {
+            id: menuComponent
+            PlasmaExtras.Menu {
+                onStatusChanged: {
+                    if (status === PlasmaExtras.Menu.Closed) {
+                        destroy();
+                        mouseArea.contextMenu = null;
+                    }
+                }
+            }
+        }
+
+        Component {
+            id: menuItemComponent
+            PlasmaExtras.MenuItem { }
         }
 
         ColumnLayout {

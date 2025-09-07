@@ -39,6 +39,8 @@ T.TabButton {
     icon.width: Kirigami.Units.iconSizes.smallMedium
     icon.height: Kirigami.Units.iconSizes.smallMedium
 
+    Accessible.onPressAction: T.TabBar.tabBar.currentIndex = T.TabBar.index
+
     Kirigami.MnemonicData.enabled: control.enabled && control.visible
     Kirigami.MnemonicData.controlType: Kirigami.MnemonicData.SecondaryControl
     Kirigami.MnemonicData.label: control.text

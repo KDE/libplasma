@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:45+0000\n"
+"POT-Creation-Date: 2025-09-08 00:46+0000\n"
 "PO-Revision-Date: 2025-02-02 02:38-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -25,13 +25,13 @@ msgstr ""
 msgid "More actions"
 msgstr "Mais ações"
 
-#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:551
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:581
 #, kde-format
 msgctxt "@action:button"
 msgid "Collapse"
 msgstr "Recolher"
 
-#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:551
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:581
 #, kde-format
 msgctxt "@action:button"
 msgid "Expand"

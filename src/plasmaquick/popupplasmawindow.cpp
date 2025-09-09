@@ -57,7 +57,7 @@ PopupPlasmaWindowPrivate::PopupPlasmaWindowPrivate(PopupPlasmaWindow *_q)
  * @param anchorRect - the rect around where the popup should be placed relative to the parent window
  * @param relativePopupPosition - the final rect of the popup relative to the parent window
  *
- * This is based purely on position in prepartion for being called in a wayland configure event
+ * This is based purely on position in preparation for being called in a wayland configure event
  */
 void PopupPlasmaWindowPrivate::updateEffectivePopupDirection(const QRect &anchorRect, const QRect &relativePopupPosition)
 {

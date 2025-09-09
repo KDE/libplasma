@@ -47,7 +47,7 @@ class PopupPlasmaWindowPrivate;
 
 /*!
  * \qmlproperty bool PopupPlasmaWindow::floating
- * Defines whether the popup can appaer (float) over the parent window. The default is false.
+ * Defines whether the popup can appear (float) over the parent window. The default is false.
  */
 
 /*!
@@ -104,7 +104,7 @@ class PLASMAQUICK_EXPORT PopupPlasmaWindow : public PlasmaWindow
 
     /*!
      * \property PlasmaQuick::PopupPlasmaWindow::floating
-     * Defines whether the popup can appaer (float) over the parent window. The default is false.
+     * Defines whether the popup can appear (float) over the parent window. The default is false.
      */
     Q_PROPERTY(bool floating READ floating WRITE setFloating NOTIFY floatingChanged)
 

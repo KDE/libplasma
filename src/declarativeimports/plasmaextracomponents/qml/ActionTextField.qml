@@ -16,7 +16,7 @@ import org.kde.kirigami as Kirigami
   action).
 
   For common pattern like, a search field or a password field, prefer using the
-  more specifig SearchField or PasswordField.
+  more specific SearchField or PasswordField.
 
   Example usage for a search field:
   \qml

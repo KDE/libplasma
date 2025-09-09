@@ -300,7 +300,7 @@ public:
      * Returns the arguments this applet was started with.
      *
      * Some applets support arguments, for instance the notes applet supports to be
-     * instantiated with a given text already passed as paramenter
+     * instantiated with a given text already passed as parameter
      */
     QVariantList startupArguments() const;
 
@@ -740,7 +740,7 @@ Q_SIGNALS:
     void effectiveBackgroundHintsChanged();
 
     /*!
-     * Emitted when the global shortcut to activate this applet has chanaged
+     * Emitted when the global shortcut to activate this applet has changed
      */
     void globalShortcutChanged(const QKeySequence &sequence);
 
@@ -837,7 +837,7 @@ Q_SIGNALS:
      */
     void internalActionsChanged(const QList<QAction *> &actions);
 
-    // TODO KF6 keep as Q_SLOT only stuff that needsto be manually invokable from qml
+    // TODO KF6 keep as Q_SLOT only stuff that needs to be manually invocable from qml
 public Q_SLOTS:
     // BOOKKEEPING
     /*!

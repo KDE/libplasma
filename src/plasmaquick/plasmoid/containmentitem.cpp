@@ -300,7 +300,7 @@ QPointF ContainmentItem::adjustToAvailableScreenRegion(int x, int y, int w, int 
             // Technically speaking a value could be in both left/right or
             // top/bottom-aligned lists and we should check both possibilities;
             // Instead, I'm only checking the first one to keep the code simple,
-            // since such occourrence is unlikely.
+            // since such occurrence is unlikely.
             if (leftAlignedGrid.contains(horizontal)) {
                 tempRect.moveLeft(horizontal);
             } else {

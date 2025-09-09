@@ -264,7 +264,7 @@ bool AppletQuickItemPrivate::appletShouldBeExpanded() const
             // size, and the full representation preferred size.
             // this can cause in the panel (when is quite big) an infinite resize loop, because
             // the applet size is bigger than the switch size, then it switches to full
-            // representaiton that has a smaller hint. this causes a resize that will make it
+            // representation that has a smaller hint. this causes a resize that will make it
             // switch to compact representation, making it grow again and switch again
             if (compactRepresentationItem && fullRepresentationItem) {
                 QObject *compactLayout = searchLayoutAttached(compactRepresentationItem);
@@ -645,7 +645,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
 
     QObject::connect(applet, &Plasma::Applet::appletDeleted, item, [qmlObject](Plasma::Applet *applet) {
         // Deleting qmlObject will also delete the instantiated plasmoidItem
-        // deleteing just the plasmoiditem will cause a double deletion when qmlObject
+        // deleting just the plasmoiditem will cause a double deletion when qmlObject
         // gets deleted by applet deletion
         if (qmlObject->parent() == applet) {
             // appletDelete can also be emitted by a containment for one of its children

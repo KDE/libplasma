@@ -32,7 +32,7 @@ public:
     void updateMainItemGeometry();
     PlasmaWindow *q;
     DialogShadows *shadows;
-    // Keep a theme instance as a memeber to create one as soon as possible,
+    // Keep a theme instance as a member to create one as soon as possible,
     // as Theme creation will set KSvg to correctly fetch images form the Plasma Theme.
     // This makes sure elements are correct, both in the dialog surface and the shadows.
     Plasma::Theme theme;

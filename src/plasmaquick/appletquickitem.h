@@ -33,7 +33,7 @@ namespace PlasmaQuick
 class AppletQuickItemPrivate;
 class SharedQmlEngine;
 
-// TODO qdoc should this be documented indepdendently or as part of PlasmoidItem
+// TODO qdoc should this be documented independently or as part of PlasmoidItem
 
 class PLASMAQUICK_EXPORT AppletQuickItem : public QQuickItem
 {
@@ -71,7 +71,7 @@ class PLASMAQUICK_EXPORT AppletQuickItem : public QQuickItem
      * Note that this will have a negative impact on plasmoid loading times
      * This is needed only when some important logic has to live inside the full representation and
      * needs to be accessed from the outside. Use with care
-     * TODO: remove? we whould find a better way to fix folderview and Notes
+     * TODO: remove? we should find a better way to fix folderview and Notes
      */
     Q_PROPERTY(bool preloadFullRepresentation READ preloadFullRepresentation WRITE setPreloadFullRepresentation NOTIFY preloadFullRepresentationChanged)
 

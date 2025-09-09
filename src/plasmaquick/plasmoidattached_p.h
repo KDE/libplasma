@@ -27,7 +27,7 @@
 
 namespace PlasmaQuick
 {
-// Class used exclusively to generate the Plasmoid.* attached proeprties, which are Applet instances
+// Class used exclusively to generate the Plasmoid.* attached properties, which are Applet instances
 class PlasmoidAttached : public QObject
 {
     Q_OBJECT
@@ -53,7 +53,7 @@ public:
     static Plasma::Applet *qmlAttachedProperties(QObject *object);
 };
 
-// Class used exclusively to generate the Plasmoid.* attached proeprties, which are Applet instances
+// Class used exclusively to generate the Plasmoid.* attached properties, which are Applet instances
 class ContainmentAttached : public QObject
 {
     Q_OBJECT

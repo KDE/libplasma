@@ -21,7 +21,7 @@ class LayoutChangedProxy;
 /*!
  * @brief The AppletPopup class shows a popup for an applet either in the panel or on the desktop
  *
- * In addition to the new API this class is resizable and can forward any input events recieved
+ * In addition to the new API this class is resizable and can forward any input events received
  * on the margin to the main item
  *
  * Size hints are transferred from the mainItem's size hints.

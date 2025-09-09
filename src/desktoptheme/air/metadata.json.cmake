@@ -38,7 +38,6 @@
                 "Name[tr]": "Oksijen Projesi",
                 "Name[uk]": "Проєкт Oxygen",
                 "Name[vi]": "Dự án Oxygen",
-                "Name[x-test]": "xxThe Oxygen Projectxx",
                 "Name[zh_CN]": "Oxygen 轻氧项目",
                 "Name[zh_TW]": "Oxygen 專案"
             }
@@ -79,7 +78,6 @@
         "Description[tr]": "Temiz hava",
         "Description[uk]": "Ковток свіжого повітря",
         "Description[vi]": "Một luồng không khí trong lành",
-        "Description[x-test]": "xxA breath of fresh airxx",
         "Description[zh_CN]": "如清新空气般淡雅的主题",
         "Description[zh_TW]": "新鮮空氣",
         "EnabledByDefault": true,
@@ -120,7 +118,6 @@
         "Name[tr]": "Hava",
         "Name[uk]": "Повітря",
         "Name[vi]": "Air",
-        "Name[x-test]": "xxAirxx",
         "Name[zh_CN]": "Air 净空",
         "Name[zh_TW]": "Air",
         "Version": "@KF_VERSION@",

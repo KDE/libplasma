@@ -38,7 +38,6 @@
                 "Name[tr]": "Oksijen Projesi",
                 "Name[uk]": "Проєкт Oxygen",
                 "Name[vi]": "Dự án Oxygen",
-                "Name[x-test]": "xxThe Oxygen Projectxx",
                 "Name[zh_CN]": "Oxygen 轻氧项目",
                 "Name[zh_TW]": "Oxygen 專案"
             }
@@ -79,7 +78,6 @@
         "Description[tr]": "Oksijen tarzında yapılmış tema",
         "Description[uk]": "Тема в стилі Oxygen",
         "Description[vi]": "Chủ đề được tạo với kiểu cách Oxygen",
-        "Description[x-test]": "xxTheme done in the Oxygen stylexx",
         "Description[zh_CN]": "Oxygen 轻氧风格的主题",
         "Description[zh_TW]": "以 Oxygen 風格所做的主題",
         "EnabledByDefault": true,
@@ -120,7 +118,6 @@
         "Name[tr]": "Oksijen",
         "Name[uk]": "Oxygen",
         "Name[vi]": "Oxygen",
-        "Name[x-test]": "xxOxygenxx",
         "Name[zh_CN]": "Oxygen 轻氧",
         "Name[zh_TW]": "Oxygen",
         "Version": "@KF_VERSION@",

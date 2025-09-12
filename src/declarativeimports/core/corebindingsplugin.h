@@ -16,6 +16,7 @@
 
 #include <Plasma/Plasma>
 
+#include "action.h"
 #include "applet.h"
 #include "appletpopup.h"
 #include "containment.h"
@@ -77,6 +78,13 @@ struct AppletForeign {
     QML_NAMED_ELEMENT(Applet)
     QML_UNCREATABLE("")
     QML_FOREIGN(Plasma::Applet)
+};
+
+struct ActionForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(Action)
+    QML_FOREIGN(QAction)
+    QML_EXTENDED(ActionExtension)
 };
 
 class CoreBindingsPlugin : public QQmlExtensionPlugin

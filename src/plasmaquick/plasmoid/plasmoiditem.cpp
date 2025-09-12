@@ -38,7 +38,6 @@ PlasmoidItem::PlasmoidItem(QQuickItem *parent)
     , m_oldKeyboardShortcut(0)
     , m_positionBeforeRemoval(QPointF(-1, -1))
 {
-    qmlRegisterAnonymousType<QAction>("org.kde.plasma.plasmoid", 1);
 }
 
 PlasmoidItem::~PlasmoidItem()

@@ -40,7 +40,6 @@ void CoreBindingsPlugin::registerTypes(const char *uri)
     qmlRegisterRevision<QWindow, 1>(uri, 2, 0);
     qmlRegisterRevision<QQuickItem, 1>(uri, 2, 0);
     qmlRegisterRevision<QQuickWindow, 2>(uri, 2, 0);
-    qmlRegisterExtendedType<QAction, ActionExtension>(uri, 2, 0, "Action");
 }
 
 #include "moc_corebindingsplugin.cpp"

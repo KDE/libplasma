@@ -44,8 +44,6 @@ public:
         DefaultPreloadWeight = 50,
         DefaultLauncherPreloadWeight = 100,
         DelayedPreloadWeight = 25,
-        PreloadWeightIncrement = 5,
-        PreloadWeightDecrement = 8,
     };
 
     enum PreloadPolicy {

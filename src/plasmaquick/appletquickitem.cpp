@@ -65,10 +65,7 @@ int AppletQuickItemPrivate::preloadWeight() const
         defaultWeight = DefaultPreloadWeight;
     }
     // default widgets to be barely preloaded
-    return qBound(
-        0,
-        applet->config().readEntry(QStringLiteral("PreloadWeight"), qMax(defaultWeight, applet->pluginMetaData().value(u"X-Plasma-PreloadWeight", 0))),
-        100);
+    return qBound(0, qMax(defaultWeight, applet->pluginMetaData().value(u"X-Plasma-PreloadWeight", 0)), 100);
 }
 
 QObject *AppletQuickItemPrivate::searchLayoutAttached(QObject *parent) const
@@ -479,10 +476,6 @@ AppletQuickItem::AppletQuickItem(QQuickItem *parent)
 AppletQuickItem::~AppletQuickItem()
 {
     AppletQuickItemPrivate::s_itemsForApplet.remove(d->applet);
-    // decrease weight
-    if (d->s_preloadPolicy >= AppletQuickItemPrivate::Adaptive) {
-        d->applet->config().writeEntry(QStringLiteral("PreloadWeight"), qMax(0, d->preloadWeight() - AppletQuickItemPrivate::PreloadWeightDecrement));
-    }
 
     // Here the order is important
     delete d->compactRepresentationItem;
@@ -846,12 +839,6 @@ void AppletQuickItem::setExpanded(bool expanded)
 
     if (expanded) {
         d->preloadForExpansion();
-        // increase on open, ignore containments
-        if (d->s_preloadPolicy >= AppletQuickItemPrivate::Adaptive && !d->applet->isContainment()) {
-            const int newWeight = qMin(d->preloadWeight() + AppletQuickItemPrivate::PreloadWeightIncrement, 100);
-            d->applet->config().writeEntry(QStringLiteral("PreloadWeight"), newWeight);
-            qCDebug(LOG_PLASMAQUICK) << "Increasing score for" << d->applet->title() << "to" << newWeight;
-        }
     }
 
     d->expanded = expanded;

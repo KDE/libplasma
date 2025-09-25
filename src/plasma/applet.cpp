@@ -125,6 +125,9 @@ void Applet::save(KConfigGroup &g) const
     KConfigGroup appletConfigGroup(&group, QStringLiteral("Configuration"));
     saveState(appletConfigGroup);
 
+    // clean up old entry
+    appletConfigGroup.deleteEntry("PreloadWeight");
+
     if (d->configLoader) {
         // we're saving so we know its changed, we don't need or want the configChanged
         // signal bubbling up at this point due to that

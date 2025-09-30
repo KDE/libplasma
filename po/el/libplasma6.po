@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-08 00:46+0000\n"
+"POT-Creation-Date: 2025-09-30 00:44+0000\n"
 "PO-Revision-Date: 2024-08-31 12:02+0300\n"
 "Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -55,12 +55,12 @@ msgstr "Αναζήτηση"
 msgid "Clear search"
 msgstr "Καθαρισμός αναζήτησης"
 
-#: plasma/applet.cpp:315
+#: plasma/applet.cpp:318
 #, kde-format
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: plasma/applet.cpp:765
+#: plasma/applet.cpp:768
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Ενεργοποίηση συστατικού %1"
@@ -172,22 +172,22 @@ msgstr "Προσθήκη συστατικών…"
 msgid "Could not find requested component: %1"
 msgstr "Αδυναμία εύρεσης του απαιτούμενου συστατικού: %1"
 
-#: plasmaquick/appletquickitem.cpp:529
+#: plasmaquick/appletquickitem.cpp:522
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "Το ριζικό στοιχείο του %1 πρέπει να είναι τύπου ContainmentItem"
 
-#: plasmaquick/appletquickitem.cpp:534
+#: plasmaquick/appletquickitem.cpp:527
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "Το ριζικό στοιχείο του %1 πρέπει να είναι τύπου PlasmoidItem"
 
-#: plasmaquick/appletquickitem.cpp:542
+#: plasmaquick/appletquickitem.cpp:535
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Άγνωστη μικροεφαρμογή"
 
-#: plasmaquick/appletquickitem.cpp:556
+#: plasmaquick/appletquickitem.cpp:549
 #, kde-format
 msgid ""
 "This Widget was written for an unknown older version of Plasma and is not "
@@ -198,13 +198,13 @@ msgstr ""
 "δεν είναι συμβατό με το Plasma %1. Παρακαλούμε επικοινωνήστε με τον "
 "συγγραφέα του συστατικού για μια ενημερωμένη έκδοση."
 
-#: plasmaquick/appletquickitem.cpp:559 plasmaquick/appletquickitem.cpp:566
-#: plasmaquick/appletquickitem.cpp:572
+#: plasmaquick/appletquickitem.cpp:552 plasmaquick/appletquickitem.cpp:559
+#: plasmaquick/appletquickitem.cpp:565
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "Το %1 δεν είναι συμβατό με το Plasma %2"
 
-#: plasmaquick/appletquickitem.cpp:563
+#: plasmaquick/appletquickitem.cpp:556
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -214,7 +214,7 @@ msgstr ""
 "Plasma %2. Παρακαλούμε επικοινωνήστε με τον δημιουργό του συστατικού για μια "
 "ενημερωμένη έκδοση."
 
-#: plasmaquick/appletquickitem.cpp:569
+#: plasmaquick/appletquickitem.cpp:562
 #, kde-format
 msgid ""
 "This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -224,17 +224,17 @@ msgstr ""
 "Plasma %2. Παρακαλούμε ενημερώστε το Plasma για να χρησιμοποιήσετε το "
 "συστατικό."
 
-#: plasmaquick/appletquickitem.cpp:578 plasmaquick/appletquickitem.cpp:600
+#: plasmaquick/appletquickitem.cpp:571 plasmaquick/appletquickitem.cpp:593
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Συγγνώμη! Υπήρξε σφάλμα κατά τη φόρτωση του %1."
 
-#: plasmaquick/appletquickitem.cpp:595
+#: plasmaquick/appletquickitem.cpp:588
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Σφάλμα φόρτωσης αρχείου QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:598
+#: plasmaquick/appletquickitem.cpp:591
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Σφάλμα φόρτωσης μικροεφαρμογής: το πακέτο %1 δεν υπάρχει."

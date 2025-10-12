@@ -49,7 +49,7 @@ AppletQuickItemPrivate::AppletQuickItemPrivate(AppletQuickItem *item)
             }
         }
 
-        qCInfo(LOG_PLASMAQUICK) << "Applet preload policy set to" << s_preloadPolicy;
+        qCDebug(LOG_PLASMAQUICK) << "Applet preload policy set to" << s_preloadPolicy;
     }
 }
 

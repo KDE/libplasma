@@ -38,8 +38,8 @@ protected:
 private:
     Plasma::Theme m_theme;
     QPointer<QWindow> m_window;
-    KSharedConfigPtr m_kdeglobals;
-    KConfigWatcher::Ptr m_configWatcher;
+    KSharedConfigPtr m_globalConfig;
+    KConfigWatcher::Ptr m_globalConfigWatcher;
 };
 
 #endif // PLASMATHEME_H

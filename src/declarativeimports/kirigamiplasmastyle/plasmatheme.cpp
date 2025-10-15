@@ -17,6 +17,7 @@
 
 #include <KColorScheme>
 #include <KConfigGroup>
+#include <KConfigWatcher>
 #include <KIconColors>
 
 PlasmaTheme::PlasmaTheme(QObject *parent)
@@ -52,6 +53,16 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
 #endif
         return smallFont;
     }()));
+
+    auto watcher = KConfigWatcher::create(ptr);
+
+    connect(watcher.get(), &KConfigWatcher::configChanged, this, [this](const KConfigGroup &group, const QByteArrayList &names) {
+        if (group.name() == QStringLiteral("WM") && names.contains(QByteArrayLiteral("frameContrast"))) {
+            setFrameContrast(group.readEntry(QStringLiteral("frameContrast"), 0.2));
+            syncColors();
+        }
+    });
+    setFrameContrast(ptr->group(QStringLiteral("WM")).readEntry(QStringLiteral("frameContrast"), 0.2));
 
     syncWindow();
     syncColors();

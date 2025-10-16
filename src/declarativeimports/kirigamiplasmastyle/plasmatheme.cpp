@@ -39,8 +39,9 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
 
     setDefaultFont(qGuiApp->font());
 
-    m_globalConfig = KSharedConfig::openConfig();
-    KConfigGroup general(m_globalConfig->group(QStringLiteral("general")));
+    m_globalConfigWatcher = KConfigWatcher::create(KSharedConfig::openConfig(QStringLiteral("kdeglobals")));
+
+    KConfigGroup general(m_globalConfigWatcher->config()->group(QStringLiteral("general")));
 
     setSmallFont(general.readEntry("smallestReadableFont", []() {
         auto smallFont = qApp->font();
@@ -54,14 +55,12 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
         return smallFont;
     }()));
 
-    m_globalConfigWatcher = KConfigWatcher::create(m_globalConfig);
-
     connect(m_globalConfigWatcher.get(), &KConfigWatcher::configChanged, this, [this](const KConfigGroup &group, const QByteArrayList &names) {
         if (group.name() == QStringLiteral("WM") && names.contains(QByteArrayLiteral("frameContrast"))) {
             setFrameContrast(group.readEntry(QStringLiteral("frameContrast"), 0.2));
         }
     });
-    setFrameContrast(m_globalConfig->group(QStringLiteral("WM")).readEntry(QStringLiteral("frameContrast"), 0.2));
+    setFrameContrast(m_globalConfigWatcher->config()->group(QStringLiteral("WM")).readEntry(QStringLiteral("frameContrast"), 0.2));
 
     syncWindow();
     syncColors();

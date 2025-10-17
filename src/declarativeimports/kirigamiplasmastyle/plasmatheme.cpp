@@ -39,7 +39,7 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
 
     setDefaultFont(qGuiApp->font());
 
-    m_globalConfigWatcher = KConfigWatcher::create(KSharedConfig::openConfig(QStringLiteral("kdeglobals")));
+    m_globalConfigWatcher = KConfigWatcher::create(KSharedConfig::openConfig());
 
     KConfigGroup general(m_globalConfigWatcher->config()->group(QStringLiteral("general")));
 

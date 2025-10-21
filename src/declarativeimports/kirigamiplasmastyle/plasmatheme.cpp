@@ -17,7 +17,6 @@
 
 #include <KColorScheme>
 #include <KConfigGroup>
-#include <KConfigWatcher>
 #include <KIconColors>
 
 PlasmaTheme::PlasmaTheme(QObject *parent)
@@ -39,9 +38,8 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
 
     setDefaultFont(qGuiApp->font());
 
-    m_globalConfigWatcher = KConfigWatcher::create(KSharedConfig::openConfig());
-
-    KConfigGroup general(m_globalConfigWatcher->config()->group(QStringLiteral("general")));
+    KSharedConfigPtr ptr = KSharedConfig::openConfig();
+    KConfigGroup general(ptr->group(QStringLiteral("general")));
 
     setSmallFont(general.readEntry("smallestReadableFont", []() {
         auto smallFont = qApp->font();
@@ -54,13 +52,6 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
 #endif
         return smallFont;
     }()));
-
-    connect(m_globalConfigWatcher.get(), &KConfigWatcher::configChanged, this, [this](const KConfigGroup &group, const QByteArrayList &names) {
-        if (group.name() == QStringLiteral("WM") && names.contains(QByteArrayLiteral("frameContrast"))) {
-            setFrameContrast(group.readEntry(QStringLiteral("frameContrast"), 0.2));
-        }
-    });
-    setFrameContrast(m_globalConfigWatcher->config()->group(QStringLiteral("WM")).readEntry(QStringLiteral("frameContrast"), 0.2));
 
     syncWindow();
     syncColors();
@@ -194,6 +185,7 @@ void PlasmaTheme::syncColors()
     // decoration
     setHoverColor(m_theme.color(Plasma::Theme::HoverColor, group));
     setFocusColor(m_theme.color(Plasma::Theme::FocusColor, group));
+    setFrameContrast(KColorScheme::frameContrast());
 }
 
 bool PlasmaTheme::event(QEvent *event)

@@ -9,7 +9,6 @@
 
 #include <Kirigami/Platform/PlatformTheme>
 
-#include <KConfigWatcher>
 #include <Plasma/Theme>
 #include <QColor>
 #include <QIcon>
@@ -38,7 +37,6 @@ protected:
 private:
     Plasma::Theme m_theme;
     QPointer<QWindow> m_window;
-    KConfigWatcher::Ptr m_globalConfigWatcher;
 };
 
 #endif // PLASMATHEME_H

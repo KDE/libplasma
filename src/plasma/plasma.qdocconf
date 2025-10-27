@@ -19,6 +19,7 @@ depends += \
     kconfigcore \
     kconfigqml \
     kpackage \
-    plasmaquick
+    plasmaquick \
+    plasmaextras
 
 tagfile = plasma.tags

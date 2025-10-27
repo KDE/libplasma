@@ -51,8 +51,8 @@ PlasmaExtras.Menu {
     property alias model: instantiator.model
 
     /*!
-     * This signal is emitted when a menu item is clicked.
-     * The attached model properties for that menu item are passed as an argument
+       This signal is emitted when a menu item is clicked.
+       The attached model properties for that menu item are passed as an argument
      */
     signal clicked(var model)
 

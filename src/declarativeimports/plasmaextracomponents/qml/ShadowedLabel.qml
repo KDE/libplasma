@@ -34,10 +34,10 @@ import org.kde.kirigami as Kirigami
  */
 PlasmaComponents3.Label {
     /*!
-     * This property can be used to conditionally *not* render the shadow, even
-     * when it's technically possible to render it.
-     *
-     * default: \c true
+       This property can be used to conditionally *not* render the shadow, even
+       when it's technically possible to render it.
+
+       default: \c true
      */
     property bool renderShadow: true
 

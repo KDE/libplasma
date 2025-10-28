@@ -28,3 +28,5 @@ set_source_files_properties(${_private_qml} PROPERTIES QT_QML_INTERNAL_TYPE TRUE
 
 ecm_target_qml_sources(org_kde_plasmacomponents3 VERSION 3.0 PATH private SOURCES ${_private_qml})
 ecm_finalize_qml_module(org_kde_plasmacomponents3 DESTINATION ${KDE_INSTALL_QMLDIR})
+
+ecm_generate_qdoc(org_kde_plasmacomponents3 plasmacomponents.qdocconf)

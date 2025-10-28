@@ -14,6 +14,11 @@ import org.kde.kirigami as Kirigami
 import "mobiletextselection" as MobileTextSelection
 import "private" as Private
 
+/*!
+     \qmltype TextField
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple text field whose visual styling is determined by the active Plasma theme.
+ */
 T.TextField {
     id: control
 

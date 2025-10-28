@@ -11,6 +11,11 @@ import org.kde.ksvg as KSvg
 import org.kde.kirigami as Kirigami
 import "private" as Private
 
+/*!
+     \qmltype SwitchIndicator
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple switch indicator whose visual styling is determined by the active Plasma theme.
+ */
 Item {
     id: root
 

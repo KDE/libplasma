@@ -10,6 +10,11 @@ import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import "private" as Private
 
+/*!
+     \qmltype ToolButton
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple tool button whose visual styling is determined by the active Plasma theme.
+ */
 T.ToolButton {
     id: control
 

@@ -15,6 +15,11 @@ import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 import "private" as P
 
+/*!
+     \qmltype RadioIndicator
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple radio indicator whose visual styling is determined by the active Plasma theme.
+ */
 Item {
     id: root
 

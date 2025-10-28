@@ -5,6 +5,11 @@
 
 import QtQuick.Templates as T
 
+/*!
+     \qmltype Pane
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple pane whose visual styling is determined by the active Plasma theme.
+ */
 T.Pane {
     id: control
 

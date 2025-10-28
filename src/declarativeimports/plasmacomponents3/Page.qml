@@ -7,6 +7,11 @@
 import QtQuick
 import QtQuick.Templates as T
 
+/*!
+     \qmltype Page
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple page whose visual styling is determined by the active Plasma theme.
+ */
 T.Page {
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
                             contentWidth + leftPadding + rightPadding,

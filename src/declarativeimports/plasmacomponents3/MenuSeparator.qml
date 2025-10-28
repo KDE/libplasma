@@ -11,6 +11,11 @@ import QtQuick
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 
+/*!
+     \qmltype MenuSeparator
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple menu separator whose visual styling is determined by the active Plasma theme.
+ */
 T.MenuSeparator {
     id: controlRoot
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,

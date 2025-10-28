@@ -9,6 +9,11 @@ import QtQuick.Templates as T
 
 import org.kde.kirigami as Kirigami
 
+/*!
+     \qmltype StackView
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple stack view whose visual styling is determined by the active Plasma theme.
+ */
 T.StackView {
     id: control
 

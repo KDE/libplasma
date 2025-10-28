@@ -13,6 +13,11 @@ import QtQml
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.components as PlasmaComponents3
 
+/*!
+     \qmltype ScrollView
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple scroll view whose visual styling is determined by the active Plasma theme.
+ */
 T.ScrollView {
     id: controlRoot
 

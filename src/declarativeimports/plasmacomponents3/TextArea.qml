@@ -14,6 +14,11 @@ import "private" as Private
 import org.kde.kirigami as Kirigami
 import "mobiletextselection" as MobileTextSelection
 
+/*!
+     \qmltype TextArea
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple text area whose visual styling is determined by the active Plasma theme.
+ */
 T.TextArea {
     id: control
 

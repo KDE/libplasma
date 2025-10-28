@@ -11,6 +11,11 @@ import org.kde.kirigami as Kirigami
 import org.kde.ksvg as KSvg
 import "private" as Private
 
+/*!
+     \qmltype RadioDelegate
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple radio delegate whose visual styling is determined by the active Plasma theme.
+ */
 T.RadioDelegate {
     id: control
 

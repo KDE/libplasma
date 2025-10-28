@@ -8,6 +8,11 @@ import QtQuick
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 
+/*!
+     \qmltype DialogButtonBox
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple dialog button box whose visual styling is determined by the active Plasma theme.
+ */
 T.DialogButtonBox {
     id: control
 

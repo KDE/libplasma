@@ -13,6 +13,11 @@ import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 import "private" as Private
 
+/*!
+     \qmltype RoundButton
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple round button whose visual styling is determined by the active Plasma theme.
+ */
 T.RoundButton {
     id: control
 

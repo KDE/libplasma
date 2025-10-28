@@ -5,6 +5,11 @@ import QtQuick
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 
+/*!
+     \qmltype SwipeView
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple swipe view whose visual styling is determined by the active Plasma theme.
+ */
 T.SwipeView {
     id: control
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,

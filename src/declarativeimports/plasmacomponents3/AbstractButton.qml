@@ -4,6 +4,11 @@
  */
 import QtQuick.Templates as T
 
+/*!
+   \qmltype AbstractButton
+   \inqmlmodule org.kde.plasma.components
+   \brief A simple abstract button whose visual styling is determined by the active Plasma theme.
+ */
 T.AbstractButton {
     id: control
 

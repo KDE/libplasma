@@ -10,6 +10,11 @@ import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import "private" as Private
 
+/*!
+     \qmltype CheckBox
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple check box whose visual styling is determined by the active Plasma theme.
+ */
 T.CheckBox {
     id: control
 

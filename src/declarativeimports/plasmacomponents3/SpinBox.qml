@@ -14,6 +14,11 @@ import org.kde.plasma.components as PlasmaComponents3
 import org.kde.kirigami as Kirigami
 import "private" as P
 
+/*!
+     \qmltype SpinBox
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple spin box whose visual styling is determined by the active Plasma theme.
+ */
 T.SpinBox {
     id: control
 

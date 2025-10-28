@@ -10,6 +10,11 @@ import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import "private" as Private
 
+/*!
+     \qmltype Switch
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple switch whose visual styling is determined by the active Plasma theme.
+ */
 T.Switch {
     id: control
 

@@ -11,6 +11,11 @@ import org.kde.ksvg as KSvg
 //NOTE: importing PlasmaCore is necessary in order to make KSvg load the current Plasma Theme
 import org.kde.plasma.core as PlasmaCore
 
+/*!
+     \qmltype Drawer
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple drawer whose visual styling is determined by the active Plasma theme.
+ */
 T.Drawer {
     id: control
 

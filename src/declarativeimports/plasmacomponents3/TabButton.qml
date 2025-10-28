@@ -16,6 +16,11 @@ import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 import "private" as Private
 
+/*!
+     \qmltype TabButton
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple tab button whose visual styling is determined by the active Plasma theme.
+ */
 T.TabButton {
     id: control
 

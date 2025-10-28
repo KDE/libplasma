@@ -11,6 +11,11 @@ import org.kde.kirigami as Kirigami
 import org.kde.ksvg as KSvg
 import "private" as Private
 
+/*!
+     \qmltype CheckDelegate
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple check delegate whose visual styling is determined by the active Plasma theme.
+ */
 T.CheckDelegate {
     id: control
 

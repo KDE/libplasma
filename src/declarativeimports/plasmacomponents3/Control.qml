@@ -7,6 +7,11 @@
 import QtQuick
 import QtQuick.Templates as T
 
+/*!
+     \qmltype Control
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple control whose visual styling is determined by the active Plasma theme.
+ */
 T.Control {
     id: control
 

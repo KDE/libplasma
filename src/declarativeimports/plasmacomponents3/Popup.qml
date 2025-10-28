@@ -11,6 +11,11 @@ import org.kde.ksvg as KSvg
 import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 
+/*!
+     \qmltype Popup
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple popup whose visual styling is determined by the active Plasma theme.
+ */
 T.Popup {
     id: control
 

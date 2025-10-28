@@ -12,6 +12,11 @@ import "private" as Private
 //NOTE: importing PlasmaCore is necessary in order to make KSvg load the current Plasma Theme
 import org.kde.plasma.core as PlasmaCore
 
+/*!
+     \qmltype Button
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple button whose visual styling is determined by the active Plasma theme.
+ */
 T.Button {
     id: control
 

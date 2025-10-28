@@ -12,6 +12,11 @@ import org.kde.ksvg as KSvg
 import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 
+/*!
+     \qmltype ToolTip
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple tooltip whose visual styling is determined by the active Plasma theme.
+ */
 T.ToolTip {
     id: control
 

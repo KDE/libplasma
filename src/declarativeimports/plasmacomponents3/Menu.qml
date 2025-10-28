@@ -13,6 +13,11 @@ import org.kde.ksvg as KSvg
 import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 
+/*!
+ *   \qmltype Menu
+ *   \inqmlmodule org.kde.plasma.components
+ *   \brief A simple menu whose visual styling is determined by the active Plasma theme.
+ */
 T.Menu {
     id: control
 

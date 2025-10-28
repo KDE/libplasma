@@ -12,6 +12,11 @@ import org.kde.ksvg as KSvg
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents3
 
+/*!
+     \qmltype GroupBox
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple group box whose visual styling is determined by the active Plasma theme.
+ */
 T.GroupBox {
     id: control
 

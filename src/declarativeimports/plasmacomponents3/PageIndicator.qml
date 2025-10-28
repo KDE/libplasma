@@ -9,6 +9,11 @@ import QtQuick.Layouts
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 
+/*!
+     \qmltype PageIndicator
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple page indicator whose visual styling is determined by the active Plasma theme.
+ */
 T.PageIndicator {
     id: control
 

@@ -11,6 +11,11 @@ import org.kde.ksvg as KSvg
 //NOTE: importing PlasmaCore is necessary in order to make KSvg load the current Plasma Theme
 import org.kde.plasma.core as PlasmaCore
 
+/*!
+     \qmltype Dialog
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple dialog whose visual styling is determined by the active Plasma theme.
+ */
 T.Dialog {
     id: control
 

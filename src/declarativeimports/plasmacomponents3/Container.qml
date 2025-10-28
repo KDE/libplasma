@@ -7,6 +7,11 @@
 import QtQuick
 import QtQuick.Templates as T
 
+/*!
+     \qmltype Container
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple container whose visual styling is determined by the active Plasma theme.
+ */
 T.Container {
     id: control
 

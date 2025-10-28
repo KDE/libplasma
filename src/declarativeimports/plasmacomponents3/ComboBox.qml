@@ -16,6 +16,11 @@ import org.kde.kirigami as Kirigami
 import "private" as Private
 import "mobiletextselection" as MobileTextSelection
 
+/*!
+     \qmltype ComboBox
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple combo box whose visual styling is determined by the active Plasma theme.
+ */
 T.ComboBox {
     id: control
 

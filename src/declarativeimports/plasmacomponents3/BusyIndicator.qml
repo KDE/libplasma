@@ -13,6 +13,11 @@ import org.kde.ksvg as KSvg
 //NOTE: importing PlasmaCore is necessary in order to make KSvg load the current Plasma Theme
 import org.kde.plasma.core as PlasmaCore
 
+/*!
+     \qmltype BusyIndicator
+     \inqmlmodule org.kde.plasma.components
+     \brief A simple busy indicator whose visual styling is determined by the active Plasma theme.
+ */
 T.BusyIndicator {
     id: control
 

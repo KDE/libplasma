@@ -15,12 +15,6 @@ class QWindow;
 
 class WindowResizeHandlerPrivate;
 
-/*!
- * @brief The EdgeEventForwarder class
- * This class forwards edge events to be replayed within the given margin
- * This is useful if children do not touch the edge of a window, but want to get input events
- */
-
 namespace PlasmaQuick
 {
 

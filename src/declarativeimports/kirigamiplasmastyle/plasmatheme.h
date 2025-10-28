@@ -30,6 +30,7 @@ public:
 
     void syncWindow();
     void syncColors();
+    void syncFrameContrast();
 
 protected:
     bool event(QEvent *event) override;
@@ -37,6 +38,7 @@ protected:
 private:
     Plasma::Theme m_theme;
     QPointer<QWindow> m_window;
+    Plasma::Theme::ColorGroup colorGroup();
 };
 
 #endif // PLASMATHEME_H

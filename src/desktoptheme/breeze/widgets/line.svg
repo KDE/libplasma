@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<svg width="3" height="1" id="svg2" sodipodi:version="0.32" inkscape:version="1.2-dev (942b66973d, 2021-09-28, custom)" version="1.0" sodipodi:docname="line.svg" inkscape:output_extension="org.inkscape.output.svgz.inkscape" inkscape:export-filename="arrow-up.png" inkscape:export-xdpi="11.25" inkscape:export-ydpi="11.25" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <style id="current-color-scheme" type="text/css">
+<svg
+   width="3"
+   height="1"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   version="1.0"
+   sodipodi:docname="line.svg"
+   inkscape:output_extension="org.inkscape.output.svgz.inkscape"
+   inkscape:export-filename="arrow-up.png"
+   inkscape:export-xdpi="11.25"
+   inkscape:export-ydpi="11.25"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="256"
+     inkscape:cx="1.5"
+     inkscape:cy="0.49804688"
+     inkscape:window-width="3440"
+     inkscape:window-height="1373"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <style
+     id="current-color-scheme"
+     type="text/css">
         .ColorScheme-Text {
             color:#31363b;
         }
@@ -34,10 +71,26 @@
             color:#3daee9;
         }
     </style>
-    <g id="vertical-line">
-        <rect width="1" height="1" x="0" y="0" class="ColorScheme-Text" style="fill:currentColor;fill-opacity:0.2"/>
-    </g>
-    <g id="horizontal-line">
-        <rect width="1" height="1" x="2" y="0" class="ColorScheme-Text" style="fill:currentColor;fill-opacity:0.2"/>
-    </g>
+  <g
+     id="vertical-line">
+    <rect
+       width="1"
+       height="1"
+       x="0"
+       y="0"
+       class="ColorScheme-Frame"
+       style="fill:currentColor"
+       id="rect1" />
+  </g>
+  <g
+     id="horizontal-line">
+    <rect
+       width="1"
+       height="1"
+       x="2"
+       y="0"
+       class="ColorScheme-Frame"
+       style="fill:currentColor"
+       id="rect2" />
+  </g>
 </svg>

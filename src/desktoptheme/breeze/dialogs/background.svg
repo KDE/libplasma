@@ -6,7 +6,7 @@
    height="64"
    viewBox="0 0 157 64"
    width="157"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    sodipodi:docname="background.svg"
    version="1.1"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -24,14 +24,14 @@
      inkscape:pagecheckerboard="1"
      inkscape:blackoutopacity="0.0"
      showgrid="true"
-     inkscape:current-layer="left"
+     inkscape:current-layer="g1"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="16.138031"
-     inkscape:cx="31.819248"
+     inkscape:cx="31.85023"
      inkscape:cy="28.659011"
-     inkscape:window-width="1920"
-     inkscape:window-height="1127"
+     inkscape:window-width="3440"
+     inkscape:window-height="1373"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1">
@@ -39,7 +39,10 @@
        type="xygrid"
        id="grid988"
        originx="0"
-       originy="4" />
+       originy="4"
+       spacingy="1"
+       spacingx="1"
+       units="px" />
   </sodipodi:namedview>
   <defs
      id="defs15">
@@ -192,7 +195,7 @@
      id="shadow-bottomright-9"
      transform="translate(95,48)" />
   <g
-     id="left"
+     id="g1"
      transform="translate(0,16)">
     <rect
        id="hint-tile-center"

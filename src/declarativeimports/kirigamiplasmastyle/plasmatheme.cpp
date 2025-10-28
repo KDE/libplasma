@@ -107,6 +107,33 @@ void PlasmaTheme::syncWindow()
     }
 }
 
+Plasma::Theme::ColorGroup PlasmaTheme::colorGroup()
+{
+    Plasma::Theme::ColorGroup group;
+    switch (colorSet()) {
+    case View:
+        group = Plasma::Theme::ViewColorGroup;
+        break;
+    case Button:
+        group = Plasma::Theme::ButtonColorGroup;
+        break;
+    case Tooltip:
+        group = Plasma::Theme::ToolTipColorGroup;
+        break;
+    case Complementary:
+        group = Plasma::Theme::ComplementaryColorGroup;
+        break;
+    case Header:
+        group = Plasma::Theme::HeaderColorGroup;
+        break;
+    case Selection: // Plasma::Theme doesn't have selection group
+    case Window:
+    default:
+        group = Plasma::Theme::NormalColorGroup;
+    }
+    return group;
+}
+
 void PlasmaTheme::syncColors()
 {
     if (QCoreApplication::closingDown()) {
@@ -130,28 +157,7 @@ void PlasmaTheme::syncColors()
         }
     }
 
-    Plasma::Theme::ColorGroup group;
-    switch (colorSet()) {
-    case View:
-        group = Plasma::Theme::ViewColorGroup;
-        break;
-    case Button:
-        group = Plasma::Theme::ButtonColorGroup;
-        break;
-    case Tooltip:
-        group = Plasma::Theme::ToolTipColorGroup;
-        break;
-    case Complementary:
-        group = Plasma::Theme::ComplementaryColorGroup;
-        break;
-    case Header:
-        group = Plasma::Theme::HeaderColorGroup;
-        break;
-    case Selection: // Plasma::Theme doesn't have selection group
-    case Window:
-    default:
-        group = Plasma::Theme::NormalColorGroup;
-    }
+    Plasma::Theme::ColorGroup group = colorGroup();
 
     // foreground
     if (paletteGroup == QPalette::Disabled) {
@@ -185,6 +191,36 @@ void PlasmaTheme::syncColors()
     // decoration
     setHoverColor(m_theme.color(Plasma::Theme::HoverColor, group));
     setFocusColor(m_theme.color(Plasma::Theme::FocusColor, group));
+    setFrameContrast(KColorScheme::frameContrast());
+}
+
+void PlasmaTheme::syncFrameContrast()
+{
+    if (QCoreApplication::closingDown()) {
+        return;
+    }
+
+    QPalette::ColorGroup paletteGroup = (QPalette::ColorGroup)colorGroup();
+    auto parentItem = qobject_cast<QQuickItem *>(parent());
+    if (parentItem) {
+        if (!parentItem->isVisible()) {
+            return;
+        }
+        if (!parentItem->isEnabled()) {
+            paletteGroup = QPalette::Disabled;
+        } else if (m_window && !m_window->isActive() && m_window->isExposed()) {
+            paletteGroup = QPalette::Inactive;
+        }
+    }
+
+    Plasma::Theme::ColorGroup group = colorGroup();
+    if (paletteGroup == QPalette::Disabled) {
+        setTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, group));
+    } else {
+        setTextColor(m_theme.color(Plasma::Theme::TextColor, group));
+    }
+    setBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
+    setFrameContrast(KColorScheme::frameContrast());
 }
 
 bool PlasmaTheme::event(QEvent *event)
@@ -195,6 +231,10 @@ bool PlasmaTheme::event(QEvent *event)
 
     if (event->type() == Kirigami::Platform::PlatformThemeEvents::ColorGroupChangedEvent::type) {
         syncColors();
+    }
+
+    if (event->type() == Kirigami::Platform::PlatformThemeEvents::FrameContrastChangedEvent::type) {
+        syncFrameContrast();
     }
 
     return PlatformTheme::event(event);

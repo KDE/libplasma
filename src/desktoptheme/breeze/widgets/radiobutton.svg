@@ -5,7 +5,7 @@
    viewBox="0 0 60 40"
    width="60"
    sodipodi:docname="radiobutton.svg"
-   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    version="1.1"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -63,9 +63,9 @@
      inkscape:current-layer="svg2"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="7.29375"
-     inkscape:cx="-1.9880034"
-     inkscape:cy="40.651242"
+     inkscape:zoom="20.62984"
+     inkscape:cx="10.615691"
+     inkscape:cy="24.939602"
      inkscape:window-width="3440"
      inkscape:window-height="1373"
      inkscape:window-x="0"
@@ -154,8 +154,8 @@
     <path
        id="path929-6"
        d="m 8,16 c -4.41235126727,0 -8,3.5876487327 -8,8 0,4.4123512673 3.58764873273,8 8,8 4.4123512673,0 8,-3.5876487327 8,-8 0,-4.4123512673 -3.5876487327,-8 -8,-8 z m 0,1 c 3.8719116927,0 7,3.1280883073 7,7 0,3.8719116927 -3.1280883073,7 -7,7 -3.87191169273,0 -7,-3.1280883073 -7,-7 0,-3.8719116927 3.12808830727,-7 7,-7 z"
-       style="opacity:0.2;fill:currentColor;fill-rule:evenodd"
-       class="ColorScheme-ButtonText" />
+       style="fill:currentColor;fill-rule:evenodd"
+       class="ColorScheme-Frame" />
   </g>
   <circle
      id="hint-size"

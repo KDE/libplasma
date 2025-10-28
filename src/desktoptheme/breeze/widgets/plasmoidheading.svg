@@ -4,7 +4,7 @@
    version="1.1"
    viewBox="0 0 173 56.000004"
    sodipodi:docname="plasmoidheading.svg"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -20,11 +20,11 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="true"
-     inkscape:zoom="82.421139"
-     inkscape:cx="106.73839"
-     inkscape:cy="47.34829"
-     inkscape:window-width="1920"
-     inkscape:window-height="1127"
+     inkscape:zoom="14.570137"
+     inkscape:cx="75.153722"
+     inkscape:cy="25.977794"
+     inkscape:window-width="3440"
+     inkscape:window-height="1373"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -34,7 +34,12 @@
      inkscape:deskcolor="#d1d1d1">
     <inkscape:grid
        type="xygrid"
-       id="grid4266" />
+       id="grid4266"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px" />
   </sodipodi:namedview>
   <style
      id="current-color-scheme"
@@ -114,10 +119,9 @@
        sodipodi:nodetypes="ccccc" />
     <path
        id="path3184"
-       class="ColorScheme-Text"
+       class="ColorScheme-Frame"
        d="m19 50v-1h-4l-2-2e-5v1l2 2e-5h1z"
        fill-rule="evenodd"
-       opacity=".2"
        fill="currentColor" />
   </g>
   <g
@@ -132,10 +136,9 @@
        fill="currentColor" />
     <path
        id="rect3154"
-       class="ColorScheme-Text"
+       class="ColorScheme-Frame"
        transform="rotate(90)"
        d="m49-51h1v32h-1z"
-       opacity=".2"
        fill="currentColor" />
   </g>
   <g
@@ -150,10 +153,9 @@
        sodipodi:nodetypes="ccccc" />
     <path
        id="path3178"
-       class="ColorScheme-Text"
+       class="ColorScheme-Frame"
        d="m57 49h-6v1h6c0-1-2e-5 0 0-1z"
        fill-rule="evenodd"
-       opacity=".2"
        fill="currentColor" />
   </g>
   <g
@@ -168,10 +170,9 @@
        sodipodi:nodetypes="ccccc" />
     <path
        id="path3184-8"
-       class="ColorScheme-Text"
+       class="ColorScheme-Frame"
        d="m67 6v1h-4l-2 2e-5v-1l2-2e-5h1z"
        fill-rule="evenodd"
-       opacity=".2"
        fill="currentColor" />
   </g>
   <g
@@ -186,10 +187,9 @@
        fill="currentColor" />
     <path
        id="rect3154-9"
-       class="ColorScheme-Text"
+       class="ColorScheme-Frame"
        transform="matrix(0 -1 -1 0 0 0)"
        d="m-7-99h1v32h-1z"
-       opacity=".2"
        fill="currentColor" />
   </g>
   <g
@@ -204,10 +204,9 @@
        sodipodi:nodetypes="ccccc" />
     <path
        id="path3178-2"
-       class="ColorScheme-Text"
+       class="ColorScheme-Frame"
        d="m105 7h-6v-1h6c0 1-2e-5 0 0 1z"
        fill-rule="evenodd"
-       opacity=".2"
        fill="currentColor" />
   </g>
   <path

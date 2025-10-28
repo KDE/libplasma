@@ -22,6 +22,8 @@ class QQuickItem;
 class ToolTipDialog;
 
 /*!
+ * \qmltype ToolTipArea
+ * \inqmlmodule org.kde.plasma.core
  * An Item managing a Plasma-themed tooltip. It is rendered in its own window.
  * You can either specify icon, mainText and subText, or a custom Component
  * that will be put inside the tooltip. By default the tooltip will be
@@ -31,7 +33,7 @@ class ToolTipDialog;
  * tooltip is being hidden.
  *
  * Example usage:
- * @code
+ * \qml
  * import org.kde.plasma.core as PlasmaCore
  * import org.kde.kirigami 2.20 as Kirigami
  *
@@ -45,11 +47,7 @@ class ToolTipDialog;
  *         mainItem: YourCustomItem { }
  *     }
  * }
- * @endcode
- *
- * <b>Import Statement</b>
- * @code import org.kde.plasma.core @endcode
- * @version 2.0
+ * \endqml
  */
 class ToolTipArea : public QQuickItem
 {
@@ -57,58 +55,68 @@ class ToolTipArea : public QQuickItem
     QML_ELEMENT
 
     /*!
+     * \qmlproperty Item ToolTipArea::mainItem
      * The item shown inside the tooltip.
      */
     Q_PROPERTY(QQuickItem *mainItem READ mainItem WRITE setMainItem NOTIFY mainItemChanged)
 
     /*!
+     * \qmlproperty string ToolTipArea::mainText
      * The main text of this tooltip
      */
     Q_PROPERTY(QString mainText READ mainText WRITE setMainText NOTIFY mainTextChanged)
 
     /*!
+     * \qmlproperty string ToolTipArea::subText
      * The description of this tooltip
      */
     Q_PROPERTY(QString subText READ subText WRITE setSubText NOTIFY subTextChanged)
 
     /*!
+     * \qmlproperty int ToolTipArea::textFormat
      * how to handle the text format of the tooltip subtext:
      * * Text.AutoText (default)
      * * Text.PlainText
      * * Text.StyledText
      * * Text.RichText
-     * Note: in the default implementation the main text is always plain text
+     * \note in the default implementation the main text is always plain text
      */
     Q_PROPERTY(int textFormat READ textFormat WRITE setTextFormat NOTIFY textFormatChanged)
 
     /*!
+     * \qmlproperty var ToolTipArea::icon
      * An icon for this tooltip, accepted values are an icon name, a QIcon, QImage or QPixmap
      */
     Q_PROPERTY(QVariant icon READ icon WRITE setIcon NOTIFY iconChanged)
 
     /*!
+     * \qmlproperty bool ToolTipArea::containsMouse
      * Returns whether the mouse is inside the item
      */
     Q_PROPERTY(bool containsMouse READ containsMouse NOTIFY containsMouseChanged)
 
     /*!
+     * \qmlproperty Plasma::Types::Location ToolTipArea::location
      * Plasma Location of the dialog window. Useful if this dialog is a popup for a panel
      */
     Q_PROPERTY(Plasma::Types::Location location READ location WRITE setLocation NOTIFY locationChanged)
 
     /*!
+     * \qmlproperty var ToolTipArea::image
      * TODO: single property for images?
      * An image for this tooltip, accepted values are an icon name, a QIcon, QImage or QPixmap
      */
     Q_PROPERTY(QVariant image READ image WRITE setImage NOTIFY imageChanged)
 
     /*!
+     * \qmlproperty bool ToolTipArea::active
      * Property that controls if a tooltips will show on mouse over.
      * The default is true.
      */
     Q_PROPERTY(bool active MEMBER m_active WRITE setActive NOTIFY activeChanged)
 
     /*!
+     * \qmlproperty bool ToolTipArea::interactive
      * If interactive is false (default), the tooltip will automatically hide
      * itself as soon as the mouse leaves the tooltiparea, if is true, if the
      * mouse leaves tooltiparea and goes over the tooltip itself, the tooltip
@@ -117,13 +125,13 @@ class ToolTipArea : public QQuickItem
     Q_PROPERTY(bool interactive MEMBER m_interactive WRITE setInteractive NOTIFY interactiveChanged)
 
     /*!
+     * \qmlproperty int ToolTipArea::timeout
      * Timeout in milliseconds after which the tooltip will hide itself.
      * Set this value to -1 to never hide the tooltip automatically.
      */
     Q_PROPERTY(int timeout MEMBER m_timeout WRITE setTimeout)
 
 public:
-    /// @cond INTERNAL_DOCS
     explicit ToolTipArea(QQuickItem *parent = nullptr);
     ~ToolTipArea() override;
 
@@ -156,13 +164,12 @@ public:
     void setInteractive(bool interactive);
 
     void setTimeout(int timeout);
-    /// @endcond
 
 public Q_SLOTS:
 
     /*!
      * Shows the tooltip.
-     * @since 5.73
+     * \since 5.73
      */
     void showToolTip();
 
@@ -173,18 +180,16 @@ public Q_SLOTS:
 
     /*!
      * Hides the tooltip immediately, in comparison to hideToolTip.
-     * @since 5.84
+     * \since 5.84
      */
     void hideImmediately();
 
 protected:
-    /// @cond INTERNAL_DOCS
     bool childMouseEventFilter(QQuickItem *item, QEvent *event) override;
     void hoverEnterEvent(QHoverEvent *event) override;
     void hoverLeaveEvent(QHoverEvent *event) override;
 
     ToolTipDialog *tooltipDialogInstance();
-    /// @endcond
 
 Q_SIGNALS:
     void mainItemChanged();
@@ -200,13 +205,13 @@ Q_SIGNALS:
     /*!
      * Emitted just before the tooltip dialog is shown.
      *
-     * @since 5.45
+     * \since 5.45
      */
     void aboutToShow();
     /*!
      * Emitted when the tooltip's visibility changes.
      *
-     * @since 5.88
+     * \since 5.88
      */
     void toolTipVisibleChanged(bool toolTipVisible);
 

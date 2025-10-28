@@ -33,8 +33,7 @@ class SvgPrivate;
  * elements stored in SVG format. This allows artists to create single packages
  * of SVGs that will affect the look and feel of all workspace components.
  *
- * Plasma::Svg uses Plasma::Theme internally to locate and load the appropriate
- * SVG data. Alternatively, Plasma::Theme can be used directly to retrieve
+ * Plasma::Theme can also be used directly to retrieve
  * file system paths to SVGs by name.
  */
 class PLASMA_EXPORT Theme : public QObject
@@ -72,8 +71,19 @@ class PLASMA_EXPORT Theme : public QObject
      */
     Q_PROPERTY(QPalette palette READ palette NOTIFY themeChanged)
 
+    /*!
+     * \property Plasma::Theme::backgroundContrast
+     */
     Q_PROPERTY(qreal backgroundContrast READ backgroundContrast NOTIFY themeChanged)
+
+    /*!
+     * \property Plasma::Theme::backgroundIntensity
+     */
     Q_PROPERTY(qreal backgroundIntensity READ backgroundIntensity NOTIFY themeChanged)
+
+    /*!
+     * \property Plasma::Theme::backgroundSaturation
+     */
     Q_PROPERTY(qreal backgroundSaturation READ backgroundSaturation NOTIFY themeChanged)
 
 public:
@@ -379,6 +389,7 @@ public:
 
 Q_SIGNALS:
     /*!
+     * \internal
      * Emitted when the user changes the theme. Stylesheet usage, colors, etc. should
      * be updated at this point. However, SVGs should *not* be repainted in response
      * to this signal; connect to Svg::repaintNeeded() instead for that, as Svg objects
@@ -388,9 +399,7 @@ Q_SIGNALS:
      */
     void themeChanged();
 
-    /*! Notifier for change of defaultFont property */
     void defaultFontChanged();
-    /*! Notifier for change of smallestFont property */
     void smallestFontChanged();
 
 private:

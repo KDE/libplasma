@@ -19,7 +19,7 @@ class AppletQuickItem;
 class LayoutChangedProxy;
 
 /*!
- * @brief The AppletPopup class shows a popup for an applet either in the panel or on the desktop
+ * \brief The AppletPopup class shows a popup for an applet either in the panel or on the desktop.
  *
  * In addition to the new API this class is resizable and can forward any input events received
  * on the margin to the main item
@@ -30,14 +30,16 @@ class PLASMAQUICK_EXPORT AppletPopup : public PopupPlasmaWindow
 {
     Q_OBJECT
     /*!
+     * \property PlasmaQuick::AppletPopup::appletInterface
      * This property holds a pointer to the AppletInterface used by
      */
     Q_PROPERTY(QQuickItem *appletInterface READ appletInterface WRITE setAppletInterface NOTIFY appletInterfaceChanged)
 
     /*!
+     * \property PlasmaQuick::AppletPopup::hideOnWindowDeactivate
      * Whether the dialog should be hidden when the dialog loses focus.
      *
-     * The default value is @c false.
+     * The default value is \c false.
      **/
     Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
 

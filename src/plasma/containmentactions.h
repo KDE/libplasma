@@ -35,7 +35,7 @@ class ContainmentActionsPrivate;
  * ContainmentActions plugins are registered using .desktop files. These files should be
  * named using the following naming scheme:
  *
- *     plasma-containmentactions-\<pluginname\>.desktop
+ * \c plasma-containmentactions-\<pluginname\>.desktop
  *
  */
 

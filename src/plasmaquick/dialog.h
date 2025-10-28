@@ -44,7 +44,7 @@ class DialogPrivate;
  * It can be automatically positioned relative to a visual parent
  * The dialog will resize to the size of the main item
  *
- * @code{.qml}
+ * \qml
  *  import QtQuick 2.0
  *  import org.kde.plasma.core as PlasmaCore
  *  Item {
@@ -62,11 +62,12 @@ class DialogPrivate;
  *          }
  *      }
  * }
- * @endcode
+ * \endqml
  *
- * <b>Import Statement</b>
- * @code import org.kde.plasma.core @endcode
- * @version 2.0
+ * Import Statement:
+ * \qml
+ * import org.kde.plasma.core
+ * \endqml
  */
 class PLASMAQUICK_EXPORT Dialog : public QQuickWindow, public QQmlParserStatus
 {
@@ -74,47 +75,57 @@ class PLASMAQUICK_EXPORT Dialog : public QQuickWindow, public QQmlParserStatus
     Q_INTERFACES(QQmlParserStatus)
 
     /*!
+     * \property PlasmaQuick::Dialog::mainItem
      * The main QML item that will be displayed in the Dialog
      */
     Q_PROPERTY(QQuickItem *mainItem READ mainItem WRITE setMainItem NOTIFY mainItemChanged)
 
     /*!
+     * \property PlasmaQuick::Dialog::visualParent
      * The main QML item that will be displayed in the Dialog
      */
     Q_PROPERTY(QQuickItem *visualParent READ visualParent WRITE setVisualParent NOTIFY visualParentChanged)
 
     /*!
+     * \property PlasmaQuick::Dialog::margins
      * Margins of the dialog around the mainItem.
-     * @see DialogMargins
+     * \sa DialogMargins
      */
     Q_PROPERTY(QObject *margins READ margins CONSTANT)
 
     /*!
+     * \property PlasmaQuick::Dialog::inset
      * Margins where the dialog background actually starts, excluiding things like shadows or borders
-     * @see DialogMargins
-     * @since 5.77
+     * \sa DialogMargins
+     * \since 5.77
      */
     Q_PROPERTY(QObject *inset READ inset CONSTANT)
 
     /*!
-     * Plasma Location of the dialog window. Useful if this dialog is a popup for a panel
+     * \property PlasmaQuick::Dialog::location
+     * Plasma Location of the dialog window.
+     *
+     * Useful if this dialog is a popup for a panel.
      */
     Q_PROPERTY(Plasma::Types::Location location READ location WRITE setLocation NOTIFY locationChanged)
 
     /*!
+     * \property PlasmaQuick::Dialog::type
      * Type of the window
      */
     Q_PROPERTY(WindowType type READ type WRITE setType NOTIFY typeChanged)
 
     /*!
+     * \property PlasmaQuick::Dialog::hideOnWindowDeactivate
      * Whether the dialog should be hidden when the dialog loses focus.
      *
-     * The default value is @c false.
+     * The default value is \c false.
      **/
     Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
 
     /*!
-     * Whether the dialog is output only. Default value is @c false. If it is @c true
+     * \property PlasmaQuick::Dialog::outputOnly
+     * Whether the dialog is output only. Default value is \c false. If it is \c true
      * the dialog does not accept input and all pointer events are not accepted, thus the dialog
      * is click through.
      *
@@ -124,6 +135,7 @@ class PLASMAQUICK_EXPORT Dialog : public QQuickWindow, public QQmlParserStatus
     Q_PROPERTY(bool outputOnly READ isOutputOnly WRITE setOutputOnly NOTIFY outputOnlyChanged)
 
     /*!
+     * \property PlasmaQuick::Dialog::flags
      * This property holds the window flags of the window.
      * The window flags control the window's appearance in the windowing system,
      * whether it's a dialog, popup, or a regular window, and whether it should
@@ -134,26 +146,32 @@ class PLASMAQUICK_EXPORT Dialog : public QQuickWindow, public QQmlParserStatus
     Q_PROPERTY(Qt::WindowFlags flags READ flags WRITE setFramelessFlags NOTIFY flagsChanged)
 
     /*!
+     * \property PlasmaQuick::Dialog::backgroundHints
      * This property holds how (and if at all) the dialog should draw its own background
      * or if it is complete responsibility of the content item to render a background.
      * Note that in case of NoBackground it loses kwin side shadows and blur
      */
     Q_PROPERTY(BackgroundHints backgroundHints READ backgroundHints WRITE setBackgroundHints NOTIFY backgroundHintsChanged)
 
+    /*!
+     * \property PlasmaQuick::Dialog::visible
+     */
     Q_PROPERTY(bool visible READ isVisible WRITE setVisible NOTIFY visibleChangedProxy)
 
     /*!
+     * \property PlasmaQuick::Dialog::floating
      * This property holds by how much the applet should be floating even if the location
      * is set to a certain screen side; if this value is positive, the dialog will draw
      * all four sides and maintain the required distance from the screen borders.
      */
     Q_PROPERTY(int floating READ floating WRITE setFloating NOTIFY floatingChanged)
 
+    // TODO: plasmoidItem?
     /*!
+     * \property PlasmaQuick::Dialog::appletInterface
      * This property holds a pointer to the AppletInterface used by an applet. It is
      * null when the dialog is not used for an applet.
      */
-    // TODO: plasmoidItem?
     Q_PROPERTY(QQuickItem *appletInterface READ appletInterface WRITE setAppletInterface NOTIFY appletInterfaceChanged)
 
     Q_CLASSINFO("DefaultProperty", "mainItem")
@@ -219,9 +237,11 @@ public:
     void setAppletInterface(QQuickItem *appletInterface);
 
     /*!
-     * @returns The suggested screen position for the popup
-     * @param item the item the popup has to be positioned relatively to. if null, the popup will be positioned in the center of the window
-     * @param size the size that the popup will have, which influences the final position
+     * Returns the suggested screen position for the popup.
+     *
+     * \a item The item the popup has to be positioned relatively to. If null, the popup will be positioned in the center of the window.
+     *
+     * \a size The size that the popup will have, which influences the final position.
      */
     virtual QPoint popupPosition(QQuickItem *item, const QSize &size);
 
@@ -238,14 +258,16 @@ Q_SIGNALS:
     void visibleChangedProxy(); // redeclaration of QQuickWindow::visibleChanged
     void appletInterfaceChanged();
     /*!
-     * Emitted when the @see hideOnWindowDeactivate property is @c true and this dialog lost focus to a
+     * Emitted when the hideOnWindowDeactivate property is \c true and this dialog lost focus to a
      * window that is neither a parent dialog to nor a child dialog of this dialog.
      */
     void windowDeactivated();
 
 protected:
     /*!
-     * set the dialog position. subclasses may change it. ToolTipDialog adjusts the position in an animated way
+     * Sets the dialog position.
+     *
+     * Subclasses may change it. ToolTipDialog adjusts the position in an animated way.
      */
     virtual void adjustGeometry(const QRect &geom);
 

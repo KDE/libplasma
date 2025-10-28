@@ -190,7 +190,7 @@ public:
     QList<Plasma::Types::Location> freeEdges(int screen) const;
 
     /*!
-     * Returns The action with the given name, if any
+     * Returns the action with the given name, if any
      */
     Q_INVOKABLE QAction *action(const QString &name) const;
 
@@ -240,7 +240,7 @@ public:
     virtual int screenForContainment(const Containment *containment) const;
 
     /*!
-     * Returns The type of immutability of this Corona
+     * Returns the type of immutability of this Corona
      */
     Types::ImmutabilityType immutability() const;
 
@@ -251,11 +251,12 @@ public:
     bool immutable() const;
 
     /*!
-     * Set the Corona globally into "edit mode"
-     * Only when the corona is of mutable type can be set of edit mode.
-     * This indicates the UI to make easy for the user to manipulate applets.
+     * Set the Corona globally into "edit mode".
      *
-     * \a edit
+     * Only when the corona is of mutable type can it be set to edit mode.
+     * This changes the UI to make it easy for the user to manipulate applets.
+     *
+     * \a edit Whether to open or close edit mode
      *
      * \since 5.63
      */

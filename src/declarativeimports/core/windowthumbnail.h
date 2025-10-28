@@ -36,10 +36,10 @@ namespace Plasma
 class WindowTextureProvider;
 
 /*!
- * @brief Renders a thumbnail for the window specified by the @c winId property.
+ * \brief Renders a thumbnail for the window specified by the \c winId property.
  *
  * This declarative item is able to render a live updating thumbnail for the
- * window specified by the given @c winId property. If it is not possible to get
+ * window specified by the given \c winId property. If it is not possible to get
  * the thumbnail, the window's icon is rendered instead or in case that the window
  * Id is invalid a generic fallback icon is used.
  *
@@ -47,7 +47,7 @@ class WindowTextureProvider;
  * thumbnail gets scaled keeping the aspect ratio. This means the thumbnail gets
  * rendered into the center of the item's geometry.
  *
- * Note: live updating thumbnails are only implemented on the X11 platform. On X11
+ * \note live updating thumbnails are only implemented on the X11 platform. On X11
  * a running compositor is not required as this item takes care of redirecting the
  * window. For technical reasons the window's frame is not included on X11.
  *
@@ -55,15 +55,16 @@ class WindowTextureProvider;
  * a window close animation.
  *
  * Example usage:
- * @code
+ * \qml
  * WindowThumbnail {
  *     winId: 102760466
  * }
- * @endcode
+ * \endqml
  *
- * <b>Import Statement</b>
- * @code import org.kde.plasma.core @endcode
- * @version 2.0
+ * Import Statement:
+ * \qml
+ * import org.kde.plasma.core
+ * \endqml
  */
 class WindowThumbnail : public QQuickItem, public QAbstractNativeEventFilter
 {

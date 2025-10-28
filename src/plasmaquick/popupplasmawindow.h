@@ -132,6 +132,12 @@ public:
      * \value AtScreenEdges
      * \value AtPanelEdges
      */
+    /*!
+     * \qmlproperty enumeration PopupPlasmaWindow::RemoveBorder
+     * \value Never
+     * \value AtScreenEdges
+     * \value AtPanelEdges
+     */
     enum RemoveBorder {
         Never = 0x0,
         AtScreenEdges = 0x1,

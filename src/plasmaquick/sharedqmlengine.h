@@ -30,14 +30,14 @@ namespace PlasmaQuick
 class SharedQmlEnginePrivate;
 
 /*!
- * @short An object that instantiates an entire QML context, with its own declarative engine
+ * \brief An object that instantiates an entire QML context, with its own declarative engine
  *
  * PlasmaQuick::SharedQmlEngine provides a class to conveniently use QML based
  * declarative user interfaces.
  * A SharedQmlEngine corresponds to one QML file (which can include others).
  * It will a shared QQmlEngine with a single root object, described in the QML file.
  *
- * @since 6.0
+ * \since 6.0
  */
 class PLASMAQUICK_EXPORT SharedQmlEngine : public QObject
 {
@@ -53,7 +53,7 @@ public:
     /*!
      * Construct a new PlasmaQuick::SharedQmlEngine
      *
-     * @param parent The QObject parent for this object.
+     * \a parent The QObject parent for this object.
      */
     explicit SharedQmlEngine(QObject *parent = nullptr);
     explicit SharedQmlEngine(Plasma::Applet *applet, QObject *parent = nullptr);
@@ -73,66 +73,68 @@ public:
      * in an application there is no need to set the translation domain as the application's
      * domain can be used.
      *
-     * @param translationDomain The translation domain to be used for i18n calls.
+     * \a translationDomain The translation domain to be used for i18n calls.
      */
     void setTranslationDomain(const QString &translationDomain);
 
     /*!
-     * @return the translation domain for the i18n calls done in this QML engine
+     * Returns the translation domain for the i18n calls done in this QML engine
      */
     QString translationDomain() const;
 
     /*!
      * Sets the path of the QML file to parse and execute
      *
-     * @param path the absolute path of a QML file
+     * \a source The absolute path of a QML file
      */
     void setSource(const QUrl &source);
 
     /*!
      * Sets the QML source to execute from a type in a module.
      *
-     * @param module The module to load the type from.
-     * @param type The type to load from the module.
+     * \a module The module to load the type from.
+     *
+     * \a type The type to load from the module.
      */
     void setSourceFromModule(QAnyStringView module, QAnyStringView type);
 
     /*!
-     * @return the absolute path of the current QML file
+     * Returns the absolute path of the current QML file
      */
     QUrl source() const;
 
     /*!
      * Sets whether the execution of the QML file has to be delayed later in the event loop. It has to be called before setQmlPath().
+     *
      * In this case it will be possible to assign new objects in the main engine context
      * before the main component gets initialized.
      * In that case it will be possible to access it immediately from the QML code.
      * The initialization will either be completed automatically asynchronously
      * or explicitly by calling completeInitialization()
      *
-     * @param delay if true the initialization of the QML file will be delayed
-     *              at the end of the event loop
+     * \a delay If true the initialization of the QML file will be delayed
+     *          at the end of the event loop
      */
     void setInitializationDelayed(const bool delay);
 
     /*!
-     * @return true if the initialization of the QML file will be delayed
-     *              at the end of the event loop
+     * Returns \c true if the initialization of the QML file will be delayed
+     * at the end of the event loop
      */
     bool isInitializationDelayed() const;
 
     /*!
-     * @return the declarative engine that runs the qml file assigned to this widget.
+     * Returns the declarative engine that runs the qml file assigned to this widget.
      */
     std::shared_ptr<QQmlEngine> engine();
 
     /*!
-     * @return the root object of the declarative object tree
+     * Returns the root object of the declarative object tree
      */
     QObject *rootObject() const;
 
     /*!
-     * @return the main QQmlComponent of the engine
+     * Returns the main QQmlComponent of the engine
      */
     QQmlComponent *mainComponent() const;
 
@@ -150,10 +152,13 @@ public:
      * Creates and returns an object based on the provided url to a Qml file
      * with the same QQmlEngine and the same root context as the main object,
      * that will be the parent of the newly created object
-     * @param source url where the QML file is located
-     * @param context The QQmlContext in which we will create the object,
-     *             if 0 it will use the engine's root context
-     * @param initialProperties optional properties that will be set on
+     *
+     * \a source Url where the QML file is located
+     *
+     * \a context The QQmlContext in which we will create the object,
+     *             if 0 it will use the engine's root context.
+     *
+     * \a initialProperties Optional properties that will be set on
      *             the object when created (and before Component.onCompleted
      *             gets emitted
      */
@@ -163,10 +168,13 @@ public:
      * Creates and returns an object based on the provided QQmlComponent
      * with the same QQmlEngine and the same root context as the admin object,
      * that will be the parent of the newly created object
-     * @param component the component we want to instantiate
-     * @param context The QQmlContext in which we will create the object,
+     *
+     * \a component the component we want to instantiate
+     *
+     * \a context The QQmlContext in which we will create the object,
      *             if 0 it will use the engine's root context
-     * @param initialProperties optional properties that will be set on
+     *
+     * \a initialProperties optional properties that will be set on
      *             the object when created (and before Component.onCompleted
      *             gets emitted
      */
@@ -176,7 +184,8 @@ public Q_SLOTS:
     /*!
      * Finishes the process of initialization.
      * If isInitializationDelayed() is false, calling this will have no effect.
-     * @param initialProperties optional properties that will be set on
+     *
+     * \a initialProperties optional properties that will be set on
      *             the object when created (and before Component.onCompleted
      *             gets emitted
      */

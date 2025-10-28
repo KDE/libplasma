@@ -43,9 +43,10 @@ class ConfigCategory;
  * such as categories of the config dialog for an Applet
  * TODO: it should probably become an import instead of a library?
  *
- * <b>Import Statement</b>
- * @code import org.kde.plasma.configuration @endcode
- * @version 2.0
+ * Import Statement:
+ * \qml
+ * import org.kde.plasma.configuration
+ * \endqml
  */
 class PLASMAQUICK_EXPORT ConfigModel : public QAbstractListModel
 {
@@ -68,8 +69,9 @@ public:
     ~ConfigModel() override;
 
     /*!
-     * add a new category in the model
-     * @param ConfigCategory the new category
+     * Add a new category in the model.
+     *
+     * \a ConfigCategory the new category
      **/
     void appendCategory(const QString &iconName, const QString &name, const QString &path, const QString &pluginName);
 
@@ -97,20 +99,18 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     /*!
-     * @param row the row for which the data will be returned
-     * @return the data of the specified row
+     * \a row The row for which the data will be returned
+     *
+     * Returns the data of the specified row
      **/
     Q_INVOKABLE QVariant get(int row) const;
 
     /*!
-     * @return the categories of the model
+     * Returns the categories of the model
      **/
     QQmlListProperty<ConfigCategory> categories();
 
 Q_SIGNALS:
-    /*!
-     * emitted when the count is changed
-     **/
     void countChanged();
 
 private:

@@ -36,8 +36,9 @@ class PLASMAQUICK_EXPORT ContainmentView : public PlasmaQuick::QuickViewSharedEn
 
 public:
     /*!
-     * @param corona the corona of this view
-     * @param parent the QWindow this ContainmentView is parented to
+     * \a corona the corona of this view
+     *
+     * \a parent the QWindow this ContainmentView is parented to
      **/
     explicit ContainmentView(Plasma::Corona *corona, QWindow *parent = nullptr);
     ~ContainmentView() override;
@@ -48,44 +49,44 @@ public:
     void destroy();
 
     /*!
-     * @return the corona of this view
+     * Returns the corona of this view
      **/
     Plasma::Corona *corona() const;
 
     /*!
-     * @return the KConfigGroup of this view
+     * Returns the KConfigGroup of this view
      **/
     virtual KConfigGroup config() const;
 
     /*!
      * sets the containment for this view
-     * @param cont the containment of this view
+     * \a cont the containment of this view
      **/
     void setContainment(Plasma::Containment *cont);
 
     /*!
-     * @return the containment of this ContainmentView
+     * Returns the containment of this ContainmentView
      **/
     Plasma::Containment *containment() const;
 
     /*!
-     * @return the location of this ContainmentView
+     * Returns the location of this ContainmentView
      **/
     Plasma::Types::Location location() const;
 
     /*!
      * Sets the location of the ContainmentView
-     * @param location the location of the ContainmentView
+     * \a location the location of the ContainmentView
      **/
     void setLocation(Plasma::Types::Location location);
 
     /*!
-     * @return the formfactor of the ContainmentView
+     * Returns the formfactor of the ContainmentView
      **/
     Plasma::Types::FormFactor formFactor() const;
 
     /*!
-     * @return the screenGeometry of the ContainmentView
+     * Returns the screenGeometry of the ContainmentView
      **/
     QRectF screenGeometry();
 

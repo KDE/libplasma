@@ -34,8 +34,6 @@ class ConfigLoader;
  * \qmltype PlasmoidItem
  * \inqmlmodule org.kde.plasma.plasmoid
  * \inherits Item
- *
- *
  */
 class PLASMAQUICK_EXPORT PlasmoidItem : public PlasmaQuick::AppletQuickItem
 {
@@ -64,7 +62,7 @@ class PLASMAQUICK_EXPORT PlasmoidItem : public PlasmaQuick::AppletQuickItem
      * * Text.PlainText
      * * Text.StyledText
      * * Text.RichText
-     * Note: in the default implementation the main text is always plain text
+     * \note in the default implementation the main text is always plain text
      */
     Q_PROPERTY(int toolTipTextFormat READ toolTipTextFormat WRITE setToolTipTextFormat NOTIFY toolTipTextFormatChanged)
 
@@ -72,7 +70,7 @@ class PLASMAQUICK_EXPORT PlasmoidItem : public PlasmaQuick::AppletQuickItem
      * This allows to set fully custom QML item as the tooltip.
      * It will ignore all texts set by setToolTipMainText or setToolTipSubText
      *
-     * @since 5.19
+     * \since 5.19
      */
     Q_PROPERTY(QQuickItem *toolTipItem READ toolTipItem WRITE setToolTipItem NOTIFY toolTipItemChanged)
 
@@ -92,7 +90,7 @@ class PLASMAQUICK_EXPORT PlasmoidItem : public PlasmaQuick::AppletQuickItem
     /*!
      * Whether the dialog should be hidden when the dialog loses focus.
      *
-     * The default value is @c true.
+     * The default value is \c true.
      * TODO KF6: move to Applet? probably not
      **/
     Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
@@ -118,8 +116,8 @@ public:
     /*!
      * Should be called before retrieving any action
      * to ensure contents are up to date
-     * @see contextualActionsAboutToShow
-     * @since 5.58
+     * \sa contextualActionsAboutToShow
+     * \since 5.58
      */
     Q_INVOKABLE void prepareContextualActions();
 
@@ -151,8 +149,10 @@ public:
 Q_SIGNALS:
     /*!
      * somebody else, usually the containment sent some data to the applet
-     * @param mimetype the mime type of the data such as text/plain
-     * @param data either the actual data or an URL representing it
+     *
+     * \a mimetype the mime type of the data such as text/plain
+     *
+     * \a data either the actual data or an URL representing it
      */
     void externalData(const QString &mimetype, const QVariant &data);
 

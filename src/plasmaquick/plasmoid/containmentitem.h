@@ -97,7 +97,7 @@ public:
 
     /*!
      * \qmlmethod QPointF mapToApplet(var applet, int x, int y)
-     *Map coordinates from relative to this containment to relative to the given applet
+     * Map coordinates from relative to this containment to relative to the given applet
      */
     Q_INVOKABLE QPointF mapToApplet(Plasma::Applet *applet, int x, int y);
 
@@ -105,7 +105,7 @@ public:
      * \qmlmethod QPointF ContainmentItem::adjustToAvailableScreenRegion(int x, int y, int w, int h)
      * Given a geometry, it adjusts it moving it completely inside of the boundaries
      * of availableScreenRegion
-     * @return the toLeft point of the rectangle
+     * Returns the toLeft point of the rectangle
      */
     Q_INVOKABLE QPointF adjustToAvailableScreenRegion(int x, int y, int w, int h) const;
 
@@ -113,8 +113,8 @@ public:
      * \qmlmethod void openContextMenu(QPointF globalPos)
      * Opens the context menu of the Corona
      *
-     * @param globalPos menu position in the global coordinate system
-     * @since 5.102
+     * \a globalPos menu position in the global coordinate system
+     * \since 5.102
      */
     Q_INVOKABLE void openContextMenu(const QPointF &globalPos);
 

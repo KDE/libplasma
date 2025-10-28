@@ -43,8 +43,9 @@ class PLASMAQUICK_EXPORT ConfigView : public QQuickWindow
 
 public:
     /*!
-     * @param applet the applet of this ConfigView
-     * @param parent the QWindow in which this ConfigView is parented to
+     * \a applet the applet of this ConfigView
+     *
+     * \a parent the QWindow in which this ConfigView is parented to
      **/
     ConfigView(Plasma::Applet *applet, QWindow *parent = nullptr);
     ~ConfigView() override;
@@ -62,7 +63,7 @@ public:
     void setAppletGlobalShortcut(const QString &shortcut);
 
     /*!
-     * @return the ConfigModel of the ConfigView
+     * Returns the ConfigModel of the ConfigView
      **/
     PlasmaQuick::ConfigModel *configModel() const;
 

@@ -93,6 +93,7 @@ PUBLIC
     KF6::CoreAddons
     Qt6::Qml
 PRIVATE
+    Qt6::DBus
     Qt6::Quick
     Qt6::WaylandClient
     KF6::ConfigGui

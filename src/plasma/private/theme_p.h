@@ -61,6 +61,7 @@ public Q_SLOTS:
     void colorsChanged();
     void notifyOfChanged();
     void settingsChanged(bool emitChanges);
+    void globalSettingsChanged(int type, int arg);
 
 Q_SIGNALS:
     void themeChanged();

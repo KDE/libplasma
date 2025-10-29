@@ -8,6 +8,7 @@
 #include "theme_p.h"
 #include "debug_p.h"
 
+#include <QDBusConnection>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
@@ -130,6 +131,13 @@ ThemePrivate::ThemePrivate(QObject *parent)
     QCoreApplication::instance()->installEventFilter(this);
 
     plasmaRcWatcher = KConfigWatcher::create(KSharedConfig::openConfig(QStringLiteral("plasmarc")));
+
+    QDBusConnection::sessionBus().connect(QString(),
+                                          QStringLiteral("/KGlobalSettings"),
+                                          QStringLiteral("org.kde.KGlobalSettings"),
+                                          QStringLiteral("notifyChange"),
+                                          this,
+                                          SLOT(globalSettingsChanged(int, int)));
 
     connect(plasmaRcWatcher.get(), &KConfigWatcher::configChanged, this, [this] {
         settingsChanged(true);
@@ -257,6 +265,14 @@ void ThemePrivate::settingsChanged(bool emitChanges)
     // qCDebug(LOG_PLASMA) << "Settings Changed!";
     KConfigGroup cg = config();
     setThemeName(cg.readEntry("name", ThemePrivate::defaultTheme), false, emitChanges);
+}
+
+void ThemePrivate::globalSettingsChanged(int type, int arg)
+{
+    // 0 is if change is a Colors change
+    if (type == 0) {
+        colorsChanged();
+    }
 }
 
 QColor ThemePrivate::color(Theme::ColorRole role, Theme::ColorGroup group) const
@@ -531,9 +547,6 @@ void ThemePrivate::setThemeName(const QString &tempThemeName, bool writeSettings
 bool ThemePrivate::eventFilter(QObject *watched, QEvent *event)
 {
     if (watched == QCoreApplication::instance()) {
-        if (event->type() == QEvent::ApplicationPaletteChange) {
-            colorsChanged();
-        }
         if (event->type() == QEvent::ApplicationFontChange || event->type() == QEvent::FontChange) {
             Q_EMIT defaultFontChanged();
             Q_EMIT smallestFontChanged();

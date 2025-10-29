@@ -38,7 +38,7 @@ protected:
 private:
     Plasma::Theme m_theme;
     QPointer<QWindow> m_window;
-    Plasma::Theme::ColorGroup colorGroup();
+    Plasma::Theme::ColorGroup colorGroupFromSet();
 };
 
 #endif // PLASMATHEME_H

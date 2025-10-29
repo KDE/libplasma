@@ -107,7 +107,7 @@ void PlasmaTheme::syncWindow()
     }
 }
 
-Plasma::Theme::ColorGroup PlasmaTheme::colorGroup()
+Plasma::Theme::ColorGroup PlasmaTheme::colorGroupFromSet()
 {
     Plasma::Theme::ColorGroup group;
     switch (colorSet()) {
@@ -157,7 +157,7 @@ void PlasmaTheme::syncColors()
         }
     }
 
-    Plasma::Theme::ColorGroup group = colorGroup();
+    Plasma::Theme::ColorGroup group = colorGroupFromSet();
 
     // foreground
     if (paletteGroup == QPalette::Disabled) {
@@ -213,7 +213,7 @@ void PlasmaTheme::syncFrameContrast()
         }
     }
 
-    Plasma::Theme::ColorGroup group = colorGroup();
+    Plasma::Theme::ColorGroup group = colorGroupFromSet();
     if (paletteGroup == QPalette::Disabled) {
         setTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, group));
     } else {

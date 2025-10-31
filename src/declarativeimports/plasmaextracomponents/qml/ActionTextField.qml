@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import org.kde.plasma.components as PlasmaComponents3
@@ -81,9 +82,12 @@ PlasmaComponents3.TextField {
 
     hoverEnabled: true
 
+    horizontalAlignment: Qt.AlignLeft
+    LayoutMirroring.enabled: Application.layoutDirection === Qt.RightToLeft
+    LayoutMirroring.childrenInherit: true
+
     topPadding: __hasBackgroundAndMargins ? background.margins.top : 0
     bottomPadding: __hasBackgroundAndMargins ? background.margins.bottom : 0
-
     leftPadding: if (root.effectiveHorizontalAlignment === TextInput.AlignRight) {
         return _rightActionsRow.width + (__hasBackgroundAndMargins ? background.margins.left : 0);
     } else {
@@ -113,29 +117,30 @@ PlasmaComponents3.TextField {
 
     Shortcut {
         id: focusShortcut
+        enabled: root.visible && root.enabled
         onActivated: {
             root.forceActiveFocus(Qt.ShortcutFocusReason)
             root.selectAll()
         }
 
         // here to make it private
-        component ActionIcon: Kirigami.Icon {
-            id: button
-
+        component InlineActionIcon: PlasmaComponents3.ToolButton {
             required property T.Action modelData
 
-            implicitWidth: Kirigami.Units.iconSizes.small
-            implicitHeight: Kirigami.Units.iconSizes.small
+            icon.width: Kirigami.Units.iconSizes.sizeForLabels
+            icon.height: Kirigami.Units.iconSizes.sizeForLabels
 
-            anchors.verticalCenter: parent.verticalCenter
+            Layout.fillHeight: true
+            Layout.preferredWidth: implicitHeight
 
-            source: modelData.icon.name.length > 0 ? modelData.icon.name : modelData.icon.source
+            icon.name: modelData.icon.name.length > 0 ? modelData.icon.name : modelData.icon.source
             visible: !(modelData instanceof Kirigami.Action) || modelData.visible
-            MouseArea {
-                onClicked: button.modelData.trigger()
-                cursorShape: Qt.ArrowCursor
-                anchors.fill: parent
-            }
+            enabled: modelData.enabled
+
+            onClicked: mouse => modelData.trigger()
+
+            PlasmaComponents3.ToolTip.visible: (hovered || activeFocus) && (modelData.text.length > 0)
+            PlasmaComponents3.ToolTip.text: modelData.text
         }
     }
 
@@ -143,34 +148,45 @@ PlasmaComponents3.TextField {
     PlasmaComponents3.ToolTip.text: focusShortcut.nativeText
     PlasmaComponents3.ToolTip.delay: Kirigami.Settings.tabletMode ? Qt.styleHints.mousePressAndHoldInterval : Kirigami.Units.toolTipDelay
 
-    Row {
+    RowLayout {
         id: leftActionsRow
-        padding: visible ? Kirigami.Units.smallSpacing : 0
-        LayoutMirroring.enabled: root.effectiveHorizontalAlignment === TextInput.AlignRight
-        anchors.left: parent.left
-        anchors.leftMargin: Kirigami.Units.smallSpacing
-        anchors.verticalCenter: parent.verticalCenter
-        height: root.implicitHeight - 2 * Kirigami.Units.smallSpacing
+
+        anchors {
+            margins: 1
+            top: parent.top
+            left: parent.left
+            bottom: parent.bottom
+        }
+
         visible: root.leftActions.length > 0
+
+        spacing: Kirigami.Units.smallSpacing
+        layoutDirection: Qt.LeftToRight
+
         Repeater {
             model: root.leftActions
-            ActionIcon { }
+            InlineActionIcon { }
         }
     }
 
-    Row {
+    RowLayout {
         id: rightActionsRow
-        padding: visible ? Kirigami.Units.smallSpacing : 0
-        layoutDirection: Qt.RightToLeft
-        LayoutMirroring.enabled: root.effectiveHorizontalAlignment === TextInput.AlignRight
-        anchors.right: parent.right
-        anchors.rightMargin: Kirigami.Units.smallSpacing
-        anchors.verticalCenter: parent.verticalCenter
-        height: root.implicitHeight - 2 * Kirigami.Units.smallSpacing
+
+        anchors {
+            margins: 1
+            top: parent.top
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         visible: root.rightActions.length > 0
+
+        spacing: Kirigami.Units.smallSpacing
+        layoutDirection: Qt.RightToLeft
+
         Repeater {
             model: root.rightActions
-            ActionIcon { }
+            InlineActionIcon { }
         }
     }
 }

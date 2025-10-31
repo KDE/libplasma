@@ -1,0 +1,95 @@
+/*!
+   \qmltype Theme
+   \inqmlmodule org.kde.plasma.core
+   \nativetype Plasma::Theme
+   \brief Interface to the Plasma theme.
+
+   Theme provides access to a common and standardized set of graphic
+   elements stored in SVG format. This allows artists to create single packages
+   of SVGs that will affect the look and feel of all workspace components.
+
+   Theme can also be used directly to retrieve
+   file system paths to SVGs by name.
+   \sa {https://develop.kde.org/docs/plasma/theme/} {Plasma Style tutorial}
+ */
+
+/*!
+   \qmlproperty string Theme::themeName
+ */
+/*!
+   \qmlproperty bool Theme::useGlobalSettings
+ */
+/*!
+   \qmlproperty string Theme::wallpaperPath
+ */
+/*!
+   \qmlproperty font Theme::defaultFont
+ */
+/*!
+   \qmlproperty font Theme::smallestFont
+ */
+/*!
+   \qmlproperty palette Theme::palette
+ */
+/*!
+   \qmlproperty real Theme::backgroundContrast
+ */
+/*!
+   \qmlproperty real Theme::backgroundIntensity
+ */
+/*!
+   \qmlproperty real Theme::backgroundSaturation
+ */
+
+/*!
+   \qmlproperty enumeration Theme::ColorRole
+   \value TextColor The text color to be used by items resting on the background
+   \value BackgroundColor The default background color
+   \value HighlightColor The text highlight color to be used by items resting on the background
+   \value HoverColor Color for hover effect on view
+   \value FocusColor Color for focus effect on view
+   \value LinkColor Color for clickable links
+   \value VisitedLinkColor Color visited clickable links
+   \value HighlightedTextColor Color contrasting with HighlightColor, to be used for instance with
+   \value PositiveTextColor Color of foreground objects with a "positive message" connotation (usually green)
+   \value NeutralTextColor Color of foreground objects with a "neutral message" connotation (usually yellow)
+   \value NegativeTextColor Color of foreground objects with a "negative message" connotation (usually red)
+   \value [since 5.64] DisabledTextColor color of disabled text
+ */
+
+/*!
+   \qmlproperty enumeration Theme::ColorGroup
+   \value NormalColorGroup
+   \value ButtonColorGroup
+   \value ViewColorGroup
+   \value ComplementaryColorGroup
+   \value HeaderColorGroup
+   \value ToolTipColorGroup
+ */
+
+/*!
+  \qmlproperty string Theme::wallpaperPathForSize(int width = -1, int height = -1)
+ */
+
+/*!
+   \qmlproperty size Theme::mSize(font font = defaultApplicationFont)
+
+   Returns the size of the letter "M" as rendered on the screen with the given \a font.
+   These values give you a base size that:
+   \list
+     \li Scales dependent on the DPI of the screen
+     \li Scales with the default font as set by the user
+   \endlist
+
+   You can use it like this in QML Items:
+   \qml
+   Item {
+       width: PlasmaCore.Theme.mSize(PlasmaCore.Theme.defaultFont).height
+       height: width
+   }
+   \endqml
+   This allows you to dynamically scale elements of your user interface with different font settings and
+   different physical outputs (with different DPI).
+
+   \since 5.0
+ */

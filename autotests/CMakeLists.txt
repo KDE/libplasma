@@ -7,7 +7,7 @@ remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_STRICT_ITERATORS -DQT_NO_CAST_FR
 include(ECMMarkAsTest)
 include(ECMAddTests)
 
-find_package(KF6CoreAddons REQUIRED)
+find_package(KF6Archive REQUIRED)
 find_package(Qt6 COMPONENTS QuickTest Widgets REQUIRED)
 
 MACRO(PLASMA_UNIT_TESTS)

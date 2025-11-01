@@ -190,6 +190,13 @@ public:
     QString wallpaperPath(const QSize &size = QSize()) const;
 
     /*!
+     * Returns the default wallpaper theme associated with this theme.
+     *
+     * \since 6.6
+     */
+    QString defaultWallpaperTheme() const;
+
+    /*!
      *
      */
     Q_INVOKABLE QString wallpaperPathForSize(int width = -1, int height = -1) const;

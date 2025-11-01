@@ -169,6 +169,11 @@ KSharedConfigPtr Theme::globalColorScheme()
     return ThemePrivate::globalTheme->colors;
 }
 
+QString Theme::defaultWallpaperTheme() const
+{
+    return d->defaultWallpaperTheme;
+}
+
 QString Theme::wallpaperPath(const QSize &size) const
 {
     QString fullPath;

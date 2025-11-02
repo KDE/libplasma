@@ -255,45 +255,45 @@ void ThemePrivate::settingsChanged(bool emitChanges)
     setThemeName(cg.readEntry("name", ThemePrivate::defaultTheme), false, emitChanges);
 }
 
-QColor ThemePrivate::color(Theme::ColorRole role, Theme::ColorGroup group) const
+QColor ThemePrivate::color(Theme::ColorRole role, Kirigami::Platform::PlatformTheme::ColorSet group) const
 {
     const KColorScheme *scheme = nullptr;
 
     // Before 5.0 Plasma theme really only used Normal and Button
     // many old themes are built on this assumption and will break
     // otherwise
-    if (apiMajor < 5 && group != Theme::NormalColorGroup) {
-        group = Theme::ButtonColorGroup;
+    if (apiMajor < 5 && group != Kirigami::Platform::PlatformTheme::Window) {
+        group = Kirigami::Platform::PlatformTheme::ColorSet::Button;
     }
 
     switch (group) {
-    case Theme::ButtonColorGroup: {
+    case Kirigami::Platform::PlatformTheme::ColorSet::Button: {
         scheme = &buttonColorScheme;
         break;
     }
 
-    case Theme::ViewColorGroup: {
+    case Kirigami::Platform::PlatformTheme::ColorSet::View: {
         scheme = &viewColorScheme;
         break;
     }
 
     // this doesn't have a real kcolorscheme
-    case Theme::ComplementaryColorGroup: {
+    case Kirigami::Platform::PlatformTheme::ColorSet::Complementary: {
         scheme = &complementaryColorScheme;
         break;
     }
 
-    case Theme::HeaderColorGroup: {
+    case Kirigami::Platform::PlatformTheme::ColorSet::Header: {
         scheme = &headerColorScheme;
         break;
     }
 
-    case Theme::ToolTipColorGroup: {
+    case Kirigami::Platform::PlatformTheme::ColorSet::Tooltip: {
         scheme = &tooltipColorScheme;
         break;
     }
 
-    case Theme::NormalColorGroup:
+    case Kirigami::Platform::PlatformTheme::ColorSet::Window:
     default: {
         scheme = &colorScheme;
         break;

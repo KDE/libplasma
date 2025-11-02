@@ -92,6 +92,7 @@ PUBLIC
     KF6::ConfigCore
     KF6::CoreAddons
     Qt6::Qml
+    KF6::KirigamiPlatform
 PRIVATE
     Qt6::Quick
     Qt6::WaylandClient

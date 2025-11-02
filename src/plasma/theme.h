@@ -13,6 +13,7 @@
 #include <QObject>
 
 #include <KSharedConfig>
+#include <Kirigami/Platform/PlatformTheme>
 #include <plasma/plasma_export.h>
 
 class KPluginMetaData;
@@ -117,24 +118,6 @@ public:
     };
 
     /*!
-     * \value NormalColorGroup
-     * \value ButtonColorGroup
-     * \value ViewColorGroup
-     * \value ComplementaryColorGroup
-     * \value HeaderColorGroup
-     * \value ToolTipColorGroup
-     */
-    enum ColorGroup {
-        NormalColorGroup = 0,
-        ButtonColorGroup = 1,
-        ViewColorGroup = 2,
-        ComplementaryColorGroup = 3,
-        HeaderColorGroup,
-        ToolTipColorGroup,
-    };
-    Q_ENUM(ColorGroup)
-
-    /*!
      * Default constructor. It will be the global theme configured in plasmarc
      *
      * \a parent the parent object
@@ -206,7 +189,7 @@ public:
      *
      * \a group which group we want a color of
      */
-    QColor color(ColorRole role, ColorGroup group = NormalColorGroup) const;
+    QColor color(ColorRole role, Kirigami::Platform::PlatformTheme::ColorSet group = Kirigami::Platform::PlatformTheme::ColorSet::Window) const;
 
     /*!
      * Tells the theme whether to follow the global settings or use application

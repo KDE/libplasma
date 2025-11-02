@@ -106,33 +106,6 @@ void PlasmaTheme::syncWindow()
     }
 }
 
-Plasma::Theme::ColorGroup PlasmaTheme::colorGroupFromSet()
-{
-    Plasma::Theme::ColorGroup group;
-    switch (colorSet()) {
-    case View:
-        group = Plasma::Theme::ViewColorGroup;
-        break;
-    case Button:
-        group = Plasma::Theme::ButtonColorGroup;
-        break;
-    case Tooltip:
-        group = Plasma::Theme::ToolTipColorGroup;
-        break;
-    case Complementary:
-        group = Plasma::Theme::ComplementaryColorGroup;
-        break;
-    case Header:
-        group = Plasma::Theme::HeaderColorGroup;
-        break;
-    case Selection: // Plasma::Theme doesn't have selection group
-    case Window:
-    default:
-        group = Plasma::Theme::NormalColorGroup;
-    }
-    return group;
-}
-
 void PlasmaTheme::syncColors()
 {
     if (QCoreApplication::closingDown()) {
@@ -156,40 +129,38 @@ void PlasmaTheme::syncColors()
         }
     }
 
-    Plasma::Theme::ColorGroup group = colorGroupFromSet();
-
     // foreground
     if (paletteGroup == QPalette::Disabled) {
-        setTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, group));
+        setTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, colorSet()));
     } else {
-        setTextColor(m_theme.color(Plasma::Theme::TextColor, group));
+        setTextColor(m_theme.color(Plasma::Theme::TextColor, colorSet()));
     }
-    setDisabledTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, group));
-    setHighlightedTextColor(m_theme.color(Plasma::Theme::HighlightedTextColor, group));
+    setDisabledTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, colorSet()));
+    setHighlightedTextColor(m_theme.color(Plasma::Theme::HighlightedTextColor, colorSet()));
     // Plasma::Theme doesn't have ActiveText, use PositiveTextColor
-    setActiveTextColor(m_theme.color(Plasma::Theme::PositiveTextColor, group));
-    setLinkColor(m_theme.color(Plasma::Theme::LinkColor, group));
-    setVisitedLinkColor(m_theme.color(Plasma::Theme::VisitedLinkColor, group));
-    setNegativeTextColor(m_theme.color(Plasma::Theme::NegativeTextColor, group));
-    setNeutralTextColor(m_theme.color(Plasma::Theme::NeutralTextColor, group));
-    setPositiveTextColor(m_theme.color(Plasma::Theme::PositiveTextColor, group));
+    setActiveTextColor(m_theme.color(Plasma::Theme::PositiveTextColor, colorSet()));
+    setLinkColor(m_theme.color(Plasma::Theme::LinkColor, colorSet()));
+    setVisitedLinkColor(m_theme.color(Plasma::Theme::VisitedLinkColor, colorSet()));
+    setNegativeTextColor(m_theme.color(Plasma::Theme::NegativeTextColor, colorSet()));
+    setNeutralTextColor(m_theme.color(Plasma::Theme::NeutralTextColor, colorSet()));
+    setPositiveTextColor(m_theme.color(Plasma::Theme::PositiveTextColor, colorSet()));
 
     // background
-    setBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
-    setHighlightColor(m_theme.color(Plasma::Theme::HighlightColor, group));
+    setBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, colorSet()));
+    setHighlightColor(m_theme.color(Plasma::Theme::HighlightColor, colorSet()));
     // Plasma::Theme doesn't have AlternateBackground
-    setAlternateBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
-    setActiveBackgroundColor(m_theme.color(Plasma::Theme::ActiveBackgroundColor, group));
+    setAlternateBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, colorSet()));
+    setActiveBackgroundColor(m_theme.color(Plasma::Theme::ActiveBackgroundColor, colorSet()));
     // Plasma::Theme doesn't have link backgrounds.
-    setLinkBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
-    setVisitedLinkBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
-    setNegativeBackgroundColor(m_theme.color(Plasma::Theme::NegativeBackgroundColor, group));
-    setNeutralBackgroundColor(m_theme.color(Plasma::Theme::NeutralBackgroundColor, group));
-    setPositiveBackgroundColor(m_theme.color(Plasma::Theme::PositiveBackgroundColor, group));
+    setLinkBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, colorSet()));
+    setVisitedLinkBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, colorSet()));
+    setNegativeBackgroundColor(m_theme.color(Plasma::Theme::NegativeBackgroundColor, colorSet()));
+    setNeutralBackgroundColor(m_theme.color(Plasma::Theme::NeutralBackgroundColor, colorSet()));
+    setPositiveBackgroundColor(m_theme.color(Plasma::Theme::PositiveBackgroundColor, colorSet()));
 
     // decoration
-    setHoverColor(m_theme.color(Plasma::Theme::HoverColor, group));
-    setFocusColor(m_theme.color(Plasma::Theme::FocusColor, group));
+    setHoverColor(m_theme.color(Plasma::Theme::HoverColor, colorSet()));
+    setFocusColor(m_theme.color(Plasma::Theme::FocusColor, colorSet()));
     setFrameContrast(KColorScheme::frameContrast());
 }
 
@@ -212,13 +183,12 @@ void PlasmaTheme::syncFrameContrast()
         }
     }
 
-    Plasma::Theme::ColorGroup group = colorGroupFromSet();
     if (paletteGroup == QPalette::Disabled) {
-        setTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, group));
+        setTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, colorSet()));
     } else {
-        setTextColor(m_theme.color(Plasma::Theme::TextColor, group));
+        setTextColor(m_theme.color(Plasma::Theme::TextColor, colorSet()));
     }
-    setBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, group));
+    setBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, colorSet()));
     setFrameContrast(KColorScheme::frameContrast());
 }
 

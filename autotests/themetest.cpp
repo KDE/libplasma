@@ -66,53 +66,53 @@ void ThemeTest::testThemeConfig()
 
 void ThemeTest::testColors()
 {
-    QCOMPARE(m_theme->color(Plasma::Theme::TextColor, Plasma::Theme::NormalColorGroup), QColor(49, 54, 59));
-    QCOMPARE(m_theme->color(Plasma::Theme::BackgroundColor, Plasma::Theme::NormalColorGroup), QColor(239, 240, 241));
-    QCOMPARE(m_theme->color(Plasma::Theme::HighlightColor, Plasma::Theme::NormalColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::HoverColor, Plasma::Theme::NormalColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::FocusColor, Plasma::Theme::NormalColorGroup), QColor(30, 146, 255));
-    QCOMPARE(m_theme->color(Plasma::Theme::LinkColor, Plasma::Theme::NormalColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::VisitedLinkColor, Plasma::Theme::NormalColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::HighlightedTextColor, Plasma::Theme::NormalColorGroup), QColor(252, 252, 252));
-    QCOMPARE(m_theme->color(Plasma::Theme::PositiveTextColor, Plasma::Theme::NormalColorGroup), QColor(17, 209, 22));
-    QCOMPARE(m_theme->color(Plasma::Theme::NeutralTextColor, Plasma::Theme::NormalColorGroup), QColor(201, 206, 59));
-    QCOMPARE(m_theme->color(Plasma::Theme::NegativeTextColor, Plasma::Theme::NormalColorGroup), QColor(237, 21, 21));
+    QCOMPARE(m_theme->color(Plasma::Theme::TextColor, Kirigami::Platform::PlatformTheme::Window), QColor(49, 54, 59));
+    QCOMPARE(m_theme->color(Plasma::Theme::BackgroundColor, Kirigami::Platform::PlatformTheme::Window), QColor(239, 240, 241));
+    QCOMPARE(m_theme->color(Plasma::Theme::HighlightColor, Kirigami::Platform::PlatformTheme::Window), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::HoverColor, Kirigami::Platform::PlatformTheme::Window), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::FocusColor, Kirigami::Platform::PlatformTheme::Window), QColor(30, 146, 255));
+    QCOMPARE(m_theme->color(Plasma::Theme::LinkColor, Kirigami::Platform::PlatformTheme::Window), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::VisitedLinkColor, Kirigami::Platform::PlatformTheme::Window), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::HighlightedTextColor, Kirigami::Platform::PlatformTheme::Window), QColor(252, 252, 252));
+    QCOMPARE(m_theme->color(Plasma::Theme::PositiveTextColor, Kirigami::Platform::PlatformTheme::Window), QColor(17, 209, 22));
+    QCOMPARE(m_theme->color(Plasma::Theme::NeutralTextColor, Kirigami::Platform::PlatformTheme::Window), QColor(201, 206, 59));
+    QCOMPARE(m_theme->color(Plasma::Theme::NegativeTextColor, Kirigami::Platform::PlatformTheme::Window), QColor(237, 21, 21));
 
-    QCOMPARE(m_theme->color(Plasma::Theme::TextColor, Plasma::Theme::ButtonColorGroup), QColor(49, 54, 59));
-    QCOMPARE(m_theme->color(Plasma::Theme::BackgroundColor, Plasma::Theme::ButtonColorGroup), QColor(239, 240, 241));
-    QCOMPARE(m_theme->color(Plasma::Theme::HighlightColor, Plasma::Theme::ButtonColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::HoverColor, Plasma::Theme::ButtonColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::FocusColor, Plasma::Theme::ButtonColorGroup), QColor(30, 146, 255));
-    QCOMPARE(m_theme->color(Plasma::Theme::LinkColor, Plasma::Theme::ButtonColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::VisitedLinkColor, Plasma::Theme::ButtonColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::HighlightedTextColor, Plasma::Theme::ButtonColorGroup), QColor(252, 252, 252));
-    QCOMPARE(m_theme->color(Plasma::Theme::PositiveTextColor, Plasma::Theme::ButtonColorGroup), QColor(17, 209, 23));
-    QCOMPARE(m_theme->color(Plasma::Theme::NeutralTextColor, Plasma::Theme::ButtonColorGroup), QColor(201, 206, 60));
-    QCOMPARE(m_theme->color(Plasma::Theme::NegativeTextColor, Plasma::Theme::ButtonColorGroup), QColor(237, 21, 22));
+    QCOMPARE(m_theme->color(Plasma::Theme::TextColor, Kirigami::Platform::PlatformTheme::Button), QColor(49, 54, 59));
+    QCOMPARE(m_theme->color(Plasma::Theme::BackgroundColor, Kirigami::Platform::PlatformTheme::Button), QColor(239, 240, 241));
+    QCOMPARE(m_theme->color(Plasma::Theme::HighlightColor, Kirigami::Platform::PlatformTheme::Button), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::HoverColor, Kirigami::Platform::PlatformTheme::Button), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::FocusColor, Kirigami::Platform::PlatformTheme::Button), QColor(30, 146, 255));
+    QCOMPARE(m_theme->color(Plasma::Theme::LinkColor, Kirigami::Platform::PlatformTheme::Button), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::VisitedLinkColor, Kirigami::Platform::PlatformTheme::Button), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::HighlightedTextColor, Kirigami::Platform::PlatformTheme::Button), QColor(252, 252, 252));
+    QCOMPARE(m_theme->color(Plasma::Theme::PositiveTextColor, Kirigami::Platform::PlatformTheme::Button), QColor(17, 209, 23));
+    QCOMPARE(m_theme->color(Plasma::Theme::NeutralTextColor, Kirigami::Platform::PlatformTheme::Button), QColor(201, 206, 60));
+    QCOMPARE(m_theme->color(Plasma::Theme::NegativeTextColor, Kirigami::Platform::PlatformTheme::Button), QColor(237, 21, 22));
 
-    QCOMPARE(m_theme->color(Plasma::Theme::TextColor, Plasma::Theme::ViewColorGroup), QColor(49, 54, 59));
-    QCOMPARE(m_theme->color(Plasma::Theme::BackgroundColor, Plasma::Theme::ViewColorGroup), QColor(252, 252, 252));
-    QCOMPARE(m_theme->color(Plasma::Theme::HighlightColor, Plasma::Theme::ViewColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::HoverColor, Plasma::Theme::ViewColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::FocusColor, Plasma::Theme::ViewColorGroup), QColor(30, 146, 255));
-    QCOMPARE(m_theme->color(Plasma::Theme::LinkColor, Plasma::Theme::ViewColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::VisitedLinkColor, Plasma::Theme::ViewColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::HighlightedTextColor, Plasma::Theme::ViewColorGroup), QColor(252, 252, 252));
-    QCOMPARE(m_theme->color(Plasma::Theme::PositiveTextColor, Plasma::Theme::ViewColorGroup), QColor(17, 209, 24));
-    QCOMPARE(m_theme->color(Plasma::Theme::NeutralTextColor, Plasma::Theme::ViewColorGroup), QColor(201, 206, 61));
-    QCOMPARE(m_theme->color(Plasma::Theme::NegativeTextColor, Plasma::Theme::ViewColorGroup), QColor(237, 21, 23));
+    QCOMPARE(m_theme->color(Plasma::Theme::TextColor, Kirigami::Platform::PlatformTheme::View), QColor(49, 54, 59));
+    QCOMPARE(m_theme->color(Plasma::Theme::BackgroundColor, Kirigami::Platform::PlatformTheme::View), QColor(252, 252, 252));
+    QCOMPARE(m_theme->color(Plasma::Theme::HighlightColor, Kirigami::Platform::PlatformTheme::View), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::HoverColor, Kirigami::Platform::PlatformTheme::View), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::FocusColor, Kirigami::Platform::PlatformTheme::View), QColor(30, 146, 255));
+    QCOMPARE(m_theme->color(Plasma::Theme::LinkColor, Kirigami::Platform::PlatformTheme::View), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::VisitedLinkColor, Kirigami::Platform::PlatformTheme::View), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::HighlightedTextColor, Kirigami::Platform::PlatformTheme::View), QColor(252, 252, 252));
+    QCOMPARE(m_theme->color(Plasma::Theme::PositiveTextColor, Kirigami::Platform::PlatformTheme::View), QColor(17, 209, 24));
+    QCOMPARE(m_theme->color(Plasma::Theme::NeutralTextColor, Kirigami::Platform::PlatformTheme::View), QColor(201, 206, 61));
+    QCOMPARE(m_theme->color(Plasma::Theme::NegativeTextColor, Kirigami::Platform::PlatformTheme::View), QColor(237, 21, 23));
 
-    QCOMPARE(m_theme->color(Plasma::Theme::TextColor, Plasma::Theme::ComplementaryColorGroup), QColor(239, 240, 241));
-    QCOMPARE(m_theme->color(Plasma::Theme::BackgroundColor, Plasma::Theme::ComplementaryColorGroup), QColor(49, 54, 59));
-    QCOMPARE(m_theme->color(Plasma::Theme::HighlightColor, Plasma::Theme::ComplementaryColorGroup), QColor(61, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::HoverColor, Plasma::Theme::ComplementaryColorGroup), QColor(71, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::FocusColor, Plasma::Theme::ComplementaryColorGroup), QColor(40, 146, 255));
-    QCOMPARE(m_theme->color(Plasma::Theme::LinkColor, Plasma::Theme::ComplementaryColorGroup), QColor(71, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::VisitedLinkColor, Plasma::Theme::ComplementaryColorGroup), QColor(71, 174, 230));
-    QCOMPARE(m_theme->color(Plasma::Theme::HighlightedTextColor, Plasma::Theme::ComplementaryColorGroup), QColor(252, 252, 252));
-    QCOMPARE(m_theme->color(Plasma::Theme::PositiveTextColor, Plasma::Theme::ComplementaryColorGroup), QColor(17, 209, 25));
-    QCOMPARE(m_theme->color(Plasma::Theme::NeutralTextColor, Plasma::Theme::ComplementaryColorGroup), QColor(201, 206, 62));
-    QCOMPARE(m_theme->color(Plasma::Theme::NegativeTextColor, Plasma::Theme::ComplementaryColorGroup), QColor(237, 21, 24));
+    QCOMPARE(m_theme->color(Plasma::Theme::TextColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(239, 240, 241));
+    QCOMPARE(m_theme->color(Plasma::Theme::BackgroundColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(49, 54, 59));
+    QCOMPARE(m_theme->color(Plasma::Theme::HighlightColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(61, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::HoverColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(71, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::FocusColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(40, 146, 255));
+    QCOMPARE(m_theme->color(Plasma::Theme::LinkColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(71, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::VisitedLinkColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(71, 174, 230));
+    QCOMPARE(m_theme->color(Plasma::Theme::HighlightedTextColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(252, 252, 252));
+    QCOMPARE(m_theme->color(Plasma::Theme::PositiveTextColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(17, 209, 25));
+    QCOMPARE(m_theme->color(Plasma::Theme::NeutralTextColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(201, 206, 62));
+    QCOMPARE(m_theme->color(Plasma::Theme::NegativeTextColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(237, 21, 24));
 }
 
 void ThemeTest::testCompositingChange()

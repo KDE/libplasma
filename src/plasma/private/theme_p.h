@@ -30,9 +30,6 @@ class Theme;
 
 // NOTE: Default wallpaper can be set from the theme configuration
 #define DEFAULT_WALLPAPER_THEME "default"
-#define DEFAULT_WALLPAPER_SUFFIX ".png"
-static const int DEFAULT_WALLPAPER_WIDTH = 1920;
-static const int DEFAULT_WALLPAPER_HEIGHT = 1200;
 
 class ThemePrivate : public QObject, public QSharedData
 {
@@ -94,9 +91,6 @@ public:
     KConfigGroup cfg;
     KConfigWatcher::Ptr plasmaRcWatcher;
     QString defaultWallpaperTheme;
-    QString defaultWallpaperSuffix;
-    int defaultWallpaperWidth;
-    int defaultWallpaperHeight;
     QTimer *selectorsUpdateTimer;
     QTimer *updateNotificationTimer;
 
@@ -104,7 +98,6 @@ public:
     bool backgroundContrastActive : 1;
     bool isDefault : 1;
     bool useGlobal : 1;
-    bool hasWallpapers : 1;
     bool fixedName : 1;
 
     qreal backgroundContrast;

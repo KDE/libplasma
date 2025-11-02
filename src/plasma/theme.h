@@ -50,11 +50,6 @@ class PLASMA_EXPORT Theme : public QObject
      */
     Q_PROPERTY(bool useGlobalSettings READ useGlobalSettings NOTIFY themeChanged)
 
-    /*!
-     * \property Plasma::Theme::wallpaperPath
-     */
-    Q_PROPERTY(QString wallpaperPath READ wallpaperPath NOTIFY themeChanged)
-
     // fonts
     /*!
      * \property Plasma::Theme::defaultFont
@@ -180,26 +175,11 @@ public:
     QString imagePath(const QString &name) const;
 
     /*!
-     * Retrieves the default wallpaper associated with this theme.
-     *
-     * \a size the target height and width of the wallpaper; if an invalid size
-     *           is passed in, then a default size will be provided instead.
-     *
-     * Returns the full path to the wallpaper image
-     */
-    QString wallpaperPath(const QSize &size = QSize()) const;
-
-    /*!
      * Returns the default wallpaper theme associated with this theme.
      *
      * \since 6.6
      */
     QString defaultWallpaperTheme() const;
-
-    /*!
-     *
-     */
-    Q_INVOKABLE QString wallpaperPathForSize(int width = -1, int height = -1) const;
 
     /*!
      * Checks if this theme has an image named in a certain way

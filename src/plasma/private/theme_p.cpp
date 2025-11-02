@@ -77,14 +77,10 @@ ThemePrivate::ThemePrivate(QObject *parent)
     , headerColorScheme(QPalette::Active, KColorScheme::Header, KSharedConfigPtr(nullptr))
     , tooltipColorScheme(QPalette::Active, KColorScheme::Tooltip, KSharedConfigPtr(nullptr))
     , defaultWallpaperTheme(QStringLiteral(DEFAULT_WALLPAPER_THEME))
-    , defaultWallpaperSuffix(QStringLiteral(DEFAULT_WALLPAPER_SUFFIX))
-    , defaultWallpaperWidth(DEFAULT_WALLPAPER_WIDTH)
-    , defaultWallpaperHeight(DEFAULT_WALLPAPER_HEIGHT)
     , compositingActive(true)
     , backgroundContrastActive(KWindowEffects::isEffectAvailable(KWindowEffects::BackgroundContrast))
     , isDefault(true)
     , useGlobal(true)
-    , hasWallpapers(false)
     , fixedName(false)
     , backgroundContrast(qQNaN())
     , backgroundIntensity(qQNaN())
@@ -371,9 +367,6 @@ void ThemePrivate::processWallpaperSettings(const KSharedConfigPtr &metadata)
     }
 
     defaultWallpaperTheme = cg.readEntry("defaultWallpaperTheme", DEFAULT_WALLPAPER_THEME);
-    defaultWallpaperSuffix = cg.readEntry("defaultFileSuffix", DEFAULT_WALLPAPER_SUFFIX);
-    defaultWallpaperWidth = cg.readEntry("defaultWidth", DEFAULT_WALLPAPER_WIDTH);
-    defaultWallpaperHeight = cg.readEntry("defaultHeight", DEFAULT_WALLPAPER_HEIGHT);
 }
 
 void ThemePrivate::processContrastSettings(const KSharedConfigPtr &metadata)
@@ -454,8 +447,6 @@ void ThemePrivate::setThemeName(const QString &theme, bool writeSettings, bool e
     headerColorScheme = KColorScheme(QPalette::Active, KColorScheme::Header, colors);
     tooltipColorScheme = KColorScheme(QPalette::Active, KColorScheme::Tooltip, colors);
     palette = KColorScheme::createApplicationPalette(colors);
-    const QString wallpaperPath = QLatin1String(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/") % theme % QLatin1String("/wallpapers/");
-    hasWallpapers = !QStandardPaths::locate(QStandardPaths::GenericDataLocation, wallpaperPath, QStandardPaths::LocateDirectory).isEmpty();
 
     // load the wallpaper settings, if any
     KSharedConfigPtr metadata = configForTheme(theme);

@@ -174,55 +174,6 @@ QString Theme::defaultWallpaperTheme() const
     return d->defaultWallpaperTheme;
 }
 
-QString Theme::wallpaperPath(const QSize &size) const
-{
-    QString fullPath;
-    QString image = d->defaultWallpaperTheme + QStringLiteral("/contents/images/%1x%2") + d->defaultWallpaperSuffix;
-    QString defaultImage = image.arg(d->defaultWallpaperWidth).arg(d->defaultWallpaperHeight);
-
-    if (size.isValid()) {
-        // try to customize the paper to the size requested
-        // TODO: this should do better than just fallback to the default size.
-        //      a "best fit" matching would be far better, so we don't end
-        //      up returning a 1920x1200 wallpaper for a 640x480 request ;)
-        image = image.arg(size.width()).arg(size.height());
-    } else {
-        image = defaultImage;
-    }
-
-    // TODO: the theme's wallpaper overrides regularly installed wallpapers.
-    //      should it be possible for user installed (e.g. locateLocal) wallpapers
-    //      to override the theme?
-    if (d->hasWallpapers) {
-        // check in the theme first
-        fullPath = d->findInTheme(QLatin1String("wallpapers/") % image, d->themeName);
-
-        if (fullPath.isEmpty()) {
-            fullPath = d->findInTheme(QLatin1String("wallpapers/") % defaultImage, d->themeName);
-        }
-    }
-
-    if (fullPath.isEmpty()) {
-        // we failed to find it in the theme, so look in the standard directories
-        // qCDebug(LOG_PLASMA) << "looking for" << image;
-        fullPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("wallpapers/") + image);
-    }
-
-    if (fullPath.isEmpty()) {
-        // we still failed to find it in the theme, so look for the default in
-        // the standard directories
-        // qCDebug(LOG_PLASMA) << "looking for" << defaultImage;
-        fullPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("wallpapers/") + defaultImage);
-    }
-
-    return fullPath;
-}
-
-QString Theme::wallpaperPathForSize(int width, int height) const
-{
-    return Plasma::Theme::wallpaperPath(QSize(width, height));
-}
-
 bool Theme::currentThemeHasImage(const QString &name) const
 {
     if (name.contains(QLatin1String("../"))) {

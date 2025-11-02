@@ -2,22 +2,22 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="148"
    height="148"
    id="svg3642"
    sodipodi:version="0.32"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    sodipodi:docname="background.svg"
    inkscape:output_extension="org.inkscape.output.svgz.inkscape"
-   version="1.0">
+   version="1.0"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <sodipodi:namedview
      id="base"
      pagecolor="#919191"
@@ -26,14 +26,14 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="5.189189"
-     inkscape:cx="23.65571"
-     inkscape:cy="71.343789"
-     inkscape:current-layer="layer1"
+     inkscape:cx="-91.151045"
+     inkscape:cy="130.5599"
+     inkscape:current-layer="blurred-topright"
      showgrid="true"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
-     inkscape:window-width="1920"
-     inkscape:window-height="997"
+     inkscape:window-width="3440"
+     inkscape:window-height="1373"
      inkscape:window-x="0"
      inkscape:window-y="0"
      width="148px"
@@ -43,14 +43,22 @@
      guidetolerance="25"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
     <inkscape:grid
        snapvisiblegridlinesonly="true"
        empspacing="5"
        enabled="true"
        visible="true"
        id="grid3357"
-       type="xygrid" />
+       type="xygrid"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px" />
   </sodipodi:namedview>
   <defs
      id="defs3644">
@@ -541,9 +549,10 @@
          class="ColorScheme-Background" />
       <path
          inkscape:connector-curvature="0"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="M 4,127.00007 V 127.5 h 58 v -0.49993 c -0.02169,-1.6e-4 -0.04064,0 -0.0625,0 H 4.0625 c -0.021861,0 -0.040806,-1.6e-4 -0.0625,0 z"
-         id="path5283" />
+         id="path5283"
+         class="ColorScheme-Frame" />
       <rect
          y="123.0003"
          x="3.9991782"
@@ -563,9 +572,10 @@
          class="ColorScheme-Background" />
       <path
          inkscape:connector-curvature="0"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="m 63.500223,129 v 13 h 0.5 c 1.67e-4,-0.0217 0,-0.0406 0,-0.0625 v -12.875 c 0,-0.0219 1.67e-4,-0.0408 0,-0.0625 z"
-         id="path5344" />
+         id="path5344"
+         class="ColorScheme-Frame" />
       <rect
          transform="matrix(0,-1,-1,0,0,0)"
          y="-67.999771"
@@ -586,9 +596,10 @@
          class="ColorScheme-Background" />
       <path
          inkscape:connector-curvature="0"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="m 4,143.50022 v 0.5 c 0.021694,1.7e-4 0.040639,0 0.0625,0 h 57.875 c 0.02186,0 0.04081,1.7e-4 0.0625,0 v -0.5 z"
-         id="path5362" />
+         id="path5362"
+         class="ColorScheme-Frame" />
       <rect
          transform="scale(1,-1)"
          style="fill:url(#linearGradient4019);fill-opacity:1;stroke:none"
@@ -608,11 +619,12 @@
          style="opacity:1;fill:currentColor"
          class="ColorScheme-Background" />
       <path
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="m 54,97 c 0.06722,2.1827 1.817292,3.93278 4,4 v -1 c -1.637032,-0.05042 -2.94958,-1.362974 -3,-3 z"
          transform="translate(0,-6.9999975)"
          id="path3814"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         class="ColorScheme-Frame" />
       <path
          inkscape:transform-center-y="5"
          inkscape:transform-center-x="5"
@@ -647,11 +659,12 @@
          class="ColorScheme-Background" />
       <path
          inkscape:connector-curvature="0"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="m -12,12 c -2.182709,0.06722 -3.932783,1.8173 -4,4 h 1 c 0,-1.5625 1.34375,-3 3,-3 z"
          transform="matrix(0.5,0,0,0.5,10,121)"
          id="path5338"
-         sodipodi:nodetypes="ccccc" />
+         sodipodi:nodetypes="ccccc"
+         class="ColorScheme-Frame" />
       <path
          inkscape:transform-center-y="-2.5"
          inkscape:transform-center-x="2.5"
@@ -697,7 +710,8 @@
          id="path4236"
          transform="matrix(0.5,0,0,0.5,10,121)"
          d="m -12,12 c -2.182709,0.06722 -3.932783,1.8173 -4,4 h 1 c 0,-1.5625 1.34375,-3 3,-3 z"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none" />
+         style="fill:currentColor"
+         class="ColorScheme-Frame" />
       <path
          style="fill:url(#radialGradient4097);fill-opacity:1;stroke:none"
          d="m -2.0002265,123.0003 v 6 h 4 c 0,-1.10457 0.895431,-2 2,-2 v -4 z"
@@ -720,7 +734,8 @@
          inkscape:connector-curvature="0"
          id="path4248"
          d="m 63.500223,129 v 13 h 0.5 c 1.67e-4,-0.0217 0,-0.0406 0,-0.0625 v -12.875 c 0,-0.0219 1.67e-4,-0.0408 0,-0.0625 z"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none" />
+         style="fill:currentColor"
+         class="ColorScheme-Frame" />
       <rect
          transform="matrix(0,-1,-1,0,0,0)"
          style="fill:url(#linearGradient3945);fill-opacity:1;stroke:none"
@@ -740,11 +755,12 @@
          id="path4279"
          class="ColorScheme-Background" />
       <path
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="m 93,97 c -0.05042,1.637026 -1.362968,2.949585 -3,3 v 1 c 2.182708,-0.0672 3.93278,-1.8173 4,-4 z"
          transform="matrix(-1,0,0,1,148,-6.9999975)"
          id="path3046"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         class="ColorScheme-Frame" />
       <path
          style="fill:url(#radialGradient4177);fill-opacity:1;stroke:none"
          d="M 46.00044,102.00061 V 90.000609 h 8 c 0,2.20914 1.79086,4 4,4 v 8.000001 z"
@@ -957,9 +973,10 @@
          class="ColorScheme-Background" />
       <path
          inkscape:connector-curvature="0"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="M 4,127.00007 V 127.5 h 58 v -0.49993 c -0.02169,-1.6e-4 -0.04064,0 -0.0625,0 H 4.0625 c -0.021861,0 -0.040806,-1.6e-4 -0.0625,0 z"
-         id="path934" />
+         id="path934"
+         class="ColorScheme-Frame" />
       <rect
          y="123.0003"
          x="3.9991782"
@@ -979,9 +996,10 @@
          class="ColorScheme-Background" />
       <path
          inkscape:connector-curvature="0"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="m 63.500223,129 v 13 h 0.5 c 1.67e-4,-0.0217 0,-0.0406 0,-0.0625 v -12.875 c 0,-0.0219 1.67e-4,-0.0408 0,-0.0625 z"
-         id="path942" />
+         id="path942"
+         class="ColorScheme-Frame" />
       <rect
          transform="matrix(0,-1,-1,0,0,0)"
          y="-67.999771"
@@ -1002,9 +1020,10 @@
          class="ColorScheme-Background" />
       <path
          inkscape:connector-curvature="0"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="m 4,143.50022 v 0.5 c 0.021694,1.7e-4 0.040639,0 0.0625,0 h 57.875 c 0.02186,0 0.04081,1.7e-4 0.0625,0 v -0.5 z"
-         id="path950" />
+         id="path950"
+         class="ColorScheme-Frame" />
       <rect
          transform="scale(1,-1)"
          style="fill:url(#linearGradient1022);fill-opacity:1;stroke:none"
@@ -1024,11 +1043,12 @@
          style="opacity:0.8;fill:currentColor"
          class="ColorScheme-Background" />
       <path
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="m 54,97 c 0.06722,2.1827 1.817292,3.93278 4,4 v -1 c -1.637032,-0.05042 -2.94958,-1.362974 -3,-3 z"
          transform="translate(0,-6.9999975)"
          id="path958"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         class="ColorScheme-Frame" />
       <path
          inkscape:transform-center-y="5"
          inkscape:transform-center-x="5"
@@ -1063,11 +1083,12 @@
          class="ColorScheme-Background" />
       <path
          inkscape:connector-curvature="0"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="m -12,12 c -2.182709,0.06722 -3.932783,1.8173 -4,4 h 1 c 0,-1.5625 1.34375,-3 3,-3 z"
          transform="matrix(0.5,0,0,0.5,10,121)"
          id="path972"
-         sodipodi:nodetypes="ccccc" />
+         sodipodi:nodetypes="ccccc"
+         class="ColorScheme-Frame" />
       <path
          inkscape:transform-center-y="-2.5"
          inkscape:transform-center-x="2.5"
@@ -1113,7 +1134,8 @@
          id="path986"
          transform="matrix(0.5,0,0,0.5,10,121)"
          d="m -12,12 c -2.182709,0.06722 -3.932783,1.8173 -4,4 h 1 c 0,-1.5625 1.34375,-3 3,-3 z"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none" />
+         style="fill:currentColor"
+         class="ColorScheme-Frame" />
       <path
          style="fill:url(#radialGradient1028);fill-opacity:1;stroke:none"
          d="m -2.0002265,123.0003 v 6 h 4 c 0,-1.10457 0.895431,-2 2,-2 v -4 z"
@@ -1136,7 +1158,8 @@
          inkscape:connector-curvature="0"
          id="path994"
          d="m 63.500223,129 v 13 h 0.5 c 1.67e-4,-0.0217 0,-0.0406 0,-0.0625 v -12.875 c 0,-0.0219 1.67e-4,-0.0408 0,-0.0625 z"
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none" />
+         style="fill:currentColor"
+         class="ColorScheme-Frame" />
       <rect
          transform="matrix(0,-1,-1,0,0,0)"
          style="fill:url(#linearGradient1030);fill-opacity:1;stroke:none"
@@ -1156,11 +1179,12 @@
          id="path1000"
          class="ColorScheme-Background" />
       <path
-         style="opacity:0.2;fill:#eff0f1;fill-opacity:0.90196078;fill-rule:nonzero;stroke:none"
+         style="fill:currentColor"
          d="m 93,97 c -0.05042,1.637026 -1.362968,2.949585 -3,3 v 1 c 2.182708,-0.0672 3.93278,-1.8173 4,-4 z"
          transform="matrix(-1,0,0,1,148,-6.9999975)"
          id="path1002"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         class="ColorScheme-Frame" />
       <path
          style="fill:url(#radialGradient1032);fill-opacity:1;stroke:none"
          d="M 46.00044,102.00061 V 90.000609 h 8 c 0,2.20914 1.79086,4 4,4 v 8.000001 z"

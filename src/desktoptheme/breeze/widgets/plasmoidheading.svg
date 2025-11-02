@@ -21,8 +21,8 @@
      inkscape:pagecheckerboard="0"
      showgrid="true"
      inkscape:zoom="14.570137"
-     inkscape:cx="75.153722"
-     inkscape:cy="25.977794"
+     inkscape:cx="62.353567"
+     inkscape:cy="36.753258"
      inkscape:window-width="3440"
      inkscape:window-height="1373"
      inkscape:window-x="0"
@@ -67,16 +67,27 @@
        d="m 13,12 h 6 V 6 c -4,0 -6,2 -6,6 z"
        opacity="0.75"
        sodipodi:nodetypes="cccc" />
+    <path
+       d="m 13.00001,12 h 0.999349 v -1 c 0,-2.233297 1.765552,-4 3.997395,-4 h 0.999349 L 19,6 H 17.996744 C 15.228548,6 13,8.23 13,11 Z"
+       style="fill:currentColor;stroke-width:0.999674"
+       class="ColorScheme-Frame"
+       id="path1308-6"
+       sodipodi:nodetypes="cccc" />
   </g>
   <g
      id="header-top">
     <path
        id="path1066"
        class="ColorScheme-Background"
-       transform="rotate(-90)"
        d="m-12 19h6v32h-6z"
        fill="currentColor"
-       opacity=".75" />
+       opacity=".75"
+       transform="rotate(-90)" />
+    <path
+       d="M 19,6 V 7 H 51 V 6 Z"
+       id="path1337"
+       class="ColorScheme-Frame"
+       fill="currentColor" />
   </g>
   <g
      id="header-topright">
@@ -87,26 +98,48 @@
        d="m 51,6 v 6 h 6 C 57,8 55,6 51,6 Z"
        opacity="0.75"
        sodipodi:nodetypes="cccc" />
+    <path
+       d="m 51,6.00001 v 0.999349 h 1 c 2.233297,0 4,1.765552 4,3.997395 v 0.999349 L 57,12 V 10.996744 C 57,8.228548 54.77,6 52,6 Z"
+       style="fill:currentColor;stroke-width:0.999674"
+       class="ColorScheme-Frame"
+       id="path1308-3"
+       sodipodi:nodetypes="cccc" />
   </g>
-  <path
-     id="header-left"
-     class="ColorScheme-Background"
-     transform="scale(-1)"
-     d="m-19-44h6v32h-6z"
-     fill="currentColor"
-     opacity=".75" />
+  <g
+     id="header-left">
+    <path
+       id="path-hl"
+       class="ColorScheme-Background"
+       transform="scale(-1)"
+       d="m-19-44h6v32h-6z"
+       fill="currentColor"
+       opacity=".75" />
+    <path
+       d="m 13,44 h 1 V 12 h -1 z"
+       id="path1902"
+       class="ColorScheme-Frame"
+       fill="currentColor" />
+  </g>
   <path
      id="header-center"
      class="ColorScheme-Background"
      d="m19 12h32v32h-32z"
      fill="currentColor"
      opacity=".75" />
-  <path
-     id="header-right"
-     class="ColorScheme-Background"
-     d="m51 12h6v32h-6z"
-     fill="currentColor"
-     opacity=".75" />
+  <g
+     id="header-right">
+    <path
+       id="path-hr"
+       class="ColorScheme-Background"
+       d="m51 12h6v32h-6z"
+       fill="currentColor"
+       opacity=".75" />
+    <path
+       d="m 56,44 h 1 V 12 h -1 z"
+       id="path1785-4"
+       class="ColorScheme-Frame"
+       fill="currentColor" />
+  </g>
   <g
      id="header-bottomleft"
      fill="currentColor">
@@ -121,6 +154,12 @@
        id="path3184"
        class="ColorScheme-Frame"
        d="m19 50v-1h-4l-2-2e-5v1l2 2e-5h1z"
+       fill-rule="evenodd"
+       fill="currentColor" />
+    <path
+       id="path1"
+       class="ColorScheme-Frame"
+       d="m 14.00002,44 h -1 v 4 L 13,50 h 1 l 2e-5,-2 v -1 z"
        fill-rule="evenodd"
        fill="currentColor" />
   </g>
@@ -157,6 +196,12 @@
        d="m57 49h-6v1h6c0-1-2e-5 0 0-1z"
        fill-rule="evenodd"
        fill="currentColor" />
+    <path
+       id="path2"
+       class="ColorScheme-Frame"
+       d="m 56,44 v 6 h 1 v -6 c -1,0 0,2e-5 -1,0 z"
+       fill-rule="evenodd"
+       fill="currentColor" />
   </g>
   <g
      id="footer-topleft"
@@ -172,6 +217,12 @@
        id="path3184-8"
        class="ColorScheme-Frame"
        d="m67 6v1h-4l-2 2e-5v-1l2-2e-5h1z"
+       fill-rule="evenodd"
+       fill="currentColor" />
+    <path
+       id="path3184-8-2"
+       class="ColorScheme-Frame"
+       d="m 62.00002,12 h -1 V 8 L 61,6 h 1 l 2e-5,2 v 1 z"
        fill-rule="evenodd"
        fill="currentColor" />
   </g>
@@ -208,14 +259,13 @@
        d="m105 7h-6v-1h6c0 1-2e-5 0 0 1z"
        fill-rule="evenodd"
        fill="currentColor" />
+    <path
+       id="path3178-2-4"
+       class="ColorScheme-Frame"
+       d="M 104,12 V 6 h 1 v 6 c -1,0 0,-2e-5 -1,0 z"
+       fill-rule="evenodd"
+       fill="currentColor" />
   </g>
-  <path
-     id="footer-left"
-     class="ColorScheme-Background"
-     transform="scale(-1 1)"
-     d="m-67 12h6v32h-6z"
-     fill="currentColor"
-     opacity=".75" />
   <path
      id="footer-center"
      class="ColorScheme-Background"
@@ -223,34 +273,6 @@
      d="m67-44h32v32h-32z"
      fill="currentColor"
      opacity=".75" />
-  <path
-     id="footer-right"
-     class="ColorScheme-Background"
-     transform="scale(1 -1)"
-     d="m99-44h6v32h-6z"
-     fill="currentColor"
-     opacity=".75" />
-  <path
-     id="footer-bottomleft"
-     opacity="0.75"
-     class="ColorScheme-Background"
-     fill="currentColor"
-     d="m 61,44 c 0,4 2,6 6,6 v -6 z"
-     sodipodi:nodetypes="cccc" />
-  <path
-     id="footer-bottom"
-     class="ColorScheme-Background"
-     transform="matrix(0 1 1 0 0 0)"
-     d="m44 67h6v32h-6z"
-     fill="currentColor"
-     opacity=".75" />
-  <path
-     id="footer-bottomright"
-     class="ColorScheme-Background"
-     fill="currentColor"
-     d="m 99,44 v 6 c 4,0 6,-2 6,-6 z"
-     opacity="0.75"
-     sodipodi:nodetypes="cccc" />
   <path
      id="hint-top-margin"
      d="m33 12h4v6h-4z"
@@ -269,4 +291,81 @@
      transform="rotate(90)"
      d="m26-25h4v6h-4z"
      fill="#f0f" />
+  <g
+     id="footer-left">
+    <path
+       id="path-fl"
+       class="ColorScheme-Background"
+       transform="scale(-1 1)"
+       d="m-67 12h6v32h-6z"
+       fill="currentColor"
+       opacity=".75" />
+    <path
+       d="m 61,44 h 1 V 12 h -1 z"
+       id="path1902-3"
+       class="ColorScheme-Frame"
+       fill="currentColor" />
+  </g>
+  <g
+     id="footer-right">
+    <path
+       id="path-fr"
+       class="ColorScheme-Background"
+       transform="scale(1 -1)"
+       d="m99-44h6v32h-6z"
+       fill="currentColor"
+       opacity=".75" />
+    <path
+       d="m 104,44 h 1 V 12 h -1 z"
+       id="path1785-4-7"
+       class="ColorScheme-Frame"
+       fill="currentColor" />
+  </g>
+  <g
+     id="footer-bottom">
+    <path
+       id="path3"
+       class="ColorScheme-Background"
+       transform="matrix(0 1 1 0 0 0)"
+       d="m44 67h6v32h-6z"
+       fill="currentColor"
+       opacity=".75" />
+    <path
+       id="rect3154-4"
+       class="ColorScheme-Frame"
+       d="m 99,49 v 1 H 67 v -1 z"
+       fill="currentColor" />
+  </g>
+  <g
+     id="footer-bottomleft">
+    <path
+       id="path4"
+       opacity="0.75"
+       class="ColorScheme-Background"
+       fill="currentColor"
+       d="m 61,44 c 0,4 2,6 6,6 v -6 z"
+       sodipodi:nodetypes="cccc" />
+    <path
+       d="m 67,49.99999 v -0.999349 h -1 c -2.233297,0 -4,-1.765552 -4,-3.997395 V 44.003897 L 61,44 v 1.003256 C 61,47.771452 63.23,50 66,50 Z"
+       style="fill:currentColor;stroke-width:0.999674"
+       class="ColorScheme-Frame"
+       id="path1308-3-4"
+       sodipodi:nodetypes="cccc" />
+  </g>
+  <g
+     id="footer-bottomright">
+    <path
+       id="path5"
+       class="ColorScheme-Background"
+       fill="currentColor"
+       d="m 99,44 v 6 c 4,0 6,-2 6,-6 z"
+       opacity="0.75"
+       sodipodi:nodetypes="cccc" />
+    <path
+       d="m 104.99999,44 h -0.99935 v 1 c 0,2.2333 -1.76555,4 -3.99739,4 H 99.003897 L 99,50 h 1.00326 C 102.77145,50 105,47.77 105,45 Z"
+       style="fill:currentColor;stroke-width:0.999674"
+       class="ColorScheme-Frame"
+       id="path1308-3-3"
+       sodipodi:nodetypes="cccc" />
+  </g>
 </svg>

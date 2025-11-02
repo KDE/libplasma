@@ -6,7 +6,7 @@
    height="64"
    viewBox="0 0 157 64"
    width="157"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    sodipodi:docname="background.svg"
    version="1.1"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -24,14 +24,14 @@
      inkscape:pagecheckerboard="1"
      inkscape:blackoutopacity="0.0"
      showgrid="false"
-     inkscape:current-layer="left"
+     inkscape:current-layer="bottomright"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="16.604808"
-     inkscape:cx="16.952922"
-     inkscape:cy="54.652847"
-     inkscape:window-width="1920"
-     inkscape:window-height="1127"
+     inkscape:zoom="16"
+     inkscape:cx="39.625"
+     inkscape:cy="38.46875"
+     inkscape:window-width="3440"
+     inkscape:window-height="1373"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1">
@@ -39,7 +39,10 @@
        type="xygrid"
        id="grid988"
        originx="0"
-       originy="4" />
+       originy="4"
+       spacingy="1"
+       spacingx="1"
+       units="px" />
   </sodipodi:namedview>
   <defs
      id="defs15">
@@ -206,6 +209,11 @@
        width="32"
        x="0"
        y="0" />
+    <path
+       style="fill:currentColor"
+       d="M 1.6e-6,9.9999998e-8 V 1.0000001 H 32.000002 V 9.9999998e-8 Z"
+       id="path1337"
+       class="ColorScheme-Frame" />
   </g>
   <g
      id="bottom"
@@ -218,6 +226,11 @@
        width="32"
        x="0"
        y="0" />
+    <path
+       style="fill:currentColor"
+       d="M 1.6e-6,5 V 6 H 32.000002 V 5 Z"
+       id="path1337-3"
+       class="ColorScheme-Frame" />
   </g>
   <g
      id="left"
@@ -230,6 +243,11 @@
        width="6"
        x="0"
        y="0" />
+    <path
+       style="fill:currentColor"
+       d="M 1.0000016,0 H 1.614502e-6 V 32 H 1.0000016 Z"
+       id="path1337-2"
+       class="ColorScheme-Frame" />
   </g>
   <g
      id="right"
@@ -242,6 +260,11 @@
        width="6"
        x="0"
        y="0" />
+    <path
+       style="fill:currentColor"
+       d="m 5.000002,32 h 1 V 0 h -1 z"
+       id="path1337-9"
+       class="ColorScheme-Frame" />
   </g>
   <g
      id="center"
@@ -264,6 +287,12 @@
        class="ColorScheme-Background"
        id="path3115"
        sodipodi:nodetypes="cccc" />
+    <path
+       d="M 1.1614502e-5,5.9999999 H 1.0000116 v -1 C 1.0000116,2.766703 2.7667146,1 5.0000116,1 h 1 L 6.0039116,10e-8 h -1.00391 C 2.2300016,10e-8 1.614502e-6,2.23 1.614502e-6,4.9999999 Z"
+       style="fill:currentColor"
+       class="ColorScheme-Frame"
+       id="path1308"
+       sodipodi:nodetypes="cccc" />
   </g>
   <g
      id="topright"
@@ -273,6 +302,12 @@
        style="fill:currentColor"
        class="ColorScheme-Background"
        id="path3118"
+       sodipodi:nodetypes="cccc" />
+    <path
+       d="m 2e-6,1.01e-5 v 1 h 1 c 2.233297,0 4,1.766703 4,4 v 1 l 1,0.0039 v -1.00391 c 0,-2.77 -2.23,-5.000000000000001 -5,-5.000000000000001 z"
+       style="fill:currentColor"
+       class="ColorScheme-Frame"
+       id="path1308-6"
        sodipodi:nodetypes="cccc" />
   </g>
   <g
@@ -284,6 +319,12 @@
        class="ColorScheme-Background"
        id="path3124"
        sodipodi:nodetypes="cccc" />
+    <path
+       d="m 6.0000016,6.0039 v -1 h -1 c -2.233297,0 -4,-1.766703 -4,-4 v -1 L 1.614502e-6,0 v 1.00391 c 0,2.77 2.229999985498,5 4.999999985498,5 z"
+       style="fill:currentColor"
+       class="ColorScheme-Frame"
+       id="path1308-0"
+       sodipodi:nodetypes="cccc" />
   </g>
   <g
      id="bottomright"
@@ -293,6 +334,12 @@
        style="fill:currentColor"
        class="ColorScheme-Background"
        id="path3121"
+       sodipodi:nodetypes="cccc" />
+    <path
+       d="m 6.001947,0.001955 h -1 v 1 c 0,2.233297 -1.766703,4 -4,4 h -1 l -0.0039,1 h 1.00391 c 2.77,0 5,-2.23 5,-5 z"
+       style="fill:currentColor"
+       class="ColorScheme-Frame"
+       id="path1308-0-3"
        sodipodi:nodetypes="cccc" />
   </g>
   <rect

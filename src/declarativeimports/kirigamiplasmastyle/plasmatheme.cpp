@@ -70,7 +70,6 @@ QIcon PlasmaTheme::iconFromTheme(const QString &name, const QColor &customColor)
     colors.setPositiveText(colorScheme.foreground(KColorScheme::PositiveText).color().name());
     colors.setNeutralText(colorScheme.foreground(KColorScheme::NeutralText).color().name());
     colors.setNegativeText(colorScheme.foreground(KColorScheme::NegativeText).color().name());
-    colors.setActiveText(colorScheme.foreground(KColorScheme::ActiveText).color().name());
 
     if (customColor != Qt::transparent) {
         colors.setText(customColor);

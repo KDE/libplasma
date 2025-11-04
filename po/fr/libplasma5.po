@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-27 05:30+0000\n"
-"PO-Revision-Date: 2024-04-26 11:31+0200\n"
+"PO-Revision-Date: 2024-08-25 11:46+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -297,19 +297,19 @@ msgstr "Descriptions du service"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:30
 #, kde-format
 msgid "Images for dialogs"
-msgstr "Images pour la boîte de dialogue"
+msgstr "Images pour la boite de dialogue"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:31
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:32
 #, kde-format
 msgid "Generic dialog background"
-msgstr "Arrière plan générique de la boîte de dialogue"
+msgstr "Arrière plan générique de la boite de dialogue"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:33
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:34
 #, kde-format
 msgid "Theme for the logout dialog"
-msgstr "Thème de la boîte de dialogue de déconnexion"
+msgstr "Thème de la boite de dialogue de déconnexion"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:36
 #, kde-format
@@ -354,19 +354,19 @@ msgstr "Image de fond pour les infobulles"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:50
 #, kde-format
 msgid "Opaque images for dialogs"
-msgstr "Images opaque des boîtes de dialogue"
+msgstr "Images opaque des boites de dialogue"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:51
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:52
 #, kde-format
 msgid "Opaque generic dialog background"
-msgstr "Fond opaque générique de la boîte de dialogue"
+msgstr "Fond opaque générique de la boite de dialogue"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:55
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:58
 #, kde-format
 msgid "Opaque theme for the logout dialog"
-msgstr "Thème opaque pour la boîte de dialogue de déconnexion"
+msgstr "Thème opaque pour la boite de dialogue de déconnexion"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:60
 #, kde-format

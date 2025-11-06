@@ -46,7 +46,7 @@ public:
     void scheduleThemeChangeNotification();
     void setThemeName(const QString &themeName, bool writeSettings, bool emitChanged);
     void processWallpaperSettings(const KSharedConfigPtr &metadata);
-    void processContrastSettings(const KSharedConfigPtr &metadata);
+    void processContrastSettings(const KColorScheme &colorScheme, const KSharedConfigPtr &metadata);
     void processAdaptiveTransparencySettings(const KSharedConfigPtr &metadata);
     void processBlurBehindSettings(const KSharedConfigPtr &metadata);
 

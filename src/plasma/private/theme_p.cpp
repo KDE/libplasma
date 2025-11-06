@@ -29,6 +29,11 @@ ThemePrivate *ThemePrivate::globalTheme = nullptr;
 QHash<QString, ThemePrivate *> ThemePrivate::themes = QHash<QString, ThemePrivate *>();
 using QSP = QStandardPaths;
 
+static bool isColorSchemeDark(const KColorScheme &colorScheme)
+{
+    return qGray(colorScheme.background().color().rgb()) < 192;
+}
+
 KSharedConfig::Ptr configForTheme(const QString &theme)
 {
     const QString baseName = QLatin1String(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/") % theme;
@@ -231,6 +236,7 @@ void ThemePrivate::colorsChanged()
     headerColorScheme = KColorScheme(QPalette::Active, KColorScheme::Header, colors);
     tooltipColorScheme = KColorScheme(QPalette::Active, KColorScheme::Tooltip, colors);
     palette = KColorScheme::createApplicationPalette(colors);
+    processContrastSettings(colorScheme, configForTheme(themeName));
     scheduleThemeChangeNotification();
     Q_EMIT applicationPaletteChange();
 }
@@ -369,19 +375,28 @@ void ThemePrivate::processWallpaperSettings(const KSharedConfigPtr &metadata)
     defaultWallpaperTheme = cg.readEntry("defaultWallpaperTheme", DEFAULT_WALLPAPER_THEME);
 }
 
-void ThemePrivate::processContrastSettings(const KSharedConfigPtr &metadata)
+void ThemePrivate::processContrastSettings(const KColorScheme &colorScheme, const KSharedConfigPtr &metadata)
 {
-    KConfigGroup cg;
-    if (metadata->hasGroup(QStringLiteral("ContrastEffect"))) {
-        cg = KConfigGroup(metadata, QStringLiteral("ContrastEffect"));
-        backgroundContrastEnabled = cg.readEntry("enabled", false);
-
-        backgroundContrast = cg.readEntry("contrast", qQNaN());
-        backgroundIntensity = cg.readEntry("intensity", qQNaN());
-        backgroundSaturation = cg.readEntry("saturation", qQNaN());
+    QStringList chain{QStringLiteral("ContrastEffect")};
+    if (isColorSchemeDark(colorScheme)) {
+        chain.prepend(QStringLiteral("ContrastEffect-Dark"));
     } else {
-        backgroundContrastEnabled = false;
+        chain.prepend(QStringLiteral("ContrastEffect-Light"));
     }
+
+    for (const QString &groupName : chain) {
+        if (metadata->hasGroup(groupName)) {
+            const KConfigGroup group(metadata, groupName);
+
+            backgroundContrastEnabled = group.readEntry("enabled", false);
+            backgroundContrast = group.readEntry("contrast", qQNaN());
+            backgroundIntensity = group.readEntry("intensity", qQNaN());
+            backgroundSaturation = group.readEntry("saturation", qQNaN());
+            return;
+        }
+    }
+
+    backgroundContrastEnabled = false;
 }
 
 void ThemePrivate::processAdaptiveTransparencySettings(const KSharedConfigPtr &metadata)
@@ -451,7 +466,7 @@ void ThemePrivate::setThemeName(const QString &theme, bool writeSettings, bool e
     // load the wallpaper settings, if any
     KSharedConfigPtr metadata = configForTheme(theme);
 
-    processContrastSettings(metadata);
+    processContrastSettings(colorScheme, metadata);
     processBlurBehindSettings(metadata);
     processAdaptiveTransparencySettings(metadata);
 

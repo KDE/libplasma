@@ -100,16 +100,12 @@ void ContainmentItem::init()
 
             if (pkg.metadata().isValid() && !pkg.metadata().isHidden()) {
                 if (pkg.isValid()) {
-                    QObject *containmentGraphicObject = qmlObject()->rootObject();
-
                     QVariantHash toolboxProperties;
                     toolboxProperties[QStringLiteral("parent")] = QVariant::fromValue(this);
                     QObject *toolBoxObject = qmlObject()->createObjectFromSource(pkg.fileUrl("mainscript"), nullptr, toolboxProperties);
-                    if (toolBoxObject && containmentGraphicObject) {
-                        connect(this, &QObject::destroyed, [toolBoxObject]() {
-                            delete toolBoxObject;
-                        });
-                        containmentGraphicObject->setProperty("toolBox", QVariant::fromValue(toolBoxObject));
+                    if (toolBoxObject) {
+                        toolBoxObject->setParent(this);
+                        setProperty("toolBox", QVariant::fromValue(toolBoxObject));
                     }
                 } else {
                     qCWarning(LOG_PLASMAQUICK) << "Could not load toolbox package." << pkg.path();

@@ -139,6 +139,7 @@ PlasmaComponents3.TextField {
 
             visible: !(modelData instanceof Kirigami.Action) || modelData.visible
             enabled: modelData.enabled
+            focusPolicy: Qt.TabFocus
 
             onClicked: mouse => modelData.trigger()
 

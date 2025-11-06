@@ -134,13 +134,16 @@ PlasmaComponents3.TextField {
             Layout.preferredWidth: implicitHeight
 
             icon.name: modelData.icon.name.length > 0 ? modelData.icon.name : modelData.icon.source
+            text: modelData.text
+            display: PlasmaComponents3.ToolButton.IconOnly
+
             visible: !(modelData instanceof Kirigami.Action) || modelData.visible
             enabled: modelData.enabled
 
             onClicked: mouse => modelData.trigger()
 
-            PlasmaComponents3.ToolTip.visible: (hovered || activeFocus) && (modelData.text.length > 0)
-            PlasmaComponents3.ToolTip.text: modelData.text
+            PlasmaComponents3.ToolTip.visible: (hovered || activeFocus) && (text.length > 0)
+            PlasmaComponents3.ToolTip.text: text
         }
     }
 

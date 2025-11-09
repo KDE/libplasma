@@ -16,6 +16,7 @@ include(CMakeFindDependencyMacro)
 find_dependency(Qt6Qml "@REQUIRED_QT_VERSION@")
 find_dependency(Qt6Gui "@REQUIRED_QT_VERSION@")
 find_dependency(KF6Package "@KF_DEP_VERSION@")
+find_dependency(KF6KirigamiPlatform "@KF_DEP_VERSION@")
 find_dependency(KF6WindowSystem "@KF_DEP_VERSION@")
 
 @PACKAGE_SETUP_AUTOMOC_VARIABLES@

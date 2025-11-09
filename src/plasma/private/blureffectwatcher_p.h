@@ -38,9 +38,8 @@ Q_SIGNALS:
     void effectChanged(bool on);
 
 private:
-    void init();
-    bool fetchEffectActive() const;
 #if HAVE_X11
+    bool fetchEffectActive() const;
     xcb_atom_t m_property;
     QNativeInterface::QX11Application *m_x11Interface = nullptr;
 #endif

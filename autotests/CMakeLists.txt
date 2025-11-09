@@ -13,7 +13,7 @@ find_package(Qt6 COMPONENTS QuickTest Widgets REQUIRED)
 MACRO(PLASMA_UNIT_TESTS)
        FOREACH(_testname ${ARGN})
                set(libs Qt6::Qml Qt6::Test Plasma::Plasma Plasma::PlasmaQuick
-                        KF6::Archive KF6::CoreAddons KF6::ConfigGui KF6::I18n KF6::IconThemes)
+                        KF6::Archive KF6::CoreAddons KF6::ConfigGui KF6::I18n KF6::IconThemes KF6::Svg)
                if(QT_QTOPENGL_FOUND)
                    list(APPEND libs Qt6::OpenGL)
                endif()

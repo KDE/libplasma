@@ -41,8 +41,6 @@ public:
 
     KConfigGroup &config();
 
-    QString imagePath(const QString &theme, const QString &type, const QString &image);
-    QString findInTheme(const QString &image, const QString &theme);
     void scheduleThemeChangeNotification();
     void setThemeName(const QString &themeName, bool writeSettings, bool emitChanged);
     void processWallpaperSettings(const KSharedConfigPtr &metadata);

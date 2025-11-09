@@ -101,47 +101,6 @@ QString Theme::themeName() const
     return d->themeName;
 }
 
-QString Theme::imagePath(const QString &name) const
-{
-    // look for a compressed svg file in the theme
-    if (name.contains(QLatin1String("../")) || name.isEmpty()) {
-        // we don't support relative paths
-        // qCDebug(LOG_PLASMA) << "Theme says: bad image path " << name;
-        return QString();
-    }
-
-    const QString svgzName = name % QLatin1String(".svgz");
-    QString path = d->findInTheme(svgzName, d->themeName);
-
-    if (path.isEmpty()) {
-        // try for an uncompressed svg file
-        const QString svgName = name % QLatin1String(".svg");
-        path = d->findInTheme(svgName, d->themeName);
-
-        // search in fallback themes if necessary
-        for (int i = 0; path.isEmpty() && i < d->fallbackThemes.count(); ++i) {
-            if (d->themeName == d->fallbackThemes[i]) {
-                continue;
-            }
-
-            // try a compressed svg file in the fallback theme
-            path = d->findInTheme(svgzName, d->fallbackThemes[i]);
-
-            if (path.isEmpty()) {
-                // try an uncompressed svg file in the fallback theme
-                path = d->findInTheme(svgName, d->fallbackThemes[i]);
-            }
-        }
-    }
-
-    return path;
-}
-
-QString Theme::backgroundPath(const QString &image) const
-{
-    return d->imagePath(themeName(), QStringLiteral("/appbackgrounds/"), image);
-}
-
 QPalette Theme::palette() const
 {
     return d->palette;
@@ -168,20 +127,6 @@ KSharedConfigPtr Theme::globalColorScheme()
 QString Theme::defaultWallpaperTheme() const
 {
     return d->defaultWallpaperTheme;
-}
-
-bool Theme::currentThemeHasImage(const QString &name) const
-{
-    if (name.contains(QLatin1String("../"))) {
-        // we don't support relative paths
-        return false;
-    }
-
-    QString path = d->findInTheme(name % QLatin1String(".svgz"), d->themeName);
-    if (path.isEmpty()) {
-        path = d->findInTheme(name % QLatin1String(".svg"), d->themeName);
-    }
-    return path.contains(QLatin1String("/" PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/") % d->themeName);
 }
 
 KSharedConfigPtr Theme::colorScheme() const

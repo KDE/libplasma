@@ -148,31 +148,11 @@ public:
     QString themeName() const;
 
     /*!
-     * Retrieve the path for an SVG image in the current theme.
-     *
-     * \a name the name of the file in the theme directory (without the
-     *           ".svg" part or a leading slash)
-     *
-     * Returns the full path to the requested file for the current theme
-     */
-    QString imagePath(const QString &name) const;
-
-    /*!
      * Returns the default wallpaper theme associated with this theme.
      *
      * \since 6.6
      */
     QString defaultWallpaperTheme() const;
-
-    /*!
-     * Checks if this theme has an image named in a certain way
-     *
-     * \a name the name of the file in the theme directory (without the
-     *           ".svg" part or a leading slash)
-     *
-     * Returns true if the image exists for this theme
-     */
-    bool currentThemeHasImage(const QString &name) const;
 
     /*!
      * Returns the color scheme configurationthat goes along this theme.
@@ -341,11 +321,6 @@ public:
      * \since 5.0
      */
     Q_INVOKABLE QSizeF mSize(const QFont &font = QGuiApplication::font()) const;
-
-    /*!
-     *
-     */
-    QString backgroundPath(const QString &image) const;
 
     /*!
      *

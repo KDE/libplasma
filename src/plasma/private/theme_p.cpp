@@ -166,31 +166,6 @@ KConfigGroup &ThemePrivate::config()
     return cfg;
 }
 
-QString ThemePrivate::imagePath(const QString &theme, const QString &type, const QString &image)
-{
-    QString subdir = QLatin1String(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/") % theme % type % image;
-    return QStandardPaths::locate(QStandardPaths::GenericDataLocation, subdir);
-}
-
-QString ThemePrivate::findInTheme(const QString &image, const QString &theme)
-{
-    QString type = QStringLiteral("/");
-    if (!compositingActive) {
-        type = QStringLiteral("/opaque/");
-    } else if (backgroundContrastActive) {
-        type = QStringLiteral("/translucent/");
-    }
-
-    QString search = imagePath(theme, type, image);
-
-    // not found or compositing enabled
-    if (search.isEmpty()) {
-        search = imagePath(theme, QStringLiteral("/"), image);
-    }
-
-    return search;
-}
-
 void ThemePrivate::updateKSvgSelectors()
 {
 #if HAVE_X11

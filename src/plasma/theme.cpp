@@ -9,8 +9,6 @@
 
 #include <QFile>
 #include <QFileInfo>
-#include <QFontDatabase>
-#include <QFontMetrics>
 #include <QMutableListIterator>
 #include <QPair>
 #include <QStringBuilder>
@@ -40,8 +38,6 @@ Theme::Theme(QObject *parent)
     d = ThemePrivate::globalTheme;
 
     connect(d, &ThemePrivate::themeChanged, this, &Theme::themeChanged);
-    connect(d, &ThemePrivate::defaultFontChanged, this, &Theme::defaultFontChanged);
-    connect(d, &ThemePrivate::smallestFontChanged, this, &Theme::smallestFontChanged);
 }
 
 Theme::Theme(const QString &themeName, QObject *parent)
@@ -218,21 +214,6 @@ bool Theme::useGlobalSettings() const
 KPluginMetaData Theme::metadata() const
 {
     return d->pluginMetaData;
-}
-
-QFont Theme::defaultFont() const
-{
-    return QGuiApplication::font();
-}
-
-QFont Theme::smallestFont() const
-{
-    return QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
-}
-
-QSizeF Theme::mSize(const QFont &font) const
-{
-    return QFontMetrics(font).boundingRect(QStringLiteral("M")).size();
 }
 
 bool Theme::backgroundContrastEnabled() const

@@ -51,17 +51,6 @@ class PLASMA_EXPORT Theme : public QObject
      */
     Q_PROPERTY(bool useGlobalSettings READ useGlobalSettings NOTIFY themeChanged)
 
-    // fonts
-    /*!
-     * \property Plasma::Theme::defaultFont
-     */
-    Q_PROPERTY(QFont defaultFont READ defaultFont NOTIFY defaultFontChanged)
-
-    /*!
-     * \property Plasma::Theme::smallestFont
-     */
-    Q_PROPERTY(QFont smallestFont READ smallestFont NOTIFY smallestFontChanged)
-
     /*!
      * \property Plasma::Theme::palette
      */
@@ -218,18 +207,6 @@ public:
      */
     KPluginMetaData metadata() const;
 
-    /*!
-     * Returns The default application font
-     * \since 5.0
-     */
-    QFont defaultFont() const;
-
-    /*!
-     * Returns The smallest readable font
-     * \since 5.0
-     */
-    QFont smallestFont() const;
-
     /*! This method allows Plasma to enable and disable the background
      * contrast effect for a given theme, improving readability. The
      * value is read from the "enabled" key in the "ContrastEffect"
@@ -320,29 +297,6 @@ public:
     bool blurBehindEnabled() const;
 
     /*!
-     * Returns the size of the letter "M" as rendered on the screen with the given font.
-     * This values gives you a base size that:
-     * * scales dependent on the DPI of the screen
-     * * Scales with the default font as set by the user
-     * You can use it like this in QML Items:
-     * \code
-     * Item {
-     *     width: PlasmaCore.Theme.mSize(PlasmaCore.Theme.defaultFont).height
-     *     height: width
-     * }
-     * \endcode
-     * This allows you to dynamically scale elements of your user interface with different font settings and
-     * different physical outputs (with different DPI).
-     *
-     * \a font The font to use for the metrics.
-     *
-     * Returns The size of the letter "M" as rendered on the screen with the given font.
-     *
-     * \since 5.0
-     */
-    Q_INVOKABLE QSizeF mSize(const QFont &font = QGuiApplication::font()) const;
-
-    /*!
      *
      */
     QString backgroundPath(const QString &image) const;
@@ -368,9 +322,6 @@ Q_SIGNALS:
      * Svg::repaintNeeded() at an appropriate time.
      */
     void themeChanged();
-
-    void defaultFontChanged();
-    void smallestFontChanged();
 
 private:
     friend class SvgPrivate;

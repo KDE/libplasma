@@ -41,20 +41,12 @@ BlurEffectWatcher::BlurEffectWatcher(QObject *parent)
     , m_x11Interface(qGuiApp->nativeInterface<QNativeInterface::QX11Application>())
 #endif
 {
-    if (KWindowSystem::isPlatformWayland()) {
+    // TODO: New KWindowEffects APIs are needed.
+    static bool insideKwin = QGuiApplication::platformName() == QLatin1String("wayland-org.kde.kwin.qpa");
+    if (insideKwin) {
+        m_effectActive = true;
+    } else if (KWindowSystem::isPlatformWayland()) {
         m_blurManager = std::make_unique<BlurManager>();
-    }
-
-    init();
-}
-
-BlurEffectWatcher::~BlurEffectWatcher()
-{
-}
-
-void BlurEffectWatcher::init()
-{
-    if (KWindowSystem::isPlatformWayland()) {
         connect(m_blurManager.get(), &BlurManager::activeChanged, this, [this]() {
             m_effectActive = m_blurManager->isActive();
             Q_EMIT effectChanged(m_effectActive);
@@ -86,6 +78,10 @@ void BlurEffectWatcher::init()
         }
 #endif
     }
+}
+
+BlurEffectWatcher::~BlurEffectWatcher()
+{
 }
 
 #if HAVE_X11
@@ -120,19 +116,9 @@ bool BlurEffectWatcher::nativeEventFilter(const QByteArray &eventType, void *mes
 
     return false;
 }
-#endif
-
-bool BlurEffectWatcher::isEffectActive() const
-{
-    return m_effectActive;
-}
 
 bool BlurEffectWatcher::fetchEffectActive() const
 {
-    if (KWindowSystem::isPlatformWayland()) {
-        return m_blurManager->isActive();
-    }
-
     if (m_property == XCB_ATOM_NONE || !m_x11Interface) {
         return false;
     }
@@ -149,6 +135,12 @@ bool BlurEffectWatcher::fetchEffectActive() const
         }
     }
     return false;
+}
+#endif
+
+bool BlurEffectWatcher::isEffectActive() const
+{
+    return m_effectActive;
 }
 
 } // namespace Plasma

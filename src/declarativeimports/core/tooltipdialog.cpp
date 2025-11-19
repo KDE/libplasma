@@ -30,6 +30,7 @@ ToolTipDialog::ToolTipDialog()
     } else {
         flags |= Qt::FramelessWindowHint;
         PlasmaShellWaylandIntegration::get(this)->setRole(QtWayland::org_kde_plasma_surface::role_tooltip);
+        PlasmaShellWaylandIntegration::get(this)->setTakesFocus(false);
     }
     setFlags(flags);
 

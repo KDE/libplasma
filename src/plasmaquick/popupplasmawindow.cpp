@@ -282,6 +282,9 @@ PopupPlasmaWindow::PopupPlasmaWindow(const QString &svgPrefix)
     : PlasmaWindow(svgPrefix)
     , d(new PopupPlasmaWindowPrivate(this))
 {
+    if (KWindowSystem::isPlatformWayland()) {
+        PlasmaShellWaylandIntegration::get(this)->setTakesFocus(true);
+    }
 }
 
 PopupPlasmaWindow::~PopupPlasmaWindow()

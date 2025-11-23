@@ -153,7 +153,7 @@ msgstr "未知"
 #: plasma/applet.cpp:759
 #, kde-format
 msgid "Activate %1 Widget"
-msgstr "激活 %1 挂件"
+msgstr "激活 %1 小部件"
 
 #: plasma/containment.cpp:115 plasma/private/applet_p.cpp:106
 #, kde-format
@@ -175,12 +175,12 @@ msgstr "配置 %1..."
 #: plasma/corona.cpp:355 plasma/corona.cpp:482
 #, kde-format
 msgid "Lock Widgets"
-msgstr "锁定挂件"
+msgstr "锁定小部件"
 
 #: plasma/corona.cpp:355
 #, kde-format
 msgid "Unlock Widgets"
-msgstr "解锁挂件"
+msgstr "解锁小部件"
 
 #: plasma/corona.cpp:404
 #, kde-format
@@ -303,13 +303,13 @@ msgstr "壁纸包"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:38
 #, kde-format
 msgid "Images for widgets"
-msgstr "挂件图像"
+msgstr "小部件图像"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:39
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:40
 #, kde-format
 msgid "Background image for widgets"
-msgstr "挂件背景图像"
+msgstr "小部件背景图像"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:41
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:42
@@ -327,7 +327,7 @@ msgstr "面板背景图像"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:46
 #, kde-format
 msgid "Background for graphing widgets"
-msgstr "图形绘制挂件背景"
+msgstr "图形绘制小部件背景"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:47
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:48
@@ -355,7 +355,7 @@ msgstr "注销对话框的不透明主题"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:60
 #, kde-format
 msgid "Opaque images for widgets"
-msgstr "挂件的不透明图像"
+msgstr "小部件的不透明图像"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:63
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:66
@@ -383,35 +383,35 @@ msgstr "其他"
 #: plasma/private/applet_p.cpp:126
 #, kde-format
 msgid "The %1 widget did not define which ScriptEngine to use."
-msgstr "挂件 %1 没有定义使用何种脚本引擎。"
+msgstr "小部件 %1 没有定义使用何种脚本引擎。"
 
 #: plasma/private/applet_p.cpp:145
 #, kde-format
 msgctxt "Package file, name of the widget"
 msgid "Could not open the %1 package required for the %2 widget."
-msgstr "无法打开 %2 挂件所需的 %1 软件包。"
+msgstr "无法打开 %2 小部件所需的 %1 软件包。"
 
 #: plasma/private/applet_p.cpp:166
 #, kde-format
 msgctxt ""
 "API or programming language the widget was written in, name of the widget"
 msgid "Could not create a %1 ScriptEngine for the %2 widget."
-msgstr "无法为 %2 挂件创建 %1 脚本引擎。"
+msgstr "无法为 %2 小部件创建 %1 脚本引擎。"
 
 #: plasma/private/applet_p.cpp:172
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "显示替代部件..."
+msgstr "显示替代小部件..."
 
 #: plasma/private/applet_p.cpp:274
 #, kde-format
 msgid "Widget Removed"
-msgstr "挂件已移除"
+msgstr "小部件已移除"
 
 #: plasma/private/applet_p.cpp:275
 #, kde-format
 msgid "The widget \"%1\" has been removed."
-msgstr "挂件“%1”已移除。"
+msgstr "小部件“%1”已移除。"
 
 #: plasma/private/applet_p.cpp:279
 #, kde-format
@@ -441,12 +441,12 @@ msgstr "撤销"
 #: plasma/private/applet_p.cpp:375
 #, kde-format
 msgid "Widget Settings"
-msgstr "挂件设置"
+msgstr "小部件设置"
 
 #: plasma/private/applet_p.cpp:382
 #, kde-format
 msgid "Remove this Widget"
-msgstr "移除此挂件"
+msgstr "移除此小部件"
 
 #: plasma/private/applet_p.cpp:389
 #: plasma/private/associatedapplicationmanager.cpp:65
@@ -485,7 +485,7 @@ msgstr "活动设置"
 #: plasma/private/containment_p.cpp:71
 #, kde-format
 msgid "Add Widgets..."
-msgstr "添加挂件..."
+msgstr "添加小部件..."
 
 #: plasma/private/containment_p.cpp:187
 #, kde-format
@@ -498,19 +498,19 @@ msgstr "无法找到所需组件：%1"
 msgid ""
 "Sharing a widget on the network allows you to access this widget from "
 "another computer as a remote control."
-msgstr "在网络上共享挂件后，您可以将其他计算机作为遥控器远程访问此挂件。"
+msgstr "在网络上共享小部件后，您可以将其他计算机作为遥控器远程访问此小部件。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
 #: plasma/private/publish.ui:27
 #, kde-format
 msgid "Share this widget on the network"
-msgstr "在网络上共享此挂件"
+msgstr "在网络上共享此小部件"
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
 #: plasma/private/publish.ui:37
 #, kde-format
 msgid "Allow everybody to freely access this widget"
-msgstr "允许任何人自由访问此挂件"
+msgstr "允许任何人自由访问此小部件"
 
 #: plasma/private/service_p.h:32
 #, kde-format
@@ -562,7 +562,7 @@ msgstr "您刚刚拖放的软件包无效。"
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:721
 #, kde-format
 msgid "Widgets"
-msgstr "挂件"
+msgstr "小部件"
 
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:657
 #, kde-format

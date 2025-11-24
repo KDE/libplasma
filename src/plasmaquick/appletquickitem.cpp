@@ -179,6 +179,17 @@ void AppletQuickItemPrivate::propagateSizeHint(const QByteArray &layoutProperty)
     }
 }
 
+template<typename T>
+static T castOrDestroy(QObject *object)
+{
+    if (auto casted = qobject_cast<T>(object)) {
+        return casted;
+    } else {
+        delete object;
+        return nullptr;
+    }
+}
+
 QQuickItem *AppletQuickItemPrivate::createCompactRepresentationItem()
 {
     if (!compactRepresentation) {
@@ -193,7 +204,11 @@ QQuickItem *AppletQuickItemPrivate::createCompactRepresentationItem()
     initialProperties[QStringLiteral("parent")] = QVariant::fromValue(q);
     initialProperties[QStringLiteral("plasmoidItem")] = QVariant::fromValue(q);
 
-    compactRepresentationItem = qobject_cast<QQuickItem *>(qmlObject->createObjectFromComponent(compactRepresentation, qmlContext(q), initialProperties));
+    compactRepresentationItem = castOrDestroy<QQuickItem *>(qmlObject->createObjectFromComponent(compactRepresentation, qmlContext(q), initialProperties));
+    if (!compactRepresentationItem) {
+        qCWarning(LOG_PLASMAQUICK) << "The compactRepresentation of" << applet->pluginMetaData().pluginId() << "is not an Item";
+        return nullptr;
+    }
 
     Q_EMIT q->compactRepresentationItemChanged(compactRepresentationItem);
 
@@ -202,17 +217,20 @@ QQuickItem *AppletQuickItemPrivate::createCompactRepresentationItem()
 
 QQuickItem *AppletQuickItemPrivate::createFullRepresentationItem()
 {
+    if (!fullRepresentation) {
+        return nullptr;
+    }
+
     if (fullRepresentationItem) {
         return fullRepresentationItem;
     }
 
-    if (fullRepresentation && fullRepresentation != qmlObject->mainComponent()) {
-        QVariantHash initialProperties;
-        initialProperties[QStringLiteral("parent")] = QVariant();
-        fullRepresentationItem = qobject_cast<QQuickItem *>(qmlObject->createObjectFromComponent(fullRepresentation, qmlContext(q), initialProperties));
-    }
+    QVariantHash initialProperties;
+    initialProperties[QStringLiteral("parent")] = QVariant();
 
+    fullRepresentationItem = castOrDestroy<QQuickItem *>(qmlObject->createObjectFromComponent(fullRepresentation, qmlContext(q), initialProperties));
     if (!fullRepresentationItem) {
+        qCWarning(LOG_PLASMAQUICK) << "The fullRepresentation of" << applet->pluginMetaData().pluginId() << "is not an Item";
         return nullptr;
     }
 
@@ -232,13 +250,13 @@ QQuickItem *AppletQuickItemPrivate::createCompactRepresentationExpanderItem()
     }
 
     // Ensure plasmoidItem is not null on creation to avoid ternary operator in QML
-    compactRepresentationExpanderItem = qobject_cast<QQuickItem *>(qmlObject->createObjectFromComponent(compactRepresentationExpander,
-                                                                                                        qmlContext(q),
-                                                                                                        {
-                                                                                                            {u"plasmoidItem"_s, QVariant::fromValue(q)},
-                                                                                                        }));
-
+    compactRepresentationExpanderItem = castOrDestroy<QQuickItem *>(qmlObject->createObjectFromComponent(compactRepresentationExpander,
+                                                                                                         qmlContext(q),
+                                                                                                         {
+                                                                                                             {u"plasmoidItem"_s, QVariant::fromValue(q)},
+                                                                                                         }));
     if (!compactRepresentationExpanderItem) {
+        qCWarning(LOG_PLASMAQUICK) << "The compactRepresentationExpander of" << applet->pluginMetaData().pluginId() << "is not an Item";
         return nullptr;
     }
 

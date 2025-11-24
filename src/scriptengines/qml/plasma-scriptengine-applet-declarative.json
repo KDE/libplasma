@@ -77,7 +77,7 @@
         "Description[tr]": "QML ve JavaScript ile yazılmış yerel Plasma araç takımı",
         "Description[uk]": "Віджет Плазми, написаний на QML та JavaScript",
         "Description[vi]": "Phụ kiện nội Plasma viết bằng QML và JavaScript",
-        "Description[zh_CN]": "使用 QML 和 JavaScript 编写的原生 Plasma 挂件",
+        "Description[zh_CN]": "使用 QML 和 JavaScript 编写的原生 Plasma 小部件",
         "Description[zh_TW]": "用 QML 及 JavaScript 撰寫的原生 Plasma 元件",
         "EnabledByDefault": true,
         "Icon": "text-x-script",
@@ -118,7 +118,7 @@
         "Name[tr]": "Bildirimsel araç takımları",
         "Name[uk]": "Декларативний віджет",
         "Name[vi]": "Phụ kiện khai báo",
-        "Name[zh_CN]": "程序声明挂件",
+        "Name[zh_CN]": "程序声明小部件",
         "Name[zh_TW]": "宣告式元件",
         "ServiceTypes": [
             "Plasma/ScriptEngine"

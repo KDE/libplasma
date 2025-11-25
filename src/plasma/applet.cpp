@@ -544,6 +544,23 @@ void Applet::setUserConfiguring(bool configuring)
 
 Types::ItemStatus Applet::status() const
 {
+    if (d->itemStatus != Types::HiddenStatus) {
+        return d->itemStatus;
+    }
+
+    const Containment *cont = containment();
+    if (!cont) {
+        return d->itemStatus;
+    }
+
+    const Containment *topC = cont->containment();
+    Corona *corona = topC ? topC->corona() : cont->corona();
+    if (corona && corona->isEditMode()) {
+        // The applet is hidden, but the corona is in edit mode, so force it to active
+        // so the user can see it and interact with it
+        return Types::ActiveStatus;
+    }
+
     return d->itemStatus;
 }
 

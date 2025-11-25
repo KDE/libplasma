@@ -85,6 +85,16 @@ void Containment::init()
         }
     });
 
+    connect(corona(), &Plasma::Corona::editModeChanged, this, [this](bool edit) {
+        Q_UNUSED(edit)
+
+        for (Applet *applet : std::as_const(d->applets)) {
+            if (applet->d->itemStatus == Types::HiddenStatus) {
+                Q_EMIT applet->statusChanged(applet->status());
+            }
+        }
+    });
+
     QMap<QString, QAction *> actions = static_cast<Applet *>(this)->d->actions;
     // connect actions
     ContainmentPrivate::addDefaultActions(actions, this);

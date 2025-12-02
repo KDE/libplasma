@@ -59,7 +59,6 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void themeChanged();
-    void applicationPaletteChange();
 
 public:
     static const char defaultTheme[];

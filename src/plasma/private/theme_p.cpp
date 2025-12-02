@@ -207,7 +207,6 @@ void ThemePrivate::colorsChanged()
     tooltipColorScheme = KColorScheme(QPalette::Active, KColorScheme::Tooltip, colors);
     palette = KColorScheme::createApplicationPalette(colors);
     scheduleThemeChangeNotification();
-    Q_EMIT applicationPaletteChange();
 }
 
 void ThemePrivate::scheduleThemeChangeNotification()

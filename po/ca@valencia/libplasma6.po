@@ -229,18 +229,19 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:596 plasmaquick/appletquickitem.cpp:618
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr "S'ha produït un error en carregar %1."
+msgstr "S'ha produït un error mentre es carregava %1."
 
 #: plasmaquick/appletquickitem.cpp:613
 #, kde-format
 msgid "Error loading QML file: %1 %2"
-msgstr "S'ha produït un error en carregar el fitxer en QML: %1 %2"
+msgstr "S'ha produït un error mentre es carregava el fitxer en QML: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:616
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr ""
-"S'ha produït un error en carregar la miniaplicació: el paquet %1 no existix."
+"S'ha produït un error mentre es carregava la miniaplicació: el paquet %1 no "
+"existix."
 
 #: plasmaquick/configview.cpp:189
 #, kde-format

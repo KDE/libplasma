@@ -39,13 +39,11 @@ class ContainmentPrivate;
  * \li applet layout management
  * \endlist
  *
- * Since containment is actually just a Plasma::Applet, all the techniques used
+ * Since Containment is itself a Plasma::Applet, all the techniques used
  * for writing the visual presentation of Applets is applicable to Containtments.
  * Containments are differentiated from Applets by being marked with the ServiceType
  * of Plasma/Containment. Plugins registered with both the Applet and the Containment
- * ServiceTypes can be loaded for us in either situation.
- *
- * See techbase.kde.org for a tutorial on writing Containments using this class.
+ * ServiceTypes can be loaded for use in either situation.
  */
 class PLASMA_EXPORT Containment : public Applet
 {
@@ -53,31 +51,31 @@ class PLASMA_EXPORT Containment : public Applet
 
     /*!
      * \property Plasma::Containment::applets
-     * List of applets this containment has: the containments
+     * List of applets in this containment.
      */
     Q_PROPERTY(QList<Plasma::Applet *> applets READ applets NOTIFY appletsChanged) // KF6: this should be AppletQuickItem *
 
     /*!
      * \property Plasma::Containment::corona
-     * The corona for this contaiment
+     * The corona for this contaiment.
      */
     Q_PROPERTY(Plasma::Corona *corona READ corona CONSTANT)
 
     /*!
      * \property Plasma::Containment::containmentType
-     * Type of this containment
+     * Type of this containment.
      */
     Q_PROPERTY(Plasma::Containment::Type containmentType READ containmentType NOTIFY containmentTypeChanged)
 
     /*!
      * \property Plasma::Containment::activity
-     * Activity UID of this containment
+     * Activity UID of this containment.
      */
     Q_PROPERTY(QString activity READ activity NOTIFY activityChanged)
 
     /*!
      * \property Plasma::Containment::activityName
-     * Activity name of this containment
+     * Activity name of this containment.
      */
     Q_PROPERTY(QString activityName READ activityName NOTIFY activityNameChanged)
 
@@ -110,21 +108,25 @@ class PLASMA_EXPORT Containment : public Applet
 
     /*!
      * \property Plasma::Containment::availableScreenRect
-     * screen area free of panels: the coordinates are relative to the containment,
-     * it's independent from the screen position
-     * For more precise available geometry use availableScreenRegion()
+     * Screen area used by the Containment by itself (free of enveloping panels).
+     *
+     * The coordinates are relative to the containment (that is, x:0 and y:0 match the Containment's upper left corner),
+     * and independent from the screen position.
+     *
+     * For more precise available geometry use availableScreenRegion().
      */
     Q_PROPERTY(QRectF availableScreenRect READ availableRelativeScreenRect NOTIFY availableRelativeScreenRectChanged)
 
     /*!
-     * \property Plasma::Containment::availableRelativeScreenRegion
-     * The available region of this screen, panels excluded. It's a list of rectangles
+     * \property Plasma::Containment::availableScreenRegion
+     * A list of rectangles matching the available region of this screen, panels excluded.
      */
     Q_PROPERTY(QList<QRectF> availableScreenRegion READ availableRelativeScreenRegion NOTIFY availableRelativeScreenRegionChanged)
 
     /*!
      * \property Plasma::Containment::screenGeometry
-     * Provides access to the geometry of the applet is in.
+     * Provides access to the geometry of the screen the applet is in.
+     *
      * Can be useful to figure out what's the absolute position of the applet.
      */
     Q_PROPERTY(QRectF screenGeometry READ screenGeometry NOTIFY screenGeometryChanged)
@@ -150,19 +152,22 @@ public:
     void init() override;
 
     /*!
-     * This enumeration describes the type of the Containment.
-     * DesktopContainments represent main containments that will own a screen in a mutually exclusive fashion,
-     * while PanelContainments are accessories which can be present multiple per screen.
+     * The type of the Containment.
      *
      * This value is specified in the "X-Plasma-ContainmentType" JSON-metadata value of containments.
      *
      * \value NoContainment
-     * \value Desktop A desktop containment
-     * \value Panel A desktop panel
-     * \value Custom A containment that is neither a desktop nor a panel but something application specific
-     * \value CustomPanel A customized desktop panel. "CustomPanel" in metadata
-     * \value CustomEmbedded A customized containment embedded in another applet
-     *
+     * \value Desktop
+     *        Main containments that will own a screen in a mutually exclusive fashion.
+     * \value Panel
+     *        A desktop panel. Multiple can be present per screen.
+     * \value Custom
+     *        A containment that is neither a desktop nor a panel but something application specific.
+     * \value CustomPanel
+     *        A customized desktop panel.
+     *        "CustomPanel" in metadata.
+     * \value CustomEmbedded
+     *        A customized containment embedded into another applet.
      */
     enum Type {
         NoContainment = -1,
@@ -203,12 +208,9 @@ public:
     Applet *createApplet(const QString &name, const QVariantList &args = QVariantList(), const QRectF &geometryHint = QRectF(-1, -1, 0, 0));
 
     /*!
-     * Add an existing applet to this Containment
+     * \brief Adds an existing \a applet to this Containment with the given \a geometryHint.
      *
-     * \a applet the applet that should be added
-     * \a geometryHint an hint to pass to the GUI on the location
-     *           and size we prefer for the newly created applet;
-     *           the gui might choose whether to respect or not this hint
+     * The hint determines the preferred location and size for the newly created applet. The hint will not be respected if it's not possible to position it in the preferred location.
      */
     Q_INVOKABLE void addApplet(Applet *applet, const QRectF &geometryHint = QRectF());
 

@@ -189,34 +189,32 @@ public:
  * \li applet layout management
  * \endlist
  *
- * Since containment is actually just a Plasma::Applet, all the techniques used
- * for writing the visual presentation of Applets is applicable to Containtments.
- * Containments are differentiated from Applets by being marked with the ServiceType
+ * Since Containment is itself a Plasmoid (native C++ class Plasma::Applet), all the techniques used
+ * for writing the visual presentation of Plasmoids is applicable to Containments.
+ * Containments are differentiated from Plasmoids by being marked with the ServiceType
  * of Plasma/Containment. Plugins registered with both the Applet and the Containment
- * ServiceTypes can be loaded for us in either situation.
- *
- * See techbase.kde.org for a tutorial on writing Containments using this class.
+ * ServiceTypes can be loaded for use in either situation.
  */
 
 /*!
- * \qmlattachedproperty list<Applet> Containment::applets
- * List of applets this containment has: the containments
+ * \qmlattachedproperty list<Plasmoid> Containment::applets
+ * List of plasmoids in this containment.
  */
 /*!
  * \qmlattachedproperty Plasma::Corona Containment::corona
- * The corona for this contaiment
+ * The corona for this contaiment.
  */
 /*!
  * \qmlattachedproperty Containment.Type Containment::containmentType
- * Type of this containment
+ * Type of this containment.
  */
 /*!
  * \qmlattachedproperty string Containment::activity
- * Activity UID of this containment
+ * Activity UID of this containment.
  */
 /*!
  * \qmlattachedproperty string Containment::activityName
- * Activity name of this containment
+ * Activity name of this containment.
  */
 /*!
  * \qmlattachedproperty Plasma.Types.ContainmentDisplayHints Containment::containmentDisplayHints
@@ -236,44 +234,47 @@ public:
  */
 /*!
  * \qmlattachedproperty rect Containment::availableScreenRect
- * screen area free of panels: the coordinates are relative to the containment,
- * it's independent from the screen position
- * For more precise available geometry use availableScreenRegion()
+ * Screen area used by the Containment by itself (free of enveloping panels).
+ *
+ * The coordinates are relative to the containment (that is, x:0 and y:0 match the Containment's upper left corner),
+ * and independent from the screen position.
+ *
+ * For more precise available geometry use availableScreenRegion().
  */
 /*!
- * \qmlattachedproperty list<rect> Containment::availableRelativeScreenRegion
- * The available region of this screen, panels excluded. It's a list of rectangles
+ * \qmlattachedproperty list<rect> Containment::availableScreenRegion
+ * A list of rectangles matching the available region of this screen, panels excluded.
  */
 /*!
  * \qmlattachedproperty rect Containment::screenGeometry
- * Provides access to the geometry of the applet is in.
- * Can be useful to figure out what's the absolute position of the applet.
+ * Provides access to the geometry of the screen the plasmoid is in.
+ *
+ * Can be useful to figure out what's the absolute position of the plasmoid.
  */
 /*!
  * \qmlattachedproperty enumeration Containment::Type
- * This enumeration describes the type of the Containment.
- * DesktopContainments represent main containments that will own a screen in a mutually exclusive fashion,
- * while PanelContainments are accessories which can be present multiple per screen.
+ * The type of the Containment.
  *
  * This value is specified in the "X-Plasma-ContainmentType" JSON-metadata value of containments.
  *
  * \value NoContainment
- * \value Desktop A desktop containment
- * \value Panel A desktop panel
- * \value Custom A containment that is neither a desktop nor a panel but something application specific
- * \value CustomPanel A customized desktop panel. "CustomPanel" in metadata
- * \value CustomEmbedded A customized containment embedded in another applet
- *
+ * \value Desktop
+ *        Main containments that will own a screen in a mutually exclusive fashion.
+ * \value Panel
+ *        A desktop panel. Multiple can be present per screen.
+ * \value Custom
+ *        A containment that is neither a desktop nor a panel but something application specific.
+ * \value CustomPanel
+ *        A customized desktop panel.
+ *        "CustomPanel" in metadata.
+ * \value CustomEmbedded
+ *        A customized containment embedded into another applet.
  */
 /*!
  * \qmlmethod void Containment::addApplet(Plasma::Applet applet, rect geometryHint = rect)
- * \brief Add an existing applet to this Containment
+ * \brief Adds an existing \a applet (plasmoid) to this Containment with the given \a geometryHint.
  *
- * \a applet the applet that should be added
- *
- * \a geometryHint an hint to pass to the GUI on the location
- *           and size we prefer for the newly created applet;
- *           the gui might choose whether to respect or not this hint
+ * The hint determines the preferred location and size for the newly created plasmoid. The hint will not be respected if it's not possible to position it in the preferred location.
  */
 class ContainmentAttached : public QObject
 {

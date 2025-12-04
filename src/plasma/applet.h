@@ -51,6 +51,8 @@ class Package;
  *
  * \brief The base Applet class.
  *
+ * \note Since 2022 we have standardized on "Plasmoid" for internal API usage and "Widget" as a public facing name. The name "Applet" is kept for backwards compatibility.
+ *
  * Applet provides several important roles for add-ons widgets in Plasma.
  *
  * First, it is the base class for the plugin system and therefore is the
@@ -68,19 +70,19 @@ class PLASMA_EXPORT Applet : public QObject
     /*!
      * \property Plasma::Applet::id
      *
-     * Applet id: is unique in the whole Plasma session and will never change across restarts
+     * The applet's id is unique in the whole Plasma session and will never change across restarts.
      */
     Q_PROPERTY(uint id READ id CONSTANT FINAL)
 
     /*!
      * \property Plasma::Applet::title
-     * User friendly title for the plasmoid: it's the localized applet name by default
+     * User friendly title for the plasmoid, the localized applet name by default.
      */
     Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged FINAL)
 
     /*!
      * \property Plasma::Applet::icon
-     * Icon to represent the plasmoid
+     * Icon to represent the applet.
      */
     Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged FINAL)
 
@@ -94,28 +96,31 @@ class PLASMA_EXPORT Applet : public QObject
 
     /*!
      * \property Plasma::Applet::location
-     * The location of the scene which is displaying applet.
+     * The location of the scene which is displaying this applet.
      */
     Q_PROPERTY(Plasma::Types::Location location READ location NOTIFY locationChanged)
 
     /*!
      * \property Plasma::Applet::status
-     * Status of the plasmoid: useful to instruct the shell if this plasmoid is requesting attention, if is accepting input, or if is in an idle, inactive state
+     * Allows to instruct the shell if this applet is requesting attention, accepting input, or if it is in an idle, inactive state.
      */
     Q_PROPERTY(Plasma::Types::ItemStatus status READ status WRITE setStatus NOTIFY statusChanged)
 
     /*!
      * \property Plasma::Applet::immutability
-     * The immutability of the Corona.
+     * Sets the immutability of the Corona.
+     *
      * Tells the applet whether it should allow for any modification by the user.
      */
     Q_PROPERTY(Plasma::Types::ImmutabilityType immutability READ immutability WRITE setImmutability NOTIFY immutabilityChanged)
 
     /*!
      * \property Plasma::Applet::immutable
-     * Whether the Corona is immutable. The plasmoid implementation should avoid allowing "dangerous" modifications from the user when in an immutable mode
+     * Whether the Corona is immutable.
      *
-     * This is true when immutability is not Mutable
+     * The applet implementation should avoid allowing "dangerous" modifications from the user when in an immutable mode.
+     *
+     * This is true when immutability is not Mutable.
      */
     Q_PROPERTY(bool immutable READ immutable NOTIFY immutabilityChanged)
 
@@ -128,7 +133,7 @@ class PLASMA_EXPORT Applet : public QObject
 
     /*!
      * \property Plasma::Applet::busy
-     * True if the applet should show a busy status, for instance doing
+     * True if the applet should show a busy status, for instance while doing
      * some network operation
      */
     Q_PROPERTY(bool busy READ isBusy WRITE setBusy NOTIFY busyChanged FINAL)
@@ -141,19 +146,23 @@ class PLASMA_EXPORT Applet : public QObject
 
     /*!
      * \property Plasma::Applet::backgroundHints
-     * How the applet wants its background to be drawn. The containment may chose to ignore this hint.
+     * How the plasmoid wants its background to be drawn.
+     *
+     * The containment may ignore this hint with userBackgroundHints.
      */
     Q_PROPERTY(Plasma::Types::BackgroundHints backgroundHints WRITE setBackgroundHints READ backgroundHints NOTIFY backgroundHintsChanged FINAL)
 
     /*!
      * \property Plasma::Applet::userBackgroundHints
-     * The containment (and/or the user) may decide to use another kind of background instead (if supported by the applet)
+     * Allows the containment or user to override the set backgroundHints if they exist.
      */
     Q_PROPERTY(Plasma::Types::BackgroundHints userBackgroundHints WRITE setUserBackgroundHints READ userBackgroundHints NOTIFY userBackgroundHintsChanged FINAL)
 
     /*!
      * \property Plasma::Applet::effectiveBackgroundHints
-     * The effective background hints the applet has, internally decided how to mix with userBackgroundHints
+     * Returns the effective background hints.
+     *
+     * The userBackgroundHints will be preferred if set, otherwise returns the plasmoid's backgroundHints.
      */
     Q_PROPERTY(Plasma::Types::BackgroundHints effectiveBackgroundHints READ effectiveBackgroundHints NOTIFY effectiveBackgroundHintsChanged FINAL)
 
@@ -162,36 +171,37 @@ class PLASMA_EXPORT Applet : public QObject
 
     /*!
      * \property Plasma::Applet::configuration
-     * A KConfigPropertyMap instance that represents the configuration
-     * which is usable from QML to read and write settings like any JavaScript Object
+     * Configuration for the applet.
+     *
+     * Can be used to read and write settings like any JavaScript Object.
      */
     Q_PROPERTY(KConfigPropertyMap *configuration READ configuration CONSTANT FINAL)
 
     /*!
      * \property Plasma::Applet::globalShortcut
-     * The global shortcut to activate the plasmoid
+     * The global shortcut to activate the plasmoid.
      *
-     * This is typically only used by the default configuration module
+     * This is typically only used by the default configuration module.
      *
      */
     Q_PROPERTY(QKeySequence globalShortcut READ globalShortcut WRITE setGlobalShortcut RESET setGlobalShortcut NOTIFY globalShortcutChanged)
 
     /*!
      * \property Plasma::Applet::configurationRequired
-     * If true the applet requires manual configuration from the user
+     * If true, the applet requires manual configuration from the user.
      */
     Q_PROPERTY(bool configurationRequired READ configurationRequired WRITE setConfigurationRequired NOTIFY
                    configurationRequiredChanged) // TODO KF6: having just a reason property and required would be string not empty? Uglier from c++ pov but more straight forward from qml pov
 
     /*!
      * \property Plasma::Applet::hasConfigurationInterface
-     * True if this applet will provide a UI for its configuration
+     * True if this applet will provide a UI for its configuration.
      */
     Q_PROPERTY(bool hasConfigurationInterface READ hasConfigurationInterface WRITE setHasConfigurationInterface NOTIFY hasConfigurationInterfaceChanged)
 
     /*!
      * \property Plasma::Applet::constraintHints
-     * The hints that the applet gives to its constraint,
+     * Hints how the applet should be constrained,
      * such as asking to fill all the available space ignoring margins.
      */
     Q_PROPERTY(Plasma::Applet::ConstraintHints constraintHints READ constraintHints WRITE setConstraintHints NOTIFY constraintHintsChanged FINAL)
@@ -204,26 +214,27 @@ class PLASMA_EXPORT Applet : public QObject
 
     /*!
      * \property Plasma::Applet::containment
-     * The Containment managing this applet
+     * The Containment managing this applet.
      */
     Q_PROPERTY(Plasma::Containment *containment READ containment NOTIFY containmentChanged)
 
     /*!
      * \property Plasma::Applet::contextualActions
-     * Actions to be added in the plasmoid context menu. To instantiate QActions in a declarative way,
-     * PlasmaCore.Action {} can be used
+     * Actions to be added in the plasmoid's context menu.
+     *
+     * Use PlasmaCore.Action to instantiate QActions declaratively.
      */
     Q_PROPERTY(QQmlListProperty<QAction> contextualActions READ qmlContextualActions NOTIFY contextualActionsChanged)
 
     /*!
      * \property Plasma::Applet::isContainment
-     * True if this applet is a Containment and is acting as one, such as a desktop or a panel
+     * Whether this plasmoid is a Containment and is acting as one, such as a desktop or a panel.
      */
     Q_PROPERTY(bool isContainment READ isContainment CONSTANT)
 
     /*!
      * \property Plasma::Applet::pluginName
-     * Plugin name for the applet
+     * Plugin name for the applet.
      */
     Q_PROPERTY(QString pluginName READ pluginName CONSTANT FINAL)
 

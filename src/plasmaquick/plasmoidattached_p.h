@@ -32,36 +32,36 @@ namespace PlasmaQuick
  * \qmltype Plasmoid
  * \nativetype Plasma::Applet
  * \inqmlmodule org.kde.plasma.plasmoid
- * \brief Common attached properties for applets.
+ * \brief Common attached properties for plasmoids.
  */
 /*!
  * \qmlattachedproperty int Plasmoid::id
- * Applet id: is unique in the whole Plasma session and will never change across restarts
+ * The plasmoid's id is unique in the whole Plasma session and will never change across restarts.
  */
 /*!
  * \qmlattachedproperty string Plasmoid::title
- * User friendly title for the plasmoid: it's the localized applet name by default
+ * User friendly title for the plasmoid, the localized plasmoid name by default.
  */
 /*!
  * \qmlattachedproperty string Plasmoid::icon
- * Icon to represent the Plasmoid
+ * Icon to represent the Plasmoid.
  */
 /*!
  * \qmlattachedproperty Plasma.Types.FormFactor Plasmoid::formFactor
- * The current form factor the applet is being displayed in.
+ * The current form factor the plasmoid is being displayed in.
  */
 /*!
  * \qmlattachedproperty Plasma.Types.Location Plasmoid::location
- * The location of the scene which is displaying applet.
+ * The location of the scene which is displaying this plasmoid.
  */
 /*!
  * \qmlattachedproperty Plasma.Types.ItemStatus Plasmoid::status
- * Status of the plasmoid: useful to instruct the shell if this plasmoid is requesting attention, if is accepting input, or if is in an idle, inactive state
+ * Allows to instruct the shell if this plasmoid is requesting attention, accepting input, or if it is in an idle, inactive state.
  */
 /*!
  * \qmlattachedproperty Plasma.Types.ImmutabilityType Plasmoid::immutability
- * The immutability of the Corona.
- * Tells the applet whether it should allow for any modification by the user.
+ * Sets the immutability of the Corona.
+ * Tells the plasmoid whether it should allow for any modification by the user.
  */
 /*!
  * \qmlattachedproperty bool Plasmoid::immutable
@@ -73,13 +73,13 @@ namespace PlasmaQuick
  */
 /*!
  * \qmlattachedproperty Plasma.Types.ContainmentDisplayHints Plasmoid::containmentDisplayHints
- * Display hints that come from the containment that suggest the applet how to look and behave.
+ * Display hints that come from the containment that suggest how the plasmoid should look and behave.
  * TODO: only in containment?
  */
 /*!
  * \qmlattachedproperty bool Plasmoid::busy
- * True if the applet should show a busy status, for instance doing
- * some network operation
+ * True if the plasmoid should show a busy status, for instance while doing
+ * some network operation.
  */
 /*!
  * \qmlattachedproperty bool Plasmoid::userConfiguring
@@ -87,20 +87,25 @@ namespace PlasmaQuick
  */
 /*!
  * \qmlattachedproperty Plasma.Types.BackgroundHints Plasmoid::backgroundHints
- * How the applet wants its background to be drawn. The containment may chose to ignore this hint.
+ * How the plasmoid wants its background to be drawn.
+ *
+ * The containment may ignore this hint with userBackgroundHints.
  */
 /*!
  * \qmlattachedproperty Plasma.Types.BackgroundHints Plasmoid::userBackgroundHints
- * The containment (and/or the user) may decide to use another kind of background instead (if supported by the applet)
+ * Allows the containment or user to override the set backgroundHints if they exist.
  */
 /*!
  * \qmlattachedproperty Plasma.Types.BackgroundHints Plasmoid::effectiveBackgroundHints
- * The effective background hints the applet has, internally decided how to mix with userBackgroundHints
+ * Returns the effective background hints.
+ *
+ * The userBackgroundHints will be preferred if set, otherwise returns the plasmoid's backgroundHints.
  */
 /*!
  * \qmlattachedproperty KConfigPropertyMap Plasmoid::configuration
- * A KConfigPropertyMap instance that represents the configuration
- * which is usable from QML to read and write settings like any JavaScript Object
+ * Configuration for the plasmoid.
+ *
+ * Can be used to read and write settings like any JavaScript Object.
  */
 /*!
  * \qmlattachedproperty Shortcut Plasmoid::globalShortcut
@@ -110,37 +115,38 @@ namespace PlasmaQuick
  */
 /*!
  * \qmlattachedproperty bool Plasmoid::configurationRequired
- * If true, the applet requires manual configuration from the user.
+ * If true, the plasmoid requires manual configuration from the user.
  */
 /*!
  * \qmlattachedproperty bool Plasmoid::hasConfigurationInterface
- * True if this applet will provide a UI for its configuration
+ * True if this plasmoid will provide a UI for its configuration.
  */
 /*!
  * \qmlattachedproperty Plasma.Applet.ConstraintHints Plasmoid::constraintHints
- * The hints that the applet gives to its constraint,
+ * Hints how the plasmoid should be constrained,
  * such as asking to fill all the available space ignoring margins.
  */
 /*!
  * \qmlattachedproperty KPluginMetaData Plasmoid::metaData
- * The metadata of the applet.
+ * The metadata of the plasmoid.
  */
 /*!
  * \qmlattachedproperty Containment Plasmoid::containment
- * The Containment managing this applet
+ * The Containment managing this plasmoid.
  */
 /*!
  * \qmlattachedproperty list<Action> Plasmoid::contextualActions
- * Actions to be added in the plasmoid context menu. To instantiate QActions in a declarative way,
- * PlasmaCore.Action {} can be used
+ * Actions to be added in the plasmoid's context menu.
+ *
+ * Use PlasmaCore.Action to instantiate QActions declaratively.
  */
 /*!
  * \qmlattachedproperty bool Plasmoid::isContainment
- * True if this applet is a Containment and is acting as one, such as a desktop or a panel
+ * Whether this plasmoid is a Containment and is acting as one, such as a desktop or a panel.
  */
 /*!
  * \qmlattachedproperty string Plasmoid::pluginName
- * Plugin name for the applet
+ * Plugin name for the plasmoid.
  */
 class PlasmoidAttached : public QObject
 {

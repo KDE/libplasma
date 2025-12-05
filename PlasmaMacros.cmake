@@ -72,6 +72,7 @@ function(plasma_add_applet id)
    if(ARGS_GENERATE_APPLET_CLASS OR ARGS_GENERATE_CONTAINMENT_CLASS)
 
       string(REPLACE "." "_" CLASS_NAME ${id})
+      string(REPLACE "-" "_" CLASS_NAME ${CLASS_NAME})
 
       if (ARGS_GENERATE_APPLET_CLASS)
           set(CLASS_TYPE "Applet")

@@ -159,6 +159,7 @@ SharedQmlEngine::SharedQmlEngine(QObject *parent)
 
     d->context = new KLocalizedQmlContext(d->rootContext);
     d->rootContext->setContextObject(d->context);
+    QQmlEngine::setContextForObject(d->context, d->rootContext);
 }
 
 SharedQmlEngine::SharedQmlEngine(Plasma::Applet *applet, QObject *parent)
@@ -169,6 +170,7 @@ SharedQmlEngine::SharedQmlEngine(Plasma::Applet *applet, QObject *parent)
 
     d->context = new KLocalizedQmlContext(d->rootContext);
     d->rootContext->setContextObject(d->context);
+    QQmlEngine::setContextForObject(d->context, d->rootContext);
 }
 
 SharedQmlEngine::~SharedQmlEngine()

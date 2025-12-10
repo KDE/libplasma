@@ -133,7 +133,7 @@ void PopupPlasmaWindowPrivate::updatePosition()
     m_needsReposition = false;
 
     if (!m_visualParent || !m_visualParent->window()) {
-        qCWarning(LOG_PLASMAQUICK) << "Exposed with no visual parent. Window positioning broken.";
+        qmlWarning(q) << "Exposed with no visual parent. Window positioning broken.";
         return;
     }
     q->setTransientParent(m_visualParent->window());
@@ -330,7 +330,7 @@ void PopupPlasmaWindow::setPopupDirection(Qt::Edge popupDirection)
     d->m_popupDirection = popupDirection;
 
     if (isExposed()) {
-        qCWarning(LOG_PLASMAQUICK) << "location should be set before showing popup window";
+        qmlWarning(this) << "location should be set before showing popup window";
     }
     queuePositionUpdate();
 

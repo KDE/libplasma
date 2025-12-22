@@ -342,7 +342,7 @@ Item {
     }
     clip: heightAnimation.running || expandedItemOpacityFade.running
 
-    onEnabledChanged: if (!listItem.enabled) { collapse() }
+    onEnabledChanged: if (!listItem.enabled) { listItem.collapse() }
 
     Keys.onPressed: event => {
         if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
@@ -442,7 +442,7 @@ Item {
                     // Unfortunately cannot just assign action to menuItem.action.
                     text: action.text,
                     icon: action.icon.name,
-                });
+                }) as PlasmaExtras.MenuItem;
                 menuItem.clicked.connect(action.trigger);
             }
             contextMenu.open(mouse.x, mouse.y);
@@ -546,8 +546,8 @@ Item {
 
                         textFormat: listItem.allowStyledText ? Text.StyledText : Text.PlainText
                         elide: Text.ElideRight
-                        maximumLineCount: subtitleCanWrap ? (subtitleMaximumLineCount === -1 ? undefined : subtitleMaximumLineCount) : 1
-                        wrapMode: subtitleCanWrap ? Text.WordWrap : Text.NoWrap
+                        maximumLineCount: listItem.subtitleCanWrap ? (listItem.subtitleMaximumLineCount === -1 ? undefined : listItem.subtitleMaximumLineCount) : 1
+                        wrapMode: listItem.subtitleCanWrap ? Text.WordWrap : Text.NoWrap
                     }
                 }
 
@@ -566,7 +566,7 @@ Item {
                 PlasmaComponents3.ToolButton {
                     id: defaultActionButton
 
-                    visible: defaultActionButtonAction
+                    visible: listItem.defaultActionButtonAction
                             && listItem.defaultActionButtonVisible
                             && (!busyIndicator.visible || listItem.showDefaultActionButtonWhenBusy)
 
@@ -592,7 +592,7 @@ Item {
                     onClicked: listItem.toggleExpanded()
 
                     PlasmaComponents3.ToolTip {
-                        text: parent.text
+                        text: expandToggleButton.text
                     }
                 }
             }
@@ -676,7 +676,7 @@ Item {
 
                                         onClicked: {
                                             modelData.trigger()
-                                            collapse()
+                                            listItem.collapse()
                                         }
                                     }
                                 }

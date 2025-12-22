@@ -36,8 +36,8 @@ T.ScrollView {
         Kirigami.WheelHandler {
             target: controlRoot.contentItem
             // `Qt.styleHints.wheelScrollLines * 20` is the default scroll speed.
-            horizontalStepSize: Qt.styleHints.wheelScrollLines * 20
-            verticalStepSize: Qt.styleHints.wheelScrollLines * 20
+            horizontalStepSize: Application.styleHints.wheelScrollLines * 20
+            verticalStepSize: Application.styleHints.wheelScrollLines * 20
         },
         Binding { // TODO KF6: remove, Qt6 has this behavior by default
             target: controlRoot.contentItem // always instanceof Flickable

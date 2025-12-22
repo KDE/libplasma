@@ -3,6 +3,7 @@
  * SPDX-FileCopyrightText: 2020 Nate Graham <nate@kde.org>
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls
@@ -48,7 +49,7 @@ T.SpinBox {
         top: Math.max(control.from, control.to)
     }
     wheelEnabled: true
-    hoverEnabled: Qt.styleHints.useHoverEffects
+    hoverEnabled: Application.styleHints.useHoverEffects
 
     KSvg.Svg {
         id: lineSvg

@@ -3,6 +3,7 @@
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
@@ -24,13 +25,15 @@ T.PageIndicator {
     spacing: Kirigami.Units.smallSpacing
 
     delegate: Rectangle {
+        required property int index
+
         implicitWidth: Kirigami.Units.largeSpacing
         implicitHeight: implicitWidth
 
         radius: width
         color: Kirigami.Theme.textColor
 
-        opacity: index === currentIndex ? 0.9 : pressed ? 0.7 : 0.5
+        opacity: index === control.currentIndex ? 0.9 : control.pressed ? 0.7 : 0.5
         Behavior on opacity {
             enabled: Kirigami.Units.longDuration > 0
             OpacityAnimator {

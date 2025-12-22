@@ -4,6 +4,7 @@
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Templates as T
@@ -78,8 +79,8 @@ T.Slider {
     }
 
     handle: Item {
-        x: Math.round(control.leftPadding + (horizontal ? control.visualPosition * (control.availableWidth - width) : (control.availableWidth - width) / 2))
-        y: Math.round(control.topPadding + (horizontal ? (control.availableHeight - height) / 2 : control.visualPosition * (control.availableHeight - height)))
+        x: Math.round(control.leftPadding + (control.horizontal ? control.visualPosition * (control.availableWidth - width) : (control.availableWidth - width) / 2))
+        y: Math.round(control.topPadding + (control.horizontal ? (control.availableHeight - height) / 2 : control.visualPosition * (control.availableHeight - height)))
 
         implicitWidth: sliderSvg.hasElement("hint-handle-size") ? sliderSvg.elementSize("hint-handle-size").width : firstHandle.implicitWidth
         implicitHeight: sliderSvg.hasElement("hint-handle-size") ? sliderSvg.elementSize("hint-handle-size").height : firstHandle.implicitHeight
@@ -182,7 +183,8 @@ T.Slider {
                 Repeater {
                     model: tickLoader.stepCount + 1
                     delegate: Rectangle {
-                        property bool withinFill: (control.horizontal ? index : stepCount - index) <= control.position * tickLoader.stepCount
+                        required property int index
+                        property bool withinFill: (control.horizontal ? index : tickLoader.stepCount - index) <= control.position * tickLoader.stepCount
                         width: control.vertical ? parent.width : 1
                         height: control.horizontal ? parent.height : 1
                         opacity: withinFill ? 1 : 0.3

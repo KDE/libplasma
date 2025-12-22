@@ -3,6 +3,7 @@
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
+pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls
@@ -65,7 +66,7 @@ T.TextArea {
     MobileTextSelection.MobileCursor {
         target: control
         selectionStartHandle: true
-        property var rect: target.positionToRectangle(target.selectionStart)
+        property var rect: control.positionToRectangle(control.selectionStart)
         x: rect.x
         y: rect.y
     }

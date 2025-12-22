@@ -45,17 +45,17 @@ Item {
             }
             preventStealing: true
             onPositionChanged: mouse => {
-                var pos = mapToItem(target, mouse.x, mouse.y);
-                pos = target.positionAt(pos.x, pos.y);
+                var pos = mapToItem(root.target, mouse.x, mouse.y);
+                pos = root.target.positionAt(pos.x, pos.y);
 
-                if (target.selectedText.length > 0) {
-                    if (selectionStartHandle) {
-                        target.select(Math.min(pos, target.selectionEnd - 1), target.selectionEnd);
+                if (root.target.selectedText.length > 0) {
+                    if (root.selectionStartHandle) {
+                        root.target.select(Math.min(pos, root.target.selectionEnd - 1), root.target.selectionEnd);
                     } else {
-                        target.select(target.selectionStart, Math.max(pos, target.selectionStart + 1));
+                        root.target.select(root.target.selectionStart, Math.max(pos, root.target.selectionStart + 1));
                     }
                 } else {
-                    target.cursorPosition = pos;
+                    root.target.cursorPosition = pos;
                 }
             }
         }

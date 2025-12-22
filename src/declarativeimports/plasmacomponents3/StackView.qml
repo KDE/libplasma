@@ -30,7 +30,7 @@ T.StackView {
         }
         NumberAnimation {
             property: "x"
-            from: __trailing
+            from: control.__trailing
             to: 0
             duration: Kirigami.Units.longDuration
             easing.type: Easing.OutQuad
@@ -47,7 +47,7 @@ T.StackView {
         NumberAnimation {
             property: "x"
             from: 0
-            to: __leading
+            to: control.__leading
             duration: Kirigami.Units.longDuration
             easing.type: Easing.InQuad
         }
@@ -63,7 +63,7 @@ T.StackView {
         }
         NumberAnimation {
             property: "x"
-            from: __leading
+            from: control.__leading
             to: 0
             duration: Kirigami.Units.longDuration
             easing.type: Easing.OutQuad
@@ -80,7 +80,7 @@ T.StackView {
         NumberAnimation {
             property: "x"
             from: 0
-            to: __trailing
+            to: control.__trailing
             duration: Kirigami.Units.longDuration
             easing.type: Easing.InQuad
         }
@@ -96,7 +96,7 @@ T.StackView {
         }
         NumberAnimation {
             property: "x"
-            from: __trailing
+            from: control.__trailing
             to: 0
             duration: Kirigami.Units.longDuration
             easing.type: Easing.OutQuad
@@ -113,7 +113,7 @@ T.StackView {
         NumberAnimation {
             property: "x"
             from: 0
-            to: __leading
+            to: control.__leading
             duration: Kirigami.Units.longDuration
             easing.type: Easing.InQuad
         }

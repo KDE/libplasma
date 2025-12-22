@@ -24,14 +24,14 @@ SequentialAnimation {
 
     ParallelAnimation {
         OpacityAnimator {
-            target: targetItem
+            target: appearAnimation.targetItem
             from: 0
             to: 1.0
             duration: appearAnimation.duration
             easing.type: Easing.InExpo
         }
         ScaleAnimator {
-            target: targetItem
+            target: appearAnimation.targetItem
             from: 0.8
             to: 1.0
             duration: appearAnimation.duration

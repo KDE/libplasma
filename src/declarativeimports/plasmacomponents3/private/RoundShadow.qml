@@ -63,49 +63,33 @@ Item {
         State {
             name: "shadow"
             PropertyChanges {
-                target: shadow
-                opacity: 1
-            }
-            PropertyChanges {
-                target: hover
-                opacity: 0
-                elementId: hoverElement
+                shadow.opacity: 1
+                hover.opacity: 0
+                hover.elementId: hoverElement
             }
         },
         State {
             name: "hover"
             PropertyChanges {
-                target: shadow
-                opacity: 0
-            }
-            PropertyChanges {
-                target: hover
-                opacity: 1
-                elementId: hoverElement
+                shadow.opacity: 0
+                hover.opacity: 1
+                hover.elementId: hoverElement
             }
         },
         State {
             name: "focus"
             PropertyChanges {
-                target: shadow
-                opacity: 0
-            }
-            PropertyChanges {
-                target: hover
-                opacity: 1
-                elementId: focusElement
+                shadow.opacity: 0
+                hover.opacity: 1
+                hover.elementId: focusElement
             }
         },
         State {
             name: "hidden"
             PropertyChanges {
-                target: shadow
-                opacity: 0
-            }
-            PropertyChanges {
-                target: hover
-                opacity: 0
-                elementId: hoverElement
+                shadow.opacity: 0
+                hover.opacity: 0
+                hover.elementId: hoverElement
             }
         }
     ]

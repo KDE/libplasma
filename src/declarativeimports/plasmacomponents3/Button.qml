@@ -5,7 +5,6 @@
 */
 
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import "private" as Private

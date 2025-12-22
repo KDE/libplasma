@@ -106,7 +106,7 @@ T.TextField {
     MobileTextSelection.MobileCursor {
         target: control
         selectionStartHandle: true
-        property var rect: target.positionToRectangle(target.selectionStart)
+        property var rect: control.positionToRectangle(control.selectionStart)
         //FIXME: this magic values seem to be always valid, for every font,every dpi, every scaling
         x: rect.x + 5
         y: rect.y + 6
@@ -155,17 +155,17 @@ T.TextField {
     Row {
         id: inlineButtonRow
         anchors.right: control.right
-        anchors.rightMargin: control.__hasBackgroundAndMargins ? background.margins.right : 0
+        anchors.rightMargin: control.__hasBackgroundAndMargins ? control.background.margins.right : 0
         anchors.verticalCenter: control.verticalCenter
         LayoutMirroring.enabled: control.effectiveHorizontalAlignment === TextInput.AlignRight
 
         Kirigami.Icon {
             id: clearButton
             //ltr confusingly refers to the direction of the arrow in the icon, not the text direction which it should be used in
-            source: clearButtonShown ? (control.effectiveHorizontalAlignment === TextInput.AlignRight ? "edit-clear-locationbar-ltr" : "edit-clear-locationbar-rtl") : ""
+            source: control.clearButtonShown ? (control.effectiveHorizontalAlignment === TextInput.AlignRight ? "edit-clear-locationbar-ltr" : "edit-clear-locationbar-rtl") : ""
             height: Kirigami.Units.iconSizes.small
             width: height
-            opacity: (control.length > 0 && clearButtonShown && control.enabled) ? 1 : 0
+            opacity: (control.length > 0 && control.clearButtonShown && control.enabled) ? 1 : 0
             visible: opacity > 0
             Behavior on opacity {
                 enabled: Kirigami.Units.longDuration > 0

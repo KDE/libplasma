@@ -13,13 +13,14 @@ import org.kde.kirigami as Kirigami
  * Internal type containing the default layout of a tooltip.
  */
 Item {
+    id: root
     property Item toolTip
     property int preferredTextWidth: Kirigami.Units.gridUnit * 20
 
     implicitWidth: mainLayout.implicitWidth + Kirigami.Units.largeSpacing * 2
     implicitHeight: mainLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
 
-    LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
+    LayoutMirroring.enabled: Application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
@@ -33,22 +34,22 @@ Item {
         spacing: Kirigami.Units.gridUnit
 
         Image {
-            source: toolTip ? toolTip.image : ""
-            visible: toolTip !== null && toolTip.image !== ""
+            source: root.toolTip ? root.toolTip.image : ""
+            visible: root.toolTip !== null && root.toolTip.image !== ""
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
 
         Kirigami.Icon {
             animated: false
-            source: toolTip ? toolTip.icon : ""
+            source: root.toolTip ? root.toolTip.icon : ""
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-            visible: toolTip !== null && toolTip.icon !== "" && toolTip.image === "" && valid
+            visible: root.toolTip !== null && root.toolTip.icon !== "" && root.toolTip.image === "" && valid
             Layout.preferredWidth: Kirigami.Units.iconSizes.medium
             Layout.preferredHeight: Kirigami.Units.iconSizes.medium
         }
 
         ColumnLayout {
-            Layout.maximumWidth: preferredTextWidth
+            Layout.maximumWidth: root.preferredTextWidth
             spacing: 0
 
             Kirigami.Heading {
@@ -56,7 +57,7 @@ Item {
                 Layout.fillWidth: true
                 elide: Text.ElideRight
                 wrapMode: Text.Wrap
-                text: toolTip ? toolTip.mainText : ""
+                text: root.toolTip ? root.toolTip.mainText : ""
                 textFormat: Text.PlainText
                 visible: text !== ""
             }
@@ -64,8 +65,8 @@ Item {
             PlasmaComponents.Label {
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
-                text: toolTip ? toolTip.subText : ""
-                textFormat: toolTip ? toolTip.textFormat : Text.AutoText
+                text: root.toolTip ? root.toolTip.subText : ""
+                textFormat: root.toolTip ? root.toolTip.textFormat : Text.AutoText
                 opacity: 0.75
                 visible: text !== ""
                 maximumLineCount: 8

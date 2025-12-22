@@ -19,14 +19,14 @@ SequentialAnimation {
 
     ParallelAnimation {
         PropertyAnimation {
-            target: targetItem
+            target: releasedAnimation.targetItem
             properties: "opacity"
             from: 0.8; to: 1.0
             duration: releasedAnimation.duration;
             easing.type: Easing.InExpo;
         }
         PropertyAnimation {
-            target: targetItem
+            target: releasedAnimation.targetItem
             properties: "scale"
             from: 0.95; to: 1.0
             duration: releasedAnimation.duration;

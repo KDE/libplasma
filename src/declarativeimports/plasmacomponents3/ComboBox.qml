@@ -169,7 +169,7 @@ T.ComboBox {
             acceptedButtons: Qt.NoButton
             onWheel: wheel => {
                 if (wheel.pixelDelta.y < 0 || wheel.angleDelta.y < 0) {
-                    control.currentIndex = Math.min(control.currentIndex + 1, delegateModel.count -1);
+                    control.currentIndex = Math.min(control.currentIndex + 1, control.delegateModel.count -1);
                 } else {
                     control.currentIndex = Math.max(control.currentIndex - 1, 0);
                 }
@@ -198,7 +198,7 @@ T.ComboBox {
             // the LayoutMirroring options. This is a workaround to fix this by enforcing
             // the LayoutMirroring options properly.
             // QTBUG: https://bugreports.qt.io/browse/QTBUG-66446
-            LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
+            LayoutMirroring.enabled: Application.layoutDirection === Qt.RightToLeft
             LayoutMirroring.childrenInherit: true
             T.ScrollBar.vertical: Controls.ScrollBar { }
         }

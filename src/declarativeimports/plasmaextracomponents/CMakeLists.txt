@@ -1,4 +1,4 @@
-ecm_add_qml_module(plasmaextracomponentsplugin VERSION 2.0 URI "org.kde.plasma.extras" GENERATE_PLUGIN_SOURCE)
+ecm_add_qml_module(plasmaextracomponentsplugin VERSION 2.0 URI "org.kde.plasma.extras" GENERATE_PLUGIN_SOURCE DEPENDENCIES org.kde.plasma.core)
 
 target_sources(plasmaextracomponentsplugin PRIVATE
     qmenu.cpp

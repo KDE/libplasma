@@ -23,7 +23,7 @@
 
 // used in detecting if focus passes to config UI
 #include "configview.h"
-#include "sharedqmlengine.h"
+#include "quickviewsharedengine.h"
 
 // This is a proxy object that connects to the Layout attached property of an item
 // it also handles turning properties to proper defaults
@@ -196,7 +196,7 @@ void AppletPopup::handleFocusChange()
 
         bool childHasFocus = focusWindow && ((focusWindow->isActive() && isAncestorOf(focusWindow)) || (focusWindow->type() & Qt::Popup) == Qt::Popup);
 
-        const bool viewClicked = qobject_cast<const PlasmaQuick::SharedQmlEngine *>(focusWindow) || qobject_cast<const ConfigView *>(focusWindow);
+        const bool viewClicked = qobject_cast<const PlasmaQuick::QuickViewSharedEngine *>(focusWindow) || qobject_cast<const ConfigView *>(focusWindow);
 
         if (viewClicked || (!parentHasFocus && !childHasFocus)) {
             setVisible(false);

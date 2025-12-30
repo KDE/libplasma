@@ -1,0 +1,293 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the libplasma package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: libplasma\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-25 00:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
+#, kde-format
+msgid "More actions"
+msgstr ""
+
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:581
+#, kde-format
+msgctxt "@action:button"
+msgid "Collapse"
+msgstr ""
+
+#: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:581
+#, kde-format
+msgctxt "@action:button"
+msgid "Expand"
+msgstr ""
+
+#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:50
+#, kde-format
+msgid "Password"
+msgstr ""
+
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
+#, kde-format
+msgid "Search…"
+msgstr ""
+
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:64
+#, kde-format
+msgid "Search"
+msgstr ""
+
+#: declarativeimports/plasmaextracomponents/qml/SearchField.qml:75
+#, kde-format
+msgid "Clear search"
+msgstr ""
+
+#: plasma/applet.cpp:318
+#, kde-format
+msgid "Unknown"
+msgstr ""
+
+#: plasma/applet.cpp:768
+#, kde-format
+msgid "Activate %1 Widget"
+msgstr ""
+
+#: plasma/containment.cpp:97 plasma/private/applet_p.cpp:101
+#, kde-format
+msgctxt "%1 is the name of the applet"
+msgid "Remove %1"
+msgstr ""
+
+#: plasma/containment.cpp:103 plasma/corona.cpp:365 plasma/corona.cpp:486
+#, kde-format
+msgid "Enter Edit Mode"
+msgstr ""
+
+#: plasma/containment.cpp:106 plasma/private/applet_p.cpp:106
+#, kde-format
+msgctxt "%1 is the name of the applet"
+msgid "Configure %1..."
+msgstr ""
+
+#: plasma/corona.cpp:314 plasma/corona.cpp:471
+#, kde-format
+msgid "Lock Widgets"
+msgstr ""
+
+#: plasma/corona.cpp:314
+#, kde-format
+msgid "Unlock Widgets"
+msgstr ""
+
+#: plasma/corona.cpp:363
+#, kde-format
+msgid "Exit Edit Mode"
+msgstr ""
+
+#: plasma/private/applet_p.cpp:119
+#, kde-format
+msgid "Show Alternatives..."
+msgstr ""
+
+#: plasma/private/applet_p.cpp:237
+#, kde-format
+msgid "Widget Removed"
+msgstr ""
+
+#: plasma/private/applet_p.cpp:238
+#, kde-format
+msgid "The widget \"%1\" has been removed."
+msgstr ""
+
+#: plasma/private/applet_p.cpp:242
+#, kde-format
+msgid "Panel Removed"
+msgstr ""
+
+#: plasma/private/applet_p.cpp:243
+#, kde-format
+msgid "A panel has been removed."
+msgstr ""
+
+#: plasma/private/applet_p.cpp:246
+#, kde-format
+msgid "Desktop Removed"
+msgstr ""
+
+#: plasma/private/applet_p.cpp:247
+#, kde-format
+msgid "A desktop has been removed."
+msgstr ""
+
+#: plasma/private/applet_p.cpp:250
+#, kde-format
+msgid "Undo"
+msgstr ""
+
+#: plasma/private/applet_p.cpp:341
+#, kde-format
+msgid "Widget Settings"
+msgstr ""
+
+#: plasma/private/applet_p.cpp:347
+#, kde-format
+msgid "Remove this Widget"
+msgstr ""
+
+#: plasma/private/containment_p.cpp:51
+#, kde-format
+msgid "Remove this Panel"
+msgstr ""
+
+#: plasma/private/containment_p.cpp:53
+#, kde-format
+msgid "Remove this Activity"
+msgstr ""
+
+#: plasma/private/containment_p.cpp:58
+#, kde-format
+msgid "Activity Settings"
+msgstr ""
+
+#: plasma/private/containment_p.cpp:70
+#, kde-format
+msgid "Add or Manage Widgets…"
+msgstr ""
+
+#: plasma/private/containment_p.cpp:188
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:540
+#, kde-format
+msgid "The root item of %1 must be of type ContainmentItem"
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:545
+#, kde-format
+msgid "The root item of %1 must be of type PlasmoidItem"
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:553
+#, kde-format
+msgid "Unknown Applet"
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:567
+#, kde-format
+msgid ""
+"This Widget was written for an unknown older version of Plasma and is not "
+"compatible with Plasma %1. Please contact the widget's author for an updated "
+"version."
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:570 plasmaquick/appletquickitem.cpp:577
+#: plasmaquick/appletquickitem.cpp:583
+#, kde-format
+msgid "%1 is not compatible with Plasma %2"
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:574
+#, kde-format
+msgid ""
+"This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
+"Please contact the widget's author for an updated version."
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:580
+#, kde-format
+msgid ""
+"This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
+"Please update Plasma in order to use the widget."
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:589 plasmaquick/appletquickitem.cpp:611
+#, kde-format
+msgid "Sorry! There was an error loading %1."
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:606
+#, kde-format
+msgid "Error loading QML file: %1 %2"
+msgstr ""
+
+#: plasmaquick/appletquickitem.cpp:609
+#, kde-format
+msgid "Error loading Applet: package %1 does not exist."
+msgstr ""
+
+#: plasmaquick/configview.cpp:189
+#, kde-format
+msgid "%1 — %2 Settings"
+msgstr ""
+
+#: plasmaquick/configview.cpp:190
+#, kde-format
+msgid "%1 Settings"
+msgstr ""
+
+#: plasmaquick/plasmoid/containmentitem.cpp:569
+#, kde-format
+msgid "Plasma Package"
+msgstr ""
+
+#: plasmaquick/plasmoid/containmentitem.cpp:573
+#, kde-format
+msgid "Install"
+msgstr ""
+
+#: plasmaquick/plasmoid/containmentitem.cpp:584
+#, kde-format
+msgid "Package Installation Failed"
+msgstr ""
+
+#: plasmaquick/plasmoid/containmentitem.cpp:600
+#, kde-format
+msgid "The package you just dropped is invalid."
+msgstr ""
+
+#: plasmaquick/plasmoid/containmentitem.cpp:609
+#, kde-format
+msgid "Widgets"
+msgstr ""
+
+#: plasmaquick/plasmoid/containmentitem.cpp:614
+#, kde-format
+msgctxt "Add widget"
+msgid "Add %1"
+msgstr ""
+
+#: plasmaquick/plasmoid/containmentitem.cpp:628
+#, kde-format
+msgctxt "Add icon widget"
+msgid "Add Icon"
+msgstr ""
+
+#: plasmaquick/plasmoid/containmentitem.cpp:640
+#, kde-format
+msgid "Wallpaper"
+msgstr ""
+
+#: plasmaquick/plasmoid/containmentitem.cpp:650
+#, kde-format
+msgctxt "Set wallpaper"
+msgid "Set %1"
+msgstr ""
+
+#: plasmaquick/plasmoid/dropmenu.cpp:29
+#, kde-format
+msgid "Content dropped"
+msgstr ""

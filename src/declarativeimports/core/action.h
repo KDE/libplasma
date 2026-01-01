@@ -9,6 +9,7 @@
 
 #include <QAction>
 #include <QActionGroup>
+#include <QMenu>
 #include <QObject>
 #include <qqml.h>
 #include <qtclasshelpermacros.h>

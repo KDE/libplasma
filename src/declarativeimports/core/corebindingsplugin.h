@@ -15,6 +15,7 @@
 #include <QQmlPropertyMap>
 
 #include <Plasma/Plasma>
+#include <qqmlintegration.h>
 
 #include "action.h"
 #include "applet.h"
@@ -85,6 +86,12 @@ struct ActionForeign {
     QML_NAMED_ELEMENT(Action)
     QML_FOREIGN(QAction)
     QML_EXTENDED(ActionExtension)
+};
+
+struct MenuForeign {
+    Q_GADGET
+    QML_ANONYMOUS
+    QML_FOREIGN(QMenu)
 };
 
 class CoreBindingsPlugin : public QQmlExtensionPlugin

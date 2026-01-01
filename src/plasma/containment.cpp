@@ -48,13 +48,16 @@ Containment::Containment(QObject *parentObject, const KPluginMetaData &data, con
     //          that requires a scene, which is not available at this point
     setHasConfigurationInterface(true);
 
-    // Try to determine the containment type. It must be done as soon as possible
-    const QString type = pluginMetaData().value(u"X-Plasma-ContainmentType");
-    QMetaEnum metaEnum = QMetaEnum::fromType<Plasma::Containment::Type>();
-    d->type = (Plasma::Containment::Type)metaEnum.keyToValue(type.toLocal8Bit().constData());
-    if (d->type == Plasma::Containment::Type::NoContainment) {
-        qCWarning(LOG_PLASMA) << "Unknown containment type requested:" << type << pluginMetaData().fileName()
-                              << "check Plasma::Containment::Type for supported values";
+    if (data.isValid()) {
+        // Try to determine the containment type. It must be done as soon as possible
+        const QString type = pluginMetaData().value(u"X-Plasma-ContainmentType");
+        QMetaEnum metaEnum = QMetaEnum::fromType<Plasma::Containment::Type>();
+        d->type = (Plasma::Containment::Type)metaEnum.keyToValue(type.toLocal8Bit().constData());
+        if (d->type == Plasma::Containment::Type::NoContainment) {
+            Q_ASSERT(false);
+            qCWarning(LOG_PLASMA) << "Unknown containment type requested:" << type << pluginMetaData().fileName()
+                                  << "check Plasma::Containment::Type for supported values";
+        }
     }
 }
 

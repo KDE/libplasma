@@ -144,7 +144,7 @@ public:
         AtPanelEdges = 0x2
     };
     Q_DECLARE_FLAGS(RemoveBorders, RemoveBorder)
-    Q_ENUM(RemoveBorder);
+    Q_FLAG(RemoveBorders);
 
     /*!
      * Constructor

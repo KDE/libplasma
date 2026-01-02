@@ -616,7 +616,8 @@ void DialogPrivate::syncToMainItemSize()
         return;
     }
     if (mainItem->width() <= 0 || mainItem->height() <= 0) {
-        qCWarning(LOG_PLASMAQUICK) << "trying to show an empty dialog";
+        qmlWarning(q) << "trying to show an empty dialog";
+        Q_ASSERT(false);
     }
 
     updateTheme();

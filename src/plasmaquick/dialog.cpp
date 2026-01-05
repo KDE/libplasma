@@ -1189,6 +1189,7 @@ QPoint Dialog::popupPosition(QQuickItem *item, const QSize &size)
             dialogPos.setX(leftPoint.x());
         }
     }
+    bool flippedY = false;
     // ...at the top edge
     if (dialogPos.y() < avail.top()) {
         if (d->location == Plasma::Types::LeftEdge || d->location == Plasma::Types::RightEdge) {
@@ -1197,12 +1198,13 @@ QPoint Dialog::popupPosition(QQuickItem *item, const QSize &size)
         } else {
             // flip it around
             // Note: floating popup goes here.
+            flippedY = true;
             dialogPos.setY(bottomPoint.y());
         }
     }
     // ...at the bottom edge
     if (dialogPos.y() + size.height() > avail.bottom()) {
-        if (d->location == Plasma::Types::LeftEdge || d->location == Plasma::Types::RightEdge) {
+        if (d->location == Plasma::Types::LeftEdge || d->location == Plasma::Types::RightEdge || flippedY) {
             // move it in bounds
             dialogPos.setY(qMax(avail.top(), (avail.bottom() - size.height() + 1)));
         } else {

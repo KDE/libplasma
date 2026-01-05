@@ -244,7 +244,7 @@ ColumnLayout {
         Layout.fillWidth: true
         horizontalAlignment: Qt.AlignHCenter
 
-        wrapMode: Text.WordWrap
+        wrapMode: Text.Wrap
     }
 
     PlasmaComponents3.Label {
@@ -253,7 +253,7 @@ ColumnLayout {
         opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.75
 
         horizontalAlignment: Qt.AlignHCenter
-        wrapMode: Text.WordWrap
+        wrapMode: Text.Wrap
 
         Layout.fillWidth: true
     }
@@ -261,6 +261,8 @@ ColumnLayout {
     Loader {
         active: root.helpfulAction && root.helpfulAction.enabled
         Layout.alignment: Qt.AlignHCenter
+        Layout.maximumWidth: implicitWidth
+        Layout.fillWidth: true
         Layout.topMargin: Kirigami.Units.gridUnit
 
         sourceComponent: PlasmaComponents3.Button {

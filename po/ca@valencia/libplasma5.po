@@ -535,13 +535,14 @@ msgstr "Miniaplicació desconeguda"
 #: plasmaquick/appletquickitem.cpp:624
 #, kde-format
 msgid "Error loading QML file: %1 %2"
-msgstr "S'ha produït un error en carregar el fitxer en QML: %1 %2"
+msgstr "S'ha produït un error mentre es carregava el fitxer en QML: %1 %2"
 
 #: plasmaquick/appletquickitem.cpp:626
 #, kde-format
 msgid "Error loading Applet: package inexistent. %1"
 msgstr ""
-"S'ha produït un error en carregar la miniaplicació: Paquet inexistent. %1"
+"S'ha produït un error mentre es carregava la miniaplicació: Paquet "
+"inexistent. %1"
 
 #: plasmaquick/configview.cpp:92
 #, kde-format

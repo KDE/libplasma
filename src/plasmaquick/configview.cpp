@@ -254,7 +254,6 @@ ConfigView::~ConfigView()
             d->applet.data()->containment()->corona()->requestConfigSync();
         }
     }
-    delete d->rootItem;
 }
 
 QQmlEngine *ConfigView::engine()
@@ -292,6 +291,8 @@ void ConfigView::setSource(const QUrl &src)
     connect(d->rootItem, &QQuickItem::implicitHeightChanged, this, [this]() {
         setWidth(d->rootItem->implicitHeight());
     });
+
+    d->rootItem->setParent(contentItem());
 }
 
 QQuickItem *ConfigView::rootObject()

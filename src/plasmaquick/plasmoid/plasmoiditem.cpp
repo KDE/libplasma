@@ -251,11 +251,11 @@ bool PlasmoidItem::hideOnWindowDeactivate() const
 
 QRect PlasmoidItem::screenGeometry() const
 {
-    if (!applet() || !applet()->containment() || !applet()->containment()->corona() || applet()->containment()->screen() < 0) {
+    if (!applet() || !applet()->containment()) {
         return QRect();
     }
 
-    return applet()->containment()->corona()->screenGeometry(applet()->containment()->screen());
+    return applet()->containment()->screenGeometry().toRect();
 }
 
 QVariantList PlasmoidItem::availableScreenRegion() const

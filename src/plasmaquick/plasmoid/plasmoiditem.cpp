@@ -65,11 +65,7 @@ void PlasmoidItem::init()
     if (applet->containment()) {
         connect(applet->containment(), &Plasma::Containment::screenChanged, this, &PlasmoidItem::screenChanged);
 
-        connect(applet->containment()->corona(), &Plasma::Corona::screenGeometryChanged, this, [this](int id) {
-            if (id == AppletQuickItem::applet()->containment()->screen()) {
-                Q_EMIT screenGeometryChanged();
-            }
-        });
+        connect(applet->containment(), &Plasma::Containment::screenGeometryChanged, this, &PlasmoidItem::screenGeometryChanged);
 
         connect(applet->containment()->corona(), &Plasma::Corona::availableScreenRegionChanged, this, &ContainmentItem::availableScreenRegionChanged);
         connect(applet->containment()->corona(), &Plasma::Corona::availableScreenRectChanged, this, &ContainmentItem::availableScreenRectChanged);

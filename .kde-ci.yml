@@ -26,3 +26,4 @@ Options:
  cppcheck-ignore-files: ['templates/']
  require-passing-tests-on: ['@all']
  cmake-options: -DBUILD_EXAMPLES=ON
+ enable-lsan: True

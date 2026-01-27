@@ -92,6 +92,7 @@ Item {
             font: root.font
             color: Kirigami.Theme.textColor
             linkColor: Kirigami.Theme.linkColor
+            wrapMode: Text.Wrap
             elide: Text.ElideRight
             Layout.alignment: Qt.AlignCenter
             Layout.fillWidth: true

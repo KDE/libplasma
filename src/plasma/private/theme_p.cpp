@@ -198,12 +198,21 @@ void ThemePrivate::colorsChanged()
     } else {
         KSharedConfig::openConfig()->reparseConfiguration();
     }
+
+    // let's see if this theme provides an "Header" section
+    auto simpleColors = KConfig(colors->name(), KConfig::SimpleConfig);
+    bool hasHeader = simpleColors.hasGroup(QStringLiteral("Colors:Header"));
+
     colorScheme = KColorScheme(QPalette::Active, KColorScheme::Window, colors);
     buttonColorScheme = KColorScheme(QPalette::Active, KColorScheme::Button, colors);
     viewColorScheme = KColorScheme(QPalette::Active, KColorScheme::View, colors);
     selectionColorScheme = KColorScheme(QPalette::Active, KColorScheme::Selection, colors);
     complementaryColorScheme = KColorScheme(QPalette::Active, KColorScheme::Complementary, colors);
-    headerColorScheme = KColorScheme(QPalette::Active, KColorScheme::Header, colors);
+    if (hasHeader) {
+        headerColorScheme = KColorScheme(QPalette::Active, KColorScheme::Header, colors);
+    } else {
+        headerColorScheme = KColorScheme(QPalette::Active, KColorScheme::Window, colors);
+    }
     tooltipColorScheme = KColorScheme(QPalette::Active, KColorScheme::Tooltip, colors);
     palette = KColorScheme::createApplicationPalette(colors);
     scheduleThemeChangeNotification();
@@ -407,10 +416,17 @@ void ThemePrivate::setThemeName(const QString &theme, bool writeSettings, bool e
 
     // qCDebug(LOG_PLASMA) << "we're going for..." << colorsFile << "*******************";
 
+    bool hasHeader = true;
     if (colorsFile.isEmpty()) {
         colors = nullptr;
     } else {
         colors = KSharedConfig::openConfig(colorsFile);
+        // let's see if this theme provides an "Header" section
+        // For the header group is important we never fallback to kdeglobals
+        // kcolorscheme as would be the normal behavior, because this can
+        // produce illeggible results, such as black text on black background
+        auto simpleColors = KConfig(colorsFile, KConfig::SimpleConfig);
+        hasHeader = simpleColors.hasGroup(QStringLiteral("Colors:Header"));
     }
 
     colorScheme = KColorScheme(QPalette::Active, KColorScheme::Window, colors);
@@ -418,7 +434,11 @@ void ThemePrivate::setThemeName(const QString &theme, bool writeSettings, bool e
     buttonColorScheme = KColorScheme(QPalette::Active, KColorScheme::Button, colors);
     viewColorScheme = KColorScheme(QPalette::Active, KColorScheme::View, colors);
     complementaryColorScheme = KColorScheme(QPalette::Active, KColorScheme::Complementary, colors);
-    headerColorScheme = KColorScheme(QPalette::Active, KColorScheme::Header, colors);
+    if (hasHeader) {
+        headerColorScheme = KColorScheme(QPalette::Active, KColorScheme::Header, colors);
+    } else {
+        headerColorScheme = KColorScheme(QPalette::Active, KColorScheme::Window, colors);
+    }
     tooltipColorScheme = KColorScheme(QPalette::Active, KColorScheme::Tooltip, colors);
     palette = KColorScheme::createApplicationPalette(colors);
 

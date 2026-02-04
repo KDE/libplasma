@@ -13,6 +13,7 @@
 #include <KConfigLoader>
 #include <KConfigPropertyMap>
 #include <KDesktopFile>
+#include <KLocalizedString>
 
 #include <QDebug>
 #include <QFile>
@@ -124,6 +125,11 @@ WallpaperItem *WallpaperItem::loadWallpaper(ContainmentItem *containmentItem)
         qmlObject->setTranslationDomain(QLatin1String("plasma_wallpaper_") + rootPath);
     } else {
         qmlObject->setTranslationDomain(QLatin1String("plasma_wallpaper_") + pkg.metadata().pluginId());
+    }
+
+    const QString localePath = pkg.filePath("translations");
+    if (!localePath.isEmpty()) {
+        KLocalizedString::addDomainLocaleDir(qmlObject->translationDomain().toLatin1(), localePath);
     }
 
     /*

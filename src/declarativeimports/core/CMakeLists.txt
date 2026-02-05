@@ -62,3 +62,5 @@ if(HAVE_EGL)
 endif()
 
 ecm_finalize_qml_module(corebindingsplugin DESTINATION ${KDE_INSTALL_QMLDIR})
+
+ecm_generate_qdoc(corebindingsplugin plasmacore.qdocconf)

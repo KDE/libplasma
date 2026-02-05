@@ -36,6 +36,10 @@ namespace Plasma
 class WindowTextureProvider;
 
 /*!
+ * \qmltype WindowThumbnail
+ * \inqmlmodule org.kde.plasma.core
+ * \inherits Item
+ *
  * \brief Renders a thumbnail for the window specified by the \c winId property.
  *
  * This declarative item is able to render a live updating thumbnail for the
@@ -60,19 +64,30 @@ class WindowTextureProvider;
  *     winId: 102760466
  * }
  * \endqml
- *
- * Import Statement:
- * \qml
- * import org.kde.plasma.core
- * \endqml
  */
 class WindowThumbnail : public QQuickItem, public QAbstractNativeEventFilter
 {
     Q_OBJECT
     QML_ELEMENT
+
+    /*!
+     * \qmlproperty int WindowThumbnail::winId
+     */
     Q_PROPERTY(uint winId READ winId WRITE setWinId RESET resetWinId NOTIFY winIdChanged)
+
+    /*!
+     * \qmlproperty real WindowThumbnail::paintedWidth
+     */
     Q_PROPERTY(qreal paintedWidth READ paintedWidth NOTIFY paintedSizeChanged)
+
+    /*!
+     * \qmlproperty real WindowThumbnail::paintedHeight
+     */
     Q_PROPERTY(qreal paintedHeight READ paintedHeight NOTIFY paintedSizeChanged)
+
+    /*!
+     * \qmlproperty bool WindowThumbnail::thumbnailAvailable
+     */
     Q_PROPERTY(bool thumbnailAvailable READ thumbnailAvailable NOTIFY thumbnailAvailableChanged)
 
 public:

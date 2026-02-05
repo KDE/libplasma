@@ -21,6 +21,7 @@ depends += \
     kpackage \
     plasmaquick \
     plasmaextras \
-    plasmacomponents
+    plasmacomponents \
+    plasmacore
 
 tagfile = plasma.tags

@@ -38,24 +38,83 @@ class ConfigCategoryPrivate;
 class ConfigModelPrivate;
 class ConfigCategory;
 
+// TODO: it should probably become an import instead of a library?
+
 /*!
- * This model contains all the possible config categories for a dialog,
- * such as categories of the config dialog for an Applet
- * TODO: it should probably become an import instead of a library?
+ * \qmltype ConfigModel
+ * \inqmlmodule org.kde.plasma.configuration
+ * \nativetype PlasmaQuick::ConfigModel
  *
- * Import Statement:
- * \qml
- * import org.kde.plasma.configuration
- * \endqml
+ * \brief This model contains all the possible config categories for a dialog,
+ * such as categories of the config dialog for an Applet
+ */
+
+/*!
+ * \qmlproperty list<ConfigCategory> ConfigModel::categories
+ * \qmldefault
+ */
+
+/*!
+ * \qmlproperty int ConfigModel::count
+ */
+
+/*!
+ * \qmlmethod void ConfigModel::appendCategory(string iconName, string name, string path, string pluginName, bool visible)
+ */
+
+/*!
+ * \qmlmethod void ConfigModel::appendCategory(ConfigCategory category)
+ */
+
+/*!
+ * \qmlmethod void ConfigModel::removeCategory(ConfigCategory category)
+ */
+
+/*!
+ * \qmlmethod void ConfigModel::removeCategoryAt(int index)
+ */
+
+/*!
+ * \qmlmethod void ConfigModel::get(int index)
+ *
+ * \a row The row for which the data will be returned
+ *
+ * Returns the data of the specified row
+ */
+
+/*!
+ * \class PlasmaQuick::ConfigModel
+ * \inheaderfile PlasmaQuick/ConfigModel
+ * \inmodule PlasmaQuick
+ *
+ * \brief This model contains all the possible config categories for a dialog,
+ * such as categories of the config dialog for an Applet
  */
 class PLASMAQUICK_EXPORT ConfigModel : public QAbstractListModel
 {
     Q_OBJECT
+
+    /*!
+     * \property PlasmaQuick::ConfigModel::categories
+     */
     Q_PROPERTY(QQmlListProperty<PlasmaQuick::ConfigCategory> categories READ categories CONSTANT)
     Q_CLASSINFO("DefaultProperty", "categories")
+
+    /*!
+     * \property PlasmaQuick::ConfigModel::count
+     */
     Q_PROPERTY(int count READ count NOTIFY countChanged)
 
 public:
+    /*!
+     * \value NameRole
+     * \value IconRole
+     * \value SourceRole
+     * \value PluginNameRole
+     * \value VisibleRole
+     * \value ConfigUiModule
+     * \value ConfigUiComponent
+     */
     enum Roles {
         NameRole = Qt::UserRole + 1,
         IconRole,
@@ -67,6 +126,9 @@ public:
     };
     Q_ENUM(Roles)
 
+    /*!
+     *
+     */
     explicit ConfigModel(QObject *parent = nullptr);
     ~ConfigModel() override;
 
@@ -77,11 +139,25 @@ public:
      **/
     void appendCategory(const QString &iconName, const QString &name, const QString &path, const QString &pluginName);
 
+    /*!
+     *
+     */
     Q_INVOKABLE void appendCategory(const QString &iconName, const QString &name, const QString &path, const QString &pluginName, bool visible);
+
     // QML Engine isn't particularly smart resolving namespaces, hence fully qualified signature
+    /*!
+     *
+     */
     Q_INVOKABLE void appendCategory(PlasmaQuick::ConfigCategory *category);
 
+    /*!
+     *
+     */
     Q_INVOKABLE void removeCategory(PlasmaQuick::ConfigCategory *category);
+
+    /*!
+     *
+     */
     Q_INVOKABLE void removeCategoryAt(int index);
 
     /*!
@@ -89,9 +165,19 @@ public:
      **/
     void clear();
 
+    /*!
+     *
+     */
     void setApplet(Plasma::Applet *interface);
+
+    /*!
+     *
+     */
     Plasma::Applet *applet() const;
 
+    /*!
+     *
+     */
     int count()
     {
         return rowCount();
@@ -113,6 +199,9 @@ public:
     QQmlListProperty<ConfigCategory> categories();
 
 Q_SIGNALS:
+    /*!
+     *
+     */
     void countChanged();
 
 private:

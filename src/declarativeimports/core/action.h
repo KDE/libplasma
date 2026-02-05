@@ -49,13 +49,41 @@ private:
     QString m_name;
 };
 
+/*!
+ * \qmltype Action
+ * \inqmlmodule org.kde.plasma.core
+ * \inherits QtObject
+ *
+ * \brief This class is exposed to wallpapers as the WallpaperItem root qml item.
+ */
 class ActionExtension : public QObject
 {
     Q_OBJECT
+
+    /*!
+     * \qmlproperty string Action::icon.name
+     * \qmlproperty QIcon Action::icon.icon
+     */
     Q_PROPERTY(IconGroup *icon MEMBER m_iconGroup CONSTANT)
+
+    /*!
+     * \qmlproperty bool Action::isSeparator
+     */
     Q_PROPERTY(bool isSeparator READ isSeparator WRITE setSeparator NOTIFY isSeparatorChanged)
+
+    /*!
+     * \qmlproperty QActionGroup Action::actionGroup
+     */
     Q_PROPERTY(QActionGroup *actionGroup READ actionGroup WRITE setActionGroup NOTIFY actionGroupChanged)
+
+    /*!
+     * \qmlproperty variant Action::shortcut
+     */
     Q_PROPERTY(QVariant shortcut READ shortcut WRITE setShortcut NOTIFY shortcutChanged)
+
+    /*!
+     * \qmlproperty QMenu Action::menu
+     */
     Q_PROPERTY(QMenu *menu READ menu WRITE setMenu NOTIFY menuChanged)
 
 public:

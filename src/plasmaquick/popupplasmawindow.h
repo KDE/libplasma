@@ -15,57 +15,6 @@ namespace PlasmaQuick
 class PopupPlasmaWindowPrivate;
 
 /*!
- * \qmltype PopupPlasmaWindow
- * \inqmlmodule org.kde.plasma.core
- * \nativetype PlasmaQuick::PopupPlasmaWindow
- *
- * \brief Styled Plasma window that can be positioned
- * relative to an existing Item on another window.
- *
- * When shown the popup is placed correctly.
- *
- * On Wayland this is currently an XdgTopLevel with the PlasmaShellSurface used on top.
- * Do not rely on that implementation detail.
- */
-
-/*!
- * \qmlproperty Item PopupPlasmaWindow::visualParent
- * The anchor item to place the popup relative to.
- */
-
-/*!
- * \qmlproperty Qt.Edge PopupPlasmaWindow::popupDirection
- * Defines the default direction to place the popup relative to the visualParent.
- */
-
-/*!
- * \qmlproperty Qt.Edge PopupPlasmaWindow::effectivePopupDirection
- * Defines the direction the popup was placed relative to the visualParent.
- * This property is read-only and is updated when the popup is shown.
- * The value whilst the popup is hidden is undefined.
- */
-
-/*!
- * \qmlproperty bool PopupPlasmaWindow::floating
- * Defines whether the popup can appear (float) over the parent window. The default is false.
- */
-
-/*!
- * \qmlproperty bool PopupPlasmaWindow::animated
- * Defines whether the popup is animated on show and close. The default is false.
- */
-
-/*!
- * \qmlproperty RemoveBorders PopupPlasmaWindow::removeBorderStrategy
- * Defines which borders should be enabled/disabled when the popup is shown. The default is to show all borders
- */
-
-/*!
- * \qmlproperty int PopupPlasmaWindow::margin
- * If set provides a gap between the parent window and all screen edges
- */
-
-/*!
  * \class PlasmaQuick::PopupPlasmaWindow
  * \inheaderfile PlasmaQuick/PopupPlasmaWindow
  * \inmodule PlasmaQuick

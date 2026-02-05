@@ -25,17 +25,51 @@
 
 namespace PlasmaQuick
 {
-// This class represents a single row item of the ConfigModel model in a QML friendly manner.
-// the properties contains all the data needed to represent an icon in the sidebar of a configuration dialog, of applets or containments
+/*!
+ * \qmltype ConfigCategory
+ * \inqmlmodule org.kde.plasma.configuration
+ *
+ * \brief Represents a single row item of the ConfigModel model.
+ *
+ * The properties contains all the data needed to represent an icon in the sidebar of a configuration dialog, of applets or containments
+ */
 class PLASMAQUICK_EXPORT ConfigCategory : public QObject
 {
     Q_OBJECT
+
+    /*!
+     * \qmlproperty string ConfigCategory::name
+     */
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
+
+    /*!
+     * \qmlproperty string ConfigCategory::icon
+     */
     Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
+
+    /*!
+     * \qmlproperty string ConfigCategory::source
+     */
     Q_PROPERTY(QString source READ source WRITE setSource NOTIFY sourceChanged)
+
+    /*!
+     * \qmlproperty string ConfigCategory::pluginName
+     */
     Q_PROPERTY(QString pluginName READ pluginName WRITE setPluginName NOTIFY pluginNameChanged)
+
+    /*!
+     * \qmlproperty bool ConfigCategory::visible
+     */
     Q_PROPERTY(bool visible READ visible WRITE setVisible NOTIFY visibleChanged)
+
+    /*!
+     * \qmlproperty string ConfigCategory::configUiModule
+     */
     Q_PROPERTY(QString configUiModule READ configUiModule WRITE setConfigUiModule NOTIFY configUiModuleChanged)
+
+    /*!
+     * \qmlproperty string ConfigCategory::configUiComponent
+     */
     Q_PROPERTY(QString configUiComponent READ configUiComponent WRITE setConfigUiComponent NOTIFY configUiComponentChanged)
 
 public:

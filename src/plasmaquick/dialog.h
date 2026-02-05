@@ -39,35 +39,15 @@ namespace PlasmaQuick
 class DialogPrivate;
 
 /*!
- * Dialog creates a Plasma themed top level window that can contain any QML component.
+ * \class PlasmaQuick::Dialog
+ * \inheaderfile PlasmaQuick::Dialog
+ * \inmodule PlasmaQuick
+ *
+ * \brief Creates a Plasma themed top level window that can contain any QML component.
  *
  * It can be automatically positioned relative to a visual parent
  * The dialog will resize to the size of the main item
  *
- * \qml
- *  import QtQuick 2.0
- *  import org.kde.plasma.core as PlasmaCore
- *  Item {
- *     PlasmaCore.Dialog {
- *          visible: true
- *          mainItem: Item {
- *              width: 500
- *              height: 500
- *
- *              Text {
- *                  anchors.centerIn: parent
- *                  color: "red"
- *                  text: "text"
- *              }
- *          }
- *      }
- * }
- * \endqml
- *
- * Import Statement:
- * \qml
- * import org.kde.plasma.core
- * \endqml
  */
 class PLASMAQUICK_EXPORT Dialog : public QQuickWindow, public QQmlParserStatus
 {

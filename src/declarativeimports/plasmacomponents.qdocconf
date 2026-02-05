@@ -5,8 +5,8 @@ description = Plasma Components Stuff
 
 documentationinheaders = true
 
-headerdirs = .
-sourcedirs = .
+headerdirs = plasmacomponents3
+sourcedirs = plasmacomponents3
 
 outputformats = HTML
 

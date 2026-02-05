@@ -1,7 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
-project = PlasmaQuick
-description = Plasma Quick Stuff
+project = PlasmaCore
+description = Plasma Core QML Module
 
 documentationinheaders = true
 
@@ -20,6 +20,6 @@ depends += \
     kconfigcore \
     kconfigqml \
     kpackage \
-    plasmacore
+    plasmaquick
 
-tagfile = plasmaquick.tags
+tagfile = plasmacore.tags

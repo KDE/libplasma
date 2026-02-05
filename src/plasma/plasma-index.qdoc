@@ -21,9 +21,6 @@
         \li \l{Plasma Components QML Types}
         \li \l{Plasma Extras QML Types}
         \li \l{Plasmoid QML Types}
+        \li \l{Plasmoid Configuration QML Types}
     \endlist
-
-    \section1 Licenses
-
-    TODO
 */

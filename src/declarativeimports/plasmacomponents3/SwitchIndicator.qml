@@ -77,7 +77,7 @@ Item {
         svg: switchSvg
         elementId: {
             if (root.control.down) return "handle-pressed";
-            if ((root.control.enabled && root.control.hovered) || root.control.focus) return "handle-hover";
+            if ((root.control.enabled && root.control.hovered) || root.control.visualFocus) return "handle-hover";
             if (root.control.checked && switchSvg.hasElement("handle-active")) return "handle-active";
             return "handle";
         }

@@ -82,7 +82,7 @@ class PLASMAQUICK_EXPORT PlasmaWindow : public QQuickWindow
      * \property PlasmaQuick::PlasmaWindow::borders
      * Tells what borders are enabled of its background
      */
-    Q_PROPERTY(Qt::Edges borders READ borders NOTIFY bordersChanged)
+    Q_PROPERTY(Qt::Edges borders READ borders WRITE setBorders NOTIFY bordersChanged)
 
     /*!
      * \property PlasmaQuick::PlasmaWindow::topPadding

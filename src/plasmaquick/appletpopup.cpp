@@ -21,10 +21,6 @@
 #include "plasmashellwaylandintegration.h"
 #include "windowresizehandler.h"
 
-// used in detecting if focus passes to config UI
-#include "configview.h"
-#include "quickviewsharedengine.h"
-
 // This is a proxy object that connects to the Layout attached property of an item
 // it also handles turning properties to proper defaults
 // we need a wrapper as QQmlProperty can't disconnect
@@ -111,8 +107,6 @@ AppletPopup::AppletPopup()
         m_oldScreen = screen;
         updateMaxSize();
     });
-
-    QObject::connect(static_cast<QGuiApplication *>(QCoreApplication::instance()), &QGuiApplication::focusWindowChanged, this, &AppletPopup::handleFocusChange);
 }
 
 AppletPopup::~AppletPopup()
@@ -148,20 +142,6 @@ void AppletPopup::setAppletInterface(QQuickItem *appletInterface)
     Q_EMIT appletInterfaceChanged();
 }
 
-bool AppletPopup::hideOnWindowDeactivate() const
-{
-    return m_hideOnWindowDeactivate;
-}
-
-void AppletPopup::setHideOnWindowDeactivate(bool hideOnWindowDeactivate)
-{
-    if (hideOnWindowDeactivate == m_hideOnWindowDeactivate) {
-        return;
-    }
-    m_hideOnWindowDeactivate = hideOnWindowDeactivate;
-    Q_EMIT hideOnWindowDeactivateChanged();
-}
-
 void AppletPopup::hideEvent(QHideEvent *event)
 {
     // Persist the size if this contains an applet
@@ -175,33 +155,6 @@ void AppletPopup::hideEvent(QHideEvent *event)
     }
 
     PopupPlasmaWindow::hideEvent(event);
-}
-
-void AppletPopup::handleFocusChange()
-{
-    const QWindow *focusWindow = QGuiApplication::focusWindow();
-    if (m_hideOnWindowDeactivate && focusWindow != this) {
-        bool parentHasFocus = false;
-
-        QWindow *parentWindow = transientParent();
-
-        while (parentWindow) {
-            if (parentWindow->isActive() && !(parentWindow->flags() & Qt::WindowDoesNotAcceptFocus)) {
-                parentHasFocus = true;
-                break;
-            }
-
-            parentWindow = parentWindow->transientParent();
-        }
-
-        bool childHasFocus = focusWindow && ((focusWindow->isActive() && isAncestorOf(focusWindow)) || (focusWindow->type() & Qt::Popup) == Qt::Popup);
-
-        const bool viewClicked = qobject_cast<const PlasmaQuick::QuickViewSharedEngine *>(focusWindow) || qobject_cast<const ConfigView *>(focusWindow);
-
-        if (viewClicked || (!parentHasFocus && !childHasFocus)) {
-            setVisible(false);
-        }
-    }
 }
 
 void AppletPopup::onMainItemChanged()

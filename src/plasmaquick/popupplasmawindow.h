@@ -115,6 +115,13 @@ class PLASMAQUICK_EXPORT PopupPlasmaWindow : public PlasmaWindow
     Q_PROPERTY(bool animated READ animated WRITE setAnimated NOTIFY animatedChanged)
 
     /*!
+     * \property PlasmaQuick::PopupPlasmaWindow::hideOnWindowDeactivate
+     * Whether the window should be hidden when it or its parent window loses focus.
+     * The default value is \c false.
+     */
+    Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
+
+    /*!
      * \property PlasmaQuick::PopupPlasmaWindow::removeBorderStrategy
      * Defines which borders should be enabled/disabled when the popup is shown. The default is to show all borders
      */
@@ -165,6 +172,9 @@ public:
     bool animated() const;
     void setAnimated(bool animated);
 
+    bool hideOnWindowDeactivate() const;
+    void setHideOnWindowDeactivate(bool hideOnWindowDeactivate);
+
     RemoveBorders removeBorderStrategy() const;
     void setRemoveBorderStrategy(RemoveBorders borders);
 
@@ -185,6 +195,7 @@ Q_SIGNALS:
     void effectivePopupDirectionChanged();
     void floatingChanged();
     void animatedChanged();
+    void hideOnWindowDeactivateChanged();
     void removeBorderStrategyChanged();
     void marginChanged();
     void nearbyBordersChanged();

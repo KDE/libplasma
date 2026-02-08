@@ -93,6 +93,8 @@ private Q_SLOTS:
         QVERIFY(item);
 
         QCOMPARE(item->applet(), applet);
+
+        delete applet;
     }
 
     void testListContainment()

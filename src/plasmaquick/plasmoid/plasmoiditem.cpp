@@ -71,7 +71,7 @@ void PlasmoidItem::init()
         connect(applet->containment()->corona(), &Plasma::Corona::availableScreenRectChanged, this, &ContainmentItem::availableScreenRectChanged);
     }
 
-    connect(this, &PlasmoidItem::expandedChanged, [=, this](bool expanded) {
+    connect(this, &PlasmoidItem::expandedChanged, this, [this](bool expanded) {
         // if both compactRepresentationItem and fullRepresentationItem exist,
         // the applet is in a popup
         if (expanded) {

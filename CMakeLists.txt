@@ -156,6 +156,9 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ################# list the subdirectories #################
 add_definitions(-DTRANSLATION_DOMAIN=\"libplasma6\")
+add_definitions(
+    -DQT_NO_CONTEXTLESS_CONNECT
+)
 ki18n_install(po)
 add_subdirectory(src)
 

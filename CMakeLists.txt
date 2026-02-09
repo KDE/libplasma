@@ -32,6 +32,7 @@ include(ECMMarkNonGuiExecutable)
 include(ECMDeprecationSettings)
 include(ECMQmlModule)
 include(ECMGenerateQDoc)
+include(ECMFindQmlModule)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
@@ -124,6 +125,13 @@ else()
     set(HAVE_EGL 0)
     message(STATUS "OpenGL::EGL is not available")
 endif()
+
+ecm_find_qmlmodule(Qt5Compat.GraphicalEffects REQUIRED)
+
+ecm_find_qmlmodule(org.kde.config REQUIRED)
+ecm_find_qmlmodule(org.kde.config REQUIRED)
+ecm_find_qmlmodule(org.kde.kirigami REQUIRED)
+ecm_find_qmlmodule(org.kde.ksvg REQUIRED)
 
 #########################################################################
 

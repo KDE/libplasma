@@ -526,6 +526,12 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
     Plasma::Containment *pc = qobject_cast<Plasma::Containment *>(applet);
     auto *qmlObject = new PlasmaQuick::SharedQmlEngine(applet, applet);
     qmlObject->engine()->setProperty("_kirigamiTheme", QStringLiteral("KirigamiPlasmaStyle"));
+
+    QQmlComponent tooltipComponent(qmlObject->engine().get(), "org.kde.plasma.components", "ToolTip");
+    QObject *tooltip = tooltipComponent.create();
+    tooltip->setParent(qmlObject->engine().get());
+    qmlObject->engine()->setProperty("_q_QQuickToolTip", QVariant::fromValue(tooltip));
+
     qmlObject->setInitializationDelayed(true);
     qmlObject->setTranslationDomain(applet->translationDomain());
 

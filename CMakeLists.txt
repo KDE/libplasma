@@ -73,6 +73,7 @@ find_package(PlasmaActivities REQUIRED ${PROJECT_DEP_VERSION})
 find_package(PlasmaWaylandProtocols 1.10.0 REQUIRED)
 find_package(Qt6WaylandClient ${QT_MIN_VERSION} REQUIRED CONFIG)
 find_package(Wayland 1.9 REQUIRED Client)
+find_package(WaylandProtocols 1.46 REQUIRED)
 
 option(WITHOUT_X11 "Build without X11 support (skips finding X11)." OFF)
 if(NOT WITHOUT_X11)

@@ -18,7 +18,7 @@
 
 namespace Plasma
 {
-class BlurManager;
+class BackgroundEffectManager;
 
 class BlurEffectWatcher : public QObject, public QAbstractNativeEventFilter
 {
@@ -43,7 +43,7 @@ private:
     xcb_atom_t m_property;
     QNativeInterface::QX11Application *m_x11Interface = nullptr;
 #endif
-    std::unique_ptr<BlurManager> m_blurManager;
+    std::unique_ptr<BackgroundEffectManager> m_backgroundEffectManager;
     bool m_effectActive = false;
 };
 

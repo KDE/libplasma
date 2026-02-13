@@ -53,13 +53,10 @@ target_sources(Plasma PRIVATE
     private/blureffectwatcher_p.h
 )
 
-if (Qt6_VERSION VERSION_GREATER_EQUAL "6.8.0")
-    set(private_code_option  "PRIVATE_CODE")
-endif()
 qt6_generate_wayland_protocol_client_sources(Plasma
-    ${private_code_option}
+    PRIVATE_CODE
     FILES
-        ${PLASMA_WAYLAND_PROTOCOLS_DIR}/blur.xml
+        ${WaylandProtocols_DATADIR}/staging/ext-background-effect/ext-background-effect-v1.xml
 )
 
 ecm_qt_declare_logging_category(Plasma

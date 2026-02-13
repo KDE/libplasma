@@ -14,24 +14,43 @@
 #include <X11/Xlib.h>
 #endif
 
-#include "qwayland-blur.h"
+#include "qwayland-ext-background-effect-v1.h"
 
 namespace Plasma
 {
 
-class BlurManager : public QWaylandClientExtensionTemplate<BlurManager>, public QtWayland::org_kde_kwin_blur_manager
+class BackgroundEffectManager : public QWaylandClientExtensionTemplate<BackgroundEffectManager>, public QtWayland::ext_background_effect_manager_v1
 {
+    Q_OBJECT
 public:
-    BlurManager()
-        : QWaylandClientExtensionTemplate<BlurManager>(1)
+    BackgroundEffectManager()
+        : QWaylandClientExtensionTemplate<BackgroundEffectManager>(1)
     {
+        initialize();
+        connect(this, &BackgroundEffectManager::activeChanged, this, [this]() {
+            if (!isActive()) {
+                m_supportsBlur = false;
+                Q_EMIT capabilitiesChanged();
+            }
+        });
     }
-    ~BlurManager()
+    ~BackgroundEffectManager()
     {
-        if (object()) {
-            org_kde_kwin_blur_manager_destroy(object());
+        if (isActive()) {
+            destroy();
         }
     }
+
+    void ext_background_effect_manager_v1_capabilities(uint32_t flags) override
+    {
+        m_supportsBlur = flags & capability_blur;
+        Q_EMIT capabilitiesChanged();
+    }
+
+    bool m_supportsBlur = false;
+
+Q_SIGNALS:
+    void capabilitiesChanged();
 };
 
 BlurEffectWatcher::BlurEffectWatcher(QObject *parent)
@@ -46,12 +65,12 @@ BlurEffectWatcher::BlurEffectWatcher(QObject *parent)
     if (insideKwin) {
         m_effectActive = true;
     } else if (KWindowSystem::isPlatformWayland()) {
-        m_blurManager = std::make_unique<BlurManager>();
-        connect(m_blurManager.get(), &BlurManager::activeChanged, this, [this]() {
-            m_effectActive = m_blurManager->isActive();
+        m_backgroundEffectManager = std::make_unique<BackgroundEffectManager>();
+        connect(m_backgroundEffectManager.get(), &BackgroundEffectManager::capabilitiesChanged, this, [this]() {
+            m_effectActive = m_backgroundEffectManager->m_supportsBlur;
             Q_EMIT effectChanged(m_effectActive);
         });
-        m_effectActive = m_blurManager->isActive();
+        m_effectActive = m_backgroundEffectManager->m_supportsBlur;
     } else if (KWindowSystem::isPlatformX11()) {
 #if HAVE_X11
         if (!m_x11Interface) {
@@ -144,3 +163,5 @@ bool BlurEffectWatcher::isEffectActive() const
 }
 
 } // namespace Plasma
+
+#include "blureffectwatcher.moc"

@@ -88,12 +88,11 @@ class PLASMAQUICK_EXPORT PlasmoidItem : public PlasmaQuick::AppletQuickItem
     Q_PROPERTY(QRect screenGeometry READ screenGeometry NOTIFY screenGeometryChanged)
 
     /*!
+     * \qmlproperty bool PlasmoidItem::hideOnWindowDeactivate
      * Whether the dialog should be hidden when the dialog loses focus.
      *
      * The default value is \c true.
-     * TODO KF6: move to Applet? probably not
      **/
-    Q_PROPERTY(bool hideOnWindowDeactivate READ hideOnWindowDeactivate WRITE setHideOnWindowDeactivate NOTIFY hideOnWindowDeactivateChanged)
 
     /*!
      * screen area free of panels: the coordinates are relative to the containment,
@@ -143,9 +142,6 @@ public:
     int screen() const;
     QRect screenGeometry() const;
 
-    bool hideOnWindowDeactivate() const;
-    void setHideOnWindowDeactivate(bool hide);
-
 Q_SIGNALS:
     /*!
      * somebody else, usually the containment sent some data to the applet
@@ -170,7 +166,6 @@ Q_SIGNALS:
     void toolTipItemChanged();
     void screenChanged();
     void screenGeometryChanged();
-    void hideOnWindowDeactivateChanged();
     void availableScreenRegionChanged();
     void availableScreenRectChanged();
     void contextualActionsChanged();
@@ -189,7 +184,6 @@ private:
     QString m_toolTipSubText;
     int m_toolTipTextFormat;
     QPointer<QQuickItem> m_toolTipItem;
-    bool m_hideOnDeactivate : 1;
     int m_oldKeyboardShortcut;
 
     friend class ContainmentItem;

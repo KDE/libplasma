@@ -34,10 +34,10 @@ PlasmoidItem::PlasmoidItem(QQuickItem *parent)
     : AppletQuickItem(parent)
     , m_toolTipTextFormat(0)
     , m_toolTipItem(nullptr)
-    , m_hideOnDeactivate(true)
     , m_oldKeyboardShortcut(0)
     , m_positionBeforeRemoval(QPointF(-1, -1))
 {
+    setHideOnWindowDeactivate(true); // Default value
 }
 
 PlasmoidItem::~PlasmoidItem()
@@ -235,20 +235,6 @@ int PlasmoidItem::screen() const
 
     return -1;
 }
-
-void PlasmoidItem::setHideOnWindowDeactivate(bool hide)
-{
-    if (m_hideOnDeactivate != hide) {
-        m_hideOnDeactivate = hide;
-        Q_EMIT hideOnWindowDeactivateChanged();
-    }
-}
-
-bool PlasmoidItem::hideOnWindowDeactivate() const
-{
-    return m_hideOnDeactivate;
-}
-
 QRect PlasmoidItem::screenGeometry() const
 {
     if (!applet() || !applet()->containment()) {

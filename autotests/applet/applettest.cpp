@@ -164,6 +164,19 @@ private Q_SLOTS:
 
         QVERIFY(shouldNotBeFound == applets.cend());
     }
+
+    void actionsTest()
+    {
+        auto applet = Plasma::PluginLoader::self()->loadApplet("org.kde.plasma.testapplet");
+
+        auto action = std::make_unique<QAction>("Hello");
+
+        // verify that double assignment isn't causing issues
+        applet->setInternalAction("foo", action.get());
+        applet->setInternalAction("foo", action.get());
+
+        delete applet;
+    }
 };
 
 QTEST_MAIN(AppletTest);

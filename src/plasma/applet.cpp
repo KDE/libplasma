@@ -670,10 +670,6 @@ void Applet::setInternalAction(const QString &name, QAction *action)
     }
 
     action->setObjectName(name);
-    QAction *oldAction = d->actions.value(name);
-    if (oldAction && QJSEngine::objectOwnership(oldAction) == QJSEngine::CppOwnership) {
-        delete oldAction;
-    }
 
     d->actions[name] = action;
 

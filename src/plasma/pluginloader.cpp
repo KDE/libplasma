@@ -36,7 +36,7 @@ PluginLoader *PluginLoader::self()
     return &self;
 }
 
-Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVariantList &args)
+std::unique_ptr<Applet> PluginLoader::loadApplet(const QString &name, uint appletId, const QVariantList &args)
 {
     if (name.isEmpty()) {
         return nullptr;
@@ -72,12 +72,12 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
         QVariantList allArgs;
         allArgs << QVariant::fromValue(package) << appletId << args;
 
-        Applet *applet = nullptr;
+        std::unique_ptr<Applet> applet;
 
         if (isContainmentMetaData(package.metadata())) {
-            applet = new Containment(nullptr, package.metadata(), allArgs);
+            applet = std::make_unique<Containment>(nullptr, package.metadata(), allArgs);
         } else {
-            applet = new Applet(nullptr, package.metadata(), allArgs);
+            applet = std::make_unique<Applet>(nullptr, package.metadata(), allArgs);
         }
 
         const QString localePath = package.filePath("translations");
@@ -100,12 +100,12 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
         }
 
         factory->setMetaData(package.metadata());
-        return factory->create<Plasma::Applet>(nullptr, allArgs);
+        return std::unique_ptr<Applet>(factory->create<Plasma::Applet>(nullptr, allArgs));
     }
 
     // C++ with embedded QML
     if (plugin.isValid()) {
-        return KPluginFactory::instantiatePlugin<Plasma::Applet>(plugin, nullptr, {{}, appletId}).plugin;
+        return std::unique_ptr<Applet>(KPluginFactory::instantiatePlugin<Plasma::Applet>(plugin, nullptr, {{}, appletId}).plugin);
     }
 
     // Add fake extension to parse completeBaseName() as pluginId
@@ -114,7 +114,7 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
     // at least show the missing applet's ID.
     const auto fakeFileName = name + u'.';
     // metadata = KPluginMetaData(QJsonObject(), fakeFileName);
-    return new Applet(nullptr, KPluginMetaData(QJsonObject(), fakeFileName), {{}, appletId});
+    return std::make_unique<Applet>(nullptr, KPluginMetaData(QJsonObject(), fakeFileName), QVariantList{{}, appletId});
 }
 
 ContainmentActions *PluginLoader::loadContainmentActions(Containment *parent, const QString &name, const QVariantList &args)

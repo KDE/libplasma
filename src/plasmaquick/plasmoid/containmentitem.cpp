@@ -384,7 +384,8 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
                         if (applet->containment() != m_containment) {
                             appletItem->setParentItem(nullptr);
                         }
-                        m_containment->addApplet(applet, QRect(x, y, -1, -1));
+                        // transfer ownership of applet from the old containment to the new containment
+                        m_containment->addApplet(std::unique_ptr<Plasma::Applet>(applet), QRect(x, y, -1, -1));
                         break;
                     }
                 }

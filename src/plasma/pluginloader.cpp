@@ -35,20 +35,20 @@ inline bool isContainmentMetaData(const KPluginMetaData &md)
     return md.rawData().contains(QStringLiteral("X-Plasma-ContainmentType"));
 }
 
-inline Applet *makeFakeApplet(const QString &name, uint appletId, const QString &errorMessage)
+inline std::unique_ptr<Applet> makeFakeApplet(const QString &name, uint appletId, const QString &errorMessage)
 {
     // Add fake extension to parse completeBaseName() as pluginId
     // without having to construct a fake JSON metadata object.
     // This would help with better error messages which would
     // at least show the missing applet's ID.
     const QString fakeFileName = name + u'.';
-    auto applet = new Applet(nullptr, KPluginMetaData(QJsonObject(), fakeFileName), {{}, appletId});
+    auto applet = std::make_unique<Applet>(nullptr, KPluginMetaData(QJsonObject(), fakeFileName), QVariantList{{}, appletId});
     applet->setLaunchErrorMessage(errorMessage);
     return applet;
 }
 
 /*! May return \c nullptr in the case of load error. Try to avoid this though, this function can provide rich diagnostics */
-inline Applet *loadAppletInternal(const QString &name, uint appletId, const QVariantList &args)
+inline std::unique_ptr<Applet> loadAppletInternal(const QString &name, uint appletId, const QVariantList &args)
 {
     if (name.isEmpty()) {
         return nullptr;
@@ -84,12 +84,12 @@ inline Applet *loadAppletInternal(const QString &name, uint appletId, const QVar
         QVariantList allArgs;
         allArgs << QVariant::fromValue(package) << appletId << args;
 
-        Applet *applet = nullptr;
+        std::unique_ptr<Applet> applet;
 
         if (isContainmentMetaData(package.metadata())) {
-            applet = new Containment(nullptr, package.metadata(), allArgs);
+            applet = std::make_unique<Containment>(nullptr, package.metadata(), allArgs);
         } else {
-            applet = new Applet(nullptr, package.metadata(), allArgs);
+            applet = std::make_unique<Applet>(nullptr, package.metadata(), allArgs);
         }
 
         const QString localePath = package.filePath("translations");
@@ -112,7 +112,7 @@ inline Applet *loadAppletInternal(const QString &name, uint appletId, const QVar
         }
 
         factory->setMetaData(package.metadata());
-        return factory->create<Plasma::Applet>(nullptr, allArgs);
+        return std::unique_ptr<Applet>(factory->create<Plasma::Applet>(nullptr, allArgs));
     }
 
     // C++ with embedded QML
@@ -121,7 +121,7 @@ inline Applet *loadAppletInternal(const QString &name, uint appletId, const QVar
         allArgs << QVariant() << appletId << args;
         auto result = KPluginFactory::instantiatePlugin<Plasma::Applet>(plugin, nullptr, allArgs);
         if (auto applet = result.plugin; applet) {
-            return applet;
+            return std::unique_ptr<Applet>(applet);
         }
         return makeFakeApplet(name, appletId, result.errorString);
     }
@@ -136,7 +136,7 @@ PluginLoader *PluginLoader::self()
     return &self;
 }
 
-Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVariantList &args)
+std::unique_ptr<Applet> PluginLoader::loadApplet(const QString &name, uint appletId, const QVariantList &args)
 {
     if (auto applet = loadAppletInternal(name, appletId, args); applet) {
         return applet;

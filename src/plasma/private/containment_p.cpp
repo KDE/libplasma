@@ -183,18 +183,20 @@ Applet *ContainmentPrivate::createApplet(const QString &name, const QVariantList
         return nullptr;
     }
 
-    Applet *applet = PluginLoader::self()->loadApplet(name, id, args);
+    auto applet = PluginLoader::self()->loadApplet(name, id, args);
+    auto appletPtr = applet.get();
+
     Q_ASSERT(applet);
     if (!applet) {
         return nullptr;
     }
 
-    q->addApplet(applet, geometryHint);
+    q->addApplet(std::move(applet), geometryHint);
     // mirror behavior of resorecontents: if an applet is not valid, set it immediately to uiReady
-    if (!applet->pluginMetaData().isValid()) {
-        applet->updateConstraints(Applet::UiReadyConstraint);
+    if (!appletPtr->pluginMetaData().isValid()) {
+        appletPtr->updateConstraints(Applet::UiReadyConstraint);
     }
-    return applet;
+    return appletPtr;
 }
 
 void ContainmentPrivate::appletDeleted(Plasma::Applet *applet)

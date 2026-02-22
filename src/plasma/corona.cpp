@@ -540,7 +540,7 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
 
     bool loadingNull = pluginName == QLatin1String("null");
     if (!loadingNull) {
-        Applet *applet = PluginLoader::self()->loadApplet(pluginName, id, args);
+        auto applet = PluginLoader::self()->loadApplet(pluginName, id, args).release();
         containment = dynamic_cast<Containment *>(applet);
 
         // in case we got a non-Containment from Applet::loadApplet

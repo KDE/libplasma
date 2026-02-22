@@ -554,6 +554,15 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
     if (!loadingNull) {
         applet = PluginLoader::self()->loadApplet(pluginName, id, args);
         containment = dynamic_cast<Containment *>(applet);
+
+        // in case we got a non-Containment from Applet::loadApplet
+        if (applet && !containment) {
+            // the applet probably doesn't know what's hit it, so let's pretend it can be
+            // initialized to make assumptions in the applet's dtor safer
+            applet->init();
+            delete applet;
+        }
+
         if (containment) {
             containment->setParent(q);
         }
@@ -562,12 +571,6 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
     if (!containment) {
         // in case we got a non-Containment from Applet::loadApplet or
         // a null containment was requested
-        if (applet) {
-            // the applet probably doesn't know what's hit it, so let's pretend it can be
-            // initialized to make assumptions in the applet's dtor safer
-            applet->init();
-            delete applet;
-        }
         applet = containment = new Containment(q, KPluginMetaData(), QVariantList{QVariant(), id});
         if (lastScreen >= 0) {
             containment->d->lastScreen = lastScreen;

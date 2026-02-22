@@ -560,11 +560,6 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
     }
 
     if (!containment) {
-        if (!loadingNull) {
-#ifndef NDEBUG
-            // qCDebug(LOG_PLASMA) << "loading of containment" << name << "failed.";
-#endif
-        }
         // in case we got a non-Containment from Applet::loadApplet or
         // a null containment was requested
         if (applet) {

@@ -384,7 +384,7 @@ void ContainmentItem::processMimeData(QMimeData *mimeData, int x, int y, KIO::Dr
                         if (applet->containment() != m_containment) {
                             appletItem->setParentItem(nullptr);
                         }
-                        m_containment->addApplet(applet, QRect(x, y, -1, -1));
+                        // m_containment->addApplet(applet, QRect(x, y, -1, -1));
                         break;
                     }
                 }

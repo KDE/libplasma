@@ -180,20 +180,21 @@ Applet *ContainmentPrivate::createApplet(const QString &name, const QVariantList
         return nullptr;
     }
 
-    Applet *applet = PluginLoader::self()->loadApplet(name, id, args);
+    auto applet = PluginLoader::self()->loadApplet(name, id, args);
+    auto appletPtr = applet.get();
 
     if (!applet) {
         qCWarning(LOG_PLASMA) << "Applet" << name << "could not be loaded.";
-        applet = new Applet(nullptr, KPluginMetaData(), QVariantList{QVariant(), id});
+        applet = std::make_unique<Applet>(nullptr, KPluginMetaData(), QVariantList{QVariant(), id});
         applet->setLaunchErrorMessage(i18n("Could not find requested component: %1", name));
     }
 
-    q->addApplet(applet, geometryHint);
+    q->addApplet(std::move(applet), geometryHint);
     // mirror behavior of resorecontents: if an applet is not valid, set it immediately to uiReady
-    if (!applet->pluginMetaData().isValid()) {
-        applet->updateConstraints(Applet::UiReadyConstraint);
+    if (!appletPtr->pluginMetaData().isValid()) {
+        appletPtr->updateConstraints(Applet::UiReadyConstraint);
     }
-    return applet;
+    return appletPtr;
 }
 
 void ContainmentPrivate::appletDeleted(Plasma::Applet *applet)

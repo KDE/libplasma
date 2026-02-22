@@ -212,7 +212,7 @@ public:
      *
      * The hint determines the preferred location and size for the newly created applet. The hint will not be respected if it's not possible to position it in the preferred location.
      */
-    Q_INVOKABLE void addApplet(Applet *applet, const QRectF &geometryHint = QRectF());
+    /*Q_INVOKABLE*/ void addApplet(std::unique_ptr<Applet> &&applet, const QRectF &geometryHint = QRectF());
 
     /*!
      * Returns the applets currently in this Containment

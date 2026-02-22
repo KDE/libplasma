@@ -11,6 +11,8 @@
 
 #include <QVariant>
 
+#include <memory>
+
 class KPluginMetaData;
 namespace Plasma
 {
@@ -44,7 +46,7 @@ public:
      *
      * Returns a pointer to the loaded applet, or \c nullptr on load failure
      **/
-    Applet *loadApplet(const QString &name, uint appletId = 0, const QVariantList &args = QVariantList());
+    std::unique_ptr<Applet> loadApplet(const QString &name, uint appletId = 0, const QVariantList &args = QVariantList());
 
     /*!
      * Load a ContainmentActions plugin.

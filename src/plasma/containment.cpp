@@ -263,6 +263,7 @@ void Containment::restoreContents(KConfigGroup &group)
             continue;
         }
 
+        // TODO
         d->createApplet(plugin, QVariantList(), appId);
     }
 
@@ -346,15 +347,17 @@ void Containment::setLocation(Types::Location location)
 
 Applet *Containment::createApplet(const QString &name, const QVariantList &args, const QRectF &geometryHint)
 {
-    Plasma::Applet *applet = d->createApplet(name, args, 0, geometryHint);
+    auto applet = d->createApplet(name, args, 0, geometryHint);
     if (applet) {
         Q_EMIT appletCreated(applet, geometryHint);
     }
     return applet;
 }
 
-void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
+void Containment::addApplet(std::unique_ptr<Applet> &&_applet, const QRectF &geometryHint)
 {
+    auto applet = _applet.release();
+
     if (!applet) {
 #ifndef NDEBUG
         // qCDebug(LOG_PLASMA) << "adding null applet!?!";

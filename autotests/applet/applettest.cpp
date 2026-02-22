@@ -81,18 +81,18 @@ private Q_SLOTS:
 
         QVERIFY(testApplet != applets.cend());
 
-        Plasma::Applet *applet = Plasma::PluginLoader::self()->loadApplet(id);
+        auto applet = Plasma::PluginLoader::self()->loadApplet(id);
         QVERIFY(applet);
 
         QCOMPARE(applet->pluginName(), id);
 
         QVERIFY(applet->launchErrorMessage().isEmpty());
 
-        PlasmaQuick::AppletQuickItem *item = PlasmaQuick::AppletQuickItem::itemForApplet(applet);
+        PlasmaQuick::AppletQuickItem *item = PlasmaQuick::AppletQuickItem::itemForApplet(applet.get());
 
         QVERIFY(item);
 
-        QCOMPARE(item->applet(), applet);
+        QCOMPARE(item->applet(), applet.get());
     }
 
     void testListContainment()
@@ -174,8 +174,6 @@ private Q_SLOTS:
         // verify that double assignment isn't causing issues
         applet->setInternalAction("foo", action.get());
         applet->setInternalAction("foo", action.get());
-
-        delete applet;
     }
 };
 

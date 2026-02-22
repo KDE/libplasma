@@ -541,7 +541,6 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
 {
     QString pluginName = name;
     Containment *containment = nullptr;
-    Applet *applet = nullptr;
 
     // qCDebug(LOG_PLASMA) << "Loading" << name << args << id;
 
@@ -552,7 +551,7 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
 
     bool loadingNull = pluginName == QLatin1String("null");
     if (!loadingNull) {
-        applet = PluginLoader::self()->loadApplet(pluginName, id, args);
+        Applet *applet = PluginLoader::self()->loadApplet(pluginName, id, args);
         containment = dynamic_cast<Containment *>(applet);
 
         // in case we got a non-Containment from Applet::loadApplet
@@ -571,12 +570,12 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
     if (!containment) {
         // in case we got a non-Containment from Applet::loadApplet or
         // a null containment was requested
-        applet = containment = new Containment(q, KPluginMetaData(), QVariantList{QVariant(), id});
+        containment = new Containment(q, KPluginMetaData(), QVariantList{QVariant(), id});
         if (lastScreen >= 0) {
             containment->d->lastScreen = lastScreen;
         }
         // if it's a dummy containment, just say its ui is ready, not blocking the corona
-        applet->updateConstraints(Applet::UiReadyConstraint);
+        containment->updateConstraints(Applet::UiReadyConstraint);
 
         // we want to provide something and don't care about the failure to launch
         containment->setFormFactor(Plasma::Types::Planar);

@@ -71,41 +71,6 @@ void Corona::saveLayout(const QString &configName) const
     d->saveLayout(c);
 }
 
-void Corona::exportLayout(KConfigGroup &config, QList<Containment *> containments)
-{
-    const auto groupList = config.groupList();
-    for (const QString &group : groupList) {
-        KConfigGroup cg(&config, group);
-        cg.deleteGroup();
-    }
-
-    // temporarily unlock so that removal works
-    Types::ImmutabilityType oldImm = immutability();
-    d->immutability = Types::Mutable;
-
-    KConfigGroup dest(&config, QStringLiteral("Containments"));
-    KConfigGroup dummy;
-    for (Plasma::Containment *c : std::as_const(containments)) {
-        c->save(dummy);
-        c->config().reparent(&dest);
-
-        // ensure the containment is unlocked
-        // this is done directly because we have to bypass any Types::SystemImmutable checks
-        c->Applet::d->immutability = Types::Mutable;
-        const auto lstApplet = c->applets();
-        for (Applet *a : lstApplet) {
-            a->d->immutability = Types::Mutable;
-        }
-
-        c->destroy();
-    }
-
-    // restore immutability
-    d->immutability = oldImm;
-
-    config.sync();
-}
-
 void Corona::requestConfigSync()
 {
     // constant controlling how long between requesting a configuration sync
@@ -147,11 +112,6 @@ void Corona::loadLayout(const QString &configName)
 
     KConfigGroup cg(config(), QStringLiteral("General"));
     setImmutability((Plasma::Types::ImmutabilityType)cg.readEntry("immutability", (int)Plasma::Types::Mutable));
-}
-
-QList<Plasma::Containment *> Corona::importLayout(const KConfigGroup &conf)
-{
-    return d->importLayout(conf, true);
 }
 
 Containment *Corona::containmentForScreen(int screen, const QString &activity, const QString &defaultPluginIfNonExistent, const QVariantList &defaultArgs)

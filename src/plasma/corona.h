@@ -210,30 +210,6 @@ public:
     QList<QAction *> actions() const;
 
     /*!
-     * Imports an applet layout from a config file. The results will be added to the
-     * current set of Containments.
-     *
-     * \a config the name of the config file to load from,
-     *               or the default config file if QString()
-     *
-     * Returns the list of containments that were loaded
-     *
-     * \since 4.6
-     */
-    QList<Plasma::Containment *> importLayout(const KConfigGroup &config);
-
-    /*!
-     * Exports a set of containments to a config file.
-     *
-     * \a config the config group to save to
-     *
-     * \a containments the list of containments to save
-     *
-     * \since 4.6
-     */
-    void exportLayout(KConfigGroup &config, QList<Containment *> containments);
-
-    /*!
      * Returns the id of the screen which is showing \a containment
      * -1 is returned if the containment is not associated with a screen.
      */

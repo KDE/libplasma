@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:45+0000\n"
+"POT-Creation-Date: 2026-02-24 00:47+0000\n"
 "PO-Revision-Date: 2024-08-23 11:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -64,7 +64,7 @@ msgstr "Neteja la busca"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: plasma/applet.cpp:768
+#: plasma/applet.cpp:764
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Activa el giny %1"

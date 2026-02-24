@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:45+0000\n"
+"POT-Creation-Date: 2026-02-24 00:47+0000\n"
 "PO-Revision-Date: 2024-12-15 22:18+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -60,7 +60,7 @@ msgstr "अन्वेषणं स्वच्छं कुर्वन्त�
 msgid "Unknown"
 msgstr "अज्ञात्"
 
-#: plasma/applet.cpp:768
+#: plasma/applet.cpp:764
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "%1 विजेट् सक्रियताम्"

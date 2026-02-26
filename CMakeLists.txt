@@ -25,7 +25,6 @@ include(ECMGenerateHeaders)
 include(CMakePackageConfigHelpers)
 include(ECMSetupVersion)
 include(ECMQtDeclareLoggingCategory)
-include(ECMAddQch)
 include(KDEPackageAppTemplates)
 include(ECMGenerateQmlTypes)
 include(ECMMarkNonGuiExecutable)
@@ -33,9 +32,6 @@ include(ECMDeprecationSettings)
 include(ECMQmlModule)
 include(ECMGenerateQDoc)
 include(ECMFindQmlModule)
-
-option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
-add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 ecm_setup_version(PROJECT
                   VARIABLE_PREFIX PLASMA
@@ -186,16 +182,6 @@ add_subdirectory(templates)
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/Plasma")
-
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS Plasma_QCH
-        FILE PlasmaQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/PlasmaQchTargets.cmake\")")
-endif()
 
 configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/PlasmaConfig.cmake.in"

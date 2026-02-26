@@ -150,31 +150,3 @@ install(
 )
 
 install(TARGETS Plasma EXPORT PlasmaTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-
-if(BUILD_QCH)
-    ecm_add_qch(
-        Plasma_QCH
-        NAME Plasma
-        BASE_NAME Plasma
-        VERSION ${PLASMA_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-            ${Plasma_HEADERS}
-            Mainpage.dox
-        MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
-        LINK_QCHS
-            Qt6Gui_QCH
-            KF6Service_QCH
-            KF6Package_QCH
-        INCLUDE_DIRS
-            ${Plasma_BUILD_INCLUDE_DIRS}
-        BLANK_MACROS
-            PLASMA_EXPORT
-            PLASMA_DEPRECATED
-            PLASMA_DEPRECATED_EXPORT
-            "PLASMA_DEPRECATED_VERSION(x, y, t)"
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()

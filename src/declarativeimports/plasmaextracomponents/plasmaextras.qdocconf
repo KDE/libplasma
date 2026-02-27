@@ -19,7 +19,8 @@ depends += \
     qtwidgets \
     qtquick \
     qtquickcontrols \
-    plasma
+    plasma \
+    plasmacomponents
 
 qhp.projects            = PlasmaExtras
 

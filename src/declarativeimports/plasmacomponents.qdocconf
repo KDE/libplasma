@@ -1,24 +1,26 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = PlasmaComponents
-description = Plasma Components Stuff
+description = Plasma Components QML Types
 
 documentationinheaders = true
 
-headerdirs = plasmacomponents3
-sourcedirs = plasmacomponents3
+headerdirs += plasmacomponents3
+sourcedirs += plasmacomponents3
 
 outputformats = HTML
 
-navigation.landingpage = "LibPlasma"
+navigation.landingpage = "Plasma"
 
 depends += \
+    kde \
     qtcore \
     qtgui \
     qtwidgets \
     qtquick \
     kconfigcore \
     kconfigqml \
-    kpackage
+    kpackage \
+    plasma
 
 tagfile = plasmacomponents.tags

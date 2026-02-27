@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {XmlGui}
+    \include {module-use.qdocinc} {building with cmake} {Plasma} {Plasma} {Plasma::Plasma}
 
     \section1 API Reference
 

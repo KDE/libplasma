@@ -1,22 +1,24 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = PlasmaExtras
-description = Plasma Extra Stuff
+description = Plasma Extras QML Module
 
 documentationinheaders = true
 
-headerdirs = .
-sourcedirs = .
+headerdirs += .
+sourcedirs += .
 
 outputformats = HTML
 
-navigation.landingpage = "LibPlasma"
+navigation.landingpage = "Plasma"
 
 depends += \
+    kde \
     qtcore \
     qtgui \
     qtwidgets \
     qtquick \
-    qtquickcontrols
+    qtquickcontrols \
+    plasma
 
 tagfile = plasmaextras.tags

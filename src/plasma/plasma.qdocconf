@@ -5,14 +5,15 @@ description = Plasma Stuff
 
 documentationinheaders = true
 
-headerdirs = .
-sourcedirs = .
+headerdirs += .
+sourcedirs += .
 
 outputformats = HTML
 
-navigation.landingpage = "LibPlasma"
+navigation.landingpage = "Plasma"
 
 depends += \
+    kde \
     qtcore \
     qtgui \
     qtwidgets \

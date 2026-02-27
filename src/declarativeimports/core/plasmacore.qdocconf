@@ -24,4 +24,19 @@ depends += \
     plasmaquick \
     plasma
 
+qhp.projects            = PlasmaCore
+
+qhp.PlasmaCore.file                = plasmacore.qhp
+qhp.PlasmaCore.namespace           = org.kde.plasmacore.$QT_VERSION_TAG
+qhp.PlasmaCore.virtualFolder       = plasmacore
+qhp.PlasmaCore.indexTitle          = Plasma Core
+qhp.PlasmaCore.indexRoot           =
+
+qhp.PlasmaCore.subprojects         = plasmacoreqml
+
+qhp.PlasmaCore.subprojects.plasmacoreqml.title = Plasma Core QML Types
+qhp.PlasmaCore.subprojects.plasmacoreqml.indexTitle = Plasma Core QML Types
+qhp.PlasmaCore.subprojects.plasmacoreqml.selectors = qmlmodule:org.kde.plasma.core
+qhp.PlasmaCore.subprojects.plasmacoreqml.sortPages = true
+
 tagfile = plasmacore.tags

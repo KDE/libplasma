@@ -25,4 +25,18 @@ depends += \
     plasmacomponents \
     plasmacore
 
+qhp.projects            = Plasma
+
+qhp.Plasma.file                = plasma.qhp
+qhp.Plasma.namespace           = org.kde.plasma.$QT_VERSION_TAG
+qhp.Plasma.virtualFolder       = plasma
+qhp.Plasma.indexTitle          = Plasma
+qhp.Plasma.indexRoot           =
+
+qhp.Plasma.subprojects         = classes
+qhp.Plasma.subprojects.classes.title = C++ Classes
+qhp.Plasma.subprojects.classes.indexTitle = Plasma C++ Classes
+qhp.Plasma.subprojects.classes.selectors = class fake:headerfile
+qhp.Plasma.subprojects.classes.sortPages = true
+
 tagfile = plasma.tags

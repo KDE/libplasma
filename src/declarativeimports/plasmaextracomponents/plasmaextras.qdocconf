@@ -21,4 +21,19 @@ depends += \
     qtquickcontrols \
     plasma
 
+qhp.projects            = PlasmaExtras
+
+qhp.PlasmaExtras.file                = plasmaextras.qhp
+qhp.PlasmaExtras.namespace           = org.kde.plasmaextras.$QT_VERSION_TAG
+qhp.PlasmaExtras.virtualFolder       = plasmaextras
+qhp.PlasmaExtras.indexTitle          = Plasma Extras
+qhp.PlasmaExtras.indexRoot           =
+
+qhp.PlasmaExtras.subprojects         = plasmaextrasqml
+
+qhp.PlasmaExtras.subprojects.plasmaextrasqml.title = Plasma Extras QML Types
+qhp.PlasmaExtras.subprojects.plasmaextrasqml.indexTitle = Plasma Extras QML Types
+qhp.PlasmaExtras.subprojects.plasmaextrasqml.selectors = qmlmodule:org.kde.plasma.extras
+qhp.PlasmaExtras.subprojects.plasmaextrasqml.sortPages = true
+
 tagfile = plasmaextras.tags

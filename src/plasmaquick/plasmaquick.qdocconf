@@ -24,4 +24,28 @@ depends += \
     plasmacore \
     plasma
 
+qhp.projects            = PlasmaQuick
+
+qhp.PlasmaQuick.file                = plasmaquick.qhp
+qhp.PlasmaQuick.namespace           = org.kde.plasmaquick.$QT_VERSION_TAG
+qhp.PlasmaQuick.virtualFolder       = plasmaquick
+qhp.PlasmaQuick.indexTitle          = Plasma Quick
+qhp.PlasmaQuick.indexRoot           =
+
+qhp.PlasmaQuick.subprojects         = classes plasmoidqml configurationqml
+qhp.PlasmaQuick.subprojects.classes.title = C++ Classes
+qhp.PlasmaQuick.subprojects.classes.indexTitle = Plasma Quick C++ Classes
+qhp.PlasmaQuick.subprojects.classes.selectors = class fake:headerfile
+qhp.PlasmaQuick.subprojects.classes.sortPages = true
+
+qhp.PlasmaQuick.subprojects.plasmoidqml.title = Plasmoid QML Types
+qhp.PlasmaQuick.subprojects.plasmoidqml.indexTitle = Plasmoid QML Types
+qhp.PlasmaQuick.subprojects.plasmoidqml.selectors = qmlmodule:org.kde.plasma.plasmoid
+qhp.PlasmaQuick.subprojects.plasmoidqml.sortPages = true
+
+qhp.PlasmaQuick.subprojects.configurationqml.title = Plasmoid Configuration QML Types
+qhp.PlasmaQuick.subprojects.configurationqml.indexTitle = Plasmoid Configuration QML Types
+qhp.PlasmaQuick.subprojects.configurationqml.selectors = qmlmodule:org.kde.plasma.configuration
+qhp.PlasmaQuick.subprojects.configurationqml.sortPages = true
+
 tagfile = plasmaquick.tags

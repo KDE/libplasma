@@ -23,4 +23,19 @@ depends += \
     kpackage \
     plasma
 
+qhp.projects            = PlasmaComponents
+
+qhp.PlasmaComponents.file                = plasmacomponents.qhp
+qhp.PlasmaComponents.namespace           = org.kde.plasmacomponents.$QT_VERSION_TAG
+qhp.PlasmaComponents.virtualFolder       = plasmacomponents
+qhp.PlasmaComponents.indexTitle          = Plasma Components
+qhp.PlasmaComponents.indexRoot           =
+
+qhp.PlasmaComponents.subprojects         = plasmacomponentsqml
+
+qhp.PlasmaComponents.subprojects.plasmacomponentsqml.title = Plasma Components QML Types
+qhp.PlasmaComponents.subprojects.plasmacomponentsqml.indexTitle = Plasma Components QML Types
+qhp.PlasmaComponents.subprojects.plasmacomponentsqml.selectors = qmlmodule:org.kde.plasma.components
+qhp.PlasmaComponents.subprojects.plasmacomponentsqml.sortPages = true
+
 tagfile = plasmacomponents.tags

@@ -66,14 +66,11 @@ target_sources(PlasmaQuick PRIVATE
     plasmoid/wallpaperitem.h
 )
 
-if (Qt6_VERSION VERSION_GREATER_EQUAL "6.8.0")
-    set(private_code_option  "PRIVATE_CODE")
-endif()
 qt_generate_wayland_protocol_client_sources(PlasmaQuick
+    PRIVATE_CODE
     FILES
         "${PLASMA_WAYLAND_PROTOCOLS_DIR}/plasma-shell.xml"
         "${Wayland_DATADIR}/wayland.xml"
-    ${private_code_option}
 )
 
 ecm_qt_declare_logging_category(PlasmaQuick

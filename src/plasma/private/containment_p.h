@@ -79,7 +79,7 @@ public:
     QSet<Applet *> loadingApplets;
     QString wallpaperPlugin;
     QObject *wallpaperGraphicsObject = nullptr;
-    QHash<QString, ContainmentActions *> localActionPlugins;
+    std::map<QString, std::unique_ptr<ContainmentActions>> localActionPlugins;
     int lastScreen;
     QString activityId;
     Containment::Type type;

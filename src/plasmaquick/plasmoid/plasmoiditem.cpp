@@ -383,7 +383,7 @@ bool PlasmoidItem::eventFilter(QObject *watched, QEvent *event)
         Plasma::Containment *c = applet()->containment();
         if (c) {
             const QString trigger = Plasma::ContainmentActions::eventToString(event);
-            Plasma::ContainmentActions *plugin = c->containmentActions().value(trigger);
+            Plasma::ContainmentActions *plugin = c->containmentActions(trigger);
             if (!plugin) {
                 return false;
             }

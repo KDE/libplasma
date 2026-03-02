@@ -64,7 +64,6 @@ Containment::Containment(QObject *parentObject, const KPluginMetaData &data, con
 Containment::~Containment()
 {
     disconnect(corona(), nullptr, this, nullptr);
-    qDeleteAll(d->localActionPlugins);
     delete d;
 }
 
@@ -600,9 +599,9 @@ void Containment::setContainmentActions(const QString &trigger, const QString &p
     KConfigGroup cfg = d->containmentActionsConfig();
     ContainmentActions *plugin = nullptr;
 
-    plugin = containmentActions().value(trigger);
+    plugin = containmentActions(trigger);
     if (plugin && plugin->id() != pluginName) {
-        containmentActions().remove(trigger);
+        d->localActionPlugins.erase(trigger);
         delete plugin;
         plugin = nullptr;
     }
@@ -621,7 +620,7 @@ void Containment::setContainmentActions(const QString &trigger, const QString &p
 
         if (plugin) {
             cfg.writeEntry(trigger, pluginName);
-            containmentActions().insert(trigger, plugin);
+            d->localActionPlugins[trigger] = std::unique_ptr<Plasma::ContainmentActions>(plugin);
             plugin->setContainment(this);
             KConfigGroup pluginConfig = KConfigGroup(&cfg, trigger);
             plugin->restore(pluginConfig);
@@ -634,9 +633,22 @@ void Containment::setContainmentActions(const QString &trigger, const QString &p
     Q_EMIT configNeedsSaving();
 }
 
-QHash<QString, ContainmentActions *> &Containment::containmentActions()
+QStringList Containment::containmentActionsList() const
 {
-    return d->localActionPlugins;
+    QStringList keys;
+
+    for (auto &[key, _] : d->localActionPlugins) {
+        keys << key;
+    }
+    return keys;
+}
+
+Plasma::ContainmentActions *Containment::containmentActions(const QString &name) const
+{
+    if (!d->localActionPlugins.contains(name)) {
+        return nullptr;
+    }
+    return d->localActionPlugins[name].get();
 }
 
 bool Containment::isUiReady() const

@@ -280,7 +280,9 @@ public:
      * Returns all the loaded containment action plugins, indexed by trigger name
      * \since 5.0
      */
-    QHash<QString, ContainmentActions *> &containmentActions();
+    QStringList containmentActionsList() const;
+
+    Plasma::ContainmentActions *containmentActions(const QString &name) const;
 
     /*!
      * Returns \c true when the ui of this containment is fully loaded, as well the ui of every applet in it

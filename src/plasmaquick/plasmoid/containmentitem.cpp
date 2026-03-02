@@ -778,7 +778,7 @@ void ContainmentItem::loadWallpaper()
 
 void ContainmentItem::mouseReleaseEvent(QMouseEvent *event)
 {
-    event->setAccepted(m_containment->containmentActions().contains(Plasma::ContainmentActions::eventToString(event)));
+    event->setAccepted(m_containment->containmentActions(Plasma::ContainmentActions::eventToString(event)));
 }
 
 void ContainmentItem::mousePressEvent(QMouseEvent *event)
@@ -798,7 +798,7 @@ void ContainmentItem::mousePressEvent(QMouseEvent *event)
     }
 
     const QString trigger = Plasma::ContainmentActions::eventToString(event);
-    Plasma::ContainmentActions *plugin = m_containment->containmentActions().value(trigger);
+    Plasma::ContainmentActions *plugin = m_containment->containmentActions(trigger);
 
     if (!plugin) {
         event->setAccepted(false);
@@ -925,7 +925,7 @@ void ContainmentItem::mousePressEvent(QMouseEvent *event)
 void ContainmentItem::wheelEvent(QWheelEvent *event)
 {
     const QString trigger = Plasma::ContainmentActions::eventToString(event);
-    Plasma::ContainmentActions *plugin = m_containment->containmentActions().value(trigger);
+    Plasma::ContainmentActions *plugin = m_containment->containmentActions(trigger);
 
     if (!plugin) {
         event->setAccepted(false);
@@ -1025,7 +1025,7 @@ void ContainmentItem::addContainmentActions(QMenu *desktopMenu, QEvent *event)
 
     // this is what ContainmentPrivate::prepareContainmentActions was
     const QString trigger = Plasma::ContainmentActions::eventToString(event);
-    Plasma::ContainmentActions *plugin = m_containment->containmentActions().value(trigger);
+    Plasma::ContainmentActions *plugin = m_containment->containmentActions(trigger);
 
     if (!plugin) {
         return;

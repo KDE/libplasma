@@ -100,7 +100,6 @@ public:
     QBasicTimer *modificationsTimer;
 
     QPointer<KNotification> deleteNotification;
-    QTimer *deleteNotificationTimer;
 
     QString configurationRequiredReason;
 

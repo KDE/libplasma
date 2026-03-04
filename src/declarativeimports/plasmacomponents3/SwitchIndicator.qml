@@ -53,6 +53,8 @@ Item {
         prefix: "inactive"
     }
     KSvg.FrameSvgItem {
+        // active should never show up when in inactive state (0)
+        visible: root.control.position > 0
         anchors {
             left: inactive.left
             top: inactive.top

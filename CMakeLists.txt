@@ -133,8 +133,8 @@ ecm_find_qmlmodule(org.kde.ksvg REQUIRED)
 #########################################################################
 
 ecm_set_disabled_deprecation_versions(
-    QT 6.9.0
-    KF 6.16.0
+    QT 6.11.0
+    KF 6.23.0
 )
 
 #add_definitions(-Wno-deprecated)

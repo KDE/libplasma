@@ -32,6 +32,16 @@ Item {
         imagePath: "widgets/switch"
         // FIXME
         colorSet: root.control.Kirigami.Theme.colorSet
+        onRepaintNeeded: {
+            inactive.implicitHeight = Qt.binding(() =>
+            switchSvg.hasElement("hint-bar-size")
+                ? switchSvg.elementSize("hint-bar-size").height
+                : button.implicitHeight)
+            inactive.implicitWidth = Qt.binding(() =>
+            switchSvg.hasElement("hint-bar-size")
+                ? switchSvg.elementSize("hint-bar-size").width
+                : root.implicitHeight * 2)
+        }
     }
 
     KSvg.FrameSvgItem {

@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2010 Ryan Rix <ry@n.rix.si>
+    SPDX-FileCopyrightText: 2026 Harald Sitter <sitter@kde.org>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -25,18 +26,29 @@ using namespace Qt::Literals;
 
 namespace Plasma
 {
+
+namespace
+{
+
 inline bool isContainmentMetaData(const KPluginMetaData &md)
 {
     return md.rawData().contains(QStringLiteral("X-Plasma-ContainmentType"));
 }
 
-PluginLoader *PluginLoader::self()
+inline Applet *makeFakeApplet(const QString &name, uint appletId, const QString &errorMessage)
 {
-    static PluginLoader self;
-    return &self;
+    // Add fake extension to parse completeBaseName() as pluginId
+    // without having to construct a fake JSON metadata object.
+    // This would help with better error messages which would
+    // at least show the missing applet's ID.
+    const QString fakeFileName = name + u'.';
+    auto applet = new Applet(nullptr, KPluginMetaData(QJsonObject(), fakeFileName), {{}, appletId});
+    applet->setLaunchErrorMessage(errorMessage);
+    return applet;
 }
 
-Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVariantList &args)
+/*! May return \c nullptr in the case of load error. Try to avoid this though, this function can provide rich diagnostics */
+inline Applet *loadAppletInternal(const QString &name, uint appletId, const QVariantList &args)
 {
     if (name.isEmpty()) {
         return nullptr;
@@ -105,16 +117,30 @@ Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVari
 
     // C++ with embedded QML
     if (plugin.isValid()) {
-        return KPluginFactory::instantiatePlugin<Plasma::Applet>(plugin, nullptr, {{}, appletId}).plugin;
+        auto result = KPluginFactory::instantiatePlugin<Plasma::Applet>(plugin, nullptr, {{}, appletId});
+        if (auto applet = result.plugin; applet) {
+            return applet;
+        }
+        return makeFakeApplet(name, appletId, result.errorString);
     }
 
-    // Add fake extension to parse completeBaseName() as pluginId
-    // without having to construct a fake JSON metadata object.
-    // This would help with better error messages which would
-    // at least show the missing applet's ID.
-    const auto fakeFileName = name + u'.';
-    // metadata = KPluginMetaData(QJsonObject(), fakeFileName);
-    return new Applet(nullptr, KPluginMetaData(QJsonObject(), fakeFileName), {{}, appletId});
+    return nullptr;
+}
+}
+
+PluginLoader *PluginLoader::self()
+{
+    static PluginLoader self;
+    return &self;
+}
+
+Applet *PluginLoader::loadApplet(const QString &name, uint appletId, const QVariantList &args)
+{
+    if (auto applet = loadAppletInternal(name, appletId, args); applet) {
+        return applet;
+    }
+
+    return makeFakeApplet(name, appletId, i18n("Could not find requested component: %1", name));
 }
 
 ContainmentActions *PluginLoader::loadContainmentActions(Containment *parent, const QString &name, const QVariantList &args)

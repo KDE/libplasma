@@ -181,11 +181,9 @@ Applet *ContainmentPrivate::createApplet(const QString &name, const QVariantList
     }
 
     Applet *applet = PluginLoader::self()->loadApplet(name, id, args);
-
+    Q_ASSERT(applet);
     if (!applet) {
-        qCWarning(LOG_PLASMA) << "Applet" << name << "could not be loaded.";
-        applet = new Applet(nullptr, KPluginMetaData(), QVariantList{QVariant(), id});
-        applet->setLaunchErrorMessage(i18n("Could not find requested component: %1", name));
+        return nullptr;
     }
 
     q->addApplet(applet, geometryHint);

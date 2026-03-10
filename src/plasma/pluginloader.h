@@ -42,7 +42,7 @@ public:
      *
      * \a args to send the applet extra arguments
      *
-     * Returns a pointer to the loaded applet, or \c nullptr on load failure
+     * Returns a pointer to the loaded applet. Should never return \c nullptr
      **/
     Applet *loadApplet(const QString &name, uint appletId = 0, const QVariantList &args = QVariantList());
 

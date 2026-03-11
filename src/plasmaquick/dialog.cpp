@@ -615,10 +615,6 @@ void DialogPrivate::syncToMainItemSize()
     if (!componentComplete || q->visibility() == QWindow::Hidden) {
         return;
     }
-    if (mainItem->width() <= 0 || mainItem->height() <= 0) {
-        qmlWarning(q) << "trying to show an empty dialog";
-        Q_ASSERT(false);
-    }
 
     updateTheme();
     if (visualParent) {
@@ -1365,6 +1361,20 @@ void Dialog::showEvent(QShowEvent *event)
         KX11Extras::setState(winId(), NET::SkipTaskbar | NET::SkipPager | NET::SkipSwitcher);
     }
     QQuickWindow::showEvent(event);
+}
+
+void Dialog::exposeEvent(QExposeEvent *event)
+{
+    QQuickWindow::exposeEvent(event);
+
+    // guard after the expose event, so that application code should have called polish and had a chance to debug
+    // if we hit this, we will have already rendered an invalid sized frame and have triggered a pending compositor error
+    if (isVisible() && KWindowSystem::isPlatformWayland() && !isRunningInKWin()) {
+        if (d->mainItem->width() <= 0 || d->mainItem->height() <= 0) {
+            qmlWarning(this) << "trying to show an empty dialog" << objectName();
+            Q_ASSERT(false);
+        }
+    }
 }
 
 bool Dialog::event(QEvent *event)

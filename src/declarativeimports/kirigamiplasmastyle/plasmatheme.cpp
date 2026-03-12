@@ -137,8 +137,8 @@ void PlasmaTheme::syncColors()
     }
     setDisabledTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, colorSet()));
     setHighlightedTextColor(m_theme.color(Plasma::Theme::HighlightedTextColor, colorSet()));
-    // Plasma::Theme doesn't have ActiveText, use PositiveTextColor
-    setActiveTextColor(m_theme.color(Plasma::Theme::PositiveTextColor, colorSet()));
+    // Plasma::Theme doesn't have ActiveText, use HighlightColor
+    setActiveTextColor(m_theme.color(Plasma::Theme::HighlightColor, colorSet()));
     setLinkColor(m_theme.color(Plasma::Theme::LinkColor, colorSet()));
     setVisitedLinkColor(m_theme.color(Plasma::Theme::VisitedLinkColor, colorSet()));
     setNegativeTextColor(m_theme.color(Plasma::Theme::NegativeTextColor, colorSet()));

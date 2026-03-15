@@ -525,7 +525,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
 
     Plasma::Containment *pc = qobject_cast<Plasma::Containment *>(applet);
     auto *qmlObject = new PlasmaQuick::SharedQmlEngine(applet, applet);
-    qmlObject->engine()->setProperty("_kirigamiTheme", QStringLiteral("KirigamiPlasmaStyle"));
+    Plasma::setupPlasmaStyle(qmlObject->engine().get());
     qmlObject->setInitializationDelayed(true);
     qmlObject->setTranslationDomain(applet->translationDomain());
 

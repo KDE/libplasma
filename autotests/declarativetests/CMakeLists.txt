@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 add_executable(qmltest qmltest.cpp)
-target_link_libraries(qmltest Qt::QuickTest Qt::Qml)
+target_link_libraries(qmltest Qt::QuickTest Qt::Qml Plasma::Plasma)
 
 add_test(
     NAME bug485688test

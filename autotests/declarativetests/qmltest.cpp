@@ -4,6 +4,8 @@
 #include <QQmlEngine>
 #include <QtQuickTest>
 
+#include <Plasma/Plasma>
+
 class Setup : public QObject
 {
     Q_OBJECT
@@ -22,7 +24,7 @@ public Q_SLOTS:
     void qmlEngineAvailable(QQmlEngine *engine)
     {
         // Initialization requiring the QQmlEngine to be constructed
-        engine->setProperty("_kirigamiTheme", QStringLiteral("KirigamiPlasmaStyle"));
+        Plasma::setupPlasmaStyle(engine);
     }
 
     void cleanupTestCase()

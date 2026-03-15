@@ -12,6 +12,7 @@
 #include <plasma/plasma_export.h>
 
 class QAction;
+class QQmlEngine;
 
 namespace Plasma
 {
@@ -160,6 +161,13 @@ public:
 private:
     Types(QObject *parent = nullptr);
 };
+
+/*!
+ * Set up \a engine to use the Plasma style.
+ *
+ * \since 6.7
+ */
+PLASMA_EXPORT void setupPlasmaStyle(QQmlEngine *engine);
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Types::ContainmentDisplayHints)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Types::BackgroundFlags)

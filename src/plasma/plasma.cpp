@@ -9,6 +9,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QMenu>
+#include <QQmlEngine>
 
 #include "containment.h"
 
@@ -21,6 +22,11 @@ Types::Types(QObject *parent)
 
 Types::~Types()
 {
+}
+
+void setupPlasmaStyle(QQmlEngine *engine)
+{
+    engine->setProperty("_kirigamiTheme", QStringLiteral("KirigamiPlasmaStyle"));
 }
 
 } // Plasma namespace

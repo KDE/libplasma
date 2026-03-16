@@ -10,6 +10,7 @@ target_sources(plasmaextracomponentsplugin PRIVATE
 ecm_target_qml_sources(plasmaextracomponentsplugin SOURCES
     qml/ActionTextField.qml
     qml/BasicPlasmoidHeading.qml
+    qml/ContextualHelpButton.qml
     qml/DescriptiveLabel.qml
     qml/ExpandableListItem.qml
     qml/Heading.qml

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 00:47+0000\n"
+"POT-Creation-Date: 2026-03-17 00:45+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -20,6 +20,12 @@ msgstr ""
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
 msgid "More actions"
+msgstr ""
+
+#: declarativeimports/plasmaextracomponents/qml/ContextualHelpButton.qml:58
+#, kde-format
+msgctxt "@action:button"
+msgid "Show Contextual Help"
 msgstr ""
 
 #: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:587

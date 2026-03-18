@@ -31,11 +31,11 @@ import org.kde.plasma.components as PlasmaComponents
       spacing: Kirigami.Units.smallSpacing
 
       PlasmaComponents.CheckBox {
-          text: i18n("Allow screen tearing in fullscreen windows")
+          text: i18ndc("your_app_name", "@option:check", "Allow screen tearing in fullscreen windows")
       }
 
       PlasmaExtras.ContextualHelpButton {
-          toolTipText: i18n("With most displays, screen tearing reduces latency at the cost of some visual fidelity at high framerates. Note that not all graphics drivers support this setting.")
+          toolTipText: i18ndc("your_app_name", "@info:tooltip", "With most displays, screen tearing reduces latency at the cost of some visual fidelity at high framerates. Note that not all graphics drivers support this setting.")
       }
   }
 
@@ -55,7 +55,7 @@ PlasmaComponents.ToolButton {
      */
     property bool toolTipVisible: false
 
-    text: i18nc("@action:button", "Show Contextual Help")
+    text: i18ndc("libplasma6", "@action:button", "Show Contextual Help")
     icon.name: "help-contextual-symbolic"
     display: PlasmaComponents.ToolButton.IconOnly
 

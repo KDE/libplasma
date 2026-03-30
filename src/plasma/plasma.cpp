@@ -9,6 +9,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QMenu>
+#include <QQmlComponent>
 #include <QQmlEngine>
 
 #include "containment.h"
@@ -27,6 +28,15 @@ Types::~Types()
 void setupPlasmaStyle(QQmlEngine *engine)
 {
     engine->setProperty("_kirigamiTheme", QStringLiteral("KirigamiPlasmaStyle"));
+
+    // Make sure that attached tooltips use the correct style when using plasmacomponents
+    // https://qt-project.atlassian.net/browse/QTBUG-144126
+    if (engine->property("_q_QQuickToolTip").isNull()) {
+        QQmlComponent tooltipComponent(engine, "org.kde.plasma.components", "ToolTip");
+        QObject *tooltip = tooltipComponent.create();
+        tooltip->setParent(engine);
+        engine->setProperty("_q_QQuickToolTip", QVariant::fromValue(tooltip));
+    }
 }
 
 } // Plasma namespace

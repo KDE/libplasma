@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-17 00:45+0000\n"
+"POT-Creation-Date: 2026-03-30 00:45+0000\n"
 "PO-Revision-Date: 2024-03-14 23:24+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -102,6 +102,11 @@ msgstr ""
 msgid "Exit Edit Mode"
 msgstr "Colar del mou d'edición"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Nun se pudo atopar el componente solicitáu: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -171,11 +176,6 @@ msgstr ""
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr ""
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Nun se pudo atopar el componente solicitáu: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-17 00:45+0000\n"
+"POT-Creation-Date: 2026-03-30 00:45+0000\n"
 "PO-Revision-Date: 2024-10-29 11:45+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -104,6 +104,11 @@ msgstr "Atslēgt logdaļas"
 msgid "Exit Edit Mode"
 msgstr "Iziet no rediģēšanas režīma"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Neatrada pieprasīto komponenti: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -173,11 +178,6 @@ msgstr "Aktivitātes iestatījumi"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Pievienot vai pārvaldīt logdaļas…"
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Neatrada pieprasīto komponenti: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

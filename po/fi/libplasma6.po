@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-17 00:45+0000\n"
+"POT-Creation-Date: 2026-03-30 00:45+0000\n"
 "PO-Revision-Date: 2024-10-17 13:50+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -109,6 +109,11 @@ msgstr "Poista sovelmien lukitus"
 msgid "Exit Edit Mode"
 msgstr "Poistu muokkaustilasta"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Pyydettyä komponenttia ei löytynyt: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -178,11 +183,6 @@ msgstr "Aktiviteetin asetukset"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Lisää tai hallitse sovelmia…"
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Pyydettyä komponenttia ei löytynyt: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

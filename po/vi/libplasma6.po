@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-17 00:45+0000\n"
+"POT-Creation-Date: 2026-03-30 00:45+0000\n"
 "PO-Revision-Date: 2023-10-24 10:41+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -102,6 +102,11 @@ msgstr "Bỏ khoá các phụ kiện"
 msgid "Exit Edit Mode"
 msgstr "Thoát khỏi chế độ sửa"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Không tìm thấy thành phần được yêu cầu: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -171,11 +176,6 @@ msgstr "Thiết lập Hoạt động"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr ""
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Không tìm thấy thành phần được yêu cầu: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, fuzzy, kde-format

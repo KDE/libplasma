@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-17 00:45+0000\n"
+"POT-Creation-Date: 2026-03-30 00:45+0000\n"
 "PO-Revision-Date: 2024-09-22 21:52+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -105,6 +105,11 @@ msgstr "Felületi elemek feloldása"
 msgid "Exit Edit Mode"
 msgstr "Kilépés a szerkesztőmódból"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "A kért komponens nem található: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -174,11 +179,6 @@ msgstr "Tevékenység beállítások"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Elemek hozzáadása vagy kezelése…"
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "A kért komponens nem található: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-17 00:45+0000\n"
+"POT-Creation-Date: 2026-03-30 00:45+0000\n"
 "PO-Revision-Date: 2026-03-18 11:36+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -117,6 +117,11 @@ msgstr "Déverrouiller les composants graphiques"
 msgid "Exit Edit Mode"
 msgstr "Quitter le mode d'édition"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Impossible de trouver le composant demandé : %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -186,11 +191,6 @@ msgstr "Paramètre de l'activité"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Ajouter ou gérer des composants graphiques…"
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Impossible de trouver le composant demandé : %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

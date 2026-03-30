@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-17 00:45+0000\n"
+"POT-Creation-Date: 2026-03-30 00:45+0000\n"
 "PO-Revision-Date: 2026-03-17 08:16+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -105,6 +105,11 @@ msgstr "Розблокувати віджети"
 msgid "Exit Edit Mode"
 msgstr "Вийти з режиму редагування"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Не вдалося знайти потрібного компонента: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -174,11 +179,6 @@ msgstr "Налаштувати простір дій"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Додати віджети або керувати ними…"
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Не вдалося знайти потрібного компонента: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

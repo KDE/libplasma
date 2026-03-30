@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-17 00:45+0000\n"
+"POT-Creation-Date: 2026-03-30 00:45+0000\n"
 "PO-Revision-Date: 2024-08-25 12:18+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -118,6 +118,11 @@ msgstr "Lås opp elementa"
 msgid "Exit Edit Mode"
 msgstr "Avslutt tilpassing"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Fann ikkje etterspurd komponent: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -187,11 +192,6 @@ msgstr "Aktivitetsoppsett"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Legg til eller juster element …"
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Fann ikkje etterspurd komponent: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-17 00:45+0000\n"
+"POT-Creation-Date: 2026-03-30 00:45+0000\n"
 "PO-Revision-Date: 2026-03-17 12:02+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -102,6 +102,11 @@ msgstr "Widgets ontgrendelen"
 msgid "Exit Edit Mode"
 msgstr "Bewerkingsmodus sluiten"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Kon gevraagd component niet vinden: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -171,11 +176,6 @@ msgstr "Instellingen voor activiteiten"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Widgets toevoegen of beheren…"
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Kon gevraagd component niet vinden: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

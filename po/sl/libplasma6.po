@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 02:42+0000\n"
+"POT-Creation-Date: 2026-03-30 02:40+0000\n"
 "PO-Revision-Date: 2024-08-23 06:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: LUGOS\n"
@@ -102,6 +102,11 @@ msgstr "Odkleni gradnike"
 msgid "Exit Edit Mode"
 msgstr "Izhod iz urejevalnega načina"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Ni bilo mogoče najti zahtevanega sestavnega dela: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -171,11 +176,6 @@ msgstr "Nastavitve dejavnosti"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Dodaj ali upravljaj gradnike…"
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Ni bilo mogoče najti zahtevanega sestavnega dela: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

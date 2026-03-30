@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 02:42+0000\n"
+"POT-Creation-Date: 2026-03-30 02:40+0000\n"
 "PO-Revision-Date: 2022-06-14 10:56+0700\n"
 "Last-Translator: Aziz Adam Adrian <4.adam.adrian@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -100,6 +100,11 @@ msgstr "Buka Kunci Widget"
 msgid "Exit Edit Mode"
 msgstr "Keluarkan Mode Edit"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Tidak dapat menemukan komponen yang diminta: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -169,11 +174,6 @@ msgstr "Pengaturan Activity"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr ""
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Tidak dapat menemukan komponen yang diminta: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

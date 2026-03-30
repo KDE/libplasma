@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 02:42+0000\n"
+"POT-Creation-Date: 2026-03-30 02:40+0000\n"
 "PO-Revision-Date: 2025-04-25 15:28+0200\n"
 "Last-Translator: Lucia Mrenica <lucia.mrenica@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -98,6 +98,11 @@ msgstr "Odomknúť miniaplikácie"
 msgid "Exit Edit Mode"
 msgstr "Ukončiť režim úprav"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "Nepodarilo sa nájsť požadovaný komponent: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -167,11 +172,6 @@ msgstr "Nastavenia aktivity"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Pridať alebo spravovať miniaplikácie..."
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "Nepodarilo sa nájsť požadovaný komponent: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

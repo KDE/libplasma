@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 02:42+0000\n"
+"POT-Creation-Date: 2026-03-30 02:40+0000\n"
 "PO-Revision-Date: 2024-01-28 19:51-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -97,6 +97,11 @@ msgstr "ਵਿਦਜੈਟ ਅਣ-ਲਾਕ ਕਰੋ"
 msgid "Exit Edit Mode"
 msgstr "ਸੋਧ ਢੰਗ ਤੋਂ ਬਾਹਰ"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "ਲੋੜੀਦਾ ਭਾਗ ਲੱਭਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -166,11 +171,6 @@ msgstr "ਸਰਗਰਮੀ ਸੈਟਿੰਗਾਂ"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr ""
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "ਲੋੜੀਦਾ ਭਾਗ ਲੱਭਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

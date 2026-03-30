@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 02:42+0000\n"
+"POT-Creation-Date: 2026-03-30 02:40+0000\n"
 "PO-Revision-Date: 2024-12-24 17:51+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -97,6 +97,11 @@ msgstr "위젯 잠금 풀기"
 msgid "Exit Edit Mode"
 msgstr "편집 모드 끝내기"
 
+#: plasma/pluginloader.cpp:143
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "요청한 구성 요소를 찾을 수 없습니다: %1"
+
 #: plasma/private/applet_p.cpp:119
 #, kde-format
 msgid "Show Alternatives..."
@@ -166,11 +171,6 @@ msgstr "활동 설정"
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "위젯 추가 및 관리…"
-
-#: plasma/private/containment_p.cpp:188
-#, kde-format
-msgid "Could not find requested component: %1"
-msgstr "요청한 구성 요소를 찾을 수 없습니다: %1"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format

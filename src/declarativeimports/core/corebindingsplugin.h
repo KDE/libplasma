@@ -244,6 +244,12 @@ struct MenuForeign {
     QML_FOREIGN(QMenu)
 };
 
+struct IconForeign {
+    Q_GADGET
+    QML_ANONYMOUS
+    QML_FOREIGN(QIcon)
+};
+
 class CoreBindingsPlugin : public QQmlExtensionPlugin
 {
     Q_OBJECT

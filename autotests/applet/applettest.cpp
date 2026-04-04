@@ -177,6 +177,16 @@ private Q_SLOTS:
 
         delete applet;
     }
+
+    void testArgs()
+    {
+        QVariantList args{1, u"Foo"_s, 3};
+        auto applet = Plasma::PluginLoader::self()->loadApplet("org.kde.plasma.testapplet", 1, args);
+
+        QCOMPARE(applet->startupArguments(), args);
+
+        delete applet;
+    }
 };
 
 QTEST_MAIN(AppletTest);

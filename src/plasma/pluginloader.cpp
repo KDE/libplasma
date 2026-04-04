@@ -117,7 +117,9 @@ inline Applet *loadAppletInternal(const QString &name, uint appletId, const QVar
 
     // C++ with embedded QML
     if (plugin.isValid()) {
-        auto result = KPluginFactory::instantiatePlugin<Plasma::Applet>(plugin, nullptr, {{}, appletId});
+        QVariantList allArgs;
+        allArgs << QVariant() << appletId << args;
+        auto result = KPluginFactory::instantiatePlugin<Plasma::Applet>(plugin, nullptr, allArgs);
         if (auto applet = result.plugin; applet) {
             return applet;
         }

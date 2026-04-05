@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-30 00:45+0000\n"
+"POT-Creation-Date: 2026-04-05 00:46+0000\n"
 "PO-Revision-Date: 2016-03-20 15:24+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -108,7 +108,7 @@ msgstr "Otključaj vidžete"
 msgid "Exit Edit Mode"
 msgstr ""
 
-#: plasma/pluginloader.cpp:143
+#: plasma/pluginloader.cpp:145
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Ne mogu da nađem zahtevanu komponentu: %1"

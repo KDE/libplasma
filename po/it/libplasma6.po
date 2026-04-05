@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-30 00:45+0000\n"
+"POT-Creation-Date: 2026-04-05 00:46+0000\n"
 "PO-Revision-Date: 2026-03-17 16:40+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -105,7 +105,7 @@ msgstr "Sblocca oggetti"
 msgid "Exit Edit Mode"
 msgstr "Esci dalla modalità di modifica"
 
-#: plasma/pluginloader.cpp:143
+#: plasma/pluginloader.cpp:145
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Impossibile trovare il componente richiesto: %1"

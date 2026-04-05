@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-30 00:45+0000\n"
+"POT-Creation-Date: 2026-04-05 00:46+0000\n"
 "PO-Revision-Date: 2025-04-25 15:28+0200\n"
 "Last-Translator: Lucia Mrenica <lucia.mrenica@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -104,7 +104,7 @@ msgstr "Odomknúť miniaplikácie"
 msgid "Exit Edit Mode"
 msgstr "Ukončiť režim úprav"
 
-#: plasma/pluginloader.cpp:143
+#: plasma/pluginloader.cpp:145
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Nepodarilo sa nájsť požadovaný komponent: %1"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-30 02:40+0000\n"
+"POT-Creation-Date: 2026-04-05 02:41+0000\n"
 "PO-Revision-Date: 2024-08-25 11:46+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -111,7 +111,7 @@ msgstr "Déverrouiller les composants graphiques"
 msgid "Exit Edit Mode"
 msgstr "Quitter le mode d'édition"
 
-#: plasma/pluginloader.cpp:143
+#: plasma/pluginloader.cpp:145
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Impossible de trouver le composant demandé : %1"

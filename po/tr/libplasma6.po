@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-30 02:40+0000\n"
+"POT-Creation-Date: 2026-04-05 02:41+0000\n"
 "PO-Revision-Date: 2026-03-17 14:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -99,7 +99,7 @@ msgstr "Araç Takımlarının Kilidini Aç"
 msgid "Exit Edit Mode"
 msgstr "Düzenleme Kipinden Çık"
 
-#: plasma/pluginloader.cpp:143
+#: plasma/pluginloader.cpp:145
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "İstenilen bileşen bulunamadı: %1"

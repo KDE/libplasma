@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-30 02:40+0000\n"
+"POT-Creation-Date: 2026-04-05 02:41+0000\n"
 "PO-Revision-Date: 2024-08-25 01:44+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -102,7 +102,7 @@ msgstr "解除鎖定元件"
 msgid "Exit Edit Mode"
 msgstr "離開編輯模式"
 
-#: plasma/pluginloader.cpp:143
+#: plasma/pluginloader.cpp:145
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "找不到請求的組件：%1"

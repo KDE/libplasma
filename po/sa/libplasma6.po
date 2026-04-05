@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-30 02:40+0000\n"
+"POT-Creation-Date: 2026-04-05 02:41+0000\n"
 "PO-Revision-Date: 2024-12-15 22:18+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -97,7 +97,7 @@ msgstr "विजेट् मुक्तं कुर्वन्तु"
 msgid "Exit Edit Mode"
 msgstr "सम्पादन विधितः निर्गच्छन्तु"
 
-#: plasma/pluginloader.cpp:143
+#: plasma/pluginloader.cpp:145
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "अनुरोधितं घटकं न प्राप्नोत्: %1"

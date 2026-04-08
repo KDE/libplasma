@@ -564,22 +564,22 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
             const int plasma_version_major = 6; // TODO: as soon PLASMA_VERSION_MAJOR is actually 6, use directly that
             if (version.isNull()) {
                 reason = i18n(
-                    "This Widget was written for an unknown older version of Plasma and is not compatible with Plasma %1. Please contact the widget's author for "
-                    "an updated version.",
+                    "This widget was written for an unknown older version of Plasma and is not compatible with Plasma %1. Please contact the widget's author "
+                    "for an updated version.",
                     plasma_version_major);
                 compactReason = i18n("%1 is not compatible with Plasma %2", applet->pluginMetaData().name(), plasma_version_major);
                 versionMismatch = true;
             } else if (version.majorVersion() < plasma_version_major) {
-                reason =
-                    i18n("This Widget was written for Plasma %1 and is not compatible with Plasma %2. Please contact the widget's author for an updated version.",
-                        version.majorVersion(),
-                        plasma_version_major);
+                reason = i18n(
+                    "This widget was written for Plasma %1 and is not compatible with Plasma %2. Please contact the widget's author for an updated version.",
+                    version.majorVersion(),
+                    plasma_version_major);
                 compactReason = i18n("%1 is not compatible with Plasma %2", applet->pluginMetaData().name(), plasma_version_major);
                 versionMismatch = true;
             } else if (version.majorVersion() > plasma_version_major || version.minorVersion() > PLASMA_VERSION_MINOR) {
-                reason = i18n("This Widget was written for Plasma %1 and is not compatible with Plasma %2. Please update Plasma in order to use the widget.",
-                            versionString,
-                            plasma_version_major);
+                reason = i18n("This widget was written for Plasma %1 and is not compatible with Plasma %2. Please update Plasma in order to use the widget.",
+                              versionString,
+                              plasma_version_major);
                 compactReason = i18n("%1 is not compatible with Plasma %2", applet->pluginMetaData().name(), plasma_version_major);
                 versionMismatch = true;
             } else if (applet->failedToLaunch()) {

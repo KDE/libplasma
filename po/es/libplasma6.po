@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-05 00:46+0000\n"
+"POT-Creation-Date: 2026-04-09 00:46+0000\n"
 "PO-Revision-Date: 2026-03-18 00:44+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -194,9 +194,13 @@ msgid "Unknown Applet"
 msgstr "Miniaplicación desconocida"
 
 #: plasmaquick/appletquickitem.cpp:567
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This Widget was written for an unknown older version of Plasma and is not "
+#| "compatible with Plasma %1. Please contact the widget's author for an "
+#| "updated version."
 msgid ""
-"This Widget was written for an unknown older version of Plasma and is not "
+"This widget was written for an unknown older version of Plasma and is not "
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
@@ -211,9 +215,12 @@ msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 no es compatible con Plasma %2"
 
 #: plasmaquick/appletquickitem.cpp:574
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
+#| "%2. Please contact the widget's author for an updated version."
 msgid ""
-"This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
+"This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
 "Este elemento gráfico fue escrito para Plasma %1 y no es compatible con "
@@ -221,9 +228,12 @@ msgstr ""
 "obtener una versión actualizada."
 
 #: plasmaquick/appletquickitem.cpp:580
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
+#| "%2. Please update Plasma in order to use the widget."
 msgid ""
-"This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
+"This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
 "Este elemento gráfico fue escrito para Plasma %1 y no es compatible con "

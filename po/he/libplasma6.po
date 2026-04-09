@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-05 00:46+0000\n"
+"POT-Creation-Date: 2026-04-09 00:46+0000\n"
 "PO-Revision-Date: 2026-03-18 16:07+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -196,9 +196,13 @@ msgid "Unknown Applet"
 msgstr "יישומון לא ידוע"
 
 #: plasmaquick/appletquickitem.cpp:567
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This Widget was written for an unknown older version of Plasma and is not "
+#| "compatible with Plasma %1. Please contact the widget's author for an "
+#| "updated version."
 msgid ""
-"This Widget was written for an unknown older version of Plasma and is not "
+"This widget was written for an unknown older version of Plasma and is not "
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
@@ -212,18 +216,24 @@ msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 לא נתמך בפלזמה %2"
 
 #: plasmaquick/appletquickitem.cpp:574
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
+#| "%2. Please contact the widget's author for an updated version."
 msgid ""
-"This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
+"This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
 "היישומון נכתב לפלזמה %1 ואינו נתמך בפלזמה %2. נא ליצור קשר עם יוצרי היישומון "
 "לאספקת גרסה עדכנית"
 
 #: plasmaquick/appletquickitem.cpp:580
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
+#| "%2. Please update Plasma in order to use the widget."
 msgid ""
-"This Widget was written for Plasma %1 and is not compatible with Plasma %2. "
+"This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
 "היישומון הזה נכתב לפלזמה %1 ואינו נתמך בפלזמה %2. נא לעדכן את פלזמה כדי "

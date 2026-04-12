@@ -74,6 +74,7 @@
         "Description[pt_BR]": "Um pouco de ar fresco",
         "Description[ro]": "O gură de aer proaspăt",
         "Description[ru]": "Волшебные пузырьки",
+        "Description[sk]": "Závan čerstvého vzduchu",
         "Description[sl]": "Vdih svežega zraka",
         "Description[sv]": "Ett friskt andetag",
         "Description[tr]": "Temiz hava",

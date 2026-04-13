@@ -19,9 +19,9 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-09 00:46+0000\n"
-"PO-Revision-Date: 2026-03-18 11:36+0100\n"
+"PO-Revision-Date: 2026-04-11 07:35+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: \n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -208,11 +208,7 @@ msgid "Unknown Applet"
 msgstr "Applet inconnue"
 
 #: plasmaquick/appletquickitem.cpp:567
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgid ""
 "This widget was written for an unknown older version of Plasma and is not "
 "compatible with Plasma %1. Please contact the widget's author for an updated "
@@ -229,10 +225,7 @@ msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 est non compatible avec Plasma %2."
 
 #: plasmaquick/appletquickitem.cpp:574
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
-#| "%2. Please contact the widget's author for an updated version."
+#, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
@@ -242,10 +235,7 @@ msgstr ""
 "version à jour."
 
 #: plasmaquick/appletquickitem.cpp:580
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
-#| "%2. Please update Plasma in order to use the widget."
+#, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-09 00:46+0000\n"
-"PO-Revision-Date: 2026-03-17 11:24+0000\n"
+"POT-Creation-Date: 2026-04-14 00:45+0000\n"
+"PO-Revision-Date: 2026-04-13 18:10+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -71,7 +71,7 @@ msgstr "Óþekkt"
 msgid "Activate %1 Widget"
 msgstr "Virkja %1 græju"
 
-#: plasma/containment.cpp:100 plasma/private/applet_p.cpp:101
+#: plasma/containment.cpp:100 plasma/private/applet_p.cpp:100
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -82,7 +82,7 @@ msgstr "Fjarlægja %1"
 msgid "Enter Edit Mode"
 msgstr "Opna breytiham"
 
-#: plasma/containment.cpp:109 plasma/private/applet_p.cpp:106
+#: plasma/containment.cpp:109 plasma/private/applet_p.cpp:105
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -108,52 +108,52 @@ msgstr "Loka breytiham"
 msgid "Could not find requested component: %1"
 msgstr "Fann ekki umbeðna einingu: %1"
 
-#: plasma/private/applet_p.cpp:119
+#: plasma/private/applet_p.cpp:118
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Sýna aðra valkosti…"
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "Widget Removed"
 msgstr "Græja fjarlægð"
 
-#: plasma/private/applet_p.cpp:238
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Græjan \"%1\" var fjarlægð."
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Panel Removed"
 msgstr "Skjáborðsstika fjarlægð"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Skjáborðsstikan var fjarlægð."
 
-#: plasma/private/applet_p.cpp:246
+#: plasma/private/applet_p.cpp:245
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Skjáborð fjarlægt"
 
-#: plasma/private/applet_p.cpp:247
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Skjáborð var fjarlægt."
 
-#: plasma/private/applet_p.cpp:250
+#: plasma/private/applet_p.cpp:249
 #, kde-format
 msgid "Undo"
 msgstr "Afturkalla"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:313
 #, kde-format
 msgid "Widget Settings"
 msgstr "Græjustillingar"
 
-#: plasma/private/applet_p.cpp:347
+#: plasma/private/applet_p.cpp:319
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Fjarlægja þessa græju"
@@ -194,11 +194,7 @@ msgid "Unknown Applet"
 msgstr "Óþekkt smáforrit"
 
 #: plasmaquick/appletquickitem.cpp:567
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgid ""
 "This widget was written for an unknown older version of Plasma and is not "
 "compatible with Plasma %1. Please contact the widget's author for an updated "
@@ -214,22 +210,16 @@ msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 er ekki samhæfð við Plasma %2"
 
 #: plasmaquick/appletquickitem.cpp:574
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
-#| "%2. Please contact the widget's author for an updated version."
+#, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
-"Þessi græja var gerð fyrir %1 og virkar ekki í %2. Hafðu samband við höfund "
-"græjunnar til að fá uppfærða útgáfu."
+"Þessi græja var gerð fyrir %1 og virkar ekki í Plasma %2. Hafðu samband við "
+"höfund græjunnar til að fá uppfærða útgáfu."
 
 #: plasmaquick/appletquickitem.cpp:580
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
-#| "%2. Please update Plasma in order to use the widget."
+#, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."

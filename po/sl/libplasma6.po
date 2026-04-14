@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-09 00:46+0000\n"
+"POT-Creation-Date: 2026-04-14 00:45+0000\n"
 "PO-Revision-Date: 2026-04-09 07:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: LUGOS\n"
@@ -76,7 +76,7 @@ msgstr "Neznan"
 msgid "Activate %1 Widget"
 msgstr "Omogoči gradnik %1"
 
-#: plasma/containment.cpp:100 plasma/private/applet_p.cpp:101
+#: plasma/containment.cpp:100 plasma/private/applet_p.cpp:100
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -87,7 +87,7 @@ msgstr "Odstrani %1"
 msgid "Enter Edit Mode"
 msgstr "Vstop v urejevalni način"
 
-#: plasma/containment.cpp:109 plasma/private/applet_p.cpp:106
+#: plasma/containment.cpp:109 plasma/private/applet_p.cpp:105
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -113,52 +113,52 @@ msgstr "Izhod iz urejevalnega načina"
 msgid "Could not find requested component: %1"
 msgstr "Ni bilo mogoče najti zahtevanega sestavnega dela: %1"
 
-#: plasma/private/applet_p.cpp:119
+#: plasma/private/applet_p.cpp:118
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Pokaži alternative …"
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "Widget Removed"
 msgstr "Gradnik odstranjen"
 
-#: plasma/private/applet_p.cpp:238
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Gradnik '%1' je bil odstranjen."
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Panel Removed"
 msgstr "Plošča odstranjena"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Plošča je bila odstranjena."
 
-#: plasma/private/applet_p.cpp:246
+#: plasma/private/applet_p.cpp:245
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Namizje odstranjeno"
 
-#: plasma/private/applet_p.cpp:247
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Namizje je bilo odstranjeno."
 
-#: plasma/private/applet_p.cpp:250
+#: plasma/private/applet_p.cpp:249
 #, kde-format
 msgid "Undo"
 msgstr "Razveljavi"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:313
 #, kde-format
 msgid "Widget Settings"
 msgstr "Nastavitve gradnika"
 
-#: plasma/private/applet_p.cpp:347
+#: plasma/private/applet_p.cpp:319
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Odstrani ta gradnik"

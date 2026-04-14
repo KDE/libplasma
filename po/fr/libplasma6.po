@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-09 00:46+0000\n"
+"POT-Creation-Date: 2026-04-14 00:45+0000\n"
 "PO-Revision-Date: 2026-04-11 07:35+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -85,7 +85,7 @@ msgstr "Inconnu"
 msgid "Activate %1 Widget"
 msgstr "Activer le composant graphique %1"
 
-#: plasma/containment.cpp:100 plasma/private/applet_p.cpp:101
+#: plasma/containment.cpp:100 plasma/private/applet_p.cpp:100
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -96,7 +96,7 @@ msgstr "Supprimer %1"
 msgid "Enter Edit Mode"
 msgstr "Démarrer en mode d'édition"
 
-#: plasma/containment.cpp:109 plasma/private/applet_p.cpp:106
+#: plasma/containment.cpp:109 plasma/private/applet_p.cpp:105
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -122,52 +122,52 @@ msgstr "Quitter le mode d'édition"
 msgid "Could not find requested component: %1"
 msgstr "Impossible de trouver le composant demandé : %1"
 
-#: plasma/private/applet_p.cpp:119
+#: plasma/private/applet_p.cpp:118
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Afficher les alternatives..."
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:236
 #, kde-format
 msgid "Widget Removed"
 msgstr "Composant graphique supprimé"
 
-#: plasma/private/applet_p.cpp:238
+#: plasma/private/applet_p.cpp:237
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Le composant graphique « %1 » a été supprimé."
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:241
 #, kde-format
 msgid "Panel Removed"
 msgstr "Tableau de bord supprimé"
 
-#: plasma/private/applet_p.cpp:243
+#: plasma/private/applet_p.cpp:242
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Un tableau de bord a été supprimé."
 
-#: plasma/private/applet_p.cpp:246
+#: plasma/private/applet_p.cpp:245
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Bureau supprimé"
 
-#: plasma/private/applet_p.cpp:247
+#: plasma/private/applet_p.cpp:246
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Un bureau a été supprimé"
 
-#: plasma/private/applet_p.cpp:250
+#: plasma/private/applet_p.cpp:249
 #, kde-format
 msgid "Undo"
 msgstr "Annuler"
 
-#: plasma/private/applet_p.cpp:341
+#: plasma/private/applet_p.cpp:313
 #, kde-format
 msgid "Widget Settings"
 msgstr "Paramètres du composant graphique"
 
-#: plasma/private/applet_p.cpp:347
+#: plasma/private/applet_p.cpp:319
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Supprimer ce composant graphique"

@@ -674,10 +674,7 @@ Item {
                                             }
                                         }
 
-                                        onClicked: {
-                                            modelData.trigger()
-                                            listItem.collapse()
-                                        }
+                                        onClicked: modelData.trigger()
                                     }
                                 }
                             }

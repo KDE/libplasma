@@ -1,21 +1,22 @@
-# SPDX-FileCopyrightText: 2023, 2024 Johannes Obermayr <johannesobermayr@gmx.de>
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2018, 2019, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
-# SPDX-FileCopyrightText: 2014, 2016, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2013-2015, 2018-2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2014, 2016, 2022-2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2023-2024 Johannes Obermayr <johannesobermayr@gmx.de>
 # SPDX-FileCopyrightText: 2024 Frank Steinmetzger <dev-kde@felsenfleischer.de>
+# SPDX-FileCopyrightText: 2026 Alexander Becker <alex-at-kde-l10n-de@freenet.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasma6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-14 00:45+0000\n"
-"PO-Revision-Date: 2024-08-28 21:42+0200\n"
-"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
+"PO-Revision-Date: 2026-04-16 21:25+0200\n"
+"Last-Translator: Alexander Becker <alex-at-kde-l10n-de@freenet.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -26,7 +27,7 @@ msgstr "Weitere Aktionen"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Kontexthilfe anzeigen"
 
 #: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:587
 #, kde-format
@@ -48,7 +49,7 @@ msgstr "Passwort"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
 msgid "Search…"
-msgstr "Suchen ..."
+msgstr "Suchen …"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:64
 #, kde-format
@@ -85,7 +86,7 @@ msgstr "Bearbeitungsmodus starten"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "%1 einrichten ..."
+msgstr "%1 einrichten …"
 
 #: plasma/corona.cpp:314 plasma/corona.cpp:471
 #, kde-format
@@ -110,7 +111,7 @@ msgstr "Die angeforderte Komponente ist nicht auffindbar: %1"
 #: plasma/private/applet_p.cpp:118
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "Alternativen anzeigen ..."
+msgstr "Alternativen anzeigen …"
 
 #: plasma/private/applet_p.cpp:236
 #, kde-format
@@ -175,7 +176,7 @@ msgstr "Aktivitäten-Einstellungen"
 #: plasma/private/containment_p.cpp:70
 #, kde-format
 msgid "Add or Manage Widgets…"
-msgstr "Miniprogramme hinzufügen oder verwalten …"
+msgstr "Miniprogramme hinzufügen oder verwalten …"
 
 #: plasmaquick/appletquickitem.cpp:540
 #, kde-format
@@ -193,11 +194,7 @@ msgid "Unknown Applet"
 msgstr "Unbekanntes Miniprogramm"
 
 #: plasmaquick/appletquickitem.cpp:567
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgid ""
 "This widget was written for an unknown older version of Plasma and is not "
 "compatible with Plasma %1. Please contact the widget's author for an updated "
@@ -205,8 +202,8 @@ msgid ""
 msgstr ""
 "Dieses Miniprogramm wurde für eine unbekannte ältere Version von Plasma "
 "geschrieben und ist nicht mit Plasma %1 kompatibel. Bitte nehmen Sie mit dem "
-"Autor des Miniprogramms Kontakt auf und bitten diesen um eine aktualisierte "
-"Version."
+"Autor des Miniprogramms Kontakt auf und bitten Sie diesen um eine "
+"aktualisierte Version."
 
 #: plasmaquick/appletquickitem.cpp:570 plasmaquick/appletquickitem.cpp:577
 #: plasmaquick/appletquickitem.cpp:583
@@ -215,30 +212,24 @@ msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 ist mit Plasma %2 nicht kompatibel"
 
 #: plasmaquick/appletquickitem.cpp:574
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
-#| "%2. Please contact the widget's author for an updated version."
+#, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
 "Dieses Miniprogramm wurde für Plasma %1 geschrieben und ist nicht mit Plasma "
 "%2 kompatibel. Bitte nehmen Sie mit dem Autor des Miniprogramms Kontakt auf "
-"und bitten diesen um eine aktualisierte Version."
+"und bitten Sie diesen um eine aktualisierte Version."
 
 #: plasmaquick/appletquickitem.cpp:580
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
-#| "%2. Please update Plasma in order to use the widget."
+#, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
 "Dieses Miniprogramm wurde für Plasma %1 geschrieben und ist nicht mit Plasma "
-"%2 kompatibel. Bitte aktualisieren Plasma, damit das Miniprogramm verwendet "
-"werden kann."
+"%2 kompatibel. Bitte aktualisieren Plasma, um das Miniprogramm verwenden zu "
+"können."
 
 #: plasmaquick/appletquickitem.cpp:589 plasmaquick/appletquickitem.cpp:611
 #, kde-format

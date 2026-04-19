@@ -1,21 +1,22 @@
-# SPDX-FileCopyrightText: 2023, 2024 Johannes Obermayr <johannesobermayr@gmx.de>
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2018, 2019, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
-# SPDX-FileCopyrightText: 2014, 2016, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2013-2015, 2018-2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2014, 2016, 2022-2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2023-2024 Johannes Obermayr <johannesobermayr@gmx.de>
 # SPDX-FileCopyrightText: 2024 Frank Steinmetzger <dev-kde@felsenfleischer.de>
+# SPDX-FileCopyrightText: 2026 Alexander Becker <alex-at-kde-l10n-de@freenet.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasma6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:01+0000\n"
-"PO-Revision-Date: 2024-08-28 21:42+0200\n"
-"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
+"PO-Revision-Date: 2026-04-16 21:25+0200\n"
+"Last-Translator: Alexander Becker <alex-at-kde-l10n-de@freenet.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: declarativeimports/calendar/eventdatadecorator.cpp:51
 #, kde-format
@@ -138,7 +139,7 @@ msgstr "Passwort"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:68
 #, kde-format
 msgid "Search…"
-msgstr "Suchen ..."
+msgstr "Suchen …"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:70
 #, kde-format
@@ -170,7 +171,7 @@ msgstr "Bearbeitungsmodus starten"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "%1 einrichten ..."
+msgstr "%1 einrichten …"
 
 #: plasma/corona.cpp:355 plasma/corona.cpp:482
 #, kde-format
@@ -387,7 +388,7 @@ msgstr "Verschiedenes"
 #, kde-format
 msgid "The %1 widget did not define which ScriptEngine to use."
 msgstr ""
-"Das Bedienelement %1 definiert kein Skript-Modul, das benutzt werden soll."
+"Das Miniprogramm %1 definiert kein Skript-Modul, das verwendet werden soll."
 
 #: plasma/private/applet_p.cpp:145
 #, kde-format
@@ -405,7 +406,7 @@ msgstr "Der %1-Skript-Treiber für %2 kann nicht initialisiert werden."
 #: plasma/private/applet_p.cpp:172
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "Alternativen anzeigen ..."
+msgstr "Alternativen anzeigen …"
 
 #: plasma/private/applet_p.cpp:274
 #, kde-format
@@ -489,7 +490,7 @@ msgstr "Aktivitäten-Einstellungen"
 #: plasma/private/containment_p.cpp:71
 #, kde-format
 msgid "Add Widgets..."
-msgstr "Miniprogramme hinzufügen ..."
+msgstr "Miniprogramme hinzufügen …"
 
 #: plasma/private/containment_p.cpp:187
 #, kde-format

@@ -57,7 +57,7 @@ ContainmentItem::ContainmentItem(QQuickItem *parent)
 void ContainmentItem::classBegin()
 {
     PlasmoidItem::classBegin();
-    m_containment = static_cast<Plasma::Containment *>(applet());
+    m_containment = qobject_cast<Plasma::Containment *>(applet());
     if (!m_containment) {
         // This can happen only if the client QML code declares a PlasmoidItem somewhere else than the root object
         return;

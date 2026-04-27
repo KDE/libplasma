@@ -289,7 +289,7 @@ void ConfigView::setSource(const QUrl &src)
         setWidth(d->rootItem->implicitWidth());
     });
     connect(d->rootItem, &QQuickItem::implicitHeightChanged, this, [this]() {
-        setWidth(d->rootItem->implicitHeight());
+        setHeight(d->rootItem->implicitHeight());
     });
 
     d->rootItem->setParent(contentItem());

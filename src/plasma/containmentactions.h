@@ -141,12 +141,12 @@ public:
 protected:
     /*!
      * This constructor is to be used with the plugin loading systems
-     * found in KPluginInfo and KService. The argument list is expected
-     * to have one element: the KService service ID for the desktop entry.
+     * found in KPluginFactory. The argument list is expected to have one
+     * element: an instance of KPluginMetaData for this plugin.
      *
-     * \a parent a QObject parent; you probably want to pass in 0
+     * \a parent a QObject parent
      *
-     * \a args a list of strings containing one entry: the service id
+     * \a args a list whose first entry is the KPluginMetaData for this plugin
      */
     ContainmentActions(QObject *parent, const QVariantList &args);
 

@@ -15,7 +15,7 @@ class ContextTest : public Plasma::ContainmentActions
 {
     Q_OBJECT
 public:
-    ContextTest(QObject *parent, const QVariantList &args);
+    ContextTest(QObject *parent, const KPluginMetaData &metadata, const QVariantList &args);
 
     void init(const KConfigGroup &config);
 

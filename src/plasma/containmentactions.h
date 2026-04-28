@@ -44,11 +44,6 @@ class PLASMA_EXPORT ContainmentActions : public QObject
     Q_OBJECT
 
 public:
-    /*!
-     * Default constructor for an empty or null containmentactions
-     */
-    explicit ContainmentActions(QObject *parent = nullptr);
-
     ~ContainmentActions() override;
 
     /*!
@@ -148,7 +143,7 @@ protected:
      *
      * \a args a list of strings containing one entry: the service id
      */
-    ContainmentActions(QObject *parent, const QVariantList &args);
+    ContainmentActions(QObject *parent, const KPluginMetaData &metadata, const QVariantList &args);
 
 private:
     ContainmentActionsPrivate *const d;

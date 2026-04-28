@@ -10,8 +10,8 @@
 
 #include <Plasma/Containment>
 
-ContextTest::ContextTest(QObject *parent, const QVariantList &args)
-    : Plasma::ContainmentActions(parent, args)
+ContextTest::ContextTest(QObject *parent, const KPluginMetaData &metadata, const QVariantList &args)
+    : Plasma::ContainmentActions(parent, metadata, args)
 {
 }
 

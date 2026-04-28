@@ -17,8 +17,8 @@ namespace Plasma
 class ContainmentActionsPrivate
 {
 public:
-    ContainmentActionsPrivate(const QVariant &arg, ContainmentActions * /*containmentActions*/)
-        : containmentActionsDescription(arg.value<KPluginMetaData>())
+    ContainmentActionsPrivate(const KPluginMetaData &metadata, ContainmentActions * /*containmentActions*/)
+        : containmentActionsDescription(metadata)
     {
     }
 

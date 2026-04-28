@@ -6,8 +6,8 @@ class DummyContainmentAction : public Plasma::ContainmentActions
     Q_OBJECT
 
 public:
-    explicit DummyContainmentAction(QObject *parent)
-        : Plasma::ContainmentActions(parent)
+    explicit DummyContainmentAction(QObject *parent, const KPluginMetaData &metadata, const QVariantList &args)
+        : Plasma::ContainmentActions(parent, metadata, args)
     {
     }
 };

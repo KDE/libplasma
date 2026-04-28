@@ -156,7 +156,7 @@ ContainmentActions *PluginLoader::loadContainmentActions(Containment *parent, co
     KPluginMetaData plugin(QStringLiteral("plasma/containmentactions/") + name, KPluginMetaData::AllowEmptyMetaData);
 
     if (plugin.isValid()) {
-        if (auto res = KPluginFactory::instantiatePlugin<Plasma::ContainmentActions>(plugin, nullptr, {QVariant::fromValue(plugin)})) {
+        if (auto res = KPluginFactory::instantiatePlugin<Plasma::ContainmentActions>(plugin, nullptr, {})) {
             return res.plugin;
         }
     }

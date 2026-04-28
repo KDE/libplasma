@@ -64,7 +64,7 @@ PlasmaExtras.ActionTextField {
     Accessible.name: i18nd("libplasma6", "Search")
     Accessible.searchEdit: true
 
-    focusSequence: StandardKey.Find
+    focusSequences: [StandardKey.Find]
     inputMethodHints: Qt.ImhNoPredictiveText
 
     rightActions: [

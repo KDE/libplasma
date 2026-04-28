@@ -10,6 +10,7 @@
 #include <QDropEvent>
 #include <QEvent>
 #include <QMouseEvent>
+#include <QQuickWindow>
 #include <QWindow>
 
 using namespace PlasmaQuick;
@@ -17,7 +18,7 @@ using namespace PlasmaQuick;
 class EdgeEventForwarderPrivate
 {
 public:
-    QWindow *window;
+    QWindow *window = nullptr;
     QMargins margins;
     Qt::Edges activeEdges;
     QMargins activeMargins() const;
@@ -29,18 +30,43 @@ EdgeEventForwarder::EdgeEventForwarder(QWindow *parent)
     : QObject(parent)
     , d(new EdgeEventForwarderPrivate)
 {
-    d->window = parent;
-    d->window->installEventFilter(this);
+    setWindow(parent);
+}
+
+EdgeEventForwarder::EdgeEventForwarder(QObject *parent)
+    : QObject(parent)
+    , d(new EdgeEventForwarderPrivate)
+{
+}
+
+void EdgeEventForwarder::setWindow(QWindow *window)
+{
+    if (d->window) {
+        d->window->removeEventFilter(this);
+    }
+    d->window = window;
+    if (window) {
+        d->window->installEventFilter(this);
+    }
+    Q_EMIT windowChanged();
+}
+
+QWindow *EdgeEventForwarder::window() const
+{
+    return d->window;
 }
 
 EdgeEventForwarder::~EdgeEventForwarder()
 {
-    d->window->removeEventFilter(this);
+    if (d->window) {
+        d->window->removeEventFilter(this);
+    }
 }
 
 void EdgeEventForwarder::setMargins(const QMargins &margins)
 {
     d->margins = margins;
+    Q_EMIT marginsChanged();
 }
 
 QMargins EdgeEventForwarder::margins()
@@ -51,6 +77,7 @@ QMargins EdgeEventForwarder::margins()
 void EdgeEventForwarder::setActiveEdges(Qt::Edges edges)
 {
     d->activeEdges = edges;
+    Q_EMIT activeEdgesChanged();
 }
 
 Qt::Edges EdgeEventForwarder::activeEdges()

@@ -23,6 +23,7 @@
 #include "containment.h"
 #include "corona.h"
 #include "dialog.h"
+#include "edgeeventforwarder.h"
 
 struct TypesForeign {
     Q_GADGET
@@ -248,6 +249,12 @@ struct IconForeign {
     Q_GADGET
     QML_ANONYMOUS
     QML_FOREIGN(QIcon)
+};
+
+struct EdgeEventForwarderForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(EdgeEventForwarder)
+    QML_FOREIGN(PlasmaQuick::EdgeEventForwarder)
 };
 
 class CoreBindingsPlugin : public QQmlExtensionPlugin

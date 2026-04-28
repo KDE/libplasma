@@ -27,6 +27,11 @@ namespace PlasmaQuick
 class PLASMAQUICK_EXPORT EdgeEventForwarder : public QObject
 {
     Q_OBJECT
+
+    Q_PROPERTY(QWindow *window READ window WRITE setWindow NOTIFY windowChanged)
+    Q_PROPERTY(Qt::Edges activeEdges READ activeEdges WRITE setActiveEdges NOTIFY activeEdgesChanged)
+    Q_PROPERTY(QMargins margins READ margins WRITE setMargins NOTIFY marginsChanged)
+
 public:
     /*!
      * \brief EdgeEventForwarder constructor.
@@ -36,6 +41,7 @@ public:
      * The event forwarder is parented to the window.
      */
     EdgeEventForwarder(QWindow *parent);
+    EdgeEventForwarder(QObject *parent = nullptr);
     ~EdgeEventForwarder() override;
 
     /*!
@@ -43,6 +49,9 @@ public:
      */
     void setMargins(const QMargins &margins);
     QMargins margins();
+
+    void setWindow(QWindow *window);
+    QWindow *window() const;
 
     /*!
      * \brief Sets which margins should be active for edge forwarding.
@@ -53,6 +62,11 @@ public:
     Qt::Edges activeEdges();
 
     bool eventFilter(QObject *watched, QEvent *event) override;
+
+Q_SIGNALS:
+    void windowChanged();
+    void activeEdgesChanged();
+    void marginsChanged();
 
 private:
     std::unique_ptr<EdgeEventForwarderPrivate> d;

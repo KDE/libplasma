@@ -6,7 +6,13 @@ set(PLASMAQUICK_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR}/PlasmaQuick")
 add_library(PlasmaQuick SHARED)
 add_library(Plasma::PlasmaQuick ALIAS PlasmaQuick)
 
-qt_extract_metatypes(PlasmaQuick)
+qt_extract_metatypes(PlasmaQuick OUTPUT_FILES METATYPES_FILE)
+
+# see https://qt-project.atlassian.net/browse/QTBUG-123052
+# might be replaced with proper Qt API once that exists
+get_filename_component(METATYPES_FILE_NAME ${METATYPES_FILE} NAME)
+target_sources(PlasmaQuick INTERFACE $<INSTALL_INTERFACE:${KDE_INSTALL_QTMETATYPESDIR}/${METATYPES_FILE_NAME}>)
+
 
 set_target_properties(PlasmaQuick PROPERTIES
     VERSION     ${PLASMA_VERSION}
@@ -213,3 +219,5 @@ install(FILES
 )
 
 install(EXPORT PlasmaQuickTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE PlasmaQuickTargets.cmake NAMESPACE Plasma:: )
+
+install(FILES ${METATYPES_FILE} DESTINATION ${KDE_INSTALL_QTMETATYPESDIR})

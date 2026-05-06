@@ -10,7 +10,13 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-plasma.h.cmake ${CMAKE_CURRENT
 add_library(Plasma)
 add_library(Plasma::Plasma ALIAS Plasma)
 
-qt_extract_metatypes(Plasma)
+qt_extract_metatypes(Plasma OUTPUT_FILES METATYPES_FILE)
+
+# see https://qt-project.atlassian.net/browse/QTBUG-123052
+# might be replaced with proper Qt API once that exists
+get_filename_component(METATYPES_FILE_NAME ${METATYPES_FILE} NAME)
+target_sources(Plasma INTERFACE $<INSTALL_INTERFACE:${KDE_INSTALL_QTMETATYPESDIR}/${METATYPES_FILE_NAME}>)
+
 
 set_target_properties(Plasma PROPERTIES
     VERSION     ${PLASMA_VERSION}
@@ -150,3 +156,5 @@ install(
 )
 
 install(TARGETS Plasma EXPORT PlasmaTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+
+install(FILES ${METATYPES_FILE} DESTINATION ${KDE_INSTALL_QTMETATYPESDIR})

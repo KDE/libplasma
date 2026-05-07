@@ -304,7 +304,6 @@ void PopupPlasmaWindowPrivate::handleFocusChanged()
 
         const bool viewClicked = qobject_cast<const PlasmaQuick::QuickViewSharedEngine *>(focusWindow) || qobject_cast<const ConfigView *>(focusWindow);
 
-        qDebug() << viewClicked << parentHasFocus <<childHasFocus;
         if (viewClicked || (!parentHasFocus && !childHasFocus)) {
             q->setVisible(false);
         }

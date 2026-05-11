@@ -45,14 +45,14 @@ T.Drawer {
         enabledBorders: {
             switch (control.edge) {
             case Qt.BottomEdge:
-                return KSvg.FrameSvgItem.TopBorder;
+                return KSvg.FrameSvg.TopBorder;
             case Qt.RightEdge:
-                return KSvg.FrameSvgItem.LeftBorder;
+                return KSvg.FrameSvg.LeftBorder;
             case Qt.TopEdge:
-                return KSvg.FrameSvgItem.BottomBorder;
+                return KSvg.FrameSvg.BottomBorder;
             case Qt.LeftEdge:
             default:
-                return KSvg.FrameSvgItem.RightBorder;
+                return KSvg.FrameSvg.RightBorder;
             }
         }
     }

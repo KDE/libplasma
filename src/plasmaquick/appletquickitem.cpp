@@ -605,11 +605,16 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
             errorData[QStringLiteral("appletName")] = applet->pluginMetaData().name();
             reason += i18n("Error loading QML file: %1 %2", qmlObject->mainComponent()->url().toString(), reason);
         } else {
-            const auto pluginId = applet->pluginMetaData().pluginId();
-            reason = i18n("Error loading Applet: package %1 does not exist.", pluginId);
-            errorData[QStringLiteral("errors")] = QJsonArray::fromStringList({reason, applet->launchErrorMessage()});
-            compactReason = i18n("Sorry! There was an error loading %1.", pluginId);
-            errorData[QStringLiteral("compactError")] = compactReason;
+            if (applet->pluginMetaData().isValid()) {
+                const auto pluginId = applet->pluginMetaData().pluginId();
+                reason = i18n("Error loading Applet: package %1 does not exist.", pluginId);
+                errorData[QStringLiteral("errors")] = QJsonArray::fromStringList({reason, applet->launchErrorMessage()});
+                compactReason = i18n("Sorry! There was an error loading %1.", pluginId);
+                errorData[QStringLiteral("compactError")] = compactReason;
+            } else {
+                reason = i18nc("@info", "Error loading Applet: Cannot load package without metadata.");
+                errorData[QStringLiteral("errors")] = QJsonArray::fromStringList({reason, applet->launchErrorMessage()});
+            }
         }
 
         qCWarning(LOG_PLASMAQUICK) << "error when loading applet" << applet->pluginMetaData().pluginId()

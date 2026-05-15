@@ -101,6 +101,7 @@
         "Description[zh_TW]": "幾個詞內簡述您的應用程式所做的事",
         "EnabledByDefault": true,
         "Icon": "applications-system",
+        "Id": "org.kde.plasma.%{APPNAMELC}",
         "License": "LGPL-2.1+",
         "Name": "%{APPNAME}",
         "Name[ar]": "%{اسم_التطبيق}",

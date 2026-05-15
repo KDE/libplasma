@@ -16,30 +16,50 @@ As this namespace is reserved for use by plugins part of Plasma modules, you wil
 need to adapt this namespace if you are writing a plugin which is not intended to
 end up in the Plasma modules.
 
-## Build instructions
+## About paths
 
+Since Plasma 6, plasmoids compiled from QML to C++ (as in this template) are installed as libraries in `/usr/lib64/plugins/plasma/applets/` or `~/.local/lib64/plugins/plasma/applets/`.
+
+When testing them locally in userspace, you will need to override `QT_PLUGIN_PATH`. See [Running instructions](#running-instructions) below.
+
+Plasmoids that consist only of QML files are installed directly to `/usr/share/plasma/plasmoids/` or `~/.local/share/plasma/plasmoids/` and are found by default. When testing them locally in userspace, you don't need to override `QT_PLUGIN_PATH`.
+
+When a plasmoid consists only of QML files, the file structure should be:
+
+```
+your.plasmoid.id/
+├── contents/
+│   ├── config/
+│   │   ├── config.qml # optional
+│   │   └── main.xml # optional
+│   └── ui/
+│       ├── configGeneral.qml # optional
+│       └── main.qml
+└── metadata.json
+```
+
+## Running instructions
+
+To install locally for testing:
+
+```bash
 cd /where/your/applet/is/generated
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=MYPREFIX .. 
-make 
-make install
+cmake -B build/ --install-prefix ~/.local
+cmake --build build/
+cmake --install build/
+QT_PLUGIN_PATH=~/.local/lib64/plugins/ plasmawindowed your.plasmoid.id.here
+## or
+QT_PLUGIN_PATH=~/.local/lib64/plugins/ plasmoidviewer --applet your.plasmoid.id.here
+```
 
-(MYPREFIX is where you install your Plasma setup, replace it accordingly)
-
-Restart plasma to load the applet 
-(in a terminal type: 
-kquitapp plasmashell 
-and then
-plasmashell)
-
-or view it with 
-plasmoidviewer -a YourAppletName
+The command `plasmawindowed` comes by default with Plasma and provides a simple way to visualize plasmoids.
+The `plasmoidviewer` command comes from [plasma-sdk](https://invent.kde.org/plasma/plasma-sdk) and provides different views for plasmoids.
 
 ## Tutorials and resources
 
-The explanation of the template
-https://techbase.kde.org/Development/Tutorials/Plasma5/QML2/GettingStarted
+You can learn more about how to make plasmoids with the [Plasma widgets tutorial](https://develop.kde.org/docs/plasma/widget/).
 
-Plasma QML API explained
-https://techbase.kde.org/Development/Tutorials/Plasma2/QML2/API
+See also:
+
+* [Explanation of the template](https://techbase.kde.org/Development/Tutorials/Plasma5/QML2/GettingStarted) (possibly outdated)
+* [Plasma QML API explained](https://techbase.kde.org/Development/Tutorials/Plasma2/QML2/API) (possibly outdated)

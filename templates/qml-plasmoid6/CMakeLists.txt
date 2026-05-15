@@ -16,7 +16,7 @@ find_package(Plasma REQUIRED)
 find_package(KF6 REQUIRED COMPONENTS Config)
 
 # TODO: adapt "org.kde.plasma" here & elsewhere if needed (see README)
-plasma_add_applet(package org.kde.plasma.%{APPNAMELC}
+plasma_add_applet(org.kde.plasma.%{APPNAMELC}
     QML_SOURCES
         qml/main.qml
     RESOURCES

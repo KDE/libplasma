@@ -423,6 +423,7 @@ void AppletPrivate::propagateConfigChanged()
 
 void AppletPrivate::setUiReady()
 {
+    uiReady = true;
     // If we a re a containment, call setUiReady
     Containment *thisContainment = qobject_cast<Containment *>(q);
     if (thisContainment && thisContainment->isContainment()) {

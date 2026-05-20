@@ -18,8 +18,8 @@ find_package(KF6 REQUIRED COMPONENTS Config)
 # TODO: adapt "org.kde.plasma" here & elsewhere if needed (see README)
 plasma_add_applet(org.kde.plasma.%{APPNAMELC}
     QML_SOURCES
-        qml/main.qml
+        contents/ui/main.qml
     RESOURCES
-        qml/images/pairs.svgz
+        contents/ui/pairs.svgz
     GENERATE_APPLET_CLASS
 )

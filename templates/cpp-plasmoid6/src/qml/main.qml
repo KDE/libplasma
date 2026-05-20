@@ -15,7 +15,7 @@ PlasmoidItem {
             Layout.fillHeight: true
             Layout.fillWidth: true
             fillMode: Image.PreserveAspectFit
-            source: Qt.resolvedUrl("./pairs.svg")
+            source: Qt.resolvedUrl("pairs.svg")
         }
         PC3.Label {
             Layout.alignment: Qt.AlignCenter

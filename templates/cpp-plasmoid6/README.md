@@ -24,7 +24,7 @@ When testing a project compiled to C++ locally in userspace (`~/.local`), you wi
 
 ## Running instructions
 
-When a plasmoid is compiled from QML to C++, the file structure does not matter, unlike a [QML only plasmoid](https://invent.kde.org/plasma/libplasma/-/tree/master/templates/qml-plasmoid6).
+When a plasmoid is compiled from QML to C++, the file structure does not matter, unlike a [QML only plasmoid](https://invent.kde.org/plasma/libplasma/-/tree/master/templates/qml-plasmoid6). Specifying an `Id` key in `metadata.json` is not necessary and will emit a warning, as the URI for the project is defined in CMake.
 
 ```bash
 cd /where/your/applet/is/generated

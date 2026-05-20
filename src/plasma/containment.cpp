@@ -419,7 +419,8 @@ void Containment::addApplet(Applet *applet, const QRectF &geometryHint)
     Q_EMIT appletAboutToBeAdded(applet, geometryHint);
     d->applets.insert(position, applet);
 
-    if (!d->uiReady) {
+    // We need to check Applet's ui readiness, not ours
+    if (!applet->d->uiReady) {
         d->loadingApplets << applet;
     }
 

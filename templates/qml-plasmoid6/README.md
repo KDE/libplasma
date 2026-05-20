@@ -18,11 +18,9 @@ end up in the Plasma modules.
 
 ## About paths
 
-Since Plasma 6, plasmoids compiled from QML to C++ (as in this template) are installed as libraries in `/usr/lib64/plugins/plasma/applets/` or `~/.local/lib64/plugins/plasma/applets/`.
+Plasmoids that consist only of QML files are installed directly to `/usr/share/plasma/plasmoids/` or `~/.local/share/plasma/plasmoids/` and are found by default when run with `plasmawindowed` or `plasmoidviewer`.
 
-When testing them locally in userspace, you will need to override `QT_PLUGIN_PATH`. See [Running instructions](#running-instructions) below.
-
-Plasmoids that consist only of QML files are installed directly to `/usr/share/plasma/plasmoids/` or `~/.local/share/plasma/plasmoids/` and are found by default. When testing them locally in userspace, you don't need to override `QT_PLUGIN_PATH`.
+To test the project locally in userspace, install it with `kpackagetool6`.
 
 When a plasmoid consists only of QML files, the file structure should be:
 
@@ -38,9 +36,34 @@ your.plasmoid.id/
 └── metadata.json
 ```
 
+Since Plasma 6, plasmoids compiled from QML to C++ are installed as libraries in `/usr/lib64/plugins/plasma/applets/` or `~/.local/lib64/plugins/plasma/applets/`.
+
+When testing a project compiled to C++ locally in userspace (`~/.local`), you will need to override `QT_PLUGIN_PATH`. See [Running instructions](#running-instructions) below.
+
 ## Running instructions
 
 To install locally for testing:
+
+```bash
+kpackagetool6 --type "Plasma/Applet" --install "your.plasmoid.id.here"
+plasmawindowed your.plasmoid.id.here
+# or
+plasmoidviewer --applet your.plasmoid.id.here
+```
+
+The command `plasmawindowed` comes by default with Plasma and provides a simple way to visualize plasmoids.
+The `plasmoidviewer` command comes from [plasma-sdk](https://invent.kde.org/plasma/plasma-sdk) and provides different views for plasmoids.
+
+Instead of installing the plasmoid using the project directory, you may also convert it to a `.plasmoid` archive so your users may install it with `kpackagetool6` as well:
+
+```bash
+ark your.plasmoid.folder/ --add-to plasmoidname.plasmoid
+kpackagetool6 --type "Plasma/Applet" --install "plasmoidname.plasmoid"
+```
+
+---
+
+Optionally, you may install and run it after compiling it to C++:
 
 ```bash
 cd /where/your/applet/is/generated
@@ -51,9 +74,6 @@ QT_PLUGIN_PATH=~/.local/lib64/plugins/ plasmawindowed your.plasmoid.id.here
 ## or
 QT_PLUGIN_PATH=~/.local/lib64/plugins/ plasmoidviewer --applet your.plasmoid.id.here
 ```
-
-The command `plasmawindowed` comes by default with Plasma and provides a simple way to visualize plasmoids.
-The `plasmoidviewer` command comes from [plasma-sdk](https://invent.kde.org/plasma/plasma-sdk) and provides different views for plasmoids.
 
 ## Tutorials and resources
 

@@ -30,6 +30,7 @@ PLASMA_UNIT_TESTS(
     pluginloadertest
     themetest
     sharedqmlenginetest
+    tooltipareatest
 )
 
 kcoreaddons_add_plugin(dummycontainmentaction SOURCES dummycontainmentaction.cpp INSTALL_NAMESPACE "plasma/containmentactions" STATIC)

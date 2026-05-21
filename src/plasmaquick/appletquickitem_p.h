@@ -106,7 +106,7 @@ public:
     QPointer<QObject> ownLayout;
 
     Plasma::Applet *applet = nullptr;
-    PlasmaQuick::SharedQmlEngine *qmlObject;
+    std::shared_ptr<QQmlEngine> m_engine;
 
     KPackage::Package coronaPackage;
 

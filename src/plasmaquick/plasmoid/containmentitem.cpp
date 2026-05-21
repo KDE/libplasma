@@ -102,11 +102,11 @@ void ContainmentItem::init()
                 if (pkg.isValid()) {
                     QVariantHash toolboxProperties;
                     toolboxProperties[QStringLiteral("parent")] = QVariant::fromValue(this);
-                    QObject *toolBoxObject = qmlObject()->createObjectFromSource(pkg.fileUrl("mainscript"), nullptr, toolboxProperties);
-                    if (toolBoxObject) {
-                        toolBoxObject->setParent(this);
-                        setProperty("toolBox", QVariant::fromValue(toolBoxObject));
-                    }
+                    // QObject *toolBoxObject = qmlObject()->createObjectFromSource(pkg.fileUrl("mainscript"), nullptr, toolboxProperties);
+                    // if (toolBoxObject) {
+                    //     toolBoxObject->setParent(this);
+                    //     setProperty("toolBox", QVariant::fromValue(toolBoxObject));
+                    // }
                 } else {
                     qCWarning(LOG_PLASMAQUICK) << "Could not load toolbox package." << pkg.path();
                 }
@@ -764,7 +764,7 @@ void ContainmentItem::loadWallpaper()
         }
 
         // set anchors
-        QQmlExpression expr(qmlObject()->engine()->rootContext(), m_wallpaperItem, QStringLiteral("parent"));
+        QQmlExpression expr(qmlEngine(m_wallpaperItem)->rootContext(), m_wallpaperItem, QStringLiteral("parent"));
         QQmlProperty prop(m_wallpaperItem, QStringLiteral("anchors.fill"));
         prop.write(expr.evaluate());
     }

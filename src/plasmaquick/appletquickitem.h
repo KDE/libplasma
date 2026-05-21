@@ -196,7 +196,6 @@ Q_SIGNALS:
 protected:
     // Initializations that need to be executed after classBegin()
     virtual void init();
-    PlasmaQuick::SharedQmlEngine *qmlObject();
 
     // Reimplementation
     void childEvent(QChildEvent *event) override;

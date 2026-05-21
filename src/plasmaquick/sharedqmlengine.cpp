@@ -148,17 +148,6 @@ SharedQmlEngine::SharedQmlEngine(QObject *parent)
     QQmlEngine::setContextForObject(d->context, d->rootContext);
 }
 
-SharedQmlEngine::SharedQmlEngine(Plasma::Applet *applet, QObject *parent)
-    : QObject(parent)
-    , d(new SharedQmlEnginePrivate(this))
-{
-    d->rootContext = new AppletContext(engine().get(), applet, this);
-
-    d->context = new KLocalizedQmlContext(d->rootContext);
-    d->rootContext->setContextObject(d->context);
-    QQmlEngine::setContextForObject(d->context, d->rootContext);
-}
-
 SharedQmlEngine::~SharedQmlEngine()
 {
     if (QJSEngine::objectOwnership(d->rootObject) == QJSEngine::CppOwnership) {

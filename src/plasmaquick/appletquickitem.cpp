@@ -872,6 +872,13 @@ void AppletQuickItem::setExpanded(bool expanded)
 
     d->expanded = expanded;
 
+    // Workaround for QTBUG-146992
+    // https://qt-project.atlassian.net/browse/QTBUG-146992
+    // https://codereview.qt-project.org/c/qt/qtbase/+/738776
+    if (d->fullRepresentationItem) {
+        d->fullRepresentationItem->setEnabled(expanded);
+    }
+
     Q_EMIT expandedChanged(expanded);
 }
 

@@ -45,6 +45,7 @@ target_sources(PlasmaQuick PRIVATE
     plasmoid/containmentitem.cpp
     plasmoid/dropmenu.cpp
     plasmoid/wallpaperitem.cpp
+    plasmaquick.cpp
 
     appletcontext_p.h
     appletquickitem.h
@@ -70,6 +71,7 @@ target_sources(PlasmaQuick PRIVATE
     plasmoid/containmentitem.h
     plasmoid/dropmenu.h
     plasmoid/wallpaperitem.h
+    plasmaquick.h
 )
 
 qt_generate_wayland_protocol_client_sources(PlasmaQuick
@@ -178,6 +180,7 @@ ecm_generate_headers(PlasmaQuick_CamelCase_HEADERS
         AppletPopup
         SharedQmlEngine
         QuickViewSharedEngine
+        PlasmaQuick
     REQUIRED_HEADERS plasmaquick_LIB_INCLUDES
     PREFIX PlasmaQuick
 )

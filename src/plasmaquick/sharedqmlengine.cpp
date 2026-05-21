@@ -19,6 +19,7 @@
 #include <Plasma/Applet>
 
 #include "debug_p.h"
+#include "plasmaquick.h"
 
 #include <KLocalizedQmlContext>
 
@@ -32,7 +33,7 @@ public:
         : q(parent)
         , component(nullptr)
         , delay(false)
-        , m_engine(engine())
+        , m_engine(PlasmaQuick::globalEngine())
     {
         executionEndTimer = new QTimer(q);
         executionEndTimer->setInterval(0);
@@ -65,22 +66,7 @@ public:
     QQmlContext *rootContext;
     bool delay;
     std::shared_ptr<QQmlEngine> m_engine;
-
-private:
-    static std::shared_ptr<QQmlEngine> engine()
-    {
-        if (auto locked = s_engine.lock()) {
-            return locked;
-        }
-        auto createdEngine = std::make_shared<QQmlEngine>();
-        s_engine = createdEngine;
-        return createdEngine;
-    }
-
-    static std::weak_ptr<QQmlEngine> s_engine;
 };
-
-std::weak_ptr<QQmlEngine> SharedQmlEnginePrivate::s_engine = {};
 
 void SharedQmlEnginePrivate::errorPrint(QQmlComponent *component)
 {

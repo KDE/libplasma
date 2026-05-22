@@ -9,19 +9,19 @@
 #include <QQmlComponent>
 #include <qquickitem.h>
 
-#include "sharedqmlengine.h"
+#include "plasmaquick.h"
 
 namespace PlasmaQuick
 {
 
 DialogBackground::DialogBackground(QQuickItem *parent)
     : QQuickItem(parent)
-    , m_sharedEngine(new SharedQmlEngine(this))
+    , m_engine(PlasmaQuick::globalEngine())
 {
-    QQmlComponent component(m_sharedEngine->engine().get(), "org.kde.plasma.core", "DialogBackground");
+    QQmlComponent component(m_engine.get(), "org.kde.plasma.core", "DialogBackground");
 
-    QVariantHash props({{QStringLiteral("parent"), QVariant::fromValue(this)}});
-    QObject *object = m_sharedEngine->createObjectFromComponent(&component, m_sharedEngine->rootContext(), props);
+    QVariantMap props({{QStringLiteral("parent"), QVariant::fromValue(this)}});
+    QObject *object = component.createWithInitialProperties(props);
 
     m_frameSvgItem = qobject_cast<QQuickItem *>(object);
     Q_ASSERT(m_frameSvgItem);

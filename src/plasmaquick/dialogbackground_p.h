@@ -25,8 +25,6 @@
 
 namespace PlasmaQuick
 {
-class SharedQmlEngine;
-
 // This class wraps a FrameSvgITem created from QML, so is not necessary to statically link to it to be used in Dialog
 class DialogBackground : public QQuickItem
 {
@@ -59,7 +57,7 @@ Q_SIGNALS:
 
 private:
     QQuickItem *m_frameSvgItem;
-    SharedQmlEngine *m_sharedEngine;
+    std::shared_ptr<QQmlEngine> m_engine;
 };
 
 }

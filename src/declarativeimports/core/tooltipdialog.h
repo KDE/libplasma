@@ -15,11 +15,6 @@
 
 class QQuickItem;
 
-namespace PlasmaQuick
-{
-class SharedQmlEngine;
-}
-
 /*!
  * Internally used by Tooltip
  */
@@ -60,7 +55,8 @@ private:
     void updateSize();
 
     QPointer<QQuickItem> m_lastMainItem;
-    PlasmaQuick::SharedQmlEngine *m_qmlObject;
+    std::shared_ptr<QQmlEngine> m_engine;
+    std::unique_ptr<QQuickItem> m_qmlObject = nullptr;
     QTimer m_hideTimer;
     int m_hideTimeout;
     bool m_interactive;

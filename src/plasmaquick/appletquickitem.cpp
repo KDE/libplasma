@@ -723,7 +723,6 @@ void AppletQuickItem::init()
 
     d->initComplete = true;
     d->compactRepresentationCheck();
-    qmlObject()->engine()->rootContext()->setBaseUrl(qmlObject()->source());
 
     // if we're expanded we don't care about preloading because it will already be the case
     // as well as for containments

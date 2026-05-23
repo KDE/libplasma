@@ -764,7 +764,7 @@ void ContainmentItem::loadWallpaper()
         }
 
         // set anchors
-        QQmlExpression expr(qmlObject()->engine()->rootContext(), m_wallpaperItem, QStringLiteral("parent"));
+        QQmlExpression expr(qmlContext(m_wallpaperItem), m_wallpaperItem, QStringLiteral("parent"));
         QQmlProperty prop(m_wallpaperItem, QStringLiteral("anchors.fill"));
         prop.write(expr.evaluate());
     }

@@ -197,15 +197,18 @@ QQuickItem *AppletQuickItemPrivate::createCompactRepresentationItem()
         return compactRepresentationItem;
     }
 
-    QVariantHash initialProperties;
-    initialProperties[QStringLiteral("parent")] = QVariant::fromValue(q);
-    initialProperties[QStringLiteral("plasmoidItem")] = QVariant::fromValue(q);
+    compactRepresentationItem = castOrDestroy<QQuickItem *>(compactRepresentation->beginCreate(qmlContext(q)));
 
-    compactRepresentationItem = castOrDestroy<QQuickItem *>(qmlObject->createObjectFromComponent(compactRepresentation, qmlContext(q), initialProperties));
     if (!compactRepresentationItem) {
         qCWarning(LOG_PLASMAQUICK) << "The compactRepresentation of" << applet->pluginMetaData().pluginId() << "is not an Item";
         return nullptr;
     }
+
+    // do not use createWithInitialProperties() here, the object may not have a property plasmoidItem, which would result in a warning
+    compactRepresentationItem->setProperty("parent", QVariant::fromValue(q));
+    compactRepresentationItem->setProperty("plasmoidItem", QVariant::fromValue(q));
+
+    compactRepresentation->completeCreate();
 
     Q_EMIT q->compactRepresentationItemChanged(compactRepresentationItem);
 

@@ -246,12 +246,14 @@ QQuickItem *AppletQuickItemPrivate::createCompactRepresentationExpanderItem()
         return compactRepresentationExpanderItem;
     }
 
+    QVariantMap initialProperties{
+        {u"plasmoidItem"_s, QVariant::fromValue(q)},
+        {u"parent"_s, QVariant::fromValue(q)},
+    };
+
     // Ensure plasmoidItem is not null on creation to avoid ternary operator in QML
-    compactRepresentationExpanderItem = castOrDestroy<QQuickItem *>(qmlObject->createObjectFromComponent(compactRepresentationExpander,
-                                                                                                         qmlContext(q),
-                                                                                                         {
-                                                                                                             {u"plasmoidItem"_s, QVariant::fromValue(q)},
-                                                                                                         }));
+    compactRepresentationExpanderItem =
+        castOrDestroy<QQuickItem *>(compactRepresentationExpander->createWithInitialProperties(initialProperties, qmlContext(q)));
     if (!compactRepresentationExpanderItem) {
         qCWarning(LOG_PLASMAQUICK) << "The compactRepresentationExpander of" << applet->pluginMetaData().pluginId() << "is not an Item";
         return nullptr;

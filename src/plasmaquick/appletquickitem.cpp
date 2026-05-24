@@ -952,11 +952,6 @@ void AppletQuickItem::setBadgeText(const QString &text)
 
 ////////////Internals
 
-PlasmaQuick::SharedQmlEngine *AppletQuickItem::qmlObject()
-{
-    return d->qmlObject;
-}
-
 QQuickItem *AppletQuickItem::compactRepresentationItem()
 {
     return d->compactRepresentationItem;

@@ -119,6 +119,8 @@ public:
     bool compactRepresentationCheckGuard : 1;
 
     QString badgeText;
+
+    std::shared_ptr<QQmlEngine> engine;
 };
 
 }

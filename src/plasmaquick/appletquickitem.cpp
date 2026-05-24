@@ -37,6 +37,7 @@ AppletQuickItemPrivate::AppletQuickItemPrivate(AppletQuickItem *item)
     , switchHeight(-1)
     , initComplete(false)
     , compactRepresentationCheckGuard(false)
+    , engine(PlasmaQuick::globalEngine())
 {
     if (s_preloadPolicy == Uninitialized) {
         // default as Adaptive
@@ -714,20 +715,19 @@ void AppletQuickItem::init()
     }
 
     // Initialize the main QML file
-    QQmlEngine *engine = d->qmlObject->engine().get();
 
     // If no fullRepresentation was defined, we won't create compact and expander either.
     // The only representation available are whatever items defined directly inside PlasmoidItem {}
     // default compactRepresentation is a simple icon provided by the shell package
     if (!d->compactRepresentation && d->fullRepresentation) {
-        d->compactRepresentation = new QQmlComponent(engine, this);
+        d->compactRepresentation = new QQmlComponent(d->engine.get(), this);
         d->compactRepresentation->loadUrl(d->coronaPackage.fileUrl("defaultcompactrepresentation"));
         Q_EMIT compactRepresentationChanged(d->compactRepresentation);
     }
 
     // default compactRepresentationExpander is the popup in which fullRepresentation goes
     if (!d->compactRepresentationExpander && d->fullRepresentation) {
-        d->compactRepresentationExpander = new QQmlComponent(engine, this);
+        d->compactRepresentationExpander = new QQmlComponent(d->engine.get(), this);
         QUrl compactExpanderUrl = d->applet->containment()->compactApplet();
         if (compactExpanderUrl.isEmpty()) {
             compactExpanderUrl = d->coronaPackage.fileUrl("compactapplet");

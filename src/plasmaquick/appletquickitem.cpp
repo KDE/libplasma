@@ -225,10 +225,7 @@ QQuickItem *AppletQuickItemPrivate::createFullRepresentationItem()
         return fullRepresentationItem;
     }
 
-    QVariantHash initialProperties;
-    initialProperties[QStringLiteral("parent")] = QVariant();
-
-    fullRepresentationItem = castOrDestroy<QQuickItem *>(qmlObject->createObjectFromComponent(fullRepresentation, qmlContext(q), initialProperties));
+    fullRepresentationItem = castOrDestroy<QQuickItem *>(fullRepresentation->create(qmlContext(q)));
     if (!fullRepresentationItem) {
         qCWarning(LOG_PLASMAQUICK) << "The fullRepresentation of" << applet->pluginMetaData().pluginId() << "is not an Item";
         return nullptr;

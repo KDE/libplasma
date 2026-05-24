@@ -10,6 +10,7 @@
 #include "appletcontext_p.h"
 #include "containment.h"
 #include "debug_p.h"
+#include "plasmaquick.h"
 #include "plasmoid/containmentitem.h"
 #include "plasmoid/plasmoiditem.h"
 #include "sharedqmlengine.h"
@@ -19,6 +20,7 @@
 #include <QRandomGenerator>
 #include <QTimer>
 
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 
 using namespace Qt::StringLiterals;
@@ -621,15 +623,22 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
         qCWarning(LOG_PLASMAQUICK) << "error when loading applet" << applet->pluginMetaData().pluginId()
                                    << errorData[QStringLiteral("errors")].toVariant().toStringList();
 
-        qmlObject->setSource(applet->containment()->corona()->kPackage().fileUrl("appleterror"));
+        QQmlComponent appletErrorComponent(PlasmaQuick::globalEngine().get(), applet->containment()->corona()->kPackage().fileUrl("appleterror"));
 
         applet->setHasConfigurationInterface(false);
         // even the error message QML may fail
-        if (qmlObject->mainComponent()->isError()) {
+        if (appletErrorComponent.isError()) {
             return nullptr;
         }
 
-        item = qobject_cast<PlasmoidItem *>(qmlObject->rootObject());
+        auto appletContext = new AppletContext(PlasmaQuick::globalEngine().get(), applet, qmlObject);
+
+        auto i18nContext = new KLocalizedQmlContext(appletContext);
+        i18nContext->setTranslationDomain(applet->translationDomain());
+        appletContext->setContextObject(i18nContext);
+        QQmlEngine::setContextForObject(i18nContext, appletContext);
+
+        item = qobject_cast<PlasmoidItem *>(appletErrorComponent.create(appletContext));
 
         applet->setLaunchErrorMessage(reason);
         if (item) {

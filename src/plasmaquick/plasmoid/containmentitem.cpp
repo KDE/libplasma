@@ -12,12 +12,12 @@
 #include "containmentitem.h"
 #include "debug_p.h"
 #include "dropmenu.h"
-#include "sharedqmlengine.h"
 #include "wallpaperitem.h"
 
 #include <QApplication>
 #include <QClipboard>
 #include <QMimeData>
+#include <QQmlContext>
 #include <QQmlExpression>
 #include <QQmlProperty>
 #include <QScreen>
@@ -100,9 +100,13 @@ void ContainmentItem::init()
 
             if (pkg.metadata().isValid() && !pkg.metadata().isHidden()) {
                 if (pkg.isValid()) {
-                    QVariantHash toolboxProperties;
+                    QVariantMap toolboxProperties;
                     toolboxProperties[QStringLiteral("parent")] = QVariant::fromValue(this);
-                    QObject *toolBoxObject = qmlObject()->createObjectFromSource(pkg.fileUrl("mainscript"), nullptr, toolboxProperties);
+
+                    QQmlComponent toolBoxComponent(qmlEngine(this), pkg.fileUrl("mainscript"));
+
+                    QObject *toolBoxObject = toolBoxComponent.createWithInitialProperties(toolboxProperties, qmlContext(this)->parentContext());
+
                     if (toolBoxObject) {
                         toolBoxObject->setParent(this);
                         setProperty("toolBox", QVariant::fromValue(toolBoxObject));

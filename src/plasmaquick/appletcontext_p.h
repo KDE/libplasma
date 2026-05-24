@@ -8,8 +8,6 @@
 
 #include <plasmaquick_export.h>
 
-#include "sharedqmlengine.h"
-
 #include <QQmlContext>
 
 namespace Plasma
@@ -24,15 +22,13 @@ class PLASMAQUICK_EXPORT AppletContext : public QQmlContext
 {
     Q_OBJECT
 public:
-    AppletContext(QQmlEngine *engine, Plasma::Applet *applet, SharedQmlEngine *parent);
+    AppletContext(QQmlEngine *engine, Plasma::Applet *applet, QObject *parent);
     ~AppletContext() override;
 
     Plasma::Applet *applet() const;
-    SharedQmlEngine *sharedQmlEngine() const;
 
 private:
     Plasma::Applet *m_applet;
-    SharedQmlEngine *m_sharedEngine;
 };
 
 }

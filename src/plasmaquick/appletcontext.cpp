@@ -11,10 +11,9 @@
 namespace PlasmaQuick
 {
 
-AppletContext::AppletContext(QQmlEngine *engine, Plasma::Applet *applet, SharedQmlEngine *parent)
+AppletContext::AppletContext(QQmlEngine *engine, Plasma::Applet *applet, QObject *parent)
     : QQmlContext(engine, applet)
     , m_applet(applet)
-    , m_sharedEngine(parent)
 {
     setParent(parent);
 }
@@ -27,12 +26,6 @@ Plasma::Applet *AppletContext::applet() const
 {
     return m_applet;
 }
-
-SharedQmlEngine *AppletContext::sharedQmlEngine() const
-{
-    return m_sharedEngine;
-}
-
 }
 
 #include "moc_appletcontext_p.cpp"

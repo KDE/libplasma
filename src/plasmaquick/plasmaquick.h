@@ -14,6 +14,8 @@ namespace PlasmaQuick
 {
 /*!
  * The shared QML engine to be used for applets and other Plasma components.
+ *
+ * The engine is set up via Plasma::setupPlasmaStyle().
  * \since 6.8
  */
 PLASMAQUICK_EXPORT std::shared_ptr<QQmlEngine> globalEngine();

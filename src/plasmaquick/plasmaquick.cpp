@@ -5,6 +5,7 @@
  */
 
 #include "plasmaquick.h"
+#include "plasma.h"
 
 namespace PlasmaQuick
 {
@@ -16,6 +17,9 @@ std::shared_ptr<QQmlEngine> globalEngine()
         return locked;
     }
     auto createdEngine = std::make_shared<QQmlEngine>();
+
+    Plasma::setupPlasmaStyle(createdEngine.get());
+
     s_engine = createdEngine;
     return createdEngine;
 }

@@ -632,7 +632,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
             return nullptr;
         }
 
-        auto appletContext = new AppletContext(PlasmaQuick::globalEngine().get(), applet, qmlObject);
+        auto appletContext = new AppletContext(PlasmaQuick::globalEngine().get(), applet, applet);
 
         auto i18nContext = new KLocalizedQmlContext(appletContext);
         i18nContext->setTranslationDomain(applet->translationDomain());

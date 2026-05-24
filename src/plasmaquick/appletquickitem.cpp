@@ -664,7 +664,6 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
 
     item->setProperty("_plasma_applet", QVariant::fromValue(applet));
     item->d->applet = applet;
-    item->d->qmlObject = qmlObject;
 
     if (!qEnvironmentVariableIntValue("PLASMA_NO_CONTEXTPROPERTIES")) {
         qmlObject->rootContext()->setContextProperty(QStringLiteral("plasmoid"), applet);
@@ -779,7 +778,6 @@ void AppletQuickItem::classBegin()
         return;
     }
     d->applet = ac->applet();
-    d->qmlObject = ac->sharedQmlEngine();
 }
 
 void AppletQuickItem::componentComplete()

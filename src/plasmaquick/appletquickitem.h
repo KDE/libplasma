@@ -31,7 +31,6 @@ class Applet;
 namespace PlasmaQuick
 {
 class AppletQuickItemPrivate;
-class SharedQmlEngine;
 
 // TODO qdoc should this be documented independently or as part of PlasmoidItem
 

@@ -13,7 +13,6 @@
 #include "plasmaquick.h"
 #include "plasmoid/containmentitem.h"
 #include "plasmoid/plasmoiditem.h"
-#include "sharedqmlengine.h"
 
 #include <QJsonArray>
 #include <QQmlProperty>
@@ -529,28 +528,33 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
     }
 
     Plasma::Containment *pc = qobject_cast<Plasma::Containment *>(applet);
-    auto *qmlObject = new PlasmaQuick::SharedQmlEngine(applet, applet);
-    qmlObject->setInitializationDelayed(true);
-    qmlObject->setTranslationDomain(applet->translationDomain());
 
-    AppletQuickItem *item = nullptr;
-    qmlObject->setSource(applet->mainScript());
+    auto engine = PlasmaQuick::globalEngine();
 
-    Q_ASSERT(qmlObject->mainComponent());
+    QQmlComponent component(engine.get(), applet->mainScript());
+
+    auto appletContext = new AppletContext(engine.get(), applet, applet);
+
+    auto i18nContext = new KLocalizedQmlContext(appletContext);
+    i18nContext->setTranslationDomain(applet->translationDomain());
+    appletContext->setContextObject(i18nContext);
+    QQmlEngine::setContextForObject(i18nContext, appletContext);
+
+    AppletQuickItem *item = qobject_cast<AppletQuickItem *>(component.beginCreate(appletContext));
 
     if (pc && pc->isContainment()) {
-        item = qobject_cast<ContainmentItem *>(qmlObject->rootObject());
-        if (!item && !qmlObject->mainComponent()->isError()) {
+        item = qobject_cast<ContainmentItem *>(item);
+        if (!item && !component.isError()) {
             applet->setLaunchErrorMessage(i18n("The root item of %1 must be of type ContainmentItem", applet->mainScript().toString()));
         }
     } else {
-        item = qobject_cast<PlasmoidItem *>(qmlObject->rootObject());
-        if (!item && !qmlObject->mainComponent()->isError()) {
+        item = qobject_cast<PlasmoidItem *>(item);
+        if (!item && !component.isError()) {
             applet->setLaunchErrorMessage(i18n("The root item of %1 must be of type PlasmoidItem", applet->mainScript().toString()));
         }
     }
 
-    if (!item || qmlObject->mainComponent()->isError() || applet->failedToLaunch()) {
+    if (!item || component.isError() || applet->failedToLaunch()) {
         QString reason;
         QString compactReason;
         QJsonObject errorData;
@@ -598,7 +602,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
             }
 
             if (!versionMismatch) {
-                const auto errors = qmlObject->mainComponent()->errors();
+                const auto errors = component.errors();
                 QStringList errorList;
                 for (const QQmlError &error : errors) {
                     reason += error.toString() + QLatin1Char('\n');
@@ -607,7 +611,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
                 errorData[QStringLiteral("errors")] = QJsonArray::fromStringList(errorList);
             }
             errorData[QStringLiteral("appletName")] = applet->pluginMetaData().name();
-            reason += i18n("Error loading QML file: %1 %2", qmlObject->mainComponent()->url().toString(), reason);
+            reason += i18n("Error loading QML file: %1 %2", component.url().toString(), reason);
         } else {
             if (applet->pluginMetaData().isValid()) {
                 const auto pluginId = applet->pluginMetaData().pluginId();
@@ -624,7 +628,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
         qCWarning(LOG_PLASMAQUICK) << "error when loading applet" << applet->pluginMetaData().pluginId()
                                    << errorData[QStringLiteral("errors")].toVariant().toStringList();
 
-        QQmlComponent appletErrorComponent(PlasmaQuick::globalEngine().get(), applet->containment()->corona()->kPackage().fileUrl("appleterror"));
+        QQmlComponent appletErrorComponent(engine.get(), applet->containment()->corona()->kPackage().fileUrl("appleterror"));
 
         applet->setHasConfigurationInterface(false);
         // even the error message QML may fail
@@ -632,7 +636,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
             return nullptr;
         }
 
-        auto appletContext = new AppletContext(PlasmaQuick::globalEngine().get(), applet, applet);
+        auto appletContext = new AppletContext(engine.get(), applet, applet);
 
         auto i18nContext = new KLocalizedQmlContext(appletContext);
         i18nContext->setTranslationDomain(applet->translationDomain());
@@ -653,8 +657,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
     }
 
     AppletQuickItemPrivate::s_itemsForApplet[applet] = item;
-    qmlObject->setInitializationDelayed(false);
-    qmlObject->completeInitialization();
+    component.completeCreate();
 
     // A normal applet has UI ready as soon as is loaded, a containment, only when also the wallpaper is loaded
     if (!pc || !pc->isContainment() || pc->containmentType() == Plasma::Containment::CustomEmbedded) {
@@ -666,7 +669,7 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
     item->d->applet = applet;
 
     if (!qEnvironmentVariableIntValue("PLASMA_NO_CONTEXTPROPERTIES")) {
-        qmlObject->rootContext()->setContextProperty(QStringLiteral("plasmoid"), applet);
+        appletContext->setContextProperty(QStringLiteral("plasmoid"), applet);
     }
 
     if (applet->containment()) {
@@ -677,13 +680,10 @@ AppletQuickItem *AppletQuickItem::itemForApplet(Plasma::Applet *applet)
         });
     }
 
-    QObject::connect(applet, &Plasma::Applet::appletDeleted, item, [qmlObject](Plasma::Applet *applet) {
-        // Deleting qmlObject will also delete the instantiated plasmoidItem
-        // deleting just the plasmoiditem will cause a double deletion when qmlObject
-        // gets deleted by applet deletion
-        if (qmlObject->parent() == applet) {
+    QObject::connect(applet, &Plasma::Applet::appletDeleted, item, [item, thisApplet = applet](Plasma::Applet *applet) {
+        if (thisApplet == applet) {
             // appletDelete can also be emitted by a containment for one of its children
-            delete qmlObject;
+            delete item;
             AppletQuickItemPrivate::s_itemsForApplet.remove(applet);
         }
     });

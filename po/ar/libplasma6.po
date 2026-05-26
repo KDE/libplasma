@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-26 00:46+0000\n"
 "PO-Revision-Date: 2026-04-11 18:08+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -178,22 +178,22 @@ msgstr "إعدادات النشاط"
 msgid "Add or Manage Widgets…"
 msgstr "أضف أو أدر الودجات…"
 
-#: plasmaquick/appletquickitem.cpp:540
+#: plasmaquick/appletquickitem.cpp:539
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "يجب أن يكون العنصر الجذر لـ %1 من نوع ContainmentItem"
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "يجب أن يكون العنصر الجذر لـ %1 من نوع PlasmoidItem"
 
-#: plasmaquick/appletquickitem.cpp:553
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid "Unknown Applet"
 msgstr "تطبيق مجهول"
 
-#: plasmaquick/appletquickitem.cpp:567
+#: plasmaquick/appletquickitem.cpp:566
 #, kde-format
 msgid ""
 "This widget was written for an unknown older version of Plasma and is not "
@@ -203,13 +203,13 @@ msgstr ""
 "كُتبت هذه الأداة لإصدار أقدم غير معروف من بلازما وهي غير متوافقة مع بلازما "
 "%1. يرجى الاتصال بمؤلف الودجة للحصول على نسخة محدثة."
 
-#: plasmaquick/appletquickitem.cpp:570 plasmaquick/appletquickitem.cpp:577
-#: plasmaquick/appletquickitem.cpp:583
+#: plasmaquick/appletquickitem.cpp:569 plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:582
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 غير متوافق مع بلازما %2"
 
-#: plasmaquick/appletquickitem.cpp:574
+#: plasmaquick/appletquickitem.cpp:573
 #, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -218,7 +218,7 @@ msgstr ""
 "كُتبت هذه الأداة لإصدار بلازما %1 وهي غير متوافقة مع بلازما  %2.  . يرجى "
 "الاتصال بمؤلف الودجة للحصول على نسخة محدثة."
 
-#: plasmaquick/appletquickitem.cpp:580
+#: plasmaquick/appletquickitem.cpp:579
 #, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -227,17 +227,17 @@ msgstr ""
 "كُتبت هذه الأداة لإصدار بلازما %1 وهي غير متوافقة مع بلازما %2. يرجى تحديث "
 "بلازما لتستخدم هذه الودجة."
 
-#: plasmaquick/appletquickitem.cpp:589 plasmaquick/appletquickitem.cpp:611
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "للأسف! حصل خطأ أثناء تحميل %1."
 
-#: plasmaquick/appletquickitem.cpp:606
+#: plasmaquick/appletquickitem.cpp:605
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "خطأ في تحميل ملف QML:‏ %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:609
+#: plasmaquick/appletquickitem.cpp:608
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "خطأ في تحميل البريمج: الحزمة %1غير موجودة."

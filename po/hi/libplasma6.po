@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-26 00:46+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -177,22 +177,22 @@ msgstr "गतिविधि सेटिंग्स"
 msgid "Add or Manage Widgets…"
 msgstr "विजेट जोड़ें या प्रबंधित करें…"
 
-#: plasmaquick/appletquickitem.cpp:540
+#: plasmaquick/appletquickitem.cpp:539
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "%1 का मूल आइटम ContainmentItem प्रकार का होना चाहिए"
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "%1 का मूल आइटम प्लास्मॉइडआइटम प्रकार का होना चाहिए"
 
-#: plasmaquick/appletquickitem.cpp:553
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid "Unknown Applet"
 msgstr "अज्ञात एप्लेट"
 
-#: plasmaquick/appletquickitem.cpp:567
+#: plasmaquick/appletquickitem.cpp:566
 #, fuzzy, kde-format
 #| msgid ""
 #| "This Widget was written for an unknown older version of Plasma and is not "
@@ -206,13 +206,13 @@ msgstr ""
 "यह विजेट प्लाज़्मा के किसी अज्ञात पुराने संस्करण के लिए लिखा गया था और यह प्लाज़्मा %1 के "
 "साथ संगत नहीं है। कृपया अपडेटेड संस्करण के लिए विजेट के लेखक से संपर्क करें।"
 
-#: plasmaquick/appletquickitem.cpp:570 plasmaquick/appletquickitem.cpp:577
-#: plasmaquick/appletquickitem.cpp:583
+#: plasmaquick/appletquickitem.cpp:569 plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:582
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 प्लाज़्मा %2 के साथ संगत नहीं है"
 
-#: plasmaquick/appletquickitem.cpp:574
+#: plasmaquick/appletquickitem.cpp:573
 #, fuzzy, kde-format
 #| msgid ""
 #| "This Widget was written for Plasma %1 and is not compatible with Plasma "
@@ -224,7 +224,7 @@ msgstr ""
 "यह विजेट प्लाज़्मा %1 के लिए लिखा गया था और प्लाज़्मा %2 के साथ संगत नहीं है। कृपया अपडेटेड "
 "वर्शन के लिए विजेट के लेखक से संपर्क करें।"
 
-#: plasmaquick/appletquickitem.cpp:580
+#: plasmaquick/appletquickitem.cpp:579
 #, fuzzy, kde-format
 #| msgid ""
 #| "This Widget was written for Plasma %1 and is not compatible with Plasma "
@@ -236,17 +236,17 @@ msgstr ""
 "यह विजेट प्लाज़्मा %1 के लिए लिखा गया था और प्लाज़्मा %2 के साथ संगत नहीं है। विजेट का "
 "उपयोग करने के लिए कृपया प्लाज़्मा को अपडेट करें।"
 
-#: plasmaquick/appletquickitem.cpp:589 plasmaquick/appletquickitem.cpp:611
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "क्षमा करें! %1 लोड करते समय त्रुटि हुई।"
 
-#: plasmaquick/appletquickitem.cpp:606
+#: plasmaquick/appletquickitem.cpp:605
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "QML फ़ाइल लोड करते समय त्रुटि: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:609
+#: plasmaquick/appletquickitem.cpp:608
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "एप्लेट लोड करते समय त्रुटि: पैकेज %1 मौजूद नहीं है."

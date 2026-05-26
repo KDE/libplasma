@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-26 00:46+0000\n"
 "PO-Revision-Date: 2026-04-16 21:25+0200\n"
 "Last-Translator: Alexander Becker <alex-at-kde-l10n-de@freenet.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -178,22 +178,22 @@ msgstr "Aktivitäten-Einstellungen"
 msgid "Add or Manage Widgets…"
 msgstr "Miniprogramme hinzufügen oder verwalten …"
 
-#: plasmaquick/appletquickitem.cpp:540
+#: plasmaquick/appletquickitem.cpp:539
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "Das Wurzelelement von %1 muss vom Typ ContainmentItem sein"
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "Das Wurzelelement von %1 muss vom Typ PlasmoidItem sein"
 
-#: plasmaquick/appletquickitem.cpp:553
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Unbekanntes Miniprogramm"
 
-#: plasmaquick/appletquickitem.cpp:567
+#: plasmaquick/appletquickitem.cpp:566
 #, kde-format
 msgid ""
 "This widget was written for an unknown older version of Plasma and is not "
@@ -205,13 +205,13 @@ msgstr ""
 "Autor des Miniprogramms Kontakt auf und bitten Sie diesen um eine "
 "aktualisierte Version."
 
-#: plasmaquick/appletquickitem.cpp:570 plasmaquick/appletquickitem.cpp:577
-#: plasmaquick/appletquickitem.cpp:583
+#: plasmaquick/appletquickitem.cpp:569 plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:582
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 ist mit Plasma %2 nicht kompatibel"
 
-#: plasmaquick/appletquickitem.cpp:574
+#: plasmaquick/appletquickitem.cpp:573
 #, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -221,7 +221,7 @@ msgstr ""
 "%2 kompatibel. Bitte nehmen Sie mit dem Autor des Miniprogramms Kontakt auf "
 "und bitten Sie diesen um eine aktualisierte Version."
 
-#: plasmaquick/appletquickitem.cpp:580
+#: plasmaquick/appletquickitem.cpp:579
 #, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -231,17 +231,17 @@ msgstr ""
 "%2 kompatibel. Bitte aktualisieren Plasma, um das Miniprogramm verwenden zu "
 "können."
 
-#: plasmaquick/appletquickitem.cpp:589 plasmaquick/appletquickitem.cpp:611
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Leider ist beim Laden von %1 ein Fehler aufgetreten."
 
-#: plasmaquick/appletquickitem.cpp:606
+#: plasmaquick/appletquickitem.cpp:605
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Fehler beim Laden der QML-Datei: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:609
+#: plasmaquick/appletquickitem.cpp:608
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Fehler beim Laden des Miniprogramms: Das Paket %1 existiert nicht."

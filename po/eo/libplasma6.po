@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-26 00:46+0000\n"
 "PO-Revision-Date: 2025-01-01 09:06+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -178,22 +178,22 @@ msgstr "Agado-Agordoj"
 msgid "Add or Manage Widgets…"
 msgstr "Aldoni aŭ Mastrumi Fenestraĵojn…"
 
-#: plasmaquick/appletquickitem.cpp:540
+#: plasmaquick/appletquickitem.cpp:539
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "La radika objekto de %1 devas esti de tipo ContainmentItem"
 
-#: plasmaquick/appletquickitem.cpp:545
+#: plasmaquick/appletquickitem.cpp:544
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "La radika objekto de %1 devas esti de tipo PlasmoidItem"
 
-#: plasmaquick/appletquickitem.cpp:553
+#: plasmaquick/appletquickitem.cpp:552
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Nekonata Apleto"
 
-#: plasmaquick/appletquickitem.cpp:567
+#: plasmaquick/appletquickitem.cpp:566
 #, fuzzy, kde-format
 #| msgid ""
 #| "This Widget was written for an unknown older version of Plasma and is not "
@@ -208,13 +208,13 @@ msgstr ""
 "ne estas kongrua kun Plasma %1. Bonvolu kontakti la aŭtoron de la fenestraĵo "
 "por ĝisdatigita versio."
 
-#: plasmaquick/appletquickitem.cpp:570 plasmaquick/appletquickitem.cpp:577
-#: plasmaquick/appletquickitem.cpp:583
+#: plasmaquick/appletquickitem.cpp:569 plasmaquick/appletquickitem.cpp:576
+#: plasmaquick/appletquickitem.cpp:582
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 ne estas kongrua kun Plasma %2"
 
-#: plasmaquick/appletquickitem.cpp:574
+#: plasmaquick/appletquickitem.cpp:573
 #, fuzzy, kde-format
 #| msgid ""
 #| "This Widget was written for Plasma %1 and is not compatible with Plasma "
@@ -226,7 +226,7 @@ msgstr ""
 "Ĉi Fenestraĵo estis skribita por Plasma %1 kaj ne estas kongrua kun Plasma "
 "%2. Bonvolu kontakti la aŭtoron de la fenestraĵo por ĝisdatigita versio."
 
-#: plasmaquick/appletquickitem.cpp:580
+#: plasmaquick/appletquickitem.cpp:579
 #, fuzzy, kde-format
 #| msgid ""
 #| "This Widget was written for Plasma %1 and is not compatible with Plasma "
@@ -238,17 +238,17 @@ msgstr ""
 "Ĉi Fenestraĵo estis skribita por Plasma %1 kaj ne estas kongrua kun Plasma "
 "%2. Bonvolu ĝisdatigi Plasma por uzi la fenestraĵon."
 
-#: plasmaquick/appletquickitem.cpp:589 plasmaquick/appletquickitem.cpp:611
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Pardonon, estis eraro ŝargante %1."
 
-#: plasmaquick/appletquickitem.cpp:606
+#: plasmaquick/appletquickitem.cpp:605
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Eraro dum ŝargo de QML-dosiero: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:609
+#: plasmaquick/appletquickitem.cpp:608
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Eraro dum ŝargo de Apleto: pako %1 ne ekzistas."

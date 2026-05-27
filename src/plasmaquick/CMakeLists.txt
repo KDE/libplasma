@@ -63,7 +63,8 @@ target_sources(PlasmaQuick PRIVATE
     quickviewsharedengine.h
     plasmawindow.h
     popupplasmawindow.h
-    transientplacementhint_p.h
+    transientplacementhint.h
+    transientplacementhelper_p.h
     windowresizehandler.h
     configcategory_p.h
     dialogbackground_p.h
@@ -166,6 +167,7 @@ ecm_generate_export_header(PlasmaQuick
 
 set(plasmaquick_LIB_INCLUDES
     ${CMAKE_CURRENT_BINARY_DIR}/plasmaquick_export.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/transientplacementhint.h
 )
 
 ecm_generate_headers(PlasmaQuick_CamelCase_HEADERS
@@ -182,6 +184,7 @@ ecm_generate_headers(PlasmaQuick_CamelCase_HEADERS
         SharedQmlEngine
         QuickViewSharedEngine
         PlasmaQuick
+        TransientPlacementHint
     REQUIRED_HEADERS plasmaquick_LIB_INCLUDES
     PREFIX PlasmaQuick
 )

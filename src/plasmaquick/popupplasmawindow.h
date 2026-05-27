@@ -6,6 +6,7 @@
 #pragma once
 
 #include "plasmawindow.h"
+#include "transientplacementhint.h"
 
 #include <QQuickItem>
 #include <plasmaquick/plasmaquick_export.h>
@@ -137,6 +138,12 @@ public:
     // However, knowing which borders the margin leans on is still
     // useful, as an example, to correctly set the resize handle edges.
     Qt::Edges nearbyBorders() const;
+
+    /**
+     * This is for low-level overriding of the placement, it overrides the default position set by
+     * the visual parent and popup direction properties.
+     */
+    void setPlacementHint(const TransientPlacementHint &placementHint);
 
 Q_SIGNALS:
     void visualParentChanged();

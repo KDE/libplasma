@@ -3,7 +3,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "transientplacementhint_p.h"
+#include "transientplacementhelper_p.h"
 #include <QSharedData>
 
 #include <QDebug>
@@ -11,8 +11,8 @@
 #include <QScreen>
 #include <QWindow>
 
-// This class is proposed for Qt6.something, but it's not there yet.
-// keep as an implementation detail, and then drop eventually (famous last words)
+namespace PlasmaQuick
+{
 
 class TransientPlacementHintPrivate : public QSharedData
 {
@@ -303,4 +303,6 @@ QRect TransientPlacementHelper::popupRect(QWindow *w, const TransientPlacementHi
         }
     }
     return popupRect.marginsRemoved(margin);
+}
+
 }

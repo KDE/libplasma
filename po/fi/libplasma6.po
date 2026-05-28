@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:46+0000\n"
+"POT-Creation-Date: 2026-05-28 00:45+0000\n"
 "PO-Revision-Date: 2024-10-17 13:50+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -244,7 +244,7 @@ msgstr ""
 "Sovelma on kirjoitettu Plasma-versiolle %1 eikä ole yhteensopiva Plasma-"
 "version %2 kanssa. Päivitä Plasma, jotta sovelmaa voisi käyttää."
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Pahoittelut! Latauksessa tapahtui virhe: %1."
@@ -254,9 +254,18 @@ msgstr "Pahoittelut! Latauksessa tapahtui virhe: %1."
 msgid "Error loading QML file: %1 %2"
 msgstr "QML-tiedoston avaaminen epäonnistui: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:609
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
+msgstr "Virhe ladattaessa sovelmaa: pakettia %1 ei ole olemassa."
+
+#: plasmaquick/appletquickitem.cpp:614
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package %1 does not exist."
+msgctxt "@info"
+msgid ""
+"Error loading Applet: package format is invalid (does not contain any "
+"metadata)."
 msgstr "Virhe ladattaessa sovelmaa: pakettia %1 ei ole olemassa."
 
 #: plasmaquick/configview.cpp:189

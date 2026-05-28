@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:46+0000\n"
+"POT-Creation-Date: 2026-05-28 00:45+0000\n"
 "PO-Revision-Date: 2024-09-11 19:39+0900\n"
 "Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -239,7 +239,7 @@ msgstr ""
 "このウィジェットは Plasma %1 用に作成されているため、Plasma %2 とは互換性があ"
 "りません。ウィジェットを使用するには Plasma をアップデートしてください。"
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "申し訳ありません。%1 の読み込み中にエラーが発生しました。"
@@ -249,9 +249,19 @@ msgstr "申し訳ありません。%1 の読み込み中にエラーが発生し
 msgid "Error loading QML file: %1 %2"
 msgstr "QML ファイルの読み込みに失敗しました: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:609
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
+msgstr ""
+"アプレットの読み込み中にエラーが発生しました: パッケージ %1 は存在しません。"
+
+#: plasmaquick/appletquickitem.cpp:614
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package %1 does not exist."
+msgctxt "@info"
+msgid ""
+"Error loading Applet: package format is invalid (does not contain any "
+"metadata)."
 msgstr ""
 "アプレットの読み込み中にエラーが発生しました: パッケージ %1 は存在しません。"
 

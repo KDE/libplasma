@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:46+0000\n"
+"POT-Creation-Date: 2026-05-28 00:45+0000\n"
 "PO-Revision-Date: 2024-08-31 12:02+0300\n"
 "Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -240,7 +240,7 @@ msgstr ""
 "Plasma %2. Παρακαλούμε ενημερώστε το Plasma για να χρησιμοποιήσετε το "
 "συστατικό."
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Συγγνώμη! Υπήρξε σφάλμα κατά τη φόρτωση του %1."
@@ -250,9 +250,18 @@ msgstr "Συγγνώμη! Υπήρξε σφάλμα κατά τη φόρτωση
 msgid "Error loading QML file: %1 %2"
 msgstr "Σφάλμα φόρτωσης αρχείου QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:609
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
+msgstr "Σφάλμα φόρτωσης μικροεφαρμογής: το πακέτο %1 δεν υπάρχει."
+
+#: plasmaquick/appletquickitem.cpp:614
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package %1 does not exist."
+msgctxt "@info"
+msgid ""
+"Error loading Applet: package format is invalid (does not contain any "
+"metadata)."
 msgstr "Σφάλμα φόρτωσης μικροεφαρμογής: το πακέτο %1 δεν υπάρχει."
 
 #: plasmaquick/configview.cpp:189

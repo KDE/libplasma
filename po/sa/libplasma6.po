@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:46+0000\n"
+"POT-Creation-Date: 2026-05-28 00:45+0000\n"
 "PO-Revision-Date: 2024-12-15 22:18+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -237,7 +237,7 @@ msgstr ""
 "इदं विजेट् प्लाज्मा %1 कृते लिखितम् अस्ति तथा च प्लाज्मा %2 इत्यनेन सह सङ्गतं नास्ति । कृपया "
 "विजेट् इत्यस्य उपयोगाय प्लाज्मा अपडेट् कुर्वन्तु ।"
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "क्षम्यताम्‌! %1 लोड् करणं त्रुटिः आसीत् ।"
@@ -247,9 +247,18 @@ msgstr "क्षम्यताम्‌! %1 लोड् करणं त्�
 msgid "Error loading QML file: %1 %2"
 msgstr "QML सञ्चिकायाः आरोपयने त्रुटिः: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:609
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
+msgstr "Applet आरोपयने त्रुटिः: संकुल %1 नास्ति ।"
+
+#: plasmaquick/appletquickitem.cpp:614
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package %1 does not exist."
+msgctxt "@info"
+msgid ""
+"Error loading Applet: package format is invalid (does not contain any "
+"metadata)."
 msgstr "Applet आरोपयने त्रुटिः: संकुल %1 नास्ति ।"
 
 #: plasmaquick/configview.cpp:189

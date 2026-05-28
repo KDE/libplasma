@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:46+0000\n"
+"POT-Creation-Date: 2026-05-28 00:45+0000\n"
 "PO-Revision-Date: 2024-10-29 11:45+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -239,7 +239,7 @@ msgstr ""
 "Šī logdaļa ir izveidota „Plasma“ %1 un nav savietojama ar „Plasma“ %2. Lai "
 "to izmantotu, atjauniniet „Plasma“."
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Diemžēl, ielādējot „%1“, radās kļūda."
@@ -249,9 +249,18 @@ msgstr "Diemžēl, ielādējot „%1“, radās kļūda."
 msgid "Error loading QML file: %1 %2"
 msgstr "Kļūda, ielādējot QML datni: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:609
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
+msgstr "Kļūda, ielādējot sīklietotni: „%1“ nepastāv."
+
+#: plasmaquick/appletquickitem.cpp:614
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package %1 does not exist."
+msgctxt "@info"
+msgid ""
+"Error loading Applet: package format is invalid (does not contain any "
+"metadata)."
 msgstr "Kļūda, ielādējot sīklietotni: „%1“ nepastāv."
 
 #: plasmaquick/configview.cpp:189

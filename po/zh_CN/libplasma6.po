@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:46+0000\n"
+"POT-Creation-Date: 2026-05-28 00:45+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -226,7 +226,7 @@ msgstr ""
 "此小部件是为 Plasma %1 编写的，它与 Plasma %2 不兼容。请升级 Plasma 桌面环境"
 "以使用此小部件。"
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "对不起，加载 %1 时发生错误。"
@@ -236,9 +236,18 @@ msgstr "对不起，加载 %1 时发生错误。"
 msgid "Error loading QML file: %1 %2"
 msgstr "加载 QML 文件出错：%1 %2"
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:609
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
+msgstr "加载小程序出错：软件包 %1 不存在。"
+
+#: plasmaquick/appletquickitem.cpp:614
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package %1 does not exist."
+msgctxt "@info"
+msgid ""
+"Error loading Applet: package format is invalid (does not contain any "
+"metadata)."
 msgstr "加载小程序出错：软件包 %1 不存在。"
 
 #: plasmaquick/configview.cpp:189

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:46+0000\n"
+"POT-Creation-Date: 2026-05-28 00:45+0000\n"
 "PO-Revision-Date: 2024-09-22 21:52+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -240,7 +240,7 @@ msgstr ""
 "Az elem a Plasma %1 verziójához készült, és nem kompatibilis a Plasma %2 "
 "verzióval. Frissítse a Plasmát az elem használatához."
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Hiba történt a(z) %1 betöltésekor."
@@ -250,9 +250,18 @@ msgstr "Hiba történt a(z) %1 betöltésekor."
 msgid "Error loading QML file: %1 %2"
 msgstr "Hiba a QML fájl betöltése közben: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:609
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
+msgstr "Hiba a kisalkalmazás betöltésekor: a(z) %1 csomag nem létezik."
+
+#: plasmaquick/appletquickitem.cpp:614
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package %1 does not exist."
+msgctxt "@info"
+msgid ""
+"Error loading Applet: package format is invalid (does not contain any "
+"metadata)."
 msgstr "Hiba a kisalkalmazás betöltésekor: a(z) %1 csomag nem létezik."
 
 #: plasmaquick/configview.cpp:189

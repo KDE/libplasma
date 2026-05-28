@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:46+0000\n"
+"POT-Creation-Date: 2026-05-28 00:45+0000\n"
 "PO-Revision-Date: 2025-11-04 10:52+0100\n"
 "Last-Translator: Rasmus Rosendahl-Kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -238,7 +238,7 @@ msgstr ""
 "Denne widget var skrevet til Plasma %1 og er ikke kompatibel med Plasma %2. "
 "Opdatér venligst Plasma for at bruge widgeten."
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Undskyld! Der var en fejl under indlæsning af %1."
@@ -248,9 +248,18 @@ msgstr "Undskyld! Der var en fejl under indlæsning af %1."
 msgid "Error loading QML file: %1 %2"
 msgstr "Fejl ved indlæsning af QML-fil: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:609
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
+msgstr "Fejl ved indlæsning af applet. Pakken %1 eksisterer ikke."
+
+#: plasmaquick/appletquickitem.cpp:614
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package %1 does not exist."
+msgctxt "@info"
+msgid ""
+"Error loading Applet: package format is invalid (does not contain any "
+"metadata)."
 msgstr "Fejl ved indlæsning af applet. Pakken %1 eksisterer ikke."
 
 #: plasmaquick/configview.cpp:189

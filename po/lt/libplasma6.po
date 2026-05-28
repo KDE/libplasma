@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:46+0000\n"
+"POT-Creation-Date: 2026-05-28 00:45+0000\n"
 "PO-Revision-Date: 2026-04-10 22:47+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -232,7 +232,7 @@ msgstr ""
 "Šis valdiklis buvo sukurtas Plasma %1 versijai ir nėra suderinamas su Plasma "
 "%2. Norėdami naudoti valdiklį, atnaujinkite Plasma versiją."
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:610
+#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Apgailestaujame! Įkeliant %1, įvyko klaida."
@@ -242,9 +242,18 @@ msgstr "Apgailestaujame! Įkeliant %1, įvyko klaida."
 msgid "Error loading QML file: %1 %2"
 msgstr "Klaida įkeliant QML failą: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:608
+#: plasmaquick/appletquickitem.cpp:609
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
+msgstr "Klaida įkeliant programėlę: paketo %1 nėra."
+
+#: plasmaquick/appletquickitem.cpp:614
+#, fuzzy, kde-format
+#| msgid "Error loading Applet: package %1 does not exist."
+msgctxt "@info"
+msgid ""
+"Error loading Applet: package format is invalid (does not contain any "
+"metadata)."
 msgstr "Klaida įkeliant programėlę: paketo %1 nėra."
 
 #: plasmaquick/configview.cpp:189

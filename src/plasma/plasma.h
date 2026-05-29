@@ -13,6 +13,7 @@
 
 class QAction;
 class QQmlEngine;
+class QQuickWindow;
 
 namespace Plasma
 {
@@ -168,6 +169,8 @@ private:
  * \since 6.7
  */
 PLASMA_EXPORT void setupPlasmaStyle(QQmlEngine *engine);
+
+PLASMA_EXPORT void setupPlasmaStyle(QQuickWindow *window);
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Types::ContainmentDisplayHints)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Types::BackgroundFlags)

@@ -99,6 +99,7 @@ PUBLIC
     KF6::KirigamiPlatform
 PRIVATE
     Qt6::Quick
+    Qt6::QuickPrivate
     Qt6::WaylandClient
     KF6::ConfigGui
     KF6::ColorScheme

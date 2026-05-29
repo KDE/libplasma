@@ -11,8 +11,11 @@
 #include <QMenu>
 #include <QQmlComponent>
 #include <QQmlEngine>
+#include <QQuickWindow>
+#include <private/qquickpalette_p.h>
 
 #include "containment.h"
+#include "theme.h"
 
 namespace Plasma
 {
@@ -37,6 +40,13 @@ void setupPlasmaStyle(QQmlEngine *engine)
         tooltip->setParent(engine);
         engine->setProperty("_q_QQuickToolTip", QVariant::fromValue(tooltip));
     }
+}
+
+void setupPlasmaStyle(QQuickWindow *window)
+{
+    auto qp = new QQuickPalette(window);
+    qp->fromQPalette(Plasma::Theme::globalPalette());
+    window->setProperty("palette", QVariant::fromValue(qp));
 }
 
 } // Plasma namespace

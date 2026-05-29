@@ -15,6 +15,7 @@
 #include <KWindowSystem>
 #include <KX11Extras>
 
+#include <Plasma/Plasma>
 #include <Plasma/Theme>
 
 using namespace Plasma;
@@ -47,6 +48,8 @@ PlasmaWindow::PlasmaWindow(const QString &svgPrefix)
 {
     setColor(QColor(Qt::transparent));
     setFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+
+    Plasma::setupPlasmaStyle(this);
 
     d->shadows = DialogShadows::instance(svgPrefix);
     d->dialogBackground = new DialogBackground(contentItem());

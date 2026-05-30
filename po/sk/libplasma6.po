@@ -245,13 +245,14 @@ msgid "Error loading Applet: package %1 does not exist."
 msgstr "Chyba načítania appletu: balík neexistuje. %1"
 
 #: plasmaquick/appletquickitem.cpp:614
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package %1 does not exist."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Error loading Applet: package format is invalid (does not contain any "
 "metadata)."
-msgstr "Chyba načítania appletu: balík neexistuje. %1"
+msgstr ""
+"Chyba načítania appletu: formát balíka je neplatný (neobsahuje žiadne "
+"metadáta)."
 
 #: plasmaquick/configview.cpp:189
 #, kde-format

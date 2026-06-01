@@ -278,6 +278,12 @@ void AppletPrivate::askDestroy()
             }
         });
 
+        QTimer::singleShot(60000, q, [this] {
+            if (deleteNotification) {
+                deleteNotification->close();
+            }
+        });
+
         deleteNotification->sendEvent();
         if (!q->isContainment() && q->containment()) {
             Q_EMIT q->containment()->appletAboutToBeRemoved(q);

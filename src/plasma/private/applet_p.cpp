@@ -249,7 +249,7 @@ void AppletPrivate::askDestroy()
         KNotificationAction *undoAction = deleteNotification->addAction(i18n("Undo"));
         QObject::connect(undoAction, &KNotificationAction::activated, q, [=, this]() {
             setDestroyed(false);
-            if (!q->isContainment() && q->containment()) {
+            if (q->containment() && q->containment() != q) {
                 Plasma::Applet *containmentApplet = static_cast<Plasma::Applet *>(q->containment());
                 if (containmentApplet && containmentApplet->d->transient) {
                     Q_EMIT containmentApplet->destroyedChanged(false);
@@ -279,7 +279,7 @@ void AppletPrivate::askDestroy()
         });
 
         deleteNotification->sendEvent();
-        if (!q->isContainment() && q->containment()) {
+        if (q->containment() && q->containment() != q) {
             Q_EMIT q->containment()->appletAboutToBeRemoved(q);
             q->containment()->d->applets.removeAll(q);
             Q_EMIT q->containment()->appletRemoved(q);

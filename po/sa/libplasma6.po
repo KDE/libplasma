@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-14 00:45+0000\n"
+"POT-Creation-Date: 2026-06-02 03:54+0000\n"
 "PO-Revision-Date: 2024-12-15 22:18+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -148,12 +148,12 @@ msgstr "एकः कार्यमुखः निष्कासितः अ
 msgid "Undo"
 msgstr "अपाकरोति"
 
-#: plasma/private/applet_p.cpp:313
+#: plasma/private/applet_p.cpp:319
 #, kde-format
 msgid "Widget Settings"
 msgstr "विजेट् समायोजननि"
 
-#: plasma/private/applet_p.cpp:319
+#: plasma/private/applet_p.cpp:325
 #, kde-format
 msgid "Remove this Widget"
 msgstr "एतत् विजेट् निष्कासयन्तु"

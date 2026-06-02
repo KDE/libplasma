@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:45+0000\n"
-"PO-Revision-Date: 2026-04-13 18:10+0000\n"
+"POT-Creation-Date: 2026-06-02 00:45+0000\n"
+"PO-Revision-Date: 2026-06-01 12:38+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -148,12 +148,12 @@ msgstr "Skjáborð var fjarlægt."
 msgid "Undo"
 msgstr "Afturkalla"
 
-#: plasma/private/applet_p.cpp:313
+#: plasma/private/applet_p.cpp:319
 #, kde-format
 msgid "Widget Settings"
 msgstr "Græjustillingar"
 
-#: plasma/private/applet_p.cpp:319
+#: plasma/private/applet_p.cpp:325
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Fjarlægja þessa græju"
@@ -243,13 +243,14 @@ msgid "Error loading Applet: package %1 does not exist."
 msgstr "Villa við að hlaða inn smáforriti: pakkinn %1 er ekki til."
 
 #: plasmaquick/appletquickitem.cpp:614
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package %1 does not exist."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Error loading Applet: package format is invalid (does not contain any "
 "metadata)."
-msgstr "Villa við að hlaða inn smáforriti: pakkinn %1 er ekki til."
+msgstr ""
+"Villa við að hlaða inn smáforriti: snið pakkans er ógilt (inniheldur engin "
+"lýsigögn)."
 
 #: plasmaquick/configview.cpp:189
 #, kde-format

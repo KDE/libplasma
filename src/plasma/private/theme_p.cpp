@@ -131,10 +131,6 @@ ThemePrivate::ThemePrivate(QObject *parent)
         settingsChanged(true);
     });
 
-    QObject::connect(KIconLoader::global(), &KIconLoader::iconChanged, this, [this]() {
-        scheduleThemeChangeNotification();
-    });
-
     if (KWindowSystem::isPlatformX11()) {
         connect(KX11Extras::self(), &KX11Extras::compositingChanged, selectorsUpdateTimer, qOverload<>(&QTimer::start));
     }

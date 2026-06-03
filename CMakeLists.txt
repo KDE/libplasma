@@ -93,36 +93,6 @@ if(NOT WITHOUT_X11)
     endif()
 endif()
 
-find_package(OpenGL)
-set_package_properties(OpenGL PROPERTIES DESCRIPTION "The OpenGL libraries"
-                       URL "https://www.opengl.org/"
-                       TYPE OPTIONAL
-                      )
-
-find_package(EGL)
-set_package_properties(EGL PROPERTIES
-                       PURPOSE "Fallback when OpenGL not available because of missing GLVND"
-                       TYPE OPTIONAL
-                      )
-
-get_target_property(QtGui_Enabled_Features Qt6::Gui QT_ENABLED_PUBLIC_FEATURES)
-if(OpenGL_GLX_FOUND AND HAVE_X11 AND (QtGui_Enabled_Features MATCHES "opengl"))
-    add_feature_info(GLX OpenGL_GLX_FOUND "OpenGL GLX libraries.")
-    set(HAVE_GLX 1)
-else()
-    set(HAVE_GLX 0)
-endif()
-
-# OpenGL_EGL_FOUND is defined by FindOpenGL
-if(TARGET OpenGL::EGL)
-    add_feature_info(EGL OpenGL_EGL_FOUND
-                     "A platform-agnostic mechanism for creating rendering surfaces for use with other graphics libraries, such as OpenGL|ES and OpenVG.")
-    set(HAVE_EGL 1)
-else()
-    set(HAVE_EGL 0)
-    message(STATUS "OpenGL::EGL is not available")
-endif()
-
 ecm_find_qmlmodule(Qt5Compat.GraphicalEffects REQUIRED)
 
 ecm_find_qmlmodule(org.kde.config REQUIRED)

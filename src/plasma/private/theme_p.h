@@ -89,7 +89,6 @@ public:
     QTimer *selectorsUpdateTimer;
     QTimer *updateNotificationTimer;
 
-    bool compositingActive : 1;
     bool backgroundContrastActive : 1;
     bool isDefault : 1;
     bool useGlobal : 1;

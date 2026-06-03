@@ -13,14 +13,6 @@
 #include <KIconLoader>
 #include <KIconTheme>
 #include <KSvg/ImageSet>
-#include <KWindowSystem>
-#include <KX11Extras>
-
-#include <config-plasma.h>
-#if HAVE_X11
-#include <KSelectionOwner>
-#endif
-#include <array>
 
 void ThemeTest::initTestCase()
 {
@@ -114,51 +106,6 @@ void ThemeTest::testColors()
     QCOMPARE(m_theme->color(Plasma::Theme::PositiveTextColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(17, 209, 25));
     QCOMPARE(m_theme->color(Plasma::Theme::NeutralTextColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(201, 206, 62));
     QCOMPARE(m_theme->color(Plasma::Theme::NegativeTextColor, Kirigami::Platform::PlatformTheme::Complementary), QColor(237, 21, 24));
-}
-
-void ThemeTest::testCompositingChange()
-{
-    // Create a global imageset, m_theme will manipulate it
-    KSvg::ImageSet set;
-    set.setBasePath(QStringLiteral(PLASMA_RELATIVE_DATA_INSTALL_DIR "/desktoptheme/"));
-
-    // this test simulates the compositing change on X11
-#if HAVE_X11
-    if (!KWindowSystem::isPlatformX11()) {
-        QSKIP("Test is only for X11");
-    }
-    QVERIFY(!KX11Extras::compositingActive());
-
-    // image path should give us an opaque variant
-    QVERIFY(set.selectors().contains("opaque"));
-
-    QSignalSpy themeChangedSpy(m_theme, &Plasma::Theme::themeChanged);
-    QVERIFY(themeChangedSpy.isValid());
-
-    // fake the compositor
-    QSignalSpy compositingChangedSpy(KX11Extras::self(), &KX11Extras::compositingChanged);
-    QVERIFY(compositingChangedSpy.isValid());
-    std::unique_ptr<KSelectionOwner> compositorSelection(new KSelectionOwner("_NET_WM_CM_S0"));
-    QSignalSpy claimedSpy(compositorSelection.get(), &KSelectionOwner::claimedOwnership);
-    QVERIFY(claimedSpy.isValid());
-    compositorSelection->claim(true);
-    QVERIFY(claimedSpy.wait());
-
-    QCOMPARE(compositingChangedSpy.count(), 1);
-    QVERIFY(KX11Extras::compositingActive());
-    QVERIFY(themeChangedSpy.wait());
-    QCOMPARE(themeChangedSpy.count(), 1);
-    QVERIFY(!set.selectors().contains("opaque"));
-
-    // remove compositor again
-    compositorSelection.reset();
-    QVERIFY(compositingChangedSpy.wait());
-    QCOMPARE(compositingChangedSpy.count(), 2);
-    QVERIFY(!KX11Extras::compositingActive());
-    QVERIFY(themeChangedSpy.wait());
-    QCOMPARE(themeChangedSpy.count(), 2);
-    QVERIFY(set.selectors().contains("opaque"));
-#endif
 }
 
 QTEST_MAIN(ThemeTest)

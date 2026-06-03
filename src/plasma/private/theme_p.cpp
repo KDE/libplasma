@@ -112,7 +112,7 @@ ThemePrivate::ThemePrivate(QObject *parent)
 
     updateNotificationTimer = new QTimer(this);
     updateNotificationTimer->setSingleShot(true);
-    updateNotificationTimer->setInterval(100);
+    updateNotificationTimer->setInterval(0);
     QObject::connect(updateNotificationTimer, &QTimer::timeout, this, &ThemePrivate::notifyOfChanged);
 
     if (QPixmap::defaultDepth() > 8) {

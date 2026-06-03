@@ -146,6 +146,7 @@
         "Name[sv]": "Oxygen",
         "Name[ta]": "ஆக்ஸிஜன்",
         "Name[tr]": "Oksijen",
+        "Name[ug]": "ئوكسىگېن",
         "Name[uk]": "Oxygen",
         "Name[vi]": "Oxygen",
         "Name[zh_CN]": "Oxygen 轻氧",

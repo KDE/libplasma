@@ -7,20 +7,25 @@
 #ifndef ContrastEffectWatcher_P_H
 #define ContrastEffectWatcher_P_H
 
+#include <config-plasma.h>
+
 #include <QGuiApplication>
 #include <QObject>
 
+#if HAVE_X11
 #include <QAbstractNativeEventFilter>
-
 #include <xcb/xcb.h>
-
-#include <config-plasma.h>
+#endif
 
 namespace Plasma
 {
 class BackgroundEffectManager;
 
-class BlurEffectWatcher : public QObject, public QAbstractNativeEventFilter
+class BlurEffectWatcher : public QObject
+#if HAVE_X11
+    ,
+                          public QAbstractNativeEventFilter
+#endif
 {
     Q_OBJECT
 

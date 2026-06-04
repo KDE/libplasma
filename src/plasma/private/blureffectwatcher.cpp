@@ -71,8 +71,8 @@ BlurEffectWatcher::BlurEffectWatcher(QObject *parent)
             Q_EMIT effectChanged(m_effectActive);
         });
         m_effectActive = m_backgroundEffectManager->m_supportsBlur;
-    } else if (KWindowSystem::isPlatformX11()) {
 #if HAVE_X11
+    } else if (KWindowSystem::isPlatformX11()) {
         if (!m_x11Interface) {
             return;
         }

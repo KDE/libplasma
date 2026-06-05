@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-02 00:45+0000\n"
+"POT-Creation-Date: 2026-06-05 00:46+0000\n"
 "PO-Revision-Date: 2026-04-18 16:00+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -79,13 +79,13 @@ msgstr "Start %1-elementet"
 # Men viss det ikkje finst ei tilhøyrande oppføring i scripts/frameworks/ki18n5/skjermelement.pmap, vert det heller:
 # Fjern «Panel»
 # Fjern «Global meny»
-#: plasma/containment.cpp:100 plasma/private/applet_p.cpp:100
+#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:100
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Fjern «%1»|/|Fjern $[pron %1] $[bunden %1]"
 
-#: plasma/containment.cpp:106 plasma/corona.cpp:365 plasma/corona.cpp:486
+#: plasma/containment.cpp:108 plasma/corona.cpp:365 plasma/corona.cpp:486
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Start tilpassing"
@@ -97,7 +97,7 @@ msgstr "Start tilpassing"
 # Men viss det ikkje finst ei tilhøyrande oppføring i scripts/frameworks/ki18n5/skjermelement.pmap, vert det heller:
 # Set opp «Panel»
 # Set opp «Global meny»
-#: plasma/containment.cpp:109 plasma/private/applet_p.cpp:105
+#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:105
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -173,22 +173,22 @@ msgstr "Set opp element"
 msgid "Remove this Widget"
 msgstr "Fjern dette elementet"
 
-#: plasma/private/containment_p.cpp:51
+#: plasma/private/containment_p.cpp:55
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Fjern dette panelet"
 
-#: plasma/private/containment_p.cpp:53
+#: plasma/private/containment_p.cpp:57
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Fjern denne aktiviteten"
 
-#: plasma/private/containment_p.cpp:58
+#: plasma/private/containment_p.cpp:62
 #, kde-format
 msgid "Activity Settings"
 msgstr "Aktivitetsoppsett"
 
-#: plasma/private/containment_p.cpp:70
+#: plasma/private/containment_p.cpp:74
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Legg til eller juster element …"

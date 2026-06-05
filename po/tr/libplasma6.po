@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-02 00:45+0000\n"
+"POT-Creation-Date: 2026-06-05 00:46+0000\n"
 "PO-Revision-Date: 2026-05-28 14:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -73,18 +73,18 @@ msgstr "Bilinmeyen"
 msgid "Activate %1 Widget"
 msgstr "Araç takımını etkinleştir: %1"
 
-#: plasma/containment.cpp:100 plasma/private/applet_p.cpp:100
+#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:100
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Kaldır: %1"
 
-#: plasma/containment.cpp:106 plasma/corona.cpp:365 plasma/corona.cpp:486
+#: plasma/containment.cpp:108 plasma/corona.cpp:365 plasma/corona.cpp:486
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Düzenleme Kipine Gir"
 
-#: plasma/containment.cpp:109 plasma/private/applet_p.cpp:105
+#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:105
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -160,22 +160,22 @@ msgstr "Araç Takımı Ayarları"
 msgid "Remove this Widget"
 msgstr "Bu araç takımını kaldır"
 
-#: plasma/private/containment_p.cpp:51
+#: plasma/private/containment_p.cpp:55
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Bu Paneli Kaldır"
 
-#: plasma/private/containment_p.cpp:53
+#: plasma/private/containment_p.cpp:57
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Bu Etkinliği Kaldır"
 
-#: plasma/private/containment_p.cpp:58
+#: plasma/private/containment_p.cpp:62
 #, kde-format
 msgid "Activity Settings"
 msgstr "Etkinlik Ayarları"
 
-#: plasma/private/containment_p.cpp:70
+#: plasma/private/containment_p.cpp:74
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Araç Takımları Ekle veya Yönet…"

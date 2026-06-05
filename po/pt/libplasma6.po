@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-02 00:45+0000\n"
+"POT-Creation-Date: 2026-06-05 00:46+0000\n"
 "PO-Revision-Date: 2022-07-25 09:37+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -68,18 +68,18 @@ msgstr "Desconhecido"
 msgid "Activate %1 Widget"
 msgstr "Activar o Elemento %1"
 
-#: plasma/containment.cpp:100 plasma/private/applet_p.cpp:100
+#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:100
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Remover o %1"
 
-#: plasma/containment.cpp:106 plasma/corona.cpp:365 plasma/corona.cpp:486
+#: plasma/containment.cpp:108 plasma/corona.cpp:365 plasma/corona.cpp:486
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Entrar no Modo de Edição"
 
-#: plasma/containment.cpp:109 plasma/private/applet_p.cpp:105
+#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:105
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -155,22 +155,22 @@ msgstr "Configuração do Elemento"
 msgid "Remove this Widget"
 msgstr "Remover este Elemento"
 
-#: plasma/private/containment_p.cpp:51
+#: plasma/private/containment_p.cpp:55
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Remover este Painel"
 
-#: plasma/private/containment_p.cpp:53
+#: plasma/private/containment_p.cpp:57
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Remover esta Actividade"
 
-#: plasma/private/containment_p.cpp:58
+#: plasma/private/containment_p.cpp:62
 #, kde-format
 msgid "Activity Settings"
 msgstr "Configuração da Actividade"
 
-#: plasma/private/containment_p.cpp:70
+#: plasma/private/containment_p.cpp:74
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr ""

@@ -10,8 +10,6 @@
 #include "applet.h"
 #include "private/applet_p.h"
 
-#include "config-plasma.h"
-
 #include <QDebug>
 #include <QFile>
 #include <QJSEngine>

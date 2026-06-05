@@ -9,7 +9,6 @@
 
 #include "dialog.h"
 #include "appletquickitem.h"
-#include "config-plasma.h"
 #include "configview.h"
 #include "debug_p.h"
 #include "dialogbackground_p.h"

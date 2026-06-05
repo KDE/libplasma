@@ -15,8 +15,6 @@
 #include <QThread>
 #include <QTimer>
 
-#include "config-plasma.h"
-
 #include <KColorScheme>
 #include <KConfigGroup>
 #include <KWindowEffects>

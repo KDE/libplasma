@@ -5,7 +5,6 @@
 */
 
 #include "appletpopup.h"
-#include "config-plasma.h"
 
 #include <QGuiApplication>
 #include <QQmlProperty>

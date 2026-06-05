@@ -4,7 +4,6 @@
 */
 
 #include "plasmawindow.h"
-#include "config-plasma.h"
 #include "dialogbackground_p.h"
 #include "dialogshadows_p.h"
 

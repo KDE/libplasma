@@ -7,8 +7,6 @@
 #ifndef ContrastEffectWatcher_P_H
 #define ContrastEffectWatcher_P_H
 
-#include <config-plasma.h>
-
 #include <QGuiApplication>
 #include <QObject>
 

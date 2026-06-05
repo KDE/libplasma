@@ -1,7 +1,7 @@
 # Translation for libplasma6.po to Euskara/Basque (eu).
 # Copyright (C) 2017-2026 This file is copyright:
 # This file is distributed under the same license as the plasma-framework package.
-# SPDX-FileCopyrightText: 2023, 2024, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2024, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Osoitz <oelkoro@gmail.com>, 2017.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-02 03:54+0000\n"
-"PO-Revision-Date: 2026-03-19 20:15+0100\n"
+"PO-Revision-Date: 2026-06-04 20:32+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -198,19 +198,15 @@ msgid "Unknown Applet"
 msgstr "Aplikaziotxo ezezaguna"
 
 #: plasmaquick/appletquickitem.cpp:567
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgid ""
 "This widget was written for an unknown older version of Plasma and is not "
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
-"Trepeta hori Plasmaren bertsio ezezagun baterako idatzi zen eta ez da Plasma "
-"%1(e)rekin bateragarria. Mesedez, eguneratu Plasma trepeta erabili ahal "
-"izateko."
+"Trepeta hau Plasmaren bertsio zaharrago ezezagun baterako idatzi zen eta ez "
+"da Plasma %1(r)ekin bateragarria. Mesedez, jar zaitez trepetaren egilearekin "
+"harremanean eguneratutako bertsio bat lortzeko."
 
 #: plasmaquick/appletquickitem.cpp:570 plasmaquick/appletquickitem.cpp:577
 #: plasmaquick/appletquickitem.cpp:583
@@ -219,28 +215,22 @@ msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 ez da bateragarria Plasma %2(r)ekin"
 
 #: plasmaquick/appletquickitem.cpp:574
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
-#| "%2. Please contact the widget's author for an updated version."
+#, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
-"Trepeta hori Plasma %1(e)rako idatzi zen eta ez da Plasma %2(e)rekin "
-"bateragarria. Mesedez, jar zaitez trepetaren  egilearekin harremanean "
-"eguneratutako bertsio baterako."
+"Trepeta hau Plasmaren %1(e)rako idatzi zen eta ez da Plasma %2(r)ekin "
+"bateragarria. Mesedez, jar zaitez trepetaren egilearekin harremanean "
+"eguneratutako bertsio bat lortzeko."
 
 #: plasmaquick/appletquickitem.cpp:580
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
-#| "%2. Please update Plasma in order to use the widget."
+#, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
-"Trepeta hori Plasma %1(e)rako idatzi zen eta ez da Plasma %2(e)rekin "
+"Trepeta hau Plasmaren %1(e)rako idatzi zen eta ez da Plasma %2(r)ekin "
 "bateragarria. Mesedez, eguneratu Plasma trepeta erabili ahal izateko."
 
 #: plasmaquick/appletquickitem.cpp:589 plasmaquick/appletquickitem.cpp:611

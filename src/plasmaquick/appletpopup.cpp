@@ -12,16 +12,12 @@
 #include <QSize>
 #include <qpa/qplatformwindow.h> // for QWINDOWSIZE_MAX
 
-#include <KConfigGroup>
-#if HAVE_X11
-#include <KWindowSystem>
-#include <KX11Extras>
-#endif
 #include "applet.h"
 #include "appletquickitem.h"
 #include "edgeeventforwarder.h"
 #include "plasmashellwaylandintegration.h"
 #include "windowresizehandler.h"
+#include <KConfigGroup>
 
 // This is a proxy object that connects to the Layout attached property of an item
 // it also handles turning properties to proper defaults
@@ -62,16 +58,8 @@ AppletPopup::AppletPopup()
     setAnimated(true);
     setFlags(flags() | Qt::Dialog);
 
-#if HAVE_X11
-    if (KWindowSystem::isPlatformX11()) {
-        KX11Extras::setType(winId(), NET::AppletPopup);
-    } else {
-#endif
-        PlasmaShellWaylandIntegration::get(this)->setRole(QtWayland::org_kde_plasma_surface::role::role_appletpopup);
-        PlasmaShellWaylandIntegration::get(this)->setTakesFocus(true);
-#if HAVE_X11
-    }
-#endif
+    PlasmaShellWaylandIntegration::get(this)->setRole(QtWayland::org_kde_plasma_surface::role::role_appletpopup);
+    PlasmaShellWaylandIntegration::get(this)->setTakesFocus(true);
 
     auto edgeForwarder = new EdgeEventForwarder(this);
     edgeForwarder->setMargins(padding());

@@ -23,20 +23,13 @@
 #include <QQuickItem>
 #include <QScreen>
 
+#include <KWindowEffects>
 #include <KWindowInfo>
 #include <KWindowSystem>
-#if HAVE_X11
-#include <KX11Extras>
-#endif
-#include <KWindowEffects>
 #include <Plasma/Corona>
 
 #include <QDebug>
 #include <optional>
-
-#if HAVE_X11
-#include <qpa/qplatformwindow_p.h>
-#endif
 
 #include "plasmashellwaylandintegration.h"
 
@@ -252,19 +245,9 @@ void DialogPrivate::updateTheme()
                                                  theme.backgroundIntensity(),
                                                  theme.backgroundSaturation(),
                                                  mask);
-#if HAVE_X11
-        if (!KWindowSystem::isPlatformX11() || KX11Extras::compositingActive()) {
-            if (hasMask) {
-                hasMask = false;
-                q->setMask(QRegion());
-            }
-        } else {
-#endif
-            hasMask = true;
-            q->setMask(dialogBackground->mask());
-#if HAVE_X11
-        }
-#endif
+
+        hasMask = true;
+        q->setMask(dialogBackground->mask());
         if (q->isVisible()) {
             DialogShadows::instance()->addWindow(q, dialogBackground->enabledBorders());
         }
@@ -714,47 +697,6 @@ QPointF DialogPrivate::positionAdjustedForMainItem(const QPointF &point) const
 
 void DialogPrivate::applyType()
 {
-    /*QXcbWindowFunctions::WmWindowType*/ int wmType = 0;
-
-#if HAVE_X11
-    if (KWindowSystem::isPlatformX11()) {
-        switch (type) {
-        case Dialog::Normal:
-            q->setFlags(Qt::FramelessWindowHint | q->flags());
-            break;
-        case Dialog::Dock:
-            wmType = QNativeInterface::Private::QXcbWindow::Dock;
-            break;
-        case Dialog::DialogWindow:
-            wmType = QNativeInterface::Private::QXcbWindow::Dialog;
-            break;
-        case Dialog::PopupMenu:
-            wmType = QNativeInterface::Private::QXcbWindow::PopupMenu;
-            break;
-        case Dialog::Tooltip:
-            wmType = QNativeInterface::Private::QXcbWindow::Tooltip;
-            break;
-        case Dialog::Notification:
-            wmType = QNativeInterface::Private::QXcbWindow::Notification;
-            break;
-        case Dialog::OnScreenDisplay:
-        case Dialog::CriticalNotification:
-        case Dialog::AppletPopup:
-            // Not supported by Qt
-            break;
-        }
-
-        if (wmType) {
-            // QXcbWindow isn't installed and thus inaccessible to us, but it does read this magic property from the window...
-            q->setProperty("_q_xcb_wm_window_type", wmType);
-        }
-    }
-#endif
-#if HAVE_X11
-    if (!wmType && type != Dialog::Normal && KWindowSystem::isPlatformX11()) {
-        KX11Extras::setType(q->winId(), static_cast<NET::WindowType>(type));
-    }
-#endif
     if (q->flags() & Qt::WindowStaysOnTopHint) {
         // If the AppletPopup type is not explicitly requested, then use the Dock type in this case
         // to avoid bug #454635.
@@ -816,15 +758,6 @@ void DialogPrivate::applyType()
             dialogBackground->setImagePath(prefix + QStringLiteral("dialogs/background"));
         }
     }
-#if HAVE_X11
-    if (KWindowSystem::isPlatformX11()) {
-        if (type == Dialog::Dock || type == Dialog::Notification || type == Dialog::OnScreenDisplay || type == Dialog::CriticalNotification) {
-            KX11Extras::setOnAllDesktops(q->winId(), true);
-        } else {
-            KX11Extras::setOnAllDesktops(q->winId(), false);
-        }
-    }
-#endif
     PlasmaShellWaylandIntegration::get(q)->setTakesFocus(!q->flags().testFlag(Qt::WindowDoesNotAcceptFocus));
 }
 
@@ -1084,13 +1017,7 @@ QPoint Dialog::popupPosition(QQuickItem *item, const QSize &size)
 
     // if the item is in a window that ignores WM we want to position the popups outside
     bool outsideParentWindow = (item->window()->flags() & Qt::X11BypassWindowManagerHint) && item->window()->mask().isNull();
-#if HAVE_X11
-    if (KWindowSystem::isPlatformX11()) {
-        // on X11 we also consider windows with the type Dock
-        const KWindowInfo winInfo(item->window()->winId(), NET::WMWindowType);
-        outsideParentWindow = outsideParentWindow || (winInfo.windowType(NET::AllTypesMask) == NET::Dock && item->window()->mask().isNull());
-    }
-#endif
+
     QRect parentGeometryBounds;
     if (outsideParentWindow) {
         parentGeometryBounds = item->window()->geometry();
@@ -1364,11 +1291,7 @@ void Dialog::showEvent(QShowEvent *event)
     if (d->backgroundHints != Dialog::NoBackground) {
         DialogShadows::instance()->addWindow(this, d->dialogBackground->enabledBorders());
     }
-#if HAVE_X11
-    if (KWindowSystem::isPlatformX11()) {
-        KX11Extras::setState(winId(), NET::SkipTaskbar | NET::SkipPager | NET::SkipSwitcher);
-    }
-#endif
+
     QQuickWindow::showEvent(event);
 }
 

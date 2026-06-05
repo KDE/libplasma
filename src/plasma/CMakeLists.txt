@@ -86,10 +86,6 @@ ecm_generate_export_header(Plasma
     DEPRECATION_VERSIONS
 )
 
-if(HAVE_X11)
-    set(PLASMA_EXTRA_LIBS ${PLASMA_EXTRA_LIBS} XCB::XCB)
-endif()
-
 target_link_libraries(Plasma
 PUBLIC
     Qt6::Gui

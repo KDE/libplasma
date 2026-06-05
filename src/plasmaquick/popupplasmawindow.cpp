@@ -31,7 +31,6 @@ public:
     void updateEffectivePopupDirection(const QRect &anchorRect, const QRect &relativePopupPosition);
     void updateSlideEffect(const QRect &globalPosition);
     void updatePosition();
-    void updatePositionX11(const QPoint &position);
     void updatePositionWayland(const QPoint &position);
     void updateBorders(const QRect &globalPosition);
     void updateVisualParentWindow();
@@ -177,18 +176,11 @@ void PopupPlasmaWindowPrivate::updatePosition()
     updateEffectivePopupDirection(parentAnchorRect.toRect(), relativePopupPosition);
     updateSlideEffect(popupPosition);
 
-    if (KWindowSystem::isPlatformX11()) {
-        updatePositionX11(popupPosition.topLeft());
-    } else if (KWindowSystem::isPlatformWayland()) {
+    if (KWindowSystem::isPlatformWayland()) {
         updatePositionWayland(popupPosition.topLeft());
     }
 
     updateBorders(popupPosition);
-}
-
-void PopupPlasmaWindowPrivate::updatePositionX11(const QPoint &position)
-{
-    q->setPosition(position);
 }
 
 void PopupPlasmaWindowPrivate::updatePositionWayland(const QPoint &position)

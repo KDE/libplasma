@@ -31,7 +31,7 @@ public:
     void updateEffectivePopupDirection(const QRect &anchorRect, const QRect &relativePopupPosition);
     void updateSlideEffect(const QRect &globalPosition);
     void updatePosition();
-    void updatePositionWayland(const QPoint &position);
+    void updatePosition(const QPoint &position);
     void updateBorders(const QRect &globalPosition);
     void updateVisualParentWindow();
 
@@ -177,13 +177,13 @@ void PopupPlasmaWindowPrivate::updatePosition()
     updateSlideEffect(popupPosition);
 
     if (KWindowSystem::isPlatformWayland()) {
-        updatePositionWayland(popupPosition.topLeft());
+        updatePosition(popupPosition.topLeft());
     }
 
     updateBorders(popupPosition);
 }
 
-void PopupPlasmaWindowPrivate::updatePositionWayland(const QPoint &position)
+void PopupPlasmaWindowPrivate::updatePosition(const QPoint &position)
 {
     // still update's Qt internal reference as it's used by the next dialog
     // this can be dropped when we're using true semantic positioning in the backend

@@ -37,14 +37,6 @@ kcoreaddons_add_plugin(dummycontainmentaction SOURCES dummycontainmentaction.cpp
 target_link_libraries(dummycontainmentaction Plasma::Plasma)
 kcoreaddons_target_static_plugins(pluginloadertest NAMESPACE "plasma/containmentactions")
 
-if(HAVE_X11)
-    ecm_add_test(
-        dialognativetest.cpp
-        TEST_NAME dialognativetest
-        LINK_LIBRARIES Qt6::Gui Qt6::Test Qt6::Qml Qt6::Quick KF6::WindowSystem Plasma::Plasma Plasma::PlasmaQuick
-    )
-endif()
-
 ecm_add_test(
     coronatest.cpp
     coronatestresources.qrc

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-05 00:46+0000\n"
-"PO-Revision-Date: 2026-04-11 18:08+0400\n"
+"PO-Revision-Date: 2026-06-05 13:57+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -243,13 +243,13 @@ msgid "Error loading Applet: package %1 does not exist."
 msgstr "خطأ في تحميل البريمج: الحزمة %1غير موجودة."
 
 #: plasmaquick/appletquickitem.cpp:614
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package %1 does not exist."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Error loading Applet: package format is invalid (does not contain any "
 "metadata)."
-msgstr "خطأ في تحميل البريمج: الحزمة %1غير موجودة."
+msgstr ""
+"خطأ في تحميل البريمج: تنسيق الحزمة غير صالح (لا تحتوي على أي بيانات وصفية)."
 
 #: plasmaquick/configview.cpp:189
 #, kde-format

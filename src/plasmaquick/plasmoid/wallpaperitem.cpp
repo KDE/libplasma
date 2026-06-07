@@ -51,12 +51,6 @@ void WallpaperItem::classBegin()
     // if there is no applet context we are running inside the screen locker
     if (ac) {
         m_containment = ac->applet()->containment();
-        m_wallpaperPlugin = m_containment->wallpaperPlugin();
-
-        auto pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Wallpaper"));
-        pkg.setPath(m_wallpaperPlugin);
-        m_metadata = pkg.metadata();
-
         connect(m_containment->corona(), &Plasma::Corona::startupCompleted, this, &WallpaperItem::accentColorChanged);
     }
 }
@@ -64,6 +58,10 @@ void WallpaperItem::classBegin()
 void WallpaperItem::componentComplete()
 {
     QQuickItem::componentComplete();
+
+    auto pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Wallpaper"));
+    pkg.setPath(m_wallpaperPlugin);
+    m_metadata = pkg.metadata();
 
     m_loading = false;
     Q_EMIT isLoadingChanged();

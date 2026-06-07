@@ -53,8 +53,9 @@ void WallpaperItem::classBegin()
         m_containment = ac->applet()->containment();
         m_wallpaperPlugin = m_containment->wallpaperPlugin();
 
-        m_pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Wallpaper"));
-        m_pkg.setPath(m_wallpaperPlugin);
+        auto pkg = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("Plasma/Wallpaper"));
+        pkg.setPath(m_wallpaperPlugin);
+        m_metadata = pkg.metadata();
 
         connect(m_containment->corona(), &Plasma::Corona::startupCompleted, this, &WallpaperItem::accentColorChanged);
     }
@@ -79,9 +80,9 @@ QList<KPluginMetaData> WallpaperItem::listWallpaperMetadataForMimetype(const QSt
     return KPackage::PackageLoader::self()->findPackages(QStringLiteral("Plasma/Wallpaper"), QString(), filter);
 }
 
-KPackage::Package WallpaperItem::kPackage() const
+KPluginMetaData WallpaperItem::metadata() const
 {
-    return m_pkg;
+    return m_metadata;
 }
 
 QString WallpaperItem::pluginName() const
@@ -202,7 +203,7 @@ QQmlListProperty<QAction> WallpaperItem::qmlContextualActions()
 
 bool WallpaperItem::supportsMimetype(const QString &mimetype) const
 {
-    return m_pkg.metadata().value(u"X-Plasma-DropMimeTypes", QStringList()).contains(mimetype);
+    return m_metadata.value(u"X-Plasma-DropMimeTypes", QStringList()).contains(mimetype);
 }
 
 bool WallpaperItem::isLoading() const

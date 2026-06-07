@@ -555,7 +555,7 @@ void ContainmentItem::mimeTypeRetrieved(KIO::Job *job, const QString &mimetype)
         if (m_containment->containmentType() != Plasma::Containment::Type::Panel
             && m_containment->containmentType() != Plasma::Containment::Type::CustomPanel) {
             if (m_wallpaperItem && m_wallpaperItem->supportsMimetype(mimetype)) {
-                wallpaperList << m_wallpaperItem->kPackage().metadata();
+                wallpaperList << m_wallpaperItem->metadata();
             } else {
                 wallpaperList = WallpaperItem::listWallpaperMetadataForMimetype(mimetype);
             }

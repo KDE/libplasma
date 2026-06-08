@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-05 00:46+0000\n"
-"PO-Revision-Date: 2026-04-17 19:42+0900\n"
+"PO-Revision-Date: 2026-06-07 16:02+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -247,13 +247,12 @@ msgid "Error loading Applet: package %1 does not exist."
 msgstr "載入小程式時發生錯誤：軟體包 %1 不存在。"
 
 #: plasmaquick/appletquickitem.cpp:614
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package %1 does not exist."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Error loading Applet: package format is invalid (does not contain any "
 "metadata)."
-msgstr "載入小程式時發生錯誤：軟體包 %1 不存在。"
+msgstr "載入小程式時發生錯誤：軟體包格式無效（不包含任何中繼資料）。"
 
 #: plasmaquick/configview.cpp:189
 #, kde-format

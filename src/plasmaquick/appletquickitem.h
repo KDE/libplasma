@@ -108,7 +108,7 @@ class PLASMAQUICK_EXPORT AppletQuickItem : public QQuickItem
     /*!
      * Gives compatibility to the old plasmoid.* api
      */
-    Q_PROPERTY(QObject *plasmoid READ applet CONSTANT)
+    Q_PROPERTY(Plasma::Applet *plasmoid READ applet CONSTANT)
 
     /*!
      * Text to display in a badge overlay on top of the applet's icon. If empty,

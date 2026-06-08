@@ -395,6 +395,8 @@ Item {
     Accessible.role: Accessible.Button
     Accessible.name: title
     Accessible.description: subtitle
+    Accessible.expandable: hasExpandableContent
+    Accessible.expanded: expanded
 
     PlasmaComponents3.ToolTip {
         text: listItem.title + (listItem.subtitle.length > 0 ? "\n" + listItem.subtitle : "")

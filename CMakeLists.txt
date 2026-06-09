@@ -39,7 +39,7 @@ ecm_setup_version(PROJECT
                   VARIABLE_PREFIX PLASMA
                   VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/plasma_version.h"
                   PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/PlasmaConfigVersion.cmake"
-                  SOVERSION 7)
+                  SOVERSION 8)
 
 ################# now find all used packages #################
 

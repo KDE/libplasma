@@ -54,11 +54,6 @@ public:
     Plasma::Corona *corona() const;
 
     /*!
-     * Returns the KConfigGroup of this view
-     **/
-    virtual KConfigGroup config() const;
-
-    /*!
      * sets the containment for this view
      * \a cont the containment of this view
      **/

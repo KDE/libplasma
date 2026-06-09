@@ -21,7 +21,6 @@ namespace Plasma
 void GenericPackage::initPackage(KPackage::Package *package)
 {
     package->addFileDefinition("mainscript", QStringLiteral("ui/main.qml"));
-    package->setRequired("mainscript", true);
     package->addFileDefinition("test", QStringLiteral("tests/test.qml"));
 
     if (QStringList platform = KRuntimePlatform::runtimePlatform(); !platform.isEmpty()) {

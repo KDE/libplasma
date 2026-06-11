@@ -10,10 +10,10 @@
 #include "dialog.h"
 #include "appletquickitem.h"
 #include "configview.h"
+#include "containmentview.h"
 #include "debug_p.h"
 #include "dialogbackground_p.h"
 #include "dialogshadows_p.h"
-#include "quickviewsharedengine.h"
 
 #include <QLayout>
 #include <QMenu>
@@ -1271,7 +1271,7 @@ void Dialog::focusOutEvent(QFocusEvent *ev)
         const QWindow *focusWindow = QGuiApplication::focusWindow();
         bool childHasFocus = focusWindow && ((focusWindow->isActive() && isAncestorOf(focusWindow)) || (focusWindow->type() & Qt::Popup) == Qt::Popup);
 
-        const bool viewClicked = qobject_cast<const PlasmaQuick::QuickViewSharedEngine *>(focusWindow) || qobject_cast<const ConfigView *>(focusWindow);
+        const bool viewClicked = qobject_cast<const PlasmaQuick::ContainmentView *>(focusWindow) || qobject_cast<const ConfigView *>(focusWindow);
 
         if (viewClicked || (!parentHasFocus && !childHasFocus)) {
             setVisible(false);

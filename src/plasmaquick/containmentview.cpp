@@ -7,7 +7,8 @@
 #include "containmentview.h"
 #include "configview.h"
 #include "debug_p.h"
-#include "plasmoid/containmentitem.h"
+#include "plasmaquick.h"
+#include "plasmoid/plasmoiditem.h"
 
 #include <KPackage/Package>
 #include <QDebug>
@@ -17,6 +18,8 @@
 #include <QQuickItem>
 #include <QScreen>
 #include <QTimer>
+
+#include <KLocalizedQmlContext>
 
 namespace PlasmaQuick
 {
@@ -42,12 +45,21 @@ public:
     QScreen *lastScreen;
     QPointer<Plasma::Containment> containment;
     QPointer<ConfigView> configContainmentView;
+    std::shared_ptr<QQmlEngine> engine;
+    std::unique_ptr<QQmlContext> qmlContext;
+    std::unique_ptr<QQuickItem> rootObject;
+    std::unique_ptr<KLocalizedQmlContext> i18nContext;
 };
 
 ContainmentViewPrivate::ContainmentViewPrivate(Plasma::Corona *cor, ContainmentView *view)
     : q(view)
     , corona(cor)
+    , engine(PlasmaQuick::globalEngine())
+    , qmlContext(std::make_unique<QQmlContext>(engine.get()))
 {
+    i18nContext = std::make_unique<KLocalizedQmlContext>();
+    qmlContext->setContextObject(i18nContext.get());
+    QQmlEngine::setContextForObject(i18nContext.get(), qmlContext.get());
 }
 
 ContainmentViewPrivate::~ContainmentViewPrivate()
@@ -195,7 +207,7 @@ void ContainmentViewPrivate::reactToScreenChange()
 }
 
 ContainmentView::ContainmentView(Plasma::Corona *corona, QWindow *parent)
-    : PlasmaQuick::QuickViewSharedEngine(parent)
+    : QQuickWindow(parent)
     , d(new ContainmentViewPrivate(corona, this))
 {
     setColor(Qt::transparent);
@@ -211,15 +223,13 @@ ContainmentView::ContainmentView(Plasma::Corona *corona, QWindow *parent)
     if (corona->kPackage().isValid()) {
         const auto info = corona->kPackage().metadata();
         if (info.isValid()) {
-            setTranslationDomain(QStringLiteral("plasma_shell_") + info.pluginId());
+            d->i18nContext->setTranslationDomain(QStringLiteral("plasma_shell_") + info.pluginId());
         } else {
             qCWarning(LOG_PLASMAQUICK) << "Invalid corona package metadata";
         }
     } else {
         qCWarning(LOG_PLASMAQUICK) << "Invalid home screen package";
     }
-
-    setResizeMode(ContainmentView::SizeRootObjectToView);
 }
 
 ContainmentView::~ContainmentView()
@@ -287,11 +297,50 @@ QRectF ContainmentView::screenGeometry()
     return screen()->geometry();
 }
 
+QQuickItem *ContainmentView::rootObject() const
+{
+    return d->rootObject.get();
+}
+
+QQmlContext *ContainmentView::rootContext() const
+{
+    return d->qmlContext.get();
+}
+
+void ContainmentView::setSource(const QUrl &url)
+{
+    if (url.isEmpty()) {
+        qWarning(LOG_PLASMAQUICK) << "File name empty!";
+    }
+
+    QQmlComponent component(d->engine.get());
+
+    // Important! Some parts of Plasma are extremely sensitive to status changed
+    // signal being emit in exactly the same way QQmlComponent does it. So this
+    // connection needs to happen before any loading of the component happens.
+    QObject::connect(&component, &QQmlComponent::statusChanged, this, &ContainmentView::statusChanged, Qt::QueuedConnection);
+    component.loadUrl(url);
+
+    auto obj = component.create(d->qmlContext.get());
+
+    auto item = qobject_cast<QQuickItem *>(obj);
+    item->setParentItem(contentItem());
+    item->setSize(QSize(width(), height()));
+
+    d->rootObject = std::unique_ptr<QQuickItem>(item);
+}
+
 void ContainmentView::showConfigurationInterface(Plasma::Applet *applet)
 {
     d->showConfigurationInterface(applet);
 }
 
+void ContainmentView::resizeEvent(QResizeEvent *e)
+{
+    d->rootObject->setSize(e->size());
+
+    QQuickWindow::resizeEvent(e);
+}
 }
 
 #include "moc_containmentview.cpp"

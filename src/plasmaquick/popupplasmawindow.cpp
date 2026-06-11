@@ -15,8 +15,8 @@
 #include <qtmetamacros.h>
 
 #include "configview.h"
+#include "containmentview.h"
 #include "plasmashellwaylandintegration.h"
-#include "quickviewsharedengine.h"
 #include "transientplacementhint_p.h"
 #include "utils.h"
 
@@ -294,7 +294,7 @@ void PopupPlasmaWindowPrivate::handleFocusChanged()
 
         bool childHasFocus = focusWindow && ((focusWindow->isActive() && q->isAncestorOf(focusWindow)) || (focusWindow->type() & Qt::Popup) == Qt::Popup);
 
-        const bool viewClicked = qobject_cast<const PlasmaQuick::QuickViewSharedEngine *>(focusWindow) || qobject_cast<const ConfigView *>(focusWindow);
+        const bool viewClicked = qobject_cast<const PlasmaQuick::ContainmentView *>(focusWindow) || qobject_cast<const ConfigView *>(focusWindow);
 
         if (viewClicked || (!parentHasFocus && !childHasFocus)) {
             q->setVisible(false);

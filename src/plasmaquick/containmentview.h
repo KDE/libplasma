@@ -10,7 +10,9 @@
 #include "plasma/containment.h"
 #include "plasma/corona.h"
 #include <plasmaquick/plasmaquick_export.h>
-#include <plasmaquick/quickviewsharedengine.h>
+
+#include <QQmlComponent>
+#include <QQuickWindow>
 
 //
 //  W A R N I N G
@@ -27,7 +29,7 @@ namespace PlasmaQuick
 {
 class ContainmentViewPrivate;
 
-class PLASMAQUICK_EXPORT ContainmentView : public PlasmaQuick::QuickViewSharedEngine
+class PLASMAQUICK_EXPORT ContainmentView : public QQuickWindow
 {
     Q_OBJECT
     Q_PROPERTY(Plasma::Types::Location location READ location WRITE setLocation NOTIFY locationChanged)
@@ -90,6 +92,15 @@ public:
      **/
     QRectF screenGeometry();
 
+    QQuickItem *rootObject() const;
+
+    QQmlContext *rootContext() const;
+
+    void setSource(const QUrl &url);
+
+protected:
+    void resizeEvent(QResizeEvent *e) override;
+
 protected Q_SLOTS:
     /*!
      * It will be called when the configuration is requested
@@ -116,6 +127,8 @@ Q_SIGNALS:
      * emitted when the screenGeometry is changed
      **/
     void screenGeometryChanged();
+
+    void statusChanged(QQmlComponent::Status status);
 
 private:
     ContainmentViewPrivate *const d;

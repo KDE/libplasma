@@ -223,13 +223,10 @@ void AppletPopup::updateSize()
         std::min(std::max(minimumSize().height(), wantedSize.height()), maximumSize().height())
     };
 
-    if (size.isEmpty()) {
-        qmlWarning(this) << "trying to show an empty applet popup";
-        Q_ASSERT(false);
-    }
-
     if (!size.isEmpty()) {
         resize(size);
+    } else {
+        qmlWarning(this) << "trying to show an empty applet popup";
     }
 }
 

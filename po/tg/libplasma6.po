@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-05 00:46+0000\n"
+"POT-Creation-Date: 2026-06-12 00:45+0000\n"
 "PO-Revision-Date: 2020-09-19 11:42+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -60,17 +60,17 @@ msgstr ""
 msgid "Clear search"
 msgstr ""
 
-#: plasma/applet.cpp:318
+#: plasma/applet.cpp:316
 #, kde-format
 msgid "Unknown"
 msgstr "Номаълум"
 
-#: plasma/applet.cpp:764
+#: plasma/applet.cpp:762
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Фаъол кардани виҷети %1"
 
-#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:100
+#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:98
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -81,7 +81,7 @@ msgstr "Тоза кардани %1"
 msgid "Enter Edit Mode"
 msgstr "Гузариш ба реҷаи тағйирдиҳӣ"
 
-#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:105
+#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:103
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -107,52 +107,52 @@ msgstr "Баромад аз реҷаи тағйирдиҳӣ"
 msgid "Could not find requested component: %1"
 msgstr "Унсури дархостшуда ёфт нашуд: %1"
 
-#: plasma/private/applet_p.cpp:118
+#: plasma/private/applet_p.cpp:116
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "Намоиш додани имконоти дигар..."
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "Widget Removed"
 msgstr "Виҷет тоза шуд"
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:235
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "Виҷети \"%1\" тоза карда шуд."
 
-#: plasma/private/applet_p.cpp:241
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "Panel Removed"
 msgstr "Лавҳа тоза шуд"
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "A panel has been removed."
 msgstr "Лавҳа тоза карда шуд."
 
-#: plasma/private/applet_p.cpp:245
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "Desktop Removed"
 msgstr "Мизи корӣ тоза шуд"
 
-#: plasma/private/applet_p.cpp:246
+#: plasma/private/applet_p.cpp:244
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "Мизи корӣ тоза карда шуд."
 
-#: plasma/private/applet_p.cpp:249
+#: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "Undo"
 msgstr "Ботил сохтан"
 
-#: plasma/private/applet_p.cpp:319
+#: plasma/private/applet_p.cpp:317
 #, kde-format
 msgid "Widget Settings"
 msgstr "Танзимоти виҷетҳо"
 
-#: plasma/private/applet_p.cpp:325
+#: plasma/private/applet_p.cpp:323
 #, kde-format
 msgid "Remove this Widget"
 msgstr "Тоза кардани ин виҷет"

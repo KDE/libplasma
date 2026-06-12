@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-05 00:46+0000\n"
+"POT-Creation-Date: 2026-06-12 00:45+0000\n"
 "PO-Revision-Date: 2026-05-28 08:34+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -63,17 +63,17 @@ msgstr "חיפוש"
 msgid "Clear search"
 msgstr "פינוי החיפוש"
 
-#: plasma/applet.cpp:318
+#: plasma/applet.cpp:316
 #, kde-format
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: plasma/applet.cpp:764
+#: plasma/applet.cpp:762
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "הפעלת יישומון %1"
 
-#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:100
+#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:98
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -84,7 +84,7 @@ msgstr "הסרת %1"
 msgid "Enter Edit Mode"
 msgstr "כניסה למצב עריכה"
 
-#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:105
+#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:103
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -110,52 +110,52 @@ msgstr "יציאה ממצב עריכה"
 msgid "Could not find requested component: %1"
 msgstr "לא ניתן למצוא את הרכיב המבוקש: %1"
 
-#: plasma/private/applet_p.cpp:118
+#: plasma/private/applet_p.cpp:116
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "הצגת חלופות…"
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "Widget Removed"
 msgstr "יישומון הוסר"
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:235
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "היישומון „%1” הוסר."
 
-#: plasma/private/applet_p.cpp:241
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "Panel Removed"
 msgstr "לוח הוסר"
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "A panel has been removed."
 msgstr "לוח הוסר."
 
-#: plasma/private/applet_p.cpp:245
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "Desktop Removed"
 msgstr "שולחן עבודה הוסר"
 
-#: plasma/private/applet_p.cpp:246
+#: plasma/private/applet_p.cpp:244
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "שולחן עבודה הוסר."
 
-#: plasma/private/applet_p.cpp:249
+#: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "Undo"
 msgstr "החזרה"
 
-#: plasma/private/applet_p.cpp:319
+#: plasma/private/applet_p.cpp:317
 #, kde-format
 msgid "Widget Settings"
 msgstr "הגדרות יישומון"
 
-#: plasma/private/applet_p.cpp:325
+#: plasma/private/applet_p.cpp:323
 #, kde-format
 msgid "Remove this Widget"
 msgstr "הסרת יישומון זה"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-05 00:46+0000\n"
+"POT-Creation-Date: 2026-06-12 00:45+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -60,17 +60,17 @@ msgstr "搜索"
 msgid "Clear search"
 msgstr "清除搜索内容"
 
-#: plasma/applet.cpp:318
+#: plasma/applet.cpp:316
 #, kde-format
 msgid "Unknown"
 msgstr "未知"
 
-#: plasma/applet.cpp:764
+#: plasma/applet.cpp:762
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "激活 %1 小部件"
 
-#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:100
+#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:98
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
@@ -81,7 +81,7 @@ msgstr "移除 %1"
 msgid "Enter Edit Mode"
 msgstr "进入编辑模式"
 
-#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:105
+#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:103
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -107,52 +107,52 @@ msgstr "退出编辑模式"
 msgid "Could not find requested component: %1"
 msgstr "无法找到所需组件：%1"
 
-#: plasma/private/applet_p.cpp:118
+#: plasma/private/applet_p.cpp:116
 #, kde-format
 msgid "Show Alternatives..."
 msgstr "显示替代小部件..."
 
-#: plasma/private/applet_p.cpp:236
+#: plasma/private/applet_p.cpp:234
 #, kde-format
 msgid "Widget Removed"
 msgstr "小部件已移除"
 
-#: plasma/private/applet_p.cpp:237
+#: plasma/private/applet_p.cpp:235
 #, kde-format
 msgid "The widget \"%1\" has been removed."
 msgstr "小部件“%1”已移除。"
 
-#: plasma/private/applet_p.cpp:241
+#: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "Panel Removed"
 msgstr "面板已移除"
 
-#: plasma/private/applet_p.cpp:242
+#: plasma/private/applet_p.cpp:240
 #, kde-format
 msgid "A panel has been removed."
 msgstr "已移除面板。"
 
-#: plasma/private/applet_p.cpp:245
+#: plasma/private/applet_p.cpp:243
 #, kde-format
 msgid "Desktop Removed"
 msgstr "桌面已移除"
 
-#: plasma/private/applet_p.cpp:246
+#: plasma/private/applet_p.cpp:244
 #, kde-format
 msgid "A desktop has been removed."
 msgstr "已移除桌面。"
 
-#: plasma/private/applet_p.cpp:249
+#: plasma/private/applet_p.cpp:247
 #, kde-format
 msgid "Undo"
 msgstr "撤销"
 
-#: plasma/private/applet_p.cpp:319
+#: plasma/private/applet_p.cpp:317
 #, kde-format
 msgid "Widget Settings"
 msgstr "小部件设置"
 
-#: plasma/private/applet_p.cpp:325
+#: plasma/private/applet_p.cpp:323
 #, kde-format
 msgid "Remove this Widget"
 msgstr "移除此小部件"

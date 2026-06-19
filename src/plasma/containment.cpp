@@ -75,17 +75,17 @@ void Containment::init()
     Applet::init();
 
     connect(corona(), &Plasma::Corona::availableScreenRectChanged, this, [this](int screenId) {
-        if (screenId == screen()) {
+        if (screenId == lastScreen()) {
             Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
         }
     });
     connect(corona(), &Plasma::Corona::availableScreenRegionChanged, this, [this](int screenId) {
-        if (screenId == screen()) {
+        if (screenId == lastScreen()) {
             Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
         }
     });
     connect(corona(), &Plasma::Corona::screenGeometryChanged, this, [this](int screenId) {
-        if (screenId == screen()) {
+        if (screenId == lastScreen()) {
             Q_EMIT screenGeometryChanged(screenGeometry());
         }
     });
@@ -475,14 +475,10 @@ QList<Applet *> Containment::applets() const
 
 int Containment::screen() const
 {
-    Q_ASSERT(corona());
-    if (Containment *pc = qobject_cast<Containment *>(parent()); pc && isContainment()) {
+    if (Containment *pc = qobject_cast<Containment *>(parent()); pc) {
         return pc->screen();
-    } else if (Corona *c = corona()) {
-        return c->screenForContainment(this);
-    } else {
-        return -1;
     }
+    return d->screen;
 }
 
 int Containment::lastScreen() const
@@ -493,51 +489,58 @@ int Containment::lastScreen() const
     return d->lastScreen;
 }
 
+void Containment::setScreen(int newScreen)
+{
+    if (!corona() || d->screen == newScreen) {
+        return;
+    }
+
+    if (newScreen < corona()->numScreens()) {
+        d->screen = newScreen;
+    } else {
+        d->screen = -1;
+    }
+
+    Q_EMIT screenChanged(newScreen);
+
+    if (newScreen >= 0) {
+        d->lastScreen = newScreen;
+        KConfigGroup c = config();
+        c.writeEntry("lastScreen", d->lastScreen);
+        Q_EMIT configNeedsSaving();
+
+        Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
+        Q_EMIT screenGeometryChanged(screenGeometry());
+        Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
+    }
+}
+
 QRectF Containment::availableRelativeScreenRect() const
 {
-    if (!corona()) {
+    if (!corona() || d->lastScreen < 0) {
         return {};
     }
 
-    int screenId = screen();
-
-    // If corona returned an invalid screenId, try to use lastScreen value if it is valid
-    if (screenId == -1 && lastScreen() > -1) {
-        screenId = lastScreen();
-        // Is this a screen not actually valid?
-        if (screenId >= corona()->numScreens()) {
-            screenId = -1;
-        }
-    }
-
-    if (screenId > -1) {
-        QRectF rect = corona()->availableScreenRect(screenId);
-        // make it relative
-        QRectF geometry = corona()->screenGeometry(screenId);
-        rect.moveTo(rect.topLeft() - geometry.topLeft());
-        return rect;
-    }
-
-    return {};
+    QRectF rect = corona()->availableScreenRect(d->lastScreen);
+    // make it relative
+    QRectF geometry = corona()->screenGeometry(d->lastScreen);
+    rect.moveTo(rect.topLeft() - geometry.topLeft());
+    return rect;
 }
 
 QList<QRectF> Containment::availableRelativeScreenRegion() const
 {
     QList<QRectF> regVal;
 
-    if (!containment() || !containment()->corona()) {
+    if (!containment() || !containment()->corona() || d->lastScreen < 0) {
         return regVal;
     }
 
-    int screenId = screen();
-    if (screenId < 0) {
-        return {};
-    }
-    QRegion reg = containment()->corona()->availableScreenRegion(screenId);
+    QRegion reg = containment()->corona()->availableScreenRegion(d->lastScreen);
 
     auto it = reg.begin();
     const auto itEnd = reg.end();
-    QRect geometry = containment()->corona()->screenGeometry(screenId);
+    QRect geometry = containment()->corona()->screenGeometry(d->lastScreen);
     for (; it != itEnd; ++it) {
         QRect rect = *it;
         // make it relative
@@ -549,11 +552,11 @@ QList<QRectF> Containment::availableRelativeScreenRegion() const
 
 QRectF Containment::screenGeometry() const
 {
-    if (!corona() || screen() < 0) {
+    if (!corona() || d->lastScreen < 0) {
         return {};
     }
 
-    return corona()->screenGeometry(screen());
+    return corona()->screenGeometry(d->lastScreen);
 }
 
 void Containment::setWallpaperPlugin(const QString &pluginName)
@@ -678,24 +681,6 @@ QString Containment::activityName() const
 #else
     return QString();
 #endif
-}
-
-void Containment::reactToScreenChange()
-{
-    int newScreen = screen();
-
-    Q_EMIT screenChanged(newScreen);
-
-    if (newScreen >= 0) {
-        d->lastScreen = newScreen;
-        KConfigGroup c = config();
-        c.writeEntry("lastScreen", d->lastScreen);
-        Q_EMIT configNeedsSaving();
-
-        Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
-        Q_EMIT screenGeometryChanged(screenGeometry());
-        Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
-    }
 }
 
 } // Plasma namespace

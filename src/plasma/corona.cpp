@@ -254,11 +254,6 @@ Containment *Corona::createContainmentDelayed(const QString &name, const QVarian
     return nullptr;
 }
 
-int Corona::screenForContainment(const Containment *) const
-{
-    return -1;
-}
-
 int Corona::numScreens() const
 {
     return 1;
@@ -688,7 +683,7 @@ void CoronaPrivate::notifyContainmentsReady()
 {
     containmentsStarting = 0;
     for (Containment *containment : std::as_const(containments)) {
-        if (!containment->isUiReady() && containment->screen() >= 0) {
+        if (!containment->isUiReady() && containment->lastScreen() >= 0) {
             ++containmentsStarting;
             QObject::connect(containment, &Plasma::Containment::uiReadyChanged, q, [this](bool ready) {
                 containmentReady(ready);

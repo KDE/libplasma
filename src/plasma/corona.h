@@ -9,6 +9,8 @@
 #ifndef PLASMA_CORONA_H
 #define PLASMA_CORONA_H
 
+#include <QScreen>
+
 #include <plasma/containment.h>
 #include <plasma/plasma.h>
 #include <plasma/plasma_export.h>
@@ -141,6 +143,10 @@ public:
      */
     QList<Containment *> containmentsForScreen(int screen);
 
+    virtual int screenId(QScreen *screen) const = 0;
+
+    virtual QScreen *screenForId(int screenId) const = 0;
+
     /*!
      * Returns the number of screens available to plasma.
      * Subclasses should override this method as the default
@@ -232,12 +238,6 @@ public:
      * \since 4.6
      */
     void exportLayout(KConfigGroup &config, QList<Containment *> containments);
-
-    /*!
-     * Returns the id of the screen which is showing \a containment
-     * -1 is returned if the containment is not associated with a screen.
-     */
-    virtual int screenForContainment(const Containment *containment) const;
 
     /*!
      * Returns the type of immutability of this Corona
@@ -334,6 +334,8 @@ Q_SIGNALS:
      * \a isScreen the screen it is now associated with
      */
     void screenOwnerChanged(int isScreen);
+
+    int screenIdChanged(QScreen *screen, int screenId);
 
     /*!
      * This signal indicates that the configuration file was flushed to disk.

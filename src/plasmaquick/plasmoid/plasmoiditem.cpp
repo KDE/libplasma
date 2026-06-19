@@ -230,7 +230,7 @@ void PlasmoidItem::setToolTipItem(QQuickItem *toolTipItem)
 int PlasmoidItem::screen() const
 {
     if (Plasma::Containment *c = applet()->containment()) {
-        return c->screen();
+        return c->lastScreen();
     }
 
     return -1;

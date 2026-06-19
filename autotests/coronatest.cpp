@@ -22,18 +22,27 @@ SimpleCorona::~SimpleCorona()
 {
 }
 
+int SimpleCorona::screenId(QScreen *screen) const
+{
+    const auto screens = qApp->screens();
+    return screens.indexOf(screen);
+}
+
+QScreen *SimpleCorona::screenForId(int screenId) const
+{
+    const auto screens = qApp->screens();
+
+    if (screenId < 0 || screenId >= screens.size()) {
+        return nullptr;
+    }
+
+    return screens[screenId];
+}
+
 QRect SimpleCorona::screenGeometry(int screen) const
 {
     // completely arbitrary, still not tested
     return QRect(100 * screen, 100, 100, 100);
-}
-
-int SimpleCorona::screenForContainment(const Plasma::Containment *c) const
-{
-    if (qobject_cast<const SimpleNoScreenContainment *>(c)) {
-        return -1;
-    }
-    return 0;
 }
 
 SimpleApplet::SimpleApplet(QObject *parentObject, const KPluginMetaData &data, const QVariantList &args)

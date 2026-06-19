@@ -104,7 +104,7 @@ class PLASMA_EXPORT Containment : public Applet
      * \property Plasma::Containment::screen
      * The screen number this containment is serving as the desktop for, or -1 if none
      */
-    Q_PROPERTY(int screen READ screen NOTIFY screenChanged)
+    Q_PROPERTY(int screen READ lastScreen NOTIFY screenChanged)
 
     /*!
      * \property Plasma::Containment::availableScreenRect
@@ -220,17 +220,20 @@ public:
     QList<Applet *> applets() const;
 
     /*!
-     * Returns the screen number this containment is serving as the desktop for
-     *         or -1 if none
-     */
-    int screen() const; // TODO KF6 virtual? this should be available to applet as well
-
-    /*!
      * Returns the last screen number this containment had
      *         only returns -1 if it's never ever been on a screen
      * \since 4.5
      */
     int lastScreen() const;
+    int screen() const;
+
+    /*!
+     * Sets the screen the containment will be automatically assigned when restored or
+     * Assigned a view. Setting this on a containment that has screen() > -1 has no effect.
+     *
+     * \since 6.8
+     */
+    void setScreen(int screen);
 
     void save(KConfigGroup &group) const override;
 
@@ -472,8 +475,6 @@ public Q_SLOTS:
      * \since 5.77
      */
     void setContainmentDisplayHints(Plasma::Types::ContainmentDisplayHints hints);
-
-    void reactToScreenChange();
 
 protected:
     /*!

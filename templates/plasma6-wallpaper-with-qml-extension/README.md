@@ -3,7 +3,7 @@
     SPDX-FileCopyrightText: none
 -->
 
-# Plasma Applet Template
+# Plasma Wallpaper with QML extension
 
 ## Namespace adaption
 
@@ -21,14 +21,15 @@ As this namespace is reserved for use by plugins part of Plasma modules, you wil
 need to adapt this namespace if you are writing a plugin which is not intended to
 end up in the Plasma modules.
 
-## Build instructions
+
+## Build instructions ##
 
 ```
 cd /where/your/applet/is/generated
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=MYPREFIX .. 
-make 
+cmake -DCMAKE_INSTALL_PREFIX=MYPREFIX ..
+make
 make install
 ```
 
@@ -38,7 +39,6 @@ Restart plasma to load the applet
 `plasmashell --replace`
 
 or view it with
-
 `plasmoidviewer -a YourAppletName`
 
 ## Tutorials and resources

@@ -19,7 +19,7 @@ PlasmoidItem {
         }
         PC.Label {
             Layout.alignment: Qt.AlignCenter
-            text: "This is Plasma!"
+            text: i18nc("@label", "This is Plasma!")
         }
     }
 }

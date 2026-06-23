@@ -53,7 +53,7 @@
                 "Name[zh_TW]": "%{AUTHOR}"
             }
         ],
-        "Description": "",
+        "Description": "A description for your wallpaper plugin",
         "Icon": "plasma",
         "Id": "org.kde.plasma.%{APPNAMELC}",
         "License": "LGPL-2.1+",

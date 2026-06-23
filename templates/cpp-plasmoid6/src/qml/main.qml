@@ -6,6 +6,8 @@ import QtQuick.Layouts
 import org.kde.plasma.plasmoid
 import org.kde.plasma.components as PC3
 
+import plasma.applet.org.kde.plasma.%{APPNAMELC}
+
 PlasmoidItem {
     id: root
 

@@ -1,11 +1,11 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasma_wallpaper_org.kde.plasma.%{APPNAMELC}\")
 
-add_library(%{APPNAMELC}plugin SHARED %{APPNAMELC}plugin.cpp)
+ecm_add_qml_module(%{APPNAMELC}plugin URI org.kde.plasma.private.%{APPNAMELC} SOURCES helloworld.cpp GENERATE_PLUGIN_SOURCE)
 
-target_link_libraries(%{APPNAMELC}plugin
+target_link_libraries(%{APPNAMELC}plugin PRIVATE
     KF6::I18n
     Qt6::Gui
     Qt6::Qml
 )
-install(TARGETS %{APPNAMELC}plugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/plasma/private/%{APPNAMELC})
-install(FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/plasma/private/%{APPNAMELC})
+
+ecm_finalize_qml_module(%{APPNAMELC}plugin)

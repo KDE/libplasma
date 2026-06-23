@@ -8,7 +8,7 @@ import QtQuick.Layouts
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.plasmoid
-import org.kde.plasma.private.%{APPNAMELC} 1.0
+import org.kde.plasma.private.%{APPNAMELC}
 
 WallpaperItem {
     id: root
@@ -30,7 +30,7 @@ WallpaperItem {
 
         PlasmaComponents.Label {
             Layout.alignment: Qt.AlignCenter
-            text: HelloWorld.text
+            text: HelloWorld.message
         }
     }
 }

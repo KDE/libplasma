@@ -1,2 +1,5 @@
+# SPDX-FileCopyrightText: %{CURRENT_YEAR} %{AUTHOR} <%{EMAIL}>
+# SPDX-License-Identifier: BSD-2-Clause
+
 #! /usr/bin/env bash
 $XGETTEXT `find . -name \*.qml -o -name \*.cpp` -o $podir/plasma_wallpaper_org.kde.plasma.%{APPNAMELC}.pot

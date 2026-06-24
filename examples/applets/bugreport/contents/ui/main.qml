@@ -31,6 +31,7 @@ PlasmoidItem {
 
         Item {
             width: parent.width
+            height: parent.height
 
             Kirigami.Icon {
                 id: icon

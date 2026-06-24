@@ -128,5 +128,6 @@
         "Website": "https://www.kde.org/"
     },
     "Keywords": "",
-    "X-KDE-ParentApp": ""
+    "X-KDE-ParentApp": "",
+    "X-Plasma-API-Minimum-Version": "6.0"
 }

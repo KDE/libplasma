@@ -128,5 +128,6 @@
         "Name[zh_TW]": "hello world",
         "Version": "",
         "Website": "https://www.kde.org/"
-    }
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
 }

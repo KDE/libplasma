@@ -30,7 +30,3 @@ This C++ library provides:
 - loading of the plugin structure of the workspace: containments and applets
 
 See @ref libplasma.
-
-## Script engines
-Provides support to create applets or containments in various scripting languages.
-

@@ -34,7 +34,6 @@ target_sources(PlasmaQuick PRIVATE
     edgeeventforwarder.cpp
     plasmashellwaylandintegration.cpp
     sharedqmlengine.cpp
-    quickviewsharedengine.cpp
     plasmawindow.cpp
     popupplasmawindow.cpp
     transientplacementhint.cpp
@@ -60,7 +59,6 @@ target_sources(PlasmaQuick PRIVATE
     edgeeventforwarder.h
     plasmashellwaylandintegration.h
     sharedqmlengine.h
-    quickviewsharedengine.h
     plasmawindow.h
     popupplasmawindow.h
     transientplacementhint_p.h
@@ -171,7 +169,6 @@ ecm_generate_headers(PlasmaQuick_CamelCase_HEADERS
         PopupPlasmaWindow
         AppletPopup
         SharedQmlEngine
-        QuickViewSharedEngine
         PlasmaQuick
     REQUIRED_HEADERS plasmaquick_LIB_INCLUDES
     PREFIX PlasmaQuick

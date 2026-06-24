@@ -43,12 +43,6 @@ ecm_add_test(
     LINK_LIBRARIES Qt6::Gui Qt6::Qml Qt6::Widgets Qt6::Test Plasma::Plasma KF6::CoreAddons
 )
 
-ecm_add_test(
-    quickviewsharedenginetest.cpp
-    LINK_LIBRARIES Qt6::Test Plasma::PlasmaQuick
-)
-
-
 #Add a test that i18n is not used directly in any import.
 # It should /always/ be i18nd
 find_program(SH bash)

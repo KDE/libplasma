@@ -139,6 +139,7 @@ private:
     QList<QAction *> m_contextualActions;
     bool m_loading = false;
     std::optional<QColor> m_accentColor;
+    std::shared_ptr<QQmlEngine> m_engine;
 };
 
 #endif

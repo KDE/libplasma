@@ -8,11 +8,12 @@
 #include "appletcontext_p.h"
 
 #include "containmentitem.h"
-#include "sharedqmlengine.h"
+#include "plasmaquick.h"
 
 #include <KConfigLoader>
 #include <KConfigPropertyMap>
 #include <KDesktopFile>
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 
 #include <QDebug>
@@ -32,6 +33,7 @@
 
 WallpaperItem::WallpaperItem(QQuickItem *parent)
     : QQuickItem(parent)
+    , m_engine(PlasmaQuick::globalEngine())
 {
     // resize at the beginning to avoid as much resize events as possible
     if (parent) {
@@ -116,42 +118,43 @@ WallpaperItem *WallpaperItem::loadWallpaper(ContainmentItem *containmentItem)
         return nullptr;
     }
 
-    PlasmaQuick::SharedQmlEngine *qmlObject = new PlasmaQuick::SharedQmlEngine(containmentItem->containment());
-    qmlObject->setInitializationDelayed(true);
+    auto engine = PlasmaQuick::globalEngine();
+    QQmlComponent component(engine.get(), pkg.fileUrl("mainscript"));
+
+    auto context = new QQmlContext(engine.get(), containmentItem->containment());
+
+    auto i18nContext = new KLocalizedQmlContext(context);
+    context->setContextObject(i18nContext);
+    QQmlEngine::setContextForObject(i18nContext, context);
 
     const QString rootPath = pkg.metadata().value(u"X-Plasma-RootPath");
     if (!rootPath.isEmpty()) {
-        qmlObject->setTranslationDomain(QLatin1String("plasma_wallpaper_") + rootPath);
+        i18nContext->setTranslationDomain(QLatin1String("plasma_wallpaper_") + rootPath);
     } else {
-        qmlObject->setTranslationDomain(QLatin1String("plasma_wallpaper_") + pkg.metadata().pluginId());
+        i18nContext->setTranslationDomain(QLatin1String("plasma_wallpaper_") + pkg.metadata().pluginId());
     }
 
     const QString localePath = pkg.filePath("translations");
     if (!localePath.isEmpty()) {
-        KLocalizedString::addDomainLocaleDir(qmlObject->translationDomain().toLatin1(), localePath);
+        KLocalizedString::addDomainLocaleDir(i18nContext->translationDomain().toLatin1(), localePath);
     }
 
-    /*
-     * The initialization is delayed, so it's fine to setSource first.
-     * This also prevents many undefined wallpaper warnings caused by "wallpaper" being set
-     * when the old wallpaper plugin still exists.
-     */
-    qmlObject->setSource(pkg.fileUrl("mainscript"));
-    WallpaperItem *wallpaper = qobject_cast<WallpaperItem *>(qmlObject->rootObject());
+    auto obj = component.beginCreate(context);
+    WallpaperItem *wallpaper = qobject_cast<WallpaperItem *>(obj);
     if (!wallpaper) {
-        if (qmlObject->mainComponent() && qmlObject->mainComponent()->isError()) {
-            qCWarning(LOG_PLASMAQUICK) << "Error loading the wallpaper" << qmlObject->mainComponent()->errors();
-        } else if (qmlObject->rootObject()) {
+        if (component.isError()) {
+            qCWarning(LOG_PLASMAQUICK) << "Error loading the wallpaper" << component.errors();
+        } else if (obj) {
             qCWarning(LOG_PLASMAQUICK) << "Root item of wallpaper" << containmentItem->containment()->wallpaperPlugin()
-                                       << "not a WallpaperItem instance, instead is" << qmlObject->rootObject();
+                                       << "not a WallpaperItem instance, instead is" << obj;
         }
-        qmlObject->completeInitialization();
-        delete qmlObject->rootObject();
+        component.completeCreate();
+        delete obj;
         return nullptr;
     }
 
     if (!qEnvironmentVariableIntValue("PLASMA_NO_CONTEXTPROPERTIES")) {
-        qmlObject->rootContext()->setContextProperty(QStringLiteral("wallpaper"), wallpaper);
+        context->setContextProperty(QStringLiteral("wallpaper"), wallpaper);
     }
 
     // FIXME: do we need "mainconfigxml" in wallpaper packagestructures?
@@ -172,13 +175,14 @@ WallpaperItem *WallpaperItem::loadWallpaper(ContainmentItem *containmentItem)
     auto config = new KConfigPropertyMap(m_configLoader, wallpaper);
 
     // initialize with our size to avoid as much resize events as possible
-    QVariantHash props;
+    QVariantMap props;
     props[QStringLiteral("parent")] = QVariant::fromValue(containmentItem);
     props[QStringLiteral("width")] = containmentItem->width();
     props[QStringLiteral("height")] = containmentItem->height();
     props[QStringLiteral("configuration")] = QVariant::fromValue(config);
     props[QStringLiteral("pluginName")] = containmentItem->containment()->wallpaperPlugin();
-    qmlObject->completeInitialization(props);
+    component.setInitialProperties(obj, props);
+    component.completeCreate();
     return wallpaper;
 }
 

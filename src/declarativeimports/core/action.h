@@ -17,11 +17,6 @@
 
 class QQuickItem;
 
-namespace PlasmaQuick
-{
-class SharedQmlEngine;
-}
-
 class ActionExtension;
 
 class IconGroup : public QObject

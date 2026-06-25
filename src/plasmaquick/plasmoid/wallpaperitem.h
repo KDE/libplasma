@@ -24,11 +24,6 @@ namespace Plasma
 class Containment;
 }
 
-namespace PlasmaQuick
-{
-class SharedQmlEngine;
-}
-
 /*!
  * \qmltype WallpaperItem
  * \inqmlmodule org.kde.plasma.plasmoid

@@ -104,7 +104,7 @@ class PLASMA_EXPORT Containment : public Applet
      * \property Plasma::Containment::screen
      * The screen number this containment is serving as the desktop for, or -1 if none
      */
-    Q_PROPERTY(int screen READ lastScreen NOTIFY screenChanged)
+    Q_PROPERTY(int screen READ screen NOTIFY screenChanged)
 
     /*!
      * \property Plasma::Containment::availableScreenRect
@@ -224,7 +224,6 @@ public:
      *         only returns -1 if it's never ever been on a screen
      * \since 4.5
      */
-    int lastScreen() const;
     int screen() const;
 
     /*!

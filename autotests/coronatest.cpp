@@ -22,23 +22,6 @@ SimpleCorona::~SimpleCorona()
 {
 }
 
-int SimpleCorona::screenId(QScreen *screen) const
-{
-    const auto screens = qApp->screens();
-    return screens.indexOf(screen);
-}
-
-QScreen *SimpleCorona::screenForId(int screenId) const
-{
-    const auto screens = qApp->screens();
-
-    if (screenId < 0 || screenId >= screens.size()) {
-        return nullptr;
-    }
-
-    return screens[screenId];
-}
-
 QRect SimpleCorona::screenGeometry(int screen) const
 {
     // completely arbitrary, still not tested

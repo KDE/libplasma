@@ -9,8 +9,6 @@
 #ifndef PLASMA_CORONA_H
 #define PLASMA_CORONA_H
 
-#include <QScreen>
-
 #include <plasma/containment.h>
 #include <plasma/plasma.h>
 #include <plasma/plasma_export.h>
@@ -142,10 +140,6 @@ public:
      * \since 5.45
      */
     QList<Containment *> containmentsForScreen(int screen);
-
-    virtual int screenId(QScreen *screen) const = 0;
-
-    virtual QScreen *screenForId(int screenId) const = 0;
 
     /*!
      * Returns the number of screens available to plasma.
@@ -334,8 +328,6 @@ Q_SIGNALS:
      * \a isScreen the screen it is now associated with
      */
     void screenOwnerChanged(int isScreen);
-
-    int screenIdChanged(QScreen *screen, int screenId);
 
     /*!
      * This signal indicates that the configuration file was flushed to disk.

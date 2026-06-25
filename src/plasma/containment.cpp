@@ -75,17 +75,17 @@ void Containment::init()
     Applet::init();
 
     connect(corona(), &Plasma::Corona::availableScreenRectChanged, this, [this](int screenId) {
-        if (screenId == lastScreen()) {
+        if (screenId == screen()) {
             Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
         }
     });
     connect(corona(), &Plasma::Corona::availableScreenRegionChanged, this, [this](int screenId) {
-        if (screenId == lastScreen()) {
+        if (screenId == screen()) {
             Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
         }
     });
     connect(corona(), &Plasma::Corona::screenGeometryChanged, this, [this](int screenId) {
-        if (screenId == lastScreen()) {
+        if (screenId == screen()) {
             Q_EMIT screenGeometryChanged(screenGeometry());
         }
     });
@@ -145,7 +145,6 @@ void Containment::restore(KConfigGroup &group)
     // qCDebug(LOG_PLASMA) << "    location:" << group.readEntry("location", (int)d->location);
     // qCDebug(LOG_PLASMA) << "    geom:" << group.readEntry("geometry", geometry());
     // qCDebug(LOG_PLASMA) << "    formfactor:" << group.readEntry("formfactor", (int)d->formFactor);
-    // qCDebug(LOG_PLASMA) << "    screen:" << group.readEntry("screen", d->screen);
     #endif
     */
     setLocation((Plasma::Types::Location)group.readEntry("location", (int)d->location));
@@ -213,7 +212,6 @@ void Containment::save(KConfigGroup &g) const
     // locking is saved in Applet::save
     Applet::save(group);
 
-    //     group.writeEntry("screen", d->screen);
     group.writeEntry("lastScreen", d->lastScreen);
     group.writeEntry("formfactor", (int)d->formFactor);
     group.writeEntry("location", (int)d->location);
@@ -478,41 +476,31 @@ int Containment::screen() const
     if (Containment *pc = qobject_cast<Containment *>(parent()); pc) {
         return pc->screen();
     }
-    return d->screen;
-}
-
-int Containment::lastScreen() const
-{
-    if (Containment *pc = qobject_cast<Containment *>(parent()); pc) {
-        return pc->lastScreen();
-    }
     return d->lastScreen;
 }
 
 void Containment::setScreen(int newScreen)
 {
-    if (!corona() || d->screen == newScreen) {
+    // TODO: remove the assert
+    Q_ASSERT(newScreen >= 0);
+    if (newScreen < 0) {
+        qCWarning(LOG_PLASMA) << "Passed Containment::setScreen(" << newScreen << "), only numbers >= 0 are allowed";
+        return;
+    }
+    if (!corona() || d->lastScreen == newScreen) {
         return;
     }
 
-    if (newScreen < corona()->numScreens()) {
-        d->screen = newScreen;
-    } else {
-        d->screen = -1;
-    }
-
+    d->lastScreen = newScreen;
     Q_EMIT screenChanged(newScreen);
 
-    if (newScreen >= 0) {
-        d->lastScreen = newScreen;
-        KConfigGroup c = config();
-        c.writeEntry("lastScreen", d->lastScreen);
-        Q_EMIT configNeedsSaving();
+    KConfigGroup c = config();
+    c.writeEntry("lastScreen", d->lastScreen);
+    Q_EMIT configNeedsSaving();
 
-        Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
-        Q_EMIT screenGeometryChanged(screenGeometry());
-        Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
-    }
+    Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
+    Q_EMIT screenGeometryChanged(screenGeometry());
+    Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
 }
 
 QRectF Containment::availableRelativeScreenRect() const

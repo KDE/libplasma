@@ -21,9 +21,6 @@ public:
     explicit SimpleCorona(QObject *parent = nullptr);
     ~SimpleCorona() override;
 
-    int screenId(QScreen *screen) const override;
-    QScreen *screenForId(int screenId) const override;
-
     QRect screenGeometry(int) const override;
 };
 

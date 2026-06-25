@@ -82,7 +82,6 @@ void ContainmentViewPrivate::setContainment(Plasma::Containment *cont)
             // TODO: delete the item when needed instead of just hiding, but there are quite a lot of cornercases to manage beforehand
             item->setVisible(false);
         }
-        containment->setScreen(-1);
     }
 
     containment = cont;
@@ -103,7 +102,6 @@ void ContainmentViewPrivate::setContainment(Plasma::Containment *cont)
         q->rootObject()->setSize(q->size());
     }
     if (cont) {
-        cont->setScreen(corona->screenId(lastScreen));
         QObject::connect(cont, &Plasma::Containment::locationChanged, q, &ContainmentView::locationChanged);
         QObject::connect(cont, &Plasma::Containment::formFactorChanged, q, &ContainmentView::formFactorChanged);
         QObject::connect(cont, &Plasma::Containment::configureRequested, q, &ContainmentView::showConfigurationInterface);
@@ -201,9 +199,6 @@ void ContainmentViewPrivate::reactToScreenChange()
 
     QObject::disconnect(lastScreen, nullptr, q, nullptr);
     lastScreen = newScreen;
-    if (containment) {
-        containment->setScreen(corona->screenId(lastScreen));
-    }
     QObject::connect(newScreen, &QScreen::geometryChanged, q,
                      &ContainmentView::screenGeometryChanged);
     Q_EMIT q->screenGeometryChanged();
@@ -216,8 +211,10 @@ ContainmentView::ContainmentView(Plasma::Corona *corona, QWindow *parent)
     setColor(Qt::transparent);
 
     d->lastScreen = screen();
-    QObject::connect(d->lastScreen, &QScreen::geometryChanged, this, &ContainmentView::screenGeometryChanged);
-    QObject::connect(this, &ContainmentView::screenChanged, this, [this]() {
+    QObject::connect(d->lastScreen, &QScreen::geometryChanged, this,
+                     &ContainmentView::screenGeometryChanged);
+    QObject::connect(this, &ContainmentView::screenChanged, this,
+                     [this]() {
         d->reactToScreenChange();
     });
 
@@ -251,9 +248,6 @@ void ContainmentView::destroy()
         item->setVisible(false);
         item->setParentItem(nullptr); // First, remove the item from the view
     }
-    if (d->containment) {
-        d->containment->setScreen(-1);
-    }
     deleteLater(); // delete the view
 }
 
@@ -268,7 +262,7 @@ KConfigGroup ContainmentView::config() const
         return KConfigGroup();
     }
     KConfigGroup views(KSharedConfig::openConfig(), QStringLiteral("PlasmaContainmentViews"));
-    return KConfigGroup(&views, QString::number(containment()->lastScreen()));
+    return KConfigGroup(&views, QString::number(containment()->screen()));
 }
 
 void ContainmentView::setContainment(Plasma::Containment *cont)

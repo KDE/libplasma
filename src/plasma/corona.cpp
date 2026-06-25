@@ -159,7 +159,7 @@ Containment *Corona::containmentForScreen(int screen, const QString &activity, c
     Containment *containment = nullptr;
 
     for (Containment *cont : std::as_const(d->containments)) {
-        if (cont->lastScreen() == screen //
+        if (cont->screen() == screen //
             && ((cont->activity().isEmpty() || activity.isEmpty()) || cont->activity() == activity)
             && (cont->containmentType() == Plasma::Containment::Type::Desktop //
                 || cont->containmentType() == Plasma::Containment::Type::Custom || cont->containmentType() == Plasma::Containment::Type::NoContainment)) {
@@ -209,7 +209,7 @@ QList<Containment *> Corona::containmentsForScreen(int screen)
     }
 
     std::copy_if(d->containments.begin(), d->containments.end(), std::back_inserter(conts), [screen](Containment *cont) {
-        return cont->lastScreen() == screen
+        return cont->screen() == screen
             && (cont->containmentType() == Plasma::Containment::Type::Desktop //
                 || cont->containmentType() == Plasma::Containment::Type::Custom);
     });
@@ -386,7 +386,7 @@ QList<Plasma::Types::Location> Corona::freeEdges(int screen) const
 
     const auto containments = this->containments();
     for (Containment *containment : containments) {
-        if (containment->lastScreen() == screen && freeEdges.contains(containment->location())) {
+        if (containment->screen() == screen && freeEdges.contains(containment->location())) {
             freeEdges.removeAll(containment->location());
         }
     }
@@ -558,6 +558,9 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
         }
 
         if (containment) {
+            if (lastScreen >= 0) {
+                containment->d->lastScreen = lastScreen;
+            }
             containment->setParent(q);
         }
     }
@@ -683,7 +686,7 @@ void CoronaPrivate::notifyContainmentsReady()
 {
     containmentsStarting = 0;
     for (Containment *containment : std::as_const(containments)) {
-        if (!containment->isUiReady() && containment->lastScreen() >= 0) {
+        if (!containment->isUiReady() && containment->screen() >= 0) {
             ++containmentsStarting;
             QObject::connect(containment, &Plasma::Containment::uiReadyChanged, q, [this](bool ready) {
                 containmentReady(ready);

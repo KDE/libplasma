@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-12 00:45+0000\n"
-"PO-Revision-Date: 2026-05-16 12:18+0200\n"
+"PO-Revision-Date: 2026-06-27 13:04+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -245,13 +245,14 @@ msgid "Error loading Applet: package %1 does not exist."
 msgstr "Błąd wczytywania apletu: pakiet %1 nie istnieje."
 
 #: plasmaquick/appletquickitem.cpp:614
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package %1 does not exist."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Error loading Applet: package format is invalid (does not contain any "
 "metadata)."
-msgstr "Błąd wczytywania apletu: pakiet %1 nie istnieje."
+msgstr ""
+"Błąd wczytywania apletu: format pakietu jest nieprawidłowy (nie zawiera "
+"metadanych)."
 
 #: plasmaquick/configview.cpp:189
 #, kde-format

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-12 00:45+0000\n"
+"POT-Creation-Date: 2026-06-30 00:45+0000\n"
 "PO-Revision-Date: 2026-05-28 09:04+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -182,22 +182,22 @@ msgstr "Configuració de l'activitat"
 msgid "Add or Manage Widgets…"
 msgstr "Afegeix o gestiona ginys…"
 
-#: plasmaquick/appletquickitem.cpp:539
+#: plasmaquick/appletquickitem.cpp:548
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "L'element arrel de %1 cal que sigui del tipus ContainmentItem"
 
-#: plasmaquick/appletquickitem.cpp:544
+#: plasmaquick/appletquickitem.cpp:553
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "L'element arrel de %1 cal que sigui del tipus PlasmoidItem"
 
-#: plasmaquick/appletquickitem.cpp:552
+#: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Miniaplicació desconeguda"
 
-#: plasmaquick/appletquickitem.cpp:566
+#: plasmaquick/appletquickitem.cpp:575
 #, kde-format
 msgid ""
 "This widget was written for an unknown older version of Plasma and is not "
@@ -208,13 +208,13 @@ msgstr ""
 "és compatible amb el Plasma %1. Poseu-vos en contacte amb l'autor del giny "
 "per a una versió actualitzada."
 
-#: plasmaquick/appletquickitem.cpp:569 plasmaquick/appletquickitem.cpp:576
-#: plasmaquick/appletquickitem.cpp:582
+#: plasmaquick/appletquickitem.cpp:578 plasmaquick/appletquickitem.cpp:585
+#: plasmaquick/appletquickitem.cpp:591
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 no és compatible amb el Plasma %2"
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:582
 #, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -223,7 +223,7 @@ msgstr ""
 "Aquest giny s'ha escrit per al Plasma %1 i no és compatible amb el Plasma "
 "%2. Poseu-vos en contacte amb l'autor del giny per a una versió actualitzada."
 
-#: plasmaquick/appletquickitem.cpp:579
+#: plasmaquick/appletquickitem.cpp:588
 #, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -232,22 +232,22 @@ msgstr ""
 "Aquest giny s'ha escrit per al Plasma %1 i no és compatible amb el Plasma "
 "%2. Actualitzeu el Plasma per tal de fer servir el giny."
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
+#: plasmaquick/appletquickitem.cpp:597 plasmaquick/appletquickitem.cpp:620
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "S'ha produït un error en carregar %1."
 
-#: plasmaquick/appletquickitem.cpp:605
+#: plasmaquick/appletquickitem.cpp:614
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Error en carregar el fitxer QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:609
+#: plasmaquick/appletquickitem.cpp:618
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Error en carregar la miniaplicació: el paquet %1 no existeix."
 
-#: plasmaquick/appletquickitem.cpp:614
+#: plasmaquick/appletquickitem.cpp:623
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -267,49 +267,49 @@ msgstr "%1 — Configuració de %2"
 msgid "%1 Settings"
 msgstr "Configuració de %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:569
+#: plasmaquick/plasmoid/containmentitem.cpp:573
 #, kde-format
 msgid "Plasma Package"
 msgstr "Paquet del Plasma"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:577
 #, kde-format
 msgid "Install"
 msgstr "Instal·la"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:584
+#: plasmaquick/plasmoid/containmentitem.cpp:588
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "La instal·lació del paquet ha fallat"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:600
+#: plasmaquick/plasmoid/containmentitem.cpp:604
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "El paquet que acabeu de deixar no és vàlid."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:609
+#: plasmaquick/plasmoid/containmentitem.cpp:613
 #, kde-format
 msgid "Widgets"
 msgstr "Ginys"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:614
+#: plasmaquick/plasmoid/containmentitem.cpp:618
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Afegeix el %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:628
+#: plasmaquick/plasmoid/containmentitem.cpp:632
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Afegeix una icona"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:640
+#: plasmaquick/plasmoid/containmentitem.cpp:644
 #, kde-format
 msgid "Wallpaper"
 msgstr "Fons de pantalla"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:650
+#: plasmaquick/plasmoid/containmentitem.cpp:654
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

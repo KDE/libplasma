@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-12 00:45+0000\n"
+"POT-Creation-Date: 2026-06-30 00:45+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -177,22 +177,22 @@ msgstr "गतिविधि सेटिंग्स"
 msgid "Add or Manage Widgets…"
 msgstr "विजेट जोड़ें या प्रबंधित करें…"
 
-#: plasmaquick/appletquickitem.cpp:539
+#: plasmaquick/appletquickitem.cpp:548
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "%1 का मूल आइटम ContainmentItem प्रकार का होना चाहिए"
 
-#: plasmaquick/appletquickitem.cpp:544
+#: plasmaquick/appletquickitem.cpp:553
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "%1 का मूल आइटम प्लास्मॉइडआइटम प्रकार का होना चाहिए"
 
-#: plasmaquick/appletquickitem.cpp:552
+#: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "Unknown Applet"
 msgstr "अज्ञात एप्लेट"
 
-#: plasmaquick/appletquickitem.cpp:566
+#: plasmaquick/appletquickitem.cpp:575
 #, fuzzy, kde-format
 #| msgid ""
 #| "This Widget was written for an unknown older version of Plasma and is not "
@@ -206,13 +206,13 @@ msgstr ""
 "यह विजेट प्लाज़्मा के किसी अज्ञात पुराने संस्करण के लिए लिखा गया था और यह प्लाज़्मा %1 के "
 "साथ संगत नहीं है। कृपया अपडेटेड संस्करण के लिए विजेट के लेखक से संपर्क करें।"
 
-#: plasmaquick/appletquickitem.cpp:569 plasmaquick/appletquickitem.cpp:576
-#: plasmaquick/appletquickitem.cpp:582
+#: plasmaquick/appletquickitem.cpp:578 plasmaquick/appletquickitem.cpp:585
+#: plasmaquick/appletquickitem.cpp:591
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 प्लाज़्मा %2 के साथ संगत नहीं है"
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:582
 #, fuzzy, kde-format
 #| msgid ""
 #| "This Widget was written for Plasma %1 and is not compatible with Plasma "
@@ -224,7 +224,7 @@ msgstr ""
 "यह विजेट प्लाज़्मा %1 के लिए लिखा गया था और प्लाज़्मा %2 के साथ संगत नहीं है। कृपया अपडेटेड "
 "वर्शन के लिए विजेट के लेखक से संपर्क करें।"
 
-#: plasmaquick/appletquickitem.cpp:579
+#: plasmaquick/appletquickitem.cpp:588
 #, fuzzy, kde-format
 #| msgid ""
 #| "This Widget was written for Plasma %1 and is not compatible with Plasma "
@@ -236,22 +236,22 @@ msgstr ""
 "यह विजेट प्लाज़्मा %1 के लिए लिखा गया था और प्लाज़्मा %2 के साथ संगत नहीं है। विजेट का "
 "उपयोग करने के लिए कृपया प्लाज़्मा को अपडेट करें।"
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
+#: plasmaquick/appletquickitem.cpp:597 plasmaquick/appletquickitem.cpp:620
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "क्षमा करें! %1 लोड करते समय त्रुटि हुई।"
 
-#: plasmaquick/appletquickitem.cpp:605
+#: plasmaquick/appletquickitem.cpp:614
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "QML फ़ाइल लोड करते समय त्रुटि: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:609
+#: plasmaquick/appletquickitem.cpp:618
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "एप्लेट लोड करते समय त्रुटि: पैकेज %1 मौजूद नहीं है."
 
-#: plasmaquick/appletquickitem.cpp:614
+#: plasmaquick/appletquickitem.cpp:623
 #, fuzzy, kde-format
 #| msgid "Error loading Applet: package %1 does not exist."
 msgctxt "@info"
@@ -270,49 +270,49 @@ msgstr "%1 — %2 सेटिंग्स"
 msgid "%1 Settings"
 msgstr "%1 सेटिंग्स"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:569
+#: plasmaquick/plasmoid/containmentitem.cpp:573
 #, kde-format
 msgid "Plasma Package"
 msgstr "प्लाज्मा पैकेज"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:577
 #, kde-format
 msgid "Install"
 msgstr "स्थापित करना"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:584
+#: plasmaquick/plasmoid/containmentitem.cpp:588
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "पैकेज स्थापना विफल"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:600
+#: plasmaquick/plasmoid/containmentitem.cpp:604
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "आपके द्वारा अभी-अभी छोड़ा गया पैकेज अमान्य है."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:609
+#: plasmaquick/plasmoid/containmentitem.cpp:613
 #, kde-format
 msgid "Widgets"
 msgstr "विजेट"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:614
+#: plasmaquick/plasmoid/containmentitem.cpp:618
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "%1जोड़ें"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:628
+#: plasmaquick/plasmoid/containmentitem.cpp:632
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "आइकन जोड़ें"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:640
+#: plasmaquick/plasmoid/containmentitem.cpp:644
 #, kde-format
 msgid "Wallpaper"
 msgstr "वॉलपेपर"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:650
+#: plasmaquick/plasmoid/containmentitem.cpp:654
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

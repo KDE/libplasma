@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-12 00:45+0000\n"
+"POT-Creation-Date: 2026-06-30 00:45+0000\n"
 "PO-Revision-Date: 2026-06-18 18:49+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -195,22 +195,22 @@ msgstr "Настроить комнату"
 msgid "Add or Manage Widgets…"
 msgstr "Добавить или изменить виджеты…"
 
-#: plasmaquick/appletquickitem.cpp:539
+#: plasmaquick/appletquickitem.cpp:548
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
 msgstr "Объект, корневой для %1, должен иметь тип ContainmentItem"
 
-#: plasmaquick/appletquickitem.cpp:544
+#: plasmaquick/appletquickitem.cpp:553
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
 msgstr "Объект, корневой для %1, должен иметь тип PlasmoidItem"
 
-#: plasmaquick/appletquickitem.cpp:552
+#: plasmaquick/appletquickitem.cpp:561
 #, kde-format
 msgid "Unknown Applet"
 msgstr "Неизвестный виджет"
 
-#: plasmaquick/appletquickitem.cpp:566
+#: plasmaquick/appletquickitem.cpp:575
 #, kde-format
 msgid ""
 "This widget was written for an unknown older version of Plasma and is not "
@@ -221,13 +221,13 @@ msgstr ""
 "Plasma %1. Напомните автору виджета о необходимости подготовить обновлённую "
 "версию виджета."
 
-#: plasmaquick/appletquickitem.cpp:569 plasmaquick/appletquickitem.cpp:576
-#: plasmaquick/appletquickitem.cpp:582
+#: plasmaquick/appletquickitem.cpp:578 plasmaquick/appletquickitem.cpp:585
+#: plasmaquick/appletquickitem.cpp:591
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
 msgstr "Виджет «%1» не совместим с Plasma версии %2."
 
-#: plasmaquick/appletquickitem.cpp:573
+#: plasmaquick/appletquickitem.cpp:582
 #, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -237,7 +237,7 @@ msgstr ""
 "%2. Напомните автору виджета о необходимости подготовить обновлённую версию "
 "виджета."
 
-#: plasmaquick/appletquickitem.cpp:579
+#: plasmaquick/appletquickitem.cpp:588
 #, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
@@ -246,22 +246,22 @@ msgstr ""
 "Этот виджет предназначен для Plasma версии %1 и не может работать в Plasma "
 "%2. Обновите используемую версию Plasma для использования этого виджета."
 
-#: plasmaquick/appletquickitem.cpp:588 plasmaquick/appletquickitem.cpp:611
+#: plasmaquick/appletquickitem.cpp:597 plasmaquick/appletquickitem.cpp:620
 #, kde-format
 msgid "Sorry! There was an error loading %1."
 msgstr "Ошибка загрузки %1."
 
-#: plasmaquick/appletquickitem.cpp:605
+#: plasmaquick/appletquickitem.cpp:614
 #, kde-format
 msgid "Error loading QML file: %1 %2"
 msgstr "Ошибка загрузки файла QML: %1 %2"
 
-#: plasmaquick/appletquickitem.cpp:609
+#: plasmaquick/appletquickitem.cpp:618
 #, kde-format
 msgid "Error loading Applet: package %1 does not exist."
 msgstr "Ошибка загрузки виджета: пакет «%1» не существует."
 
-#: plasmaquick/appletquickitem.cpp:614
+#: plasmaquick/appletquickitem.cpp:623
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -282,50 +282,50 @@ msgstr "%1 — параметры %2"
 msgid "%1 Settings"
 msgstr "Настройка виджета «%1»"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:569
+#: plasmaquick/plasmoid/containmentitem.cpp:573
 #, kde-format
 msgid "Plasma Package"
 msgstr "Пакет Plasma"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:577
 #, kde-format
 msgid "Install"
 msgstr "Установить"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:584
+#: plasmaquick/plasmoid/containmentitem.cpp:588
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Ошибка установки пакета"
 
 # BUGME: what does "dropped" mean here? --aspotashev
-#: plasmaquick/plasmoid/containmentitem.cpp:600
+#: plasmaquick/plasmoid/containmentitem.cpp:604
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Некорректный пакет."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:609
+#: plasmaquick/plasmoid/containmentitem.cpp:613
 #, kde-format
 msgid "Widgets"
 msgstr "Виджеты"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:614
+#: plasmaquick/plasmoid/containmentitem.cpp:618
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Добавить виджет «%1»"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:628
+#: plasmaquick/plasmoid/containmentitem.cpp:632
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Добавить значок"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:640
+#: plasmaquick/plasmoid/containmentitem.cpp:644
 #, kde-format
 msgid "Wallpaper"
 msgstr "Обои"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:650
+#: plasmaquick/plasmoid/containmentitem.cpp:654
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

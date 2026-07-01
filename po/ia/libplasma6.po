@@ -292,7 +292,7 @@ msgstr "Adde Icone"
 #: plasmaquick/plasmoid/containmentitem.cpp:640
 #, kde-format
 msgid "Wallpaper"
-msgstr "Tapete de papiro"
+msgstr "Fundo de schermo"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:650
 #, kde-format
@@ -397,7 +397,7 @@ msgstr "Contento lassate cader"
 #~ msgstr "Thema pro le dialogo de clausura de session"
 
 #~ msgid "Wallpaper packages"
-#~ msgstr "Pacchettos de tapete de papiro"
+#~ msgstr "Pacchettos de fundo de schermo"
 
 #~ msgid "Images for widgets"
 #~ msgstr "Imagines per widgets"
@@ -747,7 +747,7 @@ msgstr "Contento lassate cader"
 #~ "The type of package, e.g. theme, wallpaper, plasmoid, dataengine, runner, "
 #~ "layout-template, etc."
 #~ msgstr ""
-#~ "Le typo de pacchetto, pro ex. thema, tapete de papiro, plasmoid, "
+#~ "Le typo de pacchetto, pro ex. thema, fundo de schermo, plasmoid, "
 #~ "dataengine, runner, patrono de disposition, etc."
 
 #~ msgctxt "Do not translate <path>"
@@ -788,7 +788,7 @@ msgstr "Contento lassate cader"
 
 #~ msgctxt "package type"
 #~ msgid "wallpaper"
-#~ msgstr "Tapete de papiro"
+#~ msgstr "Fundo de schermo"
 
 #~ msgctxt "package type"
 #~ msgid "plasmoid"
@@ -928,10 +928,10 @@ msgstr "Contento lassate cader"
 #~ msgstr "Thema"
 
 #~ msgid "Wallpaper Images"
-#~ msgstr "Images de tapete de papiro"
+#~ msgstr "Images de fundo de schermo"
 
 #~ msgid "Animated Wallpaper"
-#~ msgstr "Tapete de papiro animate"
+#~ msgstr "Fundo de schermo animate"
 
 #~ msgid "KWin Effect"
 #~ msgstr "Effecto de KWin"

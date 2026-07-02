@@ -466,7 +466,6 @@ KConfigGroup *AppletPrivate::mainConfigGroup()
     if (q->isContainment() && static_cast<Containment *>(q)->containmentType() != Containment::CustomEmbedded) {
         Corona *corona = static_cast<Containment *>(q)->corona();
         KConfigGroup containmentConfig;
-        // qCDebug(LOG_PLASMA) << "got a corona, baby?" << (QObject*)corona << (QObject*)q;
 
         if (parentApplet) {
             containmentConfig = parentApplet->config();

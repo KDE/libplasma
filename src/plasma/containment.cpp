@@ -46,7 +46,7 @@ Containment::Containment(QObject *parentObject, const KPluginMetaData &data, con
     : Applet(parentObject, data, args)
     , d(new ContainmentPrivate(this))
 {
-    // WARNING: do not access config() OR globalConfig() in this method!
+    // WARNING: do not access config() in this method!
     //          that requires a scene, which is not available at this point
     setHasConfigurationInterface(true);
 

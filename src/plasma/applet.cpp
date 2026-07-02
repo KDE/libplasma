@@ -52,7 +52,7 @@ Applet::Applet(QObject *parentObject, const KPluginMetaData &data, const QVarian
         setProperty("org.kde.plasma:force-create", true);
     }
 
-    // WARNING: do not access config() OR globalConfig() in this method!
+    // WARNING: do not access config() in this method!
     //          that requires a scene, which is not available at this point
     d->init(args.mid(2));
 }
@@ -201,26 +201,6 @@ KConfigGroup Applet::config() const
     }
 
     return KConfigGroup(d->mainConfigGroup(), QStringLiteral("Configuration"));
-}
-
-KConfigGroup Applet::globalConfig() const
-{
-    KConfigGroup globalAppletConfig;
-    QString group = isContainment() ? QStringLiteral("ContainmentGlobals") : QStringLiteral("AppletGlobals");
-
-    Containment *cont = containment();
-    Corona *corona = nullptr;
-    if (cont) {
-        corona = cont->corona();
-    }
-    if (corona) {
-        KSharedConfig::Ptr coronaConfig = corona->config();
-        globalAppletConfig = KConfigGroup(coronaConfig, group);
-    } else {
-        globalAppletConfig = KConfigGroup(KSharedConfig::openConfig(), group);
-    }
-
-    return KConfigGroup(&globalAppletConfig, d->globalName());
 }
 
 void Applet::destroy()

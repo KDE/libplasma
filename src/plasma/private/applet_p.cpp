@@ -89,7 +89,7 @@ void AppletPrivate::init(const QVariantList &args)
 {
     startupArguments = args;
 
-    // WARNING: do not access config() OR globalConfig() in this method!
+    // WARNING: do not access config() in this method!
     //          that requires a Corona, which is not available at this point
     q->setHasConfigurationInterface(true);
 
@@ -413,15 +413,6 @@ void AppletPrivate::setUiReady()
     if (parentContainment && parentContainment != thisContainment) {
         parentContainment->d->appletLoaded(q);
     }
-}
-
-QString AppletPrivate::globalName() const
-{
-    if (!appletDescription.isValid()) {
-        return QString();
-    }
-
-    return appletDescription.pluginId();
 }
 
 void AppletPrivate::scheduleConstraintsUpdate(Applet::Constraints c)

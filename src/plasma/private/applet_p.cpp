@@ -457,20 +457,11 @@ KConfigGroup *AppletPrivate::mainConfigGroup()
         return mainConfig;
     }
 
-    Containment *c = q->containment();
-    Plasma::Applet *parentApplet = nullptr;
-    if (c) {
-        parentApplet = qobject_cast<Plasma::Applet *>(c->parent());
-    }
-
     if (q->isContainment() && static_cast<Containment *>(q)->containmentType() != Containment::CustomEmbedded) {
         Corona *corona = static_cast<Containment *>(q)->corona();
         KConfigGroup containmentConfig;
 
-        if (parentApplet) {
-            containmentConfig = parentApplet->config();
-            containmentConfig = KConfigGroup(&containmentConfig, QStringLiteral("Containments"));
-        } else if (corona) {
+        if (corona) {
             containmentConfig = KConfigGroup(corona->config(), QStringLiteral("Containments"));
         } else {
             containmentConfig = KConfigGroup(KSharedConfig::openConfig(), QStringLiteral("Containments"));
@@ -480,9 +471,9 @@ KConfigGroup *AppletPrivate::mainConfigGroup()
     } else {
         KConfigGroup appletConfig;
 
-        if (c) {
+        if (q->containment()) {
             // applet directly in a Containment, as usual
-            appletConfig = c->config();
+            appletConfig = q->containment()->config();
             appletConfig = KConfigGroup(&appletConfig, QStringLiteral("Applets"));
         } else {
             qCDebug(LOG_PLASMA) << "requesting config for" << q->title() << "without a containment!";

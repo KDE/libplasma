@@ -149,7 +149,7 @@ void Containment::restore(KConfigGroup &group)
     */
     setLocation((Plasma::Types::Location)group.readEntry("location", (int)d->location));
     setFormFactor((Plasma::Types::FormFactor)group.readEntry("formfactor", (int)d->formFactor));
-    d->lastScreen = group.readEntry("lastScreen", d->lastScreen);
+    d->screen = group.readEntry("lastScreen", d->screen);
 
     setWallpaperPlugin(group.readEntry("wallpaperplugin", ContainmentPrivate::defaultWallpaperPlugin));
 
@@ -212,7 +212,7 @@ void Containment::save(KConfigGroup &g) const
     // locking is saved in Applet::save
     Applet::save(group);
 
-    group.writeEntry("lastScreen", d->lastScreen);
+    group.writeEntry("lastScreen", d->screen);
     group.writeEntry("formfactor", (int)d->formFactor);
     group.writeEntry("location", (int)d->location);
 #if ENABLE_ACTIVITIES
@@ -476,7 +476,7 @@ int Containment::screen() const
     if (Containment *pc = qobject_cast<Containment *>(parent()); pc) {
         return pc->screen();
     }
-    return d->lastScreen;
+    return d->screen;
 }
 
 void Containment::setScreen(int newScreen)
@@ -487,15 +487,15 @@ void Containment::setScreen(int newScreen)
         qCWarning(LOG_PLASMA) << "Passed Containment::setScreen(" << newScreen << "), only numbers >= 0 are allowed";
         return;
     }
-    if (!corona() || d->lastScreen == newScreen) {
+    if (!corona() || d->screen == newScreen) {
         return;
     }
 
-    d->lastScreen = newScreen;
+    d->screen = newScreen;
     Q_EMIT screenChanged(newScreen);
 
     KConfigGroup c = config();
-    c.writeEntry("lastScreen", d->lastScreen);
+    c.writeEntry("lastScreen", d->screen);
     Q_EMIT configNeedsSaving();
 
     Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
@@ -505,13 +505,13 @@ void Containment::setScreen(int newScreen)
 
 QRectF Containment::availableRelativeScreenRect() const
 {
-    if (!corona() || d->lastScreen < 0) {
+    if (!corona() || d->screen < 0) {
         return {};
     }
 
-    QRectF rect = corona()->availableScreenRect(d->lastScreen);
+    QRectF rect = corona()->availableScreenRect(d->screen);
     // make it relative
-    QRectF geometry = corona()->screenGeometry(d->lastScreen);
+    QRectF geometry = corona()->screenGeometry(d->screen);
     rect.moveTo(rect.topLeft() - geometry.topLeft());
     return rect;
 }
@@ -520,15 +520,15 @@ QList<QRectF> Containment::availableRelativeScreenRegion() const
 {
     QList<QRectF> regVal;
 
-    if (!containment() || !containment()->corona() || d->lastScreen < 0) {
+    if (!containment() || !containment()->corona() || d->screen < 0) {
         return regVal;
     }
 
-    QRegion reg = containment()->corona()->availableScreenRegion(d->lastScreen);
+    QRegion reg = containment()->corona()->availableScreenRegion(d->screen);
 
     auto it = reg.begin();
     const auto itEnd = reg.end();
-    QRect geometry = containment()->corona()->screenGeometry(d->lastScreen);
+    QRect geometry = containment()->corona()->screenGeometry(d->screen);
     for (; it != itEnd; ++it) {
         QRect rect = *it;
         // make it relative
@@ -540,11 +540,11 @@ QList<QRectF> Containment::availableRelativeScreenRegion() const
 
 QRectF Containment::screenGeometry() const
 {
-    if (!corona() || d->lastScreen < 0) {
+    if (!corona() || d->screen < 0) {
         return {};
     }
 
-    return corona()->screenGeometry(d->lastScreen);
+    return corona()->screenGeometry(d->screen);
 }
 
 void Containment::setWallpaperPlugin(const QString &pluginName)

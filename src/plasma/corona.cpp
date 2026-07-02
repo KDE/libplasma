@@ -559,7 +559,7 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
 
         if (containment) {
             if (lastScreen >= 0) {
-                containment->d->lastScreen = lastScreen;
+                containment->d->screen = lastScreen;
             }
             containment->setParent(q);
         }
@@ -570,7 +570,7 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
         // a null containment was requested
         containment = new Containment(q, KPluginMetaData(), QVariantList{QVariant(), id});
         if (lastScreen >= 0) {
-            containment->d->lastScreen = lastScreen;
+            containment->d->screen = lastScreen;
         }
         // if it's a dummy containment, just say its ui is ready, not blocking the corona
         containment->updateConstraints(Applet::UiReadyConstraint);

@@ -80,7 +80,7 @@ public:
     QString wallpaperPlugin;
     QObject *wallpaperGraphicsObject = nullptr;
     QHash<QString, ContainmentActions *> localActionPlugins;
-    int lastScreen;
+    int screen;
     QString activityId;
     Containment::Type type;
     bool uiReady : 1;

@@ -1,3 +1,3 @@
-plasma_add_applet(org.kde.plasma.testapplet2 QML_SOURCES main.qml CPP_SOURCES main.cpp)
+plasma_add_applet(org.kde.plasma.testapplet2 QML_SOURCES main.qml CPP_SOURCES main.cpp RESOURCES main.xml)
 
 target_link_libraries(org.kde.plasma.testapplet2 PRIVATE Plasma::Plasma)

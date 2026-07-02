@@ -8,6 +8,7 @@
 #include <QStandardPaths>
 #include <QTest>
 
+#include <KConfigPropertyMap>
 #include <KPluginMetaData>
 
 #include <Plasma/Applet>
@@ -186,6 +187,26 @@ private Q_SLOTS:
         auto applet = Plasma::PluginLoader::self()->loadApplet("org.kde.plasma.testapplet", 1, args);
 
         QCOMPARE(applet->startupArguments(), args);
+
+        delete applet;
+    }
+
+    void testConfig()
+    {
+        auto applet = Plasma::PluginLoader::self()->loadApplet("org.kde.plasma.testapplet2");
+        auto config = applet->configuration();
+
+        QStringList expectedKeys{"fooDefault", "foo", "blaDefault", "bla", "stepDefault", "step"};
+        QCOMPARE(config->keys(), expectedKeys);
+
+        QCOMPARE(config->value("foo"), "bar");
+        QCOMPARE(config->value("fooDefault"), "bar");
+
+        QCOMPARE(config->value("bla"), false);
+        QCOMPARE(config->value("blaDefault"), false);
+
+        QCOMPARE(config->value("step"), 5);
+        QCOMPARE(config->value("stepDefault"), 5);
 
         delete applet;
     }

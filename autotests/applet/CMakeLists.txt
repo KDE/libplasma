@@ -5,4 +5,4 @@ add_subdirectory(simple)
 add_subdirectory(withcpp)
 add_subdirectory(simplecontainment)
 
-ecm_add_test(applettest.cpp LINK_LIBRARIES Qt::Test Plasma::Plasma Plasma::PlasmaQuick)
+ecm_add_test(applettest.cpp LINK_LIBRARIES Qt::Test Plasma::Plasma Plasma::PlasmaQuick KF6::ConfigQml)

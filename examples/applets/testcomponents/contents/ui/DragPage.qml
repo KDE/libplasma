@@ -52,7 +52,7 @@ PlasmaComponents.Page {
                 Layout.fillHeight: true
                 Layout.preferredWidth: 1
 
-                DragItem {
+                PlasmaComponents.ItemDelegate {
                     text: "Image and URL"
                     icon.name: "image-png"
                     Layout.preferredHeight: parent.itemHeight
@@ -74,7 +74,7 @@ PlasmaComponents.Page {
                         //Rectangle { anchors.fill: parent; color: "blue"; opacity: 0.4; }
                     }
                 }
-                DragItem {
+                PlasmaComponents.ItemDelegate {
                     text: "Delegate Image"
                     icon.name: "image-png"
                     Layout.preferredHeight: parent.itemHeight
@@ -96,7 +96,7 @@ PlasmaComponents.Page {
                         //Rectangle { anchors.fill: parent; color: "green"; opacity: 0.4; }
                     }
                 }
-                DragItem {
+                PlasmaComponents.ItemDelegate {
                     text: "HTML"
                     icon.name: "text-html"
                     Layout.preferredHeight: parent.itemHeight
@@ -116,7 +116,7 @@ PlasmaComponents.Page {
                         }
                     }
                 }
-                DragItem {
+                PlasmaComponents.ItemDelegate {
                     text: "Color"
                     icon.name: "preferences-color"
                     Layout.preferredHeight: parent.itemHeight
@@ -137,7 +137,7 @@ PlasmaComponents.Page {
                         }
                     }
                 }
-                DragItem {
+                PlasmaComponents.ItemDelegate {
                     text: "Lots of Stuff"
                     icon.name: "ksplash"
                     Layout.preferredHeight: parent.itemHeight

@@ -15,10 +15,7 @@ import org.kde.kirigami as Kirigami
 
 PlasmaComponents.Page {
     id: iconsPage
-    anchors {
-        fill: parent
-        margins: _s
-    }
+
     Column {
         anchors.fill: parent
         spacing: _s
@@ -66,8 +63,8 @@ PlasmaComponents.Page {
                 width: _h
                 height: width
             }
-            KQuickControlsAddons.QIconItem {
-                icon: "preferences-desktop-icons"
+            Kirigami.Icon {
+                source: "preferences-desktop-icons"
                 width: _h
                 height: width
             }
@@ -136,11 +133,9 @@ PlasmaComponents.Page {
                 PlasmaComponents.Button {
                     id: button
                     text: "Button"
-                    iconSource: "call-start"
+                    icon.source: "call-start"
                 }
             }
-
-
         }
     }
 }

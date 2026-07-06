@@ -14,10 +14,7 @@ import org.kde.kirigami as Kirigami
 
 PlasmaComponents.Page {
     id: plasmoidPage
-    anchors {
-        fill: parent
-        margins: _s
-    }
+
     Column {
         spacing: _s/2
         anchors.fill: parent
@@ -31,11 +28,11 @@ PlasmaComponents.Page {
             spacing: _s
             PlasmaComponents.Button {
                 text: "Button"
-                iconSource: "call-start"
+                icon.source: "call-start"
             }
             PlasmaComponents.ToolButton {
                 text: "ToolButton"
-                iconSource: "call-stop"
+                icon.source: "call-stop"
             }
         }
         Row {
@@ -54,11 +51,6 @@ PlasmaComponents.Page {
                 clearButtonShown: true
             }
         }
-//         PlasmaComponents.TextArea {
-//             width: parent.width
-//             height: _h*2
-//             wrapMode: TextEdit.Wrap
-//         }
     }
 }
 

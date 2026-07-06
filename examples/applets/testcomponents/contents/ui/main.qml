@@ -16,7 +16,6 @@ PlasmoidItem {
     id: root
 
     property int currentIndex: 0
-    onCurrentIndexChanged: print("AAA", currentIndex)
 
     fullRepresentation: ColumnLayout {
         spacing: 0
@@ -56,26 +55,26 @@ PlasmoidItem {
                 text: "Drag Page"
                 icon.name: "preferences-desktop-mouse"
             }
-            PlasmaComponents.TabButton {
-                display: T.AbstractButton.IconOnly
-                text: "Icons Page"
-                icon.name: "preferences-desktop-icons"
-            }
-            PlasmaComponents.TabButton {
-                display: T.AbstractButton.IconOnly
-                text: "Dialogs Page"
-                icon.name: "preferences-system-windows"
-            }
-            PlasmaComponents.TabButton {
-                display: T.AbstractButton.IconOnly
-                text: "Buttons Page"
-                icon.name: "preferences-desktop-theme"
-            }
-            PlasmaComponents.TabButton {
-                display: T.AbstractButton.IconOnly
-                text: "Plasmoid Page"
-                icon.name: "plasma"
-            }
+            // PlasmaComponents.TabButton {
+            //     display: T.AbstractButton.IconOnly
+            //     text: "Icons Page"
+            //     icon.name: "preferences-desktop-icons"
+            // }
+            // PlasmaComponents.TabButton {
+            //     display: T.AbstractButton.IconOnly
+            //     text: "Dialogs Page"
+            //     icon.name: "preferences-system-windows"
+            // }
+            // PlasmaComponents.TabButton {
+            //     display: T.AbstractButton.IconOnly
+            //     text: "Buttons Page"
+            //     icon.name: "preferences-desktop-theme"
+            // }
+            // PlasmaComponents.TabButton {
+            //     display: T.AbstractButton.IconOnly
+            //     text: "Plasmoid Page"
+            //     icon.name: "plasma"
+            // }
             PlasmaComponents.TabButton {
                 display: T.AbstractButton.IconOnly
                 text: "Mouse Page"
@@ -99,23 +98,11 @@ PlasmoidItem {
 
             ThemePage {}
             DragPage {}
-            // IconsPage {
-            //     id: iconsPage
-            // }
-            // DialogsPage {
-            //     id: dialogsPage
-            // }
-            // ButtonsPage {
-            //     id: buttonsPage
-            // }
-            // PlasmoidPage {
-            //     id: plasmoidPage
-            // }
-
-            // MousePage {
-            //     id: mousePage
-            // }
-
+            // IconsPage {}
+            // DialogsPage {}
+            // ButtonsPage {}
+            // PlasmoidPage {}
+            MousePage {}
         }
     }
 }

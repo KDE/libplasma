@@ -15,10 +15,7 @@ import org.kde.kirigami as Kirigami
 
 PlasmaComponents.Page {
     id: mousePage
-    anchors {
-        fill: parent
-        margins: _s
-    }
+
     Kirigami.Heading {
         id: mellabel
         level: 1
@@ -86,15 +83,15 @@ PlasmaComponents.Page {
             anchors.fill: parent
             PlasmaComponents.Button {
                 text: "Button"
-                iconSource: "call-start"
+                icon.source: "call-start"
             }
             PlasmaComponents.ToolButton {
                 text: "ToolButton"
-                iconSource: "call-stop"
+                icon.source: "call-stop"
             }
             PlasmaComponents.RadioButton {
                 text: "RadioButton"
-                //iconSource: "call-stop"
+                //icon.source: "call-stop"
             }
             PlasmaComponents.Label {
                 id: melstatus

@@ -16,10 +16,7 @@ import org.kde.kirigami as Kirigami
 
 PlasmaComponents.Page {
     id: dialogsPage
-    anchors {
-        fill: parent
-        margins: _s
-    }
+
     Column {
         spacing: _s/2
         anchors.fill: parent

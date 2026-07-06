@@ -14,10 +14,7 @@ import org.kde.kirigami as Kirigami
 
 PlasmaComponents.Page {
     id: plasmoidPage
-    anchors {
-        fill: parent
-        margins: _s
-    }
+
     Column {
         anchors.centerIn: parent
         spacing: _s
@@ -26,27 +23,27 @@ PlasmaComponents.Page {
             text: "I'm an applet"
         }
 
-        PlasmaComponents.ButtonColumn {
-            PlasmaComponents.RadioButton {
-                text: "No background"
-                onClicked: {
-                    if (checked) Plasmoid.backgroundHints = 0;
-                }
-            }
-            PlasmaComponents.RadioButton {
-                text: "Default background"
-                checked: true
-                onClicked: {
-                    if (checked) Plasmoid.backgroundHints = 1;
-                }
-            }
-            PlasmaComponents.RadioButton {
-                text: "Translucent background"
-                onClicked: {
-                    if (checked) Plasmoid.backgroundHints = 2;
-                }
-            }
-        }
+        // PlasmaComponents.ButtonColumn {
+        //     PlasmaComponents.RadioButton {
+        //         text: "No background"
+        //         onClicked: {
+        //             if (checked) Plasmoid.backgroundHints = 0;
+        //         }
+        //     }
+        //     PlasmaComponents.RadioButton {
+        //         text: "Default background"
+        //         checked: true
+        //         onClicked: {
+        //             if (checked) Plasmoid.backgroundHints = 1;
+        //         }
+        //     }
+        //     PlasmaComponents.RadioButton {
+        //         text: "Translucent background"
+        //         onClicked: {
+        //             if (checked) Plasmoid.backgroundHints = 2;
+        //         }
+        //     }
+        // }
 
         PlasmaComponents.Button {
             height: Kirigami.Units.iconSizes.desktop

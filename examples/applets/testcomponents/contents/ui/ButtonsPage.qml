@@ -5,60 +5,47 @@
 */
 
 import QtQuick
+import QtQuick.Layouts
 
 import org.kde.plasma.components as PlasmaComponents
-import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigami as Kirigami
 
-// ButtonsPage
-
 PlasmaComponents.Page {
-    id: plasmoidPage
-    anchors {
-        fill: parent
-        margins: _s
-    }
-    Column {
-        spacing: _s/2
+    id: root
+
+    ColumnLayout {
         anchors.fill: parent
+
         Kirigami.Heading {
-            level: 1
-            width: parent.width
+            Layout.fillWidth: true
             text: "Buttons"
         }
-        Row {
-            height: _h
-            spacing: _s
+        RowLayout {
+            Layout.fillWidth: true
             PlasmaComponents.Button {
                 text: "Button"
-                iconSource: "call-start"
+                icon.source: "call-start"
             }
             PlasmaComponents.ToolButton {
                 text: "ToolButton"
-                iconSource: "call-stop"
+                icon.source: "call-stop"
             }
         }
-        Row {
-            height: _h
-            spacing: _s
+        RowLayout {
+            Layout.fillWidth: true
             PlasmaComponents.RadioButton {
                 id: radio
                 text: "RadioButton"
-                //iconSource: "call-stop"
-                onCheckedChanged: if (checked) tfield.forceActiveFocus()
+                icon.source: "call-stop"
+                onCheckedChanged: if (checked) textField.forceActiveFocus()
             }
             PlasmaComponents.TextField {
-                id: tfield
+                id: textField
                 enabled: radio.checked
                 text: "input here"
                 clearButtonShown: true
             }
         }
-//         PlasmaComponents.TextArea {
-//             width: parent.width
-//             height: _h*2
-//             wrapMode: TextEdit.Wrap
-//         }
     }
 }
 

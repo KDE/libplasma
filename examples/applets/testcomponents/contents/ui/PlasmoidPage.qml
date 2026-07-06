@@ -5,72 +5,70 @@
 */
 
 import QtQuick
+import QtQuick.Layouts
+
 import org.kde.plasma.plasmoid
 import org.kde.plasma.components as PlasmaComponents
-import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigami as Kirigami
-
-// PlasmoidPage
 
 PlasmaComponents.Page {
     id: plasmoidPage
-    anchors {
-        fill: parent
-        margins: _s
-    }
-    Column {
-        anchors.centerIn: parent
-        spacing: _s
+
+    ColumnLayout {
+        anchors.fill: parent
         Kirigami.Heading {
+            Layout.alignment: Qt.AlignHCenter
             level: 2
             text: "I'm an applet"
         }
 
-        PlasmaComponents.ButtonColumn {
-            PlasmaComponents.RadioButton {
-                text: "No background"
-                onClicked: {
-                    if (checked) Plasmoid.backgroundHints = 0;
-                }
-            }
-            PlasmaComponents.RadioButton {
-                text: "Default background"
-                checked: true
-                onClicked: {
-                    if (checked) Plasmoid.backgroundHints = 1;
-                }
-            }
-            PlasmaComponents.RadioButton {
-                text: "Translucent background"
-                onClicked: {
-                    if (checked) Plasmoid.backgroundHints = 2;
-                }
-            }
+        Item {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
         }
 
-        PlasmaComponents.Button {
-            height: Kirigami.Units.iconSizes.desktop
-            text: "Busy"
-            checked: Plasmoid.busy
-            onClicked: {
-                Plasmoid.busy = !Plasmoid.busy
-            }
-        }
+        // PlasmaComponents.ButtonColumn {
+        //     PlasmaComponents.RadioButton {
+        //         text: "No background"
+        //         onClicked: {
+        //             if (checked) Plasmoid.backgroundHints = 0;
+        //         }
+        //     }
+        //     PlasmaComponents.RadioButton {
+        //         text: "Default background"
+        //         checked: true
+        //         onClicked: {
+        //             if (checked) Plasmoid.backgroundHints = 1;
+        //         }
+        //     }
+        //     PlasmaComponents.RadioButton {
+        //         text: "Translucent background"
+        //         onClicked: {
+        //             if (checked) Plasmoid.backgroundHints = 2;
+        //         }
+        //     }
+        // }
 
-        PlasmaComponents.Button {
-            id: ctxButton
-            height: Kirigami.Units.iconSizes.desktop
-            text: "Context Menu"
-            Loader {
-                id: menuLoader
-            }
-            onClicked: {
-                if (menuLoader.source == "") {
-                   menuLoader.source = "TestMenu.qml"
-                } else {
-                    //menuLoader.source = ""
+        RowLayout {
+            Layout.alignment: Qt.AlignHCenter
+            PlasmaComponents.Button {
+                text: "Busy"
+                checked: Plasmoid.busy
+                onClicked: {
+                    Plasmoid.busy = !Plasmoid.busy
                 }
-                menuLoader.item.open(0, height);
+            }
+
+            PlasmaComponents.Button {
+                id: ctxButton
+                text: "Context Menu"
+
+                TestMenu {
+                    id: menu
+                }
+                onClicked: {
+                    menu.open();
+                }
             }
         }
     }

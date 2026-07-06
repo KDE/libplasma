@@ -5,6 +5,8 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Templates as T
@@ -16,11 +18,8 @@ PlasmoidItem {
     id: root
 
     property int currentIndex: 0
-    onCurrentIndexChanged: print("AAA", currentIndex)
 
     fullRepresentation: ColumnLayout {
-        spacing: 0
-
         Layout.minimumWidth: Kirigami.Units.gridUnit * 15
         Layout.minimumHeight: Kirigami.Units.gridUnit * 15
 
@@ -37,14 +36,6 @@ PlasmoidItem {
             }
 
             Layout.fillWidth: true
-            // Layout.preferredHeight:
-            // anchors {
-            //     left: parent.left
-            //     right: parent.right
-            //     top: parent.top
-            // }
-
-            // height: Kirigami.Units.iconSizes.desktop
 
             PlasmaComponents.TabButton {
                 display: T.AbstractButton.IconOnly
@@ -99,23 +90,11 @@ PlasmoidItem {
 
             ThemePage {}
             DragPage {}
-            // IconsPage {
-            //     id: iconsPage
-            // }
-            // DialogsPage {
-            //     id: dialogsPage
-            // }
-            // ButtonsPage {
-            //     id: buttonsPage
-            // }
-            // PlasmoidPage {
-            //     id: plasmoidPage
-            // }
-
-            // MousePage {
-            //     id: mousePage
-            // }
-
+            IconsPage {}
+            DialogsPage {}
+            ButtonsPage {}
+            PlasmoidPage {}
+            MousePage {}
         }
     }
 }

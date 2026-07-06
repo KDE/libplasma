@@ -6,34 +6,28 @@
 
 import QtQuick
 import org.kde.plasma.components as PlasmaComponents
-import org.kde.kquickcontrolsaddons as KQuickControlsAddons
-
-// PlasmoidPage
 
 PlasmaComponents.Menu {
     id: testMenu
 
     PlasmaComponents.MenuItem {
         text: "Red Snapper"
-        icon: "dragonplayer"
-        onClicked: print(" Clicked on : " + text)
+        icon.name: "dragonplayer"
+        onClicked: print("Clicked on: " + text)
     }
 
     PlasmaComponents.MenuItem {
         text: "Eel"
-        icon: "kthesaurus"
-        onClicked: print(" Clicked on : " + text)
+        icon.name: "animal"
+        onClicked: print("Clicked on: " + text)
     }
 
     PlasmaComponents.MenuItem {
         text: "White Tip Reef Shark"
-        icon: "kmag"
-        onClicked: print(" Clicked on : " + text)
+        icon.name: "kmag"
+        onClicked: print("Clicked on: " + text)
     }
 
-    Component.onCompleted:{
-        print("TestMenu.qml served .. opening");
-
-    }
+    Component.onCompleted: print("TestMenu.qml served .. opening")
 }
 

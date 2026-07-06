@@ -5,71 +5,55 @@
 */
 
 import QtQuick
+import QtQuick.Layouts
 
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents
-import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigami as Kirigami
 
-// IconTab
-
 PlasmaComponents.Page {
-    id: iconsPage
-    anchors {
-        fill: parent
-        margins: _s
-    }
-    Column {
+    id: root
+
+    ColumnLayout {
         anchors.fill: parent
-        spacing: _s
 
         Kirigami.Heading {
-            width: parent.width
+            Layout.fillWidth: true
             elide: Text.ElideRight
             level: 1
             text: "Icons"
         }
         PlasmaComponents.Label {
+            Layout.fillWidth: true
+            wrapMode: PlasmaComponents.Label.Wrap
             text: "iconSizes.small  : " + Kirigami.Units.iconSizes.small +
-                    ", iconSizes.desktop: " + Kirigami.Units.iconSizes.desktop +
-                    ",<br />iconSizes.toolbar: " + Kirigami.Units.iconSizes.toolbar +
-                    ", iconSizes.dialog : " + Kirigami.Units.iconSizes.dialog
+                        "\niconSizes.smallMedium: " + Kirigami.Units.iconSizes.medium +
+                        "\niconSizes.medium: " + Kirigami.Units.iconSizes.medium +
+                        "\niconSizes.large: " + Kirigami.Units.iconSizes.medium +
+                        "\niconSizes.huge: " + Kirigami.Units.iconSizes.medium +
+                        "\niconSizes.enormous: " + Kirigami.Units.iconSizes.medium
 
         }
         Flow {
-            //height: _h
-            width: parent.width
-            spacing: _s
+            Layout.fillWidth: true
 
             Kirigami.Icon {
                 source: "configure"
-                width: _h
-                height: width
             }
             Kirigami.Icon {
                 source: "dialog-ok"
-                width: _h
-                height: width
             }
             Kirigami.Icon {
                 source: "folder-green"
-                width: _h
-                height: width
             }
             Kirigami.Icon {
                 source: "akonadi"
-                width: _h
-                height: width
             }
             Kirigami.Icon {
                 source: "clock"
-                width: _h
-                height: width
             }
-            KQuickControlsAddons.QIconItem {
-                icon: "preferences-desktop-icons"
-                width: _h
-                height: width
+            Kirigami.Icon {
+                source: "preferences-desktop-icons"
             }
 
         }
@@ -78,69 +62,63 @@ PlasmaComponents.Page {
             text: "ToolTip"
         }
 
-        Row {
-            spacing: _s
+        RowLayout {
+            Layout.fillWidth: true
             PlasmaCore.ToolTipArea {
-                width: childrenRect.width
-                height: childrenRect.height
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 2
+                Layout.preferredHeight: Kirigami.Units.gridUnit * 2
                 icon: "klipper"
                 mainText: "Fish sighted in the wild, in the wild, a fish was seen."
                 subText: "A mean-looking grouper swam by."
                 Kirigami.Icon {
-                    id: akonadiIcon
+                    anchors.fill: parent
                     objectName: "akonadiIcon"
                     source: "akonadi"
-                    width: height
-                    height: _h
-                    //anchors.horizontalCenter: parent.horizontalCenter
                     Rectangle { color: "orange"; opacity: 0.3; anchors.fill: parent; }
                 }
             }
             PlasmaCore.ToolTipArea {
-                height: _h
-                width: height
                 image: bridgeimage.source
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 2
+                Layout.preferredHeight: Kirigami.Units.gridUnit * 2
                 mainText: "Bridge"
                 subText: "Waalbrug."
                 Image {
                     id: bridgeimage
+                    anchors.fill: parent
                     objectName: "bridgeimage"
-                    height: _h
-                    width: height
                     fillMode: Image.PreserveAspectFit
                     source: "../images/bridge.jpg"
                 }
             }
             PlasmaCore.ToolTipArea {
-                width: childrenRect.width
-                height: childrenRect.height
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 2
+                Layout.preferredHeight: Kirigami.Units.gridUnit * 2
                 mainItem: PlasmaComponents.Label {
-                    text: "Nijmegen North Beach"
+                    text: "Nijmegen North Beach\nA surfboard on the beach. The photo shows the Waal river's north beach, across the water from Nijmegen, Netherlands.\nIt was taken during the summer festivals a few years back."
                     anchors.centerIn: parent
                 }
                 Image {
+                    anchors.fill: parent
                     objectName: "surfboardimage"
-                    height: _h
-                    width: height
                     fillMode: Image.PreserveAspectFit
                     source: "../images/surfboard.jpg"
 
-                    //subText: "A surfboard on the beach. <br />The photo shows the Waal river's north beach, \
-                    //across the water from Nijmegen, Netherlands. It was taken during the summer festivals a few years back."
                 }
             }
             PlasmaCore.ToolTipArea {
-                width: childrenRect.width
-                height: childrenRect.height
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 4
+                Layout.preferredHeight: Kirigami.Units.gridUnit * 2
                 mainText: "Tooltip on button"
                 PlasmaComponents.Button {
-                    id: button
+                    anchors.fill: parent
                     text: "Button"
-                    iconSource: "call-start"
+                    icon.source: "call-start"
                 }
             }
-
-
+        }
+        Item {
+            Layout.fillHeight: true
         }
     }
 }

@@ -5,46 +5,37 @@
 */
 
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Window
 
 import org.kde.plasma.components as PlasmaComponents
-import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigami as Kirigami
 
-// DialogContent
-
 Item {
-    id: dialogsPage
-    width: 300
-    height: 200
+    id: root
+
     signal closeMe()
-    Rectangle {
-        color: "green"
-        //anchors.margins: 24
-        opacity: 0
+
+    ColumnLayout {
         anchors.fill: parent
-    }
-    Column {
-        anchors.fill: parent
-        spacing: 12
+
         Kirigami.Heading {
-            id: tx
+            Layout.alignment: Qt.AlignHCenter
             level: 1
             text: "Test Dialog"
         }
         PlasmaComponents.TextArea {
-            anchors { left: parent.left; right: parent.right; top: localeItem.bottom; }
-            width: parent.width
-            height: 80
+            Layout.alignment: Qt.AlignHCenter
+            Layout.preferredWidth: 100
+            Layout.preferredHeight: 50
             wrapMode: TextEdit.Wrap
         }
         PlasmaComponents.Button {
             id: thanks
-            anchors { horizontalCenter: parent.horizontalCenter; bottom: parent.bottom; bottomMargin: 24; }
-            iconSource: "dialog-ok"
+            Layout.alignment: Qt.AlignHCenter
+            icon.source: "dialog-ok"
             text: "Thanks."
-            //onClicked: dialogsPage.parent.visible = false;
-            onClicked: closeMe()
+            onClicked: root.closeMe()
         }
     }
 }

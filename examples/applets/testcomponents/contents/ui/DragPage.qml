@@ -7,25 +7,24 @@
 
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Templates as T
+import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.draganddrop as DragAndDrop
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.extras as PlasmaExtras
-import org.kde.plasma.plasmoid
+
+import org.kde.kirigami as Kirigami
+import org.kde.draganddrop as DragAndDrop
+import org.kde.plasma.components as PlasmaComponents
 
 PlasmaComponents.Page {
     id: root
 
-    property int _h: 48
     property bool isDragging: false
 
     padding: Kirigami.Units.largeSpacing
 
     contentItem: ColumnLayout {
-
-        spacing: 0
-
         Kirigami.Heading {
             Layout.fillWidth: true
             horizontalAlignment: Text.AlignHCenter
@@ -36,114 +35,54 @@ PlasmaComponents.Page {
         }
 
         RowLayout {
-            spacing: 0
-
             Layout.fillWidth: true
             Layout.fillHeight: true
 
             ColumnLayout {
                 id: dragCol
 
-                property int itemHeight: _h*1.5
-
-                spacing: _h/4
-
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                Layout.preferredWidth: 1
 
-                DragItem {
+                 QQC2.ItemDelegate {
                     text: "Image and URL"
                     icon.name: "image-png"
-                    Layout.preferredHeight: parent.itemHeight
                     DragAndDrop.DragArea {
                         objectName: "imageandurl"
                         anchors { fill: parent; }
-                        //delegateImage: "akonadi"
+                        delegateImage: "akonadi"
                         mimeData.url: "https://plasma.kde.org/"
-                        onDragStarted: {
-                            isDragging = true;
-                            print(" drag started for " + objectName);
-                            ooo.text = objectName
-                        }
-                        onDrop: {
-                            isDragging = false;
-                            print(" item dropped " + objectName);
-                            ooo.text = objectName
-                        }
-                        //Rectangle { anchors.fill: parent; color: "blue"; opacity: 0.4; }
+                        onDragStarted: root.isDragging = true
+                        onDrop: root.isDragging = false
                     }
                 }
-                DragItem {
-                    text: "Delegate Image"
-                    icon.name: "image-png"
-                    Layout.preferredHeight: parent.itemHeight
-                    DragAndDrop.DragArea {
-                        objectName: "image"
-                        anchors { fill: parent; }
-                        //delegateImage: "akonadi"
-                        //mimeData.url: "https://www.kde.org/"
-                        onDragStarted: {
-                            isDragging = true;
-                            print(" drag started for " + objectName);
-                            ooo.text = objectName
-                        }
-                        onDrop: {
-                            isDragging = false;
-                            print(" item dropped " + objectName);
-                            ooo.text = objectName
-                        }
-                        //Rectangle { anchors.fill: parent; color: "green"; opacity: 0.4; }
-                    }
-                }
-                DragItem {
+                QQC2.ItemDelegate {
                     text: "HTML"
                     icon.name: "text-html"
-                    Layout.preferredHeight: parent.itemHeight
                     DragAndDrop.DragArea {
                         objectName: "html"
                         anchors { fill: parent; }
                         mimeData.html: "<b>One <i> Two <u> Three </b> Four </i>Five </u> "
-                        onDragStarted: {
-                            isDragging = true;
-                            print(" drag started for " + objectName);
-                            ooo.text = objectName
-                        }
-                        onDrop: {
-                            isDragging = false;
-                            print(" item dropped " + objectName);
-                            ooo.text = objectName
-                        }
+                        onDragStarted: root.isDragging = true
+                        onDrop: root.isDragging = false
                     }
                 }
-                DragItem {
+                QQC2.ItemDelegate {
                     text: "Color"
                     icon.name: "preferences-color"
-                    Layout.preferredHeight: parent.itemHeight
                     DragAndDrop.DragArea {
                         objectName: "color"
                         anchors { fill: parent; }
                         mimeData.color: "orange"
-                        onDragStarted: {
-                            isDragging = true;
-                            print(" drag started for " + objectName);
-                            ooo.text = objectName
-                        }
-                        onDrop: {
-                            isDragging = false;
-                            print(" item dropped " + objectName);
-                            ooo.text = objectName
-                            //mimeData.
-                        }
+                        onDragStarted: root.isDragging = true
+                        onDrop: root.isDragging = false
                     }
                 }
-                DragItem {
+                QQC2.ItemDelegate {
                     text: "Lots of Stuff"
-                    icon.name: "ksplash"
-                    Layout.preferredHeight: parent.itemHeight
+                    icon.name: "list-add"
 
                     DragAndDrop.DragArea {
-                        id: dragArea2
                         objectName: "stuff"
                         anchors.fill: parent
 
@@ -153,22 +92,9 @@ PlasmaComponents.Page {
                         mimeData.url: "https://www.kde.org/"
                         mimeData.urls: ["https://planet.kde.org", "https://fsfe.org", "https://techbase.kde.org", "https://qt.io"]
 
-                        //Rectangle { anchors.fill: parent; color: "yellow"; opacity: 0.6; }
-
-                        onDragStarted: {
-                            isDragging = true;
-                            print(" drag started for " + objectName);
-                            ooo.text = objectName
-                        }
-                        onDrop: {
-                            isDragging = false;
-                            print(" item dropped " + objectName);
-                            ooo.text = objectName
-                        }
+                        onDragStarted: root.isDragging = true
+                        onDrop: root.isDragging = false
                     }
-                }
-                PlasmaComponents.Label {
-                    id: ooo
                 }
             }
 
@@ -177,66 +103,41 @@ PlasmaComponents.Page {
                 Layout.fillHeight: true
                 Layout.preferredWidth: 1
 
-                PlasmaExtras.Highlight {
-                    id: dropHightlight
+                Rectangle {
+                    id: clr
                     anchors.fill: parent
-                    opacity: 0
-
-                    PropertyAnimation { properties: "opacity"; easing.type: Easing.Linear; duration: 2000; }
+                    color: "transparent"
+                    opacity: 0.5
                 }
-
-                Rectangle { id: clr; anchors.fill: parent; color: "transparent"; opacity: color != "transparent" ? 1 : 0; }
 
                 PlasmaComponents.Label {
                     id: ilabel
-                    font.pointSize: _h / 2
                     text: "Drop here."
-                    opacity: isDragging ? 0.7 : 0
+                    opacity: 1
                     anchors.centerIn: parent
-                    horizontalAlignment: Text.AlignCenter
+                    horizontalAlignment: Text.AlignHCenter
                     PropertyAnimation { properties: "opacity"; easing.type: Easing.Linear; duration: 2000; }
                 }
 
-                PlasmaComponents.Label {
-                    id: slabel
-                    font.pointSize: _h / 4
-                    //text: "Drop here."
-                    //opacity: isDragging ? 1 : 0
-                    //onTextChanged: print("droparea changed to " + text)
-                    anchors.top: parent.top
-                    anchors.right: parent.right
-                    anchors.left: parent.left
-                    //horizontalAlignment: Text.AlignCenter
-                }
-
-                onDragEnter: {
-        //             slabel.text = "drop item here";
-                    dropHightlight.opacity = 1;
-                }
-                onDragLeave: {
-        //             slabel.text = "drop left";
-                    dropHightlight.opacity = 0;
-                }
-                onDrop: {
+                onDragEnter: ilabel.text = "Drop here."
+                onDragLeave: ilabel.text = "Drop exited"
+                onDrop: event => {
                     var txt = event.mimeData.html;
                     txt += event.mimeData.text;
                     if (event.mimeData.url != "") {
                         txt += "<br />Url: " + event.mimeData.url;
                     }
                     var i = 0;
-                    var u;
-                    for (u in event.mimeData.urls) {
+                    for (let u in event.mimeData.urls) {
                         txt += "<br />  Url " + i + " : " + event.mimeData.urls[i];
                         i++;
                     }
-        //             print("COLOR: " + event.mimeData.color);
                     if (event.mimeData.hasColor()) {
                         clr.color = event.mimeData.color;
                     } else {
                         clr.color = "transparent";
                     }
-                    slabel.text = txt
-                    dropHightlight.opacity = 0.5;
+                    ilabel.text = txt
                 }
             }
         }

@@ -5,6 +5,7 @@
 */
 
 import QtQuick
+import QtQuick.Layouts
 
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.extras as PlasmaExtras
@@ -15,10 +16,7 @@ import org.kde.kirigami as Kirigami
 
 PlasmaComponents.Page {
     id: mousePage
-    anchors {
-        fill: parent
-        margins: _s
-    }
+
     Kirigami.Heading {
         id: mellabel
         level: 1
@@ -29,23 +27,13 @@ PlasmaComponents.Page {
         id: mel
         hoverEnabled: true
         anchors { left: parent.left; right: parent.right; top: mellabel.bottom; bottom: parent.bottom; }
-        /*
-        void pressed(KDeclarativeMouseEvent *mouse);
-        void positionChanged(KDeclarativeMouseEvent *mouse);
-        void released(KDeclarativeMouseEvent *mouse);
-        void clicked(KDeclarativeMouseEvent *mouse);
-        void pressAndHold(KDeclarativeMouseEvent *mouse);
-        void wheelMoved(KDeclarativeWheelEvent *wheel);
-        void containsMouseChanged(bool containsMouseChanged);
-        void hoverEnabledChanged(bool hoverEnabled);
-        */
+
         onPressed: {
             print("Pressed");
             melstatus.text = "pressed";
         }
-        onPositionChanged: {
-            print("positionChanged: " + mouse.x + "," + mouse.y);
-        }
+        onPositionChanged: mouse => print("positionChanged: " + mouse.x + "," + mouse.y)
+
         onReleased: {
             print("Released");
             melstatus.text = "Released";
@@ -58,43 +46,23 @@ PlasmaComponents.Page {
             print("Clicked");
             melstatus.text = "clicked";
         }
-        onWheelMoved: {
-            print("Wheel: " + wheel.delta);
-        }
-        onContainsMouseChanged: {
-            print("Contains mouse: " + containsMouse);
-        }
+        onWheelMoved: wheel => print("Wheel: " + wheel.delta)
 
-        MouseArea {
-            //target: mel
-            anchors.fill: parent
-            onPressed: PlasmaExtras.DisappearAnimation { targetItem: bgImage }
-            onReleased: PlasmaExtras.AppearAnimation { targetItem: bgImage }
-        }
-        Image {
-            id: bgImage
-            source: "image://appbackgrounds/standard"
-            fillMode: Image.Tile
-            anchors.fill: parent
-            asynchronous: true
-//                 opacity: mel.containsMouse ? 1 : 0.2
-//                 Behavior on opacity { PropertyAnimation {} }
-        }
-        Column {
-            //width: parent.width
-            spacing: _s
+        onContainsMouseChanged: print("Contains mouse: " + containsMouse)
+
+        ColumnLayout {
             anchors.fill: parent
             PlasmaComponents.Button {
                 text: "Button"
-                iconSource: "call-start"
+                icon.source: "call-start"
             }
             PlasmaComponents.ToolButton {
                 text: "ToolButton"
-                iconSource: "call-stop"
+                icon.source: "call-stop"
             }
             PlasmaComponents.RadioButton {
                 text: "RadioButton"
-                //iconSource: "call-stop"
+                icon.source: "call-stop"
             }
             PlasmaComponents.Label {
                 id: melstatus

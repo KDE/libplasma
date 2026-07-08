@@ -294,13 +294,13 @@ msgstr "Adicionar um Ícone"
 #: plasmaquick/plasmoid/containmentitem.cpp:644
 #, kde-format
 msgid "Wallpaper"
-msgstr "Papel de Parede"
+msgstr "Imagem de fundo"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:654
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"
-msgstr "Configurar o %1"
+msgstr "Definir %1"
 
 #: plasmaquick/plasmoid/dropmenu.cpp:29
 #, kde-format
@@ -400,13 +400,13 @@ msgstr "Conteúdo largado"
 #~ msgstr "Tema da janela de encerramento"
 
 #~ msgid "Wallpaper packages"
-#~ msgstr "Pacotes de papel de parede"
+#~ msgstr "Pacotes de imagens de fundo"
 
 #~ msgid "Images for widgets"
-#~ msgstr "Imagens dos elementos gráficos"
+#~ msgstr "Imagens dos widgets"
 
 #~ msgid "Background image for widgets"
-#~ msgstr "Imagem de fundo dos elementos"
+#~ msgstr "Imagem de fundo dos widgets"
 
 #~ msgid "Analog clock face"
 #~ msgstr "Face do relógio analógico"

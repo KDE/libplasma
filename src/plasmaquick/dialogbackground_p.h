@@ -7,7 +7,6 @@
 #ifndef DIALOGBACKGROUND_P_H
 #define DIALOGBACKGROUND_P_H
 
-#include "sharedqmlengine.h"
 #include <KSvg/FrameSvg>
 
 #include <QQuickItem>

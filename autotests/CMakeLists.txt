@@ -28,7 +28,6 @@ PLASMA_UNIT_TESTS(
     dialogqmltest
     pluginloadertest
     themetest
-    sharedqmlenginetest
     tooltipareatest
 )
 

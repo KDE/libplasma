@@ -7,7 +7,6 @@
 
 #include "plasmoiditem.h"
 #include "appletcontext_p.h"
-#include "sharedqmlengine.h"
 
 #include <QAction>
 #include <QActionGroup>

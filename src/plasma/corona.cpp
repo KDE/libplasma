@@ -601,6 +601,26 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
         containment->init();
         KConfigGroup cg = containment->config();
         containment->restore(cg);
+
+        {
+            // This block makes sure there are never two Desktop containments
+            // that own the same screen/activity pair.
+            // Do this only when not delayedInit as ShellCorona will do manual replacement of screens
+            // manual things with the screen
+            int newScreen = std::max(0, containment->screen());
+            // Do this everythime because this operation isn't done many times
+            // and to not keep an extra cache in memory with usual sync issues
+            for (auto cont : std::as_const(containments)) {
+                if (containment->location() != Types::Desktop) {
+                    continue;
+                }
+                if (cont->screen() == newScreen && cont->activity() == containment->activity()) {
+                    ++newScreen;
+                }
+            }
+            containment->setScreen(newScreen);
+        }
+
         containment->updateConstraints(Applet::StartupCompletedConstraint);
         containment->save(cg);
         q->requestConfigSync();

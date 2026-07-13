@@ -22,7 +22,7 @@ SimpleCorona::~SimpleCorona()
 {
 }
 
-QRect SimpleCorona::screenGeometry(int screen) const
+QRect SimpleCorona::screenGeometry(uint screen) const
 {
     // completely arbitrary, still not tested
     return QRect(100 * screen, 100, 100, 100);

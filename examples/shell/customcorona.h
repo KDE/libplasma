@@ -16,7 +16,7 @@ class CustomCorona : public Plasma::Corona
 
 public:
     explicit CustomCorona(QObject *parent = nullptr);
-    QRect screenGeometry(int id) const override;
+    QRect screenGeometry(uint id) const override;
 
 public Q_SLOTS:
     void load();

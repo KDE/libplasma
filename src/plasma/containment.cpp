@@ -74,17 +74,17 @@ void Containment::init()
 {
     Applet::init();
 
-    connect(corona(), &Plasma::Corona::availableScreenRectChanged, this, [this](int screenId) {
+    connect(corona(), &Plasma::Corona::availableScreenRectChanged, this, [this](uint screenId) {
         if (screenId == screen()) {
             Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
         }
     });
-    connect(corona(), &Plasma::Corona::availableScreenRegionChanged, this, [this](int screenId) {
+    connect(corona(), &Plasma::Corona::availableScreenRegionChanged, this, [this](uint screenId) {
         if (screenId == screen()) {
             Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
         }
     });
-    connect(corona(), &Plasma::Corona::screenGeometryChanged, this, [this](int screenId) {
+    connect(corona(), &Plasma::Corona::screenGeometryChanged, this, [this](uint screenId) {
         if (screenId == screen()) {
             Q_EMIT screenGeometryChanged(screenGeometry());
         }
@@ -471,7 +471,7 @@ QList<Applet *> Containment::applets() const
     return d->applets;
 }
 
-int Containment::screen() const
+uint Containment::screen() const
 {
     if (Containment *pc = qobject_cast<Containment *>(parent()); pc) {
         return pc->screen();
@@ -479,14 +479,8 @@ int Containment::screen() const
     return d->screen;
 }
 
-void Containment::setScreen(int newScreen)
+void Containment::setScreen(uint newScreen)
 {
-    // TODO: remove the assert
-    Q_ASSERT(newScreen >= 0);
-    if (newScreen < 0) {
-        qCWarning(LOG_PLASMA) << "Passed Containment::setScreen(" << newScreen << "), only numbers >= 0 are allowed";
-        return;
-    }
     if (!corona() || d->screen == newScreen) {
         return;
     }
@@ -505,7 +499,7 @@ void Containment::setScreen(int newScreen)
 
 QRectF Containment::availableRelativeScreenRect() const
 {
-    if (!corona() || d->screen < 0) {
+    if (!corona()) {
         return {};
     }
 
@@ -520,7 +514,7 @@ QList<QRectF> Containment::availableRelativeScreenRegion() const
 {
     QList<QRectF> regVal;
 
-    if (!containment() || !containment()->corona() || d->screen < 0) {
+    if (!containment() || !containment()->corona()) {
         return regVal;
     }
 
@@ -540,7 +534,7 @@ QList<QRectF> Containment::availableRelativeScreenRegion() const
 
 QRectF Containment::screenGeometry() const
 {
-    if (!corona() || d->screen < 0) {
+    if (!corona()) {
         return {};
     }
 

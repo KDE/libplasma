@@ -29,12 +29,13 @@ T.Menu {
 
     delegate: MenuItem { width: parent.width; onImplicitWidthChanged: control.contentItem.contentItem.childrenChanged() }
 
-    margins: 0
+    margins: background ? Math.max(background.margins.top, background.margins.left,
+                                   background.margins.right, background.margins.bottom) : 0
 
-    topPadding: (background as KSvg.FrameSvgItem)?.margins.top ?? undefined
-    leftPadding: (background as KSvg.FrameSvgItem)?.margins.left ?? undefined
-    rightPadding: (background as KSvg.FrameSvgItem)?.margins.right ?? undefined
-    bottomPadding: (background as KSvg.FrameSvgItem)?.margins.bottom ?? undefined
+    topPadding: background ? background.margins.top : undefined
+    leftPadding: background ? background.margins.left : undefined
+    rightPadding: background ? background.margins.right : undefined
+    bottomPadding: background ? background.margins.bottom : undefined
 
     contentItem: ListView {
         implicitHeight: contentHeight
@@ -95,9 +96,31 @@ T.Menu {
         }
     }
 
-    background: KSvg.FrameSvgItem {
-        imagePath: "widgets/background"
-        implicitWidth: Kirigami.Units.gridUnit * 8
-        implicitHeight: Kirigami.Units.gridUnit * 2
+    background: Item {
+        readonly property alias margins: surface.margins
+
+        implicitWidth: Kirigami.Units.gridUnit * 8 + surface.margins.left + surface.margins.right
+        implicitHeight: Kirigami.Units.gridUnit * 2 + surface.margins.top + surface.margins.bottom
+
+        KSvg.FrameSvgItem {
+            id: shadow
+            anchors {
+                fill: parent
+                topMargin: -margins.top
+                leftMargin: -margins.left
+                rightMargin: -margins.right
+                bottomMargin: -margins.bottom
+            }
+            imagePath: "solid/widgets/tooltip"
+            prefix: "shadow"
+        }
+
+        // there is no blur used so we don't want translucent SVGs
+        // using tooltip SVG because it's a popup and because we have no menu SVG
+        KSvg.FrameSvgItem {
+            id: surface
+            anchors.fill: parent
+            imagePath: "solid/widgets/tooltip"
+        }
     }
 }

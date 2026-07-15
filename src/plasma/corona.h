@@ -142,6 +142,16 @@ public:
     QList<Containment *> containmentsForScreen(uint screen);
 
     /*!
+     * Sets the Containment plugin for a given screen.
+     * If there is a containment owning the pain (screen, activity), unload it and
+     * created a new one with the desired plugin.
+     * All existing applets are transferred to the new containment.
+     *
+     * \since 6.8
+     */
+    Plasma::Containment *setContainmentTypeForScreen(uint screen, const QString &activity, const QString &plugin);
+
+    /*!
      * Returns the number of screens available to plasma.
      * Subclasses should override this method as the default
      * implementation returns a meaningless value.

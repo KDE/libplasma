@@ -182,6 +182,100 @@ Containment *Corona::containmentForScreen(uint screen, const QString &activity, 
     return containment;
 }
 
+Plasma::Containment *Corona::setContainmentTypeForScreen(uint screen, const QString &activity, const QString &plugin)
+{
+    Plasma::Containment *oldContainment = nullptr;
+    // search but not create
+    const auto it = std::find_if(d->containments.constBegin(), d->containments.constEnd(), [screen, activity](Plasma::Containment *cont) {
+        return cont->screen() == screen && cont->activity() == activity;
+    });
+
+    if (it != d->containments.constEnd()) {
+        oldContainment = *it;
+    }
+
+    // no valid containment in given screen, giving up
+    if (!oldContainment) {
+        return nullptr;
+    }
+
+    if (plugin.isEmpty()) {
+        return oldContainment;
+    }
+
+    // create a new containment
+    Plasma::Containment *newContainment = d->addContainment(plugin, {}, 0, screen, false);
+
+    // if creation failed or invalid plugin, give up
+    if (!newContainment) {
+        return oldContainment;
+    } else if (!newContainment->pluginMetaData().isValid()) {
+        newContainment->deleteLater();
+        return oldContainment;
+    }
+
+    // At this point we have a valid new containment from plugin and a view
+    // copy all configuration groups (excluded applets)
+    KConfigGroup oldCg = oldContainment->config();
+
+    // newCg *HAS* to be from a KSharedConfig, because some KConfigSkeleton will need to be synced
+    // this makes the configscheme work
+    KConfigGroup newCg(KSharedConfig::openConfig(oldCg.config()->name()), QStringLiteral("Containments"));
+    newCg = KConfigGroup(&newCg, QString::number(newContainment->id()));
+
+    // this makes containment->config() work, is a separate thing from its configscheme
+    KConfigGroup newCg2 = newContainment->config();
+
+    const auto groups = oldCg.groupList();
+    for (const QString &group : groups) {
+        if (group != QLatin1String("Applets")) {
+            KConfigGroup subGroup(&oldCg, group);
+            KConfigGroup newSubGroup(&newCg, group);
+            subGroup.copyTo(&newSubGroup);
+
+            KConfigGroup newSubGroup2(&newCg2, group);
+            subGroup.copyTo(&newSubGroup2);
+        }
+    }
+
+    newContainment->init();
+
+    const QMap<QString, QString> entryMap = oldCg.entryMap();
+    for (auto it = entryMap.constBegin(); it != entryMap.constEnd(); it++) {
+        if (it.key() == u"activityId" || it.key() == u"wallpaperplugin" || it.key().startsWith(u"ItemGeometries")) {
+            newCg.writeEntry(it.key(), it.value());
+            newCg2.writeEntry(it.key(), it.value());
+        }
+    }
+
+    newContainment->restore(newCg);
+    newContainment->updateConstraints(Plasma::Applet::StartupCompletedConstraint);
+    newContainment->flushPendingConstraintsEvents();
+    Q_EMIT containmentAdded(newContainment);
+
+    // Move the applets
+    const auto applets = oldContainment->applets();
+    for (Plasma::Applet *applet : applets) {
+        newContainment->addApplet(applet);
+    }
+
+    // remove the "remove" action
+    QAction *removeAction = newContainment->internalAction(QStringLiteral("remove"));
+    if (removeAction) {
+        removeAction->deleteLater();
+    }
+    newContainment->setActivity(oldContainment->activity());
+
+    oldContainment->destroy();
+
+    // Save now as we now have a screen, so lastScreen will not be -1
+    newContainment->save(newCg);
+    requestConfigSync();
+    Q_EMIT availableScreenRectChanged(screen);
+
+    return newContainment;
+}
+
 QList<Containment *> Corona::containmentsForActivity(const QString &activity)
 {
     QList<Containment *> conts;

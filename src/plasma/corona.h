@@ -141,6 +141,8 @@ public:
      */
     QList<Containment *> containmentsForScreen(uint screen);
 
+    Plasma::Containment *setContainmentTypeForScreen(uint screen, const QString &activity, const QString &plugin);
+
     /*!
      * Returns the number of screens available to plasma.
      * Subclasses should override this method as the default

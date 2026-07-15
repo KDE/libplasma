@@ -68,6 +68,7 @@ ContainmentViewPrivate::~ContainmentViewPrivate()
 
 void ContainmentViewPrivate::setContainment(Plasma::Containment *cont)
 {
+    qWarning() << "NEW CONT" << cont;
     if (containment == cont) {
         return;
     }
@@ -105,11 +106,19 @@ void ContainmentViewPrivate::setContainment(Plasma::Containment *cont)
         QObject::connect(cont, &Plasma::Containment::locationChanged, q, &ContainmentView::locationChanged);
         QObject::connect(cont, &Plasma::Containment::formFactorChanged, q, &ContainmentView::formFactorChanged);
         QObject::connect(cont, &Plasma::Containment::configureRequested, q, &ContainmentView::showConfigurationInterface);
+        // TODO: move to PanelView
         QObject::connect(cont, SIGNAL(destroyedChanged(bool)), q, SLOT(updateDestroyed(bool)));
+        auto screen = containment->screen();
+        auto activity = containment->activity();
 
-        // Panels are created invisible and the code below ensures they are only
-        // shown once their contents have settled to avoid visual glitches on startup
-        if (cont->containmentType() == Plasma::Containment::Type::Panel || cont->containmentType() == Plasma::Containment::Type::CustomPanel) {
+        if (cont->containmentType() == Plasma::Containment::Type::Desktop) {
+            QObject::connect(cont, &QObject::destroyed, q, [this, screen, activity]() {
+                q->setContainment(corona->containmentForScreen(screen, activity, {}));
+                q->show();
+            });
+        } else if (cont->containmentType() == Plasma::Containment::Type::Panel || cont->containmentType() == Plasma::Containment::Type::CustomPanel) {
+            // Panels are created invisible and the code below ensures they are only
+            // shown once their contents have settled to avoid visual glitches on startup
             QObject::connect(cont, &Plasma::Containment::uiReadyChanged, q, [this, cont](bool ready) {
                 if (ready && !cont->destroyed()) {
                     q->setVisible(true);

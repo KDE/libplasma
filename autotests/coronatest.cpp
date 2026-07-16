@@ -22,18 +22,10 @@ SimpleCorona::~SimpleCorona()
 {
 }
 
-QRect SimpleCorona::screenGeometry(int screen) const
+QRect SimpleCorona::screenGeometry(uint screen) const
 {
     // completely arbitrary, still not tested
     return QRect(100 * screen, 100, 100, 100);
-}
-
-int SimpleCorona::screenForContainment(const Plasma::Containment *c) const
-{
-    if (qobject_cast<const SimpleNoScreenContainment *>(c)) {
-        return -1;
-    }
-    return 0;
 }
 
 SimpleApplet::SimpleApplet(QObject *parentObject, const KPluginMetaData &data, const QVariantList &args)

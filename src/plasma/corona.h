@@ -120,7 +120,7 @@ public:
      * \since 5.45
      */
     Containment *
-    containmentForScreen(int screen, const QString &activity, const QString &defaultPluginIfNonExistent, const QVariantList &defaultArgs = QVariantList());
+    containmentForScreen(uint screen, const QString &activity, const QString &defaultPluginIfNonExistent, const QVariantList &defaultArgs = QVariantList());
 
     /*!
      * Returns all containments which match a particular activity, for any screen
@@ -139,14 +139,14 @@ public:
      *
      * \since 5.45
      */
-    QList<Containment *> containmentsForScreen(int screen);
+    QList<Containment *> containmentsForScreen(uint screen);
 
     /*!
      * Returns the number of screens available to plasma.
      * Subclasses should override this method as the default
      * implementation returns a meaningless value.
      */
-    virtual int numScreens() const;
+    virtual uint numScreens() const;
 
     /*!
      * Returns the geometry of a given screen.
@@ -154,7 +154,7 @@ public:
      * Subclasses should override this method as the default
      * implementation returns a meaningless value.
      */
-    virtual QRect screenGeometry(int id) const = 0;
+    virtual QRect screenGeometry(uint id) const = 0;
 
     /*!
      * Returns the available region for a given screen.
@@ -164,7 +164,7 @@ public:
      * equal to screenGeometry(id); subclasses that need another
      * behavior should override this method.
      */
-    virtual QRegion availableScreenRegion(int id) const;
+    virtual QRegion availableScreenRegion(uint id) const;
 
     /*!
      * Returns the available rect for a given screen.
@@ -177,7 +177,7 @@ public:
      * equal to screenGeometry(id); subclasses that need another
      * behavior should override this method.
      */
-    virtual QRect availableScreenRect(int id) const;
+    virtual QRect availableScreenRect(uint id) const;
 
     /*!
      * This method is useful in order to retrieve the list of available
@@ -187,7 +187,7 @@ public:
      *
      * Returns a list of free edges not filled with panel type containments.
      */
-    QList<Plasma::Types::Location> freeEdges(int screen) const;
+    QList<Plasma::Types::Location> freeEdges(uint screen) const;
 
     /*!
      * Returns the action with the given name, if any
@@ -232,12 +232,6 @@ public:
      * \since 4.6
      */
     void exportLayout(KConfigGroup &config, QList<Containment *> containments);
-
-    /*!
-     * Returns the id of the screen which is showing \a containment
-     * -1 is returned if the containment is not associated with a screen.
-     */
-    virtual int screenForContainment(const Containment *containment) const;
 
     /*!
      * Returns the type of immutability of this Corona
@@ -333,7 +327,7 @@ Q_SIGNALS:
      *
      * \a isScreen the screen it is now associated with
      */
-    void screenOwnerChanged(int isScreen);
+    void screenOwnerChanged(uint isScreen);
 
     /*!
      * This signal indicates that the configuration file was flushed to disk.
@@ -343,17 +337,17 @@ Q_SIGNALS:
     /*!
      * This signal indicates that a change in available screen geometry occurred.
      */
-    void availableScreenRegionChanged(int id);
+    void availableScreenRegionChanged(uint id);
 
     /*!
      * This signal indicates that a change in available screen geometry occurred.
      */
-    void availableScreenRectChanged(int id);
+    void availableScreenRectChanged(uint id);
 
     /*!
      * This signal indicates that a change in geometry for the screen occurred.
      */
-    void screenGeometryChanged(int id);
+    void screenGeometryChanged(uint id);
 
     /*!
      * emitted when immutability changes.
@@ -366,12 +360,12 @@ Q_SIGNALS:
     /*! This signal indicates the screen with the specified id was removed.
      * \since 5.40
      */
-    void screenRemoved(int id);
+    void screenRemoved(uint id);
 
     /*! This signal indicates a new screen with the specified id was added.
      * \since 5.40
      */
-    void screenAdded(int id);
+    void screenAdded(uint id);
 
     /*!
      * emitted when the editMode state changes

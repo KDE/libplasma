@@ -74,17 +74,17 @@ void Containment::init()
 {
     Applet::init();
 
-    connect(corona(), &Plasma::Corona::availableScreenRectChanged, this, [this](int screenId) {
+    connect(corona(), &Plasma::Corona::availableScreenRectChanged, this, [this](uint screenId) {
         if (screenId == screen()) {
             Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
         }
     });
-    connect(corona(), &Plasma::Corona::availableScreenRegionChanged, this, [this](int screenId) {
+    connect(corona(), &Plasma::Corona::availableScreenRegionChanged, this, [this](uint screenId) {
         if (screenId == screen()) {
             Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
         }
     });
-    connect(corona(), &Plasma::Corona::screenGeometryChanged, this, [this](int screenId) {
+    connect(corona(), &Plasma::Corona::screenGeometryChanged, this, [this](uint screenId) {
         if (screenId == screen()) {
             Q_EMIT screenGeometryChanged(screenGeometry());
         }
@@ -145,12 +145,11 @@ void Containment::restore(KConfigGroup &group)
     // qCDebug(LOG_PLASMA) << "    location:" << group.readEntry("location", (int)d->location);
     // qCDebug(LOG_PLASMA) << "    geom:" << group.readEntry("geometry", geometry());
     // qCDebug(LOG_PLASMA) << "    formfactor:" << group.readEntry("formfactor", (int)d->formFactor);
-    // qCDebug(LOG_PLASMA) << "    screen:" << group.readEntry("screen", d->screen);
     #endif
     */
     setLocation((Plasma::Types::Location)group.readEntry("location", (int)d->location));
     setFormFactor((Plasma::Types::FormFactor)group.readEntry("formfactor", (int)d->formFactor));
-    d->lastScreen = group.readEntry("lastScreen", d->lastScreen);
+    d->screen = group.readEntry("lastScreen", d->screen);
 
     setWallpaperPlugin(group.readEntry("wallpaperplugin", ContainmentPrivate::defaultWallpaperPlugin));
 
@@ -213,8 +212,7 @@ void Containment::save(KConfigGroup &g) const
     // locking is saved in Applet::save
     Applet::save(group);
 
-    //     group.writeEntry("screen", d->screen);
-    group.writeEntry("lastScreen", d->lastScreen);
+    group.writeEntry("lastScreen", d->screen);
     group.writeEntry("formfactor", (int)d->formFactor);
     group.writeEntry("location", (int)d->location);
 #if ENABLE_ACTIVITIES
@@ -473,24 +471,30 @@ QList<Applet *> Containment::applets() const
     return d->applets;
 }
 
-int Containment::screen() const
-{
-    Q_ASSERT(corona());
-    if (Containment *pc = qobject_cast<Containment *>(parent()); pc && isContainment()) {
-        return pc->screen();
-    } else if (Corona *c = corona()) {
-        return c->screenForContainment(this);
-    } else {
-        return -1;
-    }
-}
-
-int Containment::lastScreen() const
+uint Containment::screen() const
 {
     if (Containment *pc = qobject_cast<Containment *>(parent()); pc) {
-        return pc->lastScreen();
+        return pc->screen();
     }
-    return d->lastScreen;
+    return d->screen;
+}
+
+void Containment::setScreen(uint newScreen)
+{
+    if (!corona() || d->screen == newScreen) {
+        return;
+    }
+
+    d->screen = newScreen;
+    Q_EMIT screenChanged(newScreen);
+
+    KConfigGroup c = config();
+    c.writeEntry("lastScreen", d->screen);
+    Q_EMIT configNeedsSaving();
+
+    Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
+    Q_EMIT screenGeometryChanged(screenGeometry());
+    Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
 }
 
 QRectF Containment::availableRelativeScreenRect() const
@@ -499,26 +503,11 @@ QRectF Containment::availableRelativeScreenRect() const
         return {};
     }
 
-    int screenId = screen();
-
-    // If corona returned an invalid screenId, try to use lastScreen value if it is valid
-    if (screenId == -1 && lastScreen() > -1) {
-        screenId = lastScreen();
-        // Is this a screen not actually valid?
-        if (screenId >= corona()->numScreens()) {
-            screenId = -1;
-        }
-    }
-
-    if (screenId > -1) {
-        QRectF rect = corona()->availableScreenRect(screenId);
-        // make it relative
-        QRectF geometry = corona()->screenGeometry(screenId);
-        rect.moveTo(rect.topLeft() - geometry.topLeft());
-        return rect;
-    }
-
-    return {};
+    QRectF rect = corona()->availableScreenRect(d->screen);
+    // make it relative
+    QRectF geometry = corona()->screenGeometry(d->screen);
+    rect.moveTo(rect.topLeft() - geometry.topLeft());
+    return rect;
 }
 
 QList<QRectF> Containment::availableRelativeScreenRegion() const
@@ -529,15 +518,11 @@ QList<QRectF> Containment::availableRelativeScreenRegion() const
         return regVal;
     }
 
-    int screenId = screen();
-    if (screenId < 0) {
-        return {};
-    }
-    QRegion reg = containment()->corona()->availableScreenRegion(screenId);
+    QRegion reg = containment()->corona()->availableScreenRegion(d->screen);
 
     auto it = reg.begin();
     const auto itEnd = reg.end();
-    QRect geometry = containment()->corona()->screenGeometry(screenId);
+    QRect geometry = containment()->corona()->screenGeometry(d->screen);
     for (; it != itEnd; ++it) {
         QRect rect = *it;
         // make it relative
@@ -549,11 +534,11 @@ QList<QRectF> Containment::availableRelativeScreenRegion() const
 
 QRectF Containment::screenGeometry() const
 {
-    if (!corona() || screen() < 0) {
+    if (!corona()) {
         return {};
     }
 
-    return corona()->screenGeometry(screen());
+    return corona()->screenGeometry(d->screen);
 }
 
 void Containment::setWallpaperPlugin(const QString &pluginName)
@@ -678,24 +663,6 @@ QString Containment::activityName() const
 #else
     return QString();
 #endif
-}
-
-void Containment::reactToScreenChange()
-{
-    int newScreen = screen();
-
-    Q_EMIT screenChanged(newScreen);
-
-    if (newScreen >= 0) {
-        d->lastScreen = newScreen;
-        KConfigGroup c = config();
-        c.writeEntry("lastScreen", d->lastScreen);
-        Q_EMIT configNeedsSaving();
-
-        Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
-        Q_EMIT screenGeometryChanged(screenGeometry());
-        Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
-    }
 }
 
 } // Plasma namespace

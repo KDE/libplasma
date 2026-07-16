@@ -82,7 +82,6 @@ void ContainmentViewPrivate::setContainment(Plasma::Containment *cont)
             // TODO: delete the item when needed instead of just hiding, but there are quite a lot of cornercases to manage beforehand
             item->setVisible(false);
         }
-        containment->reactToScreenChange();
     }
 
     containment = cont;
@@ -103,7 +102,6 @@ void ContainmentViewPrivate::setContainment(Plasma::Containment *cont)
         q->rootObject()->setSize(q->size());
     }
     if (cont) {
-        cont->reactToScreenChange();
         QObject::connect(cont, &Plasma::Containment::locationChanged, q, &ContainmentView::locationChanged);
         QObject::connect(cont, &Plasma::Containment::formFactorChanged, q, &ContainmentView::formFactorChanged);
         QObject::connect(cont, &Plasma::Containment::configureRequested, q, &ContainmentView::showConfigurationInterface);
@@ -217,8 +215,8 @@ ContainmentView::ContainmentView(Plasma::Corona *corona, QWindow *parent)
                      &ContainmentView::screenGeometryChanged);
     QObject::connect(this, &ContainmentView::screenChanged, this,
                      [this]() {
-                         d->reactToScreenChange();
-                     });
+        d->reactToScreenChange();
+    });
 
     if (corona->kPackage().isValid()) {
         const auto info = corona->kPackage().metadata();

@@ -21,8 +21,7 @@ public:
     explicit SimpleCorona(QObject *parent = nullptr);
     ~SimpleCorona() override;
 
-    QRect screenGeometry(int) const override;
-    int screenForContainment(const Plasma::Containment *) const override;
+    QRect screenGeometry(uint) const override;
 };
 
 class SimpleApplet : public Plasma::Applet

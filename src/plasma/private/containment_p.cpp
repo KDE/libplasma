@@ -31,7 +31,6 @@ ContainmentPrivate::ContainmentPrivate(Containment *c)
     : q(c)
     , formFactor(Types::Planar)
     , location(Types::Floating)
-    , lastScreen(-1)
     , type(Plasma::Containment::Type::NoContainment) // never had a screen
     , uiReady(false)
     , appletsUiReady(false)

@@ -33,7 +33,7 @@ CustomCorona::CustomCorona(QObject *parent)
     load();
 }
 
-QRect CustomCorona::screenGeometry(int id) const
+QRect CustomCorona::screenGeometry(uint id) const
 {
     Q_UNUSED(id);
     // TODO?

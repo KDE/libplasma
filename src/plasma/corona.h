@@ -149,7 +149,7 @@ public:
      *
      * \since 6.8
      */
-    Plasma::Containment *setContainmentTypeForScreen(uint screen, const QString &activity, const QString &plugin);
+    Plasma::Containment *setContainmentPluginForScreen(uint screen, const QString &activity, const QString &plugin);
 
     /*!
      * Returns the number of screens available to plasma.

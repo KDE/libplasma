@@ -182,7 +182,7 @@ Containment *Corona::containmentForScreen(uint screen, const QString &activity, 
     return containment;
 }
 
-Plasma::Containment *Corona::setContainmentTypeForScreen(uint screen, const QString &activity, const QString &plugin)
+Plasma::Containment *Corona::setContainmentPluginForScreen(uint screen, const QString &activity, const QString &plugin)
 {
     Plasma::Containment *oldContainment = nullptr;
     // search but not create

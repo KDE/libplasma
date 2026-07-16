@@ -27,12 +27,12 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
     auto parentItem = qobject_cast<QQuickItem *>(parent);
     if (parentItem) {
         connect(parentItem, &QQuickItem::windowChanged, this, &PlasmaTheme::syncWindow);
-        connect(parentItem, &QQuickItem::enabledChanged, this, &PlasmaTheme::syncColors);
+        connect(parentItem, &QQuickItem::enabledChanged, this, &PlasmaTheme::syncWindowDependentColors);
         connect(parentItem, &QQuickItem::visibleChanged, this, [this, parentItem] {
             if (!parentItem->isVisible()) {
                 return;
             }
-            syncColors();
+            syncWindowDependentColors();
         });
     }
 
@@ -54,8 +54,8 @@ PlasmaTheme::PlasmaTheme(QObject *parent)
     }()));
 
     syncWindow();
-    syncColors();
-    connect(&m_theme, &Plasma::Theme::themeChanged, this, &PlasmaTheme::syncColors);
+    syncAllColors();
+    connect(&m_theme, &Plasma::Theme::themeChanged, this, &PlasmaTheme::syncAllColors);
 }
 
 PlasmaTheme::~PlasmaTheme()
@@ -81,7 +81,7 @@ QIcon PlasmaTheme::iconFromTheme(const QString &name, const QColor &customColor)
 void PlasmaTheme::syncWindow()
 {
     if (m_window) {
-        disconnect(m_window.data(), &QWindow::activeChanged, this, &PlasmaTheme::syncColors);
+        disconnect(m_window.data(), &QWindow::activeChanged, this, &PlasmaTheme::syncWindowDependentColors);
     }
 
     QWindow *window = nullptr;
@@ -101,12 +101,12 @@ void PlasmaTheme::syncWindow()
     m_window = window;
 
     if (window) {
-        connect(m_window.data(), &QWindow::activeChanged, this, &PlasmaTheme::syncColors);
-        syncColors();
+        connect(m_window.data(), &QWindow::activeChanged, this, &PlasmaTheme::syncWindowDependentColors);
+        syncWindowDependentColors();
     }
 }
 
-void PlasmaTheme::syncColors()
+void PlasmaTheme::syncWindowDependentColors()
 {
     if (QCoreApplication::closingDown()) {
         return;
@@ -135,6 +135,14 @@ void PlasmaTheme::syncColors()
     } else {
         setTextColor(m_theme.color(Plasma::Theme::TextColor, colorSet()));
     }
+    setBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, colorSet()));
+    setFrameContrast(KColorScheme::frameContrast());
+}
+
+void PlasmaTheme::syncAllColors()
+{
+    syncWindowDependentColors();
+
     setDisabledTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, colorSet()));
     setHighlightedTextColor(m_theme.color(Plasma::Theme::HighlightedTextColor, colorSet()));
     // Plasma::Theme doesn't have ActiveText, use HighlightColor
@@ -176,11 +184,11 @@ void PlasmaTheme::syncFrameContrast()
 bool PlasmaTheme::event(QEvent *event)
 {
     if (event->type() == Kirigami::Platform::PlatformThemeEvents::ColorSetChangedEvent::type) {
-        syncColors();
+        syncAllColors();
     }
 
     if (event->type() == Kirigami::Platform::PlatformThemeEvents::ColorGroupChangedEvent::type) {
-        syncColors();
+        syncAllColors();
     }
 
     if (event->type() == Kirigami::Platform::PlatformThemeEvents::FrameContrastChangedEvent::type) {

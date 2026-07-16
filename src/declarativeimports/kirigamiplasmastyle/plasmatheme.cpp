@@ -170,25 +170,6 @@ void PlasmaTheme::syncFrameContrast()
         return;
     }
 
-    QPalette::ColorGroup paletteGroup = (QPalette::ColorGroup)colorGroup();
-    auto parentItem = qobject_cast<QQuickItem *>(parent());
-    if (parentItem) {
-        if (!parentItem->isVisible()) {
-            return;
-        }
-        if (!parentItem->isEnabled()) {
-            paletteGroup = QPalette::Disabled;
-        } else if (m_window && !m_window->isActive() && m_window->isExposed()) {
-            paletteGroup = QPalette::Inactive;
-        }
-    }
-
-    if (paletteGroup == QPalette::Disabled) {
-        setTextColor(m_theme.color(Plasma::Theme::DisabledTextColor, colorSet()));
-    } else {
-        setTextColor(m_theme.color(Plasma::Theme::TextColor, colorSet()));
-    }
-    setBackgroundColor(m_theme.color(Plasma::Theme::BackgroundColor, colorSet()));
     setFrameContrast(KColorScheme::frameContrast());
 }
 

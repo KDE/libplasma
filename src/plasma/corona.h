@@ -332,6 +332,17 @@ Q_SIGNALS:
     void containmentCreated(Plasma::Containment *containment);
 
     /*!
+     * This signal indicates that the uiReady state of a containment is changed
+     *
+     * \a containment The containment that changed, usually it is just done loading its own QML ui
+     * \a uiReady Whether now the ui of the containment is ready or not
+     *
+     * \sa Containment::uiReadyChanged
+     * \since 6.8
+     */
+    void containmentUiReadyChanged(Plasma::Containment *containment, bool uiReady);
+
+    /*!
      * This signal indicates that a containment has been newly
      * associated (or dissociated) with a physical screen.
      *

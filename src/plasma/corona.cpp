@@ -671,6 +671,9 @@ Containment *CoronaPrivate::addContainment(const QString &name, const QVariantLi
     QObject::connect(containment, SIGNAL(destroyed(QObject *)), q, SLOT(containmentDestroyed(QObject *)));
     QObject::connect(containment, &Applet::configNeedsSaving, q, &Corona::requestConfigSync);
     QObject::connect(containment, &Containment::screenChanged, q, &Corona::screenOwnerChanged);
+    QObject::connect(containment, &Containment::uiReadyChanged, q, [this, containment](bool uiReady) {
+        Q_EMIT q->containmentUiReadyChanged(containment, uiReady);
+    });
 
     containment->init();
     KConfigGroup cg = containment->config();

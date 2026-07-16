@@ -403,27 +403,6 @@ protected:
      **/
     virtual void loadDefaultLayout();
 
-    /*!
-     * Loads a containment with delayed initialization, primarily useful
-     * for implementations of loadDefaultLayout. The caller is responsible
-     * for all initialization, saving and notification of a new containment.
-     *
-     * \a name the plugin name for the containment, as given by
-     *        KPluginInfo::pluginName(). If an empty string is passed in, the default
-     *        containment plugin will be used (usually DesktopContainment). If the
-     *        string literal "null" is passed in, then no plugin will be loaded and
-     *        a simple Containment object will be created instead.
-     *
-     * \a args argument list to pass to the containment
-     *
-     * Returns a pointer to the containment on success, or 0 on failure. Failure can
-     * be caused by the Immutability type being too restrictive, as containments can't be added
-     * when widgets are locked, or if the requested containment plugin can not be located
-     * or successfully loaded.
-     * \sa createContainment
-     **/
-    Containment *createContainmentDelayed(const QString &name, const QVariantList &args = QVariantList());
-
 private:
     CoronaPrivate *const d;
 

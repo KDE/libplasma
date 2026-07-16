@@ -277,23 +277,17 @@ QRect PlasmoidItem::availableScreenRect() const
 
     QRect rect(0, 0, width(), height());
 
-    int screenId = screen();
+    uint screenId = screen();
 
-    // If corona returned an invalid screenId, try to use lastScreen value if it is valid
-    if (screenId == -1 && applet()->containment()->screen() > -1) {
-        screenId = applet()->containment()->screen();
-        // Is this a screen not actually valid?
-        if (screenId >= applet()->containment()->corona()->numScreens()) {
-            screenId = -1;
-        }
+    // Is this a screen not actually valid?
+    if (screenId >= applet()->containment()->corona()->numScreens()) {
+        screenId = 0;
     }
 
-    if (screenId > -1) {
-        rect = applet()->containment()->corona()->availableScreenRect(screenId);
-        // make it relative
-        QRect geometry = applet()->containment()->corona()->screenGeometry(screenId);
-        rect.moveTo(rect.topLeft() - geometry.topLeft());
-    }
+    rect = applet()->containment()->corona()->availableScreenRect(screenId);
+    // make it relative
+    QRect geometry = applet()->containment()->corona()->screenGeometry(screenId);
+    rect.moveTo(rect.topLeft() - geometry.topLeft());
 
     return rect;
 }

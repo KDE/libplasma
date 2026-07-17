@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-30 00:45+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2020-09-19 11:42+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -76,7 +76,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Тоза кардани %1"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:365 plasma/corona.cpp:486
+#: plasma/containment.cpp:108 plasma/corona.cpp:354 plasma/corona.cpp:475
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Гузариш ба реҷаи тағйирдиҳӣ"
@@ -87,17 +87,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Танзимоти %1..."
 
-#: plasma/corona.cpp:314 plasma/corona.cpp:471
+#: plasma/corona.cpp:303 plasma/corona.cpp:460
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Қулф кардани виҷетҳо"
 
-#: plasma/corona.cpp:314
+#: plasma/corona.cpp:303
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Кушодани қулфи виҷетҳо"
 
-#: plasma/corona.cpp:363
+#: plasma/corona.cpp:352
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Баромад аз реҷаи тағйирдиҳӣ"
@@ -157,22 +157,22 @@ msgstr "Танзимоти виҷетҳо"
 msgid "Remove this Widget"
 msgstr "Тоза кардани ин виҷет"
 
-#: plasma/private/containment_p.cpp:55
+#: plasma/private/containment_p.cpp:54
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Тоза кардани ин лавҳа"
 
-#: plasma/private/containment_p.cpp:57
+#: plasma/private/containment_p.cpp:56
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Тоза кардани ин фаъолият"
 
-#: plasma/private/containment_p.cpp:62
+#: plasma/private/containment_p.cpp:61
 #, kde-format
 msgid "Activity Settings"
 msgstr "Танзимоти фаъолиятҳо"
 
-#: plasma/private/containment_p.cpp:74
+#: plasma/private/containment_p.cpp:73
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr ""

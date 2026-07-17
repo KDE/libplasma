@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-30 00:45+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2026-05-28 09:04+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -81,7 +81,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Elimina %1"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:365 plasma/corona.cpp:486
+#: plasma/containment.cpp:108 plasma/corona.cpp:354 plasma/corona.cpp:475
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Entra en el mode edició"
@@ -92,17 +92,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Configura %1…"
 
-#: plasma/corona.cpp:314 plasma/corona.cpp:471
+#: plasma/corona.cpp:303 plasma/corona.cpp:460
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Bloqueja els ginys"
 
-#: plasma/corona.cpp:314
+#: plasma/corona.cpp:303
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Desbloqueja els ginys"
 
-#: plasma/corona.cpp:363
+#: plasma/corona.cpp:352
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Ix del mode edició"
@@ -162,22 +162,22 @@ msgstr "Configureu el giny"
 msgid "Remove this Widget"
 msgstr "Suprimix este giny"
 
-#: plasma/private/containment_p.cpp:55
+#: plasma/private/containment_p.cpp:54
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Elimina este quadro"
 
-#: plasma/private/containment_p.cpp:57
+#: plasma/private/containment_p.cpp:56
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Elimina esta activitat"
 
-#: plasma/private/containment_p.cpp:62
+#: plasma/private/containment_p.cpp:61
 #, kde-format
 msgid "Activity Settings"
 msgstr "Configureu l'activitat"
 
-#: plasma/private/containment_p.cpp:74
+#: plasma/private/containment_p.cpp:73
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Afig o gestiona els ginys…"

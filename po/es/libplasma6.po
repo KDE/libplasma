@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-30 00:45+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2026-05-28 15:07+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -77,7 +77,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Eliminar %1"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:365 plasma/corona.cpp:486
+#: plasma/containment.cpp:108 plasma/corona.cpp:354 plasma/corona.cpp:475
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Entrar en el modo de edición"
@@ -88,17 +88,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Configurar %1…"
 
-#: plasma/corona.cpp:314 plasma/corona.cpp:471
+#: plasma/corona.cpp:303 plasma/corona.cpp:460
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Bloquear elementos gráficos"
 
-#: plasma/corona.cpp:314
+#: plasma/corona.cpp:303
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Desbloquear elementos gráficos"
 
-#: plasma/corona.cpp:363
+#: plasma/corona.cpp:352
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Salir del modo de edición"
@@ -158,22 +158,22 @@ msgstr "Preferencias del elemento gráfico"
 msgid "Remove this Widget"
 msgstr "Eliminar este elemento gráfico"
 
-#: plasma/private/containment_p.cpp:55
+#: plasma/private/containment_p.cpp:54
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Eliminar este panel"
 
-#: plasma/private/containment_p.cpp:57
+#: plasma/private/containment_p.cpp:56
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Eliminar esta actividad"
 
-#: plasma/private/containment_p.cpp:62
+#: plasma/private/containment_p.cpp:61
 #, kde-format
 msgid "Activity Settings"
 msgstr "Preferencias de la actividad"
 
-#: plasma/private/containment_p.cpp:74
+#: plasma/private/containment_p.cpp:73
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "Añadir o gestionar elementos gráficos…"

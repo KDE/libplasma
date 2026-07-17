@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-30 00:45+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2026-04-12 17:17+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -76,7 +76,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "%1 தனை நீக்கு"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:365 plasma/corona.cpp:486
+#: plasma/containment.cpp:108 plasma/corona.cpp:354 plasma/corona.cpp:475
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "திருத்தும் பயன்முறையில் நுழை"
@@ -87,17 +87,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "%1 தனை அமை..."
 
-#: plasma/corona.cpp:314 plasma/corona.cpp:471
+#: plasma/corona.cpp:303 plasma/corona.cpp:460
 #, kde-format
 msgid "Lock Widgets"
 msgstr "பிளாஸ்மாய்டுகளை பூட்டு"
 
-#: plasma/corona.cpp:314
+#: plasma/corona.cpp:303
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "பிளாஸ்மாய்டுகளை திருத்தவிடு"
 
-#: plasma/corona.cpp:363
+#: plasma/corona.cpp:352
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "திருத்தும் பயன்முறையிலிருந்து வெளியேறு"
@@ -157,22 +157,22 @@ msgstr "பிளாஸ்மாய்ட் அமைப்புகள்"
 msgid "Remove this Widget"
 msgstr "இந்த பிளாஸ்மாய்டை நீக்கு"
 
-#: plasma/private/containment_p.cpp:55
+#: plasma/private/containment_p.cpp:54
 #, kde-format
 msgid "Remove this Panel"
 msgstr "இந்த பலகையை நீக்கு"
 
-#: plasma/private/containment_p.cpp:57
+#: plasma/private/containment_p.cpp:56
 #, kde-format
 msgid "Remove this Activity"
 msgstr "இந்த செயல்பாட்டை நீக்கு"
 
-#: plasma/private/containment_p.cpp:62
+#: plasma/private/containment_p.cpp:61
 #, kde-format
 msgid "Activity Settings"
 msgstr "செயல்பாடு அமைப்புகள்"
 
-#: plasma/private/containment_p.cpp:74
+#: plasma/private/containment_p.cpp:73
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr "பிளாஸ்மாய்டுகளை சேர் அல்லது நிர்வகி…"

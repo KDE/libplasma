@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-30 00:45+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2016-03-20 15:24+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -82,7 +82,7 @@ msgstr ""
 "Ukloni ovaj %1|/|Ukloni $[po-rodu-broju %1 ovaj ovu ovo ove ove ova] $[aku "
 "%1]"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:365 plasma/corona.cpp:486
+#: plasma/containment.cpp:108 plasma/corona.cpp:354 plasma/corona.cpp:475
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr ""
@@ -93,17 +93,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr ""
 
-#: plasma/corona.cpp:314 plasma/corona.cpp:471
+#: plasma/corona.cpp:303 plasma/corona.cpp:460
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Zaključaj vidžete"
 
-#: plasma/corona.cpp:314
+#: plasma/corona.cpp:303
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Otključaj vidžete"
 
-#: plasma/corona.cpp:363
+#: plasma/corona.cpp:352
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr ""
@@ -164,22 +164,22 @@ msgstr "Postavke vidžeta"
 msgid "Remove this Widget"
 msgstr "Ukloni ovaj vidžet"
 
-#: plasma/private/containment_p.cpp:55
+#: plasma/private/containment_p.cpp:54
 #, kde-format
 msgid "Remove this Panel"
 msgstr "Ukloni ovaj panel"
 
-#: plasma/private/containment_p.cpp:57
+#: plasma/private/containment_p.cpp:56
 #, kde-format
 msgid "Remove this Activity"
 msgstr "Ukloni ovu aktivnost"
 
-#: plasma/private/containment_p.cpp:62
+#: plasma/private/containment_p.cpp:61
 #, kde-format
 msgid "Activity Settings"
 msgstr "Postavke aktivnosti"
 
-#: plasma/private/containment_p.cpp:74
+#: plasma/private/containment_p.cpp:73
 #, kde-format
 msgid "Add or Manage Widgets…"
 msgstr ""

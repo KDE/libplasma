@@ -70,6 +70,7 @@ public:
     QtWayland::org_kde_plasma_surface::panel_behavior m_panelBehavior = QtWayland::org_kde_plasma_surface::panel_behavior_always_visible;
     QtWayland::org_kde_plasma_surface::role m_role = QtWayland::org_kde_plasma_surface::role_normal;
     bool m_takesFocus = false;
+    bool m_openUnderCursor = false;
     std::unique_ptr<PlasmaShellSurface> m_shellSurface;
 };
 
@@ -116,6 +117,10 @@ void PlasmaShellWaylandIntegrationPrivate::surfaceCreated()
         m_shellSurface->set_role(m_role);
         m_shellSurface->set_skip_switcher(true);
         m_shellSurface->set_skip_taskbar(true);
+
+        if (m_openUnderCursor) {
+            m_shellSurface->open_under_cursor();
+        }
     }
 }
 
@@ -208,6 +213,18 @@ void PlasmaShellWaylandIntegration::setTakesFocus(bool takesFocus)
     d->m_window->setProperty("_q_showWithoutActivating", !d->m_takesFocus);
     if (d->m_shellSurface) {
         d->m_shellSurface->set_panel_takes_focus(takesFocus);
+    }
+}
+
+void PlasmaShellWaylandIntegration::openUnderCursor()
+{
+    if (d->m_openUnderCursor) {
+        return;
+    }
+    d->m_openUnderCursor = true;
+
+    if (d->m_shellSurface) {
+        d->m_shellSurface->open_under_cursor();
     }
 }
 

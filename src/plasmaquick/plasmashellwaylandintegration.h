@@ -61,6 +61,13 @@ public:
      */
     void setTakesFocus(bool takesFocus);
 
+    /*!
+     * Request that the initial position of this surface will be under the cursor
+     *
+     * \since 6.8
+     */
+    void openUnderCursor();
+
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:

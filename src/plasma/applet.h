@@ -391,10 +391,6 @@ public:
     // CONFIGURATION
     /*!
      * Returns the KConfigGroup to access the applets configuration.
-     *
-     * This config object will write to an instance
-     * specific config file named \<appletname\>\<instanceid\>rc
-     * in the Plasma appdata directory.
      **/
     KConfigGroup config() const;
 

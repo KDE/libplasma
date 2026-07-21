@@ -33,13 +33,13 @@ class AppletPrivate
 {
 public:
     AppletPrivate(const KPluginMetaData &info, int uniqueID, Applet *applet);
-    virtual ~AppletPrivate();
+    ~AppletPrivate();
 
     void init(const QVariantList &args);
 
     void setDestroyed(bool destroyed);
     void askDestroy();
-    virtual void cleanUpAndDelete();
+    void cleanUpAndDelete();
 
     void scheduleConstraintsUpdate(Applet::Constraints c);
     void scheduleModificationNotification();

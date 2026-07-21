@@ -340,7 +340,7 @@ msgstr "Fons per als ginys gràfics"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:48
 #, kde-format
 msgid "Background image for tooltips"
-msgstr "Imatge de fons per als consells"
+msgstr "Imatge de fons per als consells d'eina"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:50
 #, kde-format
@@ -374,7 +374,7 @@ msgstr "Imatge de fons opaca per als quadros"
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:68
 #, kde-format
 msgid "Opaque background image for tooltips"
-msgstr "Imatge de fons opaca per als consells"
+msgstr "Imatge de fons opaca per als consells d'eina"
 
 #: plasma/packagestructure/plasma_theme_packagestructure.cpp:70
 #, kde-format

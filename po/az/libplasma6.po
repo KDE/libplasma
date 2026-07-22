@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-17 00:46+0000\n"
+"POT-Creation-Date: 2026-07-22 00:46+0000\n"
 "PO-Revision-Date: 2023-02-19 15:12+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -60,12 +60,12 @@ msgstr "Axtarış"
 msgid "Clear search"
 msgstr ""
 
-#: plasma/applet.cpp:316
+#: plasma/applet.cpp:296
 #, kde-format
 msgid "Unknown"
 msgstr "Naməlum"
 
-#: plasma/applet.cpp:762
+#: plasma/applet.cpp:742
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "%1 Vidjetin aktiv edilməsi"

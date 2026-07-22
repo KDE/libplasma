@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-17 00:46+0000\n"
+"POT-Creation-Date: 2026-07-22 00:46+0000\n"
 "PO-Revision-Date: 2026-04-01 14:49+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -61,12 +61,12 @@ msgstr "Caută"
 msgid "Clear search"
 msgstr "Șterge căutarea"
 
-#: plasma/applet.cpp:316
+#: plasma/applet.cpp:296
 #, kde-format
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: plasma/applet.cpp:762
+#: plasma/applet.cpp:742
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Activează controlul %1"

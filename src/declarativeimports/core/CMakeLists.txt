@@ -10,7 +10,6 @@ target_sources(corebindingsplugin PRIVATE
     corebindingsplugin.h
     tooltiparea.h
     tooltipdialog.h
-    ${RESOURCES}
 )
 
 ecm_target_qml_sources(corebindingsplugin SOURCES

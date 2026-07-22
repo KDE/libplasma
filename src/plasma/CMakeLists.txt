@@ -105,7 +105,6 @@ PRIVATE
     KF6::Notifications
     KF6::IconThemes
     KF6::Svg
-    ${PLASMA_EXTRA_LIBS}
 )
 
 if(ENABLE_ACTIVITIES)

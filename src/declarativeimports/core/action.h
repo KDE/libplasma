@@ -49,7 +49,24 @@ private:
  * \inqmlmodule org.kde.plasma.core
  * \inherits QtObject
  *
- * \brief This class is exposed to wallpapers as the WallpaperItem root qml item.
+ * \brief Represents an action on a Plasmoid.
+ *
+ * Unlike Qt Quick Controls' Action type, this is backed by a \l QAction.
+ *
+ * Use this to define actions for a Plasmoid, such as \l {Plasma::Applet::contextualActions} {\c {Plasmoid.contextualActions}}
+ * or \l {Plasma::Applet::setInternalAction} {\c {Plasmoid.setInternalAction}}
+ *
+ * Example usage:
+ *
+ * \qml
+ * import org.kde.plasma.core as PlasmaCore
+ *
+ * PlasmaCore.Action {
+ *     text: "Run"
+ *     icon.name: "system-run-symbolic"
+ *     onTriggered: runProcess()
+ * }
+ * \endqml
  */
 class ActionExtension : public QObject
 {
@@ -58,26 +75,39 @@ class ActionExtension : public QObject
     /*!
      * \qmlproperty string Action::icon.name
      * \qmlproperty QIcon Action::icon.icon
+     *
+     * The icon for this action. Can be a system icon name (through \c{icon.name}) or a \l {QIcon} (through \c{icon.icon}).
      */
     Q_PROPERTY(IconGroup *icon MEMBER m_iconGroup CONSTANT)
 
     /*!
      * \qmlproperty bool Action::isSeparator
+     *
+     * Defaults to false.
+     *
+     * \sa QAction::isSeparator
      */
     Q_PROPERTY(bool isSeparator READ isSeparator WRITE setSeparator NOTIFY isSeparatorChanged)
 
     /*!
      * \qmlproperty QActionGroup Action::actionGroup
+     *
+     * \sa QAction::actionGroup
      */
     Q_PROPERTY(QActionGroup *actionGroup READ actionGroup WRITE setActionGroup NOTIFY actionGroupChanged)
 
     /*!
      * \qmlproperty variant Action::shortcut
+     *
+     * The shortcut that can be used to activate this action.
+     * Can be a string describing a sequence (like \c {"Ctrl+Shift+X"}) or a \l {QKeySequence::StandardKey}.
      */
     Q_PROPERTY(QVariant shortcut READ shortcut WRITE setShortcut NOTIFY shortcutChanged)
 
     /*!
      * \qmlproperty QMenu Action::menu
+     *
+     * \sa QAction::setMenu
      */
     Q_PROPERTY(QMenu *menu READ menu WRITE setMenu NOTIFY menuChanged)
 

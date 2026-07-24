@@ -55,6 +55,7 @@
         ],
         "Description": "A description for your wallpaper plugin",
         "Description[ar]": "وصف لملحق خلفية الشاشة الخاص بك",
+        "Description[bg]": "Описание на вашата приставка за тапети",
         "Description[ca@valencia]": "Una descripció del connector de fons de pantalla",
         "Description[ca]": "Una descripció del connector de fons de pantalla",
         "Description[es]": "Descripción del complemento de fondo de pantalla",

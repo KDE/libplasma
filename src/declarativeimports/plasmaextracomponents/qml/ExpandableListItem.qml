@@ -637,10 +637,12 @@ Item {
                         Layout.fillWidth: true
 
                         sourceComponent: Item {
-                            height: childrenRect.height
+                            implicitHeight: actionsListLayout.implicitHeight
                             width: actionsListLoader.width // basically, parent.width but null-proof
 
                             ColumnLayout {
+                                id: actionsListLayout
+
                                 anchors.top: parent.top
                                 anchors.left: parent.left
                                 anchors.right: parent.right

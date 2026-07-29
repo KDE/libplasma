@@ -31,7 +31,7 @@ PlasmaCore.Dialog {
             Controls.Label {
                 Layout.maximumWidth: rect.Layout.minimumWidth
                 text: "Use Alt + Left Click to move the window to a side and then increase the minWidth/Height. The window should reposition itself"
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
             }
             Controls.Button {
                 text: "Increase MinWidth"

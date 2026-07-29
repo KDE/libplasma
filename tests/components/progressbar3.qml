@@ -60,7 +60,7 @@ ComponentBase {
             PlasmaComponents.Label {
                 id: progressBarAndSliderLabel
                 text: "The progress bar and slider grooves should have the same visual width."
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 Layout.preferredWidth: progressBarWidth
             }
             GridLayout {
@@ -86,7 +86,7 @@ ComponentBase {
         ColumnLayout {
             PlasmaComponents.Label {
                 text: "Min: 0; Max: 200; Value: 1\nMake sure the bar does not leak outside."
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 Layout.preferredWidth: progressBarWidth
             }
             PlasmaComponents.ProgressBar {
@@ -99,7 +99,7 @@ ComponentBase {
         ColumnLayout {
             PlasmaComponents.Label {
                 text: "Min: 0; Max: 100; Value: 110\nThe progress bar should look like it is at 100%."
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 Layout.preferredWidth: progressBarWidth
             }
             PlasmaComponents.ProgressBar {
@@ -112,7 +112,7 @@ ComponentBase {
         ColumnLayout {
             PlasmaComponents.Label {
                 text: "Min: -100; Max: 100; Value: 0\nThe progress bar should look like it is at 50%."
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 Layout.preferredWidth: progressBarWidth
             }
             PlasmaComponents.ProgressBar {
@@ -125,7 +125,7 @@ ComponentBase {
         ColumnLayout {
             PlasmaComponents.Label {
                 text: "Min: 0; Max: 100; Value: -10\nThe progress bar should look like it is at 0%."
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 Layout.preferredWidth: progressBarWidth
             }
             PlasmaComponents.ProgressBar {
@@ -138,7 +138,7 @@ ComponentBase {
         ColumnLayout {
             PlasmaComponents.Label {
                 text: "This should have a continuous movement from one end to the other and back."
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 Layout.preferredWidth: progressBarWidth
             }
             PlasmaComponents.ProgressBar {
@@ -150,7 +150,7 @@ ComponentBase {
         ColumnLayout {
             PlasmaComponents.Label {
                 text: "Checking and unchecking should not break the layout. The progress bar should look like it is at 50% if unchecked."
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 Layout.preferredWidth: progressBarWidth
             }
             PlasmaComponents.CheckBox {
@@ -163,7 +163,7 @@ ComponentBase {
         ColumnLayout {
             PlasmaComponents.Label {
                 text: "This should do one 'indefinite' animation cycle and then continuously animate to 100% in chunks of 10%."
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 Layout.preferredWidth: progressBarWidth
             }
             PlasmaComponents.ProgressBar {

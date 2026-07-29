@@ -19,7 +19,7 @@ PlasmaCore.Dialog {
     ColumnLayout {
         Controls.Label {
             Layout.maximumWidth: rect.width
-            wrapMode: Text.WordWrap
+            wrapMode: Text.Wrap
             text: "Clicking on the rectangle should toggle the full screen mode. Make sure it retains its original geometry when jumping in between full screen and normal"
         }
 

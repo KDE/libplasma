@@ -64,7 +64,7 @@ Item {
 
             PlasmaComponents.Label {
                 Layout.fillWidth: true
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 text: root.toolTip ? root.toolTip.subText : ""
                 textFormat: root.toolTip ? root.toolTip.textFormat : Text.AutoText
                 opacity: 0.75

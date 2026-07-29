@@ -15,7 +15,7 @@ ComponentBase {
         spacing: Kirigami.Units.gridUnit
 
         PlasmaComponents.Label {
-            wrapMode: Text.WordWrap
+            wrapMode: Text.Wrap
             text: "The BusyIndicator should have a height of 16px and should have a 1:1 aspect ratio"
             Layout.preferredWidth: Math.max(busyIndicatorLayout.width, root.implicitHeaderWidth)
         }
@@ -24,14 +24,14 @@ ComponentBase {
         }
 
         PlasmaComponents.Label {
-            wrapMode: Text.WordWrap
+            wrapMode: Text.Wrap
             text: "The BusyIndicator should use its implicit size."
             Layout.preferredWidth: Math.max(busyIndicatorLayout.width, root.implicitHeaderWidth)
         }
         PlasmaComponents.BusyIndicator {}
 
         PlasmaComponents.Label {
-            wrapMode: Text.WordWrap
+            wrapMode: Text.Wrap
             text: "The BusyIndicator should maintain a 1:1 aspect ratio, disappear when unchecked and restart when checked."
             Layout.preferredWidth: Math.max(busyIndicatorLayout.width, root.implicitHeaderWidth)
         }

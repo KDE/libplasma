@@ -547,7 +547,7 @@ Item {
                         textFormat: listItem.allowStyledText ? Text.StyledText : Text.PlainText
                         elide: Text.ElideRight
                         maximumLineCount: listItem.subtitleCanWrap ? (listItem.subtitleMaximumLineCount === -1 ? undefined : listItem.subtitleMaximumLineCount) : 1
-                        wrapMode: listItem.subtitleCanWrap ? Text.WordWrap : Text.NoWrap
+                        wrapMode: listItem.subtitleCanWrap ? Text.Wrap : Text.NoWrap
                     }
                 }
 

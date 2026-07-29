@@ -75,7 +75,7 @@ T.ToolTip {
             // Strip out ampersands right before non-whitespace characters, i.e.
             // those used to determine the alt key shortcut
             text: control.text.replace(/&(?=\S)/g, "")
-            wrapMode: Text.WordWrap
+            wrapMode: Text.Wrap
             font: control.font
 
             Kirigami.Theme.colorSet: Kirigami.Theme.Tooltip

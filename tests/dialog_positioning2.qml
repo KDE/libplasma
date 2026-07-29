@@ -17,7 +17,7 @@ ColumnLayout
 {
     Controls.Label {
         text: "Press the button and make sure the popup is on the correct place"
-        wrapMode: Text.WordWrap
+        wrapMode: Text.Wrap
     }
     PC3.Button {
         id: settingsButton

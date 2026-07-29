@@ -14,7 +14,7 @@ import org.kde.plasma.core as PlasmaCore
 ColumnLayout {
     Controls.Label {
         Layout.maximumWidth: mainLayout.width
-        wrapMode: Text.WordWrap
+        wrapMode: Text.Wrap
         text: "Hover over every rectangle so that the tooltip pops up. It should popup in the correct position"
     }
 

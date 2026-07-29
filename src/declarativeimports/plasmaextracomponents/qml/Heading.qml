@@ -68,7 +68,7 @@ Label {
 
     font.pointSize: __headerPointSize(level)
     font.weight: type === Heading.Type.Primary ? Font.DemiBold : Font.Normal
-    wrapMode: Text.WordWrap
+    wrapMode: Text.Wrap
 
     opacity: type === Heading.Type.Secondary ? 0.75 : 1
 

@@ -109,7 +109,7 @@ PlasmaComponents.Page {
                     width: 200
                     height: 200
                     placeholderText: "Lorem ipsum et dolor"
-                    wrapMode: TextEdit.WordWrap
+                    wrapMode: TextEdit.Wrap
                     contentMaxWidth: 400
                     contentMaxHeight: 400
                 }
@@ -118,7 +118,7 @@ PlasmaComponents.Page {
                     width: 200
                     height: 100
                     enabled: false
-                    wrapMode: TextEdit.WordWrap
+                    wrapMode: TextEdit.Wrap
                     text: "Disabled Text Area"
                 }
             }

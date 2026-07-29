@@ -49,7 +49,7 @@ Item {
                 height: rect.Layout.minimumHeight
                 Text {
                     anchors.fill: parent
-                    wrapMode: Text.WordWrap
+                    wrapMode: Text.Wrap
                     text: "you should see a red border around this white area"
                 }
             }

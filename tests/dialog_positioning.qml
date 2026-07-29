@@ -45,7 +45,7 @@ PlasmaCore.Dialog {
                 Controls.Label {
                     Layout.fillWidth: true
                     text: "alt + left click and move the window to various edges to test popup position"
-                    wrapMode: Text.WordWrap
+                    wrapMode: Text.Wrap
                 }
 
                 Controls.ComboBox {

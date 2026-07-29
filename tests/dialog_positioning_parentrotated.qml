@@ -20,7 +20,7 @@ ColumnLayout
     Controls.Label {
         id: label
         text: "Press the button and make sure the popup is on the correct place"
-        wrapMode: Text.WordWrap
+        wrapMode: Text.Wrap
     }
     PlasmaComponents.Button {
         id: settingsButton

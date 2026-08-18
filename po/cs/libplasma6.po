@@ -3,21 +3,22 @@
 # SPDX-FileCopyrightText: 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2023, 2024 Vít Pelčák <vit@pelcak.org>
 # Lukáš Tinkl <ltinkl@redhat.com>, 2010, 2012.
 # SPDX-FileCopyrightText: 2021, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-22 00:46+0000\n"
-"PO-Revision-Date: 2024-08-23 15:37+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-08-17 23:43+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -184,12 +185,12 @@ msgstr "Přidat nebo spravovat widgety…"
 #: plasmaquick/appletquickitem.cpp:548
 #, kde-format
 msgid "The root item of %1 must be of type ContainmentItem"
-msgstr ""
+msgstr "Kořenová položka %1 musí být typu ContainmentItem"
 
 #: plasmaquick/appletquickitem.cpp:553
 #, kde-format
 msgid "The root item of %1 must be of type PlasmoidItem"
-msgstr ""
+msgstr "Kořenová položka %1 musí být typu PlasmoidItem"
 
 #: plasmaquick/appletquickitem.cpp:561
 #, kde-format
@@ -203,6 +204,8 @@ msgid ""
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
+"Tento widget byl napsán pro neznámou starší verzi Plasmy a není kompatibilní "
+"s Plasmou %1. Pro aktualizovanou verzi kontaktujte autora widgetu."
 
 #: plasmaquick/appletquickitem.cpp:578 plasmaquick/appletquickitem.cpp:585
 #: plasmaquick/appletquickitem.cpp:591
@@ -216,6 +219,9 @@ msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
+"Tento widget byl napsán pro prostředí Plasma verze %1 a není kompatibilní s "
+"prostředím Plasma verze %2. Pro aktualizovanou verzi kontaktujte autora "
+"widgetu."
 
 #: plasmaquick/appletquickitem.cpp:588
 #, kde-format
@@ -223,6 +229,9 @@ msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
+"Tento widget byl napsán pro prostředí Plasma verze %1 a není kompatibilní s "
+"prostředím Plasma verze %2. Pro použití widgetu aktualizujte prostředí "
+"Plasma."
 
 #: plasmaquick/appletquickitem.cpp:597 plasmaquick/appletquickitem.cpp:620
 #, kde-format
@@ -240,18 +249,19 @@ msgid "Error loading Applet: package %1 does not exist."
 msgstr "Chyba při načítání appletu: balíček %1 neexistuje."
 
 #: plasmaquick/appletquickitem.cpp:623
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package %1 does not exist."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Error loading Applet: package format is invalid (does not contain any "
 "metadata)."
-msgstr "Chyba při načítání appletu: balíček %1 neexistuje."
+msgstr ""
+"Chyba při načítání appletu: formát balíčku je neplatný (neobsahuje žádná "
+"metadata)."
 
 #: plasmaquick/configview.cpp:189
 #, kde-format
 msgid "%1 — %2 Settings"
-msgstr ""
+msgstr "%1 — %2 Nastavení"
 
 #: plasmaquick/configview.cpp:190
 #, kde-format
@@ -276,7 +286,7 @@ msgstr "Instalace balíčku selhala"
 #: plasmaquick/plasmoid/containmentitem.cpp:604
 #, kde-format
 msgid "The package you just dropped is invalid."
-msgstr ""
+msgstr "Balíček, který jste právě vložili, je neplatný."
 
 #: plasmaquick/plasmoid/containmentitem.cpp:613
 #, kde-format

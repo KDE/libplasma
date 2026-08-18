@@ -49,6 +49,7 @@ Comment[be]=Шпалеры Plasma, якія выкарыстоўваюць ул�
 Comment[bg]=Тапет на Plasma, който използва потребителски API, предоставен от собствена QML приставка на разширение
 Comment[ca]=Un fons de pantalla del Plasma que usa una API personalitzada proporcionada per un connector propi d'una extensió en QML
 Comment[ca@valencia]=Un fons de pantalla de Plasma que utilitza una API personalitzada proporcionada per un connector propi d'una extensió en QML
+Comment[cs]=Tapeta v Plasmě, která využívá vlastní API poskytované vlastním rozšířením v QML
 Comment[da]=Et Plasma-baggrundsbillede der bruger et tilpasset API via et eget QML-udvidelsesplugin
 Comment[de]=Ein Plasma-Hintergrundbild, das eine benutzerdefinierte Programmierschnittstelle (API) eines eigenen QML-Erweiterungsmoduls verwendet.
 Comment[en_GB]=A Plasma wallpaper which uses custom API provided by an own QML extension plugin

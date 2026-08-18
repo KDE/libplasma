@@ -151,7 +151,11 @@ def main():
                 continue
             hints = []
             if answer["blank"]:
+                # An empty center is one colour as well, a transparent one, and KSvg draws nothing at all
+                # for it. Worth the hint: it is what a shadow frame's center is, and without it the empty
+                # element is rendered and uploaded at every size the frame takes.
                 counted["blank"] += 1
+                hints.append("hint-solid-color")
             elif answer["flat"]:
                 counted["solid"] += 1
                 hints.append("hint-solid-color")

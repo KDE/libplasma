@@ -9,7 +9,9 @@ writes the hints KSvg reads:
     hint-solid-color                     the centre is one flat colour, so it is drawn as that colour
     hint-stretch-center-horizontally     the centre's picture repeats along its width
     hint-stretch-center-vertically       the centre's picture repeats along its height
-    hint-stretch-borders                 reported on, never written: it is a theme author's decision
+    hint-uniform-borders                 every border varies only across its thickness, so a stretched
+                                         border is drawn from its own size rather than rendered at every
+                                         size the frame takes
 
 Nothing is written without --write. Run it on a checkout and read the diff.
 
@@ -34,6 +36,20 @@ FLOOR = 32
 
 SIDES = ("top", "bottom", "left", "right", "topleft", "topright", "bottomleft", "bottomright", "center")
 HINTS = ("hint-solid-color", "hint-stretch-center-horizontally", "hint-stretch-center-vertically")
+
+# The older hints this can also act on:
+#
+#   hint-tile-center     tiling one flat colour is filling with it, and a tiled texture is never atlased,
+#                        by construction, since repeat wrapping needs a texture of its own. So where the
+#                        centre is one colour the tile hint is removed and hint-solid-color put in its
+#                        place: same pixels, no texture at all.
+#   hint-stretch-borders added where every border of the frame only varies across its thickness. Tiling
+#                        such a border and stretching it are the same picture, and the stretched one is
+#                        atlasable where the tiled one is not.
+#
+# What it will not do is remove hint-stretch-borders from a frame whose borders vary along their length.
+# That is a design decision: the hint asks for stretching, and with the new drawing those borders are
+# stretched from their own size, which will not look as they do today.
 
 
 def read(path):
@@ -91,13 +107,35 @@ def describe(renderer, element):
     return {"flat": flat and not blank, "blank": blank, "along_x": along_x, "along_y": along_y}
 
 
+def drop_element(text, name):
+    """Removes a hint element, which the themes write as one self-closing tag."""
+    pattern = re.compile(r"[ \t]*<[a-zA-Z]+[^<>]*id=\"" + re.escape(name) + r"\"[^<>]*/>\n?", re.S)
+    new_text, count = pattern.subn("", text)
+    return (new_text, True) if count else (text, False)
+
+
 def hint_element(name, at):
     # The shape the themes already use for a hint: a small rect, never painted, only asked about.
     return f'  <rect id="{name}" x="{at}" y="0" width="5" height="5" style="fill:#ff6600" />\n'
 
 
-def stamp(path, decisions, spare_x):
+def bare_is_safe(decisions, prefixes, hint):
+    """A hint without a prefix applies to every frame in the file, which is how KSvg reads it.
+
+    So it can only be written when every frame of the file wants it. Otherwise the unprefixed frame goes
+    unhinted rather than dragging its neighbours onto the wrong path.
+    """
+    return all(hint in decisions.get(prefix, ()) for prefix in prefixes)
+
+
+def stamp(path, decisions, spare_x, removals=None):
     text = read(path)
+    changed = False
+    for prefix, gone in (removals or {}).items():
+        for hint in gone:
+            name = f"{prefix}-{hint}" if prefix else hint
+            text, dropped = drop_element(text, name)
+            changed = changed or dropped
     additions = ""
     for prefix, hints in sorted(decisions.items()):
         for hint in hints:
@@ -106,7 +144,7 @@ def stamp(path, decisions, spare_x):
                 continue
             additions += hint_element(name, spare_x)
             spare_x += 8
-    if not additions:
+    if not additions and not changed:
         return False
     closing = text.rindex("</svg>")
     write(path, text[:closing] + additions + text[closing:])
@@ -118,6 +156,9 @@ def main():
     parser.add_argument("theme", type=Path, help="a desktoptheme directory, or a single svg")
     parser.add_argument("--write", action="store_true", help="write the hints, rather than only reporting them")
     parser.add_argument("--quiet", action="store_true", help="only the totals")
+    parser.add_argument("--add-stretch-borders", action="store_true",
+                        help="also add hint-stretch-borders where every border only varies across its thickness. "
+                             "Off by default: it is cheaper to draw but not the same rasterisation as tiling")
     args = parser.parse_args()
 
     QGuiApplication(sys.argv)
@@ -126,7 +167,8 @@ def main():
     if not files:
         raise SystemExit(f"no svgs under {args.theme}")
 
-    counted = {"solid": 0, "blank": 0, "one axis": 0, "neither": 0, "frames": 0}
+    counted = {"solid": 0, "blank": 0, "one axis": 0, "neither": 0, "frames": 0,
+               "borders stretchable": 0, "tiled centres replaced": 0, "uniform borders": 0}
     stretch_borders_kept = []
     touched = 0
 
@@ -143,6 +185,7 @@ def main():
         # A hint is written past the artwork rather than over it.
         spare_x = int(renderer.viewBoxF().width() + 8)
         decisions = {}
+        removals = {}
         for prefix in prefixes:
             counted["frames"] += 1
             named = (lambda part, p=prefix: f"{p}-{part}" if p else part)
@@ -170,27 +213,85 @@ def main():
             if hints:
                 decisions[prefix] = hints
 
-            # Whether the borders a theme asks to stretch can be stretched from their own size is worth
-            # reporting: with the new drawing they are, and a border which varies along its length will
-            # look different than it did.
-            asks_stretch = f'id="hint-stretch-borders"' in text or f'id="{named("hint-stretch-borders")}"' in text
+            # The borders: whether each only varies across its thickness decides both whether the stretch
+            # hint can be added and whether an existing one now draws differently.
+            sides = {}
+            for side, axis in (("top", "x"), ("bottom", "x"), ("left", "y"), ("right", "y")):
+                side_answer = describe(renderer, named(side))
+                if side_answer is None:
+                    continue
+                sides[side] = side_answer["along_x"] if axis == "x" else side_answer["along_y"]
+
+            asks_stretch = 'id="hint-stretch-borders"' in text or f'id="{named("hint-stretch-borders")}"' in text
             if asks_stretch:
-                for side, axis in (("top", "x"), ("bottom", "x"), ("left", "y"), ("right", "y")):
-                    side_answer = describe(renderer, named(side))
-                    if side_answer is None:
-                        continue
-                    repeats = side_answer["along_x"] if axis == "x" else side_answer["along_y"]
-                    if not repeats:
-                        stretch_borders_kept.append(f"{path.name}:{named(side)}")
+                if sides and all(sides.values()):
+                    # Stretched and uniform across their thickness: the picture at any length is what the
+                    # GPU makes from the element's own texture, so the re-render at every size can go.
+                    counted["uniform borders"] += 1
+                    decisions.setdefault(prefix, []).append("hint-uniform-borders")
+                else:
+                    for side, repeats in sides.items():
+                        if not repeats:
+                            stretch_borders_kept.append(f"{path.name}:{named(side)}")
+            elif sides and all(sides.values()):
+                # Every border here only varies across its thickness, so it could be stretched from its own
+                # size and share a sheet, where a tiled one cannot. It is not the same rasterisation
+                # though: tiling repeats a strip and stretching scales it, which differ by a few levels of
+                # alpha where the tiles meet, so this is offered rather than written.
+                counted["borders stretchable"] += 1
+                if args.add_stretch_borders:
+                    decisions.setdefault(prefix, []).append("hint-stretch-borders")
+
+            # A tiled centre which is one colour is a texture, and a standalone one at that, for a fill.
+            tiles = 'id="hint-tile-center"' in text or f'id="{named("hint-tile-center")}"' in text
+            if tiles and (answer["flat"] or answer["blank"]):
+                removals.setdefault(prefix, []).append("hint-tile-center")
+
+        # A hint with no prefix is read as applying to every frame of the file, so it is only written when
+        # they all want it. widgets/pager.svgz is the case in point: its unprefixed centre is one colour
+        # while its normal centre is a gradient, and the bare hint would have flattened the gradient.
+        if "" in decisions:
+            kept = [h for h in decisions[""] if bare_is_safe(decisions, prefixes, h)]
+            dropped = [h for h in decisions[""] if h not in kept]
+            if dropped and not args.quiet:
+                print(f"  {path}: not writing {', '.join(dropped)} without a prefix, other frames here disagree")
+            if kept:
+                decisions[""] = kept
+            else:
+                del decisions[""]
+
+        # Dropping a bare element takes the hint from every frame of the file too, so a tiled centre
+        # which is one colour in one frame cannot drop it while another frame still needs it. The frames
+        # which asked only because of the bare element have nothing of their own to drop, so they go too.
+        if "" in removals:
+            for hint in list(removals[""]):
+                if bare_is_safe(removals, prefixes, hint):
+                    continue
+                removals[""].remove(hint)
+                for prefix in prefixes:
+                    if prefix and hint in removals.get(prefix, ()) and f'id="{prefix}-{hint}"' not in text:
+                        removals[prefix].remove(hint)
+                if not args.quiet:
+                    print(f"  {path}: keeping {hint}, other frames here still need it")
+            removals = {prefix: hints for prefix, hints in removals.items() if hints}
+
+        counted["tiled centres replaced"] += sum(len(hints) for hints in removals.values())
 
         if decisions and not args.quiet:
             for prefix, hints in sorted(decisions.items()):
                 print(f"  {path}: {prefix or '(no prefix)'} -> {', '.join(hints)}")
-        if decisions and args.write and stamp(path, decisions, spare_x):
+        if args.write and (decisions or removals) and stamp(path, decisions, spare_x, removals):
             touched += 1
+        if removals and not args.quiet:
+            for prefix, gone in sorted(removals.items()):
+                print(f"  {path}: {prefix or '(no prefix)'} -> dropping {', '.join(gone)}, the centre is one colour")
 
     print(f"\n{counted['frames']} frames: {counted['solid']} one colour, {counted['blank']} draw nothing, "
           f"{counted['one axis']} repeat along one axis, {counted['neither']} neither")
+    print(f"borders: {counted['uniform borders']} stretched frames whose borders vary only across their thickness, "
+          f"so drawn from their own size")
+    print(f"older hints: {counted['tiled centres replaced']} frames whose tiled centre becomes a colour, "
+          f"{counted['borders stretchable']} tiled frames whose borders could be stretched instead")
     if stretch_borders_kept:
         print(f"{len(stretch_borders_kept)} borders of hint-stretch-borders frames vary along their length, so "
               f"stretching them from their own size will not look the same:")

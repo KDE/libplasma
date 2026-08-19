@@ -221,6 +221,36 @@ ColumnLayout {
      */
     property T.Action helpfulAction
 
+    /*!
+      \qmlproperty string PlaceholderMessage::hoveredLink
+
+      This property holds the link embedded in the explanatory message text that
+      the user is hovering over.
+
+      \since 6.8
+     */
+    readonly property alias hoveredLink: label.hoveredLink
+
+    /*!
+      This signal is emitted when a link is hovered in the explanatory message
+      text.
+
+      \a link The hovered link.
+
+      \since 6.8
+     */
+    signal linkHovered(string link)
+
+    /*!
+      This signal is emitted when a link is clicked or tapped in the explanatory
+      message text.
+
+      \a link The clicked or tapped link.
+
+      \since 6.8
+     */
+    signal linkActivated(string link)
+
     spacing: Kirigami.Units.gridUnit
 
     Kirigami.Icon {
@@ -248,14 +278,18 @@ ColumnLayout {
     }
 
     PlasmaComponents3.Label {
+        id: label
         text: root.explanation
-        visible:  root.explanation !== ""
+        visible: root.explanation !== ""
         opacity: root.type === PlaceholderMessage.Type.Actionable ? 1 : 0.75
 
         horizontalAlignment: Qt.AlignHCenter
         wrapMode: Text.Wrap
 
         Layout.fillWidth: true
+
+        onLinkHovered: link => root.linkHovered(link)
+        onLinkActivated: link => root.linkActivated(link)
     }
 
     Loader {

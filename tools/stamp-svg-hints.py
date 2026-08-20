@@ -13,6 +13,9 @@ writes the hints KSvg reads:
                                          border is drawn from its own size rather than rendered at every
                                          size the frame takes
 
+An element outside a frame takes the same colour hint under its own name, as <element>-hint-solid-color,
+since an item pointed at one rasterises it at the item's size however small the artwork is.
+
 Nothing is written without --write. Run it on a checkout and read the diff.
 
     stamp-svg-hints.py src/desktoptheme/breeze
@@ -78,6 +81,32 @@ def frames(text):
         if longest:
             seen.setdefault(one[: -len(longest) - 1], set()).add(longest)
     return sorted(prefix for prefix, parts in seen.items() if set(SIDES) <= parts)
+
+
+# Ids an editor generates, which nothing addresses by name, so nothing draws them on their own.
+GENERATED = re.compile(
+    r"^(path|rect|circle|ellipse|g|use|text|tspan|flow|linearGradient|radialGradient|stop|defs|svg|"
+    r"namedview|guide|grid|layer|clipPath|mask|filter|marker|image|polygon|polyline|line)[0-9_-]*$",
+    re.IGNORECASE)
+
+
+def standalone(text):
+    """Elements an item can be pointed at by name, which are not part of a frame.
+
+    A frame's parts are described by the frame's own hints. Everything else a theme names is drawn by an
+    item on its own, at whatever size that item is, so the same question is worth asking of it.
+    """
+    out = []
+    for one in dict.fromkeys(ids(text)):
+        if one.startswith("hint-") or "-hint-" in one or GENERATED.match(one):
+            continue
+        if one == "current-color-scheme":
+            # The element which carries the theme's stylesheet, never drawn.
+            continue
+        if one in SIDES or any(one.endswith("-" + side) for side in SIDES):
+            continue
+        out.append(one)
+    return out
 
 
 def render(renderer, element, size):
@@ -213,7 +242,7 @@ def main():
 
     counted = {"solid": 0, "blank": 0, "one axis": 0, "neither": 0, "frames": 0,
                "borders stretchable": 0, "tiled centres replaced": 0, "uniform borders": 0,
-               "borders converted": 0}
+               "borders converted": 0, "elements one colour": 0}
     stretch_borders_kept = []
     seams_kept = []
     touched = 0
@@ -221,7 +250,10 @@ def main():
     for path in files:
         text = read(path)
         prefixes = frames(text)
-        if not prefixes:
+        # A file need not hold a frame to be worth looking at: widgets/line holds two elements and no
+        # frame at all.
+        loose = standalone(text)
+        if not prefixes and not loose:
             continue
         renderer = QSvgRenderer(str(path))
         if not renderer.isValid():
@@ -307,6 +339,16 @@ def main():
             if tiles and (answer["flat"] or answer["blank"]):
                 removals.setdefault(prefix, []).append("hint-tile-center")
 
+        # The elements which are not part of a frame. An item drawing one of these rasterises it at the
+        # item's size, so a flat colour becomes a texture as large as whatever shows it: widgets/line's
+        # vertical-line is a 1x1 rect and has been seen uploaded 1003 pixels tall.
+        for element in loose:
+            answer = describe(renderer, element)
+            if answer is None or not answer["flat"]:
+                continue
+            counted["elements one colour"] += 1
+            decisions.setdefault(element, []).append("hint-solid-color")
+
         # A hint with no prefix is read as applying to every frame of the file, so it is only written when
         # they all want it. widgets/pager.svgz is the case in point: its unprefixed centre is one colour
         # while its normal centre is a gradient, and the bare hint would have flattened the gradient.
@@ -350,6 +392,8 @@ def main():
           f"{counted['one axis']} repeat along one axis, {counted['neither']} neither")
     print(f"borders: {counted['uniform borders']} stretched frames whose borders vary only across their thickness, "
           f"so drawn from their own size")
+    print(f"elements outside a frame: {counted['elements one colour']} which are one colour, so drawn as "
+          f"that colour rather than as a picture of it")
     print(f"older hints: {counted['tiled centres replaced']} frames whose tiled centre becomes a colour, "
           f"{counted['borders stretchable']} tiled frames whose borders could be stretched instead, "
           f"{counted['borders converted']} of them converted")

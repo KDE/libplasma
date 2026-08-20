@@ -26,7 +26,7 @@ import sys
 from pathlib import Path
 
 from PySide6.QtCore import QSize, Qt
-from PySide6.QtGui import QGuiApplication, QImage, QPainter
+from PySide6.QtGui import QGuiApplication, QImage, QPainter, QPixmap
 from PySide6.QtSvg import QSvgRenderer
 
 # The size a question is asked at, whatever the element's own size is. At its own size a shape can lose
@@ -87,6 +87,45 @@ def render(renderer, element, size):
     renderer.render(painter, element)
     painter.end()
     return image
+
+
+def tiling_matches_stretching(renderer, element, axis, length=512):
+    """Whether repeating the element along an axis and scaling it there give the same picture.
+
+    A border which only varies across its thickness says the two should agree, and for most elements they
+    do. Where the strip ends on a partly transparent pixel they do not: the repeat puts two such edges
+    against each other and leaves a seam, which scaling never draws. That is a difference a reader sees, so
+    it is measured here rather than assumed either way.
+    """
+    bounds = renderer.boundsOnElement(element)
+    if bounds.isEmpty():
+        return False
+    native = QSize(max(int(bounds.width() + 0.5), 1), max(int(bounds.height() + 0.5), 1))
+    strip = render(renderer, element, native)
+    if strip.isNull():
+        return False
+
+    if axis == "x":
+        tiled = QImage(QSize(length, native.height()), QImage.Format_ARGB32)
+        stretched_size = QSize(length, native.height())
+    else:
+        tiled = QImage(QSize(native.width(), length), QImage.Format_ARGB32)
+        stretched_size = QSize(native.width(), length)
+
+    tiled.fill(Qt.transparent)
+    painter = QPainter(tiled)
+    painter.drawTiledPixmap(tiled.rect(), QPixmap.fromImage(strip))
+    painter.end()
+
+    stretched = strip.scaled(stretched_size, Qt.IgnoreAspectRatio, Qt.SmoothTransformation).convertToFormat(QImage.Format_ARGB32)
+    tiled = tiled.convertToFormat(QImage.Format_ARGB32)
+
+    for y in range(tiled.height()):
+        for x in range(tiled.width()):
+            a, b = tiled.pixel(x, y), stretched.pixel(x, y)
+            if a != b:
+                return False
+    return True
 
 
 def describe(renderer, element):
@@ -156,9 +195,14 @@ def main():
     parser.add_argument("theme", type=Path, help="a desktoptheme directory, or a single svg")
     parser.add_argument("--write", action="store_true", help="write the hints, rather than only reporting them")
     parser.add_argument("--quiet", action="store_true", help="only the totals")
+    parser.add_argument("--keep-tiled-borders", action="store_true",
+                        help="leave a tiled frame's borders tiled, whatever their artwork allows. Only frames "
+                             "which already ask for stretched borders are hinted, which is how a theme reads "
+                             "before any border is converted")
     parser.add_argument("--add-stretch-borders", action="store_true",
-                        help="also add hint-stretch-borders where every border only varies across its thickness. "
-                             "Off by default: it is cheaper to draw but not the same rasterisation as tiling")
+                        help="add hint-stretch-borders to tiled frames whose borders only vary across their "
+                             "thickness even where a tile seam makes the two draw differently. Frames where "
+                             "they draw the same are converted without this")
     args = parser.parse_args()
 
     QGuiApplication(sys.argv)
@@ -168,8 +212,10 @@ def main():
         raise SystemExit(f"no svgs under {args.theme}")
 
     counted = {"solid": 0, "blank": 0, "one axis": 0, "neither": 0, "frames": 0,
-               "borders stretchable": 0, "tiled centres replaced": 0, "uniform borders": 0}
+               "borders stretchable": 0, "tiled centres replaced": 0, "uniform borders": 0,
+               "borders converted": 0}
     stretch_borders_kept = []
+    seams_kept = []
     touched = 0
 
     for path in files:
@@ -233,14 +279,28 @@ def main():
                     for side, repeats in sides.items():
                         if not repeats:
                             stretch_borders_kept.append(f"{path.name}:{named(side)}")
+            elif args.keep_tiled_borders:
+                # Asked to leave tiling alone, so a tiled frame is not looked at further.
+                pass
             elif sides and all(sides.values()):
-                # Every border here only varies across its thickness, so it could be stretched from its own
-                # size and share a sheet, where a tiled one cannot. It is not the same rasterisation
-                # though: tiling repeats a strip and stretching scales it, which differ by a few levels of
-                # alpha where the tiles meet, so this is offered rather than written.
+                # Every border here only varies across its thickness, so it can be drawn from the element's
+                # own size. The frame tiles them today, and tiling repeats a strip where stretching scales
+                # it, so the question is whether the two draw the same picture. Where they do, saying so
+                # costs the theme nothing and is written; where a seam shows, the frame is named instead.
+                same = all(tiling_matches_stretching(renderer, named(side), axis)
+                           for side, axis in (("top", "x"), ("bottom", "x"), ("left", "y"), ("right", "y"))
+                           if side in sides)
                 counted["borders stretchable"] += 1
-                if args.add_stretch_borders:
+                if same:
+                    counted["borders converted"] += 1
                     decisions.setdefault(prefix, []).append("hint-stretch-borders")
+                    decisions.setdefault(prefix, []).append("hint-uniform-borders")
+                elif args.add_stretch_borders:
+                    counted["borders converted"] += 1
+                    decisions.setdefault(prefix, []).append("hint-stretch-borders")
+                    decisions.setdefault(prefix, []).append("hint-uniform-borders")
+                else:
+                    seams_kept.append(f"{path.name}:{prefix or '(no prefix)'}")
 
             # A tiled centre which is one colour is a texture, and a standalone one at that, for a fill.
             tiles = 'id="hint-tile-center"' in text or f'id="{named("hint-tile-center")}"' in text
@@ -291,7 +351,8 @@ def main():
     print(f"borders: {counted['uniform borders']} stretched frames whose borders vary only across their thickness, "
           f"so drawn from their own size")
     print(f"older hints: {counted['tiled centres replaced']} frames whose tiled centre becomes a colour, "
-          f"{counted['borders stretchable']} tiled frames whose borders could be stretched instead")
+          f"{counted['borders stretchable']} tiled frames whose borders could be stretched instead, "
+          f"{counted['borders converted']} of them converted")
     if stretch_borders_kept:
         print(f"{len(stretch_borders_kept)} borders of hint-stretch-borders frames vary along their length, so "
               f"stretching them from their own size will not look the same:")
@@ -299,6 +360,13 @@ def main():
             print(f"  {one}")
         if len(stretch_borders_kept) > 12:
             print(f"  and {len(stretch_borders_kept) - 12} more")
+    if seams_kept:
+        print(f"{len(seams_kept)} tiled frames whose borders repeat but tile with a visible seam, so drawing "
+              f"them stretched is cheaper and not the same picture. Pass --add-stretch-borders to take them:")
+        for one in seams_kept[:12]:
+            print(f"  {one}")
+        if len(seams_kept) > 12:
+            print(f"  and {len(seams_kept) - 12} more")
     if args.write:
         print(f"{touched} files written")
     else:

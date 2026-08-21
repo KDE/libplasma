@@ -12,6 +12,7 @@ writes the hints KSvg reads:
     hint-uniform-borders                 every border varies only across its thickness, so a stretched
                                          border is drawn from its own size rather than rendered at every
                                          size the frame takes
+    hint-uniform-<side>-border           the same for one side, for a frame whose sides do not agree
 
 An element outside a frame takes the same colour hint under its own name, as <element>-hint-solid-color,
 since an item pointed at one rasterises it at the item's size however small the artwork is.
@@ -242,7 +243,7 @@ def main():
 
     counted = {"solid": 0, "blank": 0, "one axis": 0, "neither": 0, "frames": 0,
                "borders stretchable": 0, "tiled centres replaced": 0, "uniform borders": 0,
-               "borders converted": 0, "elements one colour": 0}
+               "borders converted": 0, "elements one colour": 0, "uniform sides": 0}
     stretch_borders_kept = []
     seams_kept = []
     touched = 0
@@ -308,8 +309,14 @@ def main():
                     counted["uniform borders"] += 1
                     decisions.setdefault(prefix, []).append("hint-uniform-borders")
                 else:
+                    # A frame whose sides disagree still has sides which qualify, and each of those is worth
+                    # saying on its own. Oxygen has 27 frames whose three sides are uniform and whose fourth
+                    # is not, and one hint for the whole frame turns all three of them down.
                     for side, repeats in sides.items():
-                        if not repeats:
+                        if repeats:
+                            counted["uniform sides"] += 1
+                            decisions.setdefault(prefix, []).append(f"hint-uniform-{side}-border")
+                        else:
                             stretch_borders_kept.append(f"{path.name}:{named(side)}")
             elif args.keep_tiled_borders:
                 # Asked to leave tiling alone, so a tiled frame is not looked at further.
@@ -391,7 +398,8 @@ def main():
     print(f"\n{counted['frames']} frames: {counted['solid']} one colour, {counted['blank']} draw nothing, "
           f"{counted['one axis']} repeat along one axis, {counted['neither']} neither")
     print(f"borders: {counted['uniform borders']} stretched frames whose borders vary only across their thickness, "
-          f"so drawn from their own size")
+          f"so drawn from their own size, and {counted['uniform sides']} single sides of frames whose "
+          f"other sides do not")
     print(f"elements outside a frame: {counted['elements one colour']} which are one colour, so drawn as "
           f"that colour rather than as a picture of it")
     print(f"older hints: {counted['tiled centres replaced']} frames whose tiled centre becomes a colour, "

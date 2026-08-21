@@ -14,8 +14,12 @@ writes the hints KSvg reads:
                                          size the frame takes
     hint-uniform-<side>-border           the same for one side, for a frame whose sides do not agree
 
-An element outside a frame takes the same colour hint under its own name, as <element>-hint-solid-color,
-since an item pointed at one rasterises it at the item's size however small the artwork is.
+An element outside a frame takes the same hints under its own name, since an item pointed at one rasterises
+it at the item's size however small the artwork is:
+
+    <element>-hint-solid-color           the element is one flat colour
+    <element>-hint-stretch-horizontally  its picture repeats along its width
+    <element>-hint-stretch-vertically    its picture repeats along its height
 
 Nothing is written without --write. Run it on a checkout and read the diff.
 
@@ -243,7 +247,8 @@ def main():
 
     counted = {"solid": 0, "blank": 0, "one axis": 0, "neither": 0, "frames": 0,
                "borders stretchable": 0, "tiled centres replaced": 0, "uniform borders": 0,
-               "borders converted": 0, "elements one colour": 0, "uniform sides": 0}
+               "borders converted": 0, "elements one colour": 0, "uniform sides": 0,
+               "elements one axis": 0}
     stretch_borders_kept = []
     seams_kept = []
     touched = 0
@@ -351,10 +356,25 @@ def main():
         # vertical-line is a 1x1 rect and has been seen uploaded 1003 pixels tall.
         for element in loose:
             answer = describe(renderer, element)
-            if answer is None or not answer["flat"]:
+            if answer is None:
                 continue
-            counted["elements one colour"] += 1
-            decisions.setdefault(element, []).append("hint-solid-color")
+            if answer["flat"]:
+                counted["elements one colour"] += 1
+                decisions.setdefault(element, []).append("hint-solid-color")
+            elif answer["blank"]:
+                # Draws nothing, and outside a frame that means plumbing rather than artwork: gradients,
+                # clip paths and the like, 277 of them in Breeze. An axis hint on a transparent element says
+                # nothing, and hinting them all would be noise.
+                continue
+            elif answer["along_x"] or answer["along_y"]:
+                # Not one colour, but its picture repeats along an axis, so one row or column of it carries
+                # all of it however large the item drawing it is. Air's vertical-line is the shape: a shade
+                # across three pixels which is the same all the way down.
+                counted["elements one axis"] += 1
+                if answer["along_x"]:
+                    decisions.setdefault(element, []).append("hint-stretch-horizontally")
+                if answer["along_y"]:
+                    decisions.setdefault(element, []).append("hint-stretch-vertically")
 
         # A hint with no prefix is read as applying to every frame of the file, so it is only written when
         # they all want it. widgets/pager.svgz is the case in point: its unprefixed centre is one colour
@@ -401,7 +421,8 @@ def main():
           f"so drawn from their own size, and {counted['uniform sides']} single sides of frames whose "
           f"other sides do not")
     print(f"elements outside a frame: {counted['elements one colour']} which are one colour, so drawn as "
-          f"that colour rather than as a picture of it")
+          f"that colour rather than as a picture of it, and {counted['elements one axis']} whose picture "
+          f"repeats along an axis, so drawn from one pixel there")
     print(f"older hints: {counted['tiled centres replaced']} frames whose tiled centre becomes a colour, "
           f"{counted['borders stretchable']} tiled frames whose borders could be stretched instead, "
           f"{counted['borders converted']} of them converted")

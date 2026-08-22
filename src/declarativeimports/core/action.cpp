@@ -123,6 +123,21 @@ QMenu *ActionExtension::menu()
     return m_action->menu();
 }
 
+void ActionExtension::setAlwaysShowAsMenu(bool alwaysShowAsMenu)
+{
+    if (alwaysShowAsMenu == m_alwaysShowAsMenu) {
+        return;
+    }
+
+    m_alwaysShowAsMenu = alwaysShowAsMenu;
+    Q_EMIT alwaysShowAsMenuChanged();
+}
+
+bool ActionExtension::alwaysShowAsMenu() const
+{
+    return m_alwaysShowAsMenu;
+}
+
 QAction *ActionExtension::action() const
 {
     return m_action;

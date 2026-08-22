@@ -111,6 +111,17 @@ class ActionExtension : public QObject
      */
     Q_PROPERTY(QMenu *menu READ menu WRITE setMenu NOTIFY menuChanged)
 
+    /*!
+     * \qmlproperty bool Action::alwaysShowAsMenu
+     *
+     * Whether this action will be put behind a menu in an applet even if the menu contains only this action.
+     * This overrides systray putting single actions behind an button instead of a menu.
+     * Useful when it the action's icon cannot be made self-explanatory enough on its own.
+     *
+     * Defaults to false.
+     */
+    Q_PROPERTY(bool alwaysShowAsMenu READ alwaysShowAsMenu WRITE setAlwaysShowAsMenu NOTIFY alwaysShowAsMenuChanged)
+
 public:
     explicit ActionExtension(QObject *parent = nullptr);
     ~ActionExtension() override;
@@ -127,6 +138,9 @@ public:
     void setMenu(QMenu *menu);
     QMenu *menu();
 
+    bool alwaysShowAsMenu() const;
+    void setAlwaysShowAsMenu(bool alwaysShowAsMenu);
+
     QAction *action() const;
 
 Q_SIGNALS:
@@ -134,11 +148,13 @@ Q_SIGNALS:
     void actionGroupChanged();
     void shortcutChanged();
     void menuChanged();
+    void alwaysShowAsMenuChanged();
 
 private:
     QAction *m_action;
     IconGroup *m_iconGroup;
     QString m_icon;
+    bool m_alwaysShowAsMenu = false;
 };
 
 class ActionGroup : public QActionGroup

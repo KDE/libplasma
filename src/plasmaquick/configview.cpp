@@ -51,7 +51,7 @@ public:
 
     ConfigView *q;
     QPointer<Plasma::Applet> applet;
-    ConfigModel *configModel;
+    ConfigModel *configModel = nullptr;
     Plasma::Corona *corona;
     AppletContext *rootContext;
     QQmlEngine *engine = nullptr;
@@ -117,15 +117,20 @@ void ConfigViewPrivate::init()
     }
 
     // config model local of the applet
-    QQmlComponent component(q->engine(), applet.data()->configModel());
-    QObject *object = component.create(rootContext);
-    configModel = qobject_cast<ConfigModel *>(object);
+
+    if (!applet.data()->configModel().isEmpty()) {
+        QQmlComponent component(q->engine(), applet.data()->configModel());
+        auto object = component.create(rootContext);
+        configModel = qobject_cast<ConfigModel *>(object);
+
+        if (!configModel) {
+            delete object;
+        }
+    }
 
     if (configModel) {
         configModel->setApplet(applet.data());
         configModel->setParent(q);
-    } else {
-        delete object;
     }
 }
 

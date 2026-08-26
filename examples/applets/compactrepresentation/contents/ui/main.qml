@@ -49,17 +49,12 @@ PlasmoidItem {
         Layout.minimumHeight: root.switchHeight
 
         header: PlasmaExtras.BasicPlasmoidHeading {}
-        contentItem: PlasmaComponents.ScrollView {
-            contentWidth: availableWidth
-            PlasmaExtras.Heading {
-                anchors.fill: parent
-                topPadding: Kirigami.Units.gridUnit * 2
-                bottomPadding: Kirigami.Units.gridUnit * 2
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
-                text: i18n("Hello world")
-            }
+        contentItem: PlasmaExtras.Heading {
+            anchors.fill: parent
+            verticalAlignment: Qt.AlignVCenter
+            horizontalAlignment: Qt.AlignHCenter
+            wrapMode: Text.Wrap
+            text: i18n("Hello world")
         }
     }
 }

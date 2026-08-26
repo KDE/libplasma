@@ -21,5 +21,7 @@ PlasmoidItem {
         anchors.fill: parent
         wrapMode: Text.Wrap
         text: i18n("Hello world")
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
     }
 }

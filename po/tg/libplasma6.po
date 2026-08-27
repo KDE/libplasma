@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:46+0000\n"
+"POT-Creation-Date: 2026-08-27 00:47+0000\n"
 "PO-Revision-Date: 2020-09-19 11:42+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -76,7 +76,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Тоза кардани %1"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:354 plasma/corona.cpp:475
+#: plasma/containment.cpp:108 plasma/corona.cpp:314 plasma/corona.cpp:435
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Гузариш ба реҷаи тағйирдиҳӣ"
@@ -87,17 +87,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Танзимоти %1..."
 
-#: plasma/corona.cpp:303 plasma/corona.cpp:460
+#: plasma/corona.cpp:263 plasma/corona.cpp:420
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Қулф кардани виҷетҳо"
 
-#: plasma/corona.cpp:303
+#: plasma/corona.cpp:263
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Кушодани қулфи виҷетҳо"
 
-#: plasma/corona.cpp:352
+#: plasma/corona.cpp:312
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Баромад аз реҷаи тағйирдиҳӣ"
@@ -247,60 +247,60 @@ msgid ""
 "metadata)."
 msgstr "Хатои боркунии зербарнома: баста вуҷуд надорад. %1"
 
-#: plasmaquick/configview.cpp:189
+#: plasmaquick/configview.cpp:194
 #, fuzzy, kde-format
 #| msgid "%1 Settings"
 msgid "%1 — %2 Settings"
 msgstr "Танзимоти %1"
 
-#: plasmaquick/configview.cpp:190
+#: plasmaquick/configview.cpp:195
 #, kde-format
 msgid "%1 Settings"
 msgstr "Танзимоти %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format
 msgid "Plasma Package"
 msgstr "Бастаи Plasma"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:577
+#: plasmaquick/plasmoid/containmentitem.cpp:578
 #, kde-format
 msgid "Install"
 msgstr "Насб кардан"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:588
+#: plasmaquick/plasmoid/containmentitem.cpp:589
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Насбкунии баста қатъ шуд"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:604
+#: plasmaquick/plasmoid/containmentitem.cpp:605
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Бастае, ки шумо интихоб кардед, беэътибор аст."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:613
+#: plasmaquick/plasmoid/containmentitem.cpp:614
 #, kde-format
 msgid "Widgets"
 msgstr "Виҷетҳо"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:618
+#: plasmaquick/plasmoid/containmentitem.cpp:619
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Илова кардани %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:632
+#: plasmaquick/plasmoid/containmentitem.cpp:633
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Илова кардани нишона"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:644
+#: plasmaquick/plasmoid/containmentitem.cpp:645
 #, kde-format
 msgid "Wallpaper"
 msgstr "Тасвири замина"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:654
+#: plasmaquick/plasmoid/containmentitem.cpp:655
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:46+0000\n"
+"POT-Creation-Date: 2026-08-27 00:47+0000\n"
 "PO-Revision-Date: 2024-10-29 11:45+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -78,7 +78,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Noņemt „%1“"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:354 plasma/corona.cpp:475
+#: plasma/containment.cpp:108 plasma/corona.cpp:314 plasma/corona.cpp:435
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Ieslēgt rediģēšanas režīmu"
@@ -89,17 +89,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Konfigurēt „%1“…"
 
-#: plasma/corona.cpp:303 plasma/corona.cpp:460
+#: plasma/corona.cpp:263 plasma/corona.cpp:420
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Slēgt logdaļas"
 
-#: plasma/corona.cpp:303
+#: plasma/corona.cpp:263
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Atslēgt logdaļas"
 
-#: plasma/corona.cpp:352
+#: plasma/corona.cpp:312
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Iziet no rediģēšanas režīma"
@@ -263,59 +263,59 @@ msgid ""
 "metadata)."
 msgstr "Kļūda, ielādējot sīklietotni: „%1“ nepastāv."
 
-#: plasmaquick/configview.cpp:189
+#: plasmaquick/configview.cpp:194
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "„%1“ — „%2“ Iestatījumi"
 
-#: plasmaquick/configview.cpp:190
+#: plasmaquick/configview.cpp:195
 #, kde-format
 msgid "%1 Settings"
 msgstr "„%1“ iestatījumi"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format
 msgid "Plasma Package"
 msgstr "„Plasma“ pakotne"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:577
+#: plasmaquick/plasmoid/containmentitem.cpp:578
 #, kde-format
 msgid "Install"
 msgstr "Instalēt"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:588
+#: plasmaquick/plasmoid/containmentitem.cpp:589
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Neizdevās instalēt pakotni"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:604
+#: plasmaquick/plasmoid/containmentitem.cpp:605
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Nomestā pakotne nav derīga."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:613
+#: plasmaquick/plasmoid/containmentitem.cpp:614
 #, kde-format
 msgid "Widgets"
 msgstr "Logdaļas"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:618
+#: plasmaquick/plasmoid/containmentitem.cpp:619
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Pievienot „%1“"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:632
+#: plasmaquick/plasmoid/containmentitem.cpp:633
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Pievienot ikonu"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:644
+#: plasmaquick/plasmoid/containmentitem.cpp:645
 #, kde-format
 msgid "Wallpaper"
 msgstr "Tapete"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:654
+#: plasmaquick/plasmoid/containmentitem.cpp:655
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:46+0000\n"
+"POT-Creation-Date: 2026-08-27 00:47+0000\n"
 "PO-Revision-Date: 2026-04-01 14:49+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -77,7 +77,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Elimină %1"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:354 plasma/corona.cpp:475
+#: plasma/containment.cpp:108 plasma/corona.cpp:314 plasma/corona.cpp:435
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Intră în regim de modificare"
@@ -88,17 +88,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Configurare %1..."
 
-#: plasma/corona.cpp:303 plasma/corona.cpp:460
+#: plasma/corona.cpp:263 plasma/corona.cpp:420
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Blochează controalele"
 
-#: plasma/corona.cpp:303
+#: plasma/corona.cpp:263
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Deblochează controalele"
 
-#: plasma/corona.cpp:352
+#: plasma/corona.cpp:312
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Ieși din regim de modificare"
@@ -262,59 +262,59 @@ msgid ""
 "metadata)."
 msgstr "Eroare la încărcarea miniaplicației: pachetul %1 nu există."
 
-#: plasmaquick/configview.cpp:189
+#: plasmaquick/configview.cpp:194
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 — Configurări %2"
 
-#: plasmaquick/configview.cpp:190
+#: plasmaquick/configview.cpp:195
 #, kde-format
 msgid "%1 Settings"
 msgstr "Configurări %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format
 msgid "Plasma Package"
 msgstr "Pachet Plasma"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:577
+#: plasmaquick/plasmoid/containmentitem.cpp:578
 #, kde-format
 msgid "Install"
 msgstr "Instalează"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:588
+#: plasmaquick/plasmoid/containmentitem.cpp:589
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Instalarea pachetului a eșuat"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:604
+#: plasmaquick/plasmoid/containmentitem.cpp:605
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Pachetul pe care tocmai l-ați lăsat nu e valid."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:613
+#: plasmaquick/plasmoid/containmentitem.cpp:614
 #, kde-format
 msgid "Widgets"
 msgstr "Controale grafice"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:618
+#: plasmaquick/plasmoid/containmentitem.cpp:619
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Adaugă %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:632
+#: plasmaquick/plasmoid/containmentitem.cpp:633
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Adaugă pictogramă"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:644
+#: plasmaquick/plasmoid/containmentitem.cpp:645
 #, kde-format
 msgid "Wallpaper"
 msgstr "Tapet"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:654
+#: plasmaquick/plasmoid/containmentitem.cpp:655
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

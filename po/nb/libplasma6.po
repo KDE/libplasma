@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:46+0000\n"
+"POT-Creation-Date: 2026-08-27 00:47+0000\n"
 "PO-Revision-Date: 2025-03-10 20:01+0100\n"
 "Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@nuug.no>\n"
@@ -81,7 +81,7 @@ msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Fjern «%1»"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:354 plasma/corona.cpp:475
+#: plasma/containment.cpp:108 plasma/corona.cpp:314 plasma/corona.cpp:435
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Start tilpasning"
@@ -92,17 +92,17 @@ msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
 msgstr "Sett opp «%1» …"
 
-#: plasma/corona.cpp:303 plasma/corona.cpp:460
+#: plasma/corona.cpp:263 plasma/corona.cpp:420
 #, kde-format
 msgid "Lock Widgets"
 msgstr "Lås elementer"
 
-#: plasma/corona.cpp:303
+#: plasma/corona.cpp:263
 #, kde-format
 msgid "Unlock Widgets"
 msgstr "Lås opp elementer"
 
-#: plasma/corona.cpp:352
+#: plasma/corona.cpp:312
 #, kde-format
 msgid "Exit Edit Mode"
 msgstr "Avslutt tilpasning"
@@ -267,59 +267,59 @@ msgid ""
 "metadata)."
 msgstr "Feil ved lasting av skjermelement: pakken %1 finnes ikke."
 
-#: plasmaquick/configview.cpp:189
+#: plasmaquick/configview.cpp:194
 #, kde-format
 msgid "%1 — %2 Settings"
 msgstr "%1 – innstillinger for %2"
 
-#: plasmaquick/configview.cpp:190
+#: plasmaquick/configview.cpp:195
 #, kde-format
 msgid "%1 Settings"
 msgstr "%1-innstillinger"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:573
+#: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format
 msgid "Plasma Package"
 msgstr "Plasma-pakke"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:577
+#: plasmaquick/plasmoid/containmentitem.cpp:578
 #, kde-format
 msgid "Install"
 msgstr "Installer"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:588
+#: plasmaquick/plasmoid/containmentitem.cpp:589
 #, kde-format
 msgid "Package Installation Failed"
 msgstr "Feil ved pakkeinstallering"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:604
+#: plasmaquick/plasmoid/containmentitem.cpp:605
 #, kde-format
 msgid "The package you just dropped is invalid."
 msgstr "Pakken du slapp er ugyldig."
 
-#: plasmaquick/plasmoid/containmentitem.cpp:613
+#: plasmaquick/plasmoid/containmentitem.cpp:614
 #, kde-format
 msgid "Widgets"
 msgstr "Skjermelementer"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:618
+#: plasmaquick/plasmoid/containmentitem.cpp:619
 #, kde-format
 msgctxt "Add widget"
 msgid "Add %1"
 msgstr "Legg til %1"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:632
+#: plasmaquick/plasmoid/containmentitem.cpp:633
 #, kde-format
 msgctxt "Add icon widget"
 msgid "Add Icon"
 msgstr "Legg til ikon"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:644
+#: plasmaquick/plasmoid/containmentitem.cpp:645
 #, kde-format
 msgid "Wallpaper"
 msgstr "Bakgrunnsbilde"
 
-#: plasmaquick/plasmoid/containmentitem.cpp:654
+#: plasmaquick/plasmoid/containmentitem.cpp:655
 #, kde-format
 msgctxt "Set wallpaper"
 msgid "Set %1"

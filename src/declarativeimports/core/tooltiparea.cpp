@@ -32,6 +32,7 @@ ToolTipArea::ToolTipArea(QQuickItem *parent)
     , m_textFormat(Qt::AutoText)
     , m_active(true)
     , m_interactive(false)
+    , m_hideOnClick(true)
     , m_timeout(-1)
     , m_usingDialog(false)
 {
@@ -273,6 +274,17 @@ void ToolTipArea::setInteractive(bool interactive)
     Q_EMIT interactiveChanged();
 }
 
+void ToolTipArea::setHideOnClick(bool hideOnClick)
+{
+    if (m_hideOnClick == hideOnClick) {
+        return;
+    }
+
+    m_hideOnClick = hideOnClick;
+
+    Q_EMIT hideOnClickChanged();
+}
+
 void ToolTipArea::setTimeout(int timeout)
 {
     m_timeout = timeout;
@@ -382,7 +394,7 @@ void ToolTipArea::hoverLeaveEvent(QHoverEvent *event)
 
 bool ToolTipArea::childMouseEventFilter(QQuickItem *item, QEvent *event)
 {
-    if (event->type() == QEvent::MouseButtonPress) {
+    if (event->type() == QEvent::MouseButtonPress && m_hideOnClick) {
         hideToolTip();
     }
     return QQuickItem::childMouseEventFilter(item, event);

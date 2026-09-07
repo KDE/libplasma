@@ -56,6 +56,16 @@ T.TabButton {
     }
 
     contentItem: Private.IconLabel {
+        id: buttonLabel
+        // visualFocus is false for otherFocusReason, but changing the tab with arrow keys sets that so
+        // we lose focus indication during keyboard operation. Also, a lot of the time we are not focusing
+        // the button directly, but only the tab bar itself (which works like the button having focus for
+        // pretty much all intents and purposes). So manually include those cases.
+        readonly property bool visibleFocus: {
+            const tabBar = control.T.TabBar.tabBar
+            return control.visualFocus || (control.activeFocus && control.focusReason == Qt.OtherFocusReason)
+                || (control.checked && tabBar.visualFocus && tabBar === Window.window.activeFocusItem)
+        }
         mirrored: control.mirrored
         font: control.font
         display: control.display
@@ -65,7 +75,7 @@ T.TabButton {
         iconItem.source: control.icon.name || control.icon.source
         iconItem.active: control.visualFocus
         label.text: control.Kirigami.MnemonicData.richTextLabel
-        label.color: control.visualFocus ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+        label.color: buttonLabel.visibleFocus ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
         Rectangle { // As long as we don't enable antialiasing, not rounding should be fine
             parent: control.contentItem.label
             width: Math.min(parent.width, parent.contentWidth)
@@ -73,7 +83,7 @@ T.TabButton {
             anchors.left: parent.left
             anchors.top: parent.bottom
             color: Kirigami.Theme.highlightColor
-            visible: control.visualFocus
+            visible: buttonLabel.visibleFocus
         }
     }
 

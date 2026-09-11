@@ -124,7 +124,7 @@
         "Name[tr]": "Hava",
         "Name[uk]": "Повітря",
         "Name[vi]": "Air",
-        "Name[zh_CN]": "Air 净空",
+        "Name[zh_CN]": "Air 空幻",
         "Name[zh_TW]": "Air",
         "Version": "@KF_VERSION@",
         "Website": "https://plasma.kde.org"

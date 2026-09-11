@@ -118,7 +118,7 @@ bool EdgeEventForwarder::eventFilter(QObject *watched, QEvent *event)
     case QEvent::Wheel: {
         QWheelEvent *we = static_cast<QWheelEvent *>(event);
 
-        const QPoint pos = we->position().toPoint();
+        const QPointF pos = we->position();
 
         if (!d->mainItemContainsPosition(pos)) {
             QWheelEvent we2(d->positionAdjustedForMainItem(pos),
@@ -142,11 +142,7 @@ bool EdgeEventForwarder::eventFilter(QObject *watched, QEvent *event)
     case QEvent::DragEnter: {
         QDragEnterEvent *de = static_cast<QDragEnterEvent *>(event);
         if (!d->mainItemContainsPosition(de->position())) {
-            QDragEnterEvent de2(d->positionAdjustedForMainItem(de->position()).toPoint(),
-                                de->possibleActions(),
-                                de->mimeData(),
-                                de->buttons(),
-                                de->modifiers());
+            QDragEnterEvent de2(d->positionAdjustedForMainItem(de->position()), de->possibleActions(), de->mimeData(), de->buttons(), de->modifiers());
 
             if (d->window->isVisible()) {
                 QCoreApplication::sendEvent(this, &de2);
@@ -161,7 +157,7 @@ bool EdgeEventForwarder::eventFilter(QObject *watched, QEvent *event)
     case QEvent::DragMove: {
         QDragMoveEvent *de = static_cast<QDragMoveEvent *>(event);
         if (!d->mainItemContainsPosition(de->position())) {
-            QDragMoveEvent de2(d->positionAdjustedForMainItem(de->position()).toPoint(), de->possibleActions(), de->mimeData(), de->buttons(), de->modifiers());
+            QDragMoveEvent de2(d->positionAdjustedForMainItem(de->position()), de->possibleActions(), de->mimeData(), de->buttons(), de->modifiers());
 
             if (d->window->isVisible()) {
                 QCoreApplication::sendEvent(this, &de2);

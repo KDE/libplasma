@@ -131,6 +131,17 @@ class ToolTipArea : public QQuickItem
     Q_PROPERTY(bool interactive MEMBER m_interactive WRITE setInteractive NOTIFY interactiveChanged)
 
     /*!
+     * \qmlproperty bool ToolTipArea::hideOnClick
+     * If set to true (default), any click within the tooltiparea will hide the
+     * toolip. This is generally the correct behavior for typical tooltips with
+     * usage hints. Set it to false to keep the thumbnail open even when the
+     * tooltiparea is clicked, which may be appropriate for complex tooltipareas
+     * with interior controls and tooltips with specific information or
+     * interactive controls.
+     */
+    Q_PROPERTY(bool hideOnClick MEMBER m_hideOnClick WRITE setHideOnClick NOTIFY hideOnClickChanged)
+
+    /*!
      * \qmlproperty int ToolTipArea::timeout
      * Timeout in milliseconds after which the tooltip will hide itself.
      * Set this value to -1 to never hide the tooltip automatically.
@@ -168,6 +179,8 @@ public:
     void setActive(bool active);
 
     void setInteractive(bool interactive);
+
+    void setHideOnClick(bool hideOnClick);
 
     void setTimeout(int timeout);
 
@@ -213,6 +226,7 @@ Q_SIGNALS:
     void locationChanged();
     void activeChanged();
     void interactiveChanged();
+    void hideOnClickChanged();
     /*!
      * \qmlsignal ToolTipArea::aboutToShow
      *
@@ -249,6 +263,7 @@ private:
     QVariant m_icon;
     bool m_active;
     bool m_interactive;
+    bool m_hideOnClick;
     int m_interval;
     int m_timeout;
 

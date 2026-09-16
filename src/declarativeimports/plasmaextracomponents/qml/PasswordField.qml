@@ -53,6 +53,9 @@ PlasmaExtras.ActionTextField {
     rightActions: Kirigami.Action {
         enabled: KConfig.KAuthorized.authorize("lineedit_reveal_password")
         visible: enabled
+        text: root.showPassword
+            ? i18ndc("libplasma6", "@action:button in text field, tooltip/accessible only, displays placeholders for characters", "Hide Password")
+            : i18ndc("libplasma6", "@action:button in text field, tooltip/accessible only, reveals password chracters", "Show Password")
         icon.name: root.showPassword ? "password-show-off" : "password-show-on"
         onTriggered: root.showPassword = !root.showPassword
     }

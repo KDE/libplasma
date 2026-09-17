@@ -35,6 +35,7 @@ target_sources(PlasmaQuick PRIVATE
     plasmashellwaylandintegration.cpp
     plasmawindow.cpp
     popupplasmawindow.cpp
+    screensmodel.cpp
     transientplacementhint.cpp
     windowresizehandler.cpp
     configcategory_p.cpp
@@ -59,6 +60,7 @@ target_sources(PlasmaQuick PRIVATE
     plasmashellwaylandintegration.h
     plasmawindow.h
     popupplasmawindow.h
+    screensmodel.h
     transientplacementhint_p.h
     windowresizehandler.h
     configcategory_p.h
@@ -165,6 +167,7 @@ ecm_generate_headers(PlasmaQuick_CamelCase_HEADERS
         PlasmaWindow
         PlasmaShellWaylandIntegration
         PopupPlasmaWindow
+        ScreensModel
         AppletPopup
         PlasmaQuick
     REQUIRED_HEADERS plasmaquick_LIB_INCLUDES

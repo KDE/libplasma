@@ -15,6 +15,7 @@
 #include <QQmlPropertyMap>
 
 #include <Plasma/Plasma>
+#include <PlasmaQuick/ScreensModel>
 #include <qqmlintegration.h>
 
 #include "action.h"
@@ -255,6 +256,22 @@ struct EdgeEventForwarderForeign {
     Q_GADGET
     QML_NAMED_ELEMENT(EdgeEventForwarder)
     QML_FOREIGN(PlasmaQuick::EdgeEventForwarder)
+};
+
+/*!
+ * \qmltype ScreensModel
+ * \inqmlmodule org.kde.plasma.core
+ * \nativetype PlasmaQuick::ScreensModel
+ *
+ * \brief A model containing all active screens.
+ *
+ * The model excludes Qt's placeholder screen that is present when no physical
+ * screens are connected.
+ */
+struct ScreensModelForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(ScreensModel)
+    QML_FOREIGN(PlasmaQuick::ScreensModel)
 };
 
 class CoreBindingsPlugin : public QQmlExtensionPlugin

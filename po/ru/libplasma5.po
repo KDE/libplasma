@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:01+0000\n"
-"PO-Revision-Date: 2025-11-13 15:57+0300\n"
+"PO-Revision-Date: 2026-09-19 20:12+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -187,7 +187,7 @@ msgstr "Режим редактирования"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "Настроить виджет «%1»..."
+msgstr "Настроить виджет «%1»…"
 
 #: plasma/corona.cpp:355 plasma/corona.cpp:482
 #, kde-format
@@ -424,7 +424,7 @@ msgstr "Не удалось создать движок %1, необходимы
 #: plasma/private/applet_p.cpp:172
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "Взаимозаменяемые виджеты..."
+msgstr "Варианты виджета…"
 
 #: plasma/private/applet_p.cpp:274
 #, kde-format
@@ -508,7 +508,7 @@ msgstr "Настроить комнату"
 #: plasma/private/containment_p.cpp:71
 #, kde-format
 msgid "Add Widgets..."
-msgstr "Добавить виджеты..."
+msgstr "Добавить виджеты…"
 
 #: plasma/private/containment_p.cpp:187
 #, kde-format

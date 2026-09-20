@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-27 00:47+0000\n"
-"PO-Revision-Date: 2026-06-18 18:49+0200\n"
+"PO-Revision-Date: 2026-09-19 20:12+0300\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -102,7 +102,7 @@ msgstr "Режим редактирования"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "Настроить виджет «%1»..."
+msgstr "Настроить виджет «%1»…"
 
 #: plasma/corona.cpp:263 plasma/corona.cpp:420
 #, kde-format
@@ -128,7 +128,7 @@ msgstr "Невозможно найти компонент %1"
 #: plasma/private/applet_p.cpp:116
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "Взаимозаменяемые виджеты..."
+msgstr "Варианты виджета…"
 
 #: plasma/private/applet_p.cpp:234
 #, kde-format

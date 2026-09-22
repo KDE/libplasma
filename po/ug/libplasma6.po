@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:46+0000\n"
-"PO-Revision-Date: 2026-05-31 20:21-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -47,22 +47,20 @@ msgid "Password"
 msgstr "ئىم"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:57
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, displays placeholders "
 "for characters"
 msgid "Hide Password"
-msgstr "ئىم"
+msgstr "ئىم يوشۇر"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:58
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, reveals password "
 "chracters"
 msgid "Show Password"
-msgstr "ئىم"
+msgstr "ئىم كۆرسەت"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
@@ -242,7 +240,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:597 plasmaquick/appletquickitem.cpp:620
 #, kde-format
 msgid "Sorry! There was an error loading %1."
-msgstr "كەچۈرۈڭ! %1 نى يۈكلىگەندە خاتالىق كۆرۈلگەن."
+msgstr ""
 
 #: plasmaquick/appletquickitem.cpp:614
 #, kde-format
@@ -255,13 +253,12 @@ msgid "Error loading Applet: package %1 does not exist."
 msgstr "ئەپچە يۈكلەۋاتقاندا خاتالىق خاتالىق كۆرۈلدى: %1 بوغچا مەۋجۇت ئەمەس."
 
 #: plasmaquick/appletquickitem.cpp:623
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package %1 does not exist."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Error loading Applet: package format is invalid (does not contain any "
 "metadata)."
-msgstr "ئەپچە يۈكلەۋاتقاندا خاتالىق خاتالىق كۆرۈلدى: %1 بوغچا مەۋجۇت ئەمەس."
+msgstr ""
 
 #: plasmaquick/configview.cpp:194
 #, kde-format

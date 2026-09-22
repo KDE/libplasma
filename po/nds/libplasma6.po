@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-27 00:47+0000\n"
+"POT-Creation-Date: 2026-09-22 00:46+0000\n"
 "PO-Revision-Date: 2014-08-13 22:05+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -45,6 +45,22 @@ msgstr ""
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:50
 #, kde-format
 msgid "Password"
+msgstr ""
+
+#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:57
+#, kde-format
+msgctxt ""
+"@action:button in text field, tooltip/accessible only, displays placeholders "
+"for characters"
+msgid "Hide Password"
+msgstr ""
+
+#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:58
+#, kde-format
+msgctxt ""
+"@action:button in text field, tooltip/accessible only, reveals password "
+"chracters"
+msgid "Show Password"
 msgstr ""
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62

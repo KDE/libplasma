@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-27 00:47+0000\n"
+"POT-Creation-Date: 2026-09-22 00:46+0000\n"
 "PO-Revision-Date: 2026-06-05 21:59+0200\n"
 "Last-Translator: Alexander Becker <alex-at-kde-l10n-de@freenet.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -44,6 +44,24 @@ msgstr "Ausklappen"
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:50
 #, kde-format
 msgid "Password"
+msgstr "Passwort"
+
+#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:57
+#, fuzzy, kde-format
+#| msgid "Password"
+msgctxt ""
+"@action:button in text field, tooltip/accessible only, displays placeholders "
+"for characters"
+msgid "Hide Password"
+msgstr "Passwort"
+
+#: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:58
+#, fuzzy, kde-format
+#| msgid "Password"
+msgctxt ""
+"@action:button in text field, tooltip/accessible only, reveals password "
+"chracters"
+msgid "Show Password"
 msgstr "Passwort"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62

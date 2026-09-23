@@ -99,6 +99,7 @@
         "Description[sv]": "Breeze ljus av KDE:s visuella designgrupp",
         "Description[ta]": "கே.டீ.யீ. VDG வழங்கும் வெளிர் பிரீஸ்",
         "Description[tr]": "KDE VDG’den Esinti Açık",
+        "Description[ug]": "KDE VDG لايىھەلىگەن مەيىن شامال يورۇق",
         "Description[uk]": "Світла Breeze, автори — KDE VDG",
         "Description[vi]": "Breeze Sáng, do KDE VDG",
         "Description[zh_CN]": "Breeze 微风浅色主题，由 KDE VDG (视觉设计团队) 设计制作",

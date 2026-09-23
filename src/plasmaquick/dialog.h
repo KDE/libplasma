@@ -136,7 +136,7 @@ class PLASMAQUICK_EXPORT Dialog : public QQuickWindow, public QQmlParserStatus
     /*!
      * \property PlasmaQuick::Dialog::visible
      */
-    Q_PROPERTY(bool visible READ isVisible WRITE setVisible NOTIFY visibleChangedProxy)
+    Q_PROPERTY(bool visible READ isVisible WRITE setVisible NOTIFY visibleChangedProxy OVERRIDE)
 
     /*!
      * \property PlasmaQuick::Dialog::floating

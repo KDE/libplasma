@@ -1330,6 +1330,12 @@ bool Dialog::event(QEvent *event)
         }
     }
 
+    // Everything after here is input handling, we only want to handle events coming from external sources
+    // i.e the QPA otherwise there's a risk of creating some form of loop.
+    if (!event->spontaneous()) {
+        return QQuickWindow::event(event);
+    }
+
     /*Fitt's law: if the containment has margins, and the mouse cursor clicked
      * on the mouse edge, forward the click in the containment boundaries
      */

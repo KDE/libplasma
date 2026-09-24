@@ -89,6 +89,12 @@ bool EdgeEventForwarder::eventFilter(QObject *watched, QEvent *event)
 {
     Q_UNUSED(watched)
 
+    // Everything after here is input handling, we only want to handle events coming from external sources
+    // i.e the QPA otherwise there's a risk of creating some form of loop.
+    if (!event->spontaneous()) {
+        return false;
+    }
+
     switch (event->type()) {
     case QEvent::MouseMove:
     case QEvent::MouseButtonPress:

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:46+0000\n"
-"PO-Revision-Date: 2026-06-05 13:57+0400\n"
+"PO-Revision-Date: 2026-09-23 17:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -47,22 +47,20 @@ msgid "Password"
 msgstr "كلمة السر"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:57
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, displays placeholders "
 "for characters"
 msgid "Hide Password"
-msgstr "كلمة السر"
+msgstr "أخفِ كلمة السر"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:58
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, reveals password "
 "chracters"
 msgid "Show Password"
-msgstr "كلمة السر"
+msgstr "أظهر كلمة السر"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format

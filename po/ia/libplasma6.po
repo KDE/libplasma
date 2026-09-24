@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:46+0000\n"
-"PO-Revision-Date: 2026-07-01 16:22+0200\n"
+"PO-Revision-Date: 2026-09-23 11:07+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -46,22 +46,20 @@ msgid "Password"
 msgstr "Contrasigno"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:57
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, displays placeholders "
 "for characters"
 msgid "Hide Password"
-msgstr "Contrasigno"
+msgstr "Cela Contrasigno"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:58
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, reveals password "
 "chracters"
 msgid "Show Password"
-msgstr "Contrasigno"
+msgstr "Monstra Contrasigno"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format

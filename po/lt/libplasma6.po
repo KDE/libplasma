@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:46+0000\n"
-"PO-Revision-Date: 2026-05-29 12:22+0300\n"
+"PO-Revision-Date: 2026-09-23 15:10+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -50,22 +50,20 @@ msgid "Password"
 msgstr "Slaptažodis"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:57
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, displays placeholders "
 "for characters"
 msgid "Hide Password"
-msgstr "Slaptažodis"
+msgstr "Slėpti slaptažodį"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:58
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, reveals password "
 "chracters"
 msgid "Show Password"
-msgstr "Slaptažodis"
+msgstr "Rodyti slaptažodį"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format

@@ -11,6 +11,16 @@ namespace PlasmaQuick
 {
 static std::weak_ptr<QQmlEngine> s_engine;
 
+void setGlobalEngine(std::shared_ptr<QQmlEngine> engine)
+{
+    if (s_engine.lock()) {
+        qFatal() << "setGlobalEngine must be called before PlasmaQuick::globalEngine is used";
+    }
+
+    Plasma::setupPlasmaStyle(engine.get());
+    s_engine = engine;
+}
+
 std::shared_ptr<QQmlEngine> globalEngine()
 {
     if (auto locked = s_engine.lock()) {

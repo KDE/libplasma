@@ -10,6 +10,8 @@
 
 #include <QQmlEngine>
 
+#include <memory>
+
 namespace PlasmaQuick
 {
 /*!
@@ -19,4 +21,12 @@ namespace PlasmaQuick
  * \since 6.8
  */
 PLASMAQUICK_EXPORT std::shared_ptr<QQmlEngine> globalEngine();
+
+/*!
+ * Sets the shared QML engine to be used for applets and other Plasma components.
+ *
+ * To be used when the application owns the engine, for example with QQmlApplicationEngine
+ * \since 6.9
+ */
+PLASMAQUICK_EXPORT void setGlobalEngine(std::shared_ptr<QQmlEngine> engine);
 };

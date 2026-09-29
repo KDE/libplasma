@@ -132,7 +132,7 @@
         "Name[is]": "Breeze Light",
         "Name[it]": "Brezza chiaro",
         "Name[ja]": "Breeze Light",
-        "Name[ka]": "ნიავი ღია",
+        "Name[ka]": "Breeze Light",
         "Name[ko]": "밝은 Breeze",
         "Name[lt]": "Breeze šviesus",
         "Name[lv]": "Breeze Light",

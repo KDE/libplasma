@@ -131,7 +131,7 @@
         "Name[is]": "Oxygen",
         "Name[it]": "Oxygen",
         "Name[ja]": "Oxygen",
-        "Name[ka]": "ჟანგბადი",
+        "Name[ka]": "Oxygen",
         "Name[ko]": "Oxygen",
         "Name[lt]": "Oxygen",
         "Name[lv]": "Oxygen",

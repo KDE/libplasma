@@ -133,7 +133,7 @@
         "Name[is]": "Breeze",
         "Name[it]": "Brezza",
         "Name[ja]": "Breeze",
-        "Name[ka]": "ნიავი",
+        "Name[ka]": "Breeze",
         "Name[ko]": "Breeze",
         "Name[lt]": "Breeze",
         "Name[lv]": "Breeze",

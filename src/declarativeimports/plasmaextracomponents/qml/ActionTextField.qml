@@ -154,6 +154,7 @@ PlasmaComponents3.TextField {
 
             PlasmaComponents3.ToolTip.visible: (hovered || activeFocus) && (text.length > 0)
             PlasmaComponents3.ToolTip.text: text
+            PlasmaComponents3.ToolTip.delay: Kirigami.Units.toolTipDelay
         }
     }
 

@@ -54,10 +54,6 @@
             color:#ffffff;
         }
     </style>
-  <path
-     id="hint-stretch-borders"
-     d="m-7-7h5v5h-5z"
-     opacity=".6" />
   <g
      id="header-topleft">
     <path
@@ -269,4 +265,6 @@
      transform="rotate(90)"
      d="m26-25h4v6h-4z"
      fill="#f0f" />
+  <rect id="footer-hint-tile-center" x="181" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="header-hint-tile-center" x="189" y="0" width="5" height="5" style="fill:#ff6600" />
 </svg>

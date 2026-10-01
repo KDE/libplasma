@@ -1816,4 +1816,11 @@
      id="pressed-hint-compose-over-border"
      d="m -12 192 h 3.9999999 v 4 h -3.9999999 z"
      style="fill:#0f0;" />
+  <rect id="focus-hint-tile-center" x="296" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="hover-hint-tile-center" x="304" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="pressed-hint-tile-center" x="312" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="shadow-hint-tile-center" x="320" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="toolbutton-focus-hint-tile-center" x="328" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="toolbutton-hover-hint-tile-center" x="336" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="toolbutton-pressed-hint-tile-center" x="344" y="0" width="5" height="5" style="fill:#ff6600" />
 </svg>

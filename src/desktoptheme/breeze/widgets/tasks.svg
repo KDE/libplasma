@@ -978,4 +978,28 @@
         <rect id="normal-hint-bottom-margin" x="2" y="51" width="4" height="4" fill="#f0f"/>
         <rect id="normal-hint-right-margin" x="30" y="51" width="4" height="4" fill="#f0f"/>
         <rect id="normal-hint-left-margin" x="16" y="58" width="4" height="4" fill="#f0f"/>
+  <rect id="attention-hint-tile-center" x="152" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="east-attention-hint-tile-center" x="160" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="east-focus-hint-tile-center" x="168" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="east-hover-hint-tile-center" x="176" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="east-minimized-hint-tile-center" x="184" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="east-normal-hint-tile-center" x="192" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="east-progress-hint-tile-center" x="200" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="focus-hint-tile-center" x="208" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="hover-hint-tile-center" x="216" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="minimized-hint-tile-center" x="224" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="normal-hint-tile-center" x="232" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="north-attention-hint-tile-center" x="240" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="north-focus-hint-tile-center" x="248" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="north-hover-hint-tile-center" x="256" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="north-minimized-hint-tile-center" x="264" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="north-normal-hint-tile-center" x="272" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="north-progress-hint-tile-center" x="280" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="progress-hint-tile-center" x="288" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="west-attention-hint-tile-center" x="296" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="west-focus-hint-tile-center" x="304" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="west-hover-hint-tile-center" x="312" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="west-minimized-hint-tile-center" x="320" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="west-normal-hint-tile-center" x="328" y="0" width="5" height="5" style="fill:#ff6600" />
+  <rect id="west-progress-hint-tile-center" x="336" y="0" width="5" height="5" style="fill:#ff6600" />
 </svg>

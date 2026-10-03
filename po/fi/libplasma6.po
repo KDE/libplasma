@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the kde-runtime package.
 # Teemu Rytilahti <teemu.rytilahti@kde-fi.org>, 2008.
 # Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2008, 2009.
-# SPDX-FileCopyrightText: 2010, 2011, 2014, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2010, 2011, 2014, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2026 Tommi Nieminen <translator@legisign.org>
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2011.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2019, 2020, 2022.
 #
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:46+0000\n"
-"PO-Revision-Date: 2024-10-17 13:50+0300\n"
+"PO-Revision-Date: 2026-08-25 14:15+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -33,7 +33,7 @@ msgstr "Lisää toimintoja"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Näytä kontekstiohje"
 
 #: declarativeimports/plasmaextracomponents/qml/ExpandableListItem.qml:587
 #, kde-format
@@ -218,17 +218,13 @@ msgid "Unknown Applet"
 msgstr "Tuntematon sovelma"
 
 #: plasmaquick/appletquickitem.cpp:575
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgid ""
 "This widget was written for an unknown older version of Plasma and is not "
 "compatible with Plasma %1. Please contact the widget's author for an updated "
 "version."
 msgstr ""
-"Sovelma on kirjoitettu tuntemattomalle vanhalle Plasma-versiolle eikä ole "
+"Sovelma on kirjoitettu tuntemattomaan vanhaan Plasma-versioon eikä ole "
 "yhteensopiva Plasma-version %1 kanssa. Ota yhteyttä sovelman tekijään ja "
 "pyydä päivitetty versio."
 
@@ -239,27 +235,21 @@ msgid "%1 is not compatible with Plasma %2"
 msgstr "%1 ei ole yhteensopiva Plasma-version %2 kanssa"
 
 #: plasmaquick/appletquickitem.cpp:582
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
-#| "%2. Please contact the widget's author for an updated version."
+#, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please contact the widget's author for an updated version."
 msgstr ""
-"Sovelma on kirjoitettu Plasma-versiolle %1 eikä ole yhteensopiva Plasma-"
+"Sovelma on kirjoitettu Plasma-versioon %1 eikä ole yhteensopiva Plasma-"
 "version %2 kanssa. Ota yhteyttä sovelman tekijään ja pyydä päivitetty versio."
 
 #: plasmaquick/appletquickitem.cpp:588
-#, fuzzy, kde-format
-#| msgid ""
-#| "This Widget was written for Plasma %1 and is not compatible with Plasma "
-#| "%2. Please update Plasma in order to use the widget."
+#, kde-format
 msgid ""
 "This widget was written for Plasma %1 and is not compatible with Plasma %2. "
 "Please update Plasma in order to use the widget."
 msgstr ""
-"Sovelma on kirjoitettu Plasma-versiolle %1 eikä ole yhteensopiva Plasma-"
+"Sovelma on kirjoitettu Plasma-versioon %1 eikä ole yhteensopiva Plasma-"
 "version %2 kanssa. Päivitä Plasma, jotta sovelmaa voisi käyttää."
 
 #: plasmaquick/appletquickitem.cpp:597 plasmaquick/appletquickitem.cpp:620
@@ -278,13 +268,14 @@ msgid "Error loading Applet: package %1 does not exist."
 msgstr "Virhe ladattaessa sovelmaa: pakettia %1 ei ole olemassa."
 
 #: plasmaquick/appletquickitem.cpp:623
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package %1 does not exist."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Error loading Applet: package format is invalid (does not contain any "
 "metadata)."
-msgstr "Virhe ladattaessa sovelmaa: pakettia %1 ei ole olemassa."
+msgstr ""
+"Virhe ladattaessa sovelmaa: pakettimuoto on virheellinen (ei sisällä "
+"metatietoja)."
 
 #: plasmaquick/configview.cpp:194
 #, kde-format

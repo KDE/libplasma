@@ -105,14 +105,14 @@ inline std::unique_ptr<Applet> loadAppletInternal(const QString &name, uint appl
         QVariantList allArgs;
         allArgs << QVariant::fromValue(package) << appletId << args;
 
-        KPluginFactory *factory = KPluginFactory::loadFactory(plugin).plugin;
+        const auto result = KPluginFactory::loadFactory(plugin);
 
-        if (!factory) {
-            return nullptr;
+        if (!result) {
+            return makeFakeApplet(name, appletId, result.errorString);
         }
 
-        factory->setMetaData(package.metadata());
-        return std::unique_ptr<Applet>(factory->create<Plasma::Applet>(nullptr, allArgs));
+        result.plugin->setMetaData(package.metadata());
+        return std::unique_ptr<Applet>(result.plugin->create<Plasma::Applet>(nullptr, allArgs));
     }
 
     // C++ with embedded QML

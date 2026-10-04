@@ -47,6 +47,18 @@ inline std::unique_ptr<Applet> makeFakeApplet(const QString &name, uint appletId
     return applet;
 }
 
+QString loadErrorMessage(const KPluginMetaData &plugin, const auto &result)
+{
+    // The plugin exists but failed to load, usually because a library or symbol went away with a Plasma update
+    if (plugin.isValid() && result.errorReason == KPluginFactory::INVALID_PLUGIN) {
+        return i18nc("@info",
+                     "This widget was built for a different version of Plasma and needs to be rebuilt. Please contact the widget's author for an updated "
+                     "version.\n\n%1",
+                     result.errorString);
+    }
+    return result.errorString;
+}
+
 /*! May return \c nullptr in the case of load error. Try to avoid this though, this function can provide rich diagnostics */
 inline std::unique_ptr<Applet> loadAppletInternal(const QString &name, uint appletId, const QVariantList &args)
 {
@@ -108,7 +120,7 @@ inline std::unique_ptr<Applet> loadAppletInternal(const QString &name, uint appl
         const auto result = KPluginFactory::loadFactory(plugin);
 
         if (!result) {
-            return makeFakeApplet(name, appletId, result.errorString);
+            return makeFakeApplet(name, appletId, loadErrorMessage(plugin, result));
         }
 
         result.plugin->setMetaData(package.metadata());
@@ -123,7 +135,7 @@ inline std::unique_ptr<Applet> loadAppletInternal(const QString &name, uint appl
         if (auto applet = result.plugin; applet) {
             return std::unique_ptr<Applet>(applet);
         }
-        return makeFakeApplet(name, appletId, result.errorString);
+        return makeFakeApplet(name, appletId, loadErrorMessage(plugin, result));
     }
 
     return nullptr;

@@ -36,7 +36,7 @@ msgstr ""
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
 msgid "More actions"
-msgstr "Больше действий"
+msgstr "Дополнительные действия"
 
 #: declarativeimports/plasmaextracomponents/qml/ContextualHelpButton.qml:58
 #, kde-format
@@ -112,7 +112,7 @@ msgstr "Удалить виджет «%1»"
 #: plasma/containment.cpp:108 plasma/corona.cpp:314 plasma/corona.cpp:435
 #, kde-format
 msgid "Enter Edit Mode"
-msgstr "Режим редактирования"
+msgstr "Войти в режим редактирования"
 
 #: plasma/containment.cpp:111 plasma/private/applet_p.cpp:103
 #, kde-format
@@ -159,7 +159,7 @@ msgstr "Удалён виджет «%1»."
 #: plasma/private/applet_p.cpp:239
 #, kde-format
 msgid "Panel Removed"
-msgstr "Удаление панели"
+msgstr "Панель удалена"
 
 #: plasma/private/applet_p.cpp:240
 #, kde-format
@@ -241,7 +241,7 @@ msgstr ""
 #: plasmaquick/appletquickitem.cpp:591
 #, kde-format
 msgid "%1 is not compatible with Plasma %2"
-msgstr "Виджет «%1» не совместим с Plasma версии %2."
+msgstr "Виджет «%1» несовместим с Plasma версии %2."
 
 #: plasmaquick/appletquickitem.cpp:582
 #, kde-format

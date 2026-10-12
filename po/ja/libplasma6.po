@@ -1,14 +1,14 @@
-# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 # Fuminobu Takeyama <ftake@geeko.jp>, 2016.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019.
 # Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2022, 2023.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2011, 2016, 2022.
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-26 03:00+0000\n"
-"PO-Revision-Date: 2026-07-23 17:17+0900\n"
+"PO-Revision-Date: 2026-09-22 12:24+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -79,7 +79,7 @@ msgstr "検索"
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:75
 #, kde-format
 msgid "Clear search"
-msgstr "検索をクリア"
+msgstr "検索欄をクリア"
 
 #: plasma/applet.cpp:296
 #, kde-format

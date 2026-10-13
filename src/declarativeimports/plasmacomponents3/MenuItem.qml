@@ -24,7 +24,8 @@ T.MenuItem {
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
                             implicitContentWidth + leftPadding + rightPadding + (arrow ? arrow.implicitWidth : 0))
     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
-                             Math.max(implicitContentHeight, implicitIndicatorHeight) + topPadding + bottomPadding)
+                             implicitContentHeight + topPadding + bottomPadding,
+                             implicitIndicatorHeight + topPadding + bottomPadding)
     baselineOffset: contentItem.y + contentItem.baselineOffset
 
     leftPadding: highlight.margins.left

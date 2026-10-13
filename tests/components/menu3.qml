@@ -34,6 +34,29 @@ ComponentBase {
         }
 
         PC3.Button {
+            text: "Custom menu items"
+            onClicked: customMenuItems.open()
+
+            PC3.Menu {
+                id: customMenuItems
+
+                PC3.MenuItem {
+                    contentItem: Kirigami.TitleSubtitle {
+                        title: "Foo"
+                        subtitle: "Bar"
+                    }
+                }
+
+                PC3.MenuItem {
+                    contentItem: Kirigami.TitleSubtitle {
+                        title: "Fizz"
+                        subtitle: "Buzz"
+                    }
+                }
+            }
+        }
+
+        PC3.Button {
             text: "Checkable menu items"
             onClicked: checkableMenu.open()
 

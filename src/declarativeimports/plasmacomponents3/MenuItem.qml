@@ -21,9 +21,9 @@ import org.kde.kirigami as Kirigami
 T.MenuItem {
     id: controlRoot
 
-    implicitWidth: Math.max(implicitBackgroundWidth,
+    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
                             implicitContentWidth + leftPadding + rightPadding + (arrow ? arrow.implicitWidth : 0))
-    implicitHeight: Math.max(implicitBackgroundHeight,
+    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
                              Math.max(implicitContentHeight, implicitIndicatorHeight) + topPadding + bottomPadding)
     baselineOffset: contentItem.y + contentItem.baselineOffset
 

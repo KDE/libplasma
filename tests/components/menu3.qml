@@ -168,5 +168,23 @@ ComponentBase {
                 PC3.MenuItem { text: "I'm disabled too"; enabled: false }
             }
         }
+
+        PC3.Button {
+            text: "Sub-menus"
+            onClicked: withSubmenusMenu.open()
+
+            PC3.Menu {
+                id: withSubmenusMenu
+                y: parent.height
+
+                PC3.MenuItem { text: "Item" }
+
+                PC3.Menu {
+                    title: "Sub-menu"
+
+                    PC3.MenuItem { text: "Foobar" }
+                }
+            }
+        }
     }
 }

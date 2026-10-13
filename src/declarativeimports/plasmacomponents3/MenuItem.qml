@@ -80,8 +80,8 @@ T.MenuItem {
         x: controlRoot.mirrored ? controlRoot.padding : controlRoot.width - width - controlRoot.padding
         y: controlRoot.topPadding + (controlRoot.availableHeight - height) / 2
         source: controlRoot.mirrored ? "go-next-symbolic-rtl" : "go-next-symbolic"
-        width: Math.max(label.height, Kirigami.Units.iconSizes.small)
-        height: width
+        width: Kirigami.Units.iconSizes.sizeForLabels
+        height: Kirigami.Units.iconSizes.sizeForLabels
         visible: controlRoot.subMenu
     }
 

@@ -16,6 +16,9 @@ import org.kde.kirigami as Kirigami
      \qmltype ToolTip
      \inqmlmodule org.kde.plasma.components
      \brief A simple tooltip whose visual styling is determined by the active Plasma theme.
+
+     Since they are usually used for accelerators, ampersands directly before non-whitespace characters are stripped out.
+     To prevent this (e.g., if you need to show user-defined content), duplicate exactly those ampersands that come directly before a non-whitespace character.
  */
 T.ToolTip {
     id: control
@@ -74,7 +77,7 @@ T.ToolTip {
 
             // Strip out ampersands right before non-whitespace characters, i.e.
             // those used to determine the alt key shortcut
-            text: control.text.replace(/&(?=\S)/g, "")
+            text: control.text.replace(/&(?=[^\s&])/g, "")
             wrapMode: Text.Wrap
             font: control.font
 

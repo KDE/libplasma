@@ -143,6 +143,7 @@
         "Name[ko]": "Oxygen",
         "Name[lt]": "Oxygen",
         "Name[lv]": "Oxygen",
+        "Name[nan_TW@latin]": "Oxygen",
         "Name[nb]": "Oxygen",
         "Name[nl]": "Oxygen",
         "Name[nn]": "Oxygen",

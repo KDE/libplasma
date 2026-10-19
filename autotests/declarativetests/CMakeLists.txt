@@ -13,3 +13,8 @@ add_test(
     NAME tooltiptest
     COMMAND qmltest -import ${CMAKE_BINARY_DIR}/bin -input "${CMAKE_CURRENT_SOURCE_DIR}/tooltiptest.qml"
 )
+
+add_test(
+    NAME slidertickmarkstest
+    COMMAND qmltest -import ${CMAKE_BINARY_DIR}/bin -input "${CMAKE_CURRENT_SOURCE_DIR}/slidertickmarks.qml"
+)

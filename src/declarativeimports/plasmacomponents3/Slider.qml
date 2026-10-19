@@ -18,6 +18,12 @@ import "private" as P
      \qmltype Slider
      \inqmlmodule org.kde.plasma.components
      \brief A simple slider whose visual styling is determined by the active Plasma theme.
+
+     If \c stepSize is an integer, Slider automatically draws a tick mark for
+     each step. You can use \c Kirigami.StyleHints.tickMarkStepSize to set a
+     different tick mark step size, or set it to 0 to hide tick marks
+     completely. Tick marks are not drawn if they would divide the slider into
+     more than 20 steps.
  */
 T.Slider {
     id: control
@@ -29,6 +35,10 @@ T.Slider {
 
     snapMode: T.Slider.SnapOnRelease
     hoverEnabled: true
+
+    // The hint is an integer, so fractional steps get no tick marks rather than
+    // marks that would not match them
+    Kirigami.StyleHints.tickMarkStepSize: Number.isInteger(control.stepSize) ? control.stepSize : 0
 
     layer.enabled: opacity < 1
     opacity: control.enabled ? 1 : 0.5
@@ -163,7 +173,9 @@ T.Slider {
 
         Loader {
             id: tickLoader
-            readonly property int stepCount: (control.to - control.from) / control.stepSize
+            readonly property int stepCount: control.Kirigami.StyleHints.tickMarkStepSize > 0
+                ? (control.to - control.from) / control.Kirigami.StyleHints.tickMarkStepSize
+                : 0
             visible: stepCount > 0 && stepCount <= 20
             active: visible
             anchors {

@@ -173,8 +173,7 @@ void PlasmaWindowPrivate::updateMainItemGeometry()
     const QMargins frameMargins = q->padding();
     const QSize windowSize = q->size();
 
-    mainItem->setX(frameMargins.left());
-    mainItem->setY(frameMargins.top());
+    mainItem->setPosition(QPoint(frameMargins.left(), frameMargins.top()));
 
     const QSize contentSize = windowSize.shrunkBy(frameMargins);
     mainItem->setSize(contentSize);

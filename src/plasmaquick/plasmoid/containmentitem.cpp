@@ -711,8 +711,7 @@ void ContainmentItem::appletAddedForward(Plasma::Applet *applet, const QRectF &g
                            height() / 2.0 - appletGraphicObject->height() / 2.0};
     }
 
-    appletGraphicObject->setX(position.x());
-    appletGraphicObject->setY(position.y());
+    appletGraphicObject->setPosition(position);
 }
 
 void ContainmentItem::appletRemovedForward(Plasma::Applet *applet)

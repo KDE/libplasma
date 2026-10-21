@@ -20,6 +20,8 @@
 #include <QTimer>
 
 #include <KLocalizedQmlContext>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 namespace PlasmaQuick
 {
@@ -312,6 +314,16 @@ void ContainmentView::setSource(const QUrl &url)
 
     auto obj = component.create(d->qmlContext.get());
 
+    if (component.isError()) {
+        qCritical() << "There was a problem loading" << url << "Please check your installation." << component.errors();
+        KMessageBox::error(
+            nullptr,
+            i18nc("Critical error: impossible to show panels or desktops", "There was a problem loading %1. Please check your installation.", url.toString()),
+            i18nc("Error message dialog title", "Error Starting Plasma"));
+        QCoreApplication::exit(EXIT_FAILURE);
+        return;
+    }
+
     auto item = qobject_cast<QQuickItem *>(obj);
     item->setParentItem(contentItem());
     item->setSize(QSize(width(), height()));
@@ -326,7 +338,9 @@ void ContainmentView::showConfigurationInterface(Plasma::Applet *applet)
 
 void ContainmentView::resizeEvent(QResizeEvent *e)
 {
-    d->rootObject->setSize(e->size());
+    if (d->rootObject) {
+        d->rootObject->setSize(e->size());
+    }
 
     QQuickWindow::resizeEvent(e);
 }

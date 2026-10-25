@@ -576,14 +576,19 @@ void Containment::setWallpaperGraphicsObject(QObject *object)
 
 QUrl Containment::compactApplet() const
 {
+    // Prefer the compiled-in QML over a possible on-disk KPackage, like
+    // Applet::mainScript() does. Otherwise a leftover package from an older
+    // or source installation would be picked up even though the QML is only
+    // shipped in the plugin's resources.
+    const QString path = qrcPath() + QLatin1String("CompactApplet.qml");
+    if (QFile::exists(path)) {
+        return QUrl(QLatin1String("qrc") + path);
+    }
+
     if (Applet::d->package.isValid()) {
         return Applet::d->package.fileUrl("compactapplet");
-    } else {
-        const QString path = qrcPath() + QLatin1String("CompactApplet.qml");
-        if (QFile::exists(path)) {
-            return QUrl(QLatin1String("qrc") + path);
-        }
     }
+
     return QUrl();
 }
 

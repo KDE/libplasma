@@ -53,6 +53,7 @@ Item {
             spacing: 0
 
             Kirigami.Heading {
+                id: heading
                 level: 3
                 Layout.fillWidth: true
                 elide: Text.ElideRight
@@ -67,7 +68,7 @@ Item {
                 wrapMode: Text.Wrap
                 text: root.toolTip ? root.toolTip.subText : ""
                 textFormat: root.toolTip ? root.toolTip.textFormat : Text.AutoText
-                opacity: 0.75
+                opacity: heading.visible? 0.75 : 1
                 visible: text !== ""
                 maximumLineCount: 8
             }

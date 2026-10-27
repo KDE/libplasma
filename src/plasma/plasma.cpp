@@ -15,6 +15,7 @@
 #include <QVersionNumber>
 
 #include "containment.h"
+#include "debug_p.h"
 
 namespace Plasma
 {
@@ -41,6 +42,8 @@ void setupPlasmaStyle(QQmlEngine *engine)
         if (QObject *tooltip = tooltipComponent.create()) {
             tooltip->setParent(engine);
             engine->setProperty(toolTipProperty, QVariant::fromValue(tooltip));
+        } else {
+            qCWarning(LOG_PLASMA) << "Error creating the Plasma Tooltip component:" << tooltipComponent.errors();
         }
     }
 }

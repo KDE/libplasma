@@ -155,12 +155,6 @@ void PlasmaWindowPrivate::handleFrameChanged()
 {
     const QRegion mask = dialogBackground->mask();
     KWindowEffects::enableBlurBehind(q, theme.blurBehindEnabled(), mask);
-    KWindowEffects::enableBackgroundContrast(q,
-                                             theme.backgroundContrastEnabled(),
-                                             theme.backgroundContrast(),
-                                             theme.backgroundIntensity(),
-                                             theme.backgroundSaturation(),
-                                             mask);
 
     q->setMask(mask);
 }

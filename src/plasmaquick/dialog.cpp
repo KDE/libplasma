@@ -221,7 +221,6 @@ void DialogPrivate::updateTheme()
     if (backgroundHints == Dialog::NoBackground) {
         dialogBackground->setImagePath(QString());
         KWindowEffects::enableBlurBehind(q, false);
-        KWindowEffects::enableBackgroundContrast(q, false);
         q->setMask(QRegion());
         DialogShadows::instance()->removeWindow(q);
     } else {
@@ -237,13 +236,6 @@ void DialogPrivate::updateTheme()
 
         const QRegion mask = dialogBackground->mask();
         KWindowEffects::enableBlurBehind(q, theme.blurBehindEnabled(), mask);
-
-        KWindowEffects::enableBackgroundContrast(q,
-                                                 theme.backgroundContrastEnabled(),
-                                                 theme.backgroundContrast(),
-                                                 theme.backgroundIntensity(),
-                                                 theme.backgroundSaturation(),
-                                                 mask);
 
         hasMask = true;
         q->setMask(dialogBackground->mask());

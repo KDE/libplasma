@@ -90,6 +90,16 @@ void Containment::init()
         }
     });
 
+    // Nested containments (e.g. the system tray) follow the screen of their parent containment
+    if (Containment *pc = qobject_cast<Containment *>(parent())) {
+        connect(pc, &Containment::screenChanged, this, [this](uint newScreen) {
+            Q_EMIT screenChanged(newScreen);
+            Q_EMIT availableRelativeScreenRectChanged(availableRelativeScreenRect());
+            Q_EMIT screenGeometryChanged(screenGeometry());
+            Q_EMIT availableRelativeScreenRegionChanged(availableRelativeScreenRegion());
+        });
+    }
+
     QMap<QString, QAction *> actions = static_cast<Applet *>(this)->d->actions;
     // connect actions
     ContainmentPrivate::addDefaultActions(actions, this);
@@ -505,9 +515,9 @@ QRectF Containment::availableRelativeScreenRect() const
         return {};
     }
 
-    QRectF rect = corona()->availableScreenRect(d->screen);
+    QRectF rect = corona()->availableScreenRect(screen());
     // make it relative
-    QRectF geometry = corona()->screenGeometry(d->screen);
+    QRectF geometry = corona()->screenGeometry(screen());
     rect.moveTo(rect.topLeft() - geometry.topLeft());
     return rect;
 }
@@ -520,11 +530,11 @@ QList<QRectF> Containment::availableRelativeScreenRegion() const
         return regVal;
     }
 
-    QRegion reg = containment()->corona()->availableScreenRegion(d->screen);
+    QRegion reg = containment()->corona()->availableScreenRegion(screen());
 
     auto it = reg.begin();
     const auto itEnd = reg.end();
-    QRect geometry = containment()->corona()->screenGeometry(d->screen);
+    QRect geometry = containment()->corona()->screenGeometry(screen());
     for (; it != itEnd; ++it) {
         QRect rect = *it;
         // make it relative
@@ -540,7 +550,7 @@ QRectF Containment::screenGeometry() const
         return {};
     }
 
-    return corona()->screenGeometry(d->screen);
+    return corona()->screenGeometry(screen());
 }
 
 void Containment::setWallpaperPlugin(const QString &pluginName)

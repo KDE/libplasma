@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:46+0000\n"
+"POT-Creation-Date: 2026-10-28 01:02+0000\n"
 "PO-Revision-Date: 2026-09-23 09:15+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -294,6 +294,18 @@ msgstr "Paramètres %1 — %2"
 #, kde-format
 msgid "%1 Settings"
 msgstr "Paramètres %1"
+
+#: plasmaquick/containmentview.cpp:321
+#, kde-format
+msgctxt "Critical error: impossible to show panels or desktops"
+msgid "There was a problem loading %1. Please check your installation."
+msgstr ""
+
+#: plasmaquick/containmentview.cpp:322
+#, kde-format
+msgctxt "Error message dialog title"
+msgid "Error Starting Plasma"
+msgstr ""
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

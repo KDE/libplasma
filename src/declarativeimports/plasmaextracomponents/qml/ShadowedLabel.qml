@@ -31,8 +31,13 @@ import org.kde.kirigami as Kirigami
   the underlying Label component. See the Label component from QtQuick.Controls
   2 and primitive QML Text element API for additional properties, methods, and
   signals.
+
+  Only the label text casts a shadow. Backgrounds and child items are
+  not included.
  */
 PlasmaComponents3.Label {
+    id: root
+
     /*!
        This property can be used to conditionally *not* render the shadow, even
        when it's technically possible to render it.
@@ -47,15 +52,65 @@ PlasmaComponents3.Label {
 
     color: "white"
 
-    layer.enabled: renderShadow && GraphicsInfo.api !== GraphicsInfo.Software
-    layer.effect: DropShadow {
-        horizontalOffset: 1
-        verticalOffset: 1
+    // Only the shadow is drawn from a texture. Drawing the label's own glyphs
+    // through a layer effect resamples them at fractional scale factors.
+    Loader {
+        anchors.fill: parent
+        z: -1
+        active: root.renderShadow && GraphicsInfo.api !== GraphicsInfo.Software
+        sourceComponent: Item {
+            PlasmaComponents3.Label {
+                id: shadowSource
+                anchors.fill: parent
+                visible: false
+                opacity: 1
+                Accessible.ignored: true
+                LayoutMirroring.enabled: false
 
-        radius: 4.0
-        samples: radius * 2 + 1
-        spread: 0.35
-        color: "black"
+                text: root.text
+                font: root.font
+                textFormat: root.textFormat
+                baseUrl: root.baseUrl
+                renderType: root.renderType
+                renderTypeQuality: root.renderTypeQuality
+                antialiasing: root.antialiasing
+                smooth: root.smooth
+                elide: root.elide
+                wrapMode: root.wrapMode
+                maximumLineCount: root.maximumLineCount
+                lineHeight: root.lineHeight
+                lineHeightMode: root.lineHeightMode
+                fontSizeMode: root.fontSizeMode
+                minimumPixelSize: root.minimumPixelSize
+                minimumPointSize: root.minimumPointSize
+                horizontalAlignment: root.effectiveHorizontalAlignment
+                verticalAlignment: root.verticalAlignment
+                topPadding: root.topPadding
+                bottomPadding: root.bottomPadding
+                leftPadding: root.leftPadding
+                rightPadding: root.rightPadding
+                style: root.style
+                // Keep color alpha so the shadow matches translucent text.
+                color: root.color
+                styleColor: root.styleColor
+                linkColor: root.linkColor
+            }
+
+            // DropShadowBase uses these private settings to draw only the shadow.
+            GaussianBlur {
+                x: 1
+                y: 1
+                width: parent.width
+                height: parent.height
+                source: shadowSource
+                radius: 4 * Screen.devicePixelRatio
+                samples: 9 * Screen.devicePixelRatio
+                transparentBorder: true
+                _thickness: 0.35
+                _color: "black"
+                _alphaOnly: true
+            }
+        }
     }
 
     // Fallback background when we can't draw the text shadow because hardware

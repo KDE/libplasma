@@ -96,6 +96,8 @@ bool ToolTipDialog::event(QEvent *e)
     if (e->type() == QEvent::Enter) {
         if (m_interactive) {
             m_hideTimer.stop();
+        } else {
+            setVisible(false);
         }
     } else if (e->type() == QEvent::Leave) {
         dismiss();

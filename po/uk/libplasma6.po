@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:02+0000\n"
-"PO-Revision-Date: 2026-09-22 16:44+0300\n"
+"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"PO-Revision-Date: 2026-10-28 15:07+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -89,18 +89,18 @@ msgstr "Невідомий"
 msgid "Activate %1 Widget"
 msgstr "Задіяти віджет «%1»"
 
-#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:98
+#: plasma/containment.cpp:112 plasma/private/applet_p.cpp:98
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Вилучити аплет «%1»"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:314 plasma/corona.cpp:435
+#: plasma/containment.cpp:118 plasma/corona.cpp:314 plasma/corona.cpp:435
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Увійти до режиму редагування"
 
-#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:103
+#: plasma/containment.cpp:121 plasma/private/applet_p.cpp:103
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -286,12 +286,14 @@ msgstr "Налаштувати віджет «%1»"
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
 msgstr ""
+"Проблема із завантаженням %1. Будь ласка, перевірте, чи правильно виконано "
+"встановлення."
 
 #: plasmaquick/containmentview.cpp:322
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Помилка під час спроби запустити Плазму"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

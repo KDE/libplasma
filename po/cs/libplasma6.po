@@ -9,16 +9,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:02+0000\n"
-"PO-Revision-Date: 2026-09-22 12:40+0200\n"
-"Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
+"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"PO-Revision-Date: 2026-10-28 22:51+0100\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -91,18 +91,18 @@ msgstr "Neznámý"
 msgid "Activate %1 Widget"
 msgstr "Aktivovat %1 widget"
 
-#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:98
+#: plasma/containment.cpp:112 plasma/private/applet_p.cpp:98
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Odstranit %1"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:314 plasma/corona.cpp:435
+#: plasma/containment.cpp:118 plasma/corona.cpp:314 plasma/corona.cpp:435
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Spustit režim úprav"
 
-#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:103
+#: plasma/containment.cpp:121 plasma/private/applet_p.cpp:103
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -288,13 +288,13 @@ msgstr "Nastavení %1"
 #, kde-format
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "Při načítání %1 došlo k problému. Zkontrolujte prosím svou instalaci."
 
 #: plasmaquick/containmentview.cpp:322
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Chyba při spuštění Plasmy"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

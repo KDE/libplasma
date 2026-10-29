@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:02+0000\n"
+"POT-Creation-Date: 2026-10-29 00:55+0000\n"
 "PO-Revision-Date: 2026-10-03 22:09+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -89,18 +89,18 @@ msgstr "Nepoznato"
 msgid "Activate %1 Widget"
 msgstr "Aktiviraj vidžet %1"
 
-#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:98
+#: plasma/containment.cpp:112 plasma/private/applet_p.cpp:98
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Ukloni %1|/|Ukloni $[aku %1]"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:314 plasma/corona.cpp:435
+#: plasma/containment.cpp:118 plasma/corona.cpp:314 plasma/corona.cpp:435
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Uđi u režim uređivanja"
 
-#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:103
+#: plasma/containment.cpp:121 plasma/private/applet_p.cpp:103
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."

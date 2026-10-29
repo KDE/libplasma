@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:02+0000\n"
-"PO-Revision-Date: 2026-09-26 22:42+0200\n"
+"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"PO-Revision-Date: 2026-10-28 23:11+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -91,18 +91,18 @@ msgstr "Ezezaguna"
 msgid "Activate %1 Widget"
 msgstr "Aktibatu %1 trepeta"
 
-#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:98
+#: plasma/containment.cpp:112 plasma/private/applet_p.cpp:98
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Kendu %1"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:314 plasma/corona.cpp:435
+#: plasma/containment.cpp:118 plasma/corona.cpp:314 plasma/corona.cpp:435
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Sartu editatzeko modura"
 
-#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:103
+#: plasma/containment.cpp:121 plasma/private/applet_p.cpp:103
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -288,13 +288,13 @@ msgstr "%1 ezarpenak"
 #, kde-format
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "%1 zamatzeko arazo bat egon da. Zure instalazioa egiaztatu mesedez."
 
 #: plasmaquick/containmentview.cpp:322
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Plasma abiarazteko errorea"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

@@ -18,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 01:02+0000\n"
-"PO-Revision-Date: 2026-09-22 21:42+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"PO-Revision-Date: 2026-10-28 07:44+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -103,18 +103,18 @@ msgstr "Неизвестный"
 msgid "Activate %1 Widget"
 msgstr "Сделать виджет «%1» активным"
 
-#: plasma/containment.cpp:102 plasma/private/applet_p.cpp:98
+#: plasma/containment.cpp:112 plasma/private/applet_p.cpp:98
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
 msgstr "Удалить виджет «%1»"
 
-#: plasma/containment.cpp:108 plasma/corona.cpp:314 plasma/corona.cpp:435
+#: plasma/containment.cpp:118 plasma/corona.cpp:314 plasma/corona.cpp:435
 #, kde-format
 msgid "Enter Edit Mode"
 msgstr "Войти в режим редактирования"
 
-#: plasma/containment.cpp:111 plasma/private/applet_p.cpp:103
+#: plasma/containment.cpp:121 plasma/private/applet_p.cpp:103
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
@@ -302,13 +302,13 @@ msgstr "Настройка виджета «%1»"
 #, kde-format
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "При загрузке %1 возникла проблема. Проверьте правильность установки."
 
 #: plasmaquick/containmentview.cpp:322
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Ошибка запуска Plasma"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

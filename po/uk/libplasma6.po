@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 03:08+0000\n"
-"PO-Revision-Date: 2026-09-26 19:28+0300\n"
+"PO-Revision-Date: 2026-10-29 16:22+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -286,11 +286,13 @@ msgstr "Налаштувати віджет «%1»"
 msgctxt "Fatal error message: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
 msgstr ""
+"Проблема із завантаженням %1. Будь ласка, перевірте, чи правильно виконано "
+"встановлення."
 
 #: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Помилка під час спроби запустити Плазму"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

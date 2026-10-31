@@ -71,6 +71,9 @@ Applet::~Applet()
 
     if (d->transient) {
         d->resetConfigurationObject();
+        if (d->activationAction && d->globalShortcutEnabled) {
+            KGlobalAccel::self()->removeAllShortcuts(d->activationAction);
+        }
     }
 
     // ConfigLoader is deleted when AppletPrivate closes not Applet

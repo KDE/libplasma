@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the libplasma5 package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014, 2015, 2017, 2018.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:55+0000\n"
-"PO-Revision-Date: 2026-09-23 17:41+0400\n"
+"PO-Revision-Date: 2026-10-31 17:27+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -281,13 +281,13 @@ msgstr "إعدادات %1"
 #, kde-format
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "حدثت مشكلة أثناء تحميل %1. يرجى التحقق من تثبيتك للبرنامج."
 
 #: plasmaquick/containmentview.cpp:322
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "خطأ في بدء بلازما"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

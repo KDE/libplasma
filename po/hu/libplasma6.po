@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 03:08+0000\n"
-"PO-Revision-Date: 2026-05-30 21:43+0200\n"
+"PO-Revision-Date: 2026-11-01 22:13+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -49,22 +49,20 @@ msgid "Password"
 msgstr "Jelszó"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:57
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, displays placeholders "
 "for characters"
 msgid "Hide Password"
-msgstr "Jelszó"
+msgstr "Jelszó elrejtése"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:58
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, reveals password "
 "chracters"
 msgid "Show Password"
-msgstr "Jelszó"
+msgstr "Jelszó megjelenítése"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
@@ -264,13 +262,14 @@ msgid "Error loading Applet: package %1 does not exist."
 msgstr "Hiba a kisalkalmazás betöltésekor: a(z) %1 csomag nem létezik."
 
 #: plasmaquick/appletquickitem.cpp:623
-#, fuzzy, kde-format
-#| msgid "Error loading Applet: package %1 does not exist."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Error loading Applet: package format is invalid (does not contain any "
 "metadata)."
-msgstr "Hiba a kisalkalmazás betöltésekor: a(z) %1 csomag nem létezik."
+msgstr ""
+"Hiba a kisalkalmazás betöltésekor: érvénytelen csomagformátum (nem tartalmaz "
+"semmilyen metaadatot)."
 
 #: plasmaquick/configview.cpp:194
 #, kde-format
@@ -286,12 +285,12 @@ msgstr "Beállítások: %1"
 #, kde-format
 msgctxt "Fatal error message: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "Hiba történt a(z) %1 betöltésekor. Ellenőrizze a telepítését."
 
 #: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Hiba a Plasma indításakor"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

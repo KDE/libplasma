@@ -23,7 +23,6 @@
 #include <QScreen>
 
 #include <KWindowEffects>
-#include <KWindowInfo>
 #include <KWindowSystem>
 #include <Plasma/Corona>
 

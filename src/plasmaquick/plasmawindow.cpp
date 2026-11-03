@@ -35,6 +35,10 @@ public:
     QPointer<QQuickItem> mainItem;
     DialogBackground *dialogBackground;
     PlasmaWindow::BackgroundHints backgroundHints = PlasmaWindow::StandardBackground;
+
+    // default to true, so we can be used from C++
+    bool componentComplete = true;
+    bool visible = false;
 };
 
 PlasmaWindow::PlasmaWindow(const QString &svgPrefix)
@@ -54,6 +58,8 @@ PlasmaWindow::PlasmaWindow(const QString &svgPrefix)
     connect(d->dialogBackground, &DialogBackground::maskChanged, this, [this]() {
         d->handleFrameChanged();
     });
+
+    connect(this, &QWindow::visibleChanged, this, &PlasmaWindow::visibleChangedProxy);
 
     d->shadows->addWindow(this, d->dialogBackground->enabledBorders());
 }
@@ -133,6 +139,35 @@ void PlasmaWindow::setBorders(Qt::Edges bordersToShow)
 Qt::Edges PlasmaWindow::borders()
 {
     return bordersToEdge(d->dialogBackground->enabledBorders());
+}
+
+void PlasmaWindow::classBegin()
+{
+    d->componentComplete = false;
+}
+
+void PlasmaWindow::componentComplete()
+{
+    d->componentComplete = true;
+    QQuickWindow::setVisible(d->visible);
+}
+
+bool PlasmaWindow::isVisible() const
+{
+    if (d->componentComplete) {
+        return QQuickWindow::isVisible();
+    }
+    return d->visible;
+}
+
+void PlasmaWindow::setVisible(bool visible)
+{
+    d->visible = visible;
+    if (d->componentComplete) {
+        QQuickWindow::setVisible(visible);
+    } else {
+        Q_EMIT visibleChangedProxy();
+    }
 }
 
 void PlasmaWindow::showEvent(QShowEvent *e)

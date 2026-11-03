@@ -6,6 +6,7 @@
 #ifndef PLASMAWINDOW_H
 #define PLASMAWINDOW_H
 
+#include <QQmlParserStatus>
 #include <QQuickWindow>
 
 #include <plasmaquick/plasmaquick_export.h>
@@ -26,9 +27,10 @@ class PlasmaWindowPrivate;
  *
  * \brief Creates a QQuickWindow themed in a Plasma style with background.
  */
-class PLASMAQUICK_EXPORT PlasmaWindow : public QQuickWindow
+class PLASMAQUICK_EXPORT PlasmaWindow : public QQuickWindow, public QQmlParserStatus
 {
     Q_OBJECT
+    Q_INTERFACES(QQmlParserStatus)
 
     /*!
      * \property PlasmaQuick::PlasmaWindow::mainItem
@@ -41,6 +43,15 @@ class PLASMAQUICK_EXPORT PlasmaWindow : public QQuickWindow
      * Defines the background used for the window
      */
     Q_PROPERTY(BackgroundHints backgroundHints READ backgroundHints WRITE setBackgroundHints NOTIFY backgroundHintsChanged)
+
+    /*!
+     * \property PlasmaQuick::PlasmaWindow::visible
+     * Whether the window is visible.
+     *
+     * When set from QML, the value is only applied once the component has
+     * finished being created.
+     */
+    Q_PROPERTY(bool visible READ isVisible WRITE setVisible NOTIFY visibleChangedProxy OVERRIDE)
 
     /*!
      * \property PlasmaQuick::PlasmaWindow::borders
@@ -107,6 +118,9 @@ public:
     BackgroundHints backgroundHints() const;
     void setBackgroundHints(BackgroundHints hints);
 
+    bool isVisible() const;
+    void setVisible(bool visible);
+
     qreal topPadding() const;
     qreal bottomPadding() const;
     qreal leftPadding() const;
@@ -117,8 +131,11 @@ Q_SIGNALS:
     void bordersChanged();
     void backgroundHintsChanged();
     void paddingChanged();
+    void visibleChangedProxy(); // redeclaration of QQuickWindow::visibleChanged
 
 protected:
+    void classBegin() override;
+    void componentComplete() override;
     void showEvent(QShowEvent *e) override;
     void resizeEvent(QResizeEvent *e) override;
 

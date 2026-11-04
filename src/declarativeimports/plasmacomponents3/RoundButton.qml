@@ -28,10 +28,10 @@ T.RoundButton {
     implicitHeight: Math.max(Kirigami.Units.gridUnit, contentItem.implicitHeight)
                             + topPadding + bottomPadding
 
-    leftPadding: (text.length > 0 || control.display === T.Button.IconOnly) ? surfaceNormal.margins.left : contentItem.extraSpace
-    topPadding: (text.length > 0 || control.display === T.Button.IconOnly) ? surfaceNormal.margins.top : contentItem.extraSpace
-    rightPadding: (text.length > 0 || control.display === T.Button.IconOnly) ? surfaceNormal.margins.right : contentItem.extraSpace
-    bottomPadding: (text.length > 0 || control.display === T.Button.IconOnly) ? surfaceNormal.margins.bottom : contentItem.extraSpace
+    leftPadding: (text.length > 0 && control.display !== T.Button.IconOnly) ? surfaceNormal.margins.left : contentItem.extraSpace
+    topPadding: (text.length > 0 && control.display !== T.Button.IconOnly) ? surfaceNormal.margins.top : contentItem.extraSpace
+    rightPadding: (text.length > 0 && control.display !== T.Button.IconOnly) ? surfaceNormal.margins.right : contentItem.extraSpace
+    bottomPadding: (text.length > 0 && control.display !== T.Button.IconOnly) ? surfaceNormal.margins.bottom : contentItem.extraSpace
 
     hoverEnabled: !Kirigami.Settings.tabletMode
 
@@ -107,7 +107,7 @@ T.RoundButton {
         // Normal Button
         // TODO: Make round button always round?
 
-        readonly property bool useNormalButton: control.text.length > 0
+        readonly property bool useNormalButton: control.text.length > 0 && control.display !== T.Button.IconOnly
 
         Private.ButtonShadow {
             anchors.fill: parent

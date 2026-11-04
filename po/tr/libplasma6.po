@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 03:08+0000\n"
-"PO-Revision-Date: 2026-05-28 14:59+0300\n"
+"PO-Revision-Date: 2026-11-03 22:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -287,12 +287,12 @@ msgstr "%1 Ayarları"
 #, kde-format
 msgctxt "Fatal error message: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "%1 yüklenirken bir sorun oluştu. Lütfen kurulumunuzu denetleyin."
 
 #: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Plasma Başlatılırken Hata"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

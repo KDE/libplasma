@@ -28,10 +28,10 @@ T.RoundButton {
     implicitHeight: Math.max(Kirigami.Units.gridUnit, contentItem.implicitHeight)
                             + topPadding + bottomPadding
 
-    leftPadding: text.length > 0 ? surfaceNormal.margins.left : contentItem.extraSpace
-    topPadding: text.length > 0 ? surfaceNormal.margins.top : contentItem.extraSpace
-    rightPadding: text.length > 0 ? surfaceNormal.margins.right : contentItem.extraSpace
-    bottomPadding: text.length > 0 ? surfaceNormal.margins.bottom : contentItem.extraSpace
+    leftPadding: (text.length > 0 || control.display === T.Button.IconOnly) ? surfaceNormal.margins.left : contentItem.extraSpace
+    topPadding: (text.length > 0 || control.display === T.Button.IconOnly) ? surfaceNormal.margins.top : contentItem.extraSpace
+    rightPadding: (text.length > 0 || control.display === T.Button.IconOnly) ? surfaceNormal.margins.right : contentItem.extraSpace
+    bottomPadding: (text.length > 0 || control.display === T.Button.IconOnly) ? surfaceNormal.margins.bottom : contentItem.extraSpace
 
     hoverEnabled: !Kirigami.Settings.tabletMode
 
@@ -46,11 +46,11 @@ T.RoundButton {
             Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
             Layout.fillWidth: true
             Layout.fillHeight: true
-            visible: source.length > 0
+            visible: source.length > 0 && control.display !== T.Button.TextOnly
             source: control.icon ? (control.icon.name || control.icon.source) : ""
         }
         Label {
-            visible: text.length > 0
+            visible: text.length > 0 && control.display !== T.Button.IconOnly
             text: control.text
             font: control.font
             opacity: enabled || control.highlighted || control.checked ? 1 : 0.75

@@ -377,8 +377,10 @@ void ToolTipArea::hoverEnterEvent(QHoverEvent *event)
         // It need to be considered only when other items can deal with tooltip area
         if (m_active) {
             tooltipDialogInstance()->keepalive();
-            // FIXME: showToolTip needs to be renamed in sync or something like that
-            showToolTip();
+            if (s_dialog->owner() != this) {
+                // FIXME: showToolTip needs to be renamed in sync or something like that
+                showToolTip();
+            }
         }
     } else {
         m_showTimer.start(m_interval);

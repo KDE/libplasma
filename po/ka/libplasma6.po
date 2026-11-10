@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"POT-Creation-Date: 2026-11-09 12:51+0000\n"
 "PO-Revision-Date: 2026-10-28 03:57+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -119,7 +119,23 @@ msgstr "ვიჯეტების განბლოკვა"
 msgid "Exit Edit Mode"
 msgstr "ჩასწორების რეჟიმიდან გასვლა"
 
-#: plasma/pluginloader.cpp:145
+#: plasma/pluginloader.cpp:55
+#, fuzzy, kde-format
+#| msgid ""
+#| "This widget was written for an unknown older version of Plasma and is not "
+#| "compatible with Plasma %1. Please contact the widget's author for an "
+#| "updated version."
+msgctxt "@info"
+msgid ""
+"This widget was built for a different version of Plasma and needs to be "
+"rebuilt. Please contact the widget's author for an updated version.\n"
+"\n"
+"%1"
+msgstr ""
+"ვიჯეტი დაწერილია Plasma-ის უცნობი, ძველი ვერსიისთვის და Plasma %1-სთან "
+"თავსებადი არაა. ვიჯეტის განახლებული ვერსიისთვის დაუკავშირდით ავტორს."
+
+#: plasma/pluginloader.cpp:157
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "მოთხოვნილი კომპონენტის პოვნა ვერ მოხერხდა: %1"

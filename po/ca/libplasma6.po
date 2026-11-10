@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"POT-Creation-Date: 2026-11-09 12:51+0000\n"
 "PO-Revision-Date: 2026-10-28 09:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -123,7 +123,24 @@ msgstr "Desbloqueja els ginys"
 msgid "Exit Edit Mode"
 msgstr "Surt del mode d'edició"
 
-#: plasma/pluginloader.cpp:145
+#: plasma/pluginloader.cpp:55
+#, fuzzy, kde-format
+#| msgid ""
+#| "This widget was written for an unknown older version of Plasma and is not "
+#| "compatible with Plasma %1. Please contact the widget's author for an "
+#| "updated version."
+msgctxt "@info"
+msgid ""
+"This widget was built for a different version of Plasma and needs to be "
+"rebuilt. Please contact the widget's author for an updated version.\n"
+"\n"
+"%1"
+msgstr ""
+"Aquest giny s'ha escrit per a una versió antiga desconeguda del Plasma i no "
+"és compatible amb el Plasma %1. Poseu-vos en contacte amb l'autor del giny "
+"per a una versió actualitzada."
+
+#: plasma/pluginloader.cpp:157
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "No s'ha pogut trobar el component sol·licitat: %1"

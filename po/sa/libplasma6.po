@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"POT-Creation-Date: 2026-11-09 12:51+0000\n"
 "PO-Revision-Date: 2024-12-15 22:18+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -121,7 +121,23 @@ msgstr "विजेट् मुक्तं कुर्वन्तु"
 msgid "Exit Edit Mode"
 msgstr "सम्पादन विधितः निर्गच्छन्तु"
 
-#: plasma/pluginloader.cpp:145
+#: plasma/pluginloader.cpp:55
+#, fuzzy, kde-format
+#| msgid ""
+#| "This Widget was written for an unknown older version of Plasma and is not "
+#| "compatible with Plasma %1. Please contact the widget's author for an "
+#| "updated version."
+msgctxt "@info"
+msgid ""
+"This widget was built for a different version of Plasma and needs to be "
+"rebuilt. Please contact the widget's author for an updated version.\n"
+"\n"
+"%1"
+msgstr ""
+"इदं विजेट् प्लाज्मा इत्यस्य अज्ञातस्य प्राचीनसंस्करणस्य कृते लिखितम् अस्ति तथा च प्लाज्मा %1 "
+"इत्यनेन सह सङ्गतं नास्ति । अद्यतनसंस्करणार्थं विजेट्-लेखकस्य सम्पर्कं कुर्वन्तु ।"
+
+#: plasma/pluginloader.cpp:157
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "अनुरोधितं घटकं न प्राप्नोत्: %1"

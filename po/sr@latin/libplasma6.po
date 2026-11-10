@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"POT-Creation-Date: 2026-11-09 12:51+0000\n"
 "PO-Revision-Date: 2026-10-03 22:09+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -121,7 +121,23 @@ msgstr "Otključaj vidžete"
 msgid "Exit Edit Mode"
 msgstr "Izađi iz režima uređivanja"
 
-#: plasma/pluginloader.cpp:145
+#: plasma/pluginloader.cpp:55
+#, fuzzy, kde-format
+#| msgid ""
+#| "This widget was written for an unknown older version of Plasma and is not "
+#| "compatible with Plasma %1. Please contact the widget's author for an "
+#| "updated version."
+msgctxt "@info"
+msgid ""
+"This widget was built for a different version of Plasma and needs to be "
+"rebuilt. Please contact the widget's author for an updated version.\n"
+"\n"
+"%1"
+msgstr ""
+"Ovaj vidžet je napisan za nepoznato starije izdanje Plasme i nije saglasan "
+"sa Plasmom %1. Zatražite ažurirano izdanje od autora vidžeta."
+
+#: plasma/pluginloader.cpp:157
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Ne mogu da nađem zahtevanu komponentu: %1"

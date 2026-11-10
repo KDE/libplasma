@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"POT-Creation-Date: 2026-11-09 12:51+0000\n"
 "PO-Revision-Date: 2026-10-17 14:52+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -121,7 +121,24 @@ msgstr "ウィジェットのロックを解除"
 msgid "Exit Edit Mode"
 msgstr "編集モードから出る"
 
-#: plasma/pluginloader.cpp:145
+#: plasma/pluginloader.cpp:55
+#, fuzzy, kde-format
+#| msgid ""
+#| "This Widget was written for an unknown older version of Plasma and is not "
+#| "compatible with Plasma %1. Please contact the widget's author for an "
+#| "updated version."
+msgctxt "@info"
+msgid ""
+"This widget was built for a different version of Plasma and needs to be "
+"rebuilt. Please contact the widget's author for an updated version.\n"
+"\n"
+"%1"
+msgstr ""
+"このウィジェットは不明な古いバージョンの Plasma 用に作成されているため、"
+"Plasma %1 とは互換性がありません。アップデート版についてはウィジェットの作成"
+"者に問い合わせてください。"
+
+#: plasma/pluginloader.cpp:157
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "要求されたコンポーネントが見つかりませんでした: %1"

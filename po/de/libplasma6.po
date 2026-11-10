@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"POT-Creation-Date: 2026-11-09 12:51+0000\n"
 "PO-Revision-Date: 2026-09-28 18:10+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -120,7 +120,25 @@ msgstr "Miniprogramme entsperren"
 msgid "Exit Edit Mode"
 msgstr "Bearbeitungsmodus beenden"
 
-#: plasma/pluginloader.cpp:145
+#: plasma/pluginloader.cpp:55
+#, fuzzy, kde-format
+#| msgid ""
+#| "This widget was written for an unknown older version of Plasma and is not "
+#| "compatible with Plasma %1. Please contact the widget's author for an "
+#| "updated version."
+msgctxt "@info"
+msgid ""
+"This widget was built for a different version of Plasma and needs to be "
+"rebuilt. Please contact the widget's author for an updated version.\n"
+"\n"
+"%1"
+msgstr ""
+"Dieses Miniprogramm wurde für eine unbekannte ältere Version von Plasma "
+"geschrieben und ist nicht mit Plasma %1 kompatibel. Bitte nehmen Sie mit dem "
+"Autor des Miniprogramms Kontakt auf und bitten Sie diesen um eine "
+"aktualisierte Version."
+
+#: plasma/pluginloader.cpp:157
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "Die angeforderte Komponente ist nicht auffindbar: %1"

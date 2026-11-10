@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-framework\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 00:55+0000\n"
+"POT-Creation-Date: 2026-11-09 12:51+0000\n"
 "PO-Revision-Date: 2019-12-14 15:16+0530\n"
 "Last-Translator: Nithin S Sabu <nithinsn@protonmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -119,7 +119,17 @@ msgstr "വിഡ്ജറ്റുകളുടെ വിലക്കഴിക�
 msgid "Exit Edit Mode"
 msgstr ""
 
-#: plasma/pluginloader.cpp:145
+#: plasma/pluginloader.cpp:55
+#, kde-format
+msgctxt "@info"
+msgid ""
+"This widget was built for a different version of Plasma and needs to be "
+"rebuilt. Please contact the widget's author for an updated version.\n"
+"\n"
+"%1"
+msgstr ""
+
+#: plasma/pluginloader.cpp:157
 #, kde-format
 msgid "Could not find requested component: %1"
 msgstr "ആവശ്യപ്പെട്ട ഘടകം കണ്ടെത്തുവാനായില്ല: %1"

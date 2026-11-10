@@ -34,6 +34,9 @@ public:
     bool interactive();
     void setInteractive(bool interactive);
 
+    bool pinOpen();
+    void setPinOpen(bool pin);
+
     int hideTimeout() const;
     void setHideTimeout(int timeout);
 
@@ -60,6 +63,7 @@ private:
     QTimer m_hideTimer;
     int m_hideTimeout;
     bool m_interactive;
+    bool m_pinOpen;
     QObject *m_owner;
 };
 

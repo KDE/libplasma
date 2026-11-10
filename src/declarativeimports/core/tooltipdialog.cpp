@@ -16,12 +16,14 @@
 
 #include "plasmaquick.h"
 #include "plasmashellwaylandintegration.h"
+#include "popupplasmawindow.h"
 
 ToolTipDialog::ToolTipDialog()
     : PopupPlasmaWindow(QStringLiteral("widgets/tooltip"))
     , m_engine(PlasmaQuick::globalEngine())
     , m_hideTimeout(-1)
     , m_interactive(false)
+    , m_pinOpen(false)
     , m_owner(nullptr)
 {
     Qt::WindowFlags flags = Qt::WindowDoesNotAcceptFocus | Qt::WindowStaysOnTopHint;
@@ -94,12 +96,12 @@ void ToolTipDialog::hideEvent(QHideEvent *event)
 bool ToolTipDialog::event(QEvent *e)
 {
     if (e->type() == QEvent::Enter) {
-        if (m_interactive) {
+        if (m_interactive || m_pinOpen) {
             m_hideTimer.stop();
         } else {
             setVisible(false);
         }
-    } else if (e->type() == QEvent::Leave) {
+    } else if (e->type() == QEvent::Leave && !m_pinOpen) {
         dismiss();
     }
 
@@ -138,6 +140,16 @@ bool ToolTipDialog::interactive()
 void ToolTipDialog::setInteractive(bool interactive)
 {
     m_interactive = interactive;
+}
+
+bool ToolTipDialog::pinOpen()
+{
+    return m_pinOpen;
+}
+
+void ToolTipDialog::setPinOpen(bool pin)
+{
+    m_pinOpen = pin;
 }
 
 void ToolTipDialog::valueChanged(const QVariant &value)

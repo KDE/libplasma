@@ -142,6 +142,18 @@ class ToolTipArea : public QQuickItem
     Q_PROPERTY(bool hideOnClick MEMBER m_hideOnClick WRITE setHideOnClick NOTIFY hideOnClickChanged)
 
     /*!
+     * \qmlproperty bool ToolTipArea::pinOpen
+     * If set to true, the tooltip will not close automatically once the pointer
+     * leaves it, and other tooltipareas will not replace it. This may be
+     * appropriate for complex interactive tooltips that the user explicitly
+     * activated by clicking, or that should support interactions like internal
+     * drag & drop.
+     *
+     * Defaults to false.
+     */
+    Q_PROPERTY(bool pinOpen MEMBER m_pinOpen WRITE setPinOpen NOTIFY pinOpenChanged)
+
+    /*!
      * \qmlproperty int ToolTipArea::timeout
      * Timeout in milliseconds after which the tooltip will hide itself.
      * Set this value to -1 to never hide the tooltip automatically.
@@ -181,6 +193,8 @@ public:
     void setInteractive(bool interactive);
 
     void setHideOnClick(bool hideOnClick);
+
+    void setPinOpen(bool pin);
 
     void setTimeout(int timeout);
 
@@ -227,6 +241,7 @@ Q_SIGNALS:
     void activeChanged();
     void interactiveChanged();
     void hideOnClickChanged();
+    void pinOpenChanged();
     /*!
      * \qmlsignal ToolTipArea::aboutToShow
      *
@@ -264,6 +279,7 @@ private:
     bool m_active;
     bool m_interactive;
     bool m_hideOnClick;
+    bool m_pinOpen;
     int m_interval;
     int m_timeout;
 

@@ -33,6 +33,7 @@ ToolTipArea::ToolTipArea(QQuickItem *parent)
     , m_active(true)
     , m_interactive(false)
     , m_hideOnClick(true)
+    , m_pinOpen(false)
     , m_timeout(-1)
     , m_usingDialog(false)
 {
@@ -150,6 +151,7 @@ void ToolTipArea::showToolTip()
     dlg->setVisualParent(this);
     dlg->setMainItem(mainItem());
     dlg->setInteractive(m_interactive);
+    dlg->setPinOpen(m_pinOpen);
 
     switch (location) {
     case Plasma::Types::Floating:
@@ -285,6 +287,22 @@ void ToolTipArea::setHideOnClick(bool hideOnClick)
     Q_EMIT hideOnClickChanged();
 }
 
+void ToolTipArea::setPinOpen(bool pin)
+{
+    if (m_pinOpen == pin) {
+        return;
+    }
+
+    m_pinOpen = pin;
+
+    ToolTipDialog *dlg = tooltipDialogInstance();
+    if (dlg->owner() == this) {
+        dlg->setPinOpen(pin);
+    }
+
+    Q_EMIT pinOpenChanged();
+}
+
 void ToolTipArea::setTimeout(int timeout)
 {
     m_timeout = timeout;
@@ -351,7 +369,7 @@ void ToolTipArea::setContainsMouse(bool contains)
         m_containsMouse = contains;
         Q_EMIT containsMouseChanged();
     }
-    if (!contains && tooltipDialogInstance()->owner() == this) {
+    if (!contains && tooltipDialogInstance()->owner() == this && !tooltipDialogInstance()->pinOpen()) {
         tooltipDialogInstance()->dismiss();
     }
 }
@@ -377,7 +395,7 @@ void ToolTipArea::hoverEnterEvent(QHoverEvent *event)
         // It need to be considered only when other items can deal with tooltip area
         if (m_active) {
             tooltipDialogInstance()->keepalive();
-            if (s_dialog->owner() != this) {
+            if (s_dialog->owner() != this && !s_dialog->pinOpen()) {
                 // FIXME: showToolTip needs to be renamed in sync or something like that
                 showToolTip();
             }

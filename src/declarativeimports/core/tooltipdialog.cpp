@@ -16,12 +16,16 @@
 
 #include "plasmaquick.h"
 #include "plasmashellwaylandintegration.h"
+#include "popupplasmawindow.h"
+#include "tooltiparea.h"
 
 ToolTipDialog::ToolTipDialog()
     : PopupPlasmaWindow(QStringLiteral("widgets/tooltip"))
     , m_engine(PlasmaQuick::globalEngine())
     , m_hideTimeout(-1)
     , m_interactive(false)
+    , m_pinOpen(false)
+    , m_closeWhenUnpinned(true)
     , m_owner(nullptr)
 {
     Qt::WindowFlags flags = Qt::WindowDoesNotAcceptFocus | Qt::WindowStaysOnTopHint;
@@ -94,13 +98,18 @@ void ToolTipDialog::hideEvent(QHideEvent *event)
 bool ToolTipDialog::event(QEvent *e)
 {
     if (e->type() == QEvent::Enter) {
-        if (m_interactive) {
+        if (m_interactive || m_pinOpen) {
+            m_closeWhenUnpinned = !m_interactive;
             m_hideTimer.stop();
         } else {
             setVisible(false);
         }
     } else if (e->type() == QEvent::Leave) {
-        dismiss();
+        if (m_pinOpen) {
+            m_closeWhenUnpinned = true;
+        } else {
+            dismiss();
+        }
     }
 
     return PopupPlasmaWindow::event(e);
@@ -138,6 +147,22 @@ bool ToolTipDialog::interactive()
 void ToolTipDialog::setInteractive(bool interactive)
 {
     m_interactive = interactive;
+}
+
+bool ToolTipDialog::pinOpen()
+{
+    return m_pinOpen;
+}
+
+void ToolTipDialog::setPinOpen(bool pin)
+{
+    m_pinOpen = pin;
+    if (!pin && m_closeWhenUnpinned) {
+        auto area = dynamic_cast<ToolTipArea *>(m_owner);
+        if (area && !area->containsMouse()) {
+            dismiss();
+        }
+    }
 }
 
 void ToolTipDialog::valueChanged(const QVariant &value)

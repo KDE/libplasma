@@ -316,9 +316,10 @@ void ContainmentView::setSource(const QUrl &url)
 
     if (component.isError()) {
         qCritical() << "There was a problem loading" << url << "Please check your installation." << component.errors();
-        KMessageBox::error(
+        KMessageBox::detailedError(
             nullptr,
             i18nc("Critical error: impossible to show panels or desktops", "There was a problem loading %1. Please check your installation.", url.toString()),
+            component.errorString(),
             i18nc("Error message dialog title", "Error Starting Plasma"));
         QCoreApplication::exit(EXIT_FAILURE);
         return;

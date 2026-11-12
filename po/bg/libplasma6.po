@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-09 12:51+0000\n"
-"PO-Revision-Date: 2026-10-28 16:48+0200\n"
+"PO-Revision-Date: 2026-11-11 18:49+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Poedit 3.10\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -116,11 +116,7 @@ msgid "Exit Edit Mode"
 msgstr "Излизане от режима за редактиране"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -128,9 +124,11 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Този уиджет е написан за неизвестна по-стара версия на Plasma и не е "
-"съвместим с Plasma %1. Моля, свържете се с автора на уиджета за по-"
-"актуализирана версия."
+"Този уиджет е компилиран за различна  версия на Plasma и трябва да бъде "
+"прекомпилиран. Моля, свържете се с автора на уиджета за по-актуализирана "
+"версия..\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format

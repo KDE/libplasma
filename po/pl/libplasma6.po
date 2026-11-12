@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-09 12:51+0000\n"
-"PO-Revision-Date: 2026-10-04 14:20+0200\n"
+"PO-Revision-Date: 2026-11-11 17:51+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -120,11 +120,7 @@ msgid "Exit Edit Mode"
 msgstr "Wyjdź z trybu dostosowywania"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -132,9 +128,11 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Ten element interfejsu został napisany dla nieznanej, starszej wersji Plazmy "
-"i nie jest on zgodny z Plazmą %1. Zalecamy napisanie do jego autora z prośbą "
-"o uaktualnienie do nowej wersji Plazmy."
+"Ten element interfejsu został zbudowany dla innej wersji Plazmy i wymaga "
+"przebudowania. Zalecamy napisanie do jego autora z prośbą o uaktualnioną "
+"wersję.\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format
@@ -144,7 +142,7 @@ msgstr "Nie można znaleźć żądanego składnika: %1"
 #: plasma/private/applet_p.cpp:116
 #, kde-format
 msgid "Show Alternatives..."
-msgstr "Pokaż zamienniki..."
+msgstr "Pokaż zamienniki…"
 
 #: plasma/private/applet_p.cpp:234
 #, kde-format
@@ -301,13 +299,13 @@ msgstr "%1 Ustawienia"
 #, kde-format
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "Napotkano kłopot z wczytaniem %1. Sprawdź swoją instalację."
 
 #: plasmaquick/containmentview.cpp:322
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Nie udało się uruchomić Plazmy"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

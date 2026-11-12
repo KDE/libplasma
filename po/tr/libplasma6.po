@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-09 12:51+0000\n"
-"PO-Revision-Date: 2026-11-03 22:23+0300\n"
+"PO-Revision-Date: 2026-11-10 21:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -122,11 +122,7 @@ msgid "Exit Edit Mode"
 msgstr "Düzenleme Kipinden Çık"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -134,9 +130,11 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Bu araç takımı Plasma’nın bilinmeyen eski bir sürümü için yazılmış ve Plasma "
-"%1 ile uyumlu değil. Güncel bir sürüm için araç takımının yazarıyla "
-"iletişime geçin."
+"Bu araç takımı, Plasma’nın farklı bir sürümü için yapılmış ve yeniden "
+"yapılması gerekiyor. Güncellenmiş bir sürüm için lütfen araç takımının "
+"yazarıyla iletişime geçin.\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format

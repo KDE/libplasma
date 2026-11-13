@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -170,7 +170,10 @@ msgstr "Start %1-elementet"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove %1"
-msgstr "Fjern «%1»|/|Fjern $[pron %1] $[bunden %1]"
+msgstr ""
+"Fjern «%1»"
+"|/|"
+"Fjern $[pron %1] $[bunden %1]"
 
 #: plasma/containment.cpp:121 plasma/corona.cpp:406 plasma/corona.cpp:496
 #, kde-format
@@ -188,7 +191,10 @@ msgstr "Start tilpassing"
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Configure %1..."
-msgstr "Set opp «%1» …|/|Set opp $[dobbelbest %1]$[bunden %1] …"
+msgstr ""
+"Set opp «%1» …"
+"|/|"
+"Set opp $[dobbelbest %1]$[bunden %1] …"
 
 #: plasma/corona.cpp:355 plasma/corona.cpp:482
 #, kde-format
@@ -214,14 +220,8 @@ msgstr "Om det skal lagast eit snøgglager på disken for temaet."
 #. i18n: ectx: label, entry, group (CachePolicies)
 #: plasma/data/kconfigxt/libplasma-theme-global.kcfg:14
 #, kde-format
-msgid ""
-"The maximum size of the on-disk Theme cache in kilobytes. Note that these "
-"files are sparse files, so the maximum size may not be used. Setting a "
-"larger size is therefore often quite safe."
-msgstr ""
-"Maksstorleiken på snøgglageret for temaet i kilobyte. Merk at desse filene "
-"er kompakte, så maksstorleiken vert gjerne ikkje brukt. Det er derfor ofte "
-"trygt å bruka ein stor verdi her."
+msgid "The maximum size of the on-disk Theme cache in kilobytes. Note that these files are sparse files, so the maximum size may not be used. Setting a larger size is therefore often quite safe."
+msgstr "Maksstorleiken på snøgglageret for temaet i kilobyte. Merk at desse filene er kompakte, så maksstorleiken vert gjerne ikkje brukt. Det er derfor ofte trygt å bruka ein stor verdi her."
 
 #: plasma/packagestructure/packages.cpp:28
 #: plasma/packagestructure/packages.cpp:47
@@ -412,8 +412,7 @@ msgstr "Klarte ikkje opna pakken %1 som skjermelementet %2 treng."
 
 #: plasma/private/applet_p.cpp:166
 #, kde-format
-msgctxt ""
-"API or programming language the widget was written in, name of the widget"
+msgctxt "API or programming language the widget was written in, name of the widget"
 msgid "Could not create a %1 ScriptEngine for the %2 widget."
 msgstr "Klarte ikkje laga ein %1-ScriptEngine for skjermelementet %2."
 
@@ -514,12 +513,8 @@ msgstr "Fann ikkje etterspurd komponent: %1"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: plasma/private/publish.ui:17
 #, kde-format
-msgid ""
-"Sharing a widget on the network allows you to access this widget from "
-"another computer as a remote control."
-msgstr ""
-"Viss du deler eit element over nettverket, får du tilgang til det frå andre "
-"maskiner."
+msgid "Sharing a widget on the network allows you to access this widget from another computer as a remote control."
+msgstr "Viss du deler eit element over nettverket, får du tilgang til det frå andre maskiner."
 
 #. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
 #: plasma/private/publish.ui:27
@@ -557,7 +552,10 @@ msgstr "Feil ved lasting av miniprogram: pakken finst ikkje. %1"
 #: plasmaquick/configview.cpp:92
 #, kde-format
 msgid "%1 Settings"
-msgstr "Set opp «%1»|/|Set opp $[dobbelbest %1]$[bunden %1]"
+msgstr ""
+"Set opp «%1»"
+"|/|"
+"Set opp $[dobbelbest %1]$[bunden %1]"
 
 #: scriptengines/qml/plasmoid/containmentinterface.cpp:603
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 12:51+0000\n"
+"POT-Creation-Date: 2026-11-12 06:28+0000\n"
 "PO-Revision-Date: 2026-10-03 22:09+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -304,7 +304,7 @@ msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
 msgstr ""
 
-#: plasmaquick/containmentview.cpp:322
+#: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"

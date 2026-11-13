@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 12:51+0000\n"
-"PO-Revision-Date: 2026-10-30 19:27+0200\n"
+"POT-Creation-Date: 2026-11-12 06:28+0000\n"
+"PO-Revision-Date: 2026-11-12 17:52+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -123,11 +123,7 @@ msgid "Exit Edit Mode"
 msgstr "Išjungti taisymo veikseną"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -135,9 +131,11 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Šis valdiklis buvo sukurtas senesnei nežinomai Plasma versijai ir nėra "
-"suderinamas su Plasma %1. Norėdami gauti atnaujintą valdiklio versiją, "
-"susisiekite su valdiklio kūrėju."
+"Šio valdiklio darinys buvo sukurtas kitokiai Plasma versijai ir turi būti "
+"sukurtas iš naujo. Norėdami gauti atnaujintą valdiklio versiją, susisiekite "
+"su valdiklio kūrėju.\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format
@@ -307,7 +305,7 @@ msgid "There was a problem loading %1. Please check your installation."
 msgstr ""
 "Iškilo problemų įkeliant %1. Patikrinkite, ar teisingai atliktas diegimas."
 
-#: plasmaquick/containmentview.cpp:322
+#: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"

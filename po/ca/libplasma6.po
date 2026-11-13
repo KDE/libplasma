@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 12:51+0000\n"
+"POT-Creation-Date: 2026-11-12 06:28+0000\n"
 "PO-Revision-Date: 2026-11-11 09:46+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -305,7 +305,7 @@ msgid "There was a problem loading %1. Please check your installation."
 msgstr ""
 "Hi ha hagut un problema en carregar %1. Comproveu aquesta instal·lació."
 
-#: plasmaquick/containmentview.cpp:322
+#: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"

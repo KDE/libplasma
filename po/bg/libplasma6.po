@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 12:51+0000\n"
+"POT-Creation-Date: 2026-11-12 06:28+0000\n"
 "PO-Revision-Date: 2026-11-11 18:49+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -296,7 +296,7 @@ msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
 msgstr "Възникна проблем при зареждането на %1. Моля, проверете инсталацията."
 
-#: plasmaquick/containmentview.cpp:322
+#: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"

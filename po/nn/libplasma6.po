@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 12:51+0000\n"
-"PO-Revision-Date: 2026-09-25 17:52+0200\n"
+"POT-Creation-Date: 2026-11-12 06:28+0000\n"
+"PO-Revision-Date: 2026-11-12 21:34+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -136,11 +136,7 @@ msgid "Exit Edit Mode"
 msgstr "Avslutt tilpassing"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -148,9 +144,11 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Dette skjermelementet er laga for ein eldre versjon av Plasma og er ikkje "
-"kompatibelt med Plasma %1. Ta kontakt med utviklaren av skjerm­elementet for "
-"å skaffa ein oppdatert versjon."
+"Dette skjermelementet er bygd for ein annan versjon av Plasma og må byggjast "
+"på nytt. Ta kontakt med utviklaren av skjerm­elementet for å skaffa ein "
+"oppdatert versjon.\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format
@@ -318,13 +316,13 @@ msgstr "Set opp «%1»|/|Set opp $[dobbelbest %1]$[bunden %1]"
 #, kde-format
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "Feil ved lasting av %1. Kontroller at det er rett installert."
 
-#: plasmaquick/containmentview.cpp:322
+#: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Feil ved oppstart av Plasma"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

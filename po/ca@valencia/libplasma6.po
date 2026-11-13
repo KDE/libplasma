@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 12:51+0000\n"
-"PO-Revision-Date: 2026-10-28 09:16+0100\n"
+"POT-Creation-Date: 2026-11-12 06:28+0000\n"
+"PO-Revision-Date: 2026-11-11 09:46+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -124,11 +124,7 @@ msgid "Exit Edit Mode"
 msgstr "Ix del mode edició"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -136,9 +132,11 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Este giny s'ha escrit per a una versió antiga desconeguda de Plasma i no és "
-"compatible amb Plasma %1. Poseu-vos en contacte amb el seu autor per a una "
-"versió actualitzada."
+"Este giny s'ha construït per a una versió diferent de Plasma i cal que es "
+"reconstruïsca. Poseu-vos en contacte amb el seu autor per a una versió "
+"actualitzada.\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format
@@ -309,7 +307,7 @@ msgid "There was a problem loading %1. Please check your installation."
 msgstr ""
 "Hi ha hagut un problema mentre es carregava %1. Comproveu esta instal·lació."
 
-#: plasmaquick/containmentview.cpp:322
+#: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"

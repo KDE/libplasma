@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 12:51+0000\n"
-"PO-Revision-Date: 2026-10-29 12:03+0100\n"
+"POT-Creation-Date: 2026-11-12 06:28+0000\n"
+"PO-Revision-Date: 2026-11-11 09:56+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -134,11 +134,7 @@ msgid "Exit Edit Mode"
 msgstr "Quitter le mode d'édition"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -146,9 +142,10 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Ce composant graphique a été écrit pour une ancienne version inconnue de "
-"Plasma. Il est incompatible avec la version %1 de Plasma. Veuillez contacter "
-"l'auteur du composant graphique pour une version à jour."
+"Ce composant graphique a été écrit pour une version différente de Plasma. Il "
+"a besoin d'être recompilé. Veuillez contacter la personne en charge du "
+"composant graphique pour une version à jour.\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format
@@ -320,7 +317,7 @@ msgstr ""
 "Un problème est survenu lors du chargement de %1. Veuillez vérifier votre "
 "installation."
 
-#: plasmaquick/containmentview.cpp:322
+#: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"

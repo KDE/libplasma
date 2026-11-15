@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 03:08+0000\n"
-"PO-Revision-Date: 2026-10-03 22:09+0200\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
@@ -286,12 +286,12 @@ msgstr "Поставке %1|/|Поставке $[ген %1]"
 #, kde-format
 msgctxt "Fatal error message: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "Дошло је до проблема при учитавању %1. Провјерите инсталацију."
 
 #: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Грешка при покретању Плазме"
 
 # >> @title
 #: plasmaquick/plasmoid/containmentitem.cpp:574

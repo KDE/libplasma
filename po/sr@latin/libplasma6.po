@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libplasma5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-12 06:28+0000\n"
-"PO-Revision-Date: 2026-10-03 22:09+0200\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
@@ -122,11 +122,7 @@ msgid "Exit Edit Mode"
 msgstr "Izađi iz režima uređivanja"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -134,8 +130,10 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Ovaj vidžet je napisan za nepoznato starije izdanje Plasme i nije saglasan "
-"sa Plasmom %1. Zatražite ažurirano izdanje od autora vidžeta."
+"Ovaj vidžet je izgrađen za drugo izdanje Plasme i mora ponovo da se izgradi. "
+"Zatražite ažurirano izdanje od autora vidžeta.\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format
@@ -302,13 +300,13 @@ msgstr "Postavke %1|/|Postavke $[gen %1]"
 #, kde-format
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "Došlo je do problema pri učitavanju %1. Proverite instalaciju."
 
 #: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Greška pri pokretanju Plasme"
 
 # >> @title
 #: plasmaquick/plasmoid/containmentitem.cpp:574

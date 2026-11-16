@@ -63,6 +63,7 @@ T.Slider {
         }
         LayoutMirroring.enabled: false
 
+        enabled: Kirigami.StyleHints.scrollingModifiesControls
         acceptedButtons: Qt.NoButton
 
         onWheel: wheel => {

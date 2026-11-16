@@ -166,6 +166,7 @@ T.ComboBox {
                 leftMargin: control.leftPadding
                 rightMargin: control.rightPadding
             }
+            enabled: Kirigami.StyleHints.scrollingModifiesControls
             acceptedButtons: Qt.NoButton
             onWheel: wheel => {
                 if (wheel.pixelDelta.y < 0 || wheel.angleDelta.y < 0) {

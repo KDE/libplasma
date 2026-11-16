@@ -8,10 +8,38 @@
 #include "plugin.h"
 #include "plasmatheme.h"
 #include "units.h"
+#include <KConfigWatcher>
+#include <StyleHints>
+
+using namespace Qt::StringLiterals;
+
+class KirigamiStyleHints : public Kirigami::Platform::StyleHints
+{
+public:
+    KirigamiStyleHints(QObject *parent = nullptr)
+        : Kirigami::Platform::StyleHints(parent)
+        , m_globalsWatcher(KConfigWatcher::create(KSharedConfig::openConfig()))
+    {
+        setScrollingModifiesControls(KConfigGroup(KSharedConfig::openConfig(), u"KDE"_s).readEntry(u"ScrollingModifiesControls"_s, false));
+        connect(m_globalsWatcher.data(), &KConfigWatcher::configChanged, this, [this](const KConfigGroup &group, const QByteArrayList &names) {
+            if (group.name() == "KDE"_L1) {
+                if (names.contains("ScrollingModifiesControls"_ba)) {
+                    setScrollingModifiesControls(group.readEntry(u"ScrollingModifiesControls"_s, false));
+                }
+            }
+        });
+    }
+
+private:
+    KConfigWatcher::Ptr m_globalsWatcher;
+};
 
 Plugin::Plugin(QObject *parent)
     : Kirigami::Platform::PlatformPluginFactory(parent)
 {
+    Kirigami::Platform::StyleHints::setMakeStyleHintsFunction([](QObject *object) {
+        return new KirigamiStyleHints(object);
+    });
 }
 
 Plugin::~Plugin() = default;

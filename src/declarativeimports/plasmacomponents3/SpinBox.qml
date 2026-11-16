@@ -48,7 +48,7 @@ T.SpinBox {
         bottom: Math.min(control.from, control.to)
         top: Math.max(control.from, control.to)
     }
-    wheelEnabled: true
+    wheelEnabled: Kirigami.styleHints.scrollingModifiesControls
     hoverEnabled: Application.styleHints.useHoverEffects
 
     KSvg.Svg {

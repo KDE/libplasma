@@ -1,5 +1,4 @@
 add_subdirectory(core)
-add_subdirectory(plasmaextracomponents)
 add_subdirectory(kirigamiplasmastyle)
 
 set(QQC2_VERSION "6.${Qt6Quick_VERSION_MINOR}")
@@ -17,7 +16,22 @@ FOREACH(infileName ${inFiles})
     )
 ENDFOREACH(infileName)
 
-ecm_add_qml_module(org_kde_plasmacomponents3 URI "org.kde.plasma.components" VERSION 3.0 NO_PLUGIN)
+ecm_add_qml_module(org_kde_plasmacomponents3 URI "org.kde.plasma.components"
+    VERSION 3.0
+    DEPENDENCIES
+        "QtQuick.Controls"
+        "org.kde.kirigami"
+        "org.kde.ksvg"
+        "org.kde.plasma.core"
+)
+
+target_sources(org_kde_plasmacomponents3 PRIVATE
+    plasmacomponentsplugin.cpp
+    plasmacomponentsplugin.h
+)
+
+target_link_libraries(org_kde_plasmacomponents3 PRIVATE Qt6::Qml)
+
 file(GLOB _public_qml "${CMAKE_CURRENT_BINARY_DIR}/plasmacomponents3/*.qml")
 ecm_target_qml_sources(org_kde_plasmacomponents3 VERSION 3.0 SOURCES ${_public_qml})
 file(GLOB _mobiletextselection_qml "${CMAKE_CURRENT_BINARY_DIR}/plasmacomponents3/mobiletextselection/*.qml" "${CMAKE_CURRENT_BINARY_DIR}/plasmacomponents3/mobiletextselection/qmldir")
@@ -30,3 +44,5 @@ ecm_target_qml_sources(org_kde_plasmacomponents3 VERSION 3.0 PATH private SOURCE
 ecm_finalize_qml_module(org_kde_plasmacomponents3 DESTINATION ${KDE_INSTALL_QMLDIR})
 
 ecm_generate_qdoc(org_kde_plasmacomponents3 plasmacomponents.qdocconf)
+
+add_subdirectory(plasmaextracomponents)

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 03:08+0000\n"
+"POT-Creation-Date: 2026-11-18 22:02+0000\n"
 "PO-Revision-Date: 2026-10-28 07:44+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -93,12 +93,12 @@ msgid "Clear search"
 msgstr "Очистить поиск"
 
 # Unknown Plasma widget (e.g. when it fails to load.) --aspotashev
-#: plasma/applet.cpp:296
+#: plasma/applet.cpp:299
 #, kde-format
 msgid "Unknown"
 msgstr "Неизвестный"
 
-#: plasma/applet.cpp:742
+#: plasma/applet.cpp:745
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Сделать виджет «%1» активным"

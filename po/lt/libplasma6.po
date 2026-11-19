@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 03:08+0000\n"
+"POT-Creation-Date: 2026-11-18 22:02+0000\n"
 "PO-Revision-Date: 2026-10-30 19:27+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -80,12 +80,12 @@ msgstr "Paieška"
 msgid "Clear search"
 msgstr "Išvalyti paiešką"
 
-#: plasma/applet.cpp:296
+#: plasma/applet.cpp:299
 #, kde-format
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: plasma/applet.cpp:742
+#: plasma/applet.cpp:745
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Aktyvuoti %1 valdiklį"

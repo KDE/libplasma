@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 03:08+0000\n"
+"POT-Creation-Date: 2026-11-18 22:02+0000\n"
 "PO-Revision-Date: 2026-10-28 22:51+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -81,12 +81,12 @@ msgstr "Hledat"
 msgid "Clear search"
 msgstr "Vyprázdnit hledání"
 
-#: plasma/applet.cpp:296
+#: plasma/applet.cpp:299
 #, kde-format
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: plasma/applet.cpp:742
+#: plasma/applet.cpp:745
 #, kde-format
 msgid "Activate %1 Widget"
 msgstr "Aktivovat %1 widget"

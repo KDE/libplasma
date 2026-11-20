@@ -285,11 +285,12 @@ msgstr "Nastavenia %1"
 msgctxt "Fatal error message: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
 msgstr ""
+"Pri načítaní %1 nastal problém. Skontrolujte, prosím, svoju inštaláciu."
 
 #: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Chyba pri spúšťaní Plasmy"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

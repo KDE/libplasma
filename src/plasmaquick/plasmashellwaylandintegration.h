@@ -9,6 +9,7 @@
 
 #include <QObject>
 #include <QPoint>
+#include <QRect>
 #include <memory>
 
 #include "qwayland-plasma-shell.h"
@@ -67,6 +68,14 @@ public:
      * \since 6.8
      */
     void openUnderCursor();
+
+    /*!
+     * Tell the compositor where the item that opens this surface is (e.g. an applet's button), in global
+     * coordinates, so it can animate the surface out of and back towards it. An empty rect unsets it.
+     *
+     * \since 6.9
+     */
+    void setPopupOrigin(const QRect &origin);
 
     bool eventFilter(QObject *watched, QEvent *event) override;
 

@@ -19,7 +19,7 @@ class PlasmaShellManager : public QWaylandClientExtensionTemplate<PlasmaShellMan
 {
 public:
     PlasmaShellManager()
-        : QWaylandClientExtensionTemplate<PlasmaShellManager>(8)
+        : QWaylandClientExtensionTemplate<PlasmaShellManager>(9)
     {
         initialize();
     }
@@ -63,6 +63,7 @@ public:
     void platformSurfaceCreated(QWindow *window);
     void surfaceCreated();
     void surfaceDestroyed();
+    bool canSetPopupOrigin() const;
 
     PlasmaShellWaylandIntegration *q;
     QWindow *m_window = nullptr;
@@ -71,6 +72,7 @@ public:
     QtWayland::org_kde_plasma_surface::role m_role = QtWayland::org_kde_plasma_surface::role_normal;
     bool m_takesFocus = false;
     bool m_openUnderCursor = false;
+    QRect m_popupOrigin;
     std::unique_ptr<PlasmaShellSurface> m_shellSurface;
 };
 
@@ -121,12 +123,21 @@ void PlasmaShellWaylandIntegrationPrivate::surfaceCreated()
         if (m_openUnderCursor) {
             m_shellSurface->open_under_cursor();
         }
+        if (m_popupOrigin.isValid() && canSetPopupOrigin()) {
+            m_shellSurface->set_popup_origin(m_popupOrigin.x(), m_popupOrigin.y(), m_popupOrigin.width(), m_popupOrigin.height());
+        }
     }
 }
 
 void PlasmaShellWaylandIntegrationPrivate::surfaceDestroyed()
 {
     m_shellSurface.reset();
+}
+
+bool PlasmaShellWaylandIntegrationPrivate::canSetPopupOrigin() const
+{
+    return m_shellSurface
+        && wl_proxy_get_version(reinterpret_cast<wl_proxy *>(m_shellSurface->object())) >= ORG_KDE_PLASMA_SURFACE_SET_POPUP_ORIGIN_SINCE_VERSION;
 }
 
 PlasmaShellWaylandIntegration *PlasmaShellWaylandIntegration::get(QWindow *window)
@@ -225,6 +236,18 @@ void PlasmaShellWaylandIntegration::openUnderCursor()
 
     if (d->m_shellSurface) {
         d->m_shellSurface->open_under_cursor();
+    }
+}
+
+void PlasmaShellWaylandIntegration::setPopupOrigin(const QRect &origin)
+{
+    if (origin == d->m_popupOrigin) {
+        return;
+    }
+    d->m_popupOrigin = origin;
+    if (d->canSetPopupOrigin()) {
+        // an empty size unsets it
+        d->m_shellSurface->set_popup_origin(origin.x(), origin.y(), std::max(origin.width(), 0), std::max(origin.height(), 0));
     }
 }
 

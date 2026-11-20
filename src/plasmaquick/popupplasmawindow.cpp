@@ -111,6 +111,15 @@ void PopupPlasmaWindowPrivate::updateSlideEffect(const QRect &globalPosition)
         }
     }
 
+    if (KWindowSystem::isPlatformWayland()) {
+        // lets the compositor animate the popup out of the item that opens it
+        QRect origin;
+        if (m_animated && m_visualParent && m_visualParent->window()) {
+            origin = QRectF(m_visualParent->mapToGlobal(QPointF(0, 0)), m_visualParent->size()).toRect();
+        }
+        PlasmaShellWaylandIntegration::get(q)->setPopupOrigin(origin);
+    }
+
     if (!m_animated) {
         KWindowEffects::slideWindow(q, slideLocation);
         return;

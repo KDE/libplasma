@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmapkg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-18 13:58+0000\n"
-"PO-Revision-Date: 2026-10-28 23:55+0100\n"
+"PO-Revision-Date: 2026-11-10 18:19+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -122,11 +122,7 @@ msgid "Exit Edit Mode"
 msgstr "Esci dalla modalità di modifica"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -134,9 +130,11 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Questo oggetto è stato scritto per una versione precedente sconosciuta di "
-"Plasma e non è compatibile con Plasma %1. Contatta l'autore dell'oggetto per "
-"una versione aggiornata."
+"Questo oggetto è stato creato per una versione diversa di Plasma e deve "
+"essere ricompilato. Contatta l'autore dell'oggetto per ottenere una versione "
+"aggiornata.\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format

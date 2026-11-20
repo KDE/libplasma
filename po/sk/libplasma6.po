@@ -121,11 +121,7 @@ msgid "Exit Edit Mode"
 msgstr "Ukončiť režim úprav"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -133,9 +129,10 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Tento widget bol napísaný pre neznámu staršiu verziu Plasmy a nie je "
-"kompatibilný s Plasmou %1. Pre aktualizovanú verziu prosím kontaktujte "
-"autora widgetu."
+"Tento widget bol vytvorený pre inú verziu Plasmy a je potrebné ho znova "
+"zostaviť. Pre aktualizovanú verziu prosím kontaktujte autora widgetu.\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format
@@ -302,12 +299,13 @@ msgstr "Nastavenia %1"
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
 msgstr ""
+"Pri načítaní %1 nastal problém. Skontrolujte, prosím, svoju inštaláciu."
 
 #: plasmaquick/containmentview.cpp:323
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Chyba pri spúšťaní Plasmy"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

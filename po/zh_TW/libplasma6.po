@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-18 13:58+0000\n"
-"PO-Revision-Date: 2026-11-03 19:56+0900\n"
+"PO-Revision-Date: 2026-11-19 22:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.11.70\n"
+"X-Generator: Lokalize 27.03.70\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -125,11 +125,7 @@ msgid "Exit Edit Mode"
 msgstr "離開編輯模式"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -137,8 +133,10 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"這個元件是供某個未知的舊版 Plasma 用的，與 Plasma %1 不相容。請與元件作者聯"
-"絡，待其發佈更新版本。"
+"這個元件是為別的 Plasma 版本編譯的，需要重新編譯。請與元件作者聯絡，待其發佈"
+"更新版本。\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format

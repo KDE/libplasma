@@ -36,6 +36,8 @@ public:
     QString imagePath() const;
     void setImagePath(const QString &name);
 
+    void setPrefix(const QString &prefix);
+
     void setEnabledBorders(const KSvg::FrameSvg::EnabledBorders borders);
     KSvg::FrameSvg::EnabledBorders enabledBorders() const;
 
@@ -46,12 +48,18 @@ public:
     qreal rightMargin() const;
     qreal bottomMargin() const;
 
+    qreal leftFixedMargin() const;
+    qreal topFixedMargin() const;
+    qreal rightFixedMargin() const;
+    qreal bottomFixedMargin() const;
+
     // Needed for the QML api of Dialog
     QObject *fixedMargins() const;
     QObject *inset() const;
 
 Q_SIGNALS:
     void fixedMarginsChanged();
+    void marginsChanged();
     void maskChanged();
 
 private:

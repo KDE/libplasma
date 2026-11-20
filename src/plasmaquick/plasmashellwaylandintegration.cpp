@@ -7,6 +7,7 @@
 #include "plasmashellwaylandintegration.h"
 
 #include <QGuiApplication>
+#include <QMargins>
 #include <QPlatformSurfaceEvent>
 #include <QWaylandClientExtensionTemplate>
 #include <QWindow>
@@ -69,6 +70,7 @@ public:
     std::optional<QPoint> m_position;
     QtWayland::org_kde_plasma_surface::panel_behavior m_panelBehavior = QtWayland::org_kde_plasma_surface::panel_behavior_always_visible;
     QtWayland::org_kde_plasma_surface::role m_role = QtWayland::org_kde_plasma_surface::role_normal;
+    QMargins m_customMargins;
     bool m_takesFocus = false;
     bool m_openUnderCursor = false;
     std::unique_ptr<PlasmaShellSurface> m_shellSurface;
@@ -86,6 +88,11 @@ void PlasmaShellWaylandIntegrationPrivate::platformSurfaceCreated(QWindow *windo
     if (!waylandWindow) { // It may be null, e.g. when called within KWin
         return;
     }
+
+    if (!m_customMargins.isNull()) {
+        waylandWindow->setCustomMargins(m_customMargins);
+    }
+
     QObject::connect(waylandWindow, SIGNAL(surfaceCreated()), q, SLOT(surfaceCreated()));
     QObject::connect(waylandWindow, SIGNAL(surfaceDestroyed()), q, SLOT(surfaceDestroyed()));
     if (waylandWindow->surface()) {
@@ -213,6 +220,18 @@ void PlasmaShellWaylandIntegration::setTakesFocus(bool takesFocus)
     d->m_window->setProperty("_q_showWithoutActivating", !d->m_takesFocus);
     if (d->m_shellSurface) {
         d->m_shellSurface->set_panel_takes_focus(takesFocus);
+    }
+}
+
+void PlasmaShellWaylandIntegration::setCustomMargins(const QMargins &margins)
+{
+    if (margins == d->m_customMargins) {
+        return;
+    }
+
+    d->m_customMargins = margins;
+    if (auto waylandWindow = d->m_window->nativeInterface<QNativeInterface::Private::QWaylandWindow>()) {
+        waylandWindow->setCustomMargins(margins);
     }
 }
 

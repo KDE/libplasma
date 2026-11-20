@@ -68,6 +68,11 @@ class PLASMAQUICK_EXPORT PlasmaWindow : public QQuickWindow
      */
     Q_PROPERTY(qreal rightPadding READ rightPadding NOTIFY paddingChanged)
 
+    Q_PROPERTY(qreal topBackgroundPadding READ topBackgroundPadding NOTIFY paddingChanged)
+    Q_PROPERTY(qreal bottomBackgroundPadding READ bottomBackgroundPadding NOTIFY paddingChanged)
+    Q_PROPERTY(qreal leftBackgroundPadding READ leftBackgroundPadding NOTIFY paddingChanged)
+    Q_PROPERTY(qreal rightBackgroundPadding READ rightBackgroundPadding NOTIFY paddingChanged)
+
 public:
     /*!
      * \value StandardBackground The standard background from the theme is drawn
@@ -111,6 +116,11 @@ public:
     qreal bottomPadding() const;
     qreal leftPadding() const;
     qreal rightPadding() const;
+
+    qreal topBackgroundPadding() const;
+    qreal bottomBackgroundPadding() const;
+    qreal leftBackgroundPadding() const;
+    qreal rightBackgroundPadding() const;
 
 Q_SIGNALS:
     void mainItemChanged();

@@ -48,10 +48,10 @@ T.ToolBar {
         const windowBorders = popup.borders;
         let borders = Qt.TopEdge | Qt.BottomEdge;
 
-        if (windowBorders & Qt.LeftEdge && Math.floor(background.Kirigami.ScenePosition.x) <= 0) {
+        if (windowBorders & Qt.LeftEdge && Math.floor(background.Kirigami.ScenePosition.x) <= backgroundMetrics.getShadowMargin("left")) {
             borders |= Qt.LeftEdge;
         }
-        if (windowBorders & Qt.RightEdge && Math.ceil(background.Kirigami.ScenePosition.x + background.width) >= w.width) {
+        if (windowBorders & Qt.RightEdge && Math.ceil(background.Kirigami.ScenePosition.x + background.width) >= w.width - backgroundMetrics.getShadowMargin("right")) {
             borders |= Qt.RightEdge;
         }
 
@@ -94,25 +94,47 @@ T.ToolBar {
                 const w = Window.window;
 
                 // TODO: This shouldn't be duck-typed
-                if (w && w.hasOwnProperty("leftPadding")
-                      && w.hasOwnProperty("topPadding")
-                      && w.hasOwnProperty("rightPadding")
-                      && w.hasOwnProperty("bottomPadding")) {
+                if (w && w.hasOwnProperty("leftBackgroundPadding")
+                      && w.hasOwnProperty("topBackgroundPadding")
+                      && w.hasOwnProperty("rightBackgroundPadding")
+                      && w.hasOwnProperty("bottomBackgroundPadding")) {
                     switch (margin) {
                     case "left":
-                        return -w.leftPadding;
+                        return -w.leftBackgroundPadding;
                     case "top":
-                        return -w.topPadding;
+                        return -w.topBackgroundPadding;
                     case "right":
-                        return -w.rightPadding;
+                        return -w.rightBackgroundPadding;
                     case "bottom":
                     default:
-                        return -w.bottomPadding;
+                        return -w.bottomBackgroundPadding;
                     }
                 } else if (!hasInset) {
                     return -headingSvg.fixedMargins[margin];
                 } else {
                     return -fixedMargins[margin] + inset[margin];
+                }
+            }
+
+            function getShadowMargin(margin: string) : real {
+                const w = Window.window;
+
+                // TODO: This shouldn't be duck-typed
+                if (w && w.hasOwnProperty("leftBackgroundPadding")
+                      && w.hasOwnProperty("topBackgroundPadding")
+                      && w.hasOwnProperty("rightBackgroundPadding")
+                      && w.hasOwnProperty("bottomBackgroundPadding")) {
+                    switch (margin) {
+                    case "left":
+                        return w.leftPadding - w.leftBackgroundPadding;
+                    case "top":
+                        return w.topPadding - w.topBackgroundPadding;
+                    case "right":
+                        return w.rightPadding - w.rightBackgroundPadding;
+                    case "bottom":
+                    default:
+                        return w.bottomPadding - w.bottomBackgroundPadding;
+                    }
                 }
             }
         }

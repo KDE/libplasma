@@ -27,6 +27,7 @@ DialogBackground::DialogBackground(QQuickItem *parent)
     Q_ASSERT(m_frameSvgItem);
 
     connect(m_frameSvgItem, SIGNAL(maskChanged()), this, SIGNAL(maskChanged()));
+    connect(m_frameSvgItem->property("margins").value<QObject *>(), SIGNAL(marginsChanged()), this, SIGNAL(marginsChanged()));
     connect(m_frameSvgItem->property("fixedMargins").value<QObject *>(), SIGNAL(marginsChanged()), this, SIGNAL(fixedMarginsChanged()));
 }
 
@@ -43,6 +44,11 @@ QString DialogBackground::imagePath() const
 void DialogBackground::setImagePath(const QString &path)
 {
     m_frameSvgItem->setProperty("imagePath", path);
+}
+
+void DialogBackground::setPrefix(const QString &prefix)
+{
+    m_frameSvgItem->setProperty("prefix", prefix);
 }
 
 void DialogBackground::setEnabledBorders(const KSvg::FrameSvg::EnabledBorders borders)
@@ -63,23 +69,48 @@ QRegion DialogBackground::mask() const
 qreal DialogBackground::leftMargin() const
 {
     // assume margins is valid, as we asserted it's a valid FrameSvgItem
-    QObject *margins = m_frameSvgItem->property("fixedMargins").value<QObject *>();
+    QObject *margins = m_frameSvgItem->property("margins").value<QObject *>();
     return margins->property("left").value<qreal>();
 }
 
 qreal DialogBackground::topMargin() const
 {
-    QObject *margins = m_frameSvgItem->property("fixedMargins").value<QObject *>();
+    QObject *margins = m_frameSvgItem->property("margins").value<QObject *>();
     return margins->property("top").value<qreal>();
 }
 
 qreal DialogBackground::rightMargin() const
 {
-    QObject *margins = m_frameSvgItem->property("fixedMargins").value<QObject *>();
+    QObject *margins = m_frameSvgItem->property("margins").value<QObject *>();
     return margins->property("right").value<qreal>();
 }
 
 qreal DialogBackground::bottomMargin() const
+{
+    QObject *margins = m_frameSvgItem->property("margins").value<QObject *>();
+    return margins->property("bottom").value<qreal>();
+}
+
+qreal DialogBackground::leftFixedMargin() const
+{
+    // assume margins is valid, as we asserted it's a valid FrameSvgItem
+    QObject *margins = m_frameSvgItem->property("fixedMargins").value<QObject *>();
+    return margins->property("left").value<qreal>();
+}
+
+qreal DialogBackground::topFixedMargin() const
+{
+    QObject *margins = m_frameSvgItem->property("fixedMargins").value<QObject *>();
+    return margins->property("top").value<qreal>();
+}
+
+qreal DialogBackground::rightFixedMargin() const
+{
+    QObject *margins = m_frameSvgItem->property("fixedMargins").value<QObject *>();
+    return margins->property("right").value<qreal>();
+}
+
+qreal DialogBackground::bottomFixedMargin() const
 {
     QObject *margins = m_frameSvgItem->property("fixedMargins").value<QObject *>();
     return margins->property("bottom").value<qreal>();

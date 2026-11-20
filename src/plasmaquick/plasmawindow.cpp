@@ -5,11 +5,12 @@
 
 #include "plasmawindow.h"
 #include "dialogbackground_p.h"
-#include "dialogshadows_p.h"
+#include "plasmashellwaylandintegration.h"
 
 #include <QMarginsF>
 #include <QQuickItem>
 
+#include <KSvg/FrameSvg>
 #include <KWindowEffects>
 #include <Plasma/Theme>
 
@@ -26,13 +27,14 @@ public:
     }
     void handleFrameChanged();
     void updateMainItemGeometry();
+    QMarginsF shadowMargins() const;
     PlasmaWindow *q;
-    DialogShadows *shadows;
     // Keep a theme instance as a member to create one as soon as possible,
     // as Theme creation will set KSvg to correctly fetch images form the Plasma Theme.
     // This makes sure elements are correct, both in the dialog surface and the shadows.
     Plasma::Theme theme;
     QPointer<QQuickItem> mainItem;
+    DialogBackground *shadows;
     DialogBackground *dialogBackground;
     PlasmaWindow::BackgroundHints backgroundHints = PlasmaWindow::StandardBackground;
 };
@@ -44,8 +46,18 @@ PlasmaWindow::PlasmaWindow(const QString &svgPrefix)
     setColor(QColor(Qt::transparent));
     setFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
 
-    d->shadows = DialogShadows::instance(svgPrefix);
+    d->shadows = new DialogBackground(contentItem());
+    d->shadows->setObjectName(QStringLiteral("dialogshadow")); // TODO for debugging, remove?
+    d->shadows->setImagePath(svgPrefix);
+    d->shadows->setPrefix(QStringLiteral("shadow"));
+    connect(d->shadows, &DialogBackground::marginsChanged, this, [this]() {
+        d->updateMainItemGeometry();
+        d->handleFrameChanged();
+        Q_EMIT paddingChanged();
+    });
+
     d->dialogBackground = new DialogBackground(contentItem());
+    d->dialogBackground->setObjectName(QStringLiteral("dialogbackground")); // TODO for debugging, remove?
     d->dialogBackground->setImagePath(svgPrefix);
     connect(d->dialogBackground, &DialogBackground::fixedMarginsChanged, this, [this]() {
         d->updateMainItemGeometry();
@@ -54,8 +66,6 @@ PlasmaWindow::PlasmaWindow(const QString &svgPrefix)
     connect(d->dialogBackground, &DialogBackground::maskChanged, this, [this]() {
         d->handleFrameChanged();
     });
-
-    d->shadows->addWindow(this, d->dialogBackground->enabledBorders());
 }
 
 PlasmaWindow::~PlasmaWindow()
@@ -125,9 +135,13 @@ static Qt::Edges bordersToEdge(KSvg::FrameSvg::EnabledBorders borders)
 
 void PlasmaWindow::setBorders(Qt::Edges bordersToShow)
 {
-    d->dialogBackground->setEnabledBorders(edgeToBorder(bordersToShow));
-    d->shadows->setEnabledBorders(this, d->dialogBackground->enabledBorders());
+    const auto borders = edgeToBorder(bordersToShow);
+    d->dialogBackground->setEnabledBorders(borders);
+    d->shadows->setEnabledBorders(borders);
+    d->updateMainItemGeometry();
+    d->handleFrameChanged();
     Q_EMIT bordersChanged();
+    Q_EMIT paddingChanged();
 }
 
 Qt::Edges PlasmaWindow::borders()
@@ -144,7 +158,11 @@ void PlasmaWindow::resizeEvent(QResizeEvent *e)
 {
     QQuickWindow::resizeEvent(e);
     const QSize windowSize = e->size();
-    d->dialogBackground->setSize(windowSize);
+    d->shadows->setSize(windowSize);
+
+    const auto margins = d->shadowMargins();
+    d->dialogBackground->setSize(windowSize.toSizeF().shrunkBy(margins));
+
     if (d->mainItem) {
         const QSize contentSize = windowSize.shrunkBy(padding());
         d->mainItem->setSize(contentSize);
@@ -153,7 +171,11 @@ void PlasmaWindow::resizeEvent(QResizeEvent *e)
 
 void PlasmaWindowPrivate::handleFrameChanged()
 {
-    const QRegion mask = dialogBackground->mask();
+    const auto shadow = shadowMargins();
+    dialogBackground->setPosition(QPointF{shadow.left(), shadow.top()});
+    const QSize windowSize = q->size();
+    dialogBackground->setSize(windowSize.toSizeF().shrunkBy(shadow));
+    const QRegion mask = dialogBackground->mask().translated(shadow.left(), shadow.top());
     KWindowEffects::enableBlurBehind(q, theme.blurBehindEnabled(), mask);
     KWindowEffects::enableBackgroundContrast(q,
                                              theme.backgroundContrastEnabled(),
@@ -163,6 +185,16 @@ void PlasmaWindowPrivate::handleFrameChanged()
                                              mask);
 
     q->setMask(mask);
+}
+
+QMarginsF PlasmaWindowPrivate::shadowMargins() const
+{
+    return {
+        shadows->enabledBorders() & KSvg::FrameSvg::LeftBorder ? shadows->leftMargin() : 0,
+        shadows->enabledBorders() & KSvg::FrameSvg::TopBorder ? shadows->topMargin() : 0,
+        shadows->enabledBorders() & KSvg::FrameSvg::RightBorder ? shadows->rightMargin() : 0,
+        shadows->enabledBorders() & KSvg::FrameSvg::BottomBorder ? shadows->bottomMargin() : 0,
+    };
 }
 
 void PlasmaWindowPrivate::updateMainItemGeometry()
@@ -181,10 +213,7 @@ void PlasmaWindowPrivate::updateMainItemGeometry()
 
 QMargins PlasmaWindow::padding() const
 {
-    return QMargins(d->dialogBackground->leftMargin(),
-                    d->dialogBackground->topMargin(),
-                    d->dialogBackground->rightMargin(),
-                    d->dialogBackground->bottomMargin());
+    return QMargins(leftPadding(), topPadding(), rightPadding(), bottomPadding());
 }
 
 PlasmaWindow::BackgroundHints PlasmaWindow::backgroundHints() const
@@ -210,22 +239,42 @@ void PlasmaWindow::setBackgroundHints(BackgroundHints hints)
 
 qreal PlasmaWindow::topPadding() const
 {
-    return d->dialogBackground->topMargin();
+    return d->dialogBackground->topFixedMargin() + d->shadowMargins().top();
 }
 
 qreal PlasmaWindow::bottomPadding() const
 {
-    return d->dialogBackground->bottomMargin();
+    return d->dialogBackground->bottomFixedMargin() + d->shadowMargins().bottom();
 }
 
 qreal PlasmaWindow::leftPadding() const
 {
-    return d->dialogBackground->leftMargin();
+    return d->dialogBackground->leftFixedMargin() + d->shadowMargins().left();
 }
 
 qreal PlasmaWindow::rightPadding() const
 {
-    return d->dialogBackground->rightMargin();
+    return d->dialogBackground->rightFixedMargin() + d->shadowMargins().right();
+}
+
+qreal PlasmaWindow::topBackgroundPadding() const
+{
+    return d->dialogBackground->topFixedMargin();
+}
+
+qreal PlasmaWindow::bottomBackgroundPadding() const
+{
+    return d->dialogBackground->bottomFixedMargin();
+}
+
+qreal PlasmaWindow::leftBackgroundPadding() const
+{
+    return d->dialogBackground->leftFixedMargin();
+}
+
+qreal PlasmaWindow::rightBackgroundPadding() const
+{
+    return d->dialogBackground->rightFixedMargin();
 }
 }
 

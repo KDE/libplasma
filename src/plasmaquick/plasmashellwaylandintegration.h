@@ -15,6 +15,7 @@
 
 #include <plasmaquick/plasmaquick_export.h>
 
+class QMargins;
 class QWindow;
 
 class PlasmaShellSurface;
@@ -60,6 +61,8 @@ public:
     /*!
      */
     void setTakesFocus(bool takesFocus);
+
+    void setCustomMargins(const QMargins &marigns);
 
     /*!
      * Request that the initial position of this surface will be under the cursor

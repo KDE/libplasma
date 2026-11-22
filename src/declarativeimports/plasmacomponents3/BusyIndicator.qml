@@ -51,12 +51,14 @@ T.BusyIndicator {
         implicitWidth: Kirigami.Units.gridUnit * 2
         implicitHeight: Kirigami.Units.gridUnit * 2
 
-        // We can't bind directly to opacity, as Animator won't update its value immediately.
         visible: control.running || opacityAnimator.running
         opacity: control.running ? 1 : 0
         Behavior on opacity {
             enabled: Kirigami.Units.shortDuration > 0
-            OpacityAnimator {
+            // Not an OpacityAnimator: an Animator started while the window is hidden (e.g. a closed
+            // applet popup) never finishes, and keeps the animation timer of the whole process
+            // ticking at 60 Hz until the window is shown again.
+            NumberAnimation {
                 id: opacityAnimator
                 duration: Kirigami.Units.shortDuration
                 easing.type: Easing.OutCubic

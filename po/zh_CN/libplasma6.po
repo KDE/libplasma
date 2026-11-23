@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 13:58+0000\n"
+"POT-Creation-Date: 2026-11-22 20:36+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -46,22 +46,20 @@ msgid "Password"
 msgstr "密码"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:57
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, displays placeholders "
 "for characters"
 msgid "Hide Password"
-msgstr "密码"
+msgstr "隐藏密码"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:58
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, reveals password "
 "chracters"
 msgid "Show Password"
-msgstr "密码"
+msgstr "显示密码"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
@@ -121,11 +119,7 @@ msgid "Exit Edit Mode"
 msgstr "退出编辑模式"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -133,8 +127,10 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"此小部件是为未知的旧版 Plasma 编写的，它与 Plasma %1 不兼容。请联系小部件的作"
-"者获取新版小部件。"
+"此小部件是为其他版本的 Plasma 构建的，需要重新构建。请联系小部件作者获取更新"
+"版本。\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format
@@ -293,17 +289,17 @@ msgstr "%1 — %2 设置"
 msgid "%1 Settings"
 msgstr "%1 设置"
 
-#: plasmaquick/containmentview.cpp:321
+#: plasmaquick/containmentview.cpp:325
 #, kde-format
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "加载 %1 时遇到问题。请检查 Plasma 是否正确安装。"
 
-#: plasmaquick/containmentview.cpp:323
+#: plasmaquick/containmentview.cpp:327
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "启动 Plasma 时出错"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

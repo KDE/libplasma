@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 22:02+0000\n"
+"POT-Creation-Date: 2026-11-22 21:05+0000\n"
 "PO-Revision-Date: 2026-10-28 13:26+0100\n"
 "Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -278,7 +278,7 @@ msgstr "%1 - %2 instellingen"
 msgid "%1 Settings"
 msgstr "%1 instellingen"
 
-#: plasmaquick/containmentview.cpp:321
+#: plasmaquick/containmentview.cpp:325
 #, kde-format
 msgctxt "Fatal error message: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
@@ -286,7 +286,7 @@ msgstr ""
 "Er is een probleem opgetreden bij het laden van %1. Controleer uw "
 "installatie."
 
-#: plasmaquick/containmentview.cpp:323
+#: plasmaquick/containmentview.cpp:327
 #, kde-format
 msgid "Error Starting Plasma"
 msgstr "Fout bij starten van Plasma"

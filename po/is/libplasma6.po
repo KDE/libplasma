@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-22 20:36+0000\n"
-"PO-Revision-Date: 2026-06-01 12:38+0000\n"
+"PO-Revision-Date: 2026-11-25 16:49+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -47,22 +47,20 @@ msgid "Password"
 msgstr "Lykilorð"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:57
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, displays placeholders "
 "for characters"
 msgid "Hide Password"
-msgstr "Lykilorð"
+msgstr "Fela lykilorð"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:58
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, reveals password "
 "chracters"
 msgid "Show Password"
-msgstr "Lykilorð"
+msgstr "Birta lykilorð"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
@@ -122,11 +120,7 @@ msgid "Exit Edit Mode"
 msgstr "Loka breytiham"
 
 #: plasma/pluginloader.cpp:55
-#, fuzzy, kde-format
-#| msgid ""
-#| "This widget was written for an unknown older version of Plasma and is not "
-#| "compatible with Plasma %1. Please contact the widget's author for an "
-#| "updated version."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This widget was built for a different version of Plasma and needs to be "
@@ -134,8 +128,10 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"Þessi græja var gerð fyrir óþekkta eldri útgáfu af Plasma og virkar ekki í "
-"Plasma %1. Hafðu samband við höfund græjunnar til að fá uppfærða útgáfu."
+"Þessi græja var gerð fyrir aðra útgáfu af Plasma og þarf að endurbyggja. "
+"Hafðu samband við höfund græjunnar til að fá uppfærða útgáfu.\n"
+"\n"
+"%1"
 
 #: plasma/pluginloader.cpp:157
 #, kde-format
@@ -300,13 +296,13 @@ msgstr "%1 stillingar"
 #, kde-format
 msgctxt "Critical error: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "Vandamál kom upp við að hlaða inn %1. Athugaðu uppsetninguna þína."
 
 #: plasmaquick/containmentview.cpp:327
 #, kde-format
 msgctxt "Error message dialog title"
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "Villa við að ræsa Plasma"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

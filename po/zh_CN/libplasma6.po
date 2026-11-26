@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/libplasma/libplasma6.pot\n"
-"X-Crowdin-File-ID: 48704\n"
+"X-Crowdin-File: /kf6-stable/messages/libplasma/libplasma6.pot\n"
+"X-Crowdin-File-ID: 50190\n"
 
 #: declarativeimports/plasmaextracomponents/qml/BasicPlasmoidHeading.qml:82
 #, kde-format
@@ -46,22 +46,20 @@ msgid "Password"
 msgstr "密码"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:57
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, displays placeholders "
 "for characters"
 msgid "Hide Password"
-msgstr "密码"
+msgstr "隐藏密码"
 
 #: declarativeimports/plasmaextracomponents/qml/PasswordField.qml:58
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt ""
 "@action:button in text field, tooltip/accessible only, reveals password "
 "chracters"
 msgid "Show Password"
-msgstr "密码"
+msgstr "显示密码"
 
 #: declarativeimports/plasmaextracomponents/qml/SearchField.qml:62
 #, kde-format
@@ -281,12 +279,12 @@ msgstr "%1 设置"
 #, kde-format
 msgctxt "Fatal error message: impossible to show panels or desktops"
 msgid "There was a problem loading %1. Please check your installation."
-msgstr ""
+msgstr "加载 %1 时遇到问题。请检查 Plasma 是否正确安装。"
 
 #: plasmaquick/containmentview.cpp:327
 #, kde-format
 msgid "Error Starting Plasma"
-msgstr ""
+msgstr "启动 Plasma 时出错"
 
 #: plasmaquick/plasmoid/containmentitem.cpp:574
 #, kde-format

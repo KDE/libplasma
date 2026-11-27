@@ -165,8 +165,12 @@ Item {
       For performance and security reasons, keep this off unless needed.
 
       Optional, defaults to false.
+
+      \note This property is deprecated since Plasma 6.9. It no longer has any
+            effect and plain text is always used.
      */
     property bool allowStyledText: false
+    onAllowStyledTextChanged: print("allowStyledText is deprecated since Plasma 6.9")
 
     /*!
       \qmlproperty Action ExpandableListItem::defaultActionButtonAction
@@ -520,7 +524,7 @@ Item {
 
                         level: 5
 
-                        textFormat: listItem.allowStyledText ? Text.StyledText : Text.PlainText
+                        textFormat: Text.PlainText
                         elide: Text.ElideRight
                         maximumLineCount: 1
 
@@ -543,7 +547,7 @@ Item {
 
                         Layout.fillWidth: true
 
-                        textFormat: listItem.allowStyledText ? Text.StyledText : Text.PlainText
+                        textFormat: Text.PlainText
                         elide: Text.ElideRight
                         maximumLineCount: listItem.subtitleCanWrap ? (listItem.subtitleMaximumLineCount === -1 ? undefined : listItem.subtitleMaximumLineCount) : 1
                         wrapMode: listItem.subtitleCanWrap ? Text.Wrap : Text.NoWrap

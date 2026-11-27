@@ -95,6 +95,8 @@ PlasmaComponents3.TextField {
     LayoutMirroring.enabled: Application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
+    readonly property bool __hasBackgroundAndMargins: background && background.hasOwnProperty("margins")
+
     topPadding: __hasBackgroundAndMargins ? background.margins.top : 0
     bottomPadding: __hasBackgroundAndMargins ? background.margins.bottom : 0
     leftPadding: if (root.effectiveHorizontalAlignment === TextInput.AlignRight) {

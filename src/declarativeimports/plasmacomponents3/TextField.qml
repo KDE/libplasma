@@ -22,22 +22,6 @@ import "private" as Private
 T.TextField {
     id: control
 
-    // Can't guarantee that background will always be present or have the margins property
-    readonly property bool __hasBackgroundAndMargins: background && background.hasOwnProperty("margins")
-
-    // store information that echoMode was set to Password, regardless of its current value
-    property bool __isPassword: false
-    onEchoModeChanged: echoMode => {
-        __isPassword |= (echoMode === TextInput.Password);
-    }
-
-    // TextField doesn't have this property by default for whatever reason
-    property bool visualFocus: activeFocus && [
-        Qt.TabFocusReason,
-        Qt.BacktabFocusReason,
-        Qt.ShortcutFocusReason,
-    ].includes(focusReason)
-
     /* It might be preferable to do background width OR content width if we
      * want content to stay within the background rather than expanding the
      * control, but this is maintaining compatibility with the pre-existing
@@ -49,12 +33,12 @@ T.TextField {
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
                             Math.ceil(Math.max(contentWidth + leftPadding + rightPadding, placeholder.implicitWidth)))
     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
-                             Math.max(contentHeight + topPadding + bottomPadding, placeholder.implicitHeight, __isPassword ? passwordsizeholder.implicitHeight : 0))
+                             Math.max(contentHeight + topPadding + bottomPadding, placeholder.implicitHeight, priv.isPassword ? passwordsizeholder.implicitHeight : 0))
 
-    topPadding: __hasBackgroundAndMargins ? background.margins.top : 0
-    leftPadding: (__hasBackgroundAndMargins ? background.margins.left : 0) + (control.effectiveHorizontalAlignment === TextInput.AlignRight ? inlineButtonRow.width : 0)
-    rightPadding: (__hasBackgroundAndMargins ? background.margins.right : 0) + (control.effectiveHorizontalAlignment === TextInput.AlignRight ? 0 : inlineButtonRow.width)
-    bottomPadding: __hasBackgroundAndMargins ? background.margins.bottom : 0
+    topPadding: priv.hasBackgroundAndMargins ? background.margins.top : 0
+    leftPadding: (priv.hasBackgroundAndMargins ? background.margins.left : 0) + (control.effectiveHorizontalAlignment === TextInput.AlignRight ? inlineButtonRow.width : 0)
+    rightPadding: (priv.hasBackgroundAndMargins ? background.margins.right : 0) + (control.effectiveHorizontalAlignment === TextInput.AlignRight ? 0 : inlineButtonRow.width)
+    bottomPadding: priv.hasBackgroundAndMargins ? background.margins.bottom : 0
 
     Kirigami.Theme.inherit: !background || !background.visible
     Kirigami.Theme.colorSet: Kirigami.Theme.View
@@ -96,6 +80,11 @@ T.TextField {
         cursorPosition = positionAt(event.x, event.y);
         selectWord();
     }
+
+    onEchoModeChanged: echoMode => {
+        priv.isPassword |= (echoMode === TextInput.Password);
+    }
+
     MobileTextSelection.MobileCursor {
         target: control
         selectionStartHandle: true
@@ -148,7 +137,7 @@ T.TextField {
     Row {
         id: inlineButtonRow
         anchors.right: control.right
-        anchors.rightMargin: control.__hasBackgroundAndMargins ? control.background.margins.right : 0
+        anchors.rightMargin: priv.hasBackgroundAndMargins ? control.background.margins.right : 0
         anchors.verticalCenter: control.verticalCenter
         LayoutMirroring.enabled: control.effectiveHorizontalAlignment === TextInput.AlignRight
 
@@ -213,9 +202,9 @@ T.TextField {
                 bottomMargin: -margins.bottom
             }
             imagePath: "widgets/lineedit"
-            prefix: control.visualFocus && hasElement("focusframe-center") ? "focusframe" : "focus"
+            prefix: priv.visualFocus && hasElement("focusframe-center") ? "focusframe" : "focus"
             visible: opacity > 0
-            opacity: control.visualFocus || control.activeFocus
+            opacity: priv.visualFocus || control.activeFocus
             Behavior on opacity {
                 enabled: Kirigami.Units.longDuration > 0
                 NumberAnimation {
@@ -224,5 +213,22 @@ T.TextField {
                 }
             }
         }
+    }
+
+    QtObject {
+        id: priv
+
+        // Can't guarantee that background will always be present or have the margins property
+        readonly property bool hasBackgroundAndMargins: background && background.hasOwnProperty("margins")
+
+        // store information that echoMode was set to Password, regardless of its current value
+        property bool isPassword: false
+
+        // TextField doesn't have this property by default for whatever reason
+        property bool visualFocus: activeFocus && [
+                Qt.TabFocusReason,
+                Qt.BacktabFocusReason,
+                Qt.ShortcutFocusReason,
+            ].includes(focusReason)
     }
 }

@@ -23,8 +23,6 @@ import org.kde.kirigami as Kirigami
 T.ToolTip {
     id: control
 
-    property alias textFormat: label.textFormat
-
     x: parent ? Math.round((parent.width - implicitWidth) / 2) : 0
     y: -implicitHeight - 3
 
@@ -80,6 +78,7 @@ T.ToolTip {
             text: control.text.replace(/&(?=[^\s&])/g, "")
             wrapMode: Text.Wrap
             font: control.font
+            textFormat: Text.PlainText
 
             Kirigami.Theme.colorSet: Kirigami.Theme.Tooltip
             Kirigami.Theme.inherit: false

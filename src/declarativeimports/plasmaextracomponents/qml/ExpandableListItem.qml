@@ -399,7 +399,6 @@ Item {
     PlasmaComponents3.ToolTip {
         text: listItem.title + (listItem.subtitle.length > 0 ? "\n" + listItem.subtitle : "")
         visible: mouseArea.containsMouse && (listItemTitle.truncated || listItemSubtitle.truncated)
-        textFormat: listItem.allowStyledText ? Text.StyledText : Text.PlainText
     }
 
     // Handle left clicks and taps; don't accept stylus input or else it steals
